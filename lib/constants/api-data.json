@@ -210,6 +210,422 @@
           ]
         }
       ]
+    },
+    {
+      "subject": "MySQL/SQL",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Databases and SQL",
+          "topics": [
+            "Overview of databases",
+            "Introduction to relational databases",
+            "Basic concepts of SQL",
+            "Setting up MySQL environment"
+          ]
+        },
+        {
+          "module": "Module 2: Basic SQL Queries",
+          "topics": [
+            "SELECT statements",
+            "Filtering results with WHERE clause",
+            "Sorting results with ORDER BY",
+            "Using LIMIT to constrain results"
+          ]
+        },
+        {
+          "module": "Module 3: Advanced SQL Queries",
+          "topics": [
+            "JOIN operations (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN)",
+            "GROUP BY and HAVING clauses",
+            "Aggregate functions (COUNT, SUM, AVG, MIN, MAX)",
+            "Subqueries and nested queries"
+          ]
+        },
+        {
+          "module": "Module 4: Database Design and Normalization",
+          "topics": [
+            "Principles of database design",
+            "Normalization (1NF, 2NF, 3NF, BCNF)",
+            "Entity-Relationship (ER) modeling",
+            "Designing and creating tables"
+          ]
+        },
+        {
+          "module": "Module 5: Data Manipulation",
+          "topics": [
+            "INSERT statements",
+            "UPDATE statements",
+            "DELETE statements",
+            "Transaction control (COMMIT, ROLLBACK, SAVEPOINT)"
+          ]
+        },
+        {
+          "module": "Module 6: Indexing and Optimization",
+          "topics": [
+            "Introduction to indexing",
+            "Creating and managing indexes",
+            "Query optimization techniques",
+            "Analyzing and improving query performance"
+          ]
+        },
+        {
+          "module": "Module 7: Stored Procedures and Functions",
+          "topics": [
+            "Introduction to stored procedures",
+            "Creating and executing stored procedures",
+            "Using parameters in procedures",
+            "Creating and using functions"
+          ]
+        },
+        {
+          "module": "Module 8: Triggers and Views",
+          "topics": [
+            "Introduction to triggers",
+            "Creating and managing triggers",
+            "Introduction to views",
+            "Creating and using views"
+          ]
+        },
+        {
+          "module": "Module 9: Advanced Topics",
+          "topics": [
+            "Handling JSON data in MySQL",
+            "Full-text search",
+            "Partitioning tables",
+            "Replication and backup strategies"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project",
+          "topics": [
+            "Project planning and scoping",
+            "Database design and implementation",
+            "Writing complex queries",
+            "Presenting project findings and insights"
+          ]
+        },
+        {
+          "module": "Supplementary Materials and Practice",
+          "topics": [
+            "Modulely coding exercises and assignments",
+            "Recommended readings and online resources",
+            "Participation in SQL challenges and competitions",
+            "Regular quizzes and a final exam to assess understanding"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Artificial Intelligence",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Artificial Intelligence",
+          "topics": [
+            "Overview of Artificial Intelligence",
+            "History and evolution of AI",
+            "Applications of AI",
+            "Ethical considerations in AI"
+          ]
+        },
+        {
+          "module": "Module 2: Intelligent Agents and Problem Solving",
+          "topics": [
+            "Concept of intelligent agents",
+            "Types of agents",
+            "Problem-solving techniques",
+            "Uninformed search strategies (BFS, DFS)"
+          ]
+        },
+        {
+          "module": "Module 3: Informed Search and Exploration",
+          "topics": [
+            "Heuristic search methods",
+            "A* algorithm",
+            "Greedy best-first search",
+            "Local search algorithms"
+          ]
+        },
+        {
+          "module": "Module 4: Adversarial Search and Games",
+          "topics": [
+            "Minimax algorithm",
+            "Alpha-beta pruning",
+            "Game playing: Chess, Go, and other games",
+            "Monte Carlo Tree Search (MCTS)"
+          ]
+        },
+        {
+          "module": "Module 5: Constraint Satisfaction Problems",
+          "topics": [
+            "Defining constraint satisfaction problems (CSPs)",
+            "Backtracking search for CSPs",
+            "Constraint propagation and arc consistency",
+            "Solving CSPs with heuristics"
+          ]
+        },
+        {
+          "module": "Module 6: Logical Agents and Knowledge Representation",
+          "topics": [
+            "Propositional logic",
+            "First-order logic",
+            "Inference in first-order logic",
+            "Knowledge representation techniques"
+          ]
+        },
+        {
+          "module": "Module 7: Machine Learning Basics",
+          "topics": [
+            "Introduction to machine learning",
+            "Supervised learning",
+            "Unsupervised learning",
+            "Reinforcement learning"
+          ]
+        },
+        {
+          "module": "Module 8: Natural Language Processing (NLP)",
+          "topics": [
+            "Introduction to NLP",
+            "Text preprocessing techniques",
+            "Sentiment analysis",
+            "Machine translation"
+          ]
+        },
+        {
+          "module": "Module 9: Robotics and Perception",
+          "topics": [
+            "Introduction to robotics",
+            "Perception and sensors",
+            "Motion and path planning",
+            "Robot localization and mapping"
+          ]
+        },
+        {
+          "module": "Module 10: Advanced Topics and Final Project",
+          "topics": [
+            "Deep learning",
+            "Generative Adversarial Networks (GANs)",
+            "AI in healthcare, finance, and other industries",
+            "Final project: Comprehensive AI project integrating learned concepts"
+          ]
+        },
+        {
+          "module": "Supplementary Materials and Practice",
+          "topics": [
+            "Modulely coding exercises and assignments",
+            "Recommended readings and online resources",
+            "Participation in AI challenges and competitions",
+            "Regular quizzes and a final exam to assess understanding"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Machine Learning",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Machine Learning",
+          "topics": [
+            "Overview of Machine Learning",
+            "Applications of Machine Learning",
+            "Types of Machine Learning (Supervised, Unsupervised, Reinforcement)",
+            "The Machine Learning process"
+          ]
+        },
+        {
+          "module": "Module 2: Python for Machine Learning",
+          "topics": [
+            "Setting up the Python environment",
+            "Introduction to NumPy and Pandas",
+            "Data manipulation and preprocessing",
+            "Introduction to Matplotlib and Seaborn for visualization"
+          ]
+        },
+        {
+          "module": "Module 3: Data Preprocessing",
+          "topics": [
+            "Data cleaning and handling missing values",
+            "Feature scaling and normalization",
+            "Encoding categorical data",
+            "Splitting the dataset into training and testing sets"
+          ]
+        },
+        {
+          "module": "Module 4: Supervised Learning - Regression",
+          "topics": [
+            "Linear Regression",
+            "Polynomial Regression",
+            "Evaluating regression models (MAE, MSE, RMSE)",
+            "Regularization techniques (Ridge, Lasso)"
+          ]
+        },
+        {
+          "module": "Module 5: Supervised Learning - Classification",
+          "topics": [
+            "Logistic Regression",
+            "K-Nearest Neighbors (KNN)",
+            "Support Vector Machines (SVM)",
+            "Decision Trees and Random Forests"
+          ]
+        },
+        {
+          "module": "Module 6: Model Evaluation and Selection",
+          "topics": [
+            "Cross-validation techniques",
+            "Confusion matrix, precision, recall, F1-score",
+            "ROC curve and AUC",
+            "Hyperparameter tuning (Grid Search, Random Search)"
+          ]
+        },
+        {
+          "module": "Module 7: Unsupervised Learning - Clustering",
+          "topics": [
+            "K-Means Clustering",
+            "Hierarchical Clustering",
+            "DBSCAN",
+            "Evaluation of clustering results"
+          ]
+        },
+        {
+          "module": "Module 8: Unsupervised Learning - Dimensionality Reduction",
+          "topics": [
+            "Principal Component Analysis (PCA)",
+            "t-Distributed Stochastic Neighbor Embedding (t-SNE)",
+            "Linear Discriminant Analysis (LDA)",
+            "Applications of dimensionality reduction"
+          ]
+        },
+        {
+          "module": "Module 9: Introduction to Neural Networks and Deep Learning",
+          "topics": [
+            "Basics of neural networks",
+            "Activation functions",
+            "Training a neural network",
+            "Introduction to deep learning frameworks (TensorFlow, Keras, PyTorch)"
+          ]
+        },
+        {
+          "module": "Module 10: Advanced Topics and Final Project",
+          "topics": [
+            "Convolutional Neural Networks (CNNs)",
+            "Recurrent Neural Networks (RNNs)",
+            "Natural Language Processing (NLP)",
+            "Final project: End-to-end machine learning project integrating learned concepts"
+          ]
+        },
+        {
+          "module": "Supplementary Materials and Practice",
+          "topics": [
+            "Modulely coding exercises and assignments",
+            "Recommended readings and online resources",
+            "Participation in machine learning competitions (e.g., Kaggle)",
+            "Regular quizzes and a final exam to assess understanding"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Data Analytics",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Data Analytics",
+          "topics": [
+            "Overview of Data Analytics",
+            "Importance and applications of Data Analytics",
+            "Data types and data sources",
+            "Introduction to the data analysis process"
+          ]
+        },
+        {
+          "module": "Module 2: Data Collection and Data Cleaning",
+          "topics": [
+            "Data collection methods",
+            "Data quality and preprocessing",
+            "Handling missing data",
+            "Data cleaning techniques"
+          ]
+        },
+        {
+          "module": "Module 3: Exploratory Data Analysis (EDA)",
+          "topics": [
+            "Descriptive statistics",
+            "Data visualization techniques",
+            "Identifying patterns and insights",
+            "Using Python libraries for EDA (Pandas, Matplotlib, Seaborn)"
+          ]
+        },
+        {
+          "module": "Module 4: Data Wrangling",
+          "topics": [
+            "Data transformation and normalization",
+            "Handling and manipulating data with Pandas",
+            "Combining and merging datasets",
+            "Reshaping data"
+          ]
+        },
+        {
+          "module": "Module 5: Statistical Analysis",
+          "topics": [
+            "Probability concepts",
+            "Hypothesis testing",
+            "Confidence intervals",
+            "ANOVA and regression analysis"
+          ]
+        },
+        {
+          "module": "Module 6: Data Visualization",
+          "topics": [
+            "Principles of effective data visualization",
+            "Creating plots with Matplotlib and Seaborn",
+            "Interactive visualizations with Plotly",
+            "Dashboard creation with tools like Tableau or Power BI"
+          ]
+        },
+        {
+          "module": "Module 7: Introduction to Machine Learning",
+          "topics": [
+            "Overview of machine learning concepts",
+            "Supervised vs. unsupervised learning",
+            "Key algorithms (linear regression, decision trees, clustering)",
+            "Using Scikit-Learn for machine learning tasks"
+          ]
+        },
+        {
+          "module": "Module 8: Advanced Machine Learning Techniques",
+          "topics": [
+            "Model evaluation and validation",
+            "Feature engineering and selection",
+            "Ensemble methods (Random Forest, Gradient Boosting)",
+            "Introduction to deep learning"
+          ]
+        },
+        {
+          "module": "Module 9: Big Data Technologies",
+          "topics": [
+            "Introduction to Big Data",
+            "Hadoop ecosystem",
+            "Introduction to Spark",
+            "Working with large datasets"
+          ]
+        },
+        {
+          "module": "Module 10: Data Ethics and Final Project",
+          "topics": [
+            "Ethical issues in data analytics",
+            "Data privacy and security",
+            "Best practices for ethical data handling",
+            "Final project: End-to-end data analytics project integrating learned concepts"
+          ]
+        },
+        {
+          "module": "Supplementary Materials and Practice",
+          "topics": [
+            "Modulely coding exercises and assignments",
+            "Recommended readings and online resources",
+            "Participation in data challenges and competitions",
+            "Regular quizzes and a final exam to assess understanding"
+          ]
+        }
+      ]
     }
   ]
 }

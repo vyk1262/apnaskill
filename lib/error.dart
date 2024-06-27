@@ -1,12 +1,12 @@
 import 'package:apnaskill/widgets/header.dart';
 import 'package:flutter/material.dart';
 
-class ProgramsScreen extends StatelessWidget {
+class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Header(),
-      body: const Center(child: Text('Programs Screen')),
+      body: const Center(child: Text('Contact Screen')),
     );
   }
 }

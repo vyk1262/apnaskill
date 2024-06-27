@@ -1,9 +1,10 @@
 import 'package:apnaskill/home.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:apnaskill/home.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
