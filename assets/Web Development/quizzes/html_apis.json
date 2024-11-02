@@ -1,0 +1,109 @@
+{
+  "result": [
+    {
+      "topic": "html_apis",
+      "questions": [
+        {
+          "question": "What is the purpose of the HTML Geolocation API?",
+          "options": {
+            "A": "To locate the user's position",
+            "B": "To store user data",
+            "C": "To enable drag and drop functionality",
+            "D": "To work with web servers"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which method is used to get the current location of a user in the Geolocation API?",
+          "options": {
+            "A": "getLocation()",
+            "B": "getCurrentPosition()",
+            "C": "fetchLocation()",
+            "D": "findPosition()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does the HTML Drag and Drop API enable?",
+          "options": {
+            "A": "Automatic content sorting",
+            "B": "Moving elements within or between web pages",
+            "C": "Downloading files",
+            "D": "Drawing on the screen"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which event is triggered when an element is dragged using the HTML Drag and Drop API?",
+          "options": {
+            "A": "onstart",
+            "B": "ondrag",
+            "C": "onmove",
+            "D": "onhold"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the main purpose of the HTML Web Storage API?",
+          "options": {
+            "A": "To store data in the cloud",
+            "B": "To store data on the user's local device",
+            "C": "To manage file uploads",
+            "D": "To handle video playback"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which Web Storage method is used to store data that persists until the browser or tab is closed?",
+          "options": {
+            "A": "sessionStorage",
+            "B": "localStorage",
+            "C": "globalStorage",
+            "D": "windowStorage"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of HTML Web Workers?",
+          "options": {
+            "A": "To handle drag and drop actions",
+            "B": "To run JavaScript in the background",
+            "C": "To manage HTML forms",
+            "D": "To store user data"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which HTML API allows scripts to continue working in the background, independent of other scripts?",
+          "options": {
+            "A": "Geolocation API",
+            "B": "Web Workers API",
+            "C": "Drag/Drop API",
+            "D": "Web Storage API"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does SSE stand for in HTML?",
+          "options": {
+            "A": "Simple Server Events",
+            "B": "Server-Side Extension",
+            "C": "Server-Sent Events",
+            "D": "Secure Server Endpoint"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of Server-Sent Events (SSE) in HTML?",
+          "options": {
+            "A": "To send files to the server",
+            "B": "To allow a server to push updates to the client",
+            "C": "To control HTML forms",
+            "D": "To track user location"
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

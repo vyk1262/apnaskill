@@ -1,0 +1,15 @@
+{
+  "result": [
+    {
+      "topic": "project_2",
+      "questions": [
+        "Step 1: Set up a project folder with HTML, CSS, and JavaScript files.",
+        "Step 2: In the HTML file, create a form with input fields for 'Height' and 'Weight' and a button to calculate BMI.",
+        "Step 3: Style the form and input fields using CSS to make the calculator user-friendly and visually appealing.",
+        "Step 4: Write JavaScript to capture the input values, calculate BMI using the formula: BMI = weight (kg) / (height (m) * height (m)), and display the result.",
+        "Step 5: Add conditions in JavaScript to categorize the BMI result as Underweight, Normal, Overweight, or Obese based on the calculated value.",
+        "Step 6: (Optional) Make the calculator responsive for mobile devices using media queries in CSS."
+      ]
+    }
+  ]
+}

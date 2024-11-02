@@ -1,0 +1,29 @@
+{
+  "result": [
+    {
+      "topic": "project_2",
+      "questions": [
+        "Write a Python program that opens a file, writes a string to it, and then closes the file.",
+        "Create a program that reads a file and prints its content line by line.",
+        "Implement a file handling program that appends text to an existing file and then reads the updated content.",
+        "Write a Python program that demonstrates exception handling by attempting to divide by zero and catching the exception.",
+        "Create a program that reads a file and counts the number of words in it.",
+        "Write a Python program that imports the 'math' module and uses it to calculate the square root of a number.",
+        "Create a module named 'my_module' with a function that adds two numbers and import it in another program.",
+        "Implement a program that uses the 'random' module to generate a random integer between 1 and 100.",
+        "Write a Python program that demonstrates the use of the 'os' module to list all files in the current directory.",
+        "Create a program that uses the 'sys' module to print the command-line arguments passed to the script.",
+        "Write a program that uses regular expressions to validate an email address entered by the user.",
+        "Create a Python function that demonstrates functional programming by using map, filter, and reduce on a list of numbers.",
+        "Implement a program that creates a generator to yield even numbers up to a specified limit.",
+        "Write a Python program that demonstrates the use of decorators to log function calls.",
+        "Create a program that uses a closure to demonstrate how nested functions can access variables from their enclosing scope.",
+        "Write a Python program that handles a division operation and catches any ZeroDivisionError exceptions.",
+        "Implement a program that reads a list of numbers from a file and catches exceptions if the file does not exist.",
+        "Create a Python unit test for a simple function that adds two numbers.",
+        "Write a program that demonstrates how to use assertions to validate conditions during code execution.",
+        "Implement a logging mechanism in a Python program that records errors and exceptions to a log file."
+      ]
+    }
+  ]
+}
