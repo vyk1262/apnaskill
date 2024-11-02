@@ -1,0 +1,179 @@
+{
+  "result": [
+    {
+      "topic": "applications",
+      "questions": [
+        {
+          "question": "What is NumPy primarily used for?",
+          "options": {
+            "A": "Data manipulation and analysis",
+            "B": "Machine learning",
+            "C": "Numerical computing",
+            "D": "Web development"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which function in Pandas is used to read a CSV file?",
+          "options": {
+            "A": "pd.read_csv()",
+            "B": "pd.load_csv()",
+            "C": "pd.import_csv()",
+            "D": "pd.open_csv()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the 'DataFrame' object in Pandas represent?",
+          "options": {
+            "A": "A two-dimensional labeled data structure",
+            "B": "A one-dimensional array",
+            "C": "A statistical model",
+            "D": "A type of plot"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create a scatter plot using Matplotlib?",
+          "options": {
+            "A": "plt.scatter()",
+            "B": "plt.plot()",
+            "C": "plt.bar()",
+            "D": "plt.line()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which library is commonly used for data visualization in Python?",
+          "options": {
+            "A": "Pandas",
+            "B": "NumPy",
+            "C": "Matplotlib",
+            "D": "Scikit-learn"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of Seaborn in data visualization?",
+          "options": {
+            "A": "To create more informative and attractive visualizations",
+            "B": "To perform data analysis",
+            "C": "To build web applications",
+            "D": "To implement machine learning algorithms"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What command is used to install Flask?",
+          "options": {
+            "A": "pip install flask",
+            "B": "pip install Flask",
+            "C": "install flask",
+            "D": "pip get flask"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which framework is used for building web applications in Python?",
+          "options": {
+            "A": "Django",
+            "B": "NumPy",
+            "C": "Seaborn",
+            "D": "Matplotlib"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the 'render_template' function do in Flask?",
+          "options": {
+            "A": "Renders an HTML template",
+            "B": "Creates a new route",
+            "C": "Handles a form submission",
+            "D": "Connects to a database"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which library is primarily used for machine learning in Python?",
+          "options": {
+            "A": "Scikit-learn",
+            "B": "Flask",
+            "C": "NumPy",
+            "D": "Pandas"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the 'fit' method in Scikit-learn?",
+          "options": {
+            "A": "To train a model using the provided data",
+            "B": "To make predictions",
+            "C": "To evaluate model performance",
+            "D": "To import datasets"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What type of data structure does Scikit-learn typically work with?",
+          "options": {
+            "A": "Arrays and DataFrames",
+            "B": "Graphs and Trees",
+            "C": "HTML and XML",
+            "D": "Plain text files"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of automation in Python?",
+          "options": {
+            "A": "To perform repetitive tasks programmatically",
+            "B": "To build user interfaces",
+            "C": "To create complex algorithms",
+            "D": "To manage databases"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which library is commonly used for web scraping in Python?",
+          "options": {
+            "A": "Beautiful Soup",
+            "B": "Django",
+            "C": "Matplotlib",
+            "D": "Pandas"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the 'requests' library in Python?",
+          "options": {
+            "A": "To send HTTP requests",
+            "B": "To visualize data",
+            "C": "To perform data analysis",
+            "D": "To create web applications"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you automate file handling in Python?",
+          "options": {
+            "A": "By using scripts to read, write, and manipulate files",
+            "B": "By manually editing files",
+            "C": "By creating graphical user interfaces",
+            "D": "By connecting to a database"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of a Jupyter Notebook in data analysis?",
+          "options": {
+            "A": "To provide an interactive environment for code execution and visualization",
+            "B": "To create web applications",
+            "C": "To perform machine learning tasks",
+            "D": "To manage databases"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "result": [
+    {
+      "topic": "js_web_apis",
+      "questions": [
+        {
+          "question": "What is the purpose of the Fetch API in JavaScript?",
+          "options": {
+            "A": "To make HTTP requests to servers",
+            "B": "To manipulate web storage",
+            "C": "To handle background tasks",
+            "D": "To work with geolocation data"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which API allows you to store key-value pairs in a web browser?",
+          "options": {
+            "A": "Web Storage API",
+            "B": "Web Fetch API",
+            "C": "Web Worker API",
+            "D": "Web Geolocation API"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the Geolocation API allow you to do?",
+          "options": {
+            "A": "Retrieve the user's current location",
+            "B": "Store user preferences",
+            "C": "Manage web page history",
+            "D": "Fetch data from a server"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a key feature of the Web Worker API?",
+          "options": {
+            "A": "It allows for multi-threaded programming",
+            "B": "It provides a way to store data on the server",
+            "C": "It handles HTTP requests",
+            "D": "It manipulates the DOM"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following methods is used to retrieve data from local storage?",
+          "options": {
+            "A": "localStorage.getItem(key)",
+            "B": "localStorage.retrieve(key)",
+            "C": "localStorage.fetch(key)",
+            "D": "localStorage.load(key)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the primary function of the Web History API?",
+          "options": {
+            "A": "To manipulate the browser's session history",
+            "B": "To fetch remote data",
+            "C": "To create background threads",
+            "D": "To manage cookies"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which method of the Fetch API initiates a request to a specified URL?",
+          "options": {
+            "A": "fetch(url)",
+            "B": "request(url)",
+            "C": "get(url)",
+            "D": "send(url)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you access the response from a Fetch API request?",
+          "options": {
+            "A": "Using .then() to handle the Promise",
+            "B": "Using .response() method directly",
+            "C": "By storing it in a variable",
+            "D": "Using the async/await syntax only"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What data format is commonly used when working with the Fetch API?",
+          "options": {
+            "A": "JSON",
+            "B": "XML",
+            "C": "HTML",
+            "D": "Plain text"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the function of the Web Forms API?",
+          "options": {
+            "A": "To facilitate the creation and management of web forms",
+            "B": "To store form data in the browser",
+            "C": "To handle background processes for forms",
+            "D": "To validate user input"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

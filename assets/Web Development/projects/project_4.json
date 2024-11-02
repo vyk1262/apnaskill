@@ -1,0 +1,18 @@
+{
+  "result": [
+    {
+      "topic": "project_4",
+      "questions": [
+        "Step 1: Set up a project folder with HTML, CSS, and JavaScript files.",
+        "Step 2: In the HTML file, create a form with an input field for new tasks and a button to add the task. Also, include a container to display the list of tasks.",
+        "Step 3: Style the to-do list, input field, and buttons with CSS for a clean, user-friendly interface.",
+        "Step 4: In the JavaScript file, add functionality to create a new task by capturing input from the form, appending the task to the task list, and displaying it in the task container.",
+        "Step 5: Implement 'Read' functionality to display the current tasks and update the task container when new tasks are added or deleted.",
+        "Step 6: Add an 'Update' function to edit tasks by selecting a task from the list, updating the input field with its content, and saving the edited task.",
+        "Step 7: Implement 'Delete' functionality to remove tasks from the list by clicking a delete button next to each task.",
+        "Step 8: (Optional) Store tasks in the browser's local storage to retain the task list even after refreshing the page.",
+        "Step 9: (Optional) Make the to-do list responsive using media queries in CSS for a better user experience on mobile devices."
+      ]
+    }
+  ]
+}

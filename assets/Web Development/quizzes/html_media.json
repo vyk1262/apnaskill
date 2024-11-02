@@ -1,0 +1,109 @@
+{
+  "result": [
+    {
+      "topic": "html_graphics_media",
+      "questions": [
+        {
+          "question": "Which HTML element is used to draw graphics on a web page?",
+          "options": {
+            "A": "<canvas>",
+            "B": "<svg>",
+            "C": "<img>",
+            "D": "<video>"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does SVG stand for?",
+          "options": {
+            "A": "Styled Vector Graphics",
+            "B": "Scalable Vector Graphics",
+            "C": "Standard Vector Graphics",
+            "D": "Simple Vector Graphics"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which HTML tag is used to embed a video on a webpage?",
+          "options": {
+            "A": "<media>",
+            "B": "<movie>",
+            "C": "<video>",
+            "D": "<embed>"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which HTML attribute specifies a video file to be played?",
+          "options": {
+            "A": "src",
+            "B": "href",
+            "C": "link",
+            "D": "type"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which HTML tag is used to embed an audio file on a webpage?",
+          "options": {
+            "A": "<sound>",
+            "B": "<audio>",
+            "C": "<media>",
+            "D": "<voice>"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does the 'controls' attribute do in the <audio> and <video> tags?",
+          "options": {
+            "A": "It sets the volume level.",
+            "B": "It enables built-in controls for play, pause, and volume.",
+            "C": "It specifies the file type.",
+            "D": "It auto-plays the file on page load."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you embed a YouTube video on a webpage?",
+          "options": {
+            "A": "Using the <youtube> tag",
+            "B": "Using an <embed> or <iframe> tag",
+            "C": "Using the <video> tag",
+            "D": "Using the <media> tag"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which HTML element is used to define a vector graphic?",
+          "options": {
+            "A": "<canvas>",
+            "B": "<svg>",
+            "C": "<graphic>",
+            "D": "<vector>"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What attribute in the <video> element allows a video to play automatically?",
+          "options": {
+            "A": "controls",
+            "B": "autoplay",
+            "C": "loop",
+            "D": "play"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which attribute is used to make a video loop continuously?",
+          "options": {
+            "A": "autoplay",
+            "B": "controls",
+            "C": "loop",
+            "D": "muted"
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

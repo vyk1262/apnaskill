@@ -1,0 +1,15 @@
+{
+  "result": [
+    {
+      "topic": "project_3",
+      "questions": [
+        "Step 1: Set up a project folder with HTML, CSS, and JavaScript files.",
+        "Step 2: In the HTML file, create a container to display the quote text and a button to generate a new quote.",
+        "Step 3: Style the container and button using CSS to make the quotes generator visually appealing.",
+        "Step 4: In the JavaScript file, create an array of quotes where each quote is an object with properties for the quote text and the author.",
+        "Step 5: Write a function in JavaScript that selects a random quote from the array each time the button is clicked and displays it in the container.",
+        "Step 6: (Optional) Add animations or transitions to the quotes container to enhance the user experience when a new quote is displayed."
+      ]
+    }
+  ]
+}

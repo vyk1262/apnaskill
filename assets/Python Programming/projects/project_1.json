@@ -1,0 +1,34 @@
+{
+  "result": [
+    {
+      "topic": "project_1",
+      "questions": [
+        "Write a Python program to print 'Hello, World!' to the console.",
+        "Create a Python program that accepts user input for two numbers and prints their sum.",
+        "Write a program that demonstrates the use of different data types (integer, float, string, boolean) and prints their types.",
+        "Implement a program that performs arithmetic operations (addition, subtraction, multiplication, and division) based on user choice.",
+        "Create a program that converts a temperature from Celsius to Fahrenheit.",
+        "Write a Python program that checks whether a number is even or odd using an if-else statement.",
+        "Implement a program that prints numbers from 1 to 10 using a for loop.",
+        "Create a program that uses a while loop to ask the user for their name until they provide a valid input (non-empty).",
+        "Write a program that counts down from 10 to 1 using a while loop and includes a break statement to exit early if the user inputs 'exit'.",
+        "Implement a program that uses a nested loop to print a multiplication table (1-10).",
+        "Write a function that takes two numbers as arguments and returns their product. Demonstrate its usage in a program.",
+        "Create a function that accepts a string and returns the string in reverse order.",
+        "Implement a function that calculates the factorial of a number using recursion.",
+        "Write a program that defines a function to check if a number is prime and demonstrates its usage.",
+        "Create a function that accepts a list of numbers and returns the largest number from the list.",
+        "Write a Python program to create a list of integers, and then print the sum of all the integers in the list.",
+        "Implement a program that creates a tuple and demonstrates how to access its elements.",
+        "Create a Python program that uses a dictionary to store student names as keys and their grades as values. Print the grades for each student.",
+        "Write a program that demonstrates the use of sets by creating a set of unique numbers and performing union and intersection operations.",
+        "Implement a program that takes a string input from the user and counts the number of vowels and consonants in it.",
+        "Create a class named 'Dog' with attributes like 'name' and 'age' and methods to bark and display information.",
+        "Write a Python program that demonstrates inheritance by creating a base class 'Animal' and a derived class 'Cat'.",
+        "Implement polymorphism by creating a method in a base class and overriding it in derived classes to display different messages.",
+        "Create a class that implements encapsulation, where the attributes are private and accessed through getter and setter methods.",
+        "Write a Python program that uses abstraction to create an abstract class 'Shape' and derived classes for 'Circle' and 'Rectangle'."
+      ]
+    }
+  ]
+}
