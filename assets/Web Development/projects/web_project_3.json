@@ -1,7 +1,7 @@
 {
   "result": [
     {
-      "topic": "project_3",
+      "topic": "web_project_3",
       "questions": [
         "Step 1: Set up a project folder with HTML, CSS, and JavaScript files.",
         "Step 2: In the HTML file, create a container to display the quote text and a button to generate a new quote.",

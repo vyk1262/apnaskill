@@ -27,8 +27,8 @@ class _InternshipsHomeState extends State<InternshipsHome> {
     'modules'
   ];
   List<String> pythonProjects = [
-    'project_1',
-    'project_2',
+    'python_project_1',
+    'python_project_2',
   ];
 
   List<String> webQuizTopics = [
@@ -45,10 +45,10 @@ class _InternshipsHomeState extends State<InternshipsHome> {
     "js_apis",
   ];
   List<String> webProjects = [
-    'project_1',
-    'project_2',
-    'project_3',
-    'project_4',
+    'web_project_1',
+    'web_project_2',
+    'web_project_3',
+    'web_project_4',
   ];
 
   @override

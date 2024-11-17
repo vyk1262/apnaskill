@@ -1,7 +1,7 @@
 {
   "result": [
     {
-      "topic": "project_1",
+      "topic": "web_project_1",
       "questions": [
         "Step 1: Create a project folder and set up HTML, CSS, JavaScript files, along with an Images folder and a separate responsive CSS file if required.",
         "Step 2: Use various HTML tags (section, header, nav, meta, title, head, div, input, img, etc.) to structure the webpage.",

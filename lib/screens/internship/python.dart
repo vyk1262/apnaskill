@@ -330,10 +330,9 @@ class _QuizScreenState extends State<QuizScreen> {
           const SizedBox(height: 10),
           ...widget.quizList.map((topic) {
             return ListTile(
-              leading: Icon(Icons.quiz,
-                  color: completedQuizzes.contains(topic)
-                      ? Colors.green
-                      : Colors.blueGrey[700]),
+              leading: Icon(
+                Icons.quiz,
+              ),
               title: Text(
                 topic.replaceAll('-', ' ').toUpperCase(),
                 style: TextStyle(
@@ -341,6 +340,9 @@ class _QuizScreenState extends State<QuizScreen> {
                   color: selectedQuiz == topic ? Colors.blue : Colors.black,
                 ),
               ),
+              trailing: completedQuizzes.contains(topic)
+                  ? Icon(Icons.done, color: Colors.green)
+                  : null,
               selected: selectedQuiz == topic,
               tileColor: selectedQuiz == topic
                   ? Colors.blue[100]
@@ -379,6 +381,9 @@ class _QuizScreenState extends State<QuizScreen> {
                       : Colors.black,
                 ),
               ),
+              trailing: completedProjects.contains(assignment)
+                  ? Icon(Icons.done, color: Colors.green)
+                  : null,
               selected: selectedAssignment == assignment,
               tileColor: selectedAssignment == assignment
                   ? Colors.blue[100]

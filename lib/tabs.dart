@@ -77,12 +77,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.asset(
-                  'assets/apna-bg.png',
-                  width: 100,
-                  height: 80,
-                  fit: BoxFit.contain,
-                ),
+                // Image.asset(
+                //   'assets/apna-bg.png',
+                //   width: 100,
+                //   height: 80,
+                //   fit: BoxFit.contain,
+                // ),
                 Text('APNA SKILL'),
                 Spacer(),
                 _buildNavButton(context, label: 'Home', screenName: 'Home'),
@@ -90,8 +90,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     label: 'Courses', screenName: 'Courses'),
                 _buildNavButton(context,
                     label: 'Explore', screenName: 'Explore'),
-                _buildNavButton(context,
-                    label: 'Contact', screenName: 'Contact'),
                 _buildNavButton(context, label: 'FAQs', screenName: 'FAQs'),
                 _buildNavButton(context,
                     label: 'Register/Login', screenName: 'Register'),

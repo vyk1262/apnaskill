@@ -1,7 +1,7 @@
 {
   "result": [
     {
-      "topic": "project_2",
+      "topic": "python_project_2",
       "questions": [
         "Write a Python program that opens a file, writes a string to it, and then closes the file.",
         "Create a program that reads a file and prints its content line by line.",

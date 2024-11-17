@@ -19,30 +19,30 @@ class ContactScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ContactCard(
-                    icon: Icons.phone,
-                    title: 'Phone',
-                    text: '+91 8175989767',
-                  ),
                   ContactCard(
                     icon: Icons.email,
                     title: 'Email',
                     text: 'apnaskill.in@gmail.com',
                   ),
                   ContactCard(
+                    icon: Icons.phone,
+                    title: 'Phone',
+                    text: '+91 8175989767',
+                  ),
+                  ContactCard(
                     icon: Icons.message_rounded,
                     title: 'Whatsapp',
                     text: '+91 8175989767',
                   ),
-                  ContactCard(
-                    icon: Icons.location_on,
-                    title: 'Location',
-                    text:
-                        'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
-                  ),
+                  // ContactCard(
+                  //   icon: Icons.location_on,
+                  //   title: 'Location',
+                  //   text:
+                  //       'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
+                  // ),
                 ],
               ),
 

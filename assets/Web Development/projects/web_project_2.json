@@ -1,7 +1,7 @@
 {
   "result": [
     {
-      "topic": "project_2",
+      "topic": "web_project_2",
       "questions": [
         "Step 1: Set up a project folder with HTML, CSS, and JavaScript files.",
         "Step 2: In the HTML file, create a form with input fields for 'Height' and 'Weight' and a button to calculate BMI.",

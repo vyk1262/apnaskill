@@ -1,7 +1,7 @@
 {
   "result": [
     {
-      "topic": "project_1",
+      "topic": "python_project_1",
       "questions": [
         "Write a Python program to print 'Hello, World!' to the console.",
         "Create a Python program that accepts user input for two numbers and prints their sum.",
