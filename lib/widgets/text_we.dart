@@ -26,26 +26,21 @@ class CenteredTextWidget extends StatelessWidget {
   Widget _buildTextCard(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.black26,
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.blue.withOpacity(0.4),
-              blurRadius: 8,
-              offset: const Offset(2, 2),
-            )
-          ],
+      child: Card(
+        elevation: 4, // Shadow effect
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12), // Rounded corners
         ),
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.black, // Change text color if needed
+            ),
           ),
         ),
       ),

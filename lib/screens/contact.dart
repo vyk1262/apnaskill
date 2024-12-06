@@ -4,86 +4,86 @@ import 'package:flutter/services.dart';
 
 class ContactScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Scaffold(
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              SizedBox(height: 40),
-              const Text(
-                'Contact Us',
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.primaryColor,
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: 40), // Optional spacing at the top
+            Text(
+              'Contact Us',
+              style: TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+                color: AppColors.primaryColor,
+              ),
+            ),
+            SizedBox(height: 16),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ContactCard(
+                  icon: Icons.email,
+                  title: 'Email',
+                  text: 'apnaskill.in@gmail.com',
                 ),
-              ),
-              SizedBox(height: 16),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ContactCard(
-                    icon: Icons.email,
-                    title: 'Email',
-                    text: 'apnaskill.in@gmail.com',
-                  ),
-                  ContactCard(
-                    icon: Icons.phone,
-                    title: 'Phone',
-                    text: '+91 8175989767',
-                  ),
-                  ContactCard(
-                    icon: Icons.message_rounded,
-                    title: 'Whatsapp',
-                    text: '+91 8175989767',
-                  ),
-                  // ContactCard(
-                  //   icon: Icons.location_on,
-                  //   title: 'Location',
-                  //   text:
-                  //       'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
-                  // ),
-                ],
-              ),
-
-              // Social Media Icons (existing code)
-              Container(
-                color: Colors.black,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.facebook, color: Colors.white),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.facebook, color: Colors.white),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon:
-                          Icon(Icons.youtube_searched_for, color: Colors.white),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.linked_camera, color: Colors.white),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.linked_camera, color: Colors.white),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.message, color: Colors.white),
-                    ),
-                  ],
+                ContactCard(
+                  icon: Icons.phone,
+                  title: 'Phone',
+                  text: '+91 8175989767',
                 ),
-              ),
-            ],
-          ),
+                ContactCard(
+                  icon: Icons.message_rounded,
+                  title: 'Whatsapp',
+                  text: '+91 8175989767',
+                ),
+                // Uncomment the following if you want to display the location
+                // ContactCard(
+                //   icon: Icons.location_on,
+                //   title: 'Location',
+                //   text: 'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
+                // ),
+              ],
+            ),
+            SizedBox(height: 16), // Optional spacing
+            // Social Media Icons
+            // Container(
+            //   color: Colors.black,
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       IconButton(
+            //         onPressed: () {},
+            //         icon: Icon(Icons.facebook, color: Colors.white),
+            //       ),
+            //       IconButton(
+            //         onPressed: () {},
+            //         icon: Icon(Icons.facebook, color: Colors.white),
+            //       ),
+            //       IconButton(
+            //         onPressed: () {},
+            //         icon: Icon(Icons.youtube_searched_for, color: Colors.white),
+            //       ),
+            //       IconButton(
+            //         onPressed: () {},
+            //         icon: Icon(Icons.linked_camera, color: Colors.white),
+            //       ),
+            //       IconButton(
+            //         onPressed: () {},
+            //         icon: Icon(Icons.linked_camera, color: Colors.white),
+            //       ),
+            //       IconButton(
+            //         onPressed: () {},
+            //         icon: Icon(Icons.message, color: Colors.white),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+          ],
         ),
-      );
+      ),
+    );
+  }
 }
 
 class ContactCard extends StatelessWidget {

@@ -1,8 +1,7 @@
-import 'package:apnaskill/paints/stars.dart';
 import 'package:apnaskill/screens/contact.dart';
 import 'package:apnaskill/widgets/do_text.dart';
 import 'package:apnaskill/widgets/footer.dart';
-import 'package:apnaskill/paints/square.dart';
+import 'package:apnaskill/widgets/square_grid_paint.dart';
 import 'package:apnaskill/widgets/main_text.dart';
 import 'package:apnaskill/widgets/text_we.dart';
 import 'package:flutter/material.dart';
@@ -42,18 +41,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // SizedBox(height: 16),
-                    Stack(
-                      children: [
-                        Positioned.fill(
-                          child: CustomPaint(
-                            painter: StarryNightStyle(),
-                            size: Size(double.infinity,
-                                200), // Adjust the size as needed
-                          ),
-                        ),
-                        MainTextInfo(),
-                      ],
-                    ),
+                    MainTextInfo(),
                     const SizedBox(height: 16),
 
                     SizedBox(height: 16),
@@ -69,12 +57,10 @@ class _HomePageState extends State<HomePage> {
                         DoTextInfo(),
                       ],
                     ),
-                    const SizedBox(height: 100),
-
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 40),
                     CenteredTextWidget(),
                     SizedBox(
-                      height: 400,
+                      height: 500,
                       child: ContactScreen(),
                     ),
 

@@ -1,4 +1,4 @@
-import 'package:apnaskill/paints/river.dart';
+import 'package:apnaskill/widgets/static_river_paint.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 

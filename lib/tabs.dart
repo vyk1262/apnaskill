@@ -3,7 +3,7 @@ import 'package:apnaskill/screens/contact.dart';
 import 'package:apnaskill/screens/courses.dart';
 import 'package:apnaskill/screens/faqs.dart';
 import 'package:apnaskill/screens/explore.dart';
-import 'package:apnaskill/screens/internship/python.dart';
+import 'package:apnaskill/screens/python.dart';
 import 'package:apnaskill/screens/internships.dart';
 import 'package:apnaskill/screens/register.dart';
 import 'package:flutter/material.dart';
