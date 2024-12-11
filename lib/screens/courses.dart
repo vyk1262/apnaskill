@@ -1,7 +1,5 @@
-// import 'package:apnaskill/widgets/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:html' as html;
 
@@ -22,20 +20,6 @@ class _CoursesState extends State<Courses> {
     super.initState();
     fetchSyllabusFromLocal();
   }
-
-  // Future<void> fetchSyllabus() async {
-  //   final response = await http.get(Uri.parse(
-  //       'https://gist.githubusercontent.com/vyk1262/236b5ea8345cd64eeaba112cfe807b77/raw/d306e13156aafc7f660eea0a56c54b997caf4af2/subjects.json'));
-
-  //   if (response.statusCode == 200) {
-  //     setState(() {
-  //       syllabus = json.decode(response.body)['result'];
-  //       isLoading = false;
-  //     });
-  //   } else {
-  //     throw Exception('Failed to load syllabus');
-  //   }
-  // }
 
   Future<void> fetchSyllabusFromLocal() async {
     try {
@@ -94,14 +78,6 @@ class _CoursesState extends State<Courses> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            trailing:
-                                course['subject'].toString().toLowerCase() ==
-                                        'python'
-                                    ? const Icon(
-                                        Icons.library_add_check_outlined,
-                                        color: Colors.green,
-                                      )
-                                    : null,
                             onTap: () => selectCourse(course),
                           ),
                         ],
@@ -122,22 +98,6 @@ class _CoursesState extends State<Courses> {
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (selectedCourse!['subject']
-                                    .toString()
-                                    .toLowerCase() ==
-                                'python')
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    var url =
-                                        'https://docs.google.com/document/d/e/2PACX-1vTAx10qyhTX5v6ZTy1_3ZLcNqFI9b7W5cmRhSHaOTNbu_aHKM50mRJ40YzwrRUUWpd992Vwx4lYP-kY/pub';
-                                    html.window.open(url, '_blank');
-                                  },
-                                  child: const Text(
-                                      "Assignment Questions & Quizzes"),
-                                ),
-                              ),
                             ListView.builder(
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),

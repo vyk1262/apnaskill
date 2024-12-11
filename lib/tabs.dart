@@ -1,5 +1,5 @@
 import 'package:apnaskill/home.dart';
-import 'package:apnaskill/screens/contact.dart';
+import 'package:apnaskill/widgets/contact.dart';
 import 'package:apnaskill/screens/courses.dart';
 import 'package:apnaskill/screens/faqs.dart';
 import 'package:apnaskill/screens/explore.dart';

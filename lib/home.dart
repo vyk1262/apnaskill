@@ -1,11 +1,9 @@
-import 'package:apnaskill/screens/contact.dart';
+import 'package:apnaskill/widgets/contact.dart';
 import 'package:apnaskill/widgets/do_text.dart';
 import 'package:apnaskill/widgets/footer.dart';
-import 'package:apnaskill/widgets/square_grid_paint.dart';
 import 'package:apnaskill/widgets/main_text.dart';
 import 'package:apnaskill/widgets/text_we.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'dart:html' as html;
 
 class HomePage extends StatefulWidget {
@@ -43,27 +41,10 @@ class _HomePageState extends State<HomePage> {
                     // SizedBox(height: 16),
                     MainTextInfo(),
                     const SizedBox(height: 16),
-
-                    SizedBox(height: 16),
-
-                    Stack(
-                      children: [
-                        Positioned.fill(
-                          child: CustomPaint(
-                            painter: SquarePaint(),
-                            size: Size(double.infinity, 200),
-                          ),
-                        ),
-                        DoTextInfo(),
-                      ],
-                    ),
+                    DoTextInfo(),
                     const SizedBox(height: 40),
                     CenteredTextWidget(),
-                    SizedBox(
-                      height: 500,
-                      child: ContactScreen(),
-                    ),
-
+                    ContactScreen(),
                     Footer(),
                   ],
                 ),
