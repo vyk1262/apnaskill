@@ -348,7 +348,7 @@ class _AuthScreenState extends State<AuthScreen> {
         const SizedBox(height: 16),
         DropdownButtonFormField<String>(
           value: _selectedInternship,
-          hint: const Text('Select Internship'),
+          hint: const Text('Select Subject'),
           onChanged: (String? newValue) {
             setState(() {
               _selectedInternship = newValue;

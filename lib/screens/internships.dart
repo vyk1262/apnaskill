@@ -1,4 +1,3 @@
-import 'package:apnaskill/home.dart';
 import 'package:apnaskill/screens/python.dart';
 import 'package:apnaskill/tabs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

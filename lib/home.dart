@@ -1,3 +1,4 @@
+import 'package:apnaskill/screens/faqs.dart';
 import 'package:apnaskill/widgets/contact.dart';
 import 'package:apnaskill/widgets/do_text.dart';
 import 'package:apnaskill/widgets/footer.dart';
@@ -44,6 +45,20 @@ class _HomePageState extends State<HomePage> {
                     DoTextInfo(),
                     const SizedBox(height: 40),
                     CenteredTextWidget(),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FaqsScreen(),
+                            ),
+                          );
+                        },
+                        child: const Text('Faqs'),
+                      ),
+                    ),
+                    SizedBox(height: 16),
                     ContactScreen(),
                     Footer(),
                   ],

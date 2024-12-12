@@ -1,10 +1,5 @@
 import 'package:apnaskill/home.dart';
-import 'package:apnaskill/widgets/contact.dart';
 import 'package:apnaskill/screens/courses.dart';
-import 'package:apnaskill/screens/faqs.dart';
-import 'package:apnaskill/screens/explore.dart';
-import 'package:apnaskill/screens/python.dart';
-import 'package:apnaskill/screens/internships.dart';
 import 'package:apnaskill/screens/register.dart';
 import 'package:flutter/material.dart';
 
@@ -42,12 +37,6 @@ class _TabsState extends State<Tabs> {
         return HomePage();
       case 'Courses':
         return Courses();
-      case 'Explore':
-        return InternshipsHome();
-      case 'FAQs':
-        return FaqsScreen();
-      case 'Contact':
-        return ContactScreen();
       case 'Register':
         return AuthScreen();
       default:
@@ -89,10 +78,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 _buildNavButton(context,
                     label: 'Courses', screenName: 'Courses'),
                 _buildNavButton(context,
-                    label: 'Explore', screenName: 'Explore'),
-                _buildNavButton(context, label: 'FAQs', screenName: 'FAQs'),
-                _buildNavButton(context,
-                    label: 'Register/Login', screenName: 'Register'),
+                    label: 'Login', screenName: 'Register'),
               ],
             ),
           ],

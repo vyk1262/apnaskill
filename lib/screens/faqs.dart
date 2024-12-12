@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:apnaskill/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart' as rootBundle;
 
 class FaqsScreen extends StatefulWidget {
@@ -19,20 +18,6 @@ class _FaqsScreenState extends State<FaqsScreen> {
     fetchFaqs();
   }
 
-  // Future<void> fetchFaqs() async {
-  //   final response = await http.get(Uri.parse(
-  //       'https://gist.githubusercontent.com/vyk1262/a0d67e4365be9b7bfc0ed6998aa091a6/raw/a441fa02ba79985fd8333c15af2d93a90f7ac66a/faqs.json'));
-
-  //   if (response.statusCode == 200) {
-  //     setState(() {
-  //       faqs = jsonDecode(response.body)['results'];
-  //       isLoading = false;
-  //     });
-  //   } else {
-  //     throw Exception('Failed to load FAQs');
-  //   }
-  // }
-
   Future<void> fetchFaqs() async {
     final String response =
         await rootBundle.rootBundle.loadString('assets/faqs.json');
@@ -45,6 +30,9 @@ class _FaqsScreenState extends State<FaqsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("faqs"),
+      ),
       body: Column(
         children: [
           SizedBox(height: 40),
