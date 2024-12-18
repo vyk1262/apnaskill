@@ -37,7 +37,6 @@ class _CoursesState extends State<Courses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Courses')),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : GridView.builder(

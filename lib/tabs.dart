@@ -1,3 +1,4 @@
+import 'package:apnaskill/constants/colors.dart';
 import 'package:apnaskill/home.dart';
 import 'package:apnaskill/screens/courses.dart';
 import 'package:apnaskill/screens/register.dart';
@@ -25,8 +26,7 @@ class _TabsState extends State<Tabs> {
         onSelectScreen: onSelectScreen,
         selectedScreen: selectedScreen,
       ),
-      body: _getSelectedScreenWidget(
-          selectedScreen), // Dynamically update body based on selected screen
+      body: _getSelectedScreenWidget(selectedScreen),
     );
   }
 
@@ -54,14 +54,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white, // Optional: gives a more modern look
-      automaticallyImplyLeading: false, // Hide default back button
+      backgroundColor: AppColors.primaryColor,
+      automaticallyImplyLeading: false,
       flexibleSpace: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 16.0), // Add padding around the content
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center, // Center the content vertically
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -91,14 +89,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       {required String label, required String screenName}) {
     bool isSelected = selectedScreen == screenName;
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 8.0), // Spacing between buttons
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: TextButton(
         onPressed: () => onSelectScreen(screenName),
         child: Text(
           label,
           style: TextStyle(
-            color: isSelected ? Colors.blue : Colors.black,
+            color: isSelected ? Colors.white : Colors.black,
             fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
           ),
         ),
@@ -107,6 +104,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize =>
-      Size.fromHeight(80); // Adjusted height for a better fit
+  Size get preferredSize => Size.fromHeight(50);
 }

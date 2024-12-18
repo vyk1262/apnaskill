@@ -18,7 +18,7 @@ class ContactScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16),
-          Column(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ContactCard(
@@ -36,12 +36,11 @@ class ContactScreen extends StatelessWidget {
                 title: 'Whatsapp',
                 text: '+91 8175989767',
               ),
-              // Uncomment the following if you want to display the location
-              // ContactCard(
-              //   icon: Icons.location_on,
-              //   title: 'Location',
-              //   text: 'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
-              // ),
+              ContactCard(
+                icon: Icons.location_on,
+                title: 'Location',
+                text: 'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
+              ),
             ],
           ),
           SizedBox(height: 16), // Optional spacing

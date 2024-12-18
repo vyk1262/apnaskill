@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:apnaskill/constants/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -278,7 +279,7 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green[100], // Background color
+              backgroundColor: AppColors.primaryColor,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -288,9 +289,7 @@ class _QuizScreenState extends State<QuizScreen> {
               Navigator.pop(context);
             },
           ),
-          SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: 10),
           Text(
             widget.internshipName.toUpperCase(),
             textAlign: TextAlign.center,
@@ -299,25 +298,28 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
           ),
           const Divider(),
-          ListTile(
-            leading: Icon(Icons.info, color: Colors.blueGrey[700]),
-            title: const Text(
-              "GENERAL INFO",
+          Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
-            selected: showGeneralInfo,
-            tileColor: showGeneralInfo ? Colors.blue[100] : null,
-            onTap: () {
-              setState(() {
-                showGeneralInfo = true;
-                selectedQuiz = ''; // Deselect quiz
-                selectedAssignment = null; // Deselect assignment
-                quizData.clear();
-                projectdetailsData.clear();
-              });
-            },
+            child: ListTile(
+              leading: Icon(Icons.info, color: Colors.blueGrey[700]),
+              title: const Text("GENERAL INFO"),
+              selected: showGeneralInfo,
+              tileColor: showGeneralInfo ? Colors.blue[100] : null,
+              onTap: () {
+                setState(() {
+                  showGeneralInfo = true;
+                  selectedQuiz = '';
+                  selectedAssignment = null;
+                  quizData.clear();
+                  projectdetailsData.clear();
+                });
+              },
+            ),
           ),
-
-          // Quiz Topics
+          const Divider(),
           Text(
             "Quizzes",
             style: TextStyle(
@@ -328,36 +330,40 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           const SizedBox(height: 10),
           ...widget.quizList.map((topic) {
-            return ListTile(
-              leading: Icon(
-                Icons.quiz,
+            return Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
-              title: Text(
-                topic.replaceAll('-', ' ').toUpperCase(),
-                style: TextStyle(
-                  fontSize: 18,
-                  color: selectedQuiz == topic ? Colors.blue : Colors.black,
+              margin: const EdgeInsets.symmetric(vertical: 4),
+              color: selectedQuiz == topic ? AppColors.primaryColor : null,
+              child: ListTile(
+                leading: Icon(Icons.quiz),
+                title: Text(
+                  topic.replaceAll('-', ' ').toUpperCase(),
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: selectedQuiz == topic ? Colors.white : Colors.black,
+                  ),
                 ),
+                trailing: completedQuizzes.contains(topic)
+                    ? Icon(Icons.done, color: Colors.green)
+                    : null,
+                selected: selectedQuiz == topic,
+                onTap: () {
+                  setState(() {
+                    selectedQuiz = topic;
+                    selectedAssignment = null;
+                    projectdetailsData.clear();
+                    showGeneralInfo = false;
+                    _loadQuizData(topic);
+                  });
+                },
               ),
-              trailing: completedQuizzes.contains(topic)
-                  ? Icon(Icons.done, color: Colors.green)
-                  : null,
-              selected: selectedQuiz == topic,
-              tileColor: selectedQuiz == topic
-                  ? Colors.blue[100]
-                  : null, // Highlight selected item
-              onTap: () {
-                setState(() {
-                  selectedQuiz = topic;
-                  projectdetailsData.clear();
-                  showGeneralInfo = false;
-                  _loadQuizData(topic);
-                });
-              },
             );
           }).toList(),
-          const Divider(), // Divider for better visual separation
-          const SizedBox(height: 10), // Space before assignments
+          const Divider(),
+          const SizedBox(height: 10),
           Text(
             "Projects",
             style: TextStyle(
@@ -368,33 +374,40 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           const SizedBox(height: 10),
           ...widget.projectList.map((assignment) {
-            return ListTile(
-              leading: Icon(Icons.assignment,
-                  color: Colors.blueGrey[700]), // Icon for assignments
-              title: Text(
-                assignment.replaceAll('_', ' ').toUpperCase(),
-                style: TextStyle(
-                  fontSize: 18,
-                  color: selectedAssignment == assignment
-                      ? Colors.blue
-                      : Colors.black,
-                ),
+            return Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
-              trailing: completedProjects.contains(assignment)
-                  ? Icon(Icons.done, color: Colors.green)
+              margin: const EdgeInsets.symmetric(vertical: 4),
+              color: selectedAssignment == assignment
+                  ? AppColors.primaryColor
                   : null,
-              selected: selectedAssignment == assignment,
-              tileColor: selectedAssignment == assignment
-                  ? Colors.blue[100]
-                  : null, // Highlight selected ite
-              onTap: () {
-                setState(() {
-                  selectedAssignment = assignment;
-                  quizData.clear();
-                  showGeneralInfo = false;
-                  _loadProjectDetails(assignment);
-                });
-              },
+              child: ListTile(
+                leading: Icon(Icons.assignment, color: Colors.blueGrey[700]),
+                title: Text(
+                  assignment.replaceAll('_', ' ').toUpperCase(),
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: selectedAssignment == assignment
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                ),
+                trailing: completedProjects.contains(assignment)
+                    ? Icon(Icons.done, color: Colors.green)
+                    : null,
+                selected: selectedAssignment == assignment,
+                onTap: () {
+                  setState(() {
+                    selectedAssignment = assignment;
+                    selectedQuiz = '';
+                    quizData.clear();
+                    showGeneralInfo = false;
+                    _loadProjectDetails(assignment);
+                  });
+                },
+              ),
             );
           }).toList(),
         ],
@@ -416,6 +429,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Widget buildQuizContent() {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: ListView.builder(
@@ -423,22 +437,51 @@ class _QuizScreenState extends State<QuizScreen> {
             itemBuilder: (context, index) {
               final question = quizData[index];
               return Card(
+                elevation: 4, // Subtle shadow
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Rounded corners
+                ),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 10, horizontal: 16), // Card margin
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding:
+                      const EdgeInsets.all(16.0), // Padding inside the card
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(question['question']),
+                      // Question Text with enhanced styling
+                      Text(
+                        question['question'],
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey[800],
+                        ),
+                      ),
+                      const SizedBox(height: 12), // Space after question text
+                      // Display options for the question
                       ...question['options'].entries.map((entry) {
-                        return RadioListTile<String>(
-                          title: Text(entry.value),
-                          value: entry.key,
-                          groupValue: _userAnswers[index],
-                          onChanged: (value) {
-                            setState(() {
-                              _userAnswers[index] = value;
-                            });
-                          },
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                              bottom: 8.0), // Space between options
+                          child: RadioListTile<String>(
+                            title: Text(
+                              entry.value,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.blueGrey[700],
+                              ),
+                            ),
+                            value: entry.key,
+                            groupValue: _userAnswers[index],
+                            onChanged: (value) {
+                              setState(() {
+                                _userAnswers[index] = value;
+                              });
+                            },
+                            activeColor:
+                                Colors.blue, // Color for selected radio
+                          ),
                         );
                       }).toList(),
                     ],
@@ -458,32 +501,65 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Widget buildAssignmentContent() {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Display project details as a list of cards with padding and improved styling
         Expanded(
           child: ListView.builder(
             itemCount: projectdetailsData.length,
             itemBuilder: (context, index) {
               final question = projectdetailsData[index];
               return Card(
+                elevation: 4, // Add subtle shadow for better separation
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(12), // Rounded corners for the card
+                ),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 8, horizontal: 16), // Card margin
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(question),
-                    ],
+                  padding:
+                      const EdgeInsets.all(16.0), // Padding inside the card
+                  child: Text(
+                    question,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.blueGrey[800], // Color for text
+                    ),
                   ),
                 ),
               );
             },
           ),
         ),
-        SizedBox(height: 8),
-        TextField(
-          decoration: InputDecoration(labelText: 'Project URL'),
-          onSubmitted: (url) {
-            _submitProjectDetails(url); // Call to submit project details
-          },
+
+        // Space between the card list and input field
+        SizedBox(height: 16),
+
+        // TextField for entering the project URL with improved styling
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: TextField(
+            decoration: InputDecoration(
+              labelText: 'Project URL',
+              labelStyle: TextStyle(
+                fontSize: 16,
+                color: Colors.blueGrey[600],
+              ),
+              border: OutlineInputBorder(
+                borderRadius:
+                    BorderRadius.circular(8), // Rounded corners for input field
+                borderSide:
+                    BorderSide(color: Colors.blueGrey[300]!), // Border color
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                  vertical: 16, horizontal: 12), // Padding inside the TextField
+            ),
+            onSubmitted: (url) {
+              _submitProjectDetails(url); // Call to submit project details
+            },
+          ),
         ),
       ],
     );
