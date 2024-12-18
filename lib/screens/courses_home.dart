@@ -1,17 +1,17 @@
-import 'package:apnaskill/screens/python.dart';
+import 'package:apnaskill/screens/quiz_screen.dart';
 import 'package:apnaskill/tabs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class InternshipsHome extends StatefulWidget {
-  const InternshipsHome({Key? key}) : super(key: key);
+class CoursesHomeScreen extends StatefulWidget {
+  const CoursesHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<InternshipsHome> createState() => _InternshipsHomeState();
+  State<CoursesHomeScreen> createState() => _CoursesHomeScreenState();
 }
 
-class _InternshipsHomeState extends State<InternshipsHome> {
+class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
   Map<String, dynamic>? userData;
   List<String> pythonQuizTopics = [
     'files',

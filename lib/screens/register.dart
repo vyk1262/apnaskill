@@ -1,6 +1,6 @@
 import 'package:apnaskill/constants/colors.dart';
 import 'package:apnaskill/model/user_model.dart';
-import 'package:apnaskill/screens/internships.dart';
+import 'package:apnaskill/screens/courses_home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -85,8 +85,8 @@ class _AuthScreenState extends State<AuthScreen> {
 
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => InternshipsHome()));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => CoursesHomeScreen()));
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Sign-in failed: ${e.message}');
     } finally {
@@ -150,7 +150,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
         Provider.of<UserModel>(context, listen: false).setUserId(user.email);
         Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => InternshipsHome()));
+            MaterialPageRoute(builder: (context) => CoursesHomeScreen()));
       }
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Sign-up failed: ${e.message}');
@@ -449,7 +449,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => InternshipsHome()),
+        MaterialPageRoute(builder: (context) => CoursesHomeScreen()),
       );
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Google Sign-In failed: ${e.message}');
