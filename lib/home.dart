@@ -4,6 +4,7 @@ import 'package:apnaskill/widgets/home_page_widgets/contact.dart';
 import 'package:apnaskill/widgets/home_page_widgets/feature_widget.dart';
 import 'package:apnaskill/widgets/footer.dart';
 import 'package:apnaskill/widgets/home_page_widgets/google_form_button.dart';
+import 'package:apnaskill/widgets/home_page_widgets/image_section.dart';
 import 'package:apnaskill/widgets/home_page_widgets/text_section_one.dart';
 import 'package:apnaskill/widgets/paint_widgets/square_grid_paint.dart';
 import 'package:apnaskill/widgets/home_page_widgets/text_card_widget.dart';
@@ -80,18 +81,13 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // SizedBox(height: 16),
                     Container(
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Colors.purpleAccent, Colors.blueAccent],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
+                        gradient: AppColors.gradientPrimary,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
                         child: Column(
                           children: [
                             Row(
@@ -99,17 +95,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Expanded(flex: 1, child: TextSectionFour()),
                                 Expanded(flex: 2, child: TextSectionThree()),
-                                Expanded(
-                                  flex: 1,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(right: 16.0),
-                                    child: Image.asset(
-                                      'assets/sfcmp.png',
-                                      height: 300,
-                                      fit: BoxFit.contain,
-                                    ),
-                                  ),
-                                ),
+                                Expanded(flex: 1, child: ImageSectionThree()),
                               ],
                             ),
                           ],
@@ -133,39 +119,18 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         height: 300,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [Colors.purpleAccent, Colors.blueAccent],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
+                          gradient: AppColors.gradientPrimary,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            // Text Section
                             Expanded(flex: 1, child: TextSectionOne()),
-                            // Image Section
-                            Expanded(
-                              flex: 1,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(12),
-                                  bottomRight: Radius.circular(12),
-                                ),
-                                child: Image.asset(
-                                  'assets/book_shelf.png',
-                                  fit: BoxFit.cover,
-                                  height: double.infinity,
-                                  width: double.infinity,
-                                ),
-                              ),
-                            ),
+                            Expanded(flex: 1, child: ImageSectionOne()),
                           ],
                         ),
                       ),
                     ),
-
                     Stack(
                       children: [
                         Positioned.fill(
@@ -174,22 +139,11 @@ class _HomePageState extends State<HomePage> {
                             size: Size(double.infinity, 200),
                           ),
                         ),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            const Expanded(
-                              flex: 1,
-                              child: TextSectionTwo(),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Image.asset(
-                                'assets/it2.png',
-                                // width: double.infinity,
-                                // height: 550,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
+                            Expanded(flex: 1, child: TextSectionTwo()),
+                            Expanded(flex: 1, child: ImageSectionTwo()),
                           ],
                         ),
                       ],
