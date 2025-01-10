@@ -4,6 +4,7 @@ import 'package:apnaskill/widgets/home_page_widgets/contact.dart';
 import 'package:apnaskill/widgets/home_page_widgets/feature_widget.dart';
 import 'package:apnaskill/widgets/footer.dart';
 import 'package:apnaskill/widgets/home_page_widgets/main_text.dart';
+import 'package:apnaskill/widgets/home_page_widgets/text_section_one.dart';
 import 'package:apnaskill/widgets/paint_widgets/square_grid_paint.dart';
 import 'package:apnaskill/widgets/home_page_widgets/text_we.dart';
 import 'package:apnaskill/widgets/home_page_widgets/success_stories_widget.dart';
@@ -26,6 +27,41 @@ class _HomePageState extends State<HomePage> {
     "The academic world can be challenging, but with structured practice through assignments and projects, you're building a solid foundation for success.",
     "Break away from traditional rote learning. Engage with flexible and interactive quizzes, assignments, and projects designed to fit your schedule.",
     "Ready to excel in your subjects? Practical learning through quizzes, assignments, and projects bridges the gap between theory and application, boosting your knowledge and skills."
+  ];
+  final List<Map<String, dynamic>> featureData = [
+    {
+      'icon': Icons.person,
+      'title': "Personalized Learning Programs",
+      'description':
+          "Tailored educational experiences designed to meet individual student needs and learning styles.",
+    },
+    {
+      'icon': Icons.lightbulb_outline,
+      'title': "Expert-Led Workshops",
+      'description':
+          "Interactive sessions with industry experts aimed at skill enhancement and real-world application.",
+    },
+    {
+      'icon': Icons.menu_book,
+      'title': "Comprehensive Course Materials",
+      'description':
+          "Well-structured resources providing in-depth knowledge across various subjects and disciplines.",
+    },
+  ];
+
+  final List<Map<String, dynamic>> contactData = [
+    {'icon': Icons.email, 'title': 'Email', 'text': 'apnaskill.in@gmail.com'},
+    {'icon': Icons.phone, 'title': 'Phone', 'text': '+91 8175989767'},
+    {
+      'icon': Icons.message_rounded,
+      'title': 'Whatsapp',
+      'text': '+91 8175989767'
+    },
+    {
+      'icon': Icons.location_on,
+      'title': 'Location',
+      'text': 'Apnaskill, Near to Archid Tower, Baner, Pune-422045'
+    },
   ];
 
   @override
@@ -52,34 +88,17 @@ class _HomePageState extends State<HomePage> {
                     // SizedBox(height: 16),
                     MainTextInfo(),
                     const SizedBox(height: 16),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        // First Feature
-                        FeatureItem(
-                          icon: Icons.person,
-                          title: "Personalized Learning Programs",
-                          description:
-                              "Tailored educational experiences designed to meet individual student needs and learning styles.",
-                        ),
-                        // Second Feature
-                        FeatureItem(
-                          icon: Icons.lightbulb_outline,
-                          title: "Expert-Led Workshops",
-                          description:
-                              "Interactive sessions with industry experts aimed at skill enhancement and real-world application.",
-                        ),
-                        // Third Feature
-                        FeatureItem(
-                          icon: Icons.menu_book,
-                          title: "Comprehensive Course Materials",
-                          description:
-                              "Well-structured resources providing in-depth knowledge across various subjects and disciplines.",
-                        ),
-                      ],
+                      children: featureData.map((data) {
+                        return FeatureItem(
+                          icon: data['icon'],
+                          title: data['title'],
+                          description: data['description'],
+                        );
+                      }).toList(),
                     ),
                     const SizedBox(height: 16),
-
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Container(
@@ -98,32 +117,7 @@ class _HomePageState extends State<HomePage> {
                             // Text Section
                             Expanded(
                               flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Center(
-                                      child: Text(
-                                        "Empowering Growth Through Skill Development",
-                                        style: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 16),
-                                    Text(
-                                      "At Skill Factorial, located in the heart of Hyderabad, we are dedicated to transforming the educational landscape through innovative skill development programs. Our mission is to empower individuals with the practical skills necessary for success in today's dynamic job market. We believe in a hands-on approach that bridges the gap between theoretical knowledge and real-world application. Join us on a journey of lifelong learning and professional growth.",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.white70,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              child: TextSectionOne(),
                             ),
                             // Image Section
                             Expanded(
@@ -159,43 +153,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             const Expanded(
                               flex: 1,
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 16),
-                                  Text(
-                                    'What YOU will do?',
-                                    style: TextStyle(
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  SizedBox(height: 16),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.task_alt_rounded, size: 48),
-                                      SizedBox(width: 16),
-                                      Text(
-                                        'Quizzes',
-                                        style: TextStyle(fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 16),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.task_alt_rounded, size: 48),
-                                      SizedBox(width: 16),
-                                      Text(
-                                        'Projects',
-                                        style: TextStyle(fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 16),
-                                ],
-                              ),
+                              child: TextSectionTwo(),
                             ),
                             Expanded(
                               flex: 1,
@@ -242,46 +200,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 16),
-                    Column(
-                      children: [
-                        SizedBox(height: 40),
-                        Text(
-                          'Contact Us',
-                          style: TextStyle(
-                            fontSize: 50,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.primaryColor,
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            ContactCard(
-                              icon: Icons.email,
-                              title: 'Email',
-                              text: 'apnaskill.in@gmail.com',
-                            ),
-                            ContactCard(
-                              icon: Icons.phone,
-                              title: 'Phone',
-                              text: '+91 8175989767',
-                            ),
-                            ContactCard(
-                              icon: Icons.message_rounded,
-                              title: 'Whatsapp',
-                              text: '+91 8175989767',
-                            ),
-                            ContactCard(
-                              icon: Icons.location_on,
-                              title: 'Location',
-                              text:
-                                  'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 16), // Optional spacing
-                      ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: contactData.map((data) {
+                        return ContactCard(
+                          icon: data['icon'],
+                          title: data['title'],
+                          text: data['text'],
+                        );
+                      }).toList(),
                     ),
                     Footer(),
                   ],
