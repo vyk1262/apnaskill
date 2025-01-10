@@ -1,11 +1,11 @@
 import 'package:apnaskill/screens/faqs.dart';
-import 'package:apnaskill/widgets/contact.dart';
-import 'package:apnaskill/widgets/feature_widget.dart';
+import 'package:apnaskill/widgets/home_page_widgets/contact.dart';
+import 'package:apnaskill/widgets/home_page_widgets/feature_widget.dart';
 import 'package:apnaskill/widgets/footer.dart';
-import 'package:apnaskill/widgets/main_text.dart';
-import 'package:apnaskill/widgets/square_grid_paint.dart';
-import 'package:apnaskill/widgets/text_we.dart';
-import 'package:apnaskill/widgets/success_stories_widget.dart';
+import 'package:apnaskill/widgets/home_page_widgets/main_text.dart';
+import 'package:apnaskill/widgets/paint_widgets/square_grid_paint.dart';
+import 'package:apnaskill/widgets/home_page_widgets/text_we.dart';
+import 'package:apnaskill/widgets/home_page_widgets/success_stories_widget.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
