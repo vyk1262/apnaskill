@@ -1,10 +1,9 @@
 import 'package:apnaskill/screens/faqs.dart';
 import 'package:apnaskill/widgets/contact.dart';
-import 'package:apnaskill/widgets/do_text.dart';
 import 'package:apnaskill/widgets/feature_widget.dart';
 import 'package:apnaskill/widgets/footer.dart';
 import 'package:apnaskill/widgets/main_text.dart';
-import 'package:apnaskill/widgets/skill_dev_widget.dart';
+import 'package:apnaskill/widgets/square_grid_paint.dart';
 import 'package:apnaskill/widgets/text_we.dart';
 import 'package:apnaskill/widgets/success_stories_widget.dart';
 import 'package:flutter/material.dart';
@@ -45,15 +44,164 @@ class _HomePageState extends State<HomePage> {
                     // SizedBox(height: 16),
                     MainTextInfo(),
                     const SizedBox(height: 16),
-                    LearningFeaturesWidget(),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // First Feature
+                        FeatureItem(
+                          icon: Icons.person,
+                          title: "Personalized Learning Programs",
+                          description:
+                              "Tailored educational experiences designed to meet individual student needs and learning styles.",
+                        ),
+                        // Second Feature
+                        FeatureItem(
+                          icon: Icons.lightbulb_outline,
+                          title: "Expert-Led Workshops",
+                          description:
+                              "Interactive sessions with industry experts aimed at skill enhancement and real-world application.",
+                        ),
+                        // Third Feature
+                        FeatureItem(
+                          icon: Icons.menu_book,
+                          title: "Comprehensive Course Materials",
+                          description:
+                              "Well-structured resources providing in-depth knowledge across various subjects and disciplines.",
+                        ),
+                      ],
+                    ),
                     const SizedBox(height: 16),
-                    Container(
-                      width: double.infinity,
-                      height: 300,
-                      child: SkillDevelopmentWidget(),
+
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Container(
+                        height: 300,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Colors.purpleAccent, Colors.blueAccent],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Text Section
+                            Expanded(
+                              flex: 1,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Center(
+                                      child: Text(
+                                        "Empowering Growth Through Skill Development",
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 16),
+                                    Text(
+                                      "At Skill Factorial, located in the heart of Hyderabad, we are dedicated to transforming the educational landscape through innovative skill development programs. Our mission is to empower individuals with the practical skills necessary for success in today's dynamic job market. We believe in a hands-on approach that bridges the gap between theoretical knowledge and real-world application. Join us on a journey of lifelong learning and professional growth.",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white70,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // Image Section
+                            Expanded(
+                              flex: 1,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(12),
+                                  bottomRight: Radius.circular(12),
+                                ),
+                                child: Image.asset(
+                                  'assets/book_shelf.png',
+                                  fit: BoxFit.cover,
+                                  height: double.infinity,
+                                  width: double.infinity,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
 
-                    DoTextInfo(),
+                    Stack(
+                      children: [
+                        Positioned.fill(
+                          child: CustomPaint(
+                            painter: SquarePaint(),
+                            size: Size(double.infinity, 200),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Expanded(
+                              flex: 1,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16),
+                                  Text(
+                                    'What YOU will do?',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 16),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.task_alt_rounded, size: 48),
+                                      SizedBox(width: 16),
+                                      Text(
+                                        'Quizzes',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 16),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.task_alt_rounded, size: 48),
+                                      SizedBox(width: 16),
+                                      Text(
+                                        'Projects',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 16),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Image.asset(
+                                'assets/it2.png',
+                                // width: double.infinity,
+                                // height: 550,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                     const SizedBox(height: 40),
                     CenteredTextWidget(),
                     const SizedBox(height: 40),
