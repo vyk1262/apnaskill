@@ -3,13 +3,12 @@ import 'package:apnaskill/screens/faqs.dart';
 import 'package:apnaskill/widgets/home_page_widgets/contact.dart';
 import 'package:apnaskill/widgets/home_page_widgets/feature_widget.dart';
 import 'package:apnaskill/widgets/footer.dart';
-import 'package:apnaskill/widgets/home_page_widgets/main_text.dart';
+import 'package:apnaskill/widgets/home_page_widgets/google_form_button.dart';
 import 'package:apnaskill/widgets/home_page_widgets/text_section_one.dart';
 import 'package:apnaskill/widgets/paint_widgets/square_grid_paint.dart';
-import 'package:apnaskill/widgets/home_page_widgets/text_we.dart';
+import 'package:apnaskill/widgets/home_page_widgets/text_card_widget.dart';
 import 'package:apnaskill/widgets/home_page_widgets/success_stories_widget.dart';
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -69,10 +68,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  void openUrl(String url) {
-    html.window.open(url, '_blank');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +81,41 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // SizedBox(height: 16),
-                    MainTextInfo(),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.purpleAccent, Colors.blueAccent],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(flex: 1, child: TextSectionFour()),
+                                Expanded(flex: 2, child: TextSectionThree()),
+                                Expanded(
+                                  flex: 1,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 16.0),
+                                    child: Image.asset(
+                                      'assets/sfcmp.png',
+                                      height: 300,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -115,10 +144,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             // Text Section
-                            Expanded(
-                              flex: 1,
-                              child: TextSectionOne(),
-                            ),
+                            Expanded(flex: 1, child: TextSectionOne()),
                             // Image Section
                             Expanded(
                               flex: 1,
@@ -198,6 +224,10 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: const Text('Faqs'),
                       ),
+                    ),
+                    SizedBox(height: 16),
+                    Center(
+                      child: GoogleFormButton(),
                     ),
                     SizedBox(height: 16),
                     Row(

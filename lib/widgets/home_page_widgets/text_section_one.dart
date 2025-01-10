@@ -81,3 +81,74 @@ class TextSectionTwo extends StatelessWidget {
     );
   }
 }
+
+class TextSectionThree extends StatelessWidget {
+  const TextSectionThree({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(height: 20),
+          Text(
+            "Welcome to the World of Practice",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+              color: Colors.black87,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            'S!',
+            style: TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            "Kickstart Your Career Journey with Practice, practice, practice ...",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Colors.black87,
+            ),
+          ),
+          SizedBox(height: 16),
+          Text(
+            "From Novice to Expert: The Transformative Power of Practice",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Colors.black87,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TextSectionFour extends StatelessWidget {
+  const TextSectionFour({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(10, 40, 0, 0),
+      child: Text(
+        "Designed to shape you into a highly skilled and accomplished professional in any field. with Practice ...",
+        style: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
+}
