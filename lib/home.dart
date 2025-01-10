@@ -1,3 +1,4 @@
+import 'package:apnaskill/constants/colors.dart';
 import 'package:apnaskill/screens/faqs.dart';
 import 'package:apnaskill/widgets/home_page_widgets/contact.dart';
 import 'package:apnaskill/widgets/home_page_widgets/feature_widget.dart';
@@ -241,7 +242,47 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 16),
-                    ContactScreen(),
+                    Column(
+                      children: [
+                        SizedBox(height: 40),
+                        Text(
+                          'Contact Us',
+                          style: TextStyle(
+                            fontSize: 50,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primaryColor,
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            ContactCard(
+                              icon: Icons.email,
+                              title: 'Email',
+                              text: 'apnaskill.in@gmail.com',
+                            ),
+                            ContactCard(
+                              icon: Icons.phone,
+                              title: 'Phone',
+                              text: '+91 8175989767',
+                            ),
+                            ContactCard(
+                              icon: Icons.message_rounded,
+                              title: 'Whatsapp',
+                              text: '+91 8175989767',
+                            ),
+                            ContactCard(
+                              icon: Icons.location_on,
+                              title: 'Location',
+                              text:
+                                  'Apnaskill, Near to Archid Tower,\nBaner, Pune-422045',
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 16), // Optional spacing
+                      ],
+                    ),
                     Footer(),
                   ],
                 ),
