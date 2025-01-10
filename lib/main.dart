@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Apna Skill',
+      title: 'Skill Factorial',
       theme: ThemeData(
         primaryColor: AppColors.primaryColor,
         scaffoldBackgroundColor: Colors.white,

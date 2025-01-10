@@ -36,18 +36,6 @@ class DoTextInfo extends StatelessWidget {
                       Icon(Icons.task_alt_rounded, size: 48),
                       SizedBox(width: 16),
                       Text(
-                        'Assignments',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.task_alt_rounded, size: 48),
-                      SizedBox(width: 16),
-                      Text(
                         'Quizzes',
                         style: TextStyle(fontSize: 18),
                       ),

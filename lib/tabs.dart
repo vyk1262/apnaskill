@@ -54,7 +54,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.primaryColor,
+      backgroundColor: Colors.white,
       automaticallyImplyLeading: false,
       flexibleSpace: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -64,19 +64,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                // Image.asset(
-                //   'assets/apna-bg.png',
-                //   width: 100,
-                //   height: 80,
-                //   fit: BoxFit.contain,
-                // ),
-                Text('APNA SKILL'),
+                SizedBox(width: 80),
+                Image.asset(
+                  'assets/sfls.png',
+                  width: 70,
+                  height: 70,
+                  fit: BoxFit.contain,
+                ),
+                Text('Skill Factorial'),
                 Spacer(),
                 _buildNavButton(context, label: 'Home', screenName: 'Home'),
                 _buildNavButton(context,
                     label: 'Courses', screenName: 'Courses'),
                 _buildNavButton(context,
-                    label: 'Login', screenName: 'Register'),
+                    label: 'Login →', screenName: 'Register'),
+                SizedBox(width: 80),
               ],
             ),
           ],
@@ -95,8 +97,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Text(
           label,
           style: TextStyle(
-            color: isSelected ? Colors.white : Colors.black,
+            color: isSelected ? Colors.blue : Colors.black,
             fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+            fontSize: isSelected ? 24 : 20,
           ),
         ),
       ),
@@ -104,5 +107,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(50);
+  Size get preferredSize => Size.fromHeight(70);
 }
