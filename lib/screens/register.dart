@@ -21,28 +21,15 @@ class _AuthScreenState extends State<AuthScreen> {
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _dateOfBirthController = TextEditingController();
-  final TextEditingController _genderController = TextEditingController();
   final TextEditingController _mobileNumberController = TextEditingController();
   final TextEditingController _upiTraIdController = TextEditingController();
 
   bool _isLoading = false;
 
-  final List<String> internshipsList = [
-    'Python Programming',
-    'Web Development',
-    'Internship C'
-  ];
-  String? _selectedInternship;
-
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
-    _nameController.dispose();
-    _dateOfBirthController.dispose();
-    _genderController.dispose();
     _mobileNumberController.dispose();
     _upiTraIdController.dispose();
     super.dispose();
@@ -99,14 +86,11 @@ class _AuthScreenState extends State<AuthScreen> {
   Future<void> _signUp() async {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
-    final name = _nameController.text.trim();
-    final dateOfBirth = _dateOfBirthController.text.trim();
-    final gender = _genderController.text.trim();
     final mobileNumber = _mobileNumberController.text.trim();
     final upiTraId = _upiTraIdController.text.trim();
 
     // Simple validation
-    if ([email, password, name, dateOfBirth, gender, mobileNumber, upiTraId]
+    if ([email, password, mobileNumber, upiTraId]
         .any((field) => field.isEmpty)) {
       _showErrorDialog('Please fill all fields');
       return;
@@ -135,16 +119,7 @@ class _AuthScreenState extends State<AuthScreen> {
       if (user != null) {
         await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
           'email': email,
-          'name': name,
-          'dateOfBirth': dateOfBirth,
-          'gender': gender,
           'mobileNumber': mobileNumber,
-          'internshipsList': [
-            {
-              'internshipName': _selectedInternship,
-              'upiTraId': upiTraId,
-            }
-          ],
           'createdAt': Timestamp.now(),
         });
 
@@ -276,15 +251,6 @@ class _AuthScreenState extends State<AuthScreen> {
     return Column(
       children: [
         TextField(
-          controller: _nameController,
-          decoration: const InputDecoration(
-            labelText: 'Full Name',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.person),
-          ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
           controller: _emailController,
           keyboardType: TextInputType.emailAddress,
           decoration: const InputDecoration(
@@ -305,38 +271,6 @@ class _AuthScreenState extends State<AuthScreen> {
         ),
         const SizedBox(height: 16),
         TextField(
-          controller: _dateOfBirthController,
-          keyboardType: TextInputType.datetime,
-          decoration: const InputDecoration(
-            labelText: 'Date of Birth (DD/MM/YYYY)',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.calendar_today),
-          ),
-          onTap: () async {
-            FocusScope.of(context).requestFocus(FocusNode());
-            DateTime? pickedDate = await showDatePicker(
-              context: context,
-              initialDate: DateTime.now(),
-              firstDate: DateTime(1900),
-              lastDate: DateTime.now(),
-            );
-            if (pickedDate != null) {
-              _dateOfBirthController.text =
-                  DateFormat('dd/MM/yyyy').format(pickedDate);
-            }
-          },
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _genderController,
-          decoration: const InputDecoration(
-            labelText: 'Gender',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.person_outline),
-          ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
           controller: _mobileNumberController,
           keyboardType: TextInputType.phone,
           decoration: const InputDecoration(
@@ -345,52 +279,6 @@ class _AuthScreenState extends State<AuthScreen> {
             prefixIcon: Icon(Icons.phone),
           ),
         ),
-        const SizedBox(height: 16),
-        DropdownButtonFormField<String>(
-          value: _selectedInternship,
-          hint: const Text('Select Subject'),
-          onChanged: (String? newValue) {
-            setState(() {
-              _selectedInternship = newValue;
-            });
-          },
-          items: internshipsList.map((String internship) {
-            return DropdownMenuItem<String>(
-              value: internship,
-              child: Text(internship),
-            );
-          }).toList(),
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
-          ),
-        ),
-        const SizedBox(height: 16),
-        Column(
-          children: [
-            const Text(
-              'Scan the QR code below to pay',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Image.asset(
-              'assets/ai.jpg',
-              width: 150,
-              height: 150,
-              fit: BoxFit.cover,
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _upiTraIdController,
-          decoration: const InputDecoration(
-            labelText: 'UPI Transaction ID',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.payment),
-          ),
-        ),
-        const SizedBox(height: 16),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primaryColor,
