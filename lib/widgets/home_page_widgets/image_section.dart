@@ -43,7 +43,7 @@ class ImageSectionThree extends StatelessWidget {
       padding: const EdgeInsets.only(right: 16.0),
       child: Image.asset(
         'assets/sfcmp.png',
-        height: 300,
+        height: 220,
         fit: BoxFit.contain,
       ),
     );

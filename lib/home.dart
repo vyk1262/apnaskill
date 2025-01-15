@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Expanded(flex: 1, child: TextSectionFour()),
-                                Expanded(flex: 2, child: TextSectionThree()),
+                                Expanded(flex: 1, child: TextSectionThree()),
                                 Expanded(flex: 1, child: ImageSectionThree()),
                               ],
                             ),
@@ -117,24 +117,13 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    Stack(
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Positioned.fill(
-                          child: CustomPaint(
-                            painter: SquarePaint(),
-                            size: Size(double.infinity, 200),
-                          ),
-                        ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Expanded(flex: 1, child: TextSectionTwo()),
-                            Expanded(flex: 1, child: ImageSectionTwo()),
-                          ],
-                        ),
+                        Expanded(flex: 1, child: ImageSectionTwo()),
+                        Expanded(flex: 1, child: TextSectionTwo()),
                       ],
                     ),
-                    const SizedBox(height: 40),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(

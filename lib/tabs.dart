@@ -71,7 +71,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   height: 70,
                   fit: BoxFit.contain,
                 ),
-                Text('Skill Factorial'),
+                Text('Skill Factorial',
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue)),
                 Spacer(),
                 _buildNavButton(context, label: 'Home', screenName: 'Home'),
                 _buildNavButton(context,

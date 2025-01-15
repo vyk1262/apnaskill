@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           titleTextStyle: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(
-          color: AppColors.primaryColor,
+          color: AppColors.tertiaryColor,
         ),
         textTheme: const TextTheme(
           bodyLarge: TextStyle(

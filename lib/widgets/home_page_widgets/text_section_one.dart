@@ -1,3 +1,4 @@
+import 'package:apnaskill/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class TextSectionOne extends StatelessWidget {
@@ -39,8 +40,8 @@ class TextSectionTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return const Padding(
+      padding: EdgeInsets.all(16.0),
       child: Column(
         children: [
           SizedBox(height: 16),
@@ -49,6 +50,7 @@ class TextSectionTwo extends StatelessWidget {
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
+              color: AppColors.primaryColor,
             ),
           ),
           SizedBox(height: 16),
@@ -59,7 +61,7 @@ class TextSectionTwo extends StatelessWidget {
               SizedBox(width: 16),
               Text(
                 'Quizzes',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: AppColors.secondaryColor),
               ),
             ],
           ),
@@ -71,7 +73,7 @@ class TextSectionTwo extends StatelessWidget {
               SizedBox(width: 16),
               Text(
                 'Projects',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: AppColors.secondaryColor),
               ),
             ],
           ),
@@ -98,34 +100,27 @@ class TextSectionThree extends StatelessWidget {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w600,
-              color: Colors.black87,
-            ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            'S!',
-            style: TextStyle(
-              fontSize: 50,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.black45,
             ),
           ),
           SizedBox(height: 10),
           Text(
             "Kickstart Your Career Journey with Practice, practice, practice ...",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
-              color: Colors.black87,
+              color: Colors.black45,
             ),
           ),
           SizedBox(height: 16),
           Text(
             "From Novice to Expert: The Transformative Power of Practice",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
-              color: Colors.black87,
+              color: Colors.black45,
             ),
           ),
         ],
@@ -146,7 +141,7 @@ class TextSectionFour extends StatelessWidget {
         style: TextStyle(
           fontSize: 30,
           fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: Colors.white,
         ),
       ),
     );

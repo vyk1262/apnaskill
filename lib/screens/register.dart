@@ -1,9 +1,11 @@
 import 'package:apnaskill/constants/colors.dart';
 import 'package:apnaskill/model/user_model.dart';
+import 'package:apnaskill/screens/auth_screen_ui_widget.dart';
 import 'package:apnaskill/screens/courses_home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -140,154 +142,82 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: AppColors.primaryColor,
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/gold.gif',
+              fit: BoxFit.fill,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const SizedBox(height: 20),
-              const Text(
-                'Internships',
-                style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.primaryColor),
-              ),
-              const SizedBox(height: 0),
-              const Text(
-                'by ApnsSkill',
-                style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.primaryColor),
-              ),
-              const SizedBox(height: 20),
-              Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+              Flexible(
+                flex: 1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 20),
+                    Card(
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: _isSignIn
+                            ? SignInForm(
+                                emailController: _emailController,
+                                passwordController: _passwordController,
+                                onSignIn: _signIn,
+                                onGoogleSignIn: _signInWithGoogle,
+                              )
+                            : SignUpForm(
+                                emailController: _emailController,
+                                passwordController: _passwordController,
+                                mobileNumberController: _mobileNumberController,
+                                onSignUp: _signUp,
+                              ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: AppColors.primaryColor,
+                        backgroundColor: Colors.white,
+                      ),
+                      onPressed: _toggleForm,
+                      child: Text(
+                        _isSignIn
+                            ? 'Don\'t have an account? Sign Up'
+                            : 'Already have an account? Sign In',
+                        // style: const TextStyle(color: AppColors.primaryColor),
+                      ),
+                    ),
+                    if (_isLoading) const CircularProgressIndicator(),
+                  ],
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: _isSignIn ? _buildSignInForm() : _buildSignUpForm(),
+              ),
+              Flexible(
+                flex: 1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(FontAwesomeIcons.trophy,
+                        size: 300, color: Colors.yellow.shade700),
+                    Text("Welcome to Skill Factorial",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primaryColor)),
+                  ],
                 ),
               ),
-              const SizedBox(height: 20),
-              TextButton(
-                onPressed: _toggleForm,
-                child: Text(
-                  _isSignIn
-                      ? 'Don\'t have an account? Sign Up'
-                      : 'Already have an account? Sign In',
-                  style: const TextStyle(color: AppColors.primaryColor),
-                ),
-              ),
-              if (_isLoading) const CircularProgressIndicator(),
             ],
           ),
-        ),
+        ],
       ),
-    );
-  }
-
-  Widget _buildSignInForm() {
-    return Column(
-      children: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          ),
-          onPressed: _signInWithGoogle,
-          child: const Text(
-            'Continue with Google',
-            style: TextStyle(color: Colors.white, fontSize: 16),
-          ),
-        ),
-        const SizedBox(height: 20),
-        const Text(
-          'OR',
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            // color: AppColors.primaryColor,
-          ),
-        ),
-        const SizedBox(height: 20),
-        TextField(
-          controller: _emailController,
-          keyboardType: TextInputType.emailAddress,
-          decoration: const InputDecoration(
-            labelText: 'Email',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.email),
-          ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _passwordController,
-          obscureText: true,
-          decoration: const InputDecoration(
-            labelText: 'Password',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.lock),
-          ),
-        ),
-        const SizedBox(height: 16),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-          ),
-          onPressed: _signIn,
-          child: const Text('Sign In', style: TextStyle(fontSize: 16)),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildSignUpForm() {
-    return Column(
-      children: [
-        TextField(
-          controller: _emailController,
-          keyboardType: TextInputType.emailAddress,
-          decoration: const InputDecoration(
-            labelText: 'Email',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.email),
-          ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _passwordController,
-          obscureText: true,
-          decoration: const InputDecoration(
-            labelText: 'Password',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.lock),
-          ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _mobileNumberController,
-          keyboardType: TextInputType.phone,
-          decoration: const InputDecoration(
-            labelText: 'Mobile Number',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.phone),
-          ),
-        ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-          ),
-          onPressed: _signUp,
-          child: const Text('Sign Up', style: TextStyle(fontSize: 16)),
-        ),
-      ],
     );
   }
 

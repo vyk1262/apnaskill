@@ -1,3 +1,4 @@
+import 'package:apnaskill/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class FeatureItem extends StatelessWidget {
@@ -21,7 +22,6 @@ class FeatureItem extends StatelessWidget {
             Icon(
               icon,
               size: 48,
-              color: Colors.black87,
             ),
             SizedBox(height: 8),
             Text(
@@ -29,7 +29,7 @@ class FeatureItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: AppColors.primaryColor,
               ),
               textAlign: TextAlign.center,
             ),
@@ -38,7 +38,7 @@ class FeatureItem extends StatelessWidget {
               description,
               style: TextStyle(
                 fontSize: 14,
-                color: Colors.black54,
+                color: AppColors.secondaryColor,
               ),
               textAlign: TextAlign.center,
             ),
