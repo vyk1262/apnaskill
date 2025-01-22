@@ -1,0 +1,1581 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "subject": "Python",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Python",
+          "topics": [
+            "Overview of Python and its history",
+            "Installing Python and setting up the development environment",
+            "Introduction to IDEs (Integrated Development Environments) like PyCharm, VSCode, or Jupyter Notebooks",
+            "Writing and running your first Python program",
+            "Basic syntax, comments, and variables"
+          ]
+        },
+        {
+          "module": "Module 2: Data Types and Operators",
+          "topics": [
+            "Primitive data types: integers, floats, strings, and booleans",
+            "Type conversion",
+            "Basic operators: arithmetic, comparison, logical, and assignment",
+            "String operations and methods"
+          ]
+        },
+        {
+          "module": "Module 3: Control Flow",
+          "topics": [
+            "Conditional statements: if, elif, and else",
+            "Looping constructs: for and while loops",
+            "break, continue, and pass statements",
+            "Introduction to list comprehensions"
+          ]
+        },
+        {
+          "module": "Module 4: Data Structures",
+          "topics": [
+            "Lists: creation, indexing, slicing, and methods",
+            "Tuples: characteristics and usage",
+            "Sets: creation and methods",
+            "Dictionaries: key-value pairs, methods, and operations"
+          ]
+        },
+        {
+          "module": "Module 5: Functions",
+          "topics": [
+            "Defining and calling functions",
+            "Function arguments and return values",
+            "Scope of variables: local and global",
+            "Lambda functions",
+            "Map, filter, and reduce functions"
+          ]
+        },
+        {
+          "module": "Module 6: Modules and Packages",
+          "topics": [
+            "Importing modules and using standard libraries",
+            "Creating and using custom modules",
+            "Introduction to virtual environments",
+            "Overview of popular packages (e.g., NumPy, Pandas)"
+          ]
+        },
+        {
+          "module": "Module 7: File Handling",
+          "topics": [
+            "Reading from and writing to files",
+            "Working with CSV and JSON files",
+            "Exception handling: try, except, else, and finally",
+            "Context managers"
+          ]
+        },
+        {
+          "module": "Module 8: Object-Oriented Programming (OOP)",
+          "topics": [
+            "Introduction to classes and objects",
+            "Attributes and methods",
+            "Inheritance and polymorphism",
+            "Encapsulation and abstraction"
+          ]
+        },
+        {
+          "module": "Module 9: Working with Data",
+          "topics": [
+            "Overview of data analysis libraries (NumPy, Pandas)",
+            "DataFrames: creation, indexing, and manipulation",
+            "Basic data visualization using Matplotlib",
+            "Introduction to data cleaning and preprocessing"
+          ]
+        },
+        {
+          "module": "Module 10: Advanced Topics and Project",
+          "topics": [
+            "Introduction to web scraping using BeautifulSoup or Scrapy",
+            "Basics of web development with Flask or Django",
+            "Introduction to databases and SQL",
+            "Final project: A comprehensive project integrating learned concepts (e.g., a simple web application, data analysis project, or automation script)"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "HTML",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to HTML",
+          "topics": [
+            "Overview of HTML and its history",
+            "Understanding the structure of an HTML document",
+            "Basic HTML tags: `<html>`, `<head>`, `<body>`, `<title>`, `<h1>`-`<h6>`, `<p>`",
+            "Setting up a basic HTML page"
+          ]
+        },
+        {
+          "module": "Module 2: Text Formatting and Semantic HTML",
+          "topics": [
+            "Formatting text with HTML tags: `<b>`, `<i>`, `<u>`, `<strong>`, `<em>`",
+            "Introduction to semantic HTML elements: `<header>`, `<nav>`, `<section>`, `<article>`, `<aside>`, `<footer>`",
+            "Using `<div>` and `<span>` for layout and styling",
+            "Working with lists: ordered `<ol>`, unordered `<ul>`, and definition lists `<dl>`"
+          ]
+        },
+        {
+          "module": "Module 3: Working with Images and Multimedia",
+          "topics": [
+            "Adding images using the `<img>` tag",
+            "Attributes like `src`, `alt`, `title`, `width`, and `height`",
+            "Embedding videos with `<video>` and audio with `<audio>`",
+            "Using `<figure>` and `<figcaption>` for image and media captions"
+          ]
+        },
+        {
+          "module": "Module 4: Links and Navigation",
+          "topics": [
+            "Creating hyperlinks with the `<a>` tag",
+            "Using anchor tags for internal and external linking",
+            "Building navigation menus with lists and links",
+            "Introduction to breadcrumbs and pagination"
+          ]
+        },
+        {
+          "module": "Module 5: Tables and Data Representation",
+          "topics": [
+            "Building tables with `<table>`, `<tr>`, `<td>`, `<th>`, `<caption>`, and `<thead>`",
+            "Advanced table elements: `<colgroup>`, `<col>`, `<tfoot>`",
+            "Styling tables with CSS",
+            "Using tables for data, not for layout"
+          ]
+        },
+        {
+          "module": "Module 6: Forms and User Input",
+          "topics": [
+            "Introduction to forms: `<form>`, `<input>`, `<textarea>`, `<button>`, `<select>`, `<option>`",
+            "Form attributes: `action`, `method`, `name`, `placeholder`, `required`",
+            "Advanced form controls: `<fieldset>`, `<legend>`, `<datalist>`, `<output>`, `<progress>`, `<meter>`",
+            "Client-side form validation"
+          ]
+        },
+        {
+          "module": "Module 7: HTML5 APIs and Interactivity",
+          "topics": [
+            "Introduction to HTML5 APIs: Geolocation, Drag and Drop, Web Storage",
+            "Using the `<canvas>` element for 2D graphics",
+            "Working with SVG (Scalable Vector Graphics)",
+            "Integrating HTML with JavaScript for dynamic content"
+          ]
+        },
+        {
+          "module": "Module 8: Responsive Web Design",
+          "topics": [
+            "Introduction to responsive design and mobile-first approach",
+            "Using the viewport meta tag",
+            "Creating responsive layouts with media queries",
+            "Implementing flexible images and grid systems"
+          ]
+        },
+        {
+          "module": "Module 9: SEO and Performance Optimization",
+          "topics": [
+            "Understanding `<meta>` tags and their role in SEO",
+            "Best practices for optimizing HTML for search engines",
+            "Improving page load speed with optimized HTML",
+            "Using semantic HTML for better accessibility and SEO"
+          ]
+        },
+        {
+          "module": "Module 10: Accessibility and Best Practices",
+          "topics": [
+            "Ensuring web accessibility with ARIA (Accessible Rich Internet Applications)",
+            "Common accessibility issues and how to avoid them",
+            "HTML coding best practices",
+            "Future trends in HTML and web development"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "CSS",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to CSS",
+          "topics": [
+            "Overview of CSS and its role in web development",
+            "Understanding the structure of a CSS rule",
+            "Inline, internal, and external CSS",
+            "Setting up a CSS file and linking it to an HTML document"
+          ]
+        },
+        {
+          "module": "Module 2: CSS Selectors and Properties",
+          "topics": [
+            "Basic selectors: element, class, and ID selectors",
+            "Grouping, universal, and descendant selectors",
+            "Attribute selectors",
+            "CSS properties: color, background, text, and font"
+          ]
+        },
+        {
+          "module": "Module 3: Box Model and Layout",
+          "topics": [
+            "Understanding the CSS box model: margin, border, padding, and content",
+            "Working with widths, heights, and box-sizing",
+            "Handling overflow and visibility",
+            "Creating and using borders and outlines"
+          ]
+        },
+        {
+          "module": "Module 4: Positioning and Floating Elements",
+          "topics": [
+            "CSS positioning: static, relative, absolute, and fixed",
+            "Using `z-index` for layering elements",
+            "Floating elements with `float` and `clear`",
+            "Creating layouts with floats"
+          ]
+        },
+        {
+          "module": "Module 5: Flexbox",
+          "topics": [
+            "Introduction to Flexbox",
+            "Flexbox container properties: `display`, `flex-direction`, `flex-wrap`, `justify-content`, `align-items`, `align-content`",
+            "Flexbox item properties: `order`, `flex-grow`, `flex-shrink`, `flex-basis`, `align-self`",
+            "Creating responsive layouts with Flexbox"
+          ]
+        },
+        {
+          "module": "Module 6: CSS Grid Layout",
+          "topics": [
+            "Introduction to CSS Grid Layout",
+            "Grid container properties: `display`, `grid-template-columns`, `grid-template-rows`, `grid-gap`",
+            "Grid item properties: `grid-column`, `grid-row`, `grid-area`",
+            "Building complex layouts with CSS Grid"
+          ]
+        },
+        {
+          "module": "Module 7: Typography and Text Styling",
+          "topics": [
+            "Styling text with fonts, sizes, and colors",
+            "Using Google Fonts and web-safe fonts",
+            "Text alignment, spacing, and decoration",
+            "Styling lists and links"
+          ]
+        },
+        {
+          "module": "Module 8: Transitions, Transformations, and Animations",
+          "topics": [
+            "Using CSS transitions for smooth changes",
+            "Applying transformations: translate, rotate, scale, and skew",
+            "Creating animations with `@keyframes` and `animation` properties",
+            "Advanced animation techniques"
+          ]
+        },
+        {
+          "module": "Module 9: Responsive Design with Media Queries",
+          "topics": [
+            "Introduction to responsive design",
+            "Using media queries to adapt layouts",
+            "Creating fluid layouts with percentages and `max-width`",
+            "Responsive images and typography"
+          ]
+        },
+        {
+          "module": "Module 10: Best Practices and Advanced Techniques",
+          "topics": [
+            "Organizing CSS with methodologies like BEM (Block, Element, Modifier)",
+            "CSS preprocessors: SASS and LESS",
+            "Optimizing CSS for performance",
+            "Future trends in CSS and web design"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "JavaScript",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to JavaScript",
+          "topics": [
+            "Overview of JavaScript and its history",
+            "Setting up the development environment",
+            "Embedding JavaScript in HTML: Inline, internal, and external scripts",
+            "Writing and running your first JavaScript program"
+          ]
+        },
+        {
+          "module": "Module 2: Basic Syntax and Data Types",
+          "topics": [
+            "Understanding variables and constants: `var`, `let`, `const`",
+            "Primitive data types: numbers, strings, booleans, undefined, and null",
+            "Operators: arithmetic, comparison, logical, assignment, and bitwise",
+            "Working with strings and numbers"
+          ]
+        },
+        {
+          "module": "Module 3: Control Structures and Loops",
+          "topics": [
+            "Conditional statements: `if`, `else if`, `else`, and `switch`",
+            "Looping constructs: `for`, `while`, and `do...while` loops",
+            "Working with `break` and `continue`",
+            "Introduction to `for...in` and `for...of` loops"
+          ]
+        },
+        {
+          "module": "Module 4: Functions and Scope",
+          "topics": [
+            "Defining and invoking functions",
+            "Function expressions and arrow functions",
+            "Understanding function parameters and return values",
+            "Scope and closures: local, global, and block scope"
+          ]
+        },
+        {
+          "module": "Module 5: Objects and Arrays",
+          "topics": [
+            "Introduction to objects: properties and methods",
+            "Creating and manipulating objects",
+            "Arrays: creation, indexing, and methods",
+            "Iterating over arrays and objects"
+          ]
+        },
+        {
+          "module": "Module 6: The Document Object Model (DOM)",
+          "topics": [
+            "Understanding the DOM structure",
+            "Selecting and manipulating DOM elements",
+            "Handling events with event listeners",
+            "Modifying HTML and CSS with JavaScript"
+          ]
+        },
+        {
+          "module": "Module 7: Advanced JavaScript Concepts",
+          "topics": [
+            "Introduction to `this` keyword",
+            "Working with `call`, `apply`, and `bind` methods",
+            "Prototypes and inheritance",
+            "Understanding the event loop and asynchronous JavaScript"
+          ]
+        },
+        {
+          "module": "Module 8: JavaScript and the Browser",
+          "topics": [
+            "Browser Object Model (BOM): `window`, `document`, `navigator`, `history`",
+            "Working with timers: `setTimeout`, `setInterval`, `clearTimeout`, `clearInterval`",
+            "Handling cookies and local storage",
+            "Working with forms and form validation"
+          ]
+        },
+        {
+          "module": "Module 9: Asynchronous JavaScript",
+          "topics": [
+            "Introduction to asynchronous programming",
+            "Using callbacks for asynchronous operations",
+            "Promises: creation, chaining, and error handling",
+            "Introduction to `async` and `await`"
+          ]
+        },
+        {
+          "module": "Module 10: Modern JavaScript and Best Practices",
+          "topics": [
+            "Introduction to ES6+ features: let, const, arrow functions, template literals, destructuring",
+            "Modules and imports/exports",
+            "Using JavaScript frameworks and libraries: an overview",
+            "JavaScript best practices and coding standards"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Data Science",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Data Science",
+          "topics": [
+            "Overview of Data Science",
+            "Applications and significance of Data Science",
+            "Data Science workflow",
+            "Tools and technologies for Data Science"
+          ]
+        },
+        {
+          "module": "Module 2: Python for Data Science",
+          "topics": [
+            "Setting up the Python environment",
+            "Introduction to Jupyter Notebooks",
+            "Basic Python programming",
+            "Libraries for Data Science: NumPy, Pandas"
+          ]
+        },
+        {
+          "module": "Module 3: Data Collection and Preprocessing",
+          "topics": [
+            "Data collection methods",
+            "Data cleaning and handling missing values",
+            "Data transformation and normalization",
+            "Feature engineering and selection"
+          ]
+        },
+        {
+          "module": "Module 4: Exploratory Data Analysis (EDA)",
+          "topics": [
+            "Descriptive statistics",
+            "Data visualization techniques",
+            "Using Matplotlib and Seaborn",
+            "Identifying patterns and insights"
+          ]
+        },
+        {
+          "module": "Module 5: Statistical Analysis",
+          "topics": [
+            "Probability theory",
+            "Hypothesis testing",
+            "Confidence intervals",
+            "Correlation and causation"
+          ]
+        },
+        {
+          "module": "Module 6: Machine Learning Basics",
+          "topics": [
+            "Introduction to machine learning",
+            "Supervised learning algorithms",
+            "Unsupervised learning algorithms",
+            "Model evaluation and validation"
+          ]
+        },
+        {
+          "module": "Module 7: Advanced Machine Learning",
+          "topics": [
+            "Ensemble methods (Random Forest, Gradient Boosting)",
+            "Dimensionality reduction techniques (PCA, t-SNE)",
+            "Hyperparameter tuning",
+            "Introduction to deep learning"
+          ]
+        },
+        {
+          "module": "Module 8: Time Series Analysis",
+          "topics": [
+            "Introduction to time series data",
+            "Decomposition of time series",
+            "Forecasting methods (ARIMA, Exponential Smoothing)",
+            "Evaluating forecast models"
+          ]
+        },
+        {
+          "module": "Module 9: Natural Language Processing (NLP)",
+          "topics": [
+            "Introduction to NLP",
+            "Text preprocessing",
+            "Sentiment analysis",
+            "Topic modeling"
+          ]
+        },
+        {
+          "module": "Module 10: Data Science Project",
+          "topics": [
+            "Project planning and scoping",
+            "Data collection and cleaning",
+            "Model building and evaluation",
+            "Presenting findings and insights"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "MySQL/SQL",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Databases and SQL",
+          "topics": [
+            "Overview of databases",
+            "Introduction to relational databases",
+            "Basic concepts of SQL",
+            "Setting up MySQL environment"
+          ]
+        },
+        {
+          "module": "Module 2: Basic SQL Queries",
+          "topics": [
+            "SELECT statements",
+            "Filtering results with WHERE clause",
+            "Sorting results with ORDER BY",
+            "Using LIMIT to constrain results"
+          ]
+        },
+        {
+          "module": "Module 3: Advanced SQL Queries",
+          "topics": [
+            "JOIN operations (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN)",
+            "GROUP BY and HAVING clauses",
+            "Aggregate functions (COUNT, SUM, AVG, MIN, MAX)",
+            "Subqueries and nested queries"
+          ]
+        },
+        {
+          "module": "Module 4: Database Design and Normalization",
+          "topics": [
+            "Principles of database design",
+            "Normalization (1NF, 2NF, 3NF, BCNF)",
+            "Entity-Relationship (ER) modeling",
+            "Designing and creating tables"
+          ]
+        },
+        {
+          "module": "Module 5: Data Manipulation",
+          "topics": [
+            "INSERT statements",
+            "UPDATE statements",
+            "DELETE statements",
+            "Transaction control (COMMIT, ROLLBACK, SAVEPOINT)"
+          ]
+        },
+        {
+          "module": "Module 6: Indexing and Optimization",
+          "topics": [
+            "Introduction to indexing",
+            "Creating and managing indexes",
+            "Query optimization techniques",
+            "Analyzing and improving query performance"
+          ]
+        },
+        {
+          "module": "Module 7: Stored Procedures and Functions",
+          "topics": [
+            "Introduction to stored procedures",
+            "Creating and executing stored procedures",
+            "Using parameters in procedures",
+            "Creating and using functions"
+          ]
+        },
+        {
+          "module": "Module 8: Triggers and Views",
+          "topics": [
+            "Introduction to triggers",
+            "Creating and managing triggers",
+            "Introduction to views",
+            "Creating and using views"
+          ]
+        },
+        {
+          "module": "Module 9: Advanced Topics",
+          "topics": [
+            "Handling JSON data in MySQL",
+            "Full-text search",
+            "Partitioning tables",
+            "Replication and backup strategies"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project",
+          "topics": [
+            "Project planning and scoping",
+            "Database design and implementation",
+            "Writing complex queries",
+            "Presenting project findings and insights"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Artificial Intelligence",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Artificial Intelligence",
+          "topics": [
+            "Overview of Artificial Intelligence",
+            "History and evolution of AI",
+            "Applications of AI",
+            "Ethical considerations in AI"
+          ]
+        },
+        {
+          "module": "Module 2: Intelligent Agents and Problem Solving",
+          "topics": [
+            "Concept of intelligent agents",
+            "Types of agents",
+            "Problem-solving techniques",
+            "Uninformed search strategies (BFS, DFS)"
+          ]
+        },
+        {
+          "module": "Module 3: Informed Search and Exploration",
+          "topics": [
+            "Heuristic search methods",
+            "A* algorithm",
+            "Greedy best-first search",
+            "Local search algorithms"
+          ]
+        },
+        {
+          "module": "Module 4: Adversarial Search and Games",
+          "topics": [
+            "Minimax algorithm",
+            "Alpha-beta pruning",
+            "Game playing: Chess, Go, and other games",
+            "Monte Carlo Tree Search (MCTS)"
+          ]
+        },
+        {
+          "module": "Module 5: Constraint Satisfaction Problems",
+          "topics": [
+            "Defining constraint satisfaction problems (CSPs)",
+            "Backtracking search for CSPs",
+            "Constraint propagation and arc consistency",
+            "Solving CSPs with heuristics"
+          ]
+        },
+        {
+          "module": "Module 6: Logical Agents and Knowledge Representation",
+          "topics": [
+            "Propositional logic",
+            "First-order logic",
+            "Inference in first-order logic",
+            "Knowledge representation techniques"
+          ]
+        },
+        {
+          "module": "Module 7: Machine Learning Basics",
+          "topics": [
+            "Introduction to machine learning",
+            "Supervised learning",
+            "Unsupervised learning",
+            "Reinforcement learning"
+          ]
+        },
+        {
+          "module": "Module 8: Natural Language Processing (NLP)",
+          "topics": [
+            "Introduction to NLP",
+            "Text preprocessing techniques",
+            "Sentiment analysis",
+            "Machine translation"
+          ]
+        },
+        {
+          "module": "Module 9: Robotics and Perception",
+          "topics": [
+            "Introduction to robotics",
+            "Perception and sensors",
+            "Motion and path planning",
+            "Robot localization and mapping"
+          ]
+        },
+        {
+          "module": "Module 10: Advanced Topics and Final Project",
+          "topics": [
+            "Deep learning",
+            "Generative Adversarial Networks (GANs)",
+            "AI in healthcare, finance, and other industries",
+            "Final project: Comprehensive AI project integrating learned concepts"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Machine Learning",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Machine Learning",
+          "topics": [
+            "Overview of Machine Learning",
+            "Applications of Machine Learning",
+            "Types of Machine Learning (Supervised, Unsupervised, Reinforcement)",
+            "The Machine Learning process"
+          ]
+        },
+        {
+          "module": "Module 2: Python for Machine Learning",
+          "topics": [
+            "Setting up the Python environment",
+            "Introduction to NumPy and Pandas",
+            "Data manipulation and preprocessing",
+            "Introduction to Matplotlib and Seaborn for visualization"
+          ]
+        },
+        {
+          "module": "Module 3: Data Preprocessing",
+          "topics": [
+            "Data cleaning and handling missing values",
+            "Feature scaling and normalization",
+            "Encoding categorical data",
+            "Splitting the dataset into training and testing sets"
+          ]
+        },
+        {
+          "module": "Module 4: Supervised Learning - Regression",
+          "topics": [
+            "Linear Regression",
+            "Polynomial Regression",
+            "Evaluating regression models (MAE, MSE, RMSE)",
+            "Regularization techniques (Ridge, Lasso)"
+          ]
+        },
+        {
+          "module": "Module 5: Supervised Learning - Classification",
+          "topics": [
+            "Logistic Regression",
+            "K-Nearest Neighbors (KNN)",
+            "Support Vector Machines (SVM)",
+            "Decision Trees and Random Forests"
+          ]
+        },
+        {
+          "module": "Module 6: Model Evaluation and Selection",
+          "topics": [
+            "Cross-validation techniques",
+            "Confusion matrix, precision, recall, F1-score",
+            "ROC curve and AUC",
+            "Hyperparameter tuning (Grid Search, Random Search)"
+          ]
+        },
+        {
+          "module": "Module 7: Unsupervised Learning - Clustering",
+          "topics": [
+            "K-Means Clustering",
+            "Hierarchical Clustering",
+            "DBSCAN",
+            "Evaluation of clustering results"
+          ]
+        },
+        {
+          "module": "Module 8: Unsupervised Learning - Dimensionality Reduction",
+          "topics": [
+            "Principal Component Analysis (PCA)",
+            "t-Distributed Stochastic Neighbor Embedding (t-SNE)",
+            "Linear Discriminant Analysis (LDA)",
+            "Applications of dimensionality reduction"
+          ]
+        },
+        {
+          "module": "Module 9: Introduction to Neural Networks and Deep Learning",
+          "topics": [
+            "Basics of neural networks",
+            "Activation functions",
+            "Training a neural network",
+            "Introduction to deep learning frameworks (TensorFlow, Keras, PyTorch)"
+          ]
+        },
+        {
+          "module": "Module 10: Advanced Topics and Final Project",
+          "topics": [
+            "Convolutional Neural Networks (CNNs)",
+            "Recurrent Neural Networks (RNNs)",
+            "Natural Language Processing (NLP)",
+            "Final project: End-to-end machine learning project integrating learned concepts"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Data Analytics",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Data Analytics",
+          "topics": [
+            "Overview of Data Analytics",
+            "Importance and applications of Data Analytics",
+            "Data types and data sources",
+            "Introduction to the data analysis process"
+          ]
+        },
+        {
+          "module": "Module 2: Data Collection and Data Cleaning",
+          "topics": [
+            "Data collection methods",
+            "Data quality and preprocessing",
+            "Handling missing data",
+            "Data cleaning techniques"
+          ]
+        },
+        {
+          "module": "Module 3: Exploratory Data Analysis (EDA)",
+          "topics": [
+            "Descriptive statistics",
+            "Data visualization techniques",
+            "Identifying patterns and insights",
+            "Using Python libraries for EDA (Pandas, Matplotlib, Seaborn)"
+          ]
+        },
+        {
+          "module": "Module 4: Data Wrangling",
+          "topics": [
+            "Data transformation and normalization",
+            "Handling and manipulating data with Pandas",
+            "Combining and merging datasets",
+            "Reshaping data"
+          ]
+        },
+        {
+          "module": "Module 5: Statistical Analysis",
+          "topics": [
+            "Probability concepts",
+            "Hypothesis testing",
+            "Confidence intervals",
+            "ANOVA and regression analysis"
+          ]
+        },
+        {
+          "module": "Module 6: Data Visualization",
+          "topics": [
+            "Principles of effective data visualization",
+            "Creating plots with Matplotlib and Seaborn",
+            "Interactive visualizations with Plotly",
+            "Dashboard creation with tools like Tableau or Power BI"
+          ]
+        },
+        {
+          "module": "Module 7: Introduction to Machine Learning",
+          "topics": [
+            "Overview of machine learning concepts",
+            "Supervised vs. unsupervised learning",
+            "Key algorithms (linear regression, decision trees, clustering)",
+            "Using Scikit-Learn for machine learning tasks"
+          ]
+        },
+        {
+          "module": "Module 8: Advanced Machine Learning Techniques",
+          "topics": [
+            "Model evaluation and validation",
+            "Feature engineering and selection",
+            "Ensemble methods (Random Forest, Gradient Boosting)",
+            "Introduction to deep learning"
+          ]
+        },
+        {
+          "module": "Module 9: Big Data Technologies",
+          "topics": [
+            "Introduction to Big Data",
+            "Hadoop ecosystem",
+            "Introduction to Spark",
+            "Working with large datasets"
+          ]
+        },
+        {
+          "module": "Module 10: Data Ethics and Final Project",
+          "topics": [
+            "Ethical issues in data analytics",
+            "Data privacy and security",
+            "Best practices for ethical data handling",
+            "Final project: End-to-end data analytics project integrating learned concepts"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "React",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to React",
+          "topics": [
+            "Overview of React and its history",
+            "Setting up the development environment",
+            "Understanding JSX",
+            "Creating and rendering components",
+            "Introduction to props and state"
+          ]
+        },
+        {
+          "module": "Module 2: Component Lifecycle",
+          "topics": [
+            "Lifecycle methods",
+            "Mounting, updating, and unmounting phases",
+            "Handling side effects with useEffect",
+            "Class components vs. functional components"
+          ]
+        },
+        {
+          "module": "Module 3: State Management",
+          "topics": [
+            "Managing state with useState",
+            "Lifting state up",
+            "Context API for global state management",
+            "Introduction to Redux",
+            "Connecting Redux with React"
+          ]
+        },
+        {
+          "module": "Module 4: Handling Events",
+          "topics": [
+            "Handling events in React",
+            "Synthetic events",
+            "Event delegation",
+            "Working with forms and controlled components"
+          ]
+        },
+        {
+          "module": "Module 5: Routing",
+          "topics": [
+            "Setting up React Router",
+            "Navigating between pages",
+            "Route parameters",
+            "Protected routes",
+            "Nested routing"
+          ]
+        },
+        {
+          "module": "Module 6: Styling Components",
+          "topics": [
+            "Inline styling",
+            "CSS Modules",
+            "Styled-components",
+            "Using frameworks like Bootstrap and Material-UI"
+          ]
+        },
+        {
+          "module": "Module 7: Hooks",
+          "topics": [
+            "Introduction to hooks",
+            "Using useState and useEffect",
+            "Custom hooks",
+            "useContext, useReducer, useMemo, and other hooks"
+          ]
+        },
+        {
+          "module": "Module 8: API Integration",
+          "topics": [
+            "Fetching data with fetch and axios",
+            "Handling asynchronous data",
+            "Error handling",
+            "Working with REST APIs",
+            "Introduction to GraphQL"
+          ]
+        },
+        {
+          "module": "Module 9: Advanced Concepts",
+          "topics": [
+            "Code splitting and lazy loading",
+            "Higher-order components",
+            "Render props",
+            "Portals",
+            "Contextual theming"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project",
+          "topics": [
+            "Project planning and scoping",
+            "Creating a comprehensive React application",
+            "Implementing state management and routing",
+            "Integrating APIs",
+            "Deploying the application"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Angular",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Angular",
+          "topics": [
+            "Overview of Angular and its history",
+            "Setting up the development environment",
+            "Understanding TypeScript",
+            "Creating and running your first Angular application",
+            "Introduction to Angular CLI"
+          ]
+        },
+        {
+          "module": "Module 2: Components and Templates",
+          "topics": [
+            "Creating components",
+            "Component templates",
+            "Component styles",
+            "Data binding",
+            "Component interaction and event binding"
+          ]
+        },
+        {
+          "module": "Module 3: Directives and Pipes",
+          "topics": [
+            "Built-in directives",
+            "Creating custom directives",
+            "Understanding pipes",
+            "Using built-in pipes",
+            "Creating custom pipes"
+          ]
+        },
+        {
+          "module": "Module 4: Services and Dependency Injection",
+          "topics": [
+            "Creating services",
+            "Injecting services into components",
+            "Understanding dependency injection",
+            "Using HTTP services",
+            "Handling asynchronous operations with Observables"
+          ]
+        },
+        {
+          "module": "Module 5: Routing and Navigation",
+          "topics": [
+            "Setting up Angular Router",
+            "Configuring routes",
+            "Navigating between routes",
+            "Route parameters",
+            "Lazy loading modules"
+          ]
+        },
+        {
+          "module": "Module 6: Forms",
+          "topics": [
+            "Template-driven forms",
+            "Reactive forms",
+            "Form validation",
+            "Handling form submission",
+            "Dynamic forms"
+          ]
+        },
+        {
+          "module": "Module 7: State Management",
+          "topics": [
+            "Introduction to state management",
+            "Using services for state management",
+            "Introduction to NgRx",
+            "Managing state with NgRx Store",
+            "Using NgRx Effects for side effects"
+          ]
+        },
+        {
+          "module": "Module 8: Testing",
+          "topics": [
+            "Unit testing with Jasmine and Karma",
+            "End-to-end testing with Protractor",
+            "Writing test cases for components and services",
+            "Mocking dependencies",
+            "Testing asynchronous operations"
+          ]
+        },
+        {
+          "module": "Module 9: Advanced Topics",
+          "topics": [
+            "Change detection strategy",
+            "Angular animations",
+            "Angular Universal for server-side rendering",
+            "Performance optimization techniques",
+            "Using Angular Material for UI components"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project",
+          "topics": [
+            "Project planning and scoping",
+            "Creating a comprehensive Angular application",
+            "Implementing state management and routing",
+            "Integrating APIs",
+            "Deploying the application"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Django",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Django",
+          "topics": [
+            "Overview of Django and its history",
+            "Setting up the development environment",
+            "Understanding the MVT (Model-View-Template) architecture",
+            "Creating and running your first Django project",
+            "Introduction to Django Admin"
+          ]
+        },
+        {
+          "module": "Module 2: Models",
+          "topics": [
+            "Creating models",
+            "Database migrations",
+            "Working with the Django ORM",
+            "Querying the database",
+            "Creating and managing model relationships"
+          ]
+        },
+        {
+          "module": "Module 3: Views and Templates",
+          "topics": [
+            "Function-based views",
+            "Class-based views",
+            "Creating and rendering templates",
+            "Template inheritance",
+            "Using template filters and tags"
+          ]
+        },
+        {
+          "module": "Module 4: Forms and Validation",
+          "topics": [
+            "Creating forms with Django Forms",
+            "Handling form submissions",
+            "Form validation",
+            "Using model forms",
+            "Custom form fields and widgets"
+          ]
+        },
+        {
+          "module": "Module 5: Authentication",
+          "topics": [
+            "User authentication and authorization",
+            "Managing users and permissions",
+            "Creating custom user models",
+            "Implementing login, logout, and password management",
+            "Using third-party authentication (e.g., OAuth)"
+          ]
+        },
+        {
+          "module": "Module 6: Static Files and Media",
+          "topics": [
+            "Serving static files",
+            "Managing media files",
+            "Configuring file storage",
+            "Using third-party storage solutions",
+            "Optimizing static and media files"
+          ]
+        },
+        {
+          "module": "Module 7: REST APIs",
+          "topics": [
+            "Introduction to Django REST Framework (DRF)",
+            "Creating API endpoints",
+            "Serialization and deserialization",
+            "Authentication and permissions in APIs",
+            "Testing and documenting APIs"
+          ]
+        },
+        {
+          "module": "Module 8: Testing",
+          "topics": [
+            "Unit testing in Django",
+            "Testing models, views, and forms",
+            "Using Django's test client",
+            "Writing and running test cases",
+            "Continuous integration for Django projects"
+          ]
+        },
+        {
+          "module": "Module 9: Deployment",
+          "topics": [
+            "Preparing a Django project for production",
+            "Configuring settings for different environments",
+            "Using WSGI and ASGI servers",
+            "Deploying with Gunicorn and Nginx",
+            "Monitoring and maintaining a Django application"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project",
+          "topics": [
+            "Project planning and scoping",
+            "Developing a comprehensive Django application",
+            "Implementing models, views, and templates",
+            "Integrating third-party services",
+            "Deploying the application"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Flask",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Flask",
+          "topics": [
+            "Overview of Flask and its history",
+            "Setting up the development environment",
+            "Creating and running your first Flask application",
+            "Understanding the request-response cycle",
+            "Introduction to Flask's routing system"
+          ]
+        },
+        {
+          "module": "Module 2: Templates and Static Files",
+          "topics": [
+            "Rendering templates with Jinja2",
+            "Template inheritance and context",
+            "Using static files (CSS, JavaScript, images)",
+            "Serving static files and assets",
+            "Template filters and macros"
+          ]
+        },
+        {
+          "module": "Module 3: Forms and Validation",
+          "topics": [
+            "Handling form submissions",
+            "Form validation with Flask-WTF",
+            "Creating and processing forms",
+            "Displaying form errors",
+            "File uploads"
+          ]
+        },
+        {
+          "module": "Module 4: Database Integration",
+          "topics": [
+            "Setting up SQLAlchemy",
+            "Defining models and schemas",
+            "Performing CRUD operations",
+            "Database migrations with Flask-Migrate",
+            "Introduction to Flask-SQLAlchemy"
+          ]
+        },
+        {
+          "module": "Module 5: Authentication and Authorization",
+          "topics": [
+            "User authentication with Flask-Login",
+            "Managing user sessions",
+            "Implementing login and logout functionality",
+            "Password hashing with Flask-Bcrypt",
+            "Role-based access control"
+          ]
+        },
+        {
+          "module": "Module 6: Blueprints and Application Structure",
+          "topics": [
+            "Organizing code with Blueprints",
+            "Modular application structure",
+            "Registering Blueprints",
+            "Application factory pattern",
+            "Configuration management"
+          ]
+        },
+        {
+          "module": "Module 7: RESTful APIs",
+          "topics": [
+            "Creating RESTful routes",
+            "JSON responses and request parsing",
+            "Building APIs with Flask-RESTful",
+            "Authentication in APIs",
+            "Testing and documenting APIs"
+          ]
+        },
+        {
+          "module": "Module 8: Error Handling and Logging",
+          "topics": [
+            "Custom error pages",
+            "Handling exceptions",
+            "Logging with Flask",
+            "Debugging techniques",
+            "Monitoring application performance"
+          ]
+        },
+        {
+          "module": "Module 9: Deployment",
+          "topics": [
+            "Preparing a Flask application for production",
+            "Using WSGI servers (Gunicorn, uWSGI)",
+            "Deploying with Docker",
+            "Deploying on cloud platforms (Heroku, AWS, GCP)",
+            "Configuring SSL and domain names"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project",
+          "topics": [
+            "Project planning and scoping",
+            "Developing a comprehensive Flask application",
+            "Implementing models, views, and templates",
+            "Integrating third-party services",
+            "Deploying the application"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Java",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Java",
+          "topics": [
+            "Overview of Java and its history",
+            "Setting up the development environment",
+            "Writing and running your first Java program",
+            "Basic syntax, comments, and variables",
+            "Data types and type conversion"
+          ]
+        },
+        {
+          "module": "Module 2: Control Flow",
+          "topics": [
+            "Conditional statements: if, else if, and else",
+            "Switch statements",
+            "Looping constructs: for, while, and do-while loops",
+            "break and continue statements"
+          ]
+        },
+        {
+          "module": "Module 3: Object-Oriented Programming (OOP)",
+          "topics": [
+            "Introduction to classes and objects",
+            "Attributes and methods",
+            "Constructors and destructors",
+            "Inheritance and polymorphism",
+            "Encapsulation and abstraction"
+          ]
+        },
+        {
+          "module": "Module 4: Advanced OOP Concepts",
+          "topics": [
+            "Interfaces and abstract classes",
+            "Method overloading and overriding",
+            "Static and final keywords",
+            "Nested and inner classes",
+            "Anonymous classes"
+          ]
+        },
+        {
+          "module": "Module 5: Exception Handling",
+          "topics": [
+            "Introduction to exceptions",
+            "try, catch, and finally blocks",
+            "throw and throws keywords",
+            "Creating custom exceptions",
+            "Handling multiple exceptions"
+          ]
+        },
+        {
+          "module": "Module 6: Collections Framework",
+          "topics": [
+            "Introduction to collections",
+            "List, Set, and Map interfaces",
+            "ArrayList, LinkedList, HashSet, and HashMap",
+            "Iterators and loops",
+            "Sorting and searching collections"
+          ]
+        },
+        {
+          "module": "Module 7: File Handling",
+          "topics": [
+            "Reading and writing files",
+            "FileReader and FileWriter classes",
+            "BufferedReader and BufferedWriter classes",
+            "Working with binary files",
+            "Serialization and deserialization"
+          ]
+        },
+        {
+          "module": "Module 8: Multithreading and Concurrency",
+          "topics": [
+            "Introduction to multithreading",
+            "Creating and running threads",
+            "Thread synchronization",
+            "Concurrency utilities",
+            "Executor framework"
+          ]
+        },
+        {
+          "module": "Module 9: GUI Programming with Swing",
+          "topics": [
+            "Introduction to Swing",
+            "Creating windows and dialogs",
+            "Event handling",
+            "Using basic components (buttons, labels, text fields)",
+            "Layouts and containers"
+          ]
+        },
+        {
+          "module": "Module 10: Advanced Topics and Project",
+          "topics": [
+            "Introduction to JavaFX",
+            "Networking with Java",
+            "Working with databases using JDBC",
+            "Building a comprehensive project",
+            "Final project presentation"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "C++",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to C++",
+          "topics": [
+            "Overview of C++ and its history",
+            "Setting up the development environment",
+            "Writing and running your first C++ program",
+            "Basic syntax, comments, and variables",
+            "Data types and type conversion"
+          ]
+        },
+        {
+          "module": "Module 2: Control Flow",
+          "topics": [
+            "Conditional statements: if, else if, and else",
+            "Switch statements",
+            "Looping constructs: for, while, and do-while loops",
+            "break and continue statements"
+          ]
+        },
+        {
+          "module": "Module 3: Functions",
+          "topics": [
+            "Defining and calling functions",
+            "Function arguments and return values",
+            "Function overloading",
+            "Default arguments",
+            "Recursion"
+          ]
+        },
+        {
+          "module": "Module 4: Object-Oriented Programming (OOP)",
+          "topics": [
+            "Introduction to classes and objects",
+            "Attributes and methods",
+            "Constructors and destructors",
+            "Inheritance and polymorphism",
+            "Encapsulation and abstraction"
+          ]
+        },
+        {
+          "module": "Module 5: Advanced OOP Concepts",
+          "topics": [
+            "Operator overloading",
+            "Friend functions",
+            "Abstract classes and interfaces",
+            "Templates (function and class templates)",
+            "Multiple inheritance"
+          ]
+        },
+        {
+          "module": "Module 6: Standard Template Library (STL)",
+          "topics": [
+            "Introduction to STL",
+            "Using vectors, lists, and deques",
+            "Set, map, and unordered_map",
+            "Iterators and algorithms",
+            "Custom comparator functions"
+          ]
+        },
+        {
+          "module": "Module 7: File Handling",
+          "topics": [
+            "Reading from and writing to files",
+            "File streams: ifstream, ofstream, and fstream",
+            "File operations and error handling",
+            "Binary file handling",
+            "Serialization and deserialization"
+          ]
+        },
+        {
+          "module": "Module 8: Memory Management",
+          "topics": [
+            "Dynamic memory allocation",
+            "Using new and delete operators",
+            "Understanding pointers and references",
+            "Memory leaks and smart pointers",
+            "RAII (Resource Acquisition Is Initialization)"
+          ]
+        },
+        {
+          "module": "Module 9: Multithreading and Concurrency",
+          "topics": [
+            "Introduction to multithreading",
+            "Creating and managing threads",
+            "Thread synchronization (mutexes, locks)",
+            "Concurrent data structures",
+            "Condition variables"
+          ]
+        },
+        {
+          "module": "Module 10: Advanced Topics and Project",
+          "topics": [
+            "Introduction to C++11/14/17/20 features",
+            "Network programming basics",
+            "Introduction to graphical user interfaces (GUIs) with Qt",
+            "Building a comprehensive project",
+            "Final project presentation"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Data Structures and Algorithms",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Data Structures",
+          "topics": [
+            "Overview of data structures and algorithms",
+            "Complexity analysis: Big O notation",
+            "Time and space complexity",
+            "Basic operations and use cases"
+          ]
+        },
+        {
+          "module": "Module 2: Arrays and Strings",
+          "topics": [
+            "Array basics: creation, indexing, and traversal",
+            "Multi-dimensional arrays",
+            "String manipulation and operations",
+            "Common algorithms: sorting and searching"
+          ]
+        },
+        {
+          "module": "Module 3: Linked Lists",
+          "topics": [
+            "Introduction to linked lists",
+            "Single linked lists: insertion, deletion, and traversal",
+            "Doubly linked lists: operations and use cases",
+            "Circular linked lists"
+          ]
+        },
+        {
+          "module": "Module 4: Stacks and Queues",
+          "topics": [
+            "Stack basics: implementation and applications",
+            "Queue basics: implementation and applications",
+            "Circular queues",
+            "Priority queues and deque"
+          ]
+        },
+        {
+          "module": "Module 5: Trees",
+          "topics": [
+            "Binary trees: traversal methods (inorder, preorder, postorder)",
+            "Binary search trees (BST): insertion, deletion, and searching",
+            "Balanced trees: AVL trees and Red-Black trees",
+            "Heaps: min-heaps and max-heaps"
+          ]
+        },
+        {
+          "module": "Module 6: Graphs",
+          "topics": [
+            "Graph representation: adjacency matrix and adjacency list",
+            "Graph traversal algorithms: BFS and DFS",
+            "Shortest path algorithms: Dijkstra's and Bellman-Ford",
+            "Minimum spanning trees: Prim's and Kruskal's algorithms"
+          ]
+        },
+        {
+          "module": "Module 7: Hashing",
+          "topics": [
+            "Introduction to hashing",
+            "Hash functions and collision resolution techniques",
+            "Hash tables and their applications",
+            "Open addressing and chaining"
+          ]
+        },
+        {
+          "module": "Module 8: Advanced Algorithms",
+          "topics": [
+            "Divide and conquer algorithms",
+            "Dynamic programming: concepts and common problems",
+            "Greedy algorithms",
+            "Backtracking and branch-and-bound"
+          ]
+        },
+        {
+          "module": "Module 9: Algorithm Design and Analysis",
+          "topics": [
+            "Algorithm design techniques",
+            "Analyzing algorithm performance",
+            "Understanding and solving complex problems",
+            "Algorithm optimization strategies"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project and Review",
+          "topics": [
+            "Integrating data structures and algorithms in projects",
+            "Final project development",
+            "Review of key concepts and techniques",
+            "Presentation of final project"
+          ]
+        }
+      ]
+    }
+  ]
+}

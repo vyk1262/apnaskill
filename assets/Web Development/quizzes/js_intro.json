@@ -1,0 +1,379 @@
+{
+  "result": [
+    {
+      "topic": "js_intro",
+      "questions": [
+        {
+          "question": "What does JS stand for?",
+          "options": {
+            "A": "JavaScript",
+            "B": "JavaStyle",
+            "C": "JScript",
+            "D": "Java Syntax"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which HTML tag is used to include JavaScript in a webpage?",
+          "options": {
+            "A": "<js>",
+            "B": "<script>",
+            "C": "<javascript>",
+            "D": "<code>"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How do you create a variable in JavaScript?",
+          "options": {
+            "A": "var variableName;",
+            "B": "create variableName;",
+            "C": "let variableName;",
+            "D": "const variableName;"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What keyword is used to declare a block-scoped variable?",
+          "options": {
+            "A": "var",
+            "B": "let",
+            "C": "const",
+            "D": "block"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which operator is used to assign a value to a variable?",
+          "options": {
+            "A": "==",
+            "B": "===",
+            "C": "=",
+            "D": ":="
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which data type is NOT a primitive type in JavaScript?",
+          "options": {
+            "A": "String",
+            "B": "Number",
+            "C": "Object",
+            "D": "Boolean"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How do you create a function in JavaScript?",
+          "options": {
+            "A": "function myFunction() {}",
+            "B": "create function myFunction() {}",
+            "C": "def myFunction() {}",
+            "D": "function: myFunction() {}"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What method is used to convert a JSON string into a JavaScript object?",
+          "options": {
+            "A": "JSON.stringify()",
+            "B": "JSON.parse()",
+            "C": "JSON.object()",
+            "D": "JSON.convert()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a valid array declaration?",
+          "options": {
+            "A": "var myArray = {}",
+            "B": "var myArray = []",
+            "C": "var myArray = ()",
+            "D": "var myArray = //;"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How do you access the first element of an array named 'myArray'?",
+          "options": {
+            "A": "myArray[0]",
+            "B": "myArray(0)",
+            "C": "myArray.first()",
+            "D": "myArray{0}"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does 'console.log()' do?",
+          "options": {
+            "A": "Logs a message to the console",
+            "B": "Displays an alert",
+            "C": "Writes to the webpage",
+            "D": "Creates a new console"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the result of 5 + '5' in JavaScript?",
+          "options": {
+            "A": "10",
+            "B": "55",
+            "C": "Error",
+            "D": "NaN"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which method is used to find the length of a string in JavaScript?",
+          "options": {
+            "A": "length()",
+            "B": "size()",
+            "C": "getLength()",
+            "D": "length"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the output of 'typeof NaN'?",
+          "options": {
+            "A": "number",
+            "B": "undefined",
+            "C": "NaN",
+            "D": "object"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which keyword is used to create a constant variable in JavaScript?",
+          "options": {
+            "A": "const",
+            "B": "var",
+            "C": "let",
+            "D": "fixed"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will the following code output: console.log(0.1 + 0.2 === 0.3)?",
+          "options": {
+            "A": "true",
+            "B": "false",
+            "C": "undefined",
+            "D": "NaN"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does 'Array.isArray()' do?",
+          "options": {
+            "A": "Checks if the object is an array",
+            "B": "Creates a new array",
+            "C": "Returns the length of an array",
+            "D": "Sorts an array"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is NOT a loop in JavaScript?",
+          "options": {
+            "A": "for",
+            "B": "while",
+            "C": "do while",
+            "D": "foreach"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What does 'JSON' stand for?",
+          "options": {
+            "A": "JavaScript Object Notation",
+            "B": "Java Standard Object Notation",
+            "C": "JavaScript Object Node",
+            "D": "JavaScript Notation"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create an object in JavaScript?",
+          "options": {
+            "A": "var obj = {};",
+            "B": "var obj = new Object();",
+            "C": "Both A and B",
+            "D": "object obj = {};"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is an object in JavaScript?",
+          "options": {
+            "A": "A data type that allows you to store multiple values",
+            "B": "A collection of properties and methods",
+            "C": "A function that returns a value",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How do you create an object in JavaScript?",
+          "options": {
+            "A": "Using the 'new' keyword",
+            "B": "Using object literal notation",
+            "C": "Both A and B",
+            "D": "Using the 'create' keyword"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of 'Object.prototype'?",
+          "options": {
+            "A": "To create a new object",
+            "B": "To define properties and methods for all objects",
+            "C": "To restrict access to object properties",
+            "D": "To call object methods"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you access a property of an object?",
+          "options": {
+            "A": "Using dot notation or bracket notation",
+            "B": "Using the 'get' method",
+            "C": "Using the 'access' method",
+            "D": "Using 'this' keyword"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a method in an object?",
+          "options": {
+            "A": "A variable that holds data",
+            "B": "A function associated with an object",
+            "C": "A property that stores an object",
+            "D": "A way to create an object"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does the 'this' keyword refer to inside a method?",
+          "options": {
+            "A": "The global object",
+            "B": "The method itself",
+            "C": "The object the method belongs to",
+            "D": "None of the above"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How do you set a property value of an object?",
+          "options": {
+            "A": "object.property = value;",
+            "B": "object.set(property, value);",
+            "C": "object.add(property, value);",
+            "D": "object[property] = value;"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a closure in JavaScript?",
+          "options": {
+            "A": "A function that is declared inside another function",
+            "B": "A function that retains access to its lexical scope",
+            "C": "A way to protect variables from the global scope",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How do you define a class in JavaScript?",
+          "options": {
+            "A": "class MyClass {}",
+            "B": "function MyClass() {}",
+            "C": "new MyClass() {}",
+            "D": "MyClass: {}"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is class inheritance in JavaScript?",
+          "options": {
+            "A": "Creating subclasses that inherit properties from parent classes",
+            "B": "Creating a class without any properties",
+            "C": "Defining properties within a class",
+            "D": "All of the above"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the 'static' keyword in a class?",
+          "options": {
+            "A": "To create a static method or property that belongs to the class, not instances",
+            "B": "To prevent inheritance",
+            "C": "To create private properties",
+            "D": "To define a constructor"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which method is used to call a function with a specified 'this' value and arguments?",
+          "options": {
+            "A": "apply()",
+            "B": "call()",
+            "C": "bind()",
+            "D": "invoke()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the syntax to create an object constructor?",
+          "options": {
+            "A": "function MyObject() {}",
+            "B": "MyObject() {}",
+            "C": "class MyObject {}",
+            "D": "object MyObject() {}"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you prevent an object from being modified?",
+          "options": {
+            "A": "Using Object.freeze()",
+            "B": "Using Object.preventExtensions()",
+            "C": "Using Object.seal()",
+            "D": "All of the above"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will the following code output: console.log(typeof {});",
+          "options": {
+            "A": "object",
+            "B": "array",
+            "C": "undefined",
+            "D": "null"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will happen if you try to access a property that does not exist in an object?",
+          "options": {
+            "A": "It will return undefined",
+            "B": "It will throw an error",
+            "C": "It will return null",
+            "D": "It will return false"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you call a method of an object?",
+          "options": {
+            "A": "object.method()",
+            "B": "object.method;",
+            "C": "call object.method()",
+            "D": "object.call.method()"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

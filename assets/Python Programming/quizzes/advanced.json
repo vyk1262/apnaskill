@@ -1,0 +1,179 @@
+{
+  "result": [
+    {
+      "topic": "advanced",
+      "questions": [
+        {
+          "question": "What is a regular expression?",
+          "options": {
+            "A": "A sequence of characters that defines a search pattern",
+            "B": "A type of data structure",
+            "C": "A built-in function",
+            "D": "A programming language"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which module is used in Python for working with regular expressions?",
+          "options": {
+            "A": "regex",
+            "B": "re",
+            "C": "regexp",
+            "D": "pattern"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does the re.search() function do?",
+          "options": {
+            "A": "Searches for a pattern in a string",
+            "B": "Replaces a pattern in a string",
+            "C": "Splits a string into a list",
+            "D": "Matches a string to a pattern"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which character is used to denote the start of a string in a regex pattern?",
+          "options": {
+            "A": "^",
+            "B": "$",
+            "C": "*",
+            "D": "."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the re.sub() function do?",
+          "options": {
+            "A": "Replaces occurrences of a pattern in a string",
+            "B": "Searches for a pattern in a string",
+            "C": "Splits a string into a list",
+            "D": "Matches a string to a pattern"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is functional programming?",
+          "options": {
+            "A": "A programming paradigm based on functions",
+            "B": "A style of programming that uses loops",
+            "C": "A type of data structure",
+            "D": "A way to handle errors"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is a feature of functional programming?",
+          "options": {
+            "A": "First-class functions",
+            "B": "Mutable state",
+            "C": "Side effects",
+            "D": "Global variables"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a generator in Python?",
+          "options": {
+            "A": "A special type of iterator that generates values on the fly",
+            "B": "A function that calls itself",
+            "C": "A type of data structure",
+            "D": "A built-in function"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create a generator function?",
+          "options": {
+            "A": "By using the yield statement",
+            "B": "By using the return statement",
+            "C": "By using the def statement",
+            "D": "By using the lambda statement"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the next() function do with a generator?",
+          "options": {
+            "A": "Returns the next value from the generator",
+            "B": "Resets the generator",
+            "C": "Creates a new generator",
+            "D": "Stops the generator"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is an iterator in Python?",
+          "options": {
+            "A": "An object that implements the iterator protocol",
+            "B": "A built-in function",
+            "C": "A type of data structure",
+            "D": "A programming language"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which method is used to create an iterator from an iterable?",
+          "options": {
+            "A": "__iter__()",
+            "B": "__next__()",
+            "C": "iter()",
+            "D": "next()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a decorator in Python?",
+          "options": {
+            "A": "A function that modifies another function",
+            "B": "A type of variable",
+            "C": "A built-in function",
+            "D": "A data structure"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you apply a decorator to a function?",
+          "options": {
+            "A": "@decorator_name before the function definition",
+            "B": "decorator_name() after the function definition",
+            "C": "decorator_name before the function call",
+            "D": "decorator_name() before the function call"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the @staticmethod decorator do?",
+          "options": {
+            "A": "Defines a static method that does not access the instance",
+            "B": "Defines a method that can only be called from the class",
+            "C": "Defines a method that requires an instance",
+            "D": "Defines a class variable"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the functools.wraps() decorator do?",
+          "options": {
+            "A": "Preserves the metadata of the original function",
+            "B": "Changes the return value of a function",
+            "C": "Logs function calls",
+            "D": "Handles exceptions"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a common use case for decorators?",
+          "options": {
+            "A": "Logging, enforcing access control, or instrumentation",
+            "B": "Handling exceptions",
+            "C": "Creating data structures",
+            "D": "Defining variables"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

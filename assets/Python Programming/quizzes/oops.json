@@ -1,0 +1,189 @@
+{
+  "result": [
+    {
+      "topic": "oops",
+      "questions": [
+        {
+          "question": "What is a class in Python?",
+          "options": {
+            "A": "A blueprint for creating objects",
+            "B": "A variable type",
+            "C": "A function",
+            "D": "An instance of an object"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create an object from a class in Python?",
+          "options": {
+            "A": "obj = ClassName()",
+            "B": "obj = ClassName[]",
+            "C": "obj = ClassName{}",
+            "D": "obj = ClassName<>"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is inheritance in OOP?",
+          "options": {
+            "A": "When a class inherits properties from another class",
+            "B": "A way to encapsulate data",
+            "C": "A method of creating functions",
+            "D": "The ability to hide data"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following keywords is used to define a subclass in Python?",
+          "options": {
+            "A": "base",
+            "B": "parent",
+            "C": "inherits",
+            "D": "class"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What does polymorphism allow in OOP?",
+          "options": {
+            "A": "Objects of different classes to be treated as objects of a common superclass",
+            "B": "Multiple classes to have the same name",
+            "C": "Classes to inherit from multiple classes",
+            "D": "A class to have multiple data types"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is encapsulation?",
+          "options": {
+            "A": "Hiding the implementation details of a class",
+            "B": "Combining data and methods into a single unit",
+            "C": "Using multiple classes",
+            "D": "The ability to define methods"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the __init__ method in a class?",
+          "options": {
+            "A": "To initialize an object",
+            "B": "To define a class",
+            "C": "To create a subclass",
+            "D": "To encapsulate data"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is an example of abstraction in OOP?",
+          "options": {
+            "A": "Using abstract classes to define methods that must be implemented by subclasses",
+            "B": "Hiding class variables",
+            "C": "Using multiple classes",
+            "D": "Defining a class"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is true about the super() function?",
+          "options": {
+            "A": "It is used to call methods from a parent class",
+            "B": "It defines a class",
+            "C": "It creates an instance of a class",
+            "D": "It encapsulates data"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will the following code output?\n\nclass Animal:\n    def speak(self):\n        return 'Animal speaks'\n\nclass Dog(Animal):\n    def speak(self):\n        return 'Dog barks'\n\nmy_dog = Dog()\nprint(my_dog.speak())",
+          "options": {
+            "A": "'Animal speaks'",
+            "B": "'Dog barks'",
+            "C": "Error",
+            "D": "'Animal barks'"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is method overriding?",
+          "options": {
+            "A": "Defining a method in a subclass that has the same name as a method in its superclass",
+            "B": "Creating multiple methods with the same name",
+            "C": "Defining multiple classes",
+            "D": "Hiding data in a class"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which keyword is used to inherit a class in Python?",
+          "options": {
+            "A": "extends",
+            "B": "inherits",
+            "C": "super",
+            "D": "class"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What will the following code print?\n\nclass Car:\n    def __init__(self, brand):\n        self.brand = brand\n\nmy_car = Car('Toyota')\nprint(my_car.brand)",
+          "options": {
+            "A": "Toyota",
+            "B": "Car",
+            "C": "Error",
+            "D": "None"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the difference between an instance variable and a class variable?",
+          "options": {
+            "A": "Instance variables belong to a specific object, while class variables belong to the class itself",
+            "B": "There is no difference",
+            "C": "Class variables are private, instance variables are public",
+            "D": "Instance variables can be accessed without creating an object"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of using private variables in a class?",
+          "options": {
+            "A": "To restrict access from outside the class",
+            "B": "To allow access from outside the class",
+            "C": "To create multiple instances",
+            "D": "To define a method"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following best describes abstraction?",
+          "options": {
+            "A": "Showing only essential features and hiding implementation details",
+            "B": "Combining data and methods into a single unit",
+            "C": "Allowing multiple forms of behavior",
+            "D": "The ability to change class variables"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What happens if a method is defined in a subclass but not in the parent class?",
+          "options": {
+            "A": "It can still be called on an instance of the subclass",
+            "B": "It will cause an error",
+            "C": "The method will be inherited",
+            "D": "It will be ignored"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is NOT a feature of OOP?",
+          "options": {
+            "A": "Encapsulation",
+            "B": "Abstraction",
+            "C": "Recursion",
+            "D": "Inheritance"
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

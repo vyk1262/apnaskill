@@ -1,0 +1,189 @@
+{
+  "result": [
+    {
+      "topic": "error_handling",
+      "questions": [
+        {
+          "question": "What is an exception in Python?",
+          "options": {
+            "A": "An error that occurs during the execution of a program",
+            "B": "A type of loop",
+            "C": "A built-in function",
+            "D": "A data structure"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which keyword is used to handle exceptions in Python?",
+          "options": {
+            "A": "try",
+            "B": "catch",
+            "C": "except",
+            "D": "handle"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the 'finally' block do in exception handling?",
+          "options": {
+            "A": "Executes code regardless of whether an exception occurred",
+            "B": "Catches exceptions",
+            "C": "Initializes variables",
+            "D": "Defines functions"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you raise an exception in Python?",
+          "options": {
+            "A": "raise ExceptionName",
+            "B": "throw ExceptionName",
+            "C": "catch ExceptionName",
+            "D": "handle ExceptionName"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the 'assert' statement in Python?",
+          "options": {
+            "A": "To test conditions and raise an AssertionError if false",
+            "B": "To handle exceptions",
+            "C": "To define functions",
+            "D": "To initialize variables"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which built-in function is used to get the type of an exception?",
+          "options": {
+            "A": "type()",
+            "B": "isinstance()",
+            "C": "getattr()",
+            "D": "exception_type()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the 'logging' module in Python?",
+          "options": {
+            "A": "To record log messages for debugging purposes",
+            "B": "To handle exceptions",
+            "C": "To define functions",
+            "D": "To create data structures"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which method of the 'logging' module is used to log an error message?",
+          "options": {
+            "A": "error()",
+            "B": "warn()",
+            "C": "info()",
+            "D": "log()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a common method for debugging in Python?",
+          "options": {
+            "A": "Using print statements to check variable values",
+            "B": "Creating new variables",
+            "C": "Using loops",
+            "D": "Defining new functions"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the 'pdb' module provide in Python?",
+          "options": {
+            "A": "A debugger for interactive source code debugging",
+            "B": "A way to handle exceptions",
+            "C": "A logging utility",
+            "D": "A testing framework"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is unit testing?",
+          "options": {
+            "A": "Testing individual components or functions of a program",
+            "B": "Testing the entire application at once",
+            "C": "Testing user interfaces",
+            "D": "Testing for performance issues"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which framework is commonly used for unit testing in Python?",
+          "options": {
+            "A": "unittest",
+            "B": "pytest",
+            "C": "nose",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What does the 'setUp()' method do in a unit test?",
+          "options": {
+            "A": "Prepares the test environment before each test method runs",
+            "B": "Cleans up after each test method runs",
+            "C": "Defines the main function",
+            "D": "Initializes variables"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a test case in unit testing?",
+          "options": {
+            "A": "A single scenario that verifies a specific aspect of code functionality",
+            "B": "A collection of tests",
+            "C": "A debugging technique",
+            "D": "A type of exception"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which assertion method checks for equality in unit tests?",
+          "options": {
+            "A": "assertEqual()",
+            "B": "assertTrue()",
+            "C": "assertIsNone()",
+            "D": "assertRaises()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the 'tearDown()' method in unit testing?",
+          "options": {
+            "A": "To clean up after each test method has run",
+            "B": "To prepare the environment before tests",
+            "C": "To define functions",
+            "D": "To handle exceptions"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the output of an unhandled exception in Python?",
+          "options": {
+            "A": "A traceback error message",
+            "B": "A success message",
+            "C": "No output",
+            "D": "A warning message"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What keyword is used to catch exceptions in Python?",
+          "options": {
+            "A": "except",
+            "B": "catch",
+            "C": "handle",
+            "D": "try"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

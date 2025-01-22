@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "intro",
+      "questions": [
+        {
+          "question": "What is Python?",
+          "options": {
+            "A": "A high-level programming language",
+            "B": "A type of snake",
+            "C": "A database management system",
+            "D": "An operating system"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is a characteristic of Python?",
+          "options": {
+            "A": "Compiled language",
+            "B": "Low-level language",
+            "C": "Interpreted language",
+            "D": "Machine-level language"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which command is used to check the Python version installed?",
+          "options": {
+            "A": "python --check",
+            "B": "python --version",
+            "C": "python -install",
+            "D": "python --info"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How do you print text in Python?",
+          "options": {
+            "A": "echo('Hello')",
+            "B": "write('Hello')",
+            "C": "print('Hello')",
+            "D": "display('Hello')"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a valid variable name in Python?",
+          "options": {
+            "A": "1_variable",
+            "B": "_variable",
+            "C": "variable name",
+            "D": "var-name"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which data type is used for True and False values?",
+          "options": {
+            "A": "String",
+            "B": "Boolean",
+            "C": "Integer",
+            "D": "Float"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the result of 5 + 3 * 2?",
+          "options": {
+            "A": "16",
+            "B": "13",
+            "C": "11",
+            "D": "10"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which operator is used for exponentiation in Python?",
+          "options": {
+            "A": "^",
+            "B": "**",
+            "C": "^^",
+            "D": "exp"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the output of print(10 % 3)?",
+          "options": {
+            "A": "3",
+            "B": "1",
+            "C": "0",
+            "D": "10"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of these is a logical operator in Python?",
+          "options": {
+            "A": "and",
+            "B": "not",
+            "C": "or",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which keyword is used to take input from the user?",
+          "options": {
+            "A": "scanf",
+            "B": "input",
+            "C": "read",
+            "D": "get"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What will be the output of: print('Python'[2])?",
+          "options": {
+            "A": "P",
+            "B": "y",
+            "C": "t",
+            "D": "h"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which function is used to convert an integer to a string?",
+          "options": {
+            "A": "int()",
+            "B": "str()",
+            "C": "float()",
+            "D": "bool()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What will be the output of print(2 == 2.0)?",
+          "options": {
+            "A": "True",
+            "B": "False",
+            "C": "Error",
+            "D": "2.0"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of these symbols is used for comments in Python?",
+          "options": {
+            "A": "//",
+            "B": "#",
+            "C": "/* */",
+            "D": "<!-- -->"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What will be the output of: print(10 // 3)?",
+          "options": {
+            "A": "3.33",
+            "B": "3",
+            "C": "1",
+            "D": "0"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which data type is used to store text?",
+          "options": {
+            "A": "int",
+            "B": "str",
+            "C": "bool",
+            "D": "float"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the correct syntax to declare a string variable in Python?",
+          "options": {
+            "A": "str name = 'John'",
+            "B": "name = John",
+            "C": "name = 'John'",
+            "D": "string name = 'John'"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What will be the output of print(type(3.14))?",
+          "options": {
+            "A": "<class 'int'>",
+            "B": "<class 'str'>",
+            "C": "<class 'float'>",
+            "D": "<class 'bool'>"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How do you add a comment in Python?",
+          "options": {
+            "A": "/* This is a comment */",
+            "B": "<!-- This is a comment -->",
+            "C": "// This is a comment",
+            "D": "# This is a comment"
+          },
+          "correct_answer": "D"
+        }
+      ]
+    }
+  ]
+}
