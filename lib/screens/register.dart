@@ -142,31 +142,44 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: AppColors.primaryColor,
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/gold.gif',
-              fit: BoxFit.fill,
+          // Background Image
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/sd.jpg'), // Add your image
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.3),
+                  BlendMode.darken,
+                ),
+              ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Flexible(
-                flex: 1,
+
+          Center(
+            child: SingleChildScrollView(
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                constraints: BoxConstraints(maxWidth: 400),
+                padding: EdgeInsets.all(20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 20),
+                    // Auth Card
                     Card(
-                      elevation: 5,
+                      elevation: 15,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                      shadowColor: Colors.black.withOpacity(0.4),
+                      child: Container(
+                        padding: EdgeInsets.all(30),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                         child: _isSignIn
                             ? SignInForm(
                                 emailController: _emailController,
@@ -182,40 +195,50 @@ class _AuthScreenState extends State<AuthScreen> {
                               ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 30),
+
+                    // Toggle Button
                     TextButton(
-                      style: TextButton.styleFrom(
-                        foregroundColor: AppColors.primaryColor,
-                        backgroundColor: Colors.white,
-                      ),
                       onPressed: _toggleForm,
+                      style: TextButton.styleFrom(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          side: BorderSide(color: Colors.white, width: 2),
+                        ),
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.blue,
+                      ).copyWith(
+                        overlayColor: MaterialStateProperty.all(
+                          Colors.white.withOpacity(0.1),
+                        ),
+                      ),
                       child: Text(
                         _isSignIn
-                            ? 'Don\'t have an account? Sign Up'
-                            : 'Already have an account? Sign In',
-                        // style: const TextStyle(color: AppColors.primaryColor),
+                            ? 'Create New Account'
+                            : 'Already Have an Account?',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
                       ),
                     ),
-                    if (_isLoading) const CircularProgressIndicator(),
+
+                    if (_isLoading)
+                      Container(
+                        color: Colors.black.withOpacity(0.5),
+                        child: Center(
+                          child: CircularProgressIndicator.adaptive(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              AppColors.primaryColor,
+                            ),
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),
-              Flexible(
-                flex: 1,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(FontAwesomeIcons.trophy,
-                        size: 300, color: Colors.yellow.shade700),
-                    Text("Welcome to Skill Factorial",
-                        style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.primaryColor)),
-                  ],
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),

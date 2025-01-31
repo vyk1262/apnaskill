@@ -38,53 +38,93 @@ class _CoursesState extends State<Courses> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: isLoading
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center(
+              child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurple),
+            ))
           : GridView.builder(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(16.0),
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200, // Maximum width of each grid item
-                crossAxisSpacing: 8.0, // Spacing between columns
-                mainAxisSpacing: 8.0, // Spacing between rows
-                childAspectRatio: 1.5, // Adjust for the card dimensions
+                maxCrossAxisExtent: 220,
+                crossAxisSpacing: 16.0,
+                mainAxisSpacing: 16.0,
+                childAspectRatio: 1.2,
               ),
               itemCount: courses.length,
               itemBuilder: (context, index) {
                 final course = courses[index];
-                return GestureDetector(
+                return _CourseCard(
+                  course: course,
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => SyllabusScreen(course: course),
                     ),
                   ),
-                  child: Card(
-                    elevation: 4,
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.book,
-                                size: 40,
-                                color: Theme.of(context).primaryColor),
-                            const SizedBox(height: 8),
-                            Text(
-                              course['subject'],
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
                 );
               },
             ),
+    );
+  }
+}
+
+class _CourseCard extends StatelessWidget {
+  final Map<String, dynamic> course;
+  final VoidCallback onTap;
+
+  const _CourseCard({required this.course, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedScale(
+      scale: 1,
+      duration: const Duration(milliseconds: 200),
+      child: Card(
+        elevation: 8,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        shadowColor: Theme.of(context).primaryColor.withOpacity(0.2),
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(20),
+          splashColor: Theme.of(context).primaryColor.withOpacity(0.1),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Theme.of(context).primaryColor.withOpacity(0.1),
+                  Theme.of(context).primaryColor.withOpacity(0.05),
+                ],
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.book,
+                    size: 48, color: Theme.of(context).primaryColor),
+                const SizedBox(height: 16),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(
+                    course['subject'],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.grey[800],
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -97,45 +137,96 @@ class SyllabusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(course['subject'])),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(8.0),
-        itemCount: course['syllabus'].length,
-        itemBuilder: (context, index) {
-          final module = course['syllabus'][index];
-          return Card(
-            elevation: 2,
-            margin: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: ListTile(
-                title: Text(
+      appBar: AppBar(
+        title: Text(course['subject'],
+            style: const TextStyle(fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        elevation: 0,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Theme.of(context).scaffoldBackgroundColor,
+              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.5),
+            ],
+          ),
+        ),
+        child: ListView.separated(
+          padding: const EdgeInsets.all(16.0),
+          itemCount: course['syllabus'].length,
+          separatorBuilder: (context, index) => const SizedBox(height: 16),
+          itemBuilder: (context, index) {
+            final module = course['syllabus'][index];
+            return _ModuleCard(module: module);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class _ModuleCard extends StatelessWidget {
+  final Map<String, dynamic> module;
+
+  const _ModuleCard({required this.module});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      elevation: 4,
+      borderRadius: BorderRadius.circular(16),
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.library_books_rounded,
+                    color: Theme.of(context).primaryColor),
+                const SizedBox(width: 12),
+                Text(
                   module['module'],
-                  style: const TextStyle(
-                    fontSize: 18,
+                  style: TextStyle(
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
+                    color: Colors.grey[800],
                   ),
                 ),
-                subtitle: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: (module['topics'] as List<dynamic>).map((topic) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0),
-                        child: Text(
-                          '- $topic',
-                          style: const TextStyle(fontSize: 16),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-              ),
+              ],
             ),
-          );
-        },
+            const SizedBox(height: 12),
+            ...(module['topics'] as List<dynamic>).map((topic) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4.0, right: 8.0),
+                      child:
+                          Icon(Icons.circle, size: 8, color: Colors.grey[600]),
+                    ),
+                    Expanded(
+                      child: Text(
+                        topic,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey[700],
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }).toList(),
+          ],
+        ),
       ),
     );
   }

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/hero.dart';
 
-import 'constants/colors.dart';
-import 'screens/faqs.dart';
 import 'widgets/footer.dart';
 import 'widgets/home_page_widgets/contact.dart';
+import 'widgets/home_page_widgets/feature_section.dart';
 import 'widgets/home_page_widgets/feature_widget.dart';
-import 'widgets/home_page_widgets/google_form_button.dart';
-import 'widgets/home_page_widgets/image_section.dart';
-import 'widgets/home_page_widgets/success_stories_widget.dart';
 import 'widgets/home_page_widgets/text_card_widget.dart';
-import 'widgets/home_page_widgets/text_section_one.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -26,8 +23,14 @@ class _HomePageState extends State<HomePage> {
   List<String> internshipTexts = [];
   List<Map<String, dynamic>> featureData = [];
   List<Map<String, dynamic>> contactData = [];
+  List<Map<String, dynamic>> techContent = [];
+  List<Map<String, dynamic>> techContentRow = [];
 
   final Map<String, IconData> iconMapping = {
+    "clock": FontAwesomeIcons.clock,
+    "book": FontAwesomeIcons.book,
+    "chartLine": FontAwesomeIcons.chartLine,
+    "doubts": FontAwesomeIcons.question,
     "person": Icons.person,
     "lightbulb_outline": Icons.lightbulb_outline,
     "menu_book": Icons.menu_book,
@@ -52,12 +55,15 @@ class _HomePageState extends State<HomePage> {
       internshipTexts = List<String>.from(data['internshipTexts']);
       featureData = List<Map<String, dynamic>>.from(data['featureData']);
       contactData = List<Map<String, dynamic>>.from(data['contactData']);
+      techContent = List<Map<String, dynamic>>.from(data['techContent']);
+      techContentRow = List<Map<String, dynamic>>.from(data['techContentRow']);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 230, 223, 223),
       body: Row(
         children: [
           Flexible(
@@ -66,101 +72,98 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        gradient: AppColors.gradientPrimary,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Column(
-                          children: [
-                            Wrap(
-                              spacing: 1,
-                              runSpacing: 16,
-                              alignment: WrapAlignment.spaceEvenly,
-                              children: [
-                                SizedBox(width: 420, child: TextSectionFour()),
-                                SizedBox(width: 420, child: TextSectionThree()),
-                                SizedBox(
-                                    width: 420, child: ImageSectionThree()),
-                              ],
-                            ),
-                          ],
-                        ),
+                    HeroWidget(),
+                    SizedBox(height: 20),
+                    ...techContent.map(
+                      (content) => FeatureSectionNew(
+                        imageUrl: content["image"]!,
+                        title: content["title"]!,
+                        description: content["description"]!,
+                        type: techContent.indexOf(content) % 2 == 0
+                            ? "Image"
+                            : "Text",
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    SizedBox(height: 20),
+                    Wrap(
+                      spacing: 50,
+                      runSpacing: 20,
+                      alignment: WrapAlignment.center,
                       children: featureData.map((data) {
-                        return FeatureItem(
-                          icon: iconMapping[data['icon']] ?? Icons.help,
-                          title: data['title'],
-                          description: data['description'],
+                        return SizedBox(
+                          width: 250,
+                          child: FeatureItem(
+                            icon: iconMapping[data['icon']] ?? Icons.help,
+                            title: data['title'],
+                            description: data['description'],
+                          ),
                         );
                       }).toList(),
                     ),
                     const SizedBox(height: 16),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Container(
-                        height: 350,
-                        decoration: BoxDecoration(
-                          gradient: AppColors.gradientPrimary,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Expanded(flex: 1, child: TextSectionOne()),
-                            Expanded(flex: 1, child: ImageSectionOne()),
-                          ],
-                        ),
+                    Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: techContentRow
+                          .map(
+                            (content) => SizedBox(
+                              width: 450,
+                              child: FeatureModern(
+                                imageUrl: content["image"]!,
+                                title: content["title"]!,
+                                description: content["description"]!,
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(40),
+                      color: const Color(0xFF4A90E2),
+                      child: Column(
+                        children: [
+                          const Text(
+                            'Ready to Test Your Knowledge?',
+                            style: TextStyle(
+                              fontSize: 32,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              foregroundColor: const Color(0xFF4A90E2),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 20),
+                            ),
+                            child: const Text(
+                              'Begin Quiz Journey',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(flex: 1, child: ImageSectionTwo()),
-                        Expanded(flex: 1, child: TextSectionTwo()),
-                      ],
-                    ),
+                    const SizedBox(height: 16),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           for (final text in internshipTexts)
-                            buildTextCard(text),
+                            AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 500),
+                              child: buildTextCard(text),
+                            ),
                         ],
                       ),
                     ),
                     const SizedBox(height: 40),
-                    Container(
-                      width: double.infinity,
-                      height: 300,
-                      child: SuccessStoriesWidget(),
-                    ),
-                    const SizedBox(height: 40),
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => FaqsScreen(),
-                            ),
-                          );
-                        },
-                        child: const Text('Faqs'),
-                      ),
-                    ),
-                    SizedBox(height: 16),
-                    Center(
-                      child: GoogleFormButton(),
-                    ),
-                    SizedBox(height: 16),
                     Wrap(
                       spacing: 16,
                       runSpacing: 16,
@@ -176,6 +179,8 @@ class _HomePageState extends State<HomePage> {
                         );
                       }).toList(),
                     ),
+                    ContactForm(),
+                    const SizedBox(height: 40),
                     Footer(),
                   ],
                 ),

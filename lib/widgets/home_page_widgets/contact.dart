@@ -48,3 +48,84 @@ class ContactCard extends StatelessWidget {
     );
   }
 }
+
+class ContactForm extends StatefulWidget {
+  const ContactForm({super.key});
+
+  @override
+  _ContactFormState createState() => _ContactFormState();
+}
+
+class _ContactFormState extends State<ContactForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20),
+      width: MediaQuery.of(context).size.width / 2,
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Name',
+                border: OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your name';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Email',
+                border: OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your email';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Message',
+                border: OutlineInputBorder(),
+                alignLabelWithHint: true,
+              ),
+              maxLines: 5,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your message';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFFF5722),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              ),
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {}
+              },
+              child: const Text(
+                'Send Message',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

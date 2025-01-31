@@ -15,9 +15,13 @@ class FeatureItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      elevation: 4.0,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.fromLTRB(40, 40, 40, 20),
         child: Column(
           children: [
             Icon(
@@ -39,21 +43,9 @@ class FeatureItem extends StatelessWidget {
               description,
               style: TextStyle(
                 fontSize: 14,
-                color: AppColors.secondaryColor,
+                color: Colors.black,
               ),
               textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 16),
-            OutlinedButton(
-              onPressed: () {
-                // Add action here
-              },
-              style: OutlinedButton.styleFrom(
-                side: BorderSide(color: Colors.blue),
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
-              ),
-              child: Text("More info"),
             ),
           ],
         ),

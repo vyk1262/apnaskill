@@ -1,4 +1,48 @@
 {
+  "techContent": [
+    {
+      "image": "assets/it.jpg",
+      "title": "Cutting-Edge Learning Tech",
+      "description": "Leverage AI-powered adaptive learning systems that personalize your educational journey based on your progress and preferences."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "title": "Immersive VR Experiences",
+      "description": "Welcome to the World of Practice, Kickstart Your Career Journey with Practice, practice, practice ...From Novice to Expert: The Transformative Power of Practice"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "title": "Quizzes and Projects",
+      "description": "Designed to shape you into a highly skilled and accomplished professional in any field. with Practice ..."
+    },
+    {
+      "image": "assets/book_shelf.png",
+      "title": "Empowering Growth Through Skill Development",
+      "description": "At Skill Factorial, located in the heart of Hyderabad, we are dedicated to transforming the educational landscape through innovative skill development programs. Our mission is to empower individuals with the practical skills necessary for success in today's dynamic job market. We believe in a hands-on approach that bridges the gap between theoretical knowledge and real-world application. Join us on a journey of lifelong learning and professional growth."
+    }
+  ],
+  "techContentRow": [
+    {
+      "image": "assets/it.jpg",
+      "title": "Cutting-Edge Learning Tech",
+      "description": "Leverage AI-powered adaptive learning systems that personalize your educational journey based on your progress and preferences."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "title": "Immersive VR Experiences",
+      "description": "Welcome to the World of Practice, Kickstart Your Career Journey with Practice, practice, practice ...From Novice to Expert: The Transformative Power of Practice"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "title": "Real-time Collaboration",
+      "description": "Work with peers globally using our collaborative coding environment and shared digital workspaces."
+    },
+    {
+      "image": "assets/book_shelf.png",
+      "title": "Empowering Growth Through Skill Development",
+      "description": "At Skill Factorial, located in the heart of Hyderabad, we are dedicated to transforming the educational landscape through innovative skill development programs. Our mission is to empower individuals with the practical skills necessary for success in today's dynamic job market. We believe in a hands-on approach that bridges the gap between theoretical knowledge and real-world application. Join us on a journey of lifelong learning and professional growth."
+    }
+  ],
   "internshipTexts": [
     "Skill Factorial.com is your gateway to mastering technology. We're passionate about empowering students like YOU with the skills and practical experience needed to excel in your studies.",
     "Struggling to grasp concepts? Practice makes perfect! Quizzes, assignments, and projects are your keys to deeper understanding and confidence.",
@@ -10,17 +54,37 @@
     {
       "icon": "person",
       "title": "Personalized Learning Programs",
-      "description": "Tailored educational experiences designed to meet individual student needs and learning styles."
+      "description": "Tailored educational experiences designed to meet individual student needs and learning styles"
     },
     {
       "icon": "lightbulb_outline",
       "title": "Expert-Led Workshops",
-      "description": "Interactive sessions with industry experts aimed at skill enhancement and real-world application."
+      "description": "Interactive sessions with industry experts aimed at skill enhancement and real-world application"
     },
     {
       "icon": "menu_book",
       "title": "Comprehensive Course Materials",
-      "description": "Well-structured resources providing in-depth knowledge across various subjects and disciplines."
+      "description": "Well-structured resources providing in-depth knowledge across various subjects and disciplines"
+    },
+    {
+      "icon": "doubts",
+      "title": "Doubt Solving Session",
+      "description": "If you have any doubts while attempting the quiz Weekly doubt solving sessions will be conducted"
+    },
+    {
+      "icon": "person",
+      "title": "Learn at Your Pace'",
+      "description": "Take quizzes whenever you're ready"
+    },
+    {
+      "icon": "book",
+      "title": "Various Subjects",
+      "description": "Multiple subjects to choose from"
+    },
+    {
+      "icon": "chartLine",
+      "title": "Instant Feedback",
+      "description": "Get your results immediately"
     }
   ],
   "contactData": [
