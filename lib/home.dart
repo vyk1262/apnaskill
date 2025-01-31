@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/widgets/helper_nav_func.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/hero.dart';
 
 import 'widgets/footer.dart';
@@ -133,19 +136,10 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           const SizedBox(height: 20),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              foregroundColor: const Color(0xFF4A90E2),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 20),
-                            ),
-                            child: const Text(
-                              'Begin Quiz Journey',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ),
+                          buildCtaButton(
+                              text: "Begin Your Quiz Journey",
+                              onPressed: () => navigateTo(context, AuthScreen(),
+                                  replace: false))
                         ],
                       ),
                     ),

@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import '../constants/colors.dart';
 import '../model/user_model.dart';
+import '../widgets/home_page_widgets/cta_button.dart';
 import 'auth_screen_ui_widget.dart';
 import 'courses_home.dart';
 
@@ -198,30 +199,11 @@ class _AuthScreenState extends State<AuthScreen> {
                     SizedBox(height: 30),
 
                     // Toggle Button
-                    TextButton(
+                    buildCtaButton(
+                      text: _isSignIn
+                          ? 'Create New Account'
+                          : 'Already Have an Account?',
                       onPressed: _toggleForm,
-                      style: TextButton.styleFrom(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          side: BorderSide(color: Colors.white, width: 2),
-                        ),
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.blue,
-                      ).copyWith(
-                        overlayColor: MaterialStateProperty.all(
-                          Colors.white.withOpacity(0.1),
-                        ),
-                      ),
-                      child: Text(
-                        _isSignIn
-                            ? 'Create New Account'
-                            : 'Already Have an Account?',
-                        style: TextStyle(
-                          fontSize: 16,
-                        ),
-                      ),
                     ),
 
                     if (_isLoading)

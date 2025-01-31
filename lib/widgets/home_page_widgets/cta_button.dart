@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
-Widget buildCtaButton(String text) {
+Widget buildCtaButton({
+  required String text,
+  required VoidCallback onPressed,
+  Color bgColor = const Color(0xFF4A90E2),
+  Color fgColor = Colors.white,
+  double ftSize = 20.0,
+}) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: const Color(0xFF4A90E2),
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+      backgroundColor: bgColor,
+      foregroundColor: fgColor,
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
     ),
-    onPressed: () {},
+    onPressed: onPressed,
     child: Text(
       text,
-      style: const TextStyle(
-        fontSize: 20,
-        color: Colors.white,
+      style: TextStyle(
+        fontSize: ftSize,
       ),
     ),
   );

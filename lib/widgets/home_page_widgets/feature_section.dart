@@ -1,5 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/widgets/helper_nav_func.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 
 class FeatureSectionNew extends StatelessWidget {
   final String imageUrl;
@@ -22,31 +25,23 @@ class FeatureSectionNew extends StatelessWidget {
       child: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth < 700) {
-            return _buildMobileLayout();
+            return Column(
+              children: [
+                _buildMobileImage(),
+                const SizedBox(height: 10),
+                _buildContent(context),
+              ],
+            );
           }
-          return _buildDesktopLayout();
+          return Row(
+            children: [
+              if (type == "Image") _buildDesktopImage(),
+              Expanded(child: _buildContent(context)),
+              if (type == "Text") _buildDesktopImage(),
+            ],
+          );
         },
       ),
-    );
-  }
-
-  Widget _buildDesktopLayout() {
-    return Row(
-      children: [
-        if (type == "Image") _buildDesktopImage(),
-        Expanded(child: _buildContent()),
-        if (type == "Text") _buildDesktopImage(),
-      ],
-    );
-  }
-
-  Widget _buildMobileLayout() {
-    return Column(
-      children: [
-        _buildMobileImage(),
-        const SizedBox(height: 10),
-        _buildContent(),
-      ],
     );
   }
 
@@ -86,7 +81,7 @@ class FeatureSectionNew extends StatelessWidget {
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(30),
       child: Column(
@@ -112,15 +107,10 @@ class FeatureSectionNew extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 30),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue.shade700,
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
-            ),
-            child: const Text("Learn More"),
-          ),
+          buildCtaButton(
+              text: "Learn More",
+              onPressed: () =>
+                  navigateTo(context, AuthScreen(), replace: false)),
         ],
       ),
     );
@@ -190,16 +180,10 @@ class FeatureModern extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 15),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue.shade700,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 12),
-                    ),
-                    child: const Text("Learn More"),
-                  ),
+                  buildCtaButton(
+                      text: "Learn More",
+                      onPressed: () =>
+                          navigateTo(context, AuthScreen(), replace: false))
                 ],
               ),
             ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/widgets/helper_nav_func.dart';
 
 import 'cta_button.dart';
 
@@ -53,7 +55,11 @@ class HeroWidget extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 40),
-                  buildCtaButton('Start Learning'),
+                  buildCtaButton(
+                    text: 'Start Learning',
+                    onPressed: () =>
+                        navigateTo(context, AuthScreen(), replace: false),
+                  ),
                 ],
               ),
             ),

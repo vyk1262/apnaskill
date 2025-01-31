@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 
 class ContactCard extends StatelessWidget {
   final IconData icon;
@@ -109,19 +110,16 @@ class _ContactFormState extends State<ContactForm> {
               },
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFF5722),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-              ),
+            buildCtaButton(
+              text: "Send Message",
               onPressed: () {
-                if (_formKey.currentState!.validate()) {}
+                if (_formKey.currentState!.validate()) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                        content: Text('Message Sent - Testing Purpose Only')),
+                  );
+                }
               },
-              child: const Text(
-                'Send Message',
-                style: TextStyle(color: Colors.white),
-              ),
             ),
           ],
         ),

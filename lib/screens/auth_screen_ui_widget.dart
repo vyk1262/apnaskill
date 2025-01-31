@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import '../constants/colors.dart';
 
 class SignInForm extends StatelessWidget {
@@ -19,17 +20,7 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          ),
-          onPressed: onGoogleSignIn,
-          child: const Text(
-            'Continue with Google',
-            style: TextStyle(color: Colors.white, fontSize: 16),
-          ),
-        ),
+        buildCtaButton(text: "Continue with Google", onPressed: onGoogleSignIn),
         const SizedBox(height: 20),
         const Text(
           'OR',
@@ -120,14 +111,7 @@ class SignUpForm extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-          ),
-          onPressed: onSignUp,
-          child: const Text('Sign Up', style: TextStyle(fontSize: 16)),
-        ),
+        buildCtaButton(text: "Sign Up", onPressed: onSignUp),
       ],
     );
   }

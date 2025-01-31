@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:skill_factorial/home.dart';
+import 'package:skill_factorial/screens/courses.dart';
+import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/widgets/helper_nav_func.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 
 import '../screens/faqs.dart';
 
@@ -7,53 +12,47 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[700],
+      color: Colors.black,
       padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FaqsScreen(),
-                  ),
-                );
-              },
-              child: const Text('Faqs'),
-            ),
-          ),
-          // Internal Navigation Links
           Wrap(
-            spacing: 20,
-            runSpacing: 10,
-            alignment: WrapAlignment.center,
+            spacing: 16,
+            runSpacing: 16,
             children: [
-              _buildNavLink('Home'),
-              _buildNavLink('Courses'),
-              _buildNavLink('Quizzes'),
-              _buildNavLink('About'),
-              _buildNavLink('Contact'),
-              _buildNavLink('Login/Sign Up'),
+              buildCtaButton(
+                  text: "Faqs",
+                  onPressed: () => navigateTo(
+                        context,
+                        FaqsScreen(),
+                        replace: false,
+                      )),
+              buildCtaButton(
+                  text: "Home",
+                  onPressed: () => navigateTo(
+                        context,
+                        HomePage(),
+                        replace: false,
+                      )),
+              buildCtaButton(
+                  text: "Courses",
+                  onPressed: () => navigateTo(
+                        context,
+                        Courses(),
+                        replace: false,
+                      )),
+              buildCtaButton(
+                  text: "Login",
+                  onPressed: () => navigateTo(
+                        context,
+                        AuthScreen(),
+                        replace: false,
+                      )),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildFooterLink(context, 'Home', () {
-                Navigator.pushReplacementNamed(context, '/home');
-              }),
-              _buildFooterLink(context, 'Courses', () {
-                Navigator.pushReplacementNamed(context, '/courses');
-              }),
-              _buildFooterLink(context, 'Register', () {
-                Navigator.pushReplacementNamed(context, '/register');
-              }),
-            ],
-          ),
+
           const SizedBox(height: 16),
           // Social Media Links
           Row(
