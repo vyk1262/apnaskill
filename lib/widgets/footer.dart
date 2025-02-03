@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/home.dart';
 import 'package:skill_factorial/screens/courses.dart';
 import 'package:skill_factorial/screens/register.dart';
@@ -29,27 +30,13 @@ class Footer extends StatelessWidget {
                         FaqsScreen(),
                         replace: false,
                       )),
+              buildCtaButton(text: "Home", onPressed: () => context.go('/')),
               buildCtaButton(
-                  text: "Home",
-                  onPressed: () => navigateTo(
-                        context,
-                        HomePage(),
-                        replace: false,
-                      )),
+                  text: "Courses", onPressed: () => context.go('/courses')),
               buildCtaButton(
-                  text: "Courses",
-                  onPressed: () => navigateTo(
-                        context,
-                        Courses(),
-                        replace: false,
-                      )),
+                  text: "Login", onPressed: () => context.go('/login')),
               buildCtaButton(
-                  text: "Login",
-                  onPressed: () => navigateTo(
-                        context,
-                        AuthScreen(),
-                        replace: false,
-                      )),
+                  text: "Blogs", onPressed: () => context.go('/blog')),
             ],
           ),
 

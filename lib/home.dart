@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/helper_nav_func.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/hero.dart';
 
+import 'custom_app_bar.dart';
 import 'widgets/footer.dart';
 import 'widgets/home_page_widgets/contact.dart';
 import 'widgets/home_page_widgets/feature_section.dart';
@@ -67,6 +69,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 230, 223, 223),
+      appBar: CustomAppBar(),
       body: Row(
         children: [
           Flexible(

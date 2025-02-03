@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:skill_factorial/home.dart';
 
-import '../tabs.dart';
+import '../custom_app_bar.dart';
 import 'quiz_screen.dart';
 
 class CoursesHomeScreen extends StatefulWidget {
@@ -92,7 +93,7 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
                     await FirebaseAuth.instance.signOut();
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => Tabs()),
+                      MaterialPageRoute(builder: (context) => HomePage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -100,6 +101,8 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   ),
                 ),
+                const Divider(),
+                SizedBox(height: 10),
                 Text(
                   "User Details",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

@@ -11,8 +11,8 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.network(
-          'https://images.unsplash.com/photo-1523240795612-9a054b0db644',
+        Image.asset(
+          'assets/it.jpg',
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.7,
           fit: BoxFit.cover,

@@ -459,12 +459,11 @@ class _QuizScreenState extends State<QuizScreen> {
                           color: Colors.blueGrey[800],
                         ),
                       ),
-                      const SizedBox(height: 12), // Space after question text
+                      const SizedBox(height: 8),
                       // Display options for the question
                       ...question['options'].entries.map((entry) {
                         return Padding(
-                          padding: const EdgeInsets.only(
-                              bottom: 8.0), // Space between options
+                          padding: const EdgeInsets.only(bottom: 2.0),
                           child: RadioListTile<String>(
                             title: Text(
                               entry.value,

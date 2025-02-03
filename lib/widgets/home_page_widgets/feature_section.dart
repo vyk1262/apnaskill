@@ -51,13 +51,10 @@ class FeatureSectionNew extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: CachedNetworkImage(
-            imageUrl: imageUrl,
+          child: Image.asset(
+            imageUrl,
             height: 400,
             fit: BoxFit.cover,
-            progressIndicatorBuilder: (context, url, progress) => Center(
-              child: CircularProgressIndicator(value: progress.progress),
-            ),
           ),
         ),
       ),
@@ -69,13 +66,10 @@ class FeatureSectionNew extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: CachedNetworkImage(
-          imageUrl: imageUrl,
+        child: Image.asset(
+          imageUrl,
           height: 400,
           fit: BoxFit.cover,
-          progressIndicatorBuilder: (context, url, progress) => Center(
-            child: CircularProgressIndicator(value: progress.progress),
-          ),
         ),
       ),
     );
@@ -143,14 +137,11 @@ class FeatureModern extends StatelessWidget {
             ClipRRect(
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(20)),
-              child: CachedNetworkImage(
-                imageUrl: imageUrl,
+              child: Image.asset(
+                imageUrl,
                 width: double.infinity,
                 height: 250,
                 fit: BoxFit.cover,
-                progressIndicatorBuilder: (context, url, progress) => Center(
-                  child: CircularProgressIndicator(value: progress.progress),
-                ),
               ),
             ),
             Padding(
