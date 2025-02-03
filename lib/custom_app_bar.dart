@@ -40,9 +40,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     : SizedBox.shrink(),
                 SizedBox(width: 80),
                 Image.asset(
-                  'assets/sf22.png',
-                  width: 70,
-                  height: 70,
+                  'assets/sf33.png',
+                  width: 40,
+                  height: 40,
                   fit: BoxFit.contain,
                 ),
                 Text(
