@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/helper_nav_func.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
@@ -68,7 +69,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 230, 223, 223),
+      backgroundColor: Colors.black87,
       appBar: CustomAppBar(),
       body: Row(
         children: [
@@ -91,20 +92,35 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    Wrap(
-                      spacing: 50,
-                      runSpacing: 20,
-                      alignment: WrapAlignment.center,
-                      children: featureData.map((data) {
-                        return SizedBox(
-                          width: 250,
-                          child: FeatureItem(
-                            icon: iconMapping[data['icon']] ?? Icons.help,
-                            title: data['title'],
-                            description: data['description'],
-                          ),
-                        );
-                      }).toList(),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            AppColors.primaryColor,
+                            AppColors.secondaryColor,
+                          ],
+                        ),
+                      ),
+                      child: Wrap(
+                        spacing: 50,
+                        runSpacing: 20,
+                        alignment: WrapAlignment.center,
+                        children: featureData.map((data) {
+                          return SizedBox(
+                            width: 250,
+                            child: FeatureItem(
+                              icon: iconMapping[data['icon']] ?? Icons.help,
+                              title: data['title'],
+                              description: data['description'],
+                            ),
+                          );
+                        }).toList(),
+                      ),
                     ),
                     const SizedBox(height: 16),
                     Wrap(
@@ -124,17 +140,72 @@ class _HomePageState extends State<HomePage> {
                           .toList(),
                     ),
                     SizedBox(height: 20),
+
+                    // Padding(
+                    //   padding: const EdgeInsets.all(16.0),
+                    //   child: Column(
+                    //     crossAxisAlignment: CrossAxisAlignment.start,
+                    //     children: [
+                    //       for (final text in internshipTexts)
+                    //         AnimatedSwitcher(
+                    //           duration: const Duration(milliseconds: 500),
+                    //           child: buildTextCard(text),
+                    //         ),
+                    //     ],
+                    //   ),
+                    // ),
+                    const SizedBox(height: 40),
                     Container(
                       width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            AppColors.primaryColor,
+                            AppColors.secondaryColor,
+                          ],
+                        ),
+                      ),
+                      child: Wrap(
+                        spacing: 16,
+                        runSpacing: 16,
+                        alignment: WrapAlignment.center,
+                        children: contactData.map((data) {
+                          return SizedBox(
+                            width: 250,
+                            child: ContactCard(
+                              icon: iconMapping[data['icon']] ?? Icons.help,
+                              title: data['title'],
+                              text: data['text'],
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                    SizedBox(height: 40),
+                    // ContactForm(),
+                    Container(
                       padding: const EdgeInsets.all(40),
-                      color: const Color(0xFF4A90E2),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            AppColors.primaryColor,
+                            AppColors.secondaryColor,
+                          ],
+                        ),
+                      ),
                       child: Column(
                         children: [
                           const Text(
                             'Ready to Test Your Knowledge?',
                             style: TextStyle(
                               fontSize: 32,
-                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -146,37 +217,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          for (final text in internshipTexts)
-                            AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 500),
-                              child: buildTextCard(text),
-                            ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 40),
-                    Wrap(
-                      spacing: 16,
-                      runSpacing: 16,
-                      alignment: WrapAlignment.center,
-                      children: contactData.map((data) {
-                        return SizedBox(
-                          width: 250,
-                          child: ContactCard(
-                            icon: iconMapping[data['icon']] ?? Icons.help,
-                            title: data['title'],
-                            text: data['text'],
-                          ),
-                        );
-                      }).toList(),
-                    ),
-                    ContactForm(),
+
                     const SizedBox(height: 40),
                     Footer(),
                   ],

@@ -16,6 +16,7 @@ class FeatureItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.black87,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
@@ -28,22 +29,24 @@ class FeatureItem extends StatelessWidget {
               icon,
               size: 48,
             ),
+            Divider(),
             SizedBox(height: 8),
             Text(
               title,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: AppColors.primaryColor,
+                // color: AppColors.primaryColor,
               ),
               textAlign: TextAlign.center,
             ),
+            Divider(),
             SizedBox(height: 8),
             Text(
               description,
               style: TextStyle(
                 fontSize: 14,
-                color: Colors.black,
+                // color: Colors.black,
               ),
               textAlign: TextAlign.center,
             ),

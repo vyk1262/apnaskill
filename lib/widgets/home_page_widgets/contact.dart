@@ -17,6 +17,7 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.black87,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
@@ -28,12 +29,14 @@ class ContactCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(icon, size: 40.0),
+            Divider(),
             const SizedBox(height: 8.0),
             Text(
               title,
               style: TextStyle(fontWeight: FontWeight.bold),
               textAlign: TextAlign.center, // Center-align text
             ),
+            Divider(),
             const SizedBox(height: 4.0),
             Text(
               text,

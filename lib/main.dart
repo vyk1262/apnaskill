@@ -9,7 +9,6 @@ import 'constants/colors.dart';
 import 'firebase_options.dart';
 import 'home.dart';
 import 'model/user_model.dart';
-import 'screens/blog_pages.dart';
 import 'screens/url_not_found.dart';
 import 'custom_app_bar.dart';
 
@@ -45,19 +44,6 @@ final router = GoRouter(
           path: 'login',
           builder: (context, state) => const AuthScreen(),
         ),
-        GoRoute(
-          path: 'blog',
-          builder: (context, state) => const BlogPage(),
-          routes: [
-            GoRoute(
-              path: ':slug',
-              builder: (context, state) {
-                final slug = state.pathParameters['slug']!;
-                return BlogPostPage(slug: slug);
-              },
-            ),
-          ],
-        ),
       ],
     ),
   ],
@@ -86,13 +72,13 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: const TextTheme(
           bodyLarge: TextStyle(
-            color: Colors.red,
+            color: Colors.white,
           ),
           bodyMedium: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
           bodySmall: TextStyle(
-            color: Colors.green,
+            color: Colors.white24,
           ),
         ),
         buttonTheme: const ButtonThemeData(
@@ -110,6 +96,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: AppColors.primaryColor,
         ),
+        // cardColor: Colors.black87,
       ),
       // home: isMobile ? MobileTabs() : Tabs(),
     );

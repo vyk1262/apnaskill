@@ -95,7 +95,7 @@ class FeatureSectionNew extends StatelessWidget {
             description,
             style: TextStyle(
               fontSize: 18,
-              color: Colors.grey.shade700,
+              // color: Colors.grey.shade700,
               height: 1.6,
             ),
             textAlign: TextAlign.center,
@@ -128,6 +128,7 @@ class FeatureModern extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Card(
+        color: Colors.black87,
         elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
@@ -164,7 +165,7 @@ class FeatureModern extends StatelessWidget {
                         description,
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.grey.shade700,
+                          // color: Colors.grey.shade700,
                           height: 1.5,
                         ),
                       ),

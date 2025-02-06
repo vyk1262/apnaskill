@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skill_factorial/constants/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   CustomAppBar();
@@ -45,12 +47,28 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   height: 40,
                   fit: BoxFit.contain,
                 ),
-                Text(
-                  'Skill Factorial',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Skill',
+                        style: TextStyle(
+                            color: AppColors.primaryColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: ' ',
+                      ),
+                      TextSpan(
+                        text: 'Factorial',
+                        style: TextStyle(
+                            color: AppColors.secondaryColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
                 Spacer(),
                 isMobile
@@ -61,8 +79,26 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               label: 'Home', screenName: '/'),
                           _buildNavButton(context,
                               label: 'Courses', screenName: 'courses'),
-                          _buildNavButton(context,
-                              label: 'Blogs', screenName: 'blog'),
+                          TextButton(
+                            onPressed: () async {
+                              final Uri url =
+                                  Uri.parse('https://blog.skillfactorial.com');
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url,
+                                    mode: LaunchMode.externalApplication);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            child: Text(
+                              "Blogs",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
                           _buildNavButton(context,
                               label: 'Login →', screenName: 'login'),
                         ],
@@ -96,6 +132,19 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       SizedBox(width: 20),
                       _buildDrawerButton(context,
                           label: 'Courses', screenName: 'courses'),
+                      TextButton(
+                        onPressed: () async {
+                          final Uri url =
+                              Uri.parse('https://blog.skillfactorial.com');
+                          if (await canLaunchUrl(url)) {
+                            await launchUrl(url,
+                                mode: LaunchMode.externalApplication);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: Text("Blogs"),
+                      ),
                       _buildDrawerButton(context,
                           label: 'Blogs', screenName: 'blog'),
                       SizedBox(width: 20),
