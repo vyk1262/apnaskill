@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. Sarah Johnson",
+    "profession": "Senior Software Engineer",
+    "expertise": ["Flutter", "Dart", "Mobile Development"],
+    "experience": 8,
+    "price": 45.0,
+    "image": "assets/library.jpg",
+    "bio": "Passionate about teaching mobile development with 8+ years of industry experience...",
+    "education": "PhD in Computer Science, MIT",
+    "rating": 4.9
+  },
+  {
+    "id": "2",
+    "name": "David Lee",
+    "profession": "Data Scientist",
+    "expertise": ["Python", "Machine Learning", "AI"],
+    "experience": 5,
+    "price": 50.0,
+    "image": "assets/library.jpg",
+    "bio": "Experienced data scientist specializing in machine learning...",
+    "education": "Master's in Data Science, Stanford",
+    "rating": 4.7
+  }
+]

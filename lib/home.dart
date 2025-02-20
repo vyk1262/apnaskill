@@ -5,9 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/register.dart';
-import 'package:skill_factorial/widgets/helper_nav_func.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/hero.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/why.dart';
 
 import 'custom_app_bar.dart';
 import 'widgets/footer.dart';
@@ -186,6 +186,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 40),
+                    WhyChooseUs(),
+                    SizedBox(height: 40),
                     // ContactForm(),
                     Container(
                       padding: const EdgeInsets.all(40),
@@ -211,9 +213,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                           const SizedBox(height: 20),
                           buildCtaButton(
-                              text: "Begin Your Quiz Journey",
-                              onPressed: () => navigateTo(context, AuthScreen(),
-                                  replace: false))
+                            text: "Begin Your Quiz Journey",
+                            onPressed: () => context.go('/login'),
+                          )
                         ],
                       ),
                     ),

@@ -2,17 +2,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skill_factorial/screens/courses.dart';
+import 'package:skill_factorial/screens/courses_home.dart';
+import 'package:skill_factorial/screens/faqs.dart';
+import 'package:skill_factorial/screens/mentors.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'Profile.dart';
 import 'constants/colors.dart';
 import 'firebase_options.dart';
 import 'home.dart';
 import 'model/user_model.dart';
 import 'screens/url_not_found.dart';
-import 'custom_app_bar.dart';
 
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 // void main() => runApp(MyApp());
@@ -41,8 +43,20 @@ final router = GoRouter(
           builder: (context, state) => const Courses(),
         ),
         GoRoute(
+          path: 'quizzes',
+          builder: (context, state) => const QuizListHome(),
+        ),
+        GoRoute(
           path: 'login',
           builder: (context, state) => const AuthScreen(),
+        ),
+        GoRoute(
+          path: 'mentors',
+          builder: (context, state) => const Mentors(),
+        ),
+        GoRoute(
+          path: 'faqs',
+          builder: (context, state) => FaqsScreen(),
         ),
       ],
     ),
@@ -78,7 +92,23 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
           bodySmall: TextStyle(
-            color: Colors.white24,
+            color: Colors.white,
+          ),
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          labelStyle: TextStyle(color: Colors.white),
+          hintStyle: TextStyle(color: Colors.grey),
+          iconColor: Colors.white,
+          prefixIconColor: Colors.white,
+          suffixIconColor: Colors.white,
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
           ),
         ),
         buttonTheme: const ButtonThemeData(

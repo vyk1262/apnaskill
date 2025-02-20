@@ -2,11 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 // import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../constants/colors.dart';
+import '../custom_app_bar.dart';
 import '../model/user_model.dart';
 import '../widgets/home_page_widgets/cta_button.dart';
 import 'auth_screen_ui_widget.dart';
@@ -76,8 +78,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => CoursesHomeScreen()));
+      context.go('/quizzes');
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Sign-in failed: ${e.message}');
     } finally {
@@ -128,8 +129,7 @@ class _AuthScreenState extends State<AuthScreen> {
         });
 
         Provider.of<UserModel>(context, listen: false).setUserId(user.email);
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => CoursesHomeScreen()));
+        context.go('/quizzes');
       }
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Sign-up failed: ${e.message}');
@@ -143,6 +143,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           // Background Image
@@ -174,11 +175,11 @@ class _AuthScreenState extends State<AuthScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      shadowColor: Colors.black.withOpacity(0.4),
+                      shadowColor: Colors.blue.withOpacity(0.4),
                       child: Container(
                         padding: EdgeInsets.all(30),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.black87,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: _isSignIn
@@ -271,10 +272,7 @@ class _AuthScreenState extends State<AuthScreen> {
         }
       }
 
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => CoursesHomeScreen()),
-      );
+      context.go('/quizzes');
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Google Sign-In failed: ${e.message}');
     } finally {

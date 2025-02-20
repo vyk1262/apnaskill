@@ -1,19 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/home.dart';
 
 import '../custom_app_bar.dart';
 import 'quiz_screen.dart';
 
-class CoursesHomeScreen extends StatefulWidget {
-  const CoursesHomeScreen({Key? key}) : super(key: key);
+class QuizListHome extends StatefulWidget {
+  const QuizListHome({Key? key}) : super(key: key);
 
   @override
-  State<CoursesHomeScreen> createState() => _CoursesHomeScreenState();
+  State<QuizListHome> createState() => _QuizListHomeState();
 }
 
-class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
+class _QuizListHomeState extends State<QuizListHome> {
   Map<String, dynamic>? userData;
   List<String> pythonQuizTopics = [
     'files',
@@ -27,10 +28,10 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
     'intro',
     'modules'
   ];
-  List<String> pythonProjects = [
-    'python_project_1',
-    'python_project_2',
-  ];
+  // List<String> pythonProjects = [
+  //   'python_project_1',
+  //   'python_project_2',
+  // ];
 
   List<String> webQuizTopics = [
     "html_intro",
@@ -45,12 +46,12 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
     "js_async",
     "js_apis",
   ];
-  List<String> webProjects = [
-    'web_project_1',
-    'web_project_2',
-    'web_project_3',
-    'web_project_4',
-  ];
+  // List<String> webProjects = [
+  //   'web_project_1',
+  //   'web_project_2',
+  //   'web_project_3',
+  //   'web_project_4',
+  // ];
 
   @override
   void initState() {
@@ -77,54 +78,9 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
     User? user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
+      appBar: CustomAppBar(),
       body: Row(
         children: [
-          // User details section (30% of the space)
-          Container(
-            padding: const EdgeInsets.all(16.0),
-            color: Colors.blueGrey[50],
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ElevatedButton.icon(
-                  icon: Icon(Icons.logout),
-                  label: Text("Logout"),
-                  onPressed: () async {
-                    await FirebaseAuth.instance.signOut();
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  ),
-                ),
-                const Divider(),
-                SizedBox(height: 10),
-                Text(
-                  "User Details",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10),
-                if (userData != null) ...[
-                  Text("Name: ${userData!['name']}",
-                      style: TextStyle(fontSize: 18)),
-                  Text("DOB: ${userData!['dateOfBirth']}",
-                      style: TextStyle(fontSize: 18)),
-                  Text("Gender: ${userData!['gender']}",
-                      style: TextStyle(fontSize: 18)),
-                  Text("Email: ${userData!['email']}",
-                      style: TextStyle(fontSize: 18)),
-                ] else
-                  CircularProgressIndicator(),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10),
-
-          // Internship names section (GridView)
           Expanded(
             child: GridView.count(
               padding: const EdgeInsets.all(16.0),
@@ -132,16 +88,14 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               children: [
-                _buildInternshipCard(context, "Python Programming",
-                    pythonQuizTopics, pythonProjects),
                 _buildInternshipCard(
-                    context, "Web Development", webQuizTopics, webProjects),
+                    context, "Python Programming", pythonQuizTopics),
+                _buildInternshipCard(context, "Web Development", webQuizTopics),
+                _buildInternshipCard(context, "Data Science", pythonQuizTopics),
                 _buildInternshipCard(
-                    context, "Data Science", pythonQuizTopics, pythonProjects),
-                _buildInternshipCard(context, "Machine Learning",
-                    pythonQuizTopics, pythonProjects),
-                _buildInternshipCard(context, "Mobile App Development",
-                    pythonQuizTopics, pythonProjects),
+                    context, "Machine Learning", pythonQuizTopics),
+                _buildInternshipCard(
+                    context, "Mobile App Development", pythonQuizTopics),
               ],
             ),
           ),
@@ -150,8 +104,8 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
     );
   }
 
-  Widget _buildInternshipCard(BuildContext context, String internshipName,
-      List<String> quizList, List<String> projectList) {
+  Widget _buildInternshipCard(
+      BuildContext context, String internshipName, List<String> quizList) {
     bool isUnlocked = userData?['internshipsList']?.any(
             (internship) => internship['internshipName'] == internshipName) ??
         false;
@@ -165,7 +119,6 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
               builder: (context) => QuizScreen(
                 internshipName: internshipName,
                 quizList: quizList,
-                projectList: projectList,
               ),
             ),
           );
@@ -174,6 +127,7 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
         }
       },
       child: Card(
+        color: Colors.black,
         elevation: 4,
         child: Column(
           children: [
@@ -194,7 +148,7 @@ class _CoursesHomeScreenState extends State<CoursesHomeScreen> {
                       TextButton(
                         onPressed: () =>
                             _showUnlockDialog(context, internshipName),
-                        child: Text("Unlock"),
+                        child: const Text(User == null ? "Login" : "Unlock"),
                       ),
                     ],
                   ),

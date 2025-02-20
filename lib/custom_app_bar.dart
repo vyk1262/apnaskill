@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'Profile.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   CustomAppBar();
@@ -10,13 +14,35 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   State<CustomAppBar> createState() => _CustomAppBarState();
 
   @override
-  Size get preferredSize => Size.fromHeight(70);
+  Size get preferredSize => Size.fromHeight(60);
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
+  Map<String, dynamic>? userData;
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserData();
+  }
+
+  Future<void> _fetchUserData() async {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      DocumentSnapshot snapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .get();
+
+      setState(() {
+        userData = snapshot.data() as Map<String, dynamic>?;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool isMobile = MediaQuery.of(context).size.width < 700;
+    User? user = FirebaseAuth.instance.currentUser;
+    bool isMobile = MediaQuery.of(context).size.width < 800;
     return AppBar(
       backgroundColor: Colors.black,
       automaticallyImplyLeading: false,
@@ -41,11 +67,17 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       )
                     : SizedBox.shrink(),
                 SizedBox(width: 80),
-                Image.asset(
-                  'assets/sf33.png',
-                  width: 40,
-                  height: 40,
-                  fit: BoxFit.contain,
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () => context.go('/'),
+                    child: Image.asset(
+                      'assets/sf45.png',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
                 RichText(
                   text: TextSpan(
@@ -70,6 +102,24 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ],
                   ),
                 ),
+                if (user != null)
+                  if (userData != null) ...[
+                    Spacer(),
+                    Text("Welcome: ${userData!['name']}",
+                        style: TextStyle(fontSize: 18)),
+                    IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Profile(
+                                  userData: userData), // Pass userData here
+                            ),
+                          );
+                        },
+                        icon: Icon(Icons.account_box)),
+                  ] else
+                    CircularProgressIndicator(),
                 Spacer(),
                 isMobile
                     ? SizedBox.shrink()
@@ -78,7 +128,11 @@ class _CustomAppBarState extends State<CustomAppBar> {
                           _buildNavButton(context,
                               label: 'Home', screenName: '/'),
                           _buildNavButton(context,
+                              label: 'Mentors', screenName: 'mentors'),
+                          _buildNavButton(context,
                               label: 'Courses', screenName: 'courses'),
+                          _buildNavButton(context,
+                              label: 'Quizzes', screenName: 'quizzes'),
                           TextButton(
                             onPressed: () async {
                               final Uri url =
@@ -99,8 +153,22 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               ),
                             ),
                           ),
-                          _buildNavButton(context,
-                              label: 'Login →', screenName: 'login'),
+                          if (user == null)
+                            _buildNavButton(context,
+                                label: 'Login →', screenName: 'login'),
+                          if (user != null)
+                            ElevatedButton.icon(
+                              icon: Icon(Icons.logout),
+                              label: Text("Logout"),
+                              onPressed: () async {
+                                await FirebaseAuth.instance.signOut();
+                                context.go('/');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 16.0, vertical: 8.0),
+                              ),
+                            ),
                         ],
                       ),
               ],
@@ -127,11 +195,22 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        icon: Icon(
+                          Icons.cancel,
+                          size: 34,
+                        ),
+                      ),
                       _buildDrawerButton(context,
                           label: 'Home', screenName: '/'),
-                      SizedBox(width: 20),
+                      SizedBox(height: 10),
+                      _buildDrawerButton(context,
+                          label: 'Mentors', screenName: 'mentors'),
+                      SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Courses', screenName: 'courses'),
+                      SizedBox(height: 10),
                       TextButton(
                         onPressed: () async {
                           final Uri url =
@@ -143,11 +222,16 @@ class _CustomAppBarState extends State<CustomAppBar> {
                             throw 'Could not launch $url';
                           }
                         },
-                        child: Text("Blogs"),
+                        child: Text(
+                          "Blogs",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
+                        ),
                       ),
-                      _buildDrawerButton(context,
-                          label: 'Blogs', screenName: 'blog'),
-                      SizedBox(width: 20),
+                      SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Login →', screenName: 'login'),
                     ],

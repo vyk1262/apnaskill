@@ -9,14 +9,12 @@ import '../constants/colors.dart';
 class QuizScreen extends StatefulWidget {
   final String internshipName;
   final List<String> quizList;
-  final List<String> projectList;
 
-  const QuizScreen(
-      {Key? key,
-      required this.internshipName,
-      required this.quizList,
-      required this.projectList})
-      : super(key: key);
+  const QuizScreen({
+    Key? key,
+    required this.internshipName,
+    required this.quizList,
+  }) : super(key: key);
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -38,7 +36,6 @@ class _QuizScreenState extends State<QuizScreen> {
   void initState() {
     super.initState();
     showGeneralInfo = true;
-    _loadProjectData();
     _loadCompletedItems();
   }
 
@@ -54,17 +51,6 @@ class _QuizScreenState extends State<QuizScreen> {
           List<String?>.filled(quizData.length, null, growable: false);
       selectedAssignment = null; // Reset assignment when quiz is loaded
     });
-  }
-
-  // Load assignment data from JSON files
-  Future<void> _loadProjectData() async {
-    for (String assignment in widget.projectList) {
-      final String jsonString = await DefaultAssetBundle.of(context).loadString(
-          'assets/${widget.internshipName}/projects/$assignment.json');
-      final Map<String, dynamic> jsonData = jsonDecode(jsonString);
-      assignmentData
-          .addAll(List<Map<String, dynamic>>.from(jsonData['result']));
-    }
   }
 
 // Load questions for the selected assignment
@@ -365,52 +351,6 @@ class _QuizScreenState extends State<QuizScreen> {
           }).toList(),
           const Divider(),
           const SizedBox(height: 10),
-          Text(
-            "Projects",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.blueGrey[800],
-            ),
-          ),
-          const SizedBox(height: 10),
-          ...widget.projectList.map((assignment) {
-            return Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              margin: const EdgeInsets.symmetric(vertical: 4),
-              color: selectedAssignment == assignment
-                  ? AppColors.primaryColor
-                  : null,
-              child: ListTile(
-                leading: Icon(Icons.assignment, color: Colors.blueGrey[700]),
-                title: Text(
-                  assignment.replaceAll('_', ' ').toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: selectedAssignment == assignment
-                        ? Colors.white
-                        : Colors.black,
-                  ),
-                ),
-                trailing: completedProjects.contains(assignment)
-                    ? Icon(Icons.done, color: Colors.green)
-                    : null,
-                selected: selectedAssignment == assignment,
-                onTap: () {
-                  setState(() {
-                    selectedAssignment = assignment;
-                    selectedQuiz = '';
-                    quizData.clear();
-                    showGeneralInfo = false;
-                    _loadProjectDetails(assignment);
-                  });
-                },
-              ),
-            );
-          }).toList(),
         ],
       ),
     );

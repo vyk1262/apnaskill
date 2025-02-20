@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
+import '../custom_app_bar.dart';
+
 class Courses extends StatefulWidget {
   const Courses({Key? key}) : super(key: key);
 
@@ -37,6 +39,7 @@ class _CoursesState extends State<Courses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: isLoading
           ? const Center(
               child: CircularProgressIndicator(

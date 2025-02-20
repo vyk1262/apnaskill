@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/home.dart';
 import 'package:skill_factorial/screens/courses.dart';
 import 'package:skill_factorial/screens/register.dart';
-import 'package:skill_factorial/widgets/helper_nav_func.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../screens/faqs.dart';
 
@@ -24,19 +24,32 @@ class Footer extends StatelessWidget {
             runSpacing: 16,
             children: [
               buildCtaButton(
-                  text: "Faqs",
-                  onPressed: () => navigateTo(
-                        context,
-                        FaqsScreen(),
-                        replace: false,
-                      )),
+                text: "Faqs",
+                onPressed: () => context.go('/faqs'),
+              ),
               buildCtaButton(text: "Home", onPressed: () => context.go('/')),
               buildCtaButton(
                   text: "Courses", onPressed: () => context.go('/courses')),
               buildCtaButton(
                   text: "Login", onPressed: () => context.go('/login')),
-              buildCtaButton(
-                  text: "Blogs", onPressed: () => context.go('/blog')),
+              TextButton(
+                onPressed: () async {
+                  final Uri url = Uri.parse('https://blog.skillfactorial.com');
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+                child: Text(
+                  "Blogs",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
             ],
           ),
 
