@@ -130,8 +130,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                           _buildNavButton(context,
                               label: 'Mentors', screenName: 'mentors'),
                           _buildNavButton(context,
-                              label: 'Courses', screenName: 'courses'),
-                          _buildNavButton(context,
                               label: 'Quizzes', screenName: 'quizzes'),
                           TextButton(
                             onPressed: () async {
@@ -207,9 +205,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Mentors', screenName: 'mentors'),
-                      SizedBox(height: 10),
-                      _buildDrawerButton(context,
-                          label: 'Courses', screenName: 'courses'),
                       SizedBox(height: 10),
                       TextButton(
                         onPressed: () async {

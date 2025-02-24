@@ -11,7 +11,7 @@ import '../constants/colors.dart';
 import '../custom_app_bar.dart';
 import '../model/user_model.dart';
 import '../widgets/home_page_widgets/cta_button.dart';
-import 'auth_screen_ui_widget.dart';
+import '../widgets/sign_in_screen_widgets/auth_screen_ui_widget.dart';
 import 'courses_home.dart';
 
 class AuthScreen extends StatefulWidget {

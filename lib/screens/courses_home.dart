@@ -1,10 +1,14 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/home.dart';
 
 import '../custom_app_bar.dart';
+import 'syllabus_view.dart';
 import 'quiz_screen.dart';
 
 class QuizListHome extends StatefulWidget {
@@ -28,10 +32,6 @@ class _QuizListHomeState extends State<QuizListHome> {
     'intro',
     'modules'
   ];
-  // List<String> pythonProjects = [
-  //   'python_project_1',
-  //   'python_project_2',
-  // ];
 
   List<String> webQuizTopics = [
     "html_intro",
@@ -46,12 +46,6 @@ class _QuizListHomeState extends State<QuizListHome> {
     "js_async",
     "js_apis",
   ];
-  // List<String> webProjects = [
-  //   'web_project_1',
-  //   'web_project_2',
-  //   'web_project_3',
-  //   'web_project_4',
-  // ];
 
   @override
   void initState() {
@@ -79,79 +73,92 @@ class _QuizListHomeState extends State<QuizListHome> {
 
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Row(
-        children: [
-          Expanded(
-            child: GridView.count(
-              padding: const EdgeInsets.all(16.0),
-              crossAxisCount: 4,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              children: [
-                _buildInternshipCard(
-                    context, "Python Programming", pythonQuizTopics),
-                _buildInternshipCard(context, "Web Development", webQuizTopics),
-                _buildInternshipCard(context, "Data Science", pythonQuizTopics),
-                _buildInternshipCard(
-                    context, "Machine Learning", pythonQuizTopics),
-                _buildInternshipCard(
-                    context, "Mobile App Development", pythonQuizTopics),
-              ],
-            ),
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          children: [
+            _buildInternshipTile(
+                context, "Python Programming", pythonQuizTopics),
+            _buildInternshipTile(context, "Web Development", webQuizTopics),
+            _buildInternshipTile(context, "Data Science", pythonQuizTopics),
+            _buildInternshipTile(context, "Machine Learning", pythonQuizTopics),
+            _buildInternshipTile(
+                context, "Mobile App Development", pythonQuizTopics),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildInternshipCard(
+  Widget _buildInternshipTile(
       BuildContext context, String internshipName, List<String> quizList) {
     bool isUnlocked = userData?['internshipsList']?.any(
             (internship) => internship['internshipName'] == internshipName) ??
         false;
 
-    return InkWell(
-      onTap: () {
-        if (isUnlocked) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => QuizScreen(
-                internshipName: internshipName,
-                quizList: quizList,
-              ),
-            ),
-          );
-        } else {
-          _showUnlockDialog(context, internshipName);
-        }
-      },
-      child: Card(
-        color: Colors.black,
-        elevation: 4,
-        child: Column(
+    return Card(
+      color: Colors.black87,
+      elevation: 4,
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              child: Center(
-                child: Text(
-                  internshipName,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
+            Row(
+              children: [
+                Icon(
+                  isUnlocked ? Icons.check_circle : Icons.lock,
+                  color: isUnlocked ? Colors.green : Colors.red,
+                  size: 40,
                 ),
-              ),
+                const SizedBox(width: 12),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      internshipName,
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      isUnlocked ? "Unlocked" : "Locked - Tap to Unlock",
+                      style: TextStyle(
+                          color: isUnlocked ? Colors.green : Colors.red),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            isUnlocked
-                ? Icon(Icons.check_circle, color: Colors.green, size: 40)
-                : Column(
-                    children: [
-                      Icon(Icons.lock, color: Colors.red, size: 40),
-                      TextButton(
-                        onPressed: () =>
-                            _showUnlockDialog(context, internshipName),
-                        child: const Text(User == null ? "Login" : "Unlock"),
-                      ),
-                    ],
-                  ),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    if (isUnlocked) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuizScreen(
+                            internshipName: internshipName,
+                            quizList: quizList,
+                          ),
+                        ),
+                      );
+                    } else {
+                      _showUnlockDialog(context, internshipName);
+                    }
+                  },
+                  child: Text(isUnlocked ? "Start Quiz" : "Unlock"),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    _loadSyllabus(context, internshipName);
+                  },
+                  child: const Text("Syllabus"),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -213,6 +220,59 @@ class _QuizListHomeState extends State<QuizListHome> {
         ])
       });
       _fetchUserData(); // Refresh user data to reflect the new unlocked internship
+    }
+  }
+
+  Future<void> _loadSyllabus(
+      BuildContext context, String internshipName) async {
+    try {
+      String jsonString = await rootBundle.loadString('assets/api-data.json');
+      final jsonDataAll = jsonDecode(jsonString);
+
+      if (jsonDataAll['status'] == 'success' && jsonDataAll['result'] is List) {
+        List<dynamic> results = jsonDataAll['result'];
+
+        List<dynamic>?
+            syllabusData; // Declare syllabusData outside the loop, nullable
+
+        for (var subjectData in results) {
+          if (subjectData is Map &&
+              subjectData.containsKey('subject') &&
+              subjectData['subject'] == internshipName &&
+              subjectData.containsKey('syllabus') &&
+              subjectData['syllabus'] is List) {
+            syllabusData = subjectData['syllabus']; // Assign the syllabus here
+            break; // Exit the loop once the subject is found
+          }
+        }
+
+        if (syllabusData != null) {
+          // Check if syllabusData was found
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SyllabusScreen(
+                internshipName: internshipName,
+                syllabusData: syllabusData, // Pass the syllabusData
+              ),
+            ),
+          );
+        } else {
+          // Handle the case where the subject is not found
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Syllabus not found for $internshipName.')),
+          );
+        }
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Invalid JSON format.')),
+        );
+      }
+    } catch (e) {
+      print("Error loading syllabus: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error loading syllabus. Please try again.')),
+      );
     }
   }
 }

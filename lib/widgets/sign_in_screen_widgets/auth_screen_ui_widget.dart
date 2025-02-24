@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
 class SignInForm extends StatelessWidget {
   final TextEditingController emailController;

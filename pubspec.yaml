@@ -84,9 +84,7 @@ flutter:
     - assets/faqs.json
     - assets/app-data-text.json
     - assets/Python Programming/quizzes/
-    - assets/Python Programming/projects/
     - assets/Web Development/quizzes/
-    - assets/Web Development/projects/
     - assets/mentors.json
 
   # An image asset can refer to one or more resolution-specific "variants", see

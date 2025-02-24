@@ -2,7 +2,7 @@
   "status": "success",
   "result": [
     {
-      "subject": "Python",
+      "subject": "Python Programming",
       "syllabus": [
         {
           "module": "Module 1: Introduction to Python",
@@ -100,6 +100,101 @@
     },
     {
       "subject": "HTML",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to HTML",
+          "topics": [
+            "Overview of HTML and its history",
+            "Understanding the structure of an HTML document",
+            "Basic HTML tags: `<html>`, `<head>`, `<body>`, `<title>`, `<h1>`-`<h6>`, `<p>`",
+            "Setting up a basic HTML page"
+          ]
+        },
+        {
+          "module": "Module 2: Text Formatting and Semantic HTML",
+          "topics": [
+            "Formatting text with HTML tags: `<b>`, `<i>`, `<u>`, `<strong>`, `<em>`",
+            "Introduction to semantic HTML elements: `<header>`, `<nav>`, `<section>`, `<article>`, `<aside>`, `<footer>`",
+            "Using `<div>` and `<span>` for layout and styling",
+            "Working with lists: ordered `<ol>`, unordered `<ul>`, and definition lists `<dl>`"
+          ]
+        },
+        {
+          "module": "Module 3: Working with Images and Multimedia",
+          "topics": [
+            "Adding images using the `<img>` tag",
+            "Attributes like `src`, `alt`, `title`, `width`, and `height`",
+            "Embedding videos with `<video>` and audio with `<audio>`",
+            "Using `<figure>` and `<figcaption>` for image and media captions"
+          ]
+        },
+        {
+          "module": "Module 4: Links and Navigation",
+          "topics": [
+            "Creating hyperlinks with the `<a>` tag",
+            "Using anchor tags for internal and external linking",
+            "Building navigation menus with lists and links",
+            "Introduction to breadcrumbs and pagination"
+          ]
+        },
+        {
+          "module": "Module 5: Tables and Data Representation",
+          "topics": [
+            "Building tables with `<table>`, `<tr>`, `<td>`, `<th>`, `<caption>`, and `<thead>`",
+            "Advanced table elements: `<colgroup>`, `<col>`, `<tfoot>`",
+            "Styling tables with CSS",
+            "Using tables for data, not for layout"
+          ]
+        },
+        {
+          "module": "Module 6: Forms and User Input",
+          "topics": [
+            "Introduction to forms: `<form>`, `<input>`, `<textarea>`, `<button>`, `<select>`, `<option>`",
+            "Form attributes: `action`, `method`, `name`, `placeholder`, `required`",
+            "Advanced form controls: `<fieldset>`, `<legend>`, `<datalist>`, `<output>`, `<progress>`, `<meter>`",
+            "Client-side form validation"
+          ]
+        },
+        {
+          "module": "Module 7: HTML5 APIs and Interactivity",
+          "topics": [
+            "Introduction to HTML5 APIs: Geolocation, Drag and Drop, Web Storage",
+            "Using the `<canvas>` element for 2D graphics",
+            "Working with SVG (Scalable Vector Graphics)",
+            "Integrating HTML with JavaScript for dynamic content"
+          ]
+        },
+        {
+          "module": "Module 8: Responsive Web Design",
+          "topics": [
+            "Introduction to responsive design and mobile-first approach",
+            "Using the viewport meta tag",
+            "Creating responsive layouts with media queries",
+            "Implementing flexible images and grid systems"
+          ]
+        },
+        {
+          "module": "Module 9: SEO and Performance Optimization",
+          "topics": [
+            "Understanding `<meta>` tags and their role in SEO",
+            "Best practices for optimizing HTML for search engines",
+            "Improving page load speed with optimized HTML",
+            "Using semantic HTML for better accessibility and SEO"
+          ]
+        },
+        {
+          "module": "Module 10: Accessibility and Best Practices",
+          "topics": [
+            "Ensuring web accessibility with ARIA (Accessible Rich Internet Applications)",
+            "Common accessibility issues and how to avoid them",
+            "HTML coding best practices",
+            "Future trends in HTML and web development"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Web Development",
       "syllabus": [
         {
           "module": "Module 1: Introduction to HTML",
@@ -1484,6 +1579,101 @@
     },
     {
       "subject": "Data Structures and Algorithms",
+      "syllabus": [
+        {
+          "module": "Module 1: Introduction to Data Structures",
+          "topics": [
+            "Overview of data structures and algorithms",
+            "Complexity analysis: Big O notation",
+            "Time and space complexity",
+            "Basic operations and use cases"
+          ]
+        },
+        {
+          "module": "Module 2: Arrays and Strings",
+          "topics": [
+            "Array basics: creation, indexing, and traversal",
+            "Multi-dimensional arrays",
+            "String manipulation and operations",
+            "Common algorithms: sorting and searching"
+          ]
+        },
+        {
+          "module": "Module 3: Linked Lists",
+          "topics": [
+            "Introduction to linked lists",
+            "Single linked lists: insertion, deletion, and traversal",
+            "Doubly linked lists: operations and use cases",
+            "Circular linked lists"
+          ]
+        },
+        {
+          "module": "Module 4: Stacks and Queues",
+          "topics": [
+            "Stack basics: implementation and applications",
+            "Queue basics: implementation and applications",
+            "Circular queues",
+            "Priority queues and deque"
+          ]
+        },
+        {
+          "module": "Module 5: Trees",
+          "topics": [
+            "Binary trees: traversal methods (inorder, preorder, postorder)",
+            "Binary search trees (BST): insertion, deletion, and searching",
+            "Balanced trees: AVL trees and Red-Black trees",
+            "Heaps: min-heaps and max-heaps"
+          ]
+        },
+        {
+          "module": "Module 6: Graphs",
+          "topics": [
+            "Graph representation: adjacency matrix and adjacency list",
+            "Graph traversal algorithms: BFS and DFS",
+            "Shortest path algorithms: Dijkstra's and Bellman-Ford",
+            "Minimum spanning trees: Prim's and Kruskal's algorithms"
+          ]
+        },
+        {
+          "module": "Module 7: Hashing",
+          "topics": [
+            "Introduction to hashing",
+            "Hash functions and collision resolution techniques",
+            "Hash tables and their applications",
+            "Open addressing and chaining"
+          ]
+        },
+        {
+          "module": "Module 8: Advanced Algorithms",
+          "topics": [
+            "Divide and conquer algorithms",
+            "Dynamic programming: concepts and common problems",
+            "Greedy algorithms",
+            "Backtracking and branch-and-bound"
+          ]
+        },
+        {
+          "module": "Module 9: Algorithm Design and Analysis",
+          "topics": [
+            "Algorithm design techniques",
+            "Analyzing algorithm performance",
+            "Understanding and solving complex problems",
+            "Algorithm optimization strategies"
+          ]
+        },
+        {
+          "module": "Module 10: Final Project and Review",
+          "topics": [
+            "Integrating data structures and algorithms in projects",
+            "Final project development",
+            "Review of key concepts and techniques",
+            "Presentation of final project"
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Mobile App Development",
       "syllabus": [
         {
           "module": "Module 1: Introduction to Data Structures",

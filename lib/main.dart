@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:skill_factorial/screens/courses.dart';
+import 'package:skill_factorial/screens/syllabus_view.dart';
 import 'package:skill_factorial/screens/courses_home.dart';
 import 'package:skill_factorial/screens/faqs.dart';
 import 'package:skill_factorial/screens/mentors.dart';
@@ -38,10 +38,6 @@ final router = GoRouter(
       path: '/',
       builder: (context, state) => const HomePage(),
       routes: [
-        GoRoute(
-          path: 'courses',
-          builder: (context, state) => const Courses(),
-        ),
         GoRoute(
           path: 'quizzes',
           builder: (context, state) => const QuizListHome(),
@@ -127,6 +123,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: AppColors.primaryColor,
         ),
         // cardColor: Colors.black87,
+        cardTheme: const CardTheme(
+          color: Colors.black87,
+        ),
       ),
       // home: isMobile ? MobileTabs() : Tabs(),
     );
