@@ -25,7 +25,7 @@ class HeroWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomColorizeAnimatedText(
-          text: 'Expand Your Knowledge Through Practice With Quizzes',
+          text: 'Boost Your Skills and Maximize Your Productivity',
           colors: [
             Colors.white,
             Colors.blue,
@@ -34,28 +34,22 @@ class HeroWidget extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         Text(
-          "Learn",
+          'Enroll, Evaluate, Enhance, and Upskill,',
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.width > 700 ? 44 : 32,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(
-          "Test",
-          style: TextStyle(
-            fontSize: MediaQuery.of(context).size.width > 700 ? 44 : 32,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          "Grow",
-          style: TextStyle(
-            fontSize: MediaQuery.of(context).size.width > 700 ? 44 : 32,
-            fontWeight: FontWeight.bold,
-          ),
+        CustomColorizeAnimatedText(
+          text: "Learn, Test, Excel, and Achieve",
+          colors: [
+            Colors.white,
+            Colors.blue,
+            Colors.deepPurple,
+          ],
         ),
         const CustomTypewriterAnimatedText(
-          text: 'Expand Your Knowledge Through Practice With Quizzes',
+          text: 'Expand Your Knowledge With Quizzes',
           color: Colors.deepPurple,
         ),
         const SizedBox(height: 20),
