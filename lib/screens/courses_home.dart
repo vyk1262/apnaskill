@@ -20,6 +20,7 @@ class QuizListHome extends StatefulWidget {
 
 class _QuizListHomeState extends State<QuizListHome> {
   Map<String, dynamic>? userData;
+  User? user = FirebaseAuth.instance.currentUser;
   List<String> pythonQuizTopics = [
     'files',
     'functions',
@@ -69,8 +70,6 @@ class _QuizListHomeState extends State<QuizListHome> {
 
   @override
   Widget build(BuildContext context) {
-    User? user = FirebaseAuth.instance.currentUser;
-
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
@@ -139,6 +138,10 @@ class _QuizListHomeState extends State<QuizListHome> {
               children: [
                 ElevatedButton(
                   onPressed: () {
+                    if (user == null) {
+                      GoRouter.of(context).go('/login');
+                      return;
+                    }
                     if (isUnlocked) {
                       Navigator.push(
                         context,
