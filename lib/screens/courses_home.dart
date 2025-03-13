@@ -77,12 +77,12 @@ class _QuizListHomeState extends State<QuizListHome> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            _buildInternshipTile(
+            buildInternshipTile(
                 context, "Python Programming", pythonQuizTopics),
-            _buildInternshipTile(context, "Web Development", webQuizTopics),
-            _buildInternshipTile(context, "Data Science", pythonQuizTopics),
-            _buildInternshipTile(context, "Machine Learning", pythonQuizTopics),
-            _buildInternshipTile(
+            buildInternshipTile(context, "Web Development", webQuizTopics),
+            buildInternshipTile(context, "Data Science", pythonQuizTopics),
+            buildInternshipTile(context, "Machine Learning", pythonQuizTopics),
+            buildInternshipTile(
                 context, "Mobile App Development", pythonQuizTopics),
           ],
         ),
@@ -90,7 +90,7 @@ class _QuizListHomeState extends State<QuizListHome> {
     );
   }
 
-  Widget _buildInternshipTile(
+  Widget buildInternshipTile(
       BuildContext context, String internshipName, List<String> quizList) {
     bool isUnlocked = userData?['internshipsList']?.any(
             (internship) => internship['internshipName'] == internshipName) ??
@@ -107,6 +107,11 @@ class _QuizListHomeState extends State<QuizListHome> {
           children: [
             Row(
               children: [
+                Icon(
+                  Icons.book,
+                  color: isUnlocked ? Colors.green : Colors.red,
+                  size: 200,
+                ),
                 Icon(
                   isUnlocked ? Icons.check_circle : Icons.lock,
                   color: isUnlocked ? Colors.green : Colors.red,

@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/widgets/grid_dot_paint.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/hero.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/why.dart';
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> {
           Flexible(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(0.0),
                 child: Column(
                   children: [
                     HeroWidget(),
