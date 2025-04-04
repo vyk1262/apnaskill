@@ -141,7 +141,6 @@ class _HomePageState extends State<HomePage> {
                           .toList(),
                     ),
                     SizedBox(height: 20),
-
                     // Padding(
                     //   padding: const EdgeInsets.all(16.0),
                     //   child: Column(
@@ -155,6 +154,8 @@ class _HomePageState extends State<HomePage> {
                     //     ],
                     //   ),
                     // ),
+                    SizedBox(height: 40),
+                    WhyChooseUs(),
                     const SizedBox(height: 40),
                     Container(
                       width: double.infinity,
@@ -186,8 +187,6 @@ class _HomePageState extends State<HomePage> {
                         }).toList(),
                       ),
                     ),
-                    SizedBox(height: 40),
-                    WhyChooseUs(),
                     SizedBox(height: 40),
                     // ContactForm(),
                     Container(
