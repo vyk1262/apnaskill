@@ -95,79 +95,102 @@ class _QuizListHomeState extends State<QuizListHome> {
             (internship) => internship['internshipName'] == internshipName) ??
         false;
 
-    return Card(
-      color: Colors.black87,
-      elevation: 4,
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.book,
-                  color: isUnlocked ? Colors.green : Colors.red,
-                  size: 200,
-                ),
-                Icon(
-                  isUnlocked ? Icons.check_circle : Icons.lock,
-                  color: isUnlocked ? Colors.green : Colors.red,
-                  size: 40,
-                ),
-                const SizedBox(width: 12),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      internshipName,
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      isUnlocked ? "Unlocked" : "Locked - Tap to Unlock",
-                      style: TextStyle(
-                          color: isUnlocked ? Colors.green : Colors.red),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    if (user == null) {
-                      GoRouter.of(context).go('/login');
-                      return;
-                    }
-                    if (isUnlocked) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => QuizScreen(
-                            internshipName: internshipName,
-                            quizList: quizList,
-                          ),
+                if (MediaQuery.of(context).size.width > 700)
+                  Image.asset(
+                    'assets/ai.jpg',
+                    width: 200,
+                    height: 200,
+                    fit: BoxFit.cover,
+                  ),
+                const SizedBox(width: 10),
+                Container(
+                  width: MediaQuery.of(context).size.width < 700
+                      ? MediaQuery.of(context).size.width / 1.4
+                      : MediaQuery.of(context).size.width / 2,
+                  color: Colors.black,
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      if (MediaQuery.of(context).size.width < 700)
+                        Image.asset(
+                          'assets/ai.jpg',
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.cover,
                         ),
-                      );
-                    } else {
-                      _showUnlockDialog(context, internshipName);
-                    }
-                  },
-                  child: Text(isUnlocked ? "Start Quiz" : "Unlock"),
-                ),
-                const SizedBox(width: 8),
-                ElevatedButton(
-                  onPressed: () {
-                    _loadSyllabus(context, internshipName);
-                  },
-                  child: const Text("Syllabus"),
+                      const SizedBox(height: 5),
+                      Icon(
+                        isUnlocked ? Icons.check_circle : Icons.lock,
+                        color: isUnlocked ? Colors.green : Colors.red,
+                        size: 40,
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        internshipName,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        isUnlocked
+                            ? "Unlocked - Start Learning with Practice"
+                            : "Locked - Tap to Unlock",
+                        style: TextStyle(
+                            color: isUnlocked ? Colors.green : Colors.red),
+                      ),
+                      const SizedBox(height: 5),
+                      ElevatedButton(
+                        onPressed: () {
+                          if (user == null) {
+                            GoRouter.of(context).go('/login');
+                            return;
+                          }
+                          if (isUnlocked) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => QuizScreen(
+                                  internshipName: internshipName,
+                                  quizList: quizList,
+                                ),
+                              ),
+                            );
+                          } else {
+                            _showUnlockDialog(context, internshipName);
+                          }
+                        },
+                        child: Text(isUnlocked ? "Start Quiz" : "Unlock"),
+                      ),
+                      const SizedBox(height: 5),
+                      ElevatedButton(
+                        onPressed: () {
+                          _loadSyllabus(context, internshipName);
+                        },
+                        child: const Text("Syllabus"),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

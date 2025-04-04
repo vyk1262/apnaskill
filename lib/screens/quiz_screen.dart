@@ -248,7 +248,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Widget buildSideBar() {
     return Container(
-      color: Colors.blueGrey[50],
+      color: Colors.black,
       child: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
@@ -260,13 +260,11 @@ class _QuizScreenState extends State<QuizScreen> {
             label: Text(
               "Go Back",
               style: TextStyle(
-                color: Colors.white,
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primaryColor,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -291,10 +289,11 @@ class _QuizScreenState extends State<QuizScreen> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: ListTile(
-              leading: Icon(Icons.info, color: Colors.blueGrey[700]),
+              leading: Icon(
+                Icons.info,
+              ),
               title: const Text("GENERAL INFO"),
               selected: showGeneralInfo,
-              tileColor: showGeneralInfo ? Colors.blue[100] : null,
               onTap: () {
                 setState(() {
                   showGeneralInfo = true;
@@ -312,7 +311,6 @@ class _QuizScreenState extends State<QuizScreen> {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.blueGrey[800],
             ),
           ),
           const SizedBox(height: 10),
@@ -323,14 +321,12 @@ class _QuizScreenState extends State<QuizScreen> {
                 borderRadius: BorderRadius.circular(10),
               ),
               margin: const EdgeInsets.symmetric(vertical: 4),
-              color: selectedQuiz == topic ? AppColors.primaryColor : null,
               child: ListTile(
                 leading: Icon(Icons.quiz),
                 title: Text(
                   topic.replaceAll('-', ' ').toUpperCase(),
                   style: TextStyle(
                     fontSize: 18,
-                    color: selectedQuiz == topic ? Colors.white : Colors.black,
                   ),
                 ),
                 trailing: completedQuizzes.contains(topic)
@@ -359,8 +355,6 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget buildContent() {
     if (showGeneralInfo) {
       return buildGeneralInfoContent();
-    } else if (projectdetailsData.isNotEmpty) {
-      return buildAssignmentContent();
     } else if (quizData.isNotEmpty) {
       return buildQuizContent();
     } else {
@@ -396,7 +390,6 @@ class _QuizScreenState extends State<QuizScreen> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blueGrey[800],
                         ),
                       ),
                       const SizedBox(height: 8),
@@ -409,7 +402,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               entry.value,
                               style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.blueGrey[700],
+                                color: Colors.white54,
                               ),
                             ),
                             value: entry.key,
@@ -419,8 +412,6 @@ class _QuizScreenState extends State<QuizScreen> {
                                 _userAnswers[index] = value;
                               });
                             },
-                            activeColor:
-                                Colors.blue, // Color for selected radio
                           ),
                         );
                       }).toList(),
@@ -434,72 +425,6 @@ class _QuizScreenState extends State<QuizScreen> {
         ElevatedButton(
           onPressed: _submitQuiz,
           child: const Text('Submit'),
-        ),
-      ],
-    );
-  }
-
-  Widget buildAssignmentContent() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Display project details as a list of cards with padding and improved styling
-        Expanded(
-          child: ListView.builder(
-            itemCount: projectdetailsData.length,
-            itemBuilder: (context, index) {
-              final question = projectdetailsData[index];
-              return Card(
-                elevation: 4, // Add subtle shadow for better separation
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(12), // Rounded corners for the card
-                ),
-                margin: const EdgeInsets.symmetric(
-                    vertical: 8, horizontal: 16), // Card margin
-                child: Padding(
-                  padding:
-                      const EdgeInsets.all(16.0), // Padding inside the card
-                  child: Text(
-                    question,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.blueGrey[800], // Color for text
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-
-        // Space between the card list and input field
-        SizedBox(height: 16),
-
-        // TextField for entering the project URL with improved styling
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: TextField(
-            decoration: InputDecoration(
-              labelText: 'Project URL',
-              labelStyle: TextStyle(
-                fontSize: 16,
-                color: Colors.blueGrey[600],
-              ),
-              border: OutlineInputBorder(
-                borderRadius:
-                    BorderRadius.circular(8), // Rounded corners for input field
-                borderSide:
-                    BorderSide(color: Colors.blueGrey[300]!), // Border color
-              ),
-              contentPadding: const EdgeInsets.symmetric(
-                  vertical: 16, horizontal: 12), // Padding inside the TextField
-            ),
-            onSubmitted: (url) {
-              _submitProjectDetails(url); // Call to submit project details
-            },
-          ),
         ),
       ],
     );

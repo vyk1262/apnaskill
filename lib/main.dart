@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:skill_factorial/screens/explore.dart';
 import 'package:skill_factorial/screens/syllabus_view.dart';
 import 'package:skill_factorial/screens/courses_home.dart';
 import 'package:skill_factorial/screens/faqs.dart';
@@ -51,6 +52,10 @@ final router = GoRouter(
           builder: (context, state) => const Mentors(),
         ),
         GoRoute(
+          path: 'explore',
+          builder: (context, state) => Explore(),
+        ),
+        GoRoute(
           path: 'faqs',
           builder: (context, state) => FaqsScreen(),
         ),
@@ -74,13 +79,44 @@ class MyApp extends StatelessWidget {
         primaryColor: AppColors.primaryColor,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          color: AppColors.primaryColor,
-          titleTextStyle: TextStyle(color: Colors.white),
+          color: Colors.black,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.normal,
+          ),
         ),
         iconTheme: const IconThemeData(
           color: AppColors.tertiaryColor,
         ),
         textTheme: const TextTheme(
+          displayLarge: TextStyle(
+            color: Colors.white,
+          ),
+          displayMedium: TextStyle(
+            color: Colors.white,
+          ),
+          displaySmall: TextStyle(
+            color: Colors.white,
+          ),
+          headlineLarge: TextStyle(
+            color: Colors.white,
+          ),
+          headlineMedium: TextStyle(
+            color: Colors.white,
+          ),
+          headlineSmall: TextStyle(
+            color: Colors.white,
+          ),
+          titleLarge: TextStyle(
+            color: Colors.white,
+          ),
+          titleMedium: TextStyle(
+            color: Colors.white,
+          ),
+          titleSmall: TextStyle(
+            color: Colors.white,
+          ),
           bodyLarge: TextStyle(
             color: Colors.white,
           ),
@@ -89,6 +125,25 @@ class MyApp extends StatelessWidget {
           ),
           bodySmall: TextStyle(
             color: Colors.white,
+          ),
+          labelLarge: TextStyle(
+            color: Colors.white,
+          ),
+          labelMedium: TextStyle(
+            color: Colors.white,
+          ),
+          labelSmall: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        listTileTheme: const ListTileThemeData(
+          iconColor: Colors.white,
+          textColor: Colors.white,
+          selectedColor: Colors.white,
+          tileColor: Colors.purple,
+          selectedTileColor: Colors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
         inputDecorationTheme: const InputDecorationTheme(
@@ -125,6 +180,16 @@ class MyApp extends StatelessWidget {
         // cardColor: Colors.black87,
         cardTheme: const CardTheme(
           color: Colors.black87,
+        ),
+        // radio list tile theme
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateColor.resolveWith((states) {
+            if (states.contains(MaterialState.selected)) {
+              return Colors.green; // Color when selected
+            }
+            return Colors.white; // Default color
+          }),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
       ),
       // home: isMobile ? MobileTabs() : Tabs(),

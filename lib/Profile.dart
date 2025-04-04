@@ -9,8 +9,9 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black54,
-      appBar: AppBar(title: Text("Profile "), backgroundColor: Colors.blue),
+      appBar: AppBar(
+        title: Text("Profile "),
+      ),
       body: Center(
         child: userData != null
             ? Column(

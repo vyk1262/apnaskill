@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../custom_app_bar.dart';
+
 class Explore extends StatefulWidget {
   @override
   _ExploreState createState() => _ExploreState();
@@ -18,8 +20,13 @@ class _ExploreState extends State<Explore> {
   Widget _buildLinkTile(String title, String url) {
     return ListTile(
       title: Text(title,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-      trailing: Icon(Icons.open_in_new, color: Colors.blue),
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          )),
+      trailing: Icon(
+        Icons.open_in_new,
+      ),
       onTap: () => _launchURL(url),
     );
   }
@@ -27,6 +34,7 @@ class _ExploreState extends State<Explore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(

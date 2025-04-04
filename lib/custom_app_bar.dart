@@ -42,9 +42,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
-    bool isMobile = MediaQuery.of(context).size.width < 800;
+    bool isMobile = MediaQuery.of(context).size.width < 850;
     return AppBar(
-      backgroundColor: Colors.black,
       automaticallyImplyLeading: false,
       flexibleSpace: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -131,6 +130,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               label: 'Mentors', screenName: 'mentors'),
                           _buildNavButton(context,
                               label: 'Quizzes', screenName: 'quizzes'),
+                          _buildNavButton(context,
+                              label: 'Explore', screenName: 'explore'),
                           TextButton(
                             onPressed: () async {
                               final Uri url =
@@ -205,6 +206,11 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Mentors', screenName: 'mentors'),
+                      SizedBox(height: 10),
+                      _buildDrawerButton(context,
+                          label: 'Quizzes', screenName: 'quizzes'),
+                      _buildDrawerButton(context,
+                          label: "Explore", screenName: 'explore'),
                       SizedBox(height: 10),
                       TextButton(
                         onPressed: () async {
