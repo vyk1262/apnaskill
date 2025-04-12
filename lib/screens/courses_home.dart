@@ -21,37 +21,14 @@ class QuizListHome extends StatefulWidget {
 class _QuizListHomeState extends State<QuizListHome> {
   Map<String, dynamic>? userData;
   User? user = FirebaseAuth.instance.currentUser;
-  List<String> pythonQuizTopics = [
-    'files',
-    'functions',
-    'oops',
-    'error_handling',
-    'data_structures',
-    'advanced',
-    'applications',
-    'control_flow',
-    'intro',
-    'modules'
-  ];
-
-  List<String> webQuizTopics = [
-    "html_intro",
-    "html_forms",
-    "html_media",
-    "html_apis",
-    "css_intro",
-    "css_responsive",
-    "css_advanced",
-    "js_intro",
-    "js_bom",
-    "js_async",
-    "js_apis",
-  ];
+  List<String> pythonQuizTopics = [];
+  List<String> webQuizTopics = [];
 
   @override
   void initState() {
     super.initState();
     _fetchUserData();
+    _loadQuizTopics();
   }
 
   Future<void> _fetchUserData() async {
@@ -65,6 +42,29 @@ class _QuizListHomeState extends State<QuizListHome> {
       setState(() {
         userData = snapshot.data() as Map<String, dynamic>?;
       });
+    }
+  }
+
+  Future<void> _loadQuizTopics() async {
+    try {
+      final pythonData =
+          await rootBundle.loadString('assets/Python Programming/topics.json');
+      final pythonList = (jsonDecode(pythonData) as List).cast<String>();
+      setState(() {
+        pythonQuizTopics = pythonList;
+      });
+
+      final webData =
+          await rootBundle.loadString('assets/Web Development/topics.json');
+      final webList = (jsonDecode(webData) as List).cast<String>();
+      setState(() {
+        webQuizTopics = webList;
+      });
+    } catch (e) {
+      print('Error loading quiz topics: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error loading quiz topics. Please try again.')),
+      );
     }
   }
 

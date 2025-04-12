@@ -84,8 +84,11 @@ flutter:
   assets:
     - assets/
     - assets/faqs.json
+    - assets/explore.json
     - assets/app-data-text.json
+    - assets/Python Programming/
     - assets/Python Programming/quizzes/
+    - assets/Web Development/
     - assets/Web Development/quizzes/
     - assets/mentors.json
 
