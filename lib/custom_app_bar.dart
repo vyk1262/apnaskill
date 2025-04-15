@@ -132,26 +132,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               label: 'Quizzes', screenName: 'quizzes'),
                           _buildNavButton(context,
                               label: 'Explore', screenName: 'explore'),
-                          TextButton(
-                            onPressed: () async {
-                              final Uri url =
-                                  Uri.parse('https://blog.skillfactorial.com');
-                              if (await canLaunchUrl(url)) {
-                                await launchUrl(url,
-                                    mode: LaunchMode.externalApplication);
-                              } else {
-                                throw 'Could not launch $url';
-                              }
-                            },
-                            child: Text(
-                              "Blogs",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
+                          _buildNavButton(context,
+                              label: 'Blogs', screenName: 'blogs'),
                           if (user == null)
                             _buildNavButton(context,
                                 label: 'Login →', screenName: 'login'),
@@ -187,7 +169,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           body: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: Container(
-              color: Colors.black.withOpacity(0.95),
+              color: Colors.black87,
               child: Center(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,

@@ -5,59 +5,75 @@ import 'package:skill_factorial/widgets/grid_dot_paint.dart';
 
 import 'cta_button.dart';
 
-class HeroWidget extends StatelessWidget {
+class HeroWidget extends StatefulWidget {
   const HeroWidget({super.key});
 
+  @override
+  State<HeroWidget> createState() => _HeroWidgetState();
+}
+
+class _HeroWidgetState extends State<HeroWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.9,
-      child: GridDotsBackground(
-        child: Center(
-          child: heroData(context),
-        ),
+      child: Center(
+        child: heroData(context),
       ),
     );
   }
 
   Widget heroData(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).size.width < 850;
+    return isMobile
+        ? Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              newMethodOne(context),
+              const SizedBox(height: 20),
+              newMethodTwo(context),
+            ],
+          )
+        : Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: newMethodOne(context),
+              ),
+              Expanded(
+                flex: 1,
+                child: newMethodTwo(context),
+              ),
+            ],
+          );
+  }
+
+  Column newMethodOne(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        CustomColorizeAnimatedText(
-          text: 'Boost Your Skills and Maximize Your Productivity',
-          colors: [
-            Colors.white,
-            Colors.blue,
-            Colors.deepPurple,
-          ],
-        ),
         const SizedBox(height: 20),
-        Text(
-          'Enroll, Evaluate, Enhance, and Upskill,',
-          style: TextStyle(
-            fontSize: MediaQuery.of(context).size.width > 700 ? 44 : 32,
-            fontWeight: FontWeight.bold,
-          ),
+        Image.asset(
+          'assets/sf_home_2.png',
         ),
-        CustomColorizeAnimatedText(
-          text: "Learn, Test, Excel, and Achieve",
-          colors: [
-            Colors.white,
-            Colors.blue,
-            Colors.deepPurple,
-          ],
-        ),
-        const CustomTypewriterAnimatedText(
-          text: 'Expand Your Knowledge With Quizzes',
-          color: Colors.deepPurple,
-        ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 50),
         buildCtaButton(
           text: 'Start Learning',
           onPressed: () => context.go('/login'),
         ),
+      ],
+    );
+  }
+
+  Column newMethodTwo(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
         const SizedBox(height: 20),
+        Image.asset(
+          'assets/sf_home_1.png',
+        ),
+        const SizedBox(height: 50),
         _buildContactButton(context),
       ],
     );
