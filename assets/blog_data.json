@@ -4,55 +4,71 @@
     "description": "A JavaScript library for creating animations and interactive effects",
     "date": "03 Apr 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "8 min read",
+    "category": "JavaScript"
   },
   {
     "title": "The 13 software engineering laws",
     "description": "A collection of software engineering laws that are useful for developers",
     "date": "08 Apr 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "5 min read",
+    "category": "Software Engineering"
   },
   {
     "title": "Python for Data Science",
     "description": "A comprehensive guide to using Python for data science and machine learning",
     "date": "15 Mar 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "10 min read",
+    "category": "Data Science"
   },
   {
     "title": "Understanding React Hooks",
     "description": "A deep dive into React Hooks and how to use them effectively",
     "date": "20 Mar 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "7 min read",
+    "category": "React"
   },
   {
     "title": "Building RESTful APIs with Node.js",
     "description": "A step-by-step guide to building RESTful APIs using Node.js and Express",
     "date": "25 Mar 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "12 min read",
+    "category": "Node.js"
   },
   {
     "title": "CSS Grid Layout",
     "description": "An introduction to CSS Grid Layout and how to use it for responsive design",
     "date": "30 Mar 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "6 min read",
+    "category": "CSS"
   },
   {
     "title": "Introduction to Machine Learning",
     "description": "A beginner's guide to machine learning concepts and algorithms",
     "date": "05 Apr 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "9 min read",
+    "category": "Machine Learning"
   },
   {
     "title": "Web Accessibility Best Practices",
     "description": "Best practices for making web applications accessible to all users",
     "date": "10 Apr 2025",
     "image": "assets/sd.jpg",
-    "articleLink": "https://blog.skillfactorial.com/posts/welcome/"
+    "articleLink": "https://blog.skillfactorial.com/posts/welcome/",
+    "readTime": "8 min read",
+    "category": "Web Development"
   }
 ]

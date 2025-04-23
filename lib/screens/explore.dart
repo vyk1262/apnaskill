@@ -15,12 +15,17 @@ class _ExploreState extends State<Explore> {
   String _searchQuery = '';
   Map<String, List<Map<String, String>>> _filteredExploreData = {};
   Map<String, List<Map<String, String>>> _exploreData = {};
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _loadExploreData();
-    _filteredExploreData = _exploreData; // Initially show all data
+    _loadExploreData().then((_) {
+      _filterData(_searchQuery);
+    });
+    _searchController.addListener(() {
+      _filterData(_searchController.text);
+    });
   }
 
   Future<void> _loadExploreData() async {
@@ -35,7 +40,6 @@ class _ExploreState extends State<Explore> {
           List<Map<String, String>> linkList = [];
           for (var item in value) {
             if (item is Map) {
-              // Explicitly check if the map has String keys and values
               if (item.keys.every((k) => k is String) &&
                   item.values.every((v) => v is String)) {
                 linkList.add(item.cast<String, String>());
@@ -57,7 +61,9 @@ class _ExploreState extends State<Explore> {
       });
     } catch (e) {
       print('Error loading explore data: $e');
-      // Handle error appropriately, e.g., display an error message
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Failed to load explore data.')),
+      );
     }
   }
 
@@ -76,15 +82,15 @@ class _ExploreState extends State<Explore> {
             return title.contains(lowerQuery) || url.contains(lowerQuery);
           }).toList();
         });
-        // Remove categories with no matching links
         _filteredExploreData.removeWhere((key, value) => value.isEmpty);
       }
     });
   }
 
   Future<void> _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Could not launch $url')),
@@ -94,8 +100,10 @@ class _ExploreState extends State<Explore> {
 
   Widget _buildLinkCard(String title, String url) {
     return Card(
+      color: Colors.blue[200],
+      shadowColor: Colors.white,
       elevation: 4.0,
-      margin: EdgeInsets.symmetric(vertical: 8.0),
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
       child: InkWell(
         onTap: () => _launchURL(url),
@@ -108,16 +116,16 @@ class _ExploreState extends State<Explore> {
               Expanded(
                 child: Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-              SizedBox(width: 10),
-              Icon(
+              const SizedBox(width: 10),
+              const Icon(
                 Icons.open_in_new,
-                color: Theme.of(context).colorScheme.secondary,
+                color: Colors.grey,
               ),
             ],
           ),
@@ -134,7 +142,7 @@ class _ExploreState extends State<Explore> {
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.primary,
         ),
       ),
     );
@@ -148,30 +156,43 @@ class _ExploreState extends State<Explore> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: _exploreData.entries.map((entry) {
-            final category = entry.key;
-            final links = entry.value;
-
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildSectionTitle(category),
-                GridView.extent(
-                  maxCrossAxisExtent: 200.0,
-                  crossAxisSpacing: 8.0,
-                  mainAxisSpacing: 8.0,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: links
-                      .map((link) => _buildLinkCard(
-                            link['title']!,
-                            link['url']!,
-                          ))
-                      .toList(),
+          children: [
+            TextField(
+              controller: _searchController,
+              decoration: InputDecoration(
+                hintText: 'Search resources...',
+                prefixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-              ],
-            );
-          }).toList(),
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            ..._filteredExploreData.entries.map((entry) {
+              final category = entry.key;
+              final links = entry.value;
+
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildSectionTitle(category),
+                  GridView.extent(
+                    maxCrossAxisExtent: 200.0,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 10.0,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: links
+                        .map((link) => _buildLinkCard(
+                              link['title']!,
+                              link['url']!,
+                            ))
+                        .toList(),
+                  ),
+                ],
+              );
+            }).toList(),
+          ],
         ),
       ),
     );

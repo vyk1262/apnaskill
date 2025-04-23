@@ -63,10 +63,9 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(16.0), // Add some overall padding
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Top Navigation Bar
             TextField(
               controller: _searchController,
               decoration: InputDecoration(
@@ -81,7 +80,7 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                 fillColor: Colors.black,
               ),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 16),
             buildCtaButton(
               text: "Click here for more blogs",
               onPressed: () async {
@@ -93,78 +92,127 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                 }
               },
             ),
+            const SizedBox(height: 16),
             Expanded(
-              child: ListView.separated(
-                itemCount: _filteredBlogs.length,
-                separatorBuilder: (context, index) => const Divider(
-                  color: Colors.grey,
-                  thickness: 1,
-                ),
-                itemBuilder: (context, index) {
-                  final blog = _filteredBlogs[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 2, // Adjust flex as needed for text width
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  int crossAxisCount = 1;
+                  if (constraints.maxWidth >= 600) {
+                    crossAxisCount = 2;
+                  }
+                  if (constraints.maxWidth >= 900) {
+                    crossAxisCount = 3;
+                  }
+                  if (constraints.maxWidth >= 1200) {
+                    crossAxisCount = 4;
+                  }
+
+                  return GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: crossAxisCount,
+                      childAspectRatio: 1.0, // Adjust as needed
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                    ),
+                    itemCount: _filteredBlogs.length,
+                    itemBuilder: (context, index) {
+                      final blog = _filteredBlogs[index];
+                      return InkWell(
+                        onTap: () {
+                          _launchURL(blog['articleLink']);
+                        },
+                        child: Card(
+                          clipBehavior: Clip.antiAlias,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    _launchURL(blog['articleLink']);
-                                  },
-                                  child: Text(
-                                    blog['title'],
-                                    style: const TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue,
+                              Expanded(
+                                child: Stack(
+                                  children: [
+                                    Positioned.fill(
+                                      child: Image.asset(
+                                        blog['image'],
+                                        fit: BoxFit.cover,
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
+                                          return const SizedBox.shrink();
+                                        },
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ),
-                              const SizedBox(height: 8),
-                              if (blog['description'] != null)
-                                Text(
-                                  blog['description'],
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      blog['title'],
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                      ),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    const SizedBox(height: 4),
+                                    if (blog['category'] != null)
+                                      Text(
+                                        "#${blog['category']}",
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey,
+                                        ),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    const SizedBox(height: 4),
+                                    if (blog['description'] != null)
+                                      Text(
+                                        blog['description'],
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey,
+                                        ),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    const SizedBox(height: 8),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        if (blog['date'] != null)
+                                          Text(
+                                            blog['date'],
+                                            style: const TextStyle(
+                                              fontSize: 10,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        if (blog['readTime'] != null)
+                                          Text(
+                                            blog['readTime'],
+                                            style: const TextStyle(
+                                              fontSize: 10,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                              const SizedBox(height: 8),
-                              if (blog['date'] != null)
-                                Text(
-                                  blog['date'],
-                                ),
+                              ),
                             ],
                           ),
                         ),
-                        const SizedBox(width: 16),
-                        MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: GestureDetector(
-                            onTap: () {
-                              _launchURL(blog['articleLink']);
-                            },
-                            child: SizedBox(
-                              width: 150,
-                              height: 100,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  blog['image'],
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return const SizedBox.shrink();
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      );
+                    },
                   );
                 },
               ),
