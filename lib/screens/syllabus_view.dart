@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'dart:convert';
-
-import '../custom_app_bar.dart';
 
 class SyllabusScreen extends StatelessWidget {
   final String internshipName;
@@ -38,25 +34,20 @@ class SyllabusScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
-                      // Added Padding inside Card
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
-                        crossAxisAlignment:
-                            CrossAxisAlignment.start, // Align text to the start
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             module['module'] ?? "",
                             style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18), // Increased font size
+                                fontWeight: FontWeight.w500, fontSize: 18),
                           ),
-                          const SizedBox(
-                              height: 8), // Spacing between module and topics
+                          const SizedBox(height: 8),
                           ...(module['topics'] as List)
                               .map((topic) => Padding(
-                                    // Added Padding for topics
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 4), // Spacing between topics
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 4),
                                     child: Text(topic,
                                         style: const TextStyle(fontSize: 16)),
                                   ))

@@ -155,7 +155,6 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
-                                        color: Colors.white,
                                       ),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
@@ -166,7 +165,6 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                                         "#${blog['category']}",
                                         style: const TextStyle(
                                           fontSize: 12,
-                                          color: Colors.grey,
                                         ),
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
@@ -177,7 +175,6 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                                         blog['description'],
                                         style: const TextStyle(
                                           fontSize: 12,
-                                          color: Colors.grey,
                                         ),
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
@@ -192,7 +189,6 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                                             blog['date'],
                                             style: const TextStyle(
                                               fontSize: 10,
-                                              color: Colors.grey,
                                             ),
                                           ),
                                         if (blog['readTime'] != null)
@@ -200,7 +196,6 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                                             blog['readTime'],
                                             style: const TextStyle(
                                               fontSize: 10,
-                                              color: Colors.grey,
                                             ),
                                           ),
                                       ],

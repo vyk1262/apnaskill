@@ -66,18 +66,20 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       )
                     : SizedBox.shrink(),
                 SizedBox(width: 80),
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () => context.go('/'),
-                    child: Image.asset(
-                      'assets/sf45.png',
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
+                isMobile
+                    ? SizedBox.shrink()
+                    : MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () => context.go('/'),
+                          child: Image.asset(
+                            'assets/sf45.png',
+                            width: 50,
+                            height: 50,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
                 RichText(
                   text: TextSpan(
                     children: [
@@ -103,20 +105,29 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 ),
                 if (user != null)
                   if (userData != null) ...[
-                    Spacer(),
-                    Text("Welcome: ${userData!['name']}",
-                        style: TextStyle(fontSize: 18)),
-                    IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Profile(
-                                  userData: userData), // Pass userData here
+                    isMobile ? SizedBox.shrink() : Spacer(),
+                    isMobile
+                        ? SizedBox.shrink()
+                        : Text(
+                            "Welcome: ${userData!['name']}",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
                             ),
-                          );
-                        },
-                        icon: Icon(Icons.account_box)),
+                          ),
+                    isMobile
+                        ? SizedBox.shrink()
+                        : IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Profile(
+                                      userData: userData), // Pass userData here
+                                ),
+                              );
+                            },
+                            icon: Icon(Icons.account_box)),
                   ] else
                     CircularProgressIndicator(),
                 Spacer(),
@@ -126,8 +137,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         children: [
                           _buildNavButton(context,
                               label: 'Home', screenName: '/'),
-                          _buildNavButton(context,
-                              label: 'Mentors', screenName: 'mentors'),
+                          // _buildNavButton(context,
+                          //     label: 'Mentors', screenName: 'mentors'),
                           _buildNavButton(context,
                               label: 'Quizzes', screenName: 'quizzes'),
                           _buildNavButton(context,
@@ -161,6 +172,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   }
 
   void _openCustomDrawer(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
     Navigator.of(context).push(
       PageRouteBuilder(
         opaque: false,
@@ -183,11 +195,34 @@ class _CustomAppBarState extends State<CustomAppBar> {
                           size: 34,
                         ),
                       ),
+                      if (user != null)
+                        if (userData != null) ...[
+                          Text(
+                            "Welcome: ${userData!['name']}",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                          IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Profile(
+                                        userData:
+                                            userData), // Pass userData here
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.account_box)),
+                        ] else
+                          CircularProgressIndicator(),
                       _buildDrawerButton(context,
                           label: 'Home', screenName: '/'),
                       SizedBox(height: 10),
-                      _buildDrawerButton(context,
-                          label: 'Mentors', screenName: 'mentors'),
+                      // _buildDrawerButton(context,
+                      //     label: 'Mentors', screenName: 'mentors'),
                       SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Quizzes', screenName: 'quizzes'),

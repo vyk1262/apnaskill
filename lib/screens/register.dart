@@ -175,7 +175,6 @@ class _AuthScreenState extends State<AuthScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      shadowColor: Colors.blue.withOpacity(0.4),
                       child: Container(
                         padding: EdgeInsets.all(30),
                         decoration: BoxDecoration(

@@ -100,8 +100,6 @@ class _ExploreState extends State<Explore> {
 
   Widget _buildLinkCard(String title, String url) {
     return Card(
-      color: Colors.blue[200],
-      shadowColor: Colors.white,
       elevation: 4.0,
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),

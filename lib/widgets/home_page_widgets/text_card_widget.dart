@@ -26,7 +26,6 @@ Widget buildTextCard(String text) {
               width: 1,
             ),
           ),
-          shadowColor: Colors.purpleAccent.withOpacity(0.3),
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(

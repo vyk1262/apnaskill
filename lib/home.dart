@@ -79,7 +79,10 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(0.0),
                 child: Column(
                   children: [
-                    HeroWidget(),
+                    Container(
+                      color: Colors.black,
+                      child: HeroWidget(),
+                    ),
                     SizedBox(height: 20),
                     ...techContent.map(
                       (content) => FeatureSectionNew(
@@ -92,35 +95,20 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            AppColors.primaryColor,
-                            AppColors.secondaryColor,
-                          ],
-                        ),
-                      ),
-                      child: Wrap(
-                        spacing: 50,
-                        runSpacing: 20,
-                        alignment: WrapAlignment.center,
-                        children: featureData.map((data) {
-                          return SizedBox(
-                            width: 250,
-                            child: FeatureItem(
-                              icon: iconMapping[data['icon']] ?? Icons.help,
-                              title: data['title'],
-                              description: data['description'],
-                            ),
-                          );
-                        }).toList(),
-                      ),
+                    Wrap(
+                      spacing: 50,
+                      runSpacing: 20,
+                      alignment: WrapAlignment.center,
+                      children: featureData.map((data) {
+                        return SizedBox(
+                          width: 250,
+                          child: FeatureItem(
+                            icon: iconMapping[data['icon']] ?? Icons.help,
+                            title: data['title'],
+                            description: data['description'],
+                          ),
+                        );
+                      }).toList(),
                     ),
                     const SizedBox(height: 16),
                     Wrap(
@@ -153,38 +141,23 @@ class _HomePageState extends State<HomePage> {
                     //     ],
                     //   ),
                     // ),
-                    SizedBox(height: 40),
-                    WhyChooseUs(),
+                    // SizedBox(height: 40),
+                    // WhyChooseUs(),
                     const SizedBox(height: 40),
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            AppColors.primaryColor,
-                            AppColors.secondaryColor,
-                          ],
-                        ),
-                      ),
-                      child: Wrap(
-                        spacing: 16,
-                        runSpacing: 16,
-                        alignment: WrapAlignment.center,
-                        children: contactData.map((data) {
-                          return SizedBox(
-                            width: 250,
-                            child: ContactCard(
-                              icon: iconMapping[data['icon']] ?? Icons.help,
-                              title: data['title'],
-                              text: data['text'],
-                            ),
-                          );
-                        }).toList(),
-                      ),
+                    Wrap(
+                      spacing: 16,
+                      runSpacing: 16,
+                      alignment: WrapAlignment.center,
+                      children: contactData.map((data) {
+                        return SizedBox(
+                          width: 250,
+                          child: ContactCard(
+                            icon: iconMapping[data['icon']] ?? Icons.help,
+                            title: data['title'],
+                            text: data['text'],
+                          ),
+                        );
+                      }).toList(),
                     ),
                     SizedBox(height: 40),
                     // ContactForm(),

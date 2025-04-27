@@ -23,14 +23,12 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   List<String?> _userAnswers = [];
   List<Map<String, dynamic>> quizData = [];
-  List<String> projectdetailsData = [];
   List<Map<String, dynamic>> assignmentData = [];
   bool showGeneralInfo = true;
 
   String? selectedQuiz; // Default selected quiz topic
   String? selectedAssignment; // Track selected assignment
   List<String> completedQuizzes = [];
-  List<String> completedProjects = [];
 
   @override
   void initState() {
@@ -53,19 +51,6 @@ class _QuizScreenState extends State<QuizScreen> {
     });
   }
 
-// Load questions for the selected assignment
-  void _loadProjectDetails(String assignment) {
-    final details = assignmentData.firstWhere(
-      (data) => data['topic'] == assignment,
-      orElse: () => {'questions': []},
-    );
-
-    setState(() {
-      projectdetailsData = List<String>.from(details['questions']);
-      quizData.clear(); // Clear quiz data when loading assignment
-    });
-  }
-
   Future<void> _loadCompletedItems() async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
@@ -78,10 +63,6 @@ class _QuizScreenState extends State<QuizScreen> {
       // Set completed quizzes and projects based on Firestore data
       completedQuizzes = (data?['quizMarks'] as List<dynamic>?)
               ?.map((quiz) => quiz['quizName'] as String)
-              .toList() ??
-          [];
-      completedProjects = (data?['projectDetailsList'] as List<dynamic>?)
-              ?.map((project) => project.keys.first as String)
               .toList() ??
           [];
       setState(() {});
@@ -174,54 +155,6 @@ class _QuizScreenState extends State<QuizScreen> {
     setState(() {});
   }
 
-  void _submitProjectDetails(String url) async {
-    String userEmail = FirebaseAuth.instance.currentUser?.email ?? '';
-
-    // Create a project details entry
-    String projectName = selectedAssignment ?? 'Unknown Project';
-    Map<String, dynamic> projectEntry = {
-      projectName: url,
-    };
-
-    // Get reference to Firestore
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      DocumentReference internshipRef = FirebaseFirestore.instance
-          .collection('internships')
-          .doc(user.uid); // Using user UID as document ID
-
-      // First, fetch existing data to check if the project already exists
-      DocumentSnapshot snapshot = await internshipRef.get();
-      Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
-      List<dynamic> existingProjects = data?['projectDetailsList'] ?? [];
-
-      // Check if this project already exists in the list
-      bool projectExists =
-          existingProjects.any((entry) => entry.keys.first == projectName);
-
-      if (projectExists) {
-        // If project exists, update the URL
-        for (var entry in existingProjects) {
-          if (entry.keys.first == projectName) {
-            entry[projectName] = url; // Update URL
-          }
-        }
-        await internshipRef.set({
-          'email': userEmail,
-          'projectDetailsList': existingProjects,
-        }, SetOptions(merge: true));
-      } else {
-        // If project doesn't exist, add it to the array
-        await internshipRef.set({
-          'email': userEmail,
-          'projectDetailsList': FieldValue.arrayUnion([projectEntry]),
-        }, SetOptions(merge: true));
-      }
-    }
-    completedProjects.add(projectName);
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -237,7 +170,7 @@ class _QuizScreenState extends State<QuizScreen> {
             flex: 3,
             child: showGeneralInfo
                 ? buildGeneralInfoContent()
-                : quizData.isEmpty && projectdetailsData.isEmpty
+                : quizData.isEmpty
                     ? const Center(child: CircularProgressIndicator())
                     : buildContent(),
           ),
@@ -247,108 +180,110 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Widget buildSideBar() {
-    return Container(
-      color: Colors.black,
-      child: ListView(
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          ElevatedButton.icon(
-            icon: Icon(
-              Icons.arrow_back,
-              size: 24,
+    return ListView(
+      padding: const EdgeInsets.all(16.0),
+      children: [
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.arrow_back,
+            size: 24,
+          ),
+          label: Text(
+            "Go Back",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
             ),
-            label: Text(
-              "Go Back",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
+          ),
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
             ),
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        SizedBox(height: 10),
+        Text(
+          widget.internshipName.toUpperCase(),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
+        const Divider(),
+        Container(
+          decoration: BoxDecoration(
+            color: showGeneralInfo ? Colors.black : Colors.blue,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+              color: showGeneralInfo ? Colors.red : Colors.transparent,
             ),
-            onPressed: () {
-              Navigator.pop(context);
+          ),
+          margin: const EdgeInsets.symmetric(vertical: 4),
+          child: ListTile(
+            leading: Icon(
+              Icons.info,
+            ),
+            title: const Text("GENERAL INFO"),
+            selected: showGeneralInfo,
+            onTap: () {
+              setState(() {
+                showGeneralInfo = true;
+                selectedQuiz = '';
+                selectedAssignment = null;
+                quizData.clear();
+              });
             },
           ),
-          SizedBox(height: 10),
-          Text(
-            widget.internshipName.toUpperCase(),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-            ),
+        ),
+        const Divider(),
+        Text(
+          "Quizzes",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
           ),
-          const Divider(),
-          Card(
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
+        ),
+        const SizedBox(height: 10),
+        ...widget.quizList.map((topic) {
+          return Container(
+            decoration: BoxDecoration(
+                color: selectedQuiz == topic ? Colors.black : Colors.blue,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color:
+                      selectedQuiz == topic ? Colors.red : Colors.transparent,
+                )),
+            margin: const EdgeInsets.symmetric(vertical: 4),
             child: ListTile(
-              leading: Icon(
-                Icons.info,
+              leading: Icon(Icons.quiz),
+              title: Text(
+                topic.replaceAll('-', ' ').toUpperCase(),
+                style: TextStyle(
+                  fontSize: 18,
+                ),
               ),
-              title: const Text("GENERAL INFO"),
-              selected: showGeneralInfo,
+              trailing: completedQuizzes.contains(topic)
+                  ? Icon(Icons.done, color: Colors.white)
+                  : null,
+              selected: selectedQuiz == topic,
               onTap: () {
                 setState(() {
-                  showGeneralInfo = true;
-                  selectedQuiz = '';
+                  selectedQuiz = topic;
                   selectedAssignment = null;
-                  quizData.clear();
-                  projectdetailsData.clear();
+                  showGeneralInfo = false;
+                  _loadQuizData(topic);
                 });
               },
             ),
-          ),
-          const Divider(),
-          Text(
-            "Quizzes",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 10),
-          ...widget.quizList.map((topic) {
-            return Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              margin: const EdgeInsets.symmetric(vertical: 4),
-              child: ListTile(
-                leading: Icon(Icons.quiz),
-                title: Text(
-                  topic.replaceAll('-', ' ').toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                trailing: completedQuizzes.contains(topic)
-                    ? Icon(Icons.done, color: Colors.green)
-                    : null,
-                selected: selectedQuiz == topic,
-                onTap: () {
-                  setState(() {
-                    selectedQuiz = topic;
-                    selectedAssignment = null;
-                    projectdetailsData.clear();
-                    showGeneralInfo = false;
-                    _loadQuizData(topic);
-                  });
-                },
-              ),
-            );
-          }).toList(),
-          const Divider(),
-          const SizedBox(height: 10),
-        ],
-      ),
+          );
+        }).toList(),
+        const Divider(),
+        const SizedBox(height: 10),
+      ],
     );
   }
 
@@ -377,7 +312,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   borderRadius: BorderRadius.circular(12), // Rounded corners
                 ),
                 margin: const EdgeInsets.symmetric(
-                    vertical: 10, horizontal: 16), // Card margin
+                    vertical: 5, horizontal: 8), // Card margin
                 child: Padding(
                   padding:
                       const EdgeInsets.all(16.0), // Padding inside the card
@@ -392,17 +327,20 @@ class _QuizScreenState extends State<QuizScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 4),
                       // Display options for the question
                       ...question['options'].entries.map((entry) {
                         return Padding(
-                          padding: const EdgeInsets.only(bottom: 2.0),
+                          padding: const EdgeInsets.only(bottom: 1.0),
                           child: RadioListTile<String>(
+                            activeColor: Colors.black,
+                            contentPadding: const EdgeInsets.all(0),
+                            tileColor: Colors.black54,
                             title: Text(
                               entry.value,
                               style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.white54,
+                                color: Colors.white,
                               ),
                             ),
                             value: entry.key,
@@ -422,9 +360,12 @@ class _QuizScreenState extends State<QuizScreen> {
             },
           ),
         ),
-        ElevatedButton(
-          onPressed: _submitQuiz,
-          child: const Text('Submit'),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: _submitQuiz,
+            child: const Text('Submit'),
+          ),
         ),
       ],
     );
@@ -435,8 +376,63 @@ class _QuizScreenState extends State<QuizScreen> {
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("General Information"),
+            Text(
+              "Welcome to the Quizzes!",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Here's how to take the quizzes and check your scores:",
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 15),
+            Text(
+              "1. **Select a Quiz Topic:** On the left side, you'll see a list of available quiz topics. Tap on the topic you want to attempt.",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "2. **Answer the Questions:** Once a topic is selected, the quiz questions will appear on the right side. Carefully read each question and select the best answer from the given options.",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "3. **Submit Your Answers:** After you have answered all the questions in the quiz, click the 'Submit' button at the bottom.",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 15),
+            Text(
+              "**Checking Your Scores:**",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "You can view your quiz results on the **Profile Screen**.",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "**Desktop Mode:** Look for a **Profile Icon** (usually a person icon) in the app bar at the top of the screen and click on it.",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "**Mobile View:** Tap on the **Hamburger Icon** (three horizontal lines) typically located in the top left or right corner of the app bar. This will open a menu where you can find the 'Profile' option.",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 15),
+            Text(
+              "On the Profile Screen, you will find a section dedicated to your quiz scores, showing the marks you obtained in each quiz you have completed.",
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),

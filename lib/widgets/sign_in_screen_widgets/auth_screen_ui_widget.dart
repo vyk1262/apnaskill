@@ -27,12 +27,14 @@ class SignInForm extends StatelessWidget {
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
         const SizedBox(height: 20),
         TextField(
           controller: emailController,
           keyboardType: TextInputType.emailAddress,
+          style: const TextStyle(color: Colors.white),
           decoration: const InputDecoration(
             labelText: 'Email',
             border: OutlineInputBorder(),
@@ -43,6 +45,7 @@ class SignInForm extends StatelessWidget {
         TextField(
           controller: passwordController,
           obscureText: true,
+          style: const TextStyle(color: Colors.white),
           decoration: const InputDecoration(
             labelText: 'Password',
             border: OutlineInputBorder(),

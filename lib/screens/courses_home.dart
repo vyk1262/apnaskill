@@ -26,7 +26,6 @@ class _QuizListHomeState extends State<QuizListHome> {
     "Web Development",
     "Data Science",
     "Machine Learning",
-    "Mobile App Development",
   ];
   List<String> filteredInternshipNames = [];
   TextEditingController _searchController = TextEditingController();
@@ -57,32 +56,19 @@ class _QuizListHomeState extends State<QuizListHome> {
   Future<void> _loadQuizTopics() async {
     try {
       for (final internship in allInternshipNames) {
-        String assetPath = '';
-        switch (internship) {
-          case "Python Programming":
-            assetPath = 'assets/Python Programming/topics.json';
-            break;
-          case "Web Development":
-            assetPath = 'assets/Web Development/topics.json';
-            break;
-          case "Data Science":
-            assetPath = 'assets/Python Programming/topics.json';
-            break;
-          case "Machine Learning":
-            assetPath = 'assets/Python Programming/topics.json';
-            break;
-          case "Mobile App Development":
-            assetPath = 'assets/Python Programming/topics.json';
-            break;
+        final assetPath = 'assets/course_topics/$internship.json';
+        try {
+          final data = await rootBundle.loadString(assetPath);
+          final list = (jsonDecode(data) as List).cast<String>();
+          setState(() {
+            quizTopics[internship] = list;
+          });
+        } catch (innerError) {
+          print('Error loading asset for $internship: $innerError');
         }
-        final data = await rootBundle.loadString(assetPath);
-        final list = (jsonDecode(data) as List).cast<String>();
-        setState(() {
-          quizTopics[internship] = list;
-        });
       }
     } catch (e) {
-      print('Error loading quiz topics: $e');
+      print('Error during quiz topics loading: $e');
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
             content: Text('Error loading quiz topics. Please try again.')),
@@ -166,8 +152,9 @@ class _QuizListHomeState extends State<QuizListHome> {
             (internship) => internship['internshipName'] == internshipName) ??
         false;
 
+    String imagePath = 'assets/course_images/$internshipName.jpeg';
+
     return Card(
-      color: Colors.black,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       child: InkWell(
         onTap: () {
@@ -199,7 +186,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
-                    'assets/ai.jpg',
+                    imagePath,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -256,6 +243,11 @@ class _QuizListHomeState extends State<QuizListHome> {
                       }
                     },
                     child: Text(isUnlocked ? "Start Quiz" : "Unlock"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: isUnlocked ? Colors.green : Colors.red,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                    ),
                   ),
                 ],
               ),
@@ -281,7 +273,7 @@ class _QuizListHomeState extends State<QuizListHome> {
             ),
             const SizedBox(height: 8),
             Image.asset(
-              'assets/ai.jpg',
+              'assets/qrcode.jpg',
               width: 100,
               height: 100,
               fit: BoxFit.cover,

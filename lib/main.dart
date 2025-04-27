@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: router,
       title: 'Skill Factorial',
-      theme: CustomTheme.darkTheme,
+      theme: CustomTheme.lightTheme,
       // home: isMobile ? MobileTabs() : Tabs(),
     );
   }
