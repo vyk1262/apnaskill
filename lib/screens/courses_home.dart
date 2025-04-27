@@ -176,7 +176,8 @@ class _QuizListHomeState extends State<QuizListHome> {
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
                     imagePath,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
+                    width: double.infinity,
                   ),
                 ),
               ),

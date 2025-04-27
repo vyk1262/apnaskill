@@ -16,7 +16,7 @@ class _HeroWidgetState extends State<HeroWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.9,
+      height: MediaQuery.of(context).size.height,
       child: Center(
         child: heroData(context),
       ),
@@ -26,13 +26,16 @@ class _HeroWidgetState extends State<HeroWidget> {
   Widget heroData(BuildContext context) {
     bool isMobile = MediaQuery.of(context).size.width < 850;
     return isMobile
-        ? Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              newMethodOne(context),
-              const SizedBox(height: 20),
-              newMethodTwo(context),
-            ],
+        ? SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                newMethodOne(context),
+                const SizedBox(height: 20),
+                newMethodTwo(context),
+                const SizedBox(height: 20),
+              ],
+            ),
           )
         : Row(
             children: [

@@ -29,6 +29,7 @@ class _QuizScreenState extends State<QuizScreen> {
   String? selectedQuiz; // Default selected quiz topic
   String? selectedAssignment; // Track selected assignment
   List<String> completedQuizzes = [];
+  bool _showSidebarMobile = false;
 
   @override
   void initState() {
@@ -48,6 +49,7 @@ class _QuizScreenState extends State<QuizScreen> {
       _userAnswers =
           List<String?>.filled(quizData.length, null, growable: false);
       selectedAssignment = null; // Reset assignment when quiz is loaded
+      _showSidebarMobile = false; // Hide sidebar when content loads
     });
   }
 
@@ -60,7 +62,6 @@ class _QuizScreenState extends State<QuizScreen> {
       DocumentSnapshot snapshot = await internshipRef.get();
       Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
 
-      // Set completed quizzes and projects based on Firestore data
       completedQuizzes = (data?['quizMarks'] as List<dynamic>?)
               ?.map((quiz) => quiz['quizName'] as String)
               .toList() ??
@@ -77,7 +78,6 @@ class _QuizScreenState extends State<QuizScreen> {
       }
     }
 
-    // Prepare data for Firestore
     String userEmail = FirebaseAuth.instance.currentUser?.email ?? '';
     String quizName = selectedQuiz ?? 'Unknown';
 
@@ -87,7 +87,6 @@ class _QuizScreenState extends State<QuizScreen> {
       'marks': correctAnswers,
     };
 
-    // Get reference to Firestore
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       DocumentReference internshipRef = FirebaseFirestore.instance
@@ -157,133 +156,191 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final bool isMobile = screenWidth < 768; // Adjust threshold as needed
+
     return Scaffold(
+      appBar: isMobile
+          ? AppBar(
+              title: Text(widget.internshipName.toUpperCase()),
+              leading: IconButton(
+                icon: const Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _showSidebarMobile = !_showSidebarMobile;
+                  });
+                },
+              ),
+            )
+          : null,
       body: Row(
         children: [
           // Left side menu for quiz topics and assignments
-          Expanded(
-            flex: 1,
-            child: buildSideBar(),
-          ),
+          if (!isMobile || _showSidebarMobile)
+            Expanded(
+              flex: 1,
+              child: buildSideBar(isMobile),
+            ),
           // Right side for quiz questions or assignment questions
-          Expanded(
-            flex: 3,
-            child: showGeneralInfo
-                ? buildGeneralInfoContent()
-                : quizData.isEmpty
-                    ? const Center(child: CircularProgressIndicator())
-                    : buildContent(),
-          ),
+          if (!isMobile ||
+              (!_showSidebarMobile && showGeneralInfo) ||
+              (!_showSidebarMobile && quizData.isNotEmpty))
+            Expanded(
+              flex: 3,
+              child: buildContent(),
+            ),
         ],
       ),
     );
   }
 
-  Widget buildSideBar() {
-    return ListView(
-      padding: const EdgeInsets.all(16.0),
-      children: [
-        ElevatedButton.icon(
-          icon: Icon(
-            Icons.arrow_back,
-            size: 24,
-          ),
-          label: Text(
-            "Go Back",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        SizedBox(height: 10),
-        Text(
-          widget.internshipName.toUpperCase(),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20,
-          ),
-        ),
-        const Divider(),
-        Container(
-          decoration: BoxDecoration(
-            color: showGeneralInfo ? Colors.black : Colors.blue,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: showGeneralInfo ? Colors.red : Colors.transparent,
-            ),
-          ),
-          margin: const EdgeInsets.symmetric(vertical: 4),
-          child: ListTile(
-            leading: Icon(
-              Icons.info,
-            ),
-            title: const Text("GENERAL INFO"),
-            selected: showGeneralInfo,
-            onTap: () {
-              setState(() {
-                showGeneralInfo = true;
-                selectedQuiz = '';
-                selectedAssignment = null;
-                quizData.clear();
-              });
-            },
-          ),
-        ),
-        const Divider(),
-        Text(
-          "Quizzes",
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const SizedBox(height: 10),
-        ...widget.quizList.map((topic) {
-          return Container(
-            decoration: BoxDecoration(
-                color: selectedQuiz == topic ? Colors.black : Colors.blue,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color:
-                      selectedQuiz == topic ? Colors.red : Colors.transparent,
-                )),
-            margin: const EdgeInsets.symmetric(vertical: 4),
-            child: ListTile(
-              leading: Icon(Icons.quiz),
-              title: Text(
-                topic.replaceAll('-', ' ').toUpperCase(),
+  Widget buildSideBar(bool isMobile) {
+    return Container(
+      width: isMobile
+          ? _showSidebarMobile
+              ? MediaQuery.of(context)
+                  .size
+                  .width // Occupy full width on mobile when open
+              : null
+          : null,
+      child: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          if (isMobile)
+            ElevatedButton.icon(
+              icon: const Icon(
+                Icons.close,
+                size: 24,
+              ),
+              label: const Text(
+                "Close Menu",
                 style: TextStyle(
                   fontSize: 18,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              trailing: completedQuizzes.contains(topic)
-                  ? Icon(Icons.done, color: Colors.white)
-                  : null,
-              selected: selectedQuiz == topic,
-              onTap: () {
+              style: ElevatedButton.styleFrom(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              onPressed: () {
                 setState(() {
-                  selectedQuiz = topic;
-                  selectedAssignment = null;
-                  showGeneralInfo = false;
-                  _loadQuizData(topic);
+                  _showSidebarMobile = false;
                 });
               },
             ),
-          );
-        }).toList(),
-        const Divider(),
-        const SizedBox(height: 10),
-      ],
+          if (isMobile) const SizedBox(height: 10),
+          ElevatedButton.icon(
+            icon: const Icon(
+              Icons.arrow_back,
+              size: 24,
+            ),
+            label: const Text(
+              "Go Back",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          const SizedBox(height: 10),
+          Text(
+            widget.internshipName.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontSize: 20,
+            ),
+          ),
+          const Divider(),
+          Container(
+            decoration: BoxDecoration(
+              color: showGeneralInfo ? Colors.black : Colors.blue,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: showGeneralInfo ? Colors.red : Colors.transparent,
+              ),
+            ),
+            margin: const EdgeInsets.symmetric(vertical: 4),
+            child: ListTile(
+              leading: const Icon(
+                Icons.info,
+              ),
+              title: const Text("GENERAL INFO"),
+              selected: showGeneralInfo,
+              onTap: () {
+                setState(() {
+                  showGeneralInfo = true;
+                  selectedQuiz = '';
+                  selectedAssignment = null;
+                  quizData.clear();
+                  if (isMobile) _showSidebarMobile = false;
+                });
+              },
+            ),
+          ),
+          const Divider(),
+          const Text(
+            "Quizzes",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 10),
+          ...widget.quizList.map((topic) {
+            return Container(
+              decoration: BoxDecoration(
+                  color: selectedQuiz == topic ? Colors.black : Colors.blue,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color:
+                        selectedQuiz == topic ? Colors.red : Colors.transparent,
+                  )),
+              margin: const EdgeInsets.symmetric(vertical: 4),
+              child: ListTile(
+                leading: const Icon(Icons.quiz),
+                title: Text(
+                  topic.replaceAll('-', ' ').toUpperCase(),
+                  style: const TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+                trailing: completedQuizzes.contains(topic)
+                    ? const Icon(Icons.done, color: Colors.white)
+                    : null,
+                selected: selectedQuiz == topic,
+                onTap: () {
+                  setState(() {
+                    selectedQuiz = topic;
+                    selectedAssignment = null;
+                    showGeneralInfo = false;
+                    _loadQuizData(topic);
+                    if (isMobile) _showSidebarMobile = false;
+                  });
+                },
+              ),
+            );
+          }).toList(),
+          const Divider(),
+          const SizedBox(height: 10),
+        ],
+      ),
     );
   }
 
@@ -322,7 +379,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       // Question Text with enhanced styling
                       Text(
                         question['question'],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -338,7 +395,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             tileColor: Colors.black54,
                             title: Text(
                               entry.value,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 16,
                                 color: Colors.white,
                               ),
@@ -373,67 +430,69 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Widget buildGeneralInfoContent() {
     return const Center(
-      child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Welcome to the Quizzes!",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Welcome to the Quizzes!",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 20),
-            Text(
-              "Here's how to take the quizzes and check your scores:",
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 15),
-            Text(
-              "1. **Select a Quiz Topic:** On the left side, you'll see a list of available quiz topics. Tap on the topic you want to attempt.",
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "2. **Answer the Questions:** Once a topic is selected, the quiz questions will appear on the right side. Carefully read each question and select the best answer from the given options.",
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "3. **Submit Your Answers:** After you have answered all the questions in the quiz, click the 'Submit' button at the bottom.",
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 15),
-            Text(
-              "**Checking Your Scores:**",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "You can view your quiz results on the **Profile Screen**.",
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "**Desktop Mode:** Look for a **Profile Icon** (usually a person icon) in the app bar at the top of the screen and click on it.",
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "**Mobile View:** Tap on the **Hamburger Icon** (three horizontal lines) typically located in the top left or right corner of the app bar. This will open a menu where you can find the 'Profile' option.",
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 15),
-            Text(
-              "On the Profile Screen, you will find a section dedicated to your quiz scores, showing the marks you obtained in each quiz you have completed.",
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.center,
-            ),
-          ],
+              SizedBox(height: 20),
+              Text(
+                "Here's how to take the quizzes and check your scores:",
+                style: TextStyle(fontSize: 16),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 15),
+              Text(
+                "1. **Select a Quiz Topic:** On the left side, you'll see a list of available quiz topics. Tap on the topic you want to attempt.",
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "2. **Answer the Questions:** Once a topic is selected, the quiz questions will appear on the right side. Carefully read each question and select the best answer from the given options.",
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "3. **Submit Your Answers:** After you have answered all the questions in the quiz, click the 'Submit' button at the bottom.",
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 15),
+              Text(
+                "**Checking Your Scores:**",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "You can view your quiz results on the **Profile Screen**.",
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "**Desktop Mode:** Look for a **Profile Icon** (usually a person icon) in the app bar at the top of the screen and click on it.",
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "**Mobile View:** Tap on the **Hamburger Icon** (three horizontal lines) typically located in the top left or right corner of the app bar. This will open a menu where you can find the 'Profile' option.",
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 15),
+              Text(
+                "On the Profile Screen, you will find a section dedicated to your quiz scores, showing the marks you obtained in each quiz you have completed.",
+                style: TextStyle(fontSize: 16),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -65,7 +65,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         },
                       )
                     : SizedBox.shrink(),
-                SizedBox(width: 80),
+                isMobile ? SizedBox.shrink() : SizedBox(width: 80),
                 isMobile
                     ? SizedBox.shrink()
                     : MouseRegion(
@@ -141,8 +141,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                           //     label: 'Mentors', screenName: 'mentors'),
                           _buildNavButton(context,
                               label: 'Quizzes', screenName: 'quizzes'),
-                          _buildNavButton(context,
-                              label: 'Explore', screenName: 'explore'),
+                          // _buildNavButton(context,
+                          //     label: 'Explore', screenName: 'explore'),
                           _buildNavButton(context,
                               label: 'Blogs', screenName: 'blogs'),
                           if (user == null)
@@ -195,12 +195,13 @@ class _CustomAppBarState extends State<CustomAppBar> {
                           size: 34,
                         ),
                       ),
+                      SizedBox(height: 10),
                       if (user != null)
                         if (userData != null) ...[
                           Text(
                             "Welcome: ${userData!['name']}",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 20,
                               color: Colors.white,
                             ),
                           ),
@@ -218,40 +219,36 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               icon: Icon(Icons.account_box)),
                         ] else
                           CircularProgressIndicator(),
+                      SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Home', screenName: '/'),
                       SizedBox(height: 10),
                       // _buildDrawerButton(context,
                       //     label: 'Mentors', screenName: 'mentors'),
-                      SizedBox(height: 10),
+                      // SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Quizzes', screenName: 'quizzes'),
+                      SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: "Explore", screenName: 'explore'),
                       SizedBox(height: 10),
-                      TextButton(
-                        onPressed: () async {
-                          final Uri url =
-                              Uri.parse('https://blog.skillfactorial.com');
-                          if (await canLaunchUrl(url)) {
-                            await launchUrl(url,
-                                mode: LaunchMode.externalApplication);
-                          } else {
-                            throw 'Could not launch $url';
-                          }
-                        },
-                        child: Text(
-                          "Blogs",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
+                      if (user == null)
+                        _buildDrawerButton(context,
+                            label: 'Login →', screenName: 'login'),
+                      if (user != null)
+                        ElevatedButton.icon(
+                          icon: Icon(Icons.logout),
+                          label: Text("Logout"),
+                          onPressed: () async {
+                            await FirebaseAuth.instance.signOut();
+                            context.go('/');
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 16.0, vertical: 8.0),
                           ),
                         ),
-                      ),
                       SizedBox(height: 10),
-                      _buildDrawerButton(context,
-                          label: 'Login →', screenName: 'login'),
                     ],
                   ),
                 ),

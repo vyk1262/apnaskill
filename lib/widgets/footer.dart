@@ -29,30 +29,13 @@ class Footer extends StatelessWidget {
               ),
               buildCtaButton(text: "Home", onPressed: () => context.go('/')),
               buildCtaButton(
-                  text: "Courses", onPressed: () => context.go('/courses')),
+                  text: "Quizzes", onPressed: () => context.go('/quizzes')),
               buildCtaButton(
                   text: "Login", onPressed: () => context.go('/login')),
-              TextButton(
-                onPressed: () async {
-                  final Uri url = Uri.parse('https://blog.skillfactorial.com');
-                  if (await canLaunchUrl(url)) {
-                    await launchUrl(url, mode: LaunchMode.externalApplication);
-                  } else {
-                    throw 'Could not launch $url';
-                  }
-                },
-                child: Text(
-                  "Blogs",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
+              buildCtaButton(
+                  text: "Blogs", onPressed: () => context.go('/blogs'))
             ],
           ),
-
           const SizedBox(height: 16),
           // Social Media Links
           Row(
