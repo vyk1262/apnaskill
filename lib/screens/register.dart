@@ -150,7 +150,8 @@ class _AuthScreenState extends State<AuthScreen> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/sd.jpg'), // Add your image
+                image:
+                    AssetImage('assets/student_home/sd.jpg'), // Add your image
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.3),

@@ -73,7 +73,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         child: GestureDetector(
                           onTap: () => context.go('/'),
                           child: Image.asset(
-                            'assets/sf45.png',
+                            'assets/student_home/sf45.png',
                             width: 50,
                             height: 50,
                             fit: BoxFit.contain,

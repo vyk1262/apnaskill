@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skill_factorial/screens/custom_search_bar.dart';
 
 import '../custom_app_bar.dart';
 import 'quiz_screen.dart';
@@ -94,20 +95,8 @@ class _QuizListHomeState extends State<QuizListHome> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              TextField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  hintText: 'Search topics...',
-                  hintStyle: const TextStyle(color: Colors.grey),
-                  prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
-                  filled: true,
-                  fillColor: Colors.black,
-                ),
-              ),
+              CustomSearchBar(
+                  controller: _searchController, hintText: 'Search topics...'),
               const SizedBox(height: 16),
               Expanded(
                 child: LayoutBuilder(
@@ -273,7 +262,7 @@ class _QuizListHomeState extends State<QuizListHome> {
             ),
             const SizedBox(height: 8),
             Image.asset(
-              'assets/qrcode.jpg',
+              'assets/student_home/qrcode.jpg',
               width: 100,
               height: 100,
               fit: BoxFit.cover,

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:skill_factorial/custom_app_bar.dart';
+import 'package:skill_factorial/screens/custom_search_bar.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -66,32 +67,8 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                hintText: 'Search articles...',
-                hintStyle: const TextStyle(color: Colors.grey),
-                prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: Colors.black,
-              ),
-            ),
-            const SizedBox(height: 16),
-            buildCtaButton(
-              text: "Click here for more blogs",
-              onPressed: () async {
-                final Uri url = Uri.parse('https://blog.skillfactorial.com');
-                if (await canLaunchUrl(url)) {
-                  await launchUrl(url, mode: LaunchMode.externalApplication);
-                } else {
-                  throw 'Could not launch $url';
-                }
-              },
-            ),
+            CustomSearchBar(
+                controller: _searchController, hintText: 'Search articles...'),
             const SizedBox(height: 16),
             Expanded(
               child: LayoutBuilder(

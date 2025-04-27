@@ -85,6 +85,7 @@ flutter:
     - assets/
     - assets/course_images/
     - assets/course_topics/
+    - assets/student_home/
     - assets/faqs.json
     - assets/explore.json
     - assets/app-data-text.json

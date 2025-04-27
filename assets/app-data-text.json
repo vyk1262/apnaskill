@@ -1,44 +1,34 @@
 {
   "techContent": [
     {
-      "image": "assets/it.jpg",
-      "title": "Cutting-Edge Learning Tech",
-      "description": "Leverage AI-powered adaptive learning systems that personalize your educational journey based on your progress and preferences."
-    },
-    {
-      "image": "assets/book_shelf.png",
-      "title": "Immersive VR Experiences",
-      "description": "Welcome to the World of Practice, Kickstart Your Career Journey with Practice, practice, practice ...From Novice to Expert: The Transformative Power of Practice"
-    },
-    {
-      "image": "assets/book_shelf.png",
+      "image": "assets/student_home/book_shelf.png",
       "title": "Quizzes and Projects",
       "description": "Designed to shape you into a highly skilled and accomplished professional in any field. with Practice ..."
     },
     {
-      "image": "assets/book_shelf.png",
+      "image": "assets/student_home/it.jpg",
       "title": "Empowering Growth Through Skill Development",
       "description": "At Skill Factorial, located in the heart of Hyderabad, we are dedicated to transforming the educational landscape through innovative skill development programs. Our mission is to empower individuals with the practical skills necessary for success in today's dynamic job market. We believe in a hands-on approach that bridges the gap between theoretical knowledge and real-world application. Join us on a journey of lifelong learning and professional growth."
     }
   ],
   "techContentRow": [
     {
-      "image": "assets/it.jpg",
+      "image": "assets/student_home/student_lib.png",
       "title": "Cutting-Edge Learning Tech",
       "description": "Leverage AI-powered adaptive learning systems that personalize your educational journey based on your progress and preferences."
     },
     {
-      "image": "assets/it.jpg",
+      "image": "assets/student_home/student_system_f.png",
       "title": "Immersive VR Experiences",
       "description": "Welcome to the World of Practice, Kickstart Your Career Journey with Practice, practice, practice ...From Novice to Expert: The Transformative Power of Practice"
     },
     {
-      "image": "assets/it.jpg",
+      "image": "assets/student_home/student_ask.png",
       "title": "Real-time Collaboration",
       "description": "Work with peers globally using our collaborative coding environment and shared digital workspaces."
     },
     {
-      "image": "assets/book_shelf.png",
+      "image": "assets/student_home/student_class.png",
       "title": "Empowering Growth Through Skill Development",
       "description": "At Skill Factorial, located in the heart of Hyderabad, we are dedicated to transforming the educational landscape through innovative skill development programs. Our mission is to empower individuals with the practical skills necessary for success in today's dynamic job market. We believe in a hands-on approach that bridges the gap between theoretical knowledge and real-world application. Join us on a journey of lifelong learning and professional growth."
     }

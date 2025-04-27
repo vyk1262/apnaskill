@@ -54,7 +54,7 @@ class _HeroWidgetState extends State<HeroWidget> {
       children: [
         const SizedBox(height: 20),
         Image.asset(
-          'assets/sf_home_2.png',
+          'assets/student_home/sf_home_2.png',
         ),
         const SizedBox(height: 50),
         buildCtaButton(
@@ -71,7 +71,7 @@ class _HeroWidgetState extends State<HeroWidget> {
       children: [
         const SizedBox(height: 20),
         Image.asset(
-          'assets/sf_home_1.png',
+          'assets/student_home/sf_home_1.png',
         ),
         const SizedBox(height: 50),
         _buildContactButton(context),
