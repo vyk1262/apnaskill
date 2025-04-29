@@ -22,15 +22,7 @@ class _QuizListHomeState extends State<QuizListHome> {
   Map<String, dynamic>? userData;
   User? user = FirebaseAuth.instance.currentUser;
   Map<String, List<String>> quizTopics = {};
-  List<String> allInternshipNames = [
-    "Python Programming",
-    "Web Development",
-    "Data Science",
-    "Machine Learning",
-    "Numpy",
-    "Pandas",
-    "Data Analytics",
-  ];
+  List<String> allInternshipNames = [];
   List<String> filteredInternshipNames = [];
   TextEditingController _searchController = TextEditingController();
 
@@ -38,7 +30,7 @@ class _QuizListHomeState extends State<QuizListHome> {
   void initState() {
     super.initState();
     _fetchUserData();
-    _loadQuizTopics();
+    _loadInternshipNames();
     filteredInternshipNames.addAll(allInternshipNames);
     _searchController.addListener(_filterInternships);
   }
@@ -54,6 +46,25 @@ class _QuizListHomeState extends State<QuizListHome> {
       setState(() {
         userData = snapshot.data() as Map<String, dynamic>?;
       });
+    }
+  }
+
+  Future<void> _loadInternshipNames() async {
+    try {
+      final String data =
+          await rootBundle.loadString('assets/course_list.json');
+      final List<dynamic> decodedList = jsonDecode(data);
+      setState(() {
+        allInternshipNames = decodedList.cast<String>();
+        filteredInternshipNames.addAll(allInternshipNames);
+        _loadQuizTopics(); // Load quiz topics after internship names are loaded
+      });
+    } catch (e) {
+      print('Error loading internship names: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Error loading internship names. Please try again.')),
+      );
     }
   }
 
