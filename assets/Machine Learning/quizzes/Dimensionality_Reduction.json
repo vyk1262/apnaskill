@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Dimensionality_Reduction",
+      "questions": [
+        {
+          "question": "What is the primary goal of dimensionality reduction?",
+          "options": {
+            "A": "To increase the number of features in a dataset.",
+            "B": "To reduce the number of features in a dataset while preserving essential information.",
+            "C": "To improve the accuracy of machine learning models by adding noise.",
+            "D": "To visualize high-dimensional data in its original space."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is dimensionality reduction often useful in machine learning?",
+          "options": {
+            "A": "It always leads to better model performance.",
+            "B": "It can help to mitigate the curse of dimensionality, reduce computational cost, improve model interpretability, and aid in data visualization.",
+            "C": "It is only necessary for very small datasets.",
+            "D": "It ensures that all features are equally important."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the two main categories of dimensionality reduction techniques?",
+          "options": {
+            "A": "Feature scaling and feature encoding.",
+            "B": "Feature selection and feature extraction.",
+            "C": "Supervised and unsupervised methods.",
+            "D": "Linear and non-linear algorithms."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is feature selection in the context of dimensionality reduction?",
+          "options": {
+            "A": "Creating new features from existing ones.",
+            "B": "Identifying and selecting a subset of the original features that are most relevant.",
+            "C": "Transforming the original features into a lower-dimensional space.",
+            "D": "Scaling the features to a common range."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is feature extraction in the context of dimensionality reduction?",
+          "options": {
+            "A": "Selecting a subset of the original features.",
+            "B": "Creating a new, smaller set of features from the original ones through transformations.",
+            "C": "Scaling the features.",
+            "D": "Encoding categorical features numerically."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a linear dimensionality reduction technique?",
+          "options": {
+            "A": "t-SNE",
+            "B": "UMAP",
+            "C": "Principal Component Analysis (PCA)",
+            "D": "Kernel PCA"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the goal of Principal Component Analysis (PCA)?",
+          "options": {
+            "A": "To find the optimal number of clusters in a dataset.",
+            "B": "To transform the data into a new set of orthogonal variables (principal components) that capture the most variance in the data.",
+            "C": "To classify data points into predefined categories.",
+            "D": "To discover association rules between items."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How are principal components ordered in PCA?",
+          "options": {
+            "A": "Alphabetically by the original feature names.",
+            "B": "Randomly.",
+            "C": "By the amount of variance they explain in the data, with the first component explaining the most.",
+            "D": "Based on their correlation with the target variable (if available)."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the 'explained variance ratio' in PCA?",
+          "options": {
+            "A": "The ratio of the number of principal components to the original number of features.",
+            "B": "The proportion of the dataset's total variance that is captured by each principal component.",
+            "C": "The correlation between the principal components and the original features.",
+            "D": "A measure of how well PCA separates different classes in the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you decide the number of principal components to keep in PCA?",
+          "options": {
+            "A": "Always keep all principal components.",
+            "B": "Keep a fixed number of components (e.g., half the original number).",
+            "C": "Use techniques like the explained variance ratio threshold, scree plot, or cross-validation to determine a suitable number.",
+            "D": "Keep only the first principal component."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a non-linear dimensionality reduction technique?",
+          "options": {
+            "A": "Linear Discriminant Analysis (LDA)",
+            "B": "Independent Component Analysis (ICA)",
+            "C": "t-SNE (t-distributed Stochastic Neighbor Embedding)",
+            "D": "Singular Value Decomposition (SVD)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the primary goal of t-SNE?",
+          "options": {
+            "A": "To maximize the variance explained by the lower-dimensional representation.",
+            "B": "To preserve the local structure of the high-dimensional data in the lower-dimensional embedding, making it suitable for visualization.",
+            "C": "To find independent components in the data.",
+            "D": "To project data onto a linear subspace that best separates different classes."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is UMAP (Uniform Manifold Approximation and Projection for Dimension Reduction)?",
+          "options": {
+            "A": "A linear dimensionality reduction technique.",
+            "B": "A non-linear dimensionality reduction technique that aims to preserve both local and global structure of the data and is often faster than t-SNE.",
+            "C": "A feature selection method based on manifold learning.",
+            "D": "A clustering algorithm that projects data onto a lower-dimensional manifold."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Kernel PCA?",
+          "options": {
+            "A": "A linear version of PCA.",
+            "B": "A non-linear extension of PCA that uses kernel methods to perform PCA in a higher-dimensional feature space, capturing non-linear relationships.",
+            "C": "A type of feature selection based on kernels.",
+            "D": "A clustering algorithm that uses kernel functions."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Linear Discriminant Analysis (LDA)?",
+          "options": {
+            "A": "An unsupervised linear dimensionality reduction technique that aims to maximize variance.",
+            "B": "A supervised linear dimensionality reduction technique that aims to find a projection that maximizes the separability between different classes.",
+            "C": "A non-linear dimensionality reduction method for visualization.",
+            "D": "A feature selection technique based on linear relationships."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How does LDA differ from PCA?",
+          "options": {
+            "A": "PCA is supervised, while LDA is unsupervised.",
+            "B": "LDA is supervised, while PCA is unsupervised; PCA aims to maximize variance, while LDA aims to maximize class separability.",
+            "C": "PCA is used for classification, while LDA is used for regression.",
+            "D": "There is no significant difference between them."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Independent Component Analysis (ICA)?",
+          "options": {
+            "A": "A dimensionality reduction technique that assumes the observed data is a linear mixture of statistically independent source signals.",
+            "B": "A supervised method for reducing dimensions based on class labels.",
+            "C": "A non-linear technique for visualizing high-dimensional data.",
+            "D": "A clustering algorithm that finds independent clusters."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "In what scenarios might you choose a non-linear dimensionality reduction technique over a linear one?",
+          "options": {
+            "A": "When the underlying structure of the data is known to be linear.",
+            "B": "When interpretability of the reduced dimensions is the top priority.",
+            "C": "When the data lies on a non-linear manifold in the high-dimensional space.",
+            "D": "Non-linear techniques are always preferred."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are some considerations when applying dimensionality reduction techniques?",
+          "options": {
+            "A": "Always reduce the dimensionality to two or three for easy visualization.",
+            "B": "Consider the information loss during the reduction process, the interpretability of the reduced dimensions, and the computational cost.",
+            "C": "The choice of technique does not depend on the data or the task.",
+            "D": "Dimensionality reduction should always be performed before any other data preprocessing steps."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can dimensionality reduction benefit the training of machine learning models?",
+          "options": {
+            "A": "It always increases the training time.",
+            "B": "It can reduce overfitting, speed up training, and improve model performance by focusing on the most important underlying patterns.",
+            "C": "It makes the models more complex and harder to interpret.",
+            "D": "It is only beneficial for linear models."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

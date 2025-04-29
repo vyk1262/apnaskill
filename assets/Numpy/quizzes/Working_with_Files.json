@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Working_with_Files",
+      "questions": [
+        {
+          "question": "Which NumPy function is commonly used to load data from a text file?",
+          "options": {
+            "A": "numpy.readfile()",
+            "B": "numpy.loadtext()",
+            "C": "numpy.loadtxt()",
+            "D": "numpy.fromfile()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a common file extension associated with text files that `numpy.loadtxt()` can read?",
+          "options": {
+            "A": ".npy",
+            "B": ".csv",
+            "C": ".pkl",
+            "D": ".txt.npy"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What argument in `numpy.loadtxt()` allows you to specify the delimiter used in the text file?",
+          "options": {
+            "A": "separator",
+            "B": "delim",
+            "C": "delimiter",
+            "D": "sep"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you skip the first few lines of a text file when loading data using `numpy.loadtxt()`?",
+          "options": {
+            "A": "using the `skiprows` argument",
+            "B": "using the `header` argument",
+            "C": "using the `startrow` argument",
+            "D": "by pre-processing the file in Python"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What argument in `numpy.loadtxt()` allows you to specify the data type of the resulting array?",
+          "options": {
+            "A": "type",
+            "B": "dtype",
+            "C": "as_type",
+            "D": "data_type"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you specify which columns to read from a text file using `numpy.loadtxt()`?",
+          "options": {
+            "A": "using the `usecols` argument",
+            "B": "using slicing after loading",
+            "C": "using the `columns` argument",
+            "D": "both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which NumPy function is used to save a single NumPy array to a binary file with the `.npy` extension?",
+          "options": {
+            "A": "numpy.savetxt()",
+            "B": "numpy.save()",
+            "C": "numpy.savearray()",
+            "D": "numpy.dump()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function is used to load arrays saved with `numpy.save()`?",
+          "options": {
+            "A": "numpy.load()",
+            "B": "numpy.read()",
+            "C": "numpy.loadarray()",
+            "D": "numpy.readnpy()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the advantage of using `numpy.save()` and `numpy.load()` over `numpy.savetxt()` and `numpy.loadtxt()`?",
+          "options": {
+            "A": "They are more human-readable.",
+            "B": "They preserve the exact data type and shape of the array.",
+            "C": "They are generally faster for smaller files.",
+            "D": "They can handle more complex data structures."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function can save multiple arrays into a single `.npz` file (a zipped archive)?",
+          "options": {
+            "A": "numpy.savez()",
+            "B": "numpy.savemultiple()",
+            "C": "numpy.pack()",
+            "D": "numpy.archive()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you load arrays from a `.npz` file saved with `numpy.savez()`?",
+          "options": {
+            "A": "using `numpy.load()` which returns a dictionary-like object",
+            "B": "using `numpy.loadz()`",
+            "C": "using `numpy.unpack()`",
+            "D": "they need to be loaded individually using `numpy.load()`"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "When loading a `.npz` file, how do you access the individual arrays stored within it?",
+          "options": {
+            "A": "by their index in the file",
+            "B": "by the keywords used when saving them",
+            "C": "they are automatically loaded as separate variables",
+            "D": "you need to know the order in which they were saved"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What happens if `numpy.savetxt()` is used to save an array with a data type that cannot be easily represented as text?",
+          "options": {
+            "A": "It will raise an error.",
+            "B": "It will try to convert it to a string representation.",
+            "C": "It will save it as a binary file instead.",
+            "D": "It will only save the real part of complex numbers."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which argument in `numpy.savetxt()` allows you to specify the format string for how numbers are written to the file?",
+          "options": {
+            "A": "format",
+            "B": "fmt",
+            "C": "representation",
+            "D": "string_format"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you add a header or footer to a text file when saving a NumPy array using `numpy.savetxt()`?",
+          "options": {
+            "A": "using the `header` and `footer` arguments",
+            "B": "by manually adding lines to the file before or after saving",
+            "C": "using the `comments` argument to add comment lines",
+            "D": "both A and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the default delimiter used by `numpy.savetxt()`?",
+          "options": {
+            "A": ",",
+            "B": " ",
+            "C": "\t",
+            "D": ";"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Can `numpy.loadtxt()` directly read compressed files (e.g., `.gz`, `.bz2`)?",
+          "options": {
+            "A": "Yes, it automatically detects the compression.",
+            "B": "No, you need to decompress them manually first.",
+            "C": "It depends on the operating system.",
+            "D": "Only for `.gz` files."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "When saving multiple arrays to a `.npz` file, what happens if you don't provide keywords for the arrays?",
+          "options": {
+            "A": "They are saved with default names like `arr_0`, `arr_1`, etc.",
+            "B": "An error is raised.",
+            "C": "They are saved in the order they were provided without names.",
+            "D": "Only the last array is saved."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which NumPy function can be used to read data directly from a binary file format (without assuming a specific text structure)?",
+          "options": {
+            "A": "numpy.loadtxt()",
+            "B": "numpy.fromfile()",
+            "C": "numpy.load()",
+            "D": "numpy.genfromtxt()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a potential use case for `numpy.fromfile()`?",
+          "options": {
+            "A": "Reading standard CSV files.",
+            "B": "Loading arrays saved in NumPy's `.npy` format.",
+            "C": "Reading data from a binary file generated by another program.",
+            "D": "Loading multiple arrays from a zipped archive."
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

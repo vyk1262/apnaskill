@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Visualization",
+      "questions": [
+        {
+          "question": "Which Python library is most commonly used with Pandas for basic data visualization?",
+          "options": {
+            "A": "Seaborn",
+            "B": "Matplotlib",
+            "C": "Plotly",
+            "D": "Bokeh"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you create a basic line plot of a Pandas Series `s` using Matplotlib?",
+          "options": {
+            "A": "plt.plot(s)",
+            "B": "s.plot(kind='line')",
+            "C": "s.matplotlib.plot()",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you create a bar plot of a Pandas Series `s` showing the counts of unique values?",
+          "options": {
+            "A": "s.plot(kind='hist')",
+            "B": "s.plot(kind='bar')",
+            "C": "plt.bar(s.index, s.values)",
+            "D": "s.value_counts().plot(kind='bar')"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which type of plot is suitable for visualizing the distribution of a single numerical variable?",
+          "options": {
+            "A": "Scatter plot",
+            "B": "Line plot",
+            "C": "Histogram",
+            "D": "Bar plot"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you create a histogram of a column 'Age' in a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df['Age'].plot(kind='line')",
+            "B": "plt.hist(df['Age'])",
+            "C": "df['Age'].plot(kind='hist')",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which type of plot is useful for visualizing the relationship between two numerical variables?",
+          "options": {
+            "A": "Bar plot",
+            "B": "Pie chart",
+            "C": "Scatter plot",
+            "D": "Histogram"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you create a scatter plot of 'Price' vs 'Quantity' from a Pandas DataFrame `df`?",
+          "options": {
+            "A": "plt.scatter(df['Price'], df['Quantity'])",
+            "B": "df.plot(x='Price', y='Quantity', kind='scatter')",
+            "C": "df.scatter('Price', 'Quantity')",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which type of plot is suitable for showing the proportion of different categories in a dataset?",
+          "options": {
+            "A": "Box plot",
+            "B": "Line plot",
+            "C": "Pie chart",
+            "D": "Violin plot"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you create a pie chart of the value counts in a Pandas Series `s`?",
+          "options": {
+            "A": "plt.pie(s.values, labels=s.index)",
+            "B": "s.plot(kind='pie')",
+            "C": "s.value_counts().plot(kind='pie')",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which type of plot is used to display the distribution of a numerical variable across different categories?",
+          "options": {
+            "A": "Scatter plot",
+            "B": "Line plot",
+            "C": "Box plot",
+            "D": "Histogram"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you create a box plot of the 'Price' column for each 'Category' in a DataFrame `df`?",
+          "options": {
+            "A": "df.boxplot(column='Price', by='Category')",
+            "B": "df.groupby('Category')['Price'].plot(kind='box')",
+            "C": "sns.boxplot(x='Category', y='Price', data=df)",
+            "D": "Both A and C (assuming Seaborn is imported as sns)"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which library provides more advanced and aesthetically pleasing statistical visualizations built on top of Matplotlib?",
+          "options": {
+            "A": "Plotly",
+            "B": "Bokeh",
+            "C": "Seaborn",
+            "D": "Pandas"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you create a violin plot using Seaborn to visualize the distribution of 'Price' by 'Category'?",
+          "options": {
+            "A": "sns.boxplot(x='Category', y='Price', data=df)",
+            "B": "sns.violinplot(x='Category', y='Price', data=df)",
+            "C": "df.plot(x='Category', y='Price', kind='violin')",
+            "D": "plt.violin(df['Price'], labels=df['Category'])"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of adding labels and titles to your plots?",
+          "options": {
+            "A": "To make the plot visually appealing.",
+            "B": "To provide context and make the plot understandable.",
+            "C": "To reduce the file size of the image.",
+            "D": "To speed up the plotting process."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you add a title to a Matplotlib plot?",
+          "options": {
+            "A": "plt.set_title('My Plot Title')",
+            "B": "plt.title('My Plot Title')",
+            "C": "plot.title('My Plot Title')",
+            "D": "axes.title('My Plot Title')"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you add a label to the x-axis of a Matplotlib plot?",
+          "options": {
+            "A": "plt.xlabel('X-axis Label')",
+            "B": "plt.x_label('X-axis Label')",
+            "C": "plot.xlabel('X-axis Label')",
+            "D": "axes.xlabel('X-axis Label')"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of a legend in a plot?",
+          "options": {
+            "A": "To display the data values.",
+            "B": "To explain the different elements or categories represented in the plot.",
+            "C": "To save the plot as an image file.",
+            "D": "To add annotations to specific data points."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you add a legend to a Matplotlib plot?",
+          "options": {
+            "A": "plt.show_legend()",
+            "B": "plt.legend()",
+            "C": "plot.legend()",
+            "D": "axes.legend()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which library is known for creating interactive plots that can be zoomed and panned in a web browser?",
+          "options": {
+            "A": "Matplotlib",
+            "B": "Seaborn",
+            "C": "Plotly",
+            "D": "Statsmodels"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a pair plot (using Seaborn), and when is it useful?",
+          "options": {
+            "A": "A plot showing the pairwise correlation between numerical variables; useful for exploring relationships between multiple variables.",
+            "B": "A plot showing the distribution of a single variable across different groups.",
+            "C": "A plot showing the trend of a variable over time.",
+            "D": "A plot showing the proportion of different categories."
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

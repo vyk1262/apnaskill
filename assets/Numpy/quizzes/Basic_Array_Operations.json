@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Basic_Array_Operations",
+      "questions": [
+        {
+          "question": "What happens when you add two NumPy arrays of the same shape using the `+` operator?",
+          "options": {
+            "A": "The arrays are concatenated element-wise.",
+            "B": "A new array is created with element-wise sums.",
+            "C": "The first array is modified in-place by adding the second array.",
+            "D": "It results in an error if the shapes are the same."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How do you perform element-wise multiplication of two NumPy arrays `arr1` and `arr2`?",
+          "options": {
+            "A": "numpy.dot(arr1, arr2)",
+            "B": "arr1 * arr2",
+            "C": "numpy.multiply(arr1, arr2)",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the result of dividing a NumPy array by a scalar value?",
+          "options": {
+            "A": "It raises a TypeError.",
+            "B": "Each element of the array is divided by the scalar.",
+            "C": "The scalar is appended to the end of the array.",
+            "D": "The array is unchanged."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following performs element-wise exponentiation of a NumPy array `arr` with a scalar `n`?",
+          "options": {
+            "A": "arr ** n",
+            "B": "numpy.power(arr, n)",
+            "C": "numpy.exp(arr * numpy.log(n))",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How do you check if two NumPy arrays `arr1` and `arr2` have element-wise equality?",
+          "options": {
+            "A": "arr1 == arr2 (using the `==` operator)",
+            "B": "numpy.equal(arr1, arr2)",
+            "C": "arr1.equals(arr2)",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the result of comparing two NumPy arrays of the same shape using the `>` operator?",
+          "options": {
+            "A": "A single boolean value indicating if all elements of the first are greater than the second.",
+            "B": "A new array of boolean values indicating element-wise greater than comparison.",
+            "C": "The first array is modified in-place.",
+            "D": "It returns the indices where the condition is True."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function performs element-wise logical AND between two boolean arrays?",
+          "options": {
+            "A": "numpy.logical_or()",
+            "B": "numpy.logical_not()",
+            "C": "numpy.logical_and()",
+            "D": "numpy.logical_xor()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the `~` operator do when applied to a boolean NumPy array?",
+          "options": {
+            "A": "It performs element-wise logical AND.",
+            "B": "It performs element-wise logical OR.",
+            "C": "It performs element-wise logical NOT.",
+            "D": "It performs element-wise logical XOR."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you check if at least one element in a boolean NumPy array is True?",
+          "options": {
+            "A": "numpy.all(arr)",
+            "B": "numpy.any(arr)",
+            "C": "numpy.sum(arr) > 0",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you check if all elements in a boolean NumPy array are True?",
+          "options": {
+            "A": "numpy.any(arr)",
+            "B": "numpy.all(arr)",
+            "C": "numpy.prod(arr) == 1",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What happens when you perform arithmetic operations on NumPy arrays with different shapes?",
+          "options": {
+            "A": "It always results in an error.",
+            "B": "NumPy tries to apply broadcasting rules.",
+            "C": "The smaller array is padded with zeros to match the shape of the larger array.",
+            "D": "The operation is performed only on the overlapping elements."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "According to NumPy's broadcasting rules, two arrays are compatible for an operation if:",
+          "options": {
+            "A": "They have the exact same shape.",
+            "B": "The number of dimensions is the same, or one of the arrays has a dimension of size 1.",
+            "C": "The trailing dimension sizes for both arrays match, or one of them is 1.",
+            "D": "Both A and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Consider an array `a` with shape (3, 1) and an array `b` with shape (1, 4). What will be the shape of `a + b` after broadcasting?",
+          "options": {
+            "A": "(3, 1)",
+            "B": "(1, 4)",
+            "C": "(3, 4)",
+            "D": "(4, 3)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you add a constant value to all elements of a NumPy array?",
+          "options": {
+            "A": "array.add(constant)",
+            "B": "array + constant",
+            "C": "numpy.add(array, constant)",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which NumPy function calculates the sum of all elements in an array?",
+          "options": {
+            "A": "array.total()",
+            "B": "numpy.sum(array)",
+            "C": "array.sum()",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you calculate the sum of elements along a specific axis of a NumPy array?",
+          "options": {
+            "A": "numpy.sum(array, axis=None)",
+            "B": "array.sum(axis=0) or array.sum(axis=1)",
+            "C": "numpy.sum(array, dimension=0)",
+            "D": "sum(array[axis])"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function finds the maximum value in an array?",
+          "options": {
+            "A": "numpy.max(array)",
+            "B": "array.max()",
+            "C": "numpy.maximum(array)",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How do you find the index of the maximum value in a 1D NumPy array?",
+          "options": {
+            "A": "numpy.argmax(array)",
+            "B": "array.argmax()",
+            "C": "numpy.where(array == numpy.max(array))[0][0]",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which NumPy function calculates the dot product of two arrays?",
+          "options": {
+            "A": "numpy.multiply()",
+            "B": "numpy.cross()",
+            "C": "numpy.dot()",
+            "D": "numpy.matmul()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the difference between `numpy.dot()` and the `@` operator for matrix multiplication in NumPy?",
+          "options": {
+            "A": "They perform different types of multiplication.",
+            "B": "The `@` operator is a shorthand for `numpy.dot()` and is preferred for matrix multiplication in later Python versions.",
+            "C": "`numpy.dot()` only works for 1D arrays, while `@` works for higher dimensions.",
+            "D": "There is no difference; they are aliases of each other."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

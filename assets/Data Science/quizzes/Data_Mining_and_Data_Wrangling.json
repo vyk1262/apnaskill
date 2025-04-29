@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Mining_and_Data_Wrangling",
+      "questions": [
+        {
+          "question": "What is the primary goal of data mining?",
+          "options": {
+            "A": "To efficiently store and retrieve data.",
+            "B": "To clean and preprocess raw data.",
+            "C": "To discover interesting patterns, knowledge, and insights from large datasets.",
+            "D": "To visualize data in various graphical formats."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common task in data mining?",
+          "options": {
+            "A": "Database design",
+            "B": "Software development",
+            "C": "Classification, clustering, and association rule mining",
+            "D": "Web scraping"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is data wrangling primarily concerned with?",
+          "options": {
+            "A": "Extracting patterns from data.",
+            "B": "Transforming and mapping data from its raw form into a more useful format for analysis.",
+            "C": "Storing and managing large volumes of data.",
+            "D": "Presenting data insights through visualizations."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a key step in the data wrangling process?",
+          "options": {
+            "A": "Model deployment",
+            "B": "Feature selection",
+            "C": "Data cleaning, data transformation, and data integration",
+            "D": "Algorithm selection"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of data cleaning?",
+          "options": {
+            "A": "To reduce the size of the dataset.",
+            "B": "To improve the visual appeal of the data.",
+            "C": "To handle missing values, identify and treat outliers, and correct inconsistencies in the data.",
+            "D": "To combine data from multiple sources."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which technique can be used to handle missing categorical data?",
+          "options": {
+            "A": "Imputation with the mean.",
+            "B": "Deletion of rows with missing values.",
+            "C": "Imputation with the mode or creating a new 'missing' category.",
+            "D": "Linear interpolation."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is data transformation in the context of data wrangling?",
+          "options": {
+            "A": "The process of identifying patterns in data.",
+            "B": "The process of converting data from one format or structure to another, such as normalization or aggregation.",
+            "C": "The process of collecting data from various sources.",
+            "D": "The process of visualizing data insights."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is data integration?",
+          "options": {
+            "A": "The process of cleaning individual datasets.",
+            "B": "The process of combining data from multiple sources into a unified view.",
+            "C": "The process of transforming data into a specific format.",
+            "D": "The process of visualizing relationships between variables."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What challenges can arise during data integration?",
+          "options": {
+            "A": "Consistent data formats across all sources.",
+            "B": "Matching schemas and resolving semantic differences between data sources.",
+            "C": "Absence of duplicate records.",
+            "D": "Uniform data quality across all sources."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is feature selection in data mining?",
+          "options": {
+            "A": "The process of creating new features from existing ones.",
+            "B": "The process of identifying and selecting the most relevant features for a data mining task.",
+            "C": "The process of scaling features to a similar range.",
+            "D": "The process of handling missing values in features."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is association rule mining?",
+          "options": {
+            "A": "A technique for predicting a continuous target variable.",
+            "B": "A technique for grouping similar data points together.",
+            "C": "A technique for discovering interesting relationships or associations among a set of items in transactional databases.",
+            "D": "A technique for classifying data into predefined categories."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are support and confidence in association rule mining?",
+          "options": {
+            "A": "Measures of the accuracy of a classification model.",
+            "B": "Metrics used to evaluate the strength and reliability of association rules.",
+            "C": "Parameters used in clustering algorithms.",
+            "D": "Techniques for handling missing data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is clustering in data mining?",
+          "options": {
+            "A": "The process of predicting a categorical target variable.",
+            "B": "The process of grouping data points into clusters based on their similarity.",
+            "C": "The process of finding associations between items.",
+            "D": "The process of reducing the dimensionality of data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common clustering algorithm?",
+          "options": {
+            "A": "Linear Regression",
+            "B": "Decision Trees",
+            "C": "K-Means",
+            "D": "Support Vector Machines"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is classification in data mining?",
+          "options": {
+            "A": "The process of grouping similar data points.",
+            "B": "The process of assigning data points to predefined categories or classes based on their features.",
+            "C": "The process of discovering relationships between items.",
+            "D": "The process of predicting a continuous value."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common classification algorithm?",
+          "options": {
+            "A": "Principal Component Analysis (PCA)",
+            "B": "Apriori",
+            "C": "Logistic Regression",
+            "D": "K-Means"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is data exploration and how does it relate to data mining and wrangling?",
+          "options": {
+            "A": "It is the final step of presenting findings; it comes after mining and wrangling.",
+            "B": "It is the initial step of understanding the data, which helps guide the wrangling and mining processes.",
+            "C": "It is a separate field that is not related to data mining or wrangling.",
+            "D": "It primarily focuses on building predictive models."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some common tools or libraries used for data wrangling in Python?",
+          "options": {
+            "A": "TensorFlow and PyTorch",
+            "B": "Pandas and NumPy",
+            "C": "Matplotlib and Seaborn",
+            "D": "SQLAlchemy and psycopg2"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is domain knowledge important in data mining and data wrangling?",
+          "options": {
+            "A": "It is not necessary as the data speaks for itself.",
+            "B": "It helps in understanding the context of the data, formulating meaningful questions, and interpreting the discovered patterns.",
+            "C": "It is only required for presenting the final results.",
+            "D": "It is primarily used for choosing the right algorithms."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the potential impact of poorly performed data wrangling on data mining results?",
+          "options": {
+            "A": "It can lead to faster processing times.",
+            "B": "It can result in inaccurate patterns, misleading insights, and flawed models.",
+            "C": "It has no significant impact if the mining algorithms are robust.",
+            "D": "It primarily affects the visualization of the results."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

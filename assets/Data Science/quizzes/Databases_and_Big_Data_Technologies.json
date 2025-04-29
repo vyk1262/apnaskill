@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Databases_and_Big_Data_Technologies",
+      "questions": [
+        {
+          "question": "What is the primary purpose of a database management system (DBMS)?",
+          "options": {
+            "A": "To perform complex statistical analysis.",
+            "B": "To efficiently store, retrieve, and manage large volumes of data.",
+            "C": "To visualize data in graphical formats.",
+            "D": "To develop software applications."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a relational database?",
+          "options": {
+            "A": "A database that stores data in a hierarchical structure.",
+            "B": "A database that stores data as key-value pairs.",
+            "C": "A database that organizes data into tables with rows and columns, and establishes relationships between these tables.",
+            "D": "A database designed for storing unstructured data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does SQL stand for?",
+          "options": {
+            "A": "Structured Query Language",
+            "B": "Simple Question Language",
+            "C": "System Query Logic",
+            "D": "Standard Query Method"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which SQL command is used to retrieve data from a database table?",
+          "options": {
+            "A": "INSERT",
+            "B": "UPDATE",
+            "C": "SELECT",
+            "D": "DELETE"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a NoSQL database?",
+          "options": {
+            "A": "A database that does not use the SQL query language.",
+            "B": "A database that strictly adheres to the relational model.",
+            "C": "A database designed for small datasets.",
+            "D": "A database that can only store numerical data."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is a type of NoSQL database?",
+          "options": {
+            "A": "MySQL",
+            "B": "PostgreSQL",
+            "C": "MongoDB",
+            "D": "SQLite"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are the key characteristics that differentiate 'big data' from traditional data?",
+          "options": {
+            "A": "Small volume, slow velocity, limited variety.",
+            "B": "Large volume, high velocity, great variety, veracity, and value.",
+            "C": "Primarily structured data with low complexity.",
+            "D": "Processed and analyzed using traditional database systems."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Hadoop?",
+          "options": {
+            "A": "A relational database management system.",
+            "B": "A programming language for data analysis.",
+            "C": "An open-source framework for distributed storage and processing of large datasets.",
+            "D": "A tool for data visualization."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of HDFS in Hadoop?",
+          "options": {
+            "A": "It is the processing engine of Hadoop.",
+            "B": "It is the distributed file system that Hadoop uses to store data.",
+            "C": "It is the resource management component of Hadoop.",
+            "D": "It is the SQL-like interface for querying Hadoop data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is MapReduce?",
+          "options": {
+            "A": "A database query language used in Hadoop.",
+            "B": "A programming model for processing large datasets in parallel across a distributed computing environment.",
+            "C": "A data visualization tool integrated with Hadoop.",
+            "D": "A component of HDFS responsible for data storage."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Apache Spark?",
+          "options": {
+            "A": "An older version of Hadoop.",
+            "B": "A fast and general-purpose distributed processing system that can perform batch and stream processing.",
+            "C": "A NoSQL database designed for graph data.",
+            "D": "A tool for managing and monitoring Hadoop clusters."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How does Spark differ from traditional MapReduce?",
+          "options": {
+            "A": "Spark can only process structured data.",
+            "B": "Spark can perform computations in memory, leading to faster processing for iterative tasks.",
+            "C": "MapReduce is better for real-time stream processing.",
+            "D": "There is no significant performance difference between them."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a data warehouse?",
+          "options": {
+            "A": "A real-time operational database.",
+            "B": "A subject-oriented, integrated, time-variant, and non-volatile collection of data in support of management's decision-making process.",
+            "C": "A system for storing and managing unstructured data.",
+            "D": "A tool for performing online transaction processing (OLTP)."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a data lake?",
+          "options": {
+            "A": "A highly structured database for transactional data.",
+            "B": "A centralized repository that allows you to store all your structured and unstructured data at any scale.",
+            "C": "A system for real-time data processing only.",
+            "D": "A tool for creating data visualizations."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are cloud-based data storage solutions?",
+          "options": {
+            "A": "Data storage systems that are physically located on-premises.",
+            "B": "Data storage services provided by third-party vendors over the internet, such as AWS S3, Azure Blob Storage, and Google Cloud Storage.",
+            "C": "Small-scale storage devices for personal use.",
+            "D": "Temporary storage solutions for volatile data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the advantages of using cloud-based data storage?",
+          "options": {
+            "A": "Higher upfront costs for infrastructure.",
+            "B": "Limited scalability and flexibility.",
+            "C": "Scalability, cost-effectiveness, and accessibility.",
+            "D": "Increased need for on-site maintenance and management."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is data governance in the context of databases and big data?",
+          "options": {
+            "A": "The process of cleaning and transforming data.",
+            "B": "The overall management of the availability, usability, integrity, and security of data within an organization.",
+            "C": "The process of building data pipelines.",
+            "D": "The visualization of data insights."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the implications of data security and privacy in database and big data environments?",
+          "options": {
+            "A": "They are not significant concerns.",
+            "B": "They are crucial due to the large volumes and potential sensitivity of the data, requiring robust security measures and adherence to privacy regulations.",
+            "C": "They are primarily the responsibility of the database vendor.",
+            "D": "They only apply to relational databases."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some common tools for interacting with big data ecosystems like Hadoop and Spark?",
+          "options": {
+            "A": "Microsoft Excel and Access.",
+            "B": "Python with libraries like PySpark, HiveQL, and cloud-specific SDKs.",
+            "C": "Traditional relational database management systems.",
+            "D": "Text editors and command-line interfaces only."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How do databases and big data technologies support data science workflows?",
+          "options": {
+            "A": "They provide the infrastructure for storing, managing, and processing the large datasets required for analysis and model building.",
+            "B": "They are primarily used for visualizing the final results of data science projects.",
+            "C": "They are only relevant for deploying machine learning models.",
+            "D": "They are used to perform statistical analysis directly without the need for data scientists."
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

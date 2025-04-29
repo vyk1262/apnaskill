@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Machine_Learning",
+      "questions": [
+        {
+          "question": "What is the fundamental goal of machine learning?",
+          "options": {
+            "A": "To write efficient computer programs.",
+            "B": "To enable computers to learn from data without being explicitly programmed.",
+            "C": "To create static models based on fixed rules.",
+            "D": "To visualize large datasets."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a type of supervised learning?",
+          "options": {
+            "A": "Clustering",
+            "B": "Dimensionality Reduction",
+            "C": "Regression",
+            "D": "Reinforcement Learning"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "In supervised learning, what is the role of labeled data?",
+          "options": {
+            "A": "It is used only for model evaluation.",
+            "B": "It consists of input features without corresponding output targets.",
+            "C": "It provides the correct output targets for the input features, allowing the model to learn the mapping between them.",
+            "D": "It is used for unsupervised learning tasks."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common algorithm for classification tasks?",
+          "options": {
+            "A": "Linear Regression",
+            "B": "K-Means Clustering",
+            "C": "Support Vector Machines (SVM)",
+            "D": "Principal Component Analysis (PCA)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common algorithm for regression tasks?",
+          "options": {
+            "A": "Logistic Regression",
+            "B": "Decision Trees",
+            "C": "Apriori Algorithm",
+            "D": "Linear Regression"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is unsupervised learning?",
+          "options": {
+            "A": "Learning from labeled data to predict future outcomes.",
+            "B": "Learning patterns and structures from unlabeled data.",
+            "C": "Learning through trial and error with a reward system.",
+            "D": "Learning to classify data into predefined categories."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common unsupervised learning algorithm?",
+          "options": {
+            "A": "Naive Bayes",
+            "B": "Random Forest",
+            "C": "K-Nearest Neighbors (KNN)",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is reinforcement learning?",
+          "options": {
+            "A": "Learning from labeled data.",
+            "B": "Learning patterns from unlabeled data.",
+            "C": "Learning through interactions with an environment by receiving rewards or penalties for actions.",
+            "D": "Learning to classify data based on similarity."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of splitting a dataset into training and testing sets?",
+          "options": {
+            "A": "To increase the size of the dataset.",
+            "B": "To train the model on all the data.",
+            "C": "To evaluate the performance of the trained model on unseen data.",
+            "D": "To visualize the data more effectively."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is overfitting in machine learning?",
+          "options": {
+            "A": "When a model performs poorly on the training data.",
+            "B": "When a model learns the training data too well, including the noise, and performs poorly on unseen data.",
+            "C": "When a model generalizes well to unseen data.",
+            "D": "When the training data is insufficient."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following techniques can help to reduce overfitting?",
+          "options": {
+            "A": "Increasing the complexity of the model.",
+            "B": "Training the model for a longer time.",
+            "C": "Regularization",
+            "D": "Using more features."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of a confusion matrix in classification?",
+          "options": {
+            "A": "To visualize the distribution of data points.",
+            "B": "To evaluate the performance of a classification model by showing the counts of true positives, true negatives, false positives, and false negatives.",
+            "C": "To identify clusters in the data.",
+            "D": "To reduce the dimensionality of the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is precision in the context of classification?",
+          "options": {
+            "A": "The proportion of actual positives that were correctly identified.",
+            "B": "The proportion of predicted positives that were actually positive.",
+            "C": "The overall accuracy of the model.",
+            "D": "The ability of the model to find all the positive instances."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is recall (sensitivity) in the context of classification?",
+          "options": {
+            "A": "The proportion of predicted positives that were actually positive.",
+            "B": "The overall accuracy of the model.",
+            "C": "The proportion of actual positives that were correctly identified.",
+            "D": "The proportion of actual negatives that were correctly identified."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the F1-score?",
+          "options": {
+            "A": "A simple average of precision and recall.",
+            "B": "The weighted average of true positives and true negatives.",
+            "C": "The harmonic mean of precision and recall.",
+            "D": "Another name for accuracy."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of features in a machine learning model?",
+          "options": {
+            "A": "They are the predicted outputs of the model.",
+            "B": "They are the input variables used by the model to make predictions.",
+            "C": "They are the parameters that the model learns during training.",
+            "D": "They are used only for evaluating the model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is feature scaling and why is it often important?",
+          "options": {
+            "A": "It is the process of selecting the most important features; it is important for model interpretability.",
+            "B": "It is the process of transforming features to have a similar scale; it is important for algorithms sensitive to feature magnitude.",
+            "C": "It is the process of creating new features; it is important for improving model accuracy.",
+            "D": "It is the process of encoding categorical features into numerical form; it is important for all machine learning algorithms."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the bias-variance tradeoff?",
+          "options": {
+            "A": "The tradeoff between model complexity and training time.",
+            "B": "The tradeoff between the amount of data used for training and testing.",
+            "C": "The tradeoff between underfitting (high bias) and overfitting (high variance).",
+            "D": "The tradeoff between precision and recall."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of hyperparameter tuning?",
+          "options": {
+            "A": "To train the model on more data.",
+            "B": "To select the optimal values for the parameters that the model learns from the data.",
+            "C": "To select the optimal values for the parameters that are set before training the model.",
+            "D": "To evaluate the performance of the model on the testing set."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common technique for hyperparameter tuning?",
+          "options": {
+            "A": "Gradient descent",
+            "B": "Principal Component Analysis (PCA)",
+            "C": "Grid search",
+            "D": "K-Nearest Neighbors (KNN)"
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

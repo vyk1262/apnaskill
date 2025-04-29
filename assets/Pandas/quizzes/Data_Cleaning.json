@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Cleaning",
+      "questions": [
+        {
+          "question": "What is the first step in the data cleaning process?",
+          "options": {
+            "A": "Handling missing values.",
+            "B": "Identifying and handling outliers.",
+            "C": "Inspecting the data for inconsistencies and issues.",
+            "D": "Standardizing or normalizing the data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which Pandas method is commonly used to detect missing values?",
+          "options": {
+            "A": ".dropna()",
+            "B": ".fillna()",
+            "C": ".isnull()",
+            "D": ".replace()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you count the number of missing values in each column of a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.isnull().count()",
+            "B": "df.isnull().sum()",
+            "C": "df.missing_count()",
+            "D": "df.na.count()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the common strategies for handling missing values in a DataFrame?",
+          "options": {
+            "A": "Removing rows or columns with missing values.",
+            "B": "Imputing missing values with a specific value (e.g., mean, median, mode).",
+            "C": "Using more advanced imputation techniques.",
+            "D": "All of the above."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which Pandas method is used to remove rows with missing values?",
+          "options": {
+            "A": ".drop_na()",
+            "B": ".dropna()",
+            "C": ".remove_na()",
+            "D": ".delete_na()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you remove columns with any missing values in a DataFrame `df`?",
+          "options": {
+            "A": "df.dropna(axis=1, how='any')",
+            "B": "df.dropna(axis='columns', how='any')",
+            "C": "df.drop_columns_na(how='any')",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which Pandas method is used to fill missing values?",
+          "options": {
+            "A": ".fill_na()",
+            "B": ".fillna()",
+            "C": ".replace_na()",
+            "D": ".impute()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you fill all missing values in a DataFrame `df` with the value 0?",
+          "options": {
+            "A": "df.fillna(value=0)",
+            "B": "df.replace_na(0)",
+            "C": "df.impute(0)",
+            "D": "df.fill(0)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you fill missing values in a specific column 'Age' with the mean of that column?",
+          "options": {
+            "A": "df['Age'].fillna(df['Age'].mean())",
+            "B": "df.fillna({'Age': df['Age'].mean()})",
+            "C": "df.loc[df['Age'].isnull(), 'Age'] = df['Age'].mean()",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What are outliers in a dataset?",
+          "options": {
+            "A": "Values that appear most frequently.",
+            "B": "Values that are close to the mean or median.",
+            "C": "Values that are significantly different from other observations.",
+            "D": "Missing values represented by NaN."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are common methods for identifying outliers?",
+          "options": {
+            "A": "Visual inspection (e.g., box plots, scatter plots).",
+            "B": "Statistical methods (e.g., Z-score, IQR).",
+            "C": "Machine learning techniques.",
+            "D": "All of the above."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the Interquartile Range (IQR) method used for in outlier detection?",
+          "options": {
+            "A": "To calculate the average deviation from the mean.",
+            "B": "To identify values that fall below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR.",
+            "C": "To measure the spread of the middle 50% of the data.",
+            "D": "Both B and C."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you replace outliers in a column 'Value' of a DataFrame `df` with the median of that column (assuming you've identified them)?",
+          "options": {
+            "A": "df['Value'].replace_outliers(df['Value'].median())",
+            "B": "df.loc[df['Value'].isin(outlier_values), 'Value'] = df['Value'].median()",
+            "C": "df['Value'].mask(df['Value'].isin(outlier_values), df['Value'].median())",
+            "D": "Both B and C."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What are potential issues with inconsistent data?",
+          "options": {
+            "A": "Incorrect analysis and conclusions.",
+            "B": "Difficulties in merging or joining datasets.",
+            "C": "Errors in data visualization.",
+            "D": "All of the above."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you handle inconsistent capitalization in string columns of a DataFrame?",
+          "options": {
+            "A": "Using the `.str.lower()` or `.str.upper()` methods.",
+            "B": "Using the `.str.capitalize()` method.",
+            "C": "Manually correcting each inconsistency.",
+            "D": "Both A and B."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you remove duplicate rows from a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.drop_duplicates()",
+            "B": "df.remove_duplicates()",
+            "C": "df.unique()",
+            "D": "df.distinct()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you remove duplicate rows based on the values in specific columns ('ID', 'Name') of a DataFrame `df`?",
+          "options": {
+            "A": "df.drop_duplicates(subset=['ID', 'Name'])",
+            "B": "df.remove_duplicates(columns=['ID', 'Name'])",
+            "C": "df.unique(subset=['ID', 'Name'])",
+            "D": "df.distinct(columns=['ID', 'Name'])"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is data validation in the context of data cleaning?",
+          "options": {
+            "A": "The process of filling missing values.",
+            "B": "The process of ensuring that data conforms to specified rules and constraints.",
+            "C": "The process of removing duplicate entries.",
+            "D": "The process of transforming data into a consistent format."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you ensure that values in a 'Category' column of a DataFrame only contain a predefined set of valid categories?",
+          "options": {
+            "A": "Using the `.isin()` method to filter rows with invalid categories.",
+            "B": "Using the `.replace()` method to map invalid categories to a standard form or NaN.",
+            "C": "Creating a boolean mask and using it to select valid rows.",
+            "D": "All of the above."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Why is data cleaning a crucial step in the data analysis process?",
+          "options": {
+            "A": "It makes the data look more presentable.",
+            "B": "It ensures the accuracy and reliability of the analysis results.",
+            "C": "It reduces the size of the dataset.",
+            "D": "It speeds up the computation time."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

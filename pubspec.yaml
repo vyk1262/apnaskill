@@ -89,11 +89,21 @@ flutter:
     - assets/faqs.json
     - assets/explore.json
     - assets/app-data-text.json
+    - assets/mentors.json
     - assets/Python Programming/
     - assets/Python Programming/quizzes/
     - assets/Web Development/
     - assets/Web Development/quizzes/
-    - assets/mentors.json
+    - assets/Data Science/
+    - assets/Data Science/quizzes/
+    - assets/Machine Learning/
+    - assets/Machine Learning/quizzes/
+    - assets/Pandas/
+    - assets/Pandas/quizzes/
+    - assets/Numpy/
+    - assets/Numpy/quizzes/
+    - assets/Data Analytics/
+    - assets/Data Analytics/quizzes/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

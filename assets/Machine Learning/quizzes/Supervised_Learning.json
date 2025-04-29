@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Supervised_Learning",
+      "questions": [
+        {
+          "question": "What is the defining characteristic of supervised learning?",
+          "options": {
+            "A": "Learning from unlabeled data.",
+            "B": "Learning through interaction with an environment.",
+            "C": "Learning a mapping from input features to output targets based on labeled examples.",
+            "D": "Discovering hidden patterns in data without any guidance."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are the two main types of supervised learning problems?",
+          "options": {
+            "A": "Clustering and dimensionality reduction.",
+            "B": "Classification and regression.",
+            "C": "Association rule mining and anomaly detection.",
+            "D": "Generative and discriminative modeling."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "In a classification problem, what type of output is the model trying to predict?",
+          "options": {
+            "A": "A continuous numerical value.",
+            "B": "A discrete category or class label.",
+            "C": "A probability distribution over possible outcomes.",
+            "D": "A sequence of values."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following algorithms is commonly used for classification?",
+          "options": {
+            "A": "Linear Regression",
+            "B": "K-Means Clustering",
+            "C": "Support Vector Machines (SVM)",
+            "D": "Principal Component Analysis (PCA)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "In a regression problem, what type of output is the model trying to predict?",
+          "options": {
+            "A": "A discrete category.",
+            "B": "A continuous numerical value.",
+            "C": "A binary outcome (0 or 1).",
+            "D": "A set of clusters."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following algorithms is commonly used for regression?",
+          "options": {
+            "A": "Logistic Regression",
+            "B": "Decision Trees",
+            "C": "K-Nearest Neighbors (KNN)",
+            "D": "Linear Regression"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the role of a 'decision boundary' in a classification model?",
+          "options": {
+            "A": "To measure the error of the model.",
+            "B": "To separate data points belonging to different classes in the feature space.",
+            "C": "To visualize the distribution of the data.",
+            "D": "To reduce the dimensionality of the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the 'hypothesis space' in supervised learning?",
+          "options": {
+            "A": "The set of all possible input features.",
+            "B": "The set of all possible output targets.",
+            "C": "The set of all possible functions or models that the learning algorithm can learn.",
+            "D": "The space where the data points are plotted."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of a 'loss function' in supervised learning?",
+          "options": {
+            "A": "To evaluate the model's performance on the test set.",
+            "B": "To quantify the difference between the model's predictions and the true target values during training.",
+            "C": "To select the best features for the model.",
+            "D": "To prevent overfitting."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common loss function used in linear regression?",
+          "options": {
+            "A": "Cross-Entropy Loss",
+            "B": "Mean Squared Error (MSE)",
+            "C": "Hinge Loss",
+            "D": "Gini Impurity"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common loss function used in binary classification?",
+          "options": {
+            "A": "Mean Absolute Error (MAE)",
+            "B": "Mean Squared Error (MSE)",
+            "C": "Binary Cross-Entropy Loss (Log Loss)",
+            "D": "R-squared"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of an 'optimizer' in training a supervised learning model?",
+          "options": {
+            "A": "To select the best model architecture.",
+            "B": "To adjust the model's parameters (weights and biases) to minimize the loss function.",
+            "C": "To preprocess the input data.",
+            "D": "To evaluate the model's performance."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'regularization' and why is it used in supervised learning?",
+          "options": {
+            "A": "A technique for scaling input features.",
+            "B": "A technique to prevent overfitting by adding a penalty term to the loss function, discouraging overly complex models.",
+            "C": "A method for handling missing values in the data.",
+            "D": "A way to visualize the model's decision boundaries."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are L1 and L2 regularization?",
+          "options": {
+            "A": "Two different types of activation functions.",
+            "B": "Techniques for feature selection based on correlation.",
+            "C": "Methods for adding a penalty term to the loss function based on the absolute magnitude (L1) or the squared magnitude (L2) of the model's weights.",
+            "D": "Algorithms for clustering high-dimensional data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is 'cross-validation' and why is it important in supervised learning?",
+          "options": {
+            "A": "A technique for training the model on multiple datasets.",
+            "B": "A method for evaluating the model's generalization performance by splitting the data into multiple folds and training/testing on different combinations.",
+            "C": "A way to reduce the dimensionality of the data.",
+            "D": "A technique for visualizing the model's predictions."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some common evaluation metrics for classification models?",
+          "options": {
+            "A": "Mean Squared Error, R-squared.",
+            "B": "Precision, Recall, F1-score, Accuracy, AUC.",
+            "C": "Silhouette score, Davies-Bouldin index.",
+            "D": "Explained variance ratio."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some common evaluation metrics for regression models?",
+          "options": {
+            "A": "Precision, Recall, F1-score.",
+            "B": "Mean Squared Error (MSE), Mean Absolute Error (MAE), R-squared.",
+            "C": "Entropy, Gini index.",
+            "D": "Number of clusters, inertia."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between a linear and a non-linear supervised learning model?",
+          "options": {
+            "A": "Linear models can only handle numerical data, while non-linear models can handle categorical data.",
+            "B": "Linear models learn a linear relationship between input features and the output, while non-linear models can learn more complex relationships.",
+            "C": "Non-linear models are always more accurate than linear models.",
+            "D": "Linear models are used for classification, while non-linear models are for regression."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of feature importance in some supervised learning models (e.g., decision trees, random forests)?",
+          "options": {
+            "A": "To scale the features to a common range.",
+            "B": "To identify which input features have the most significant impact on the model's predictions.",
+            "C": "To encode categorical features into numerical form.",
+            "D": "To reduce the dimensionality of the feature space."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the goal of 'hyperparameter tuning' in supervised learning?",
+          "options": {
+            "A": "To train the model on more data.",
+            "B": "To find the optimal values for the model's hyperparameters that lead to the best performance.",
+            "C": "To select the best algorithm for the given task.",
+            "D": "To interpret the learned model parameters."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

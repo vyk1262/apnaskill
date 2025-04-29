@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Broadcasting",
+      "questions": [
+        {
+          "question": "What is NumPy broadcasting?",
+          "options": {
+            "A": "A method for sharing NumPy arrays between different processes.",
+            "B": "A set of rules that allow NumPy to perform arithmetic operations on arrays with different shapes.",
+            "C": "A technique for efficiently storing large NumPy arrays on disk.",
+            "D": "A way to convert NumPy arrays to other data structures."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "For broadcasting to work, what condition must be met between the shapes of the two arrays being operated on?",
+          "options": {
+            "A": "They must have the exact same shape.",
+            "B": "The number of dimensions must be equal.",
+            "C": "Either the trailing dimensions of both arrays must be equal, or one of them must be 1.",
+            "D": "The total number of elements in both arrays must be the same."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Consider an array `a` with shape (3,) and a scalar `b = 5`. Can broadcasting be applied to `a + b`?",
+          "options": {
+            "A": "No, broadcasting only works between arrays.",
+            "B": "Yes, the scalar `b` is treated as an array with shape (1,) and then broadcasted to (3,).",
+            "C": "Yes, the scalar `b` is broadcasted to match the shape of `a` (3,).",
+            "D": "Only if `a` is reshaped to (1, 3)."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the shape of the resulting array when you add a NumPy array with shape (3, 1) to an array with shape (1, 4)?",
+          "options": {
+            "A": "(3, 1)",
+            "B": "(1, 4)",
+            "C": "(3, 4)",
+            "D": "(4, 3)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "In broadcasting, if one array has fewer dimensions than the other, what happens?",
+          "options": {
+            "A": "An error is raised.",
+            "B": "The array with fewer dimensions is prepended with dimensions of size 1 to match the number of dimensions of the other array.",
+            "C": "The trailing dimensions are aligned, and the leading dimensions of the larger array are kept as they are.",
+            "D": "The smaller array is padded with zeros to match the number of dimensions."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Consider `arr1` with shape (2, 3) and `arr2` with shape (2,). Can `arr1 + arr2` be broadcasted?",
+          "options": {
+            "A": "Yes, `arr2` will be broadcasted along the rows to (2, 3).",
+            "B": "Yes, `arr2` will be broadcasted along the columns to (2, 3).",
+            "C": "No, the trailing dimensions are not compatible (3 vs 2).",
+            "D": "Only if `arr2` is reshaped to (2, 1)."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Consider `arr1` with shape (2, 3) and `arr2` with shape (3,). Can `arr1 + arr2` be broadcasted?",
+          "options": {
+            "A": "Yes, `arr2` will be broadcasted along the rows to (2, 3).",
+            "B": "Yes, `arr2` will be broadcasted along the columns to (2, 3).",
+            "C": "Yes, `arr1` will be broadcasted to (2, 3, 3).",
+            "D": "Yes, the trailing dimensions match (3 vs 3)."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Consider `arr1` with shape (3, 1) and `arr2` with shape (3,). Can `arr1 + arr2` be broadcasted?",
+          "options": {
+            "A": "Yes, `arr2` will be broadcasted along the columns to (3, 3).",
+            "B": "Yes, `arr1` will be broadcasted along the rows to (3, 3).",
+            "C": "No, the trailing dimensions are not compatible (1 vs 3).",
+            "D": "Yes, the leading dimensions match (3 vs 3)."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a common use case for NumPy broadcasting?",
+          "options": {
+            "A": "Sorting array elements.",
+            "B": "Normalizing data by subtracting the mean and dividing by the standard deviation.",
+            "C": "Concatenating multiple arrays.",
+            "D": "Reshaping arrays to different dimensions."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How does NumPy handle operations on arrays with incompatible shapes if broadcasting rules are not met?",
+          "options": {
+            "A": "It performs the operation on the common elements.",
+            "B": "It automatically reshapes the arrays to make them compatible.",
+            "C": "It raises a `ValueError` indicating that the operands could not be broadcast together.",
+            "D": "It returns an array filled with NaN values."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Consider `arr1` with shape (2, 2, 3) and `arr2` with shape (2, 3). Are they compatible for broadcasting?",
+          "options": {
+            "A": "Yes, `arr2` will be broadcasted to (2, 2, 3).",
+            "B": "No, the number of dimensions differs, and the trailing dimensions are not both 1.",
+            "C": "Yes, the trailing dimension (3) matches.",
+            "D": "Only if `arr1` is reshaped."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Consider `arr1` with shape (5, 4) and `arr2` with shape (1, 4). What is the shape of `arr1 * arr2` after broadcasting?",
+          "options": {
+            "A": "(5, 4)",
+            "B": "(1, 4)",
+            "C": "(5, 1)",
+            "D": "Broadcasting is not possible."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Consider `arr1` with shape (5, 4) and `arr2` with shape (5, 1). What is the shape of `arr1 * arr2` after broadcasting?",
+          "options": {
+            "A": "(5, 4)",
+            "B": "(5, 1)",
+            "C": "(1, 4)",
+            "D": "Broadcasting is not possible."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Can you perform an element-wise addition between an array of shape (3,) and an array of shape (3, 3) directly using broadcasting?",
+          "options": {
+            "A": "Yes, the (3,) array will be broadcasted along the rows.",
+            "B": "Yes, the (3,) array will be broadcasted along the columns.",
+            "C": "No, the dimensions are not compatible for direct broadcasting.",
+            "D": "Only if the (3, 3) array is flattened first."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "To enable broadcasting between an array of shape (3,) and an array of shape (3, 3), you might need to:",
+          "options": {
+            "A": "Reshape the (3,) array to (1, 3).",
+            "B": "Reshape the (3,) array to (3, 1).",
+            "C": "Transpose the (3, 3) array.",
+            "D": "No reshaping is necessary."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "To enable broadcasting between an array of shape (3,) and an array of shape (3, 3) for column-wise operations, you might need to:",
+          "options": {
+            "A": "Reshape the (3,) array to (1, 3).",
+            "B": "Reshape the (3,) array to (3, 1).",
+            "C": "Transpose the (3, 3) array.",
+            "D": "No reshaping is necessary."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Broadcasting rules are checked:",
+          "options": {
+            "A": "From left to right of the shape tuples.",
+            "B": "From right to left (trailing dimensions).",
+            "C": "Based on the total number of elements.",
+            "D": "Randomly for each operation."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "If two arrays have different numbers of dimensions, the array with fewer dimensions is:",
+          "options": {
+            "A": "Reshaped to match the larger array by adding trailing ones.",
+            "B": "Reshaped to match the larger array by adding leading ones.",
+            "C": "Truncated to match the number of dimensions of the smaller array.",
+            "D": "An error is raised."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Broadcasting allows for efficient operations on arrays with different shapes without:",
+          "options": {
+            "A": "Creating explicit loops in Python.",
+            "B": "Creating large intermediate arrays.",
+            "C": "Requiring the arrays to have the same data type.",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which of the following is NOT a condition for two arrays to be compatible for broadcasting?",
+          "options": {
+            "A": "They have the exact same shape.",
+            "B": "One of the arrays has a dimension of size 1.",
+            "C": "The arrays have the same number of dimensions.",
+            "D": "The trailing dimension sizes are compatible."
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

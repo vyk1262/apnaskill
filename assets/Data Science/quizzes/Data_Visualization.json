@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Visualization",
+      "questions": [
+        {
+          "question": "What is the primary goal of data visualization?",
+          "options": {
+            "A": "To store large datasets efficiently.",
+            "B": "To perform complex statistical calculations.",
+            "C": "To communicate data insights effectively and clearly through visual representations.",
+            "D": "To build predictive machine learning models."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which type of chart is best suited for showing the distribution of a single numerical variable?",
+          "options": {
+            "A": "Scatter plot",
+            "B": "Bar chart",
+            "C": "Histogram",
+            "D": "Pie chart"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which type of chart is effective for comparing categorical data?",
+          "options": {
+            "A": "Line plot",
+            "B": "Scatter plot",
+            "C": "Bar chart",
+            "D": "Histogram"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What type of plot is useful for showing the relationship between two numerical variables?",
+          "options": {
+            "A": "Pie chart",
+            "B": "Bar chart",
+            "C": "Scatter plot",
+            "D": "Histogram"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which chart is commonly used to show trends over time?",
+          "options": {
+            "A": "Pie chart",
+            "B": "Scatter plot",
+            "C": "Line plot",
+            "D": "Box plot"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What type of chart is used to show parts of a whole?",
+          "options": {
+            "A": "Bar chart",
+            "B": "Histogram",
+            "C": "Scatter plot",
+            "D": "Pie chart"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is a box plot (boxplot) used for?",
+          "options": {
+            "A": "Showing trends over time.",
+            "B": "Comparing categorical data.",
+            "C": "Displaying the distribution of numerical data and identifying potential outliers.",
+            "D": "Showing the relationship between two numerical variables."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a heatmap commonly used to visualize?",
+          "options": {
+            "A": "The distribution of a single variable.",
+            "B": "The correlation matrix between multiple variables.",
+            "C": "Trends in time series data.",
+            "D": "Categorical data proportions."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the key principles of effective data visualization?",
+          "options": {
+            "A": "Using as many colors and chart types as possible to make it visually appealing.",
+            "B": "Clarity, accuracy, simplicity, and relevance to the audience.",
+            "C": "Focusing solely on the aesthetic aspects of the visualization.",
+            "D": "Hiding complexities and focusing only on the main conclusion."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What role does color play in data visualization?",
+          "options": {
+            "A": "It is purely for aesthetic purposes and does not convey information.",
+            "B": "It can be used to represent different categories, magnitudes, or highlight specific data points.",
+            "C": "It should always be used sparingly to avoid distraction.",
+            "D": "It is only effective in pie charts."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the importance of labels and annotations in data visualization?",
+          "options": {
+            "A": "They are unnecessary and clutter the visualization.",
+            "B": "They provide context, explain elements, and make the visualization easier to understand.",
+            "C": "They are only required for academic publications.",
+            "D": "They should be cryptic to encourage closer inspection."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common data visualization tool?",
+          "options": {
+            "A": "SQL",
+            "B": "Python (with libraries like Matplotlib and Seaborn)",
+            "C": "Hadoop",
+            "D": "Java"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Tableau?",
+          "options": {
+            "A": "A programming language for statistical analysis.",
+            "B": "A popular data visualization software that allows users to create interactive dashboards and visualizations.",
+            "C": "A cloud-based data storage solution.",
+            "D": "A machine learning algorithm."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Power BI?",
+          "options": {
+            "A": "A statistical modeling package.",
+            "B": "A business analytics service by Microsoft that provides interactive visualizations and business intelligence capabilities.",
+            "C": "A database management system.",
+            "D": "A tool for web development."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are interactive dashboards?",
+          "options": {
+            "A": "Static visualizations that cannot be manipulated by the user.",
+            "B": "Collections of visualizations that allow users to explore data dynamically through filtering, drilling down, and other interactions.",
+            "C": "Only visualizations embedded in websites.",
+            "D": "Visualizations that automatically generate insights without user input."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What considerations should be taken into account when choosing a visualization type?",
+          "options": {
+            "A": "Personal preference and aesthetic appeal.",
+            "B": "The type of data (numerical, categorical, time series), the relationships to be shown, and the audience.",
+            "C": "The limitations of the software being used.",
+            "D": "The complexity of the data – more complex data requires more complex visualizations."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the potential impact of misleading data visualizations?",
+          "options": {
+            "A": "They always make the data more interesting.",
+            "B": "They can lead to incorrect interpretations, flawed decisions, and distrust in the data.",
+            "C": "They have no significant impact as long as the underlying data is correct.",
+            "D": "They are a common way to simplify complex information effectively."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of data storytelling in data visualization?",
+          "options": {
+            "A": "It is about creating fictional narratives based on data.",
+            "B": "It involves structuring visualizations and accompanying text to convey a compelling and insightful narrative about the data.",
+            "C": "It is only relevant for presenting to non-technical audiences.",
+            "D": "It focuses solely on the visual aspects and ignores the context."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can data visualization help in the exploratory data analysis (EDA) process?",
+          "options": {
+            "A": "It is not useful for EDA.",
+            "B": "It allows for quick identification of patterns, outliers, and relationships in the data, guiding further analysis.",
+            "C": "It is only used after the data has been thoroughly analyzed.",
+            "D": "It primarily focuses on cleaning and preprocessing the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some best practices for creating accessible data visualizations?",
+          "options": {
+            "A": "Using only color to convey information.",
+            "B": "Ensuring sufficient contrast, providing alternative text for images, and using clear and concise labels.",
+            "C": "Avoiding any text or labels to keep the visualization clean.",
+            "D": "Relying solely on complex interactive elements."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

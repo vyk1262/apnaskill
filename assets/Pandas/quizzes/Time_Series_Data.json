@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Time_Series_Data",
+      "questions": [
+        {
+          "question": "What is a key characteristic of time series data?",
+          "options": {
+            "A": "Data points are independent of each other.",
+            "B": "Data points are recorded at irregular intervals.",
+            "C": "Data points are indexed or ordered by time.",
+            "D": "Data points always consist of numerical values."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which Pandas data structure is primarily used for representing time series data?",
+          "options": {
+            "A": "DataFrame with a string index.",
+            "B": "Series with a DatetimeIndex.",
+            "C": "NumPy array with a time dimension.",
+            "D": "Dictionary with time as keys."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you convert a column containing date/time strings in a Pandas DataFrame to a DatetimeIndex?",
+          "options": {
+            "A": "df.set_index(pd.to_datetime(df['DateColumn']))",
+            "B": "df['DateColumn'] = pd.DatetimeIndex(df['DateColumn'])",
+            "C": "df.index = df['DateColumn'].astype('datetime64[ns]')",
+            "D": "df.set_index('DateColumn', as_datetime=True)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the `pd.to_datetime()` function in Pandas?",
+          "options": {
+            "A": "To convert a DatetimeIndex back to a string format.",
+            "B": "To parse various date and time string formats into Pandas datetime objects.",
+            "C": "To extract date and time components from a DatetimeIndex.",
+            "D": "To perform arithmetic operations on datetime objects."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is resampling in the context of time series data in Pandas?",
+          "options": {
+            "A": "Changing the data type of the time series index.",
+            "B": "Changing the frequency of the time series data (e.g., from daily to monthly).",
+            "C": "Removing duplicate time stamps.",
+            "D": "Filling missing values in the time series."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which Pandas method is used for resampling time series data?",
+          "options": {
+            "A": ".reindex()",
+            "B": ".resample()",
+            "C": ".shift()",
+            "D": ".asfreq()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the meaning of the resampling rule 'M' in Pandas?",
+          "options": {
+            "A": "Minute frequency.",
+            "B": "Monthly end frequency.",
+            "C": "Monthly start frequency.",
+            "D": "Mean frequency."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you calculate the monthly mean of a time series DataFrame `df` with a DatetimeIndex?",
+          "options": {
+            "A": "df.groupby(pd.Grouper(freq='M')).mean()",
+            "B": "df.resample('M').mean()",
+            "C": "df.rolling(window='M').mean()",
+            "D": "df.asfreq('M').mean()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a rolling window operation in time series data?",
+          "options": {
+            "A": "A method to shift the time series data forward or backward.",
+            "B": "A way to calculate statistics over a fixed-size sliding window of consecutive data points.",
+            "C": "A technique for selecting a subset of the time series data based on a time range.",
+            "D": "A method for interpolating missing values in the time series."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which Pandas method is used to perform rolling window calculations?",
+          "options": {
+            "A": ".window()",
+            "B": ".rolling()",
+            "C": ".slide()",
+            "D": ".moving_average()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you calculate the 7-day rolling mean of a column 'Value' in a time series DataFrame `df`?",
+          "options": {
+            "A": "df['Value'].rolling(window=7).mean()",
+            "B": "df.rolling(window='7D')['Value'].mean()",
+            "C": "df.resample('7D')['Value'].mean().rolling(window=1)",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the purpose of the `.shift()` method in Pandas time series?",
+          "options": {
+            "A": "To change the frequency of the time series.",
+            "B": "To move the data points forward or backward in time.",
+            "C": "To calculate the difference between consecutive time points.",
+            "D": "To sort the time series by the index."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "If you have a daily time series `s`, what does `s.shift(periods=3)` do?",
+          "options": {
+            "A": "It shifts the index forward by 3 days.",
+            "B": "It shifts the values forward by 3 days (the value at time t is now at t+3).",
+            "C": "It calculates the 3-day moving average.",
+            "D": "It resamples the data to a 3-day frequency."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the `.asfreq()` method in Pandas time series?",
+          "options": {
+            "A": "To perform frequency analysis of the time series.",
+            "B": "To convert a time series to a specified frequency. NaN is introduced for missing periods.",
+            "C": "To calculate the frequency of the index.",
+            "D": "To remove duplicate time stamps."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you fill missing values introduced by `.asfreq()` using forward fill?",
+          "options": {
+            "A": "df.asfreq('D', fill_value='ffill')",
+            "B": "df.asfreq('D').ffill()",
+            "C": "df.asfreq('D', method='pad')",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What are DatetimeIndex objects in Pandas built upon?",
+          "options": {
+            "A": "Python lists of datetime objects.",
+            "B": "NumPy's datetime64 data type.",
+            "C": "Strings representing date and time.",
+            "D": "Pandas Period objects."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between `.dt` accessor and directly applying functions to a Series with datetime objects?",
+          "options": {
+            "A": "`.dt` is used for string-based dates, while direct functions are for datetime objects.",
+            "B": "`.dt` provides a way to access datetime-like properties (e.g., year, month, day) as Series.",
+            "C": "There is no difference; they achieve the same result.",
+            "D": "`.dt` is only applicable to the index, not the values."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you extract the year from a DatetimeIndex `di`?",
+          "options": {
+            "A": "di.year()",
+            "B": "di.get_year()",
+            "C": "di.dt.year",
+            "D": "year(di)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of the `pd.Grouper()` function in the context of time series?",
+          "options": {
+            "A": "To group data based on non-time-related columns.",
+            "B": "To specify a frequency rule for grouping time series data, especially when the index is not strictly at that frequency.",
+            "C": "To perform rolling window operations.",
+            "D": "To convert data to a DatetimeIndex."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a common application of time series data analysis using Pandas?",
+          "options": {
+            "A": "Image recognition.",
+            "B": "Natural language processing.",
+            "C": "Stock price analysis and forecasting.",
+            "D": "Geospatial data analysis."
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

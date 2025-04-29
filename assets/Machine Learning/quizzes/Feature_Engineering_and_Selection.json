@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Feature_Engineering_and_Selection",
+      "questions": [
+        {
+          "question": "What is the primary goal of feature engineering?",
+          "options": {
+            "A": "To train machine learning models faster.",
+            "B": "To improve the performance of machine learning models by creating new features or modifying existing ones.",
+            "C": "To reduce the size of the dataset.",
+            "D": "To visualize the relationships between variables."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some common techniques for handling missing numerical data during feature engineering?",
+          "options": {
+            "A": "Deleting the entire dataset.",
+            "B": "Ignoring the missing values.",
+            "C": "Imputation with the mean, median, or mode, or using more sophisticated imputation methods.",
+            "D": "Converting numerical features to categorical."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are some common techniques for handling missing categorical data during feature engineering?",
+          "options": {
+            "A": "Imputation with the mean or median.",
+            "B": "Deleting rows with missing values, imputing with the mode, or creating a new 'missing' category.",
+            "C": "Converting categorical features to numerical.",
+            "D": "Ignoring the missing values."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is feature scaling and why is it often important?",
+          "options": {
+            "A": "The process of selecting the most important features; important for model interpretability.",
+            "B": "The process of transforming features to have a similar scale; important for algorithms sensitive to feature magnitude (e.g., gradient-based methods, distance-based methods).",
+            "C": "The process of creating new features; important for improving model accuracy.",
+            "D": "The process of encoding categorical features; important for all machine learning algorithms."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are common feature scaling techniques for numerical data?",
+          "options": {
+            "A": "One-hot encoding, label encoding.",
+            "B": "Mean imputation, median imputation.",
+            "C": "Standardization (Z-score scaling), Min-Max scaling.",
+            "D": "Polynomial features, interaction features."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is feature encoding and why is it necessary for many machine learning algorithms?",
+          "options": {
+            "A": "The process of scaling numerical features; necessary for distance-based algorithms.",
+            "B": "The process of handling missing values; necessary for all algorithms.",
+            "C": "The process of converting categorical features into a numerical format that algorithms can process.",
+            "D": "The process of selecting the most important features; necessary for model interpretability."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are common techniques for encoding categorical features?",
+          "options": {
+            "A": "Standardization, Min-Max scaling.",
+            "B": "Mean imputation, mode imputation.",
+            "C": "One-hot encoding, label encoding, ordinal encoding.",
+            "D": "Polynomial features, interaction features."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of creating polynomial features?",
+          "options": {
+            "A": "To reduce the dimensionality of the data.",
+            "B": "To capture non-linear relationships between features by creating higher-order terms.",
+            "C": "To scale the features to a common range.",
+            "D": "To encode categorical features numerically."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are interaction features?",
+          "options": {
+            "A": "Features that are created by scaling existing features.",
+            "B": "Features that represent the combination or interaction between two or more existing features (e.g., multiplication, division).",
+            "C": "Features that are used to handle missing values.",
+            "D": "Features that are created by applying polynomial transformations."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is feature selection?",
+          "options": {
+            "A": "The process of creating new features from existing ones.",
+            "B": "The process of identifying and selecting the most relevant subset of features for a machine learning model.",
+            "C": "The process of scaling features to a similar range.",
+            "D": "The process of encoding categorical features numerically."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is feature selection important?",
+          "options": {
+            "A": "It always increases the complexity of the model.",
+            "B": "It can improve model performance, reduce overfitting, simplify the model, and speed up training.",
+            "C": "It is only important for very large datasets.",
+            "D": "It is primarily used for data visualization."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the main categories of feature selection methods?",
+          "options": {
+            "A": "Scaling, encoding, and imputation.",
+            "B": "Filtering, wrapping, and embedded methods.",
+            "C": "Polynomial transformation, interaction features, and binning.",
+            "D": "Univariate selection, multivariate selection."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are filter methods for feature selection?",
+          "options": {
+            "A": "Methods that select features based on their performance when used in a specific model.",
+            "B": "Methods that evaluate the relevance of features based on statistical tests or scores independent of any specific model.",
+            "C": "Methods where feature selection is integrated into the model training process.",
+            "D": "Methods that iteratively add or remove features based on model performance."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are wrapper methods for feature selection?",
+          "options": {
+            "A": "Methods that select features based on statistical properties alone.",
+            "B": "Methods that evaluate subsets of features by training and evaluating a specific machine learning model.",
+            "C": "Methods where feature selection is a byproduct of the model training.",
+            "D": "Methods that rank features based on their individual importance."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are embedded methods for feature selection?",
+          "options": {
+            "A": "Methods that select features independently of any machine learning model.",
+            "B": "Methods that evaluate feature subsets by iteratively training and evaluating a model.",
+            "C": "Methods where feature selection is performed as part of the model training process itself (e.g., L1 regularization in linear models, feature importance in tree-based models).",
+            "D": "Methods that use statistical tests to rank features."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is an example of a filter method for feature selection?",
+          "options": {
+            "A": "Recursive Feature Elimination (RFE)",
+            "B": "Lasso (L1 regularization)",
+            "C": "Chi-squared test for categorical features",
+            "D": "Random Forest feature importance"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is an example of a wrapper method for feature selection?",
+          "options": {
+            "A": "ANOVA F-statistic for numerical features",
+            "B": "Tree-based feature importance",
+            "C": "Recursive Feature Elimination (RFE)",
+            "D": "Principal Component Analysis (PCA)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is an example of an embedded method for feature selection?",
+          "options": {
+            "A": "Mutual Information",
+            "B": "SelectKBest",
+            "C": "Lasso (L1 regularization)",
+            "D": "Sequential Forward Selection"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of domain knowledge in feature engineering and selection?",
+          "options": {
+            "A": "It is not important; data-driven methods are always sufficient.",
+            "B": "It can guide the creation of meaningful features and help in identifying potentially irrelevant or redundant features.",
+            "C": "It is only useful for interpreting the final model.",
+            "D": "It primarily helps in choosing the right machine learning algorithm."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some considerations to keep in mind when performing feature engineering and selection?",
+          "options": {
+            "A": "Only focus on maximizing model performance on the training set.",
+            "B": "Consider the interpretability of the resulting features and the computational cost of creating and using them, as well as the risk of data leakage.",
+            "C": "Always create as many features as possible and then select the best ones.",
+            "D": "Feature engineering and selection should always be done independently of the chosen machine learning model."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

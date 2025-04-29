@@ -27,6 +27,9 @@ class _QuizListHomeState extends State<QuizListHome> {
     "Web Development",
     "Data Science",
     "Machine Learning",
+    "Numpy",
+    "Pandas",
+    "Data Analytics",
   ];
   List<String> filteredInternshipNames = [];
   TextEditingController _searchController = TextEditingController();

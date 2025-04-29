@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Mathematical_Functions",
+      "questions": [
+        {
+          "question": "Which NumPy function calculates the sine of each element in an array?",
+          "options": {
+            "A": "numpy.cos()",
+            "B": "numpy.tan()",
+            "C": "numpy.sin()",
+            "D": "numpy.arcsin()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the NumPy function `numpy.exp()` do?",
+          "options": {
+            "A": "Calculates the exponential of each element in the array.",
+            "B": "Calculates the natural logarithm of each element.",
+            "C": "Calculates the square root of each element.",
+            "D": "Calculates the power of each element to a specified base."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which NumPy function calculates the natural logarithm (base e) of each element in an array?",
+          "options": {
+            "A": "numpy.log10()",
+            "B": "numpy.log2()",
+            "C": "numpy.log()",
+            "D": "numpy.exp()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of `numpy.sqrt()`?",
+          "options": {
+            "A": "Calculates the square of each element.",
+            "B": "Calculates the cube root of each element.",
+            "C": "Calculates the square root of each element.",
+            "D": "Calculates the logarithm base 2 of each element."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function calculates the absolute value of each element in an array?",
+          "options": {
+            "A": "numpy.abs()",
+            "B": "numpy.fabs()",
+            "C": "numpy.absolute()",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What does `numpy.floor()` do to each element of a NumPy array?",
+          "options": {
+            "A": "Rounds each element to the nearest integer.",
+            "B": "Rounds each element up to the nearest integer.",
+            "C": "Rounds each element down to the nearest integer.",
+            "D": "Truncates the decimal part of each element."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function rounds each element of an array to the nearest integer?",
+          "options": {
+            "A": "numpy.ceil()",
+            "B": "numpy.floor()",
+            "C": "numpy.round()",
+            "D": "numpy.trunc()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of `numpy.ceil()`?",
+          "options": {
+            "A": "Rounds each element to the nearest integer.",
+            "B": "Rounds each element up to the nearest integer.",
+            "C": "Rounds each element down to the nearest integer.",
+            "D": "Truncates the decimal part of each element."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function truncates the decimal part of each element in an array?",
+          "options": {
+            "A": "numpy.round()",
+            "B": "numpy.floor()",
+            "C": "numpy.ceil()",
+            "D": "numpy.trunc()"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What does `numpy.power(arr, exponent)` calculate?",
+          "options": {
+            "A": "The product of all elements in `arr` raised to the power of `exponent`.",
+            "B": "Each element in `arr` raised to the power of `exponent`.",
+            "C": "The `exponent`-th root of each element in `arr`.",
+            "D": "The sum of each element in `arr` raised to the power of `exponent`."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function calculates the tangent of each element in an array?",
+          "options": {
+            "A": "numpy.sin()",
+            "B": "numpy.cos()",
+            "C": "numpy.tan()",
+            "D": "numpy.arctan()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of `numpy.arctan()`?",
+          "options": {
+            "A": "Calculates the hyperbolic tangent of each element.",
+            "B": "Calculates the inverse tangent (arc tangent) of each element.",
+            "C": "Calculates the tangent of each element.",
+            "D": "Calculates the angle whose sine is the given number."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function calculates the dot product of two arrays?",
+          "options": {
+            "A": "numpy.multiply()",
+            "B": "numpy.cross()",
+            "C": "numpy.dot()",
+            "D": "numpy.matmul()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does `numpy.cross(a, b)` calculate?",
+          "options": {
+            "A": "The element-wise product of arrays `a` and `b`.",
+            "B": "The dot product of arrays `a` and `b`.",
+            "C": "The cross product of arrays `a` and `b`.",
+            "D": "The outer product of arrays `a` and `b`."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function performs matrix multiplication of two arrays?",
+          "options": {
+            "A": "numpy.dot()",
+            "B": "numpy.multiply()",
+            "C": "numpy.cross()",
+            "D": "numpy.inner()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does `numpy.linalg.norm(arr)` calculate by default?",
+          "options": {
+            "A": "The sum of the elements in `arr`.",
+            "B": "The mean of the elements in `arr`.",
+            "C": "The L2 norm (Euclidean norm) of the array.",
+            "D": "The maximum absolute value of the elements in `arr`."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function calculates the exponential of all elements in the input array?",
+          "options": {
+            "A": "numpy.log()",
+            "B": "numpy.power()",
+            "C": "numpy.exp()",
+            "D": "numpy.sqrt()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does `numpy.log10()` calculate?",
+          "options": {
+            "A": "The natural logarithm of each element.",
+            "B": "The logarithm base 2 of each element.",
+            "C": "The logarithm base 10 of each element.",
+            "D": "The exponential of each element with base 10."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function calculates the element-wise remainder of division?",
+          "options": {
+            "A": "numpy.divide()",
+            "B": "numpy.floor_divide()",
+            "C": "numpy.mod() or numpy.remainder()",
+            "D": "numpy.divmod()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does `numpy.arctan2(y, x)` calculate?",
+          "options": {
+            "A": "The element-wise inverse tangent of `y/x`, choosing the quadrant correctly.",
+            "B": "The element-wise inverse tangent of `y/x`, always returning values in [-pi/2, pi/2].",
+            "C": "The element-wise tangent of `y/x`.",
+            "D": "The element-wise hypotenuse of `(x, y)`."
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Array_Manipulation",
+      "questions": [
+        {
+          "question": "Which NumPy method is used to change the shape of an array without altering its data?",
+          "options": {
+            "A": "reshape()",
+            "B": "resize()",
+            "C": "flatten()",
+            "D": "ravel()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the difference between `reshape()` and `resize()` methods in NumPy?",
+          "options": {
+            "A": "`reshape()` modifies the array in-place, while `resize()` returns a new array.",
+            "B": "`reshape()` returns a view if possible, while `resize()` always returns a new array and can change the total number of elements.",
+            "C": "`reshape()` can only change the number of dimensions, while `resize()` can only change the size of existing dimensions.",
+            "D": "There is no significant difference between them."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you convert a multi-dimensional NumPy array into a flattened 1D array?",
+          "options": {
+            "A": "array.shape = (-1,)",
+            "B": "array.reshape(1, -1)",
+            "C": "array.flatten() or array.ravel()",
+            "D": "array.squeeze()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the difference between `flatten()` and `ravel()` in NumPy?",
+          "options": {
+            "A": "`flatten()` returns a view of the original array, while `ravel()` always returns a copy.",
+            "B": "`ravel()` returns a view if possible, while `flatten()` always returns a copy.",
+            "C": "`flatten()` works only on 2D arrays, while `ravel()` works on any dimensional array.",
+            "D": "There is no significant difference in their functionality."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy method is used to swap the dimensions of an array?",
+          "options": {
+            "A": "swapaxes()",
+            "B": "transpose()",
+            "C": "moveaxis()",
+            "D": "rollaxis()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does `numpy.transpose(arr, axes=(1, 0))` do to a 2D array `arr`?",
+          "options": {
+            "A": "It reverses the order of elements in each row.",
+            "B": "It swaps the rows and columns of the array.",
+            "C": "It flattens the array.",
+            "D": "It changes the data type of the array."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function is used to join a sequence of arrays along an existing axis?",
+          "options": {
+            "A": "concatenate()",
+            "B": "stack()",
+            "C": "hstack()",
+            "D": "vstack()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the difference between `numpy.concatenate()` and `numpy.stack()`?",
+          "options": {
+            "A": "`concatenate()` joins arrays along a new axis, while `stack()` joins them along an existing axis.",
+            "B": "`stack()` joins arrays along a new axis, while `concatenate()` joins them along an existing axis.",
+            "C": "There is no difference; they perform the same operation.",
+            "D": "`concatenate()` can only join 1D arrays, while `stack()` can join multi-dimensional arrays."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function is used to stack arrays in sequence horizontally (column-wise)?",
+          "options": {
+            "A": "numpy.concatenate()",
+            "B": "numpy.vstack()",
+            "C": "numpy.hstack()",
+            "D": "numpy.dstack()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function is used to stack arrays in sequence vertically (row-wise)?",
+          "options": {
+            "A": "numpy.concatenate()",
+            "B": "numpy.hstack()",
+            "C": "numpy.vstack()",
+            "D": "numpy.dstack()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function is used to split an array into multiple sub-arrays?",
+          "options": {
+            "A": "numpy.join()",
+            "B": "numpy.merge()",
+            "C": "numpy.split()",
+            "D": "numpy.chunk()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does `numpy.split(arr, 3)` do to a 1D array `arr`?",
+          "options": {
+            "A": "It splits the array into 3 equal parts.",
+            "B": "It returns the first 3 elements of the array.",
+            "C": "It splits the array after the 3rd index.",
+            "D": "It creates 3 copies of the original array."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which NumPy functions can be used to split an array horizontally?",
+          "options": {
+            "A": "numpy.vsplit()",
+            "B": "numpy.hsplit()",
+            "C": "numpy.dsplit()",
+            "D": "numpy.array_split()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy functions can be used to split an array vertically?",
+          "options": {
+            "A": "numpy.hsplit()",
+            "B": "numpy.array_split()",
+            "C": "numpy.vsplit()",
+            "D": "numpy.dsplit()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function can add values to the end of an array?",
+          "options": {
+            "A": "numpy.insert()",
+            "B": "numpy.append()",
+            "C": "numpy.concatenate()",
+            "D": "numpy.pad()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between `numpy.append()` and `numpy.insert()`?",
+          "options": {
+            "A": "`append()` adds elements at the beginning, while `insert()` adds at the end.",
+            "B": "`insert()` requires specifying the index at which to add elements, while `append()` adds to the end.",
+            "C": "`append()` modifies the array in-place, while `insert()` returns a new array.",
+            "D": "They perform the same operation but with different names."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function can insert values along a given axis before the given indices?",
+          "options": {
+            "A": "numpy.append()",
+            "B": "numpy.concatenate()",
+            "C": "numpy.insert()",
+            "D": "numpy.pad()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function can remove subarrays along a given axis?",
+          "options": {
+            "A": "numpy.delete()",
+            "B": "numpy.remove()",
+            "C": "numpy.trim()",
+            "D": "numpy.cut()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does `numpy.squeeze(arr)` do?",
+          "options": {
+            "A": "It adds a dimension of size 1 to the array.",
+            "B": "It removes single-dimensional entries from the shape of an array.",
+            "C": "It reshapes the array to be 1D.",
+            "D": "It swaps the dimensions of the array."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function can add a dimension of size one to an array?",
+          "options": {
+            "A": "numpy.squeeze()",
+            "B": "numpy.expand_dims()",
+            "C": "numpy.reshape()",
+            "D": "numpy.resize()"
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

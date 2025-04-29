@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Statistics_and_Probability",
+      "questions": [
+        {
+          "question": "What is the difference between descriptive and inferential statistics?",
+          "options": {
+            "A": "Descriptive statistics summarizes data, while inferential statistics makes predictions.",
+            "B": "Descriptive statistics analyzes samples, while inferential statistics analyzes populations.",
+            "C": "Descriptive statistics uses probabilities, while inferential statistics does not.",
+            "D": "Descriptive statistics deals with continuous data, while inferential statistics deals with discrete data."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is a measure of central tendency?",
+          "options": {
+            "A": "Standard deviation",
+            "B": "Variance",
+            "C": "Median",
+            "D": "Range"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the variance of a dataset measure?",
+          "options": {
+            "A": "The average value of the data.",
+            "B": "The middle value of the data.",
+            "C": "The spread or dispersion of the data points around the mean.",
+            "D": "The most frequent value in the data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a probability distribution?",
+          "options": {
+            "A": "A table that shows the frequency of each value in a dataset.",
+            "B": "A function that describes the likelihood of different outcomes in a random experiment.",
+            "C": "A graph that displays the relationship between two variables.",
+            "D": "A measure of the central tendency of a dataset."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is an example of a discrete probability distribution?",
+          "options": {
+            "A": "Normal distribution",
+            "B": "Uniform distribution (continuous)",
+            "C": "Binomial distribution",
+            "D": "Exponential distribution"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the probability of an event that is certain to occur?",
+          "options": {
+            "A": "0",
+            "B": "0.5",
+            "C": "1",
+            "D": "Cannot be determined"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the law of large numbers?",
+          "options": {
+            "A": "The sum of probabilities of all possible outcomes is always equal to one.",
+            "B": "As the number of trials of a random experiment increases, the sample mean approaches the true population mean.",
+            "C": "Rare events are more likely to occur in a large number of trials.",
+            "D": "The probability of independent events occurring together is the product of their individual probabilities."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a hypothesis test?",
+          "options": {
+            "A": "A method for calculating the probability of an event.",
+            "B": "A procedure for using sample data to evaluate a claim about a population.",
+            "C": "A way to describe the characteristics of a sample.",
+            "D": "A technique for visualizing data distributions."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a p-value in hypothesis testing?",
+          "options": {
+            "A": "The probability of the null hypothesis being true.",
+            "B": "The probability of observing data as extreme as, or more extreme than, the data observed if the null hypothesis is true.",
+            "C": "The significance level of the test.",
+            "D": "The power of the test."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the significance level (alpha) in hypothesis testing?",
+          "options": {
+            "A": "The probability of making a Type II error.",
+            "B": "The probability of making a Type I error.",
+            "C": "The power of the test.",
+            "D": "The probability of the null hypothesis being true."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between a Type I and a Type II error in hypothesis testing?",
+          "options": {
+            "A": "A Type I error is rejecting a true null hypothesis, while a Type II error is failing to reject a false null hypothesis.",
+            "B": "A Type I error is failing to reject a true null hypothesis, while a Type II error is rejecting a false null hypothesis.",
+            "C": "A Type I error occurs with small sample sizes, while a Type II error occurs with large sample sizes.",
+            "D": "A Type I error is related to the mean, while a Type II error is related to the variance."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a confidence interval?",
+          "options": {
+            "A": "A single value estimate of a population parameter.",
+            "B": "A range of values that is likely to contain the true population parameter with a certain level of confidence.",
+            "C": "The probability of a sample statistic falling within a certain range.",
+            "D": "The standard deviation of the sample mean."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the central limit theorem?",
+          "options": {
+            "A": "The mean of any sample is always equal to the population mean.",
+            "B": "The distribution of sample means will tend to be normally distributed as the sample size increases, regardless of the shape of the original population distribution.",
+            "C": "The variance of a sample is always smaller than the population variance.",
+            "D": "Large datasets always follow a normal distribution."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a random variable?",
+          "options": {
+            "A": "A variable whose value is constant.",
+            "B": "A variable whose value is a numerical outcome of a random phenomenon.",
+            "C": "A variable that is always normally distributed.",
+            "D": "A variable that is used only in descriptive statistics."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is conditional probability?",
+          "options": {
+            "A": "The probability of two independent events occurring.",
+            "B": "The probability of an event occurring given that another event has already occurred.",
+            "C": "The probability of either one of two events occurring.",
+            "D": "The probability of an event not occurring."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does Bayes' theorem describe?",
+          "options": {
+            "A": "The probability of the intersection of two events.",
+            "B": "The relationship between conditional probabilities.",
+            "C": "The probability of the union of two events.",
+            "D": "The probability of the complement of an event."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between independent and dependent events?",
+          "options": {
+            "A": "Independent events have the same probability, while dependent events have different probabilities.",
+            "B": "The outcome of an independent event affects the outcome of a dependent event.",
+            "C": "The outcome of an independent event does not affect the outcome of a dependent event.",
+            "D": "The outcome of one independent event does not affect the probability of another independent event, while the outcome of one dependent event does affect the probability of another dependent event."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is a statistical model?",
+          "options": {
+            "A": "A visual representation of data.",
+            "B": "A mathematical representation of a real-world phenomenon that incorporates randomness and uncertainty.",
+            "C": "A summary of the main characteristics of a dataset.",
+            "D": "A set of rules for cleaning and preparing data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common statistical test used to compare the means of two independent groups?",
+          "options": {
+            "A": "Chi-squared test",
+            "B": "ANOVA",
+            "C": "t-test",
+            "D": "Correlation coefficient"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the correlation coefficient?",
+          "options": {
+            "A": "A measure of the central tendency of two variables.",
+            "B": "A measure of the spread of two variables.",
+            "C": "A statistical measure of the strength and direction of a linear relationship between two numerical variables.",
+            "D": "A test for the difference between two means."
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Creating_and_Reading_Data",
+      "questions": [
+        {
+          "question": "Which Pandas function is commonly used to create a DataFrame from a Python dictionary?",
+          "options": {
+            "A": "pd.from_dict()",
+            "B": "pd.DataFrame.from_dict()",
+            "C": "pd.dict_to_frame()",
+            "D": "pd.create_dataframe()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "If you have a Python dictionary where keys represent column names and values are lists of column data, how would you create a Pandas DataFrame?",
+          "options": {
+            "A": "pd.DataFrame(data={'col1': [1, 2], 'col2': [3, 4]})",
+            "B": "pd.DataFrame([{'col1': 1, 'col2': 3}, {'col1': 2, 'col2': 4}])",
+            "C": "pd.DataFrame([['col1', 'col2'], [1, 3], [2, 4]])",
+            "D": "pd.DataFrame((('col1', [1, 2]), ('col2', [3, 4])))"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you create a Pandas DataFrame from a list of Python dictionaries?",
+          "options": {
+            "A": "pd.DataFrame(data=[{'col1': 1, 'col2': 3}, {'col1': 2, 'col2': 4}])",
+            "B": "pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})",
+            "C": "pd.DataFrame([['col1', 'col2'], [1, 3], [2, 4]])",
+            "D": "pd.DataFrame((('col1', [1, 2]), ('col2', [3, 4])))"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which Pandas function is used to read data from a CSV file?",
+          "options": {
+            "A": "pd.read_csv()",
+            "B": "pd.from_csv()",
+            "C": "pd.load_csv()",
+            "D": "pd.open_csv()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the default delimiter used by `pd.read_csv()`?",
+          "options": {
+            "A": ";",
+            "B": ",",
+            "C": "\t",
+            "D": " "
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you specify a different delimiter when reading a CSV file with Pandas?",
+          "options": {
+            "A": "using the `sep` argument",
+            "B": "using the `delimiter` argument",
+            "C": "using the `separator` argument",
+            "D": "all of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which argument in `pd.read_csv()` allows you to specify which row(s) should be used as the column names?",
+          "options": {
+            "A": "columns",
+            "B": "header",
+            "C": "names",
+            "D": "col_names"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you read a CSV file that does not have a header row using Pandas?",
+          "options": {
+            "A": "pd.read_csv('file.csv', header=None)",
+            "B": "pd.read_csv('file.csv', no_header=True)",
+            "C": "pd.read_csv('file.csv', has_header=False)",
+            "D": "pd.read_csv('file.csv', header=-1)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What argument in `pd.read_csv()` can be used to provide a list of names for the columns when the file doesn't have a header?",
+          "options": {
+            "A": "column_names",
+            "B": "headers",
+            "C": "names",
+            "D": "labels"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which Pandas function is used to read data from an Excel file?",
+          "options": {
+            "A": "pd.read_excel()",
+            "B": "pd.from_excel()",
+            "C": "pd.load_excel()",
+            "D": "pd.open_excel()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you specify which sheet to read from an Excel file using `pd.read_excel()`?",
+          "options": {
+            "A": "using the `sheet` argument with the sheet name or index",
+            "B": "using the `sheet_name` argument with the sheet name or index",
+            "C": "using the `active_sheet` argument",
+            "D": "both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which Pandas function is used to read data from a SQL database?",
+          "options": {
+            "A": "pd.read_sql()",
+            "B": "pd.from_sql()",
+            "C": "pd.load_sql()",
+            "D": "pd.database_query()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What information do you typically need to provide to `pd.read_sql()` to connect to a database?",
+          "options": {
+            "A": "Only the SQL query.",
+            "B": "The SQL query and a database connection object or connection string.",
+            "C": "The database file path.",
+            "D": "Only the table name."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you read data directly from a JSON string into a Pandas DataFrame?",
+          "options": {
+            "A": "pd.read_json_string()",
+            "B": "pd.from_json()",
+            "C": "pd.read_json()",
+            "D": "pd.json_to_df()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which Pandas function can be used to create a DataFrame from a NumPy array?",
+          "options": {
+            "A": "pd.DataFrame.from_numpy()",
+            "B": "pd.DataFrame(array)",
+            "C": "pd.from_array()",
+            "D": "pd.convert_to_df(array)"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "When creating a DataFrame from a NumPy array, how can you specify the column names?",
+          "options": {
+            "A": "using the `col_names` argument",
+            "B": "using the `columns` argument",
+            "C": "by assigning to the `.columns` attribute after creation",
+            "D": "both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which Pandas function can be used to read data from a clipboard?",
+          "options": {
+            "A": "pd.read_clipboard()",
+            "B": "pd.from_clipboard()",
+            "C": "pd.copy_to_df()",
+            "D": "pd.paste_df()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the `index_col` argument in `pd.read_csv()`?",
+          "options": {
+            "A": "To specify the name of the index column.",
+            "B": "To set a particular column as the index of the DataFrame.",
+            "C": "To indicate that the first column should be treated as the index by default.",
+            "D": "To specify the data type of the index column."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you handle missing values (e.g., 'NaN') that might be represented by different strings in a CSV file when reading it with Pandas?",
+          "options": {
+            "A": "by using the `na_values` argument to specify a list of strings to treat as NaN",
+            "B": "by manually replacing the strings after loading the DataFrame",
+            "C": "Pandas automatically handles common missing value representations",
+            "D": "both A and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which Pandas function is versatile and can read data from various file formats (including CSV, delimited files, fixed-width files) with more options than `pd.read_csv()`?",
+          "options": {
+            "A": "pd.read_table()",
+            "B": "pd.read_fwf()",
+            "C": "pd.read_generic()",
+            "D": "pd.read_delimited()"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

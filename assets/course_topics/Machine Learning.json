@@ -1,13 +1,16 @@
 [
-  "html_intro",
-  "html_forms",
-  "html_media",
-  "html_apis",
-  "css_intro",
-  "css_responsive",
-  "css_advanced",
-  "js_intro",
-  "js_bom",
-  "js_async",
-  "js_apis"
+  "Machine_Learning_Fundamentals",
+  "Supervised_Learning",
+  "Unsupervised_Learning",
+  "Reinforcement_Learning",
+  "Model_Evaluation_and_Selection",
+  "Feature_Engineering_and_Selection",
+  "Dimensionality_Reduction",
+  "Deep_Learning_Foundations",
+  "Natural_Language_Processing",
+  "Computer_Vision",
+  "Time_Series_Analysis",
+  "Ethical_Considerations_in_ML",
+  "Deployment_and_Productionization",
+  "Advanced_Topics_in_ML"
 ]

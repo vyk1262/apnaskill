@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Manipulation",
+      "questions": [
+        {
+          "question": "How do you select a single column named 'Product' from a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.column('Product')",
+            "B": "df.Product",
+            "C": "df['Product']",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How do you select multiple columns, 'Name' and 'Price', from a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df[['Name', 'Price']]",
+            "B": "df.select(['Name', 'Price'])",
+            "C": "df.column(['Name', 'Price'])",
+            "D": "df.get(['Name', 'Price'])"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you select rows in a DataFrame `df` where the 'Price' column is greater than 100?",
+          "options": {
+            "A": "df[df['Price'] > 100]",
+            "B": "df.where(df['Price'] > 100)",
+            "C": "df.filter(df['Price'] > 100)",
+            "D": "df.query('Price > 100')"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the `.loc[]` accessor in Pandas?",
+          "options": {
+            "A": "To select rows and columns by integer position.",
+            "B": "To select rows and columns by label or boolean array.",
+            "C": "To select only rows based on a condition.",
+            "D": "To select only columns by label."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How would you select the row with index label 'A' and column 'Name' using `.loc[]` on a DataFrame `df`?",
+          "options": {
+            "A": "df.loc['Name', 'A']",
+            "B": "df.loc[['A'], ['Name']]",
+            "C": "df.loc['A', 'Name']",
+            "D": "df.loc[0, 0]"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of the `.iloc[]` accessor in Pandas?",
+          "options": {
+            "A": "To select rows and columns by label.",
+            "B": "To select rows and columns by integer position (0-based index).",
+            "C": "To select rows based on a boolean condition.",
+            "D": "To select columns based on a list of labels."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How would you select the element at the 2nd row and 3rd column using `.iloc[]` on a DataFrame `df`?",
+          "options": {
+            "A": "df.iloc[2, 3]",
+            "B": "df.iloc[1, 2]",
+            "C": "df.iloc[[1], [2]]",
+            "D": "df.iloc('2', '3')"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you add a new column named 'Tax' to a DataFrame `df` with a constant value of 0.1?",
+          "options": {
+            "A": "df.add_column('Tax', 0.1)",
+            "B": "df['Tax'] = 0.1",
+            "C": "df.insert_column('Tax', [0.1] * len(df))",
+            "D": "df.append_column('Tax', 0.1)"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you create a new column 'TotalPrice' in a DataFrame `df` by multiplying the 'Price' and 'Quantity' columns?",
+          "options": {
+            "A": "df['TotalPrice'] = df['Price'] * df['Quantity']",
+            "B": "df.new_column('TotalPrice', df['Price'] * df['Quantity'])",
+            "C": "df.assign(TotalPrice = df['Price'] * df['Quantity'])",
+            "D": "all of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you remove a column named 'OldColumn' from a DataFrame `df`?",
+          "options": {
+            "A": "df.drop('OldColumn')",
+            "B": "del df['OldColumn']",
+            "C": "df.remove('OldColumn')",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the purpose of the `inplace=True` argument in Pandas methods like `drop()`?",
+          "options": {
+            "A": "It ensures that the operation is performed without making a copy, modifying the original DataFrame.",
+            "B": "It creates a new DataFrame with the changes and assigns it back to the original variable.",
+            "C": "It specifies that the changes should be saved to the file from which the DataFrame was loaded.",
+            "D": "It indicates that the operation should be performed on a temporary copy of the DataFrame."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you rename a column named 'OldName' to 'NewName' in a DataFrame `df`?",
+          "options": {
+            "A": "df.rename_column({'OldName': 'NewName'})",
+            "B": "df.columns = df.columns.map(lambda x: 'NewName' if x == 'OldName' else x)",
+            "C": "df.rename(columns={'OldName': 'NewName'}, inplace=True)",
+            "D": "all of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How can you sort a DataFrame `df` by the values in a column named 'Value' in ascending order?",
+          "options": {
+            "A": "df.sort('Value')",
+            "B": "df.sort_values(by='Value')",
+            "C": "df.order_by('Value')",
+            "D": "df.sorted_by('Value')"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you sort a DataFrame `df` by the values in the 'Price' column in descending order?",
+          "options": {
+            "A": "df.sort_values(by='Price', ascending=False)",
+            "B": "df.sort('Price', descending=True)",
+            "C": "df.order_by('Price', desc=True)",
+            "D": "df.sort_values(by=['Price'], order='desc')"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you apply a function to each element of a Pandas Series named `s`?",
+          "options": {
+            "A": "s.apply(function)",
+            "B": "map(function, s)",
+            "C": "s.transform(function)",
+            "D": "s.foreach(function)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you apply a function to each row or column of a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.apply(function, axis=0) or df.apply(function, axis=1)",
+            "B": "df.map(function, axis='index') or df.map(function, axis='columns')",
+            "C": "df.transform(function, axis='rows') or df.transform(function, axis='cols')",
+            "D": "df.foreach(function, rowwise=True or False)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the `.fillna()` method in Pandas?",
+          "options": {
+            "A": "To remove rows with missing values.",
+            "B": "To replace missing values (NaN) with a specified value or using a method.",
+            "C": "To check for the presence of missing values.",
+            "D": "To count the number of missing values in each column."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you replace all missing values in a DataFrame `df` with 0?",
+          "options": {
+            "A": "df.replace_na(0)",
+            "B": "df.fillna(0)",
+            "C": "df.fill_missing(0)",
+            "D": "df.na_fill(0)"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the `.astype()` method in Pandas?",
+          "options": {
+            "A": "To convert the index to a different type.",
+            "B": "To change the data type of one or more columns in a DataFrame or elements in a Series.",
+            "C": "To format the display of the data.",
+            "D": "To check the current data type of a column."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you convert the data type of the 'Price' column in a DataFrame `df` to integer?",
+          "options": {
+            "A": "df['Price'].to_int()",
+            "B": "df['Price'].astype(int)",
+            "C": "df['Price'].convert_type(int)",
+            "D": "df['Price'].as_integer()"
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}
