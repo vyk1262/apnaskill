@@ -30,8 +30,7 @@ class _QuizListHomeState extends State<QuizListHome> {
   void initState() {
     super.initState();
     _fetchUserData();
-    _loadInternshipNames();
-    filteredInternshipNames.addAll(allInternshipNames);
+    _loadInternshipAndTopics();
     _searchController.addListener(_filterInternships);
   }
 
@@ -49,44 +48,30 @@ class _QuizListHomeState extends State<QuizListHome> {
     }
   }
 
-  Future<void> _loadInternshipNames() async {
+  Future<void> _loadInternshipAndTopics() async {
     try {
       final String data =
           await rootBundle.loadString('assets/course_list.json');
-      final List<dynamic> decodedList = jsonDecode(data);
+      final Map<String, dynamic> decodedData = jsonDecode(data);
       setState(() {
-        allInternshipNames = decodedList.cast<String>();
+        allInternshipNames = decodedData.keys.toList();
+        quizTopics = decodedData.map((key, value) {
+          if (value is List) {
+            return MapEntry(key, value.cast<String>());
+          } else {
+            print(
+                "Error: Value for key '$key' is not a List in course_list.json");
+            return MapEntry(key, <String>[]);
+          }
+        });
         filteredInternshipNames.addAll(allInternshipNames);
-        _loadQuizTopics(); // Load quiz topics after internship names are loaded
       });
     } catch (e) {
-      print('Error loading internship names: $e');
+      print('Error loading data: $e');
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-            content: Text('Error loading internship names. Please try again.')),
-      );
-    }
-  }
-
-  Future<void> _loadQuizTopics() async {
-    try {
-      for (final internship in allInternshipNames) {
-        final assetPath = 'assets/course_topics/$internship.json';
-        try {
-          final data = await rootBundle.loadString(assetPath);
-          final list = (jsonDecode(data) as List).cast<String>();
-          setState(() {
-            quizTopics[internship] = list;
-          });
-        } catch (innerError) {
-          print('Error loading asset for $internship: $innerError');
-        }
-      }
-    } catch (e) {
-      print('Error during quiz topics loading: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text('Error loading quiz topics. Please try again.')),
+          content: Text('Error loading data. Please try again.'),
+        ),
       );
     }
   }

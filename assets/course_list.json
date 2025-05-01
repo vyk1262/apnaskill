@@ -1,9 +1,88 @@
-[
-  "Python Programming",
-  "Web Development",
-  "Data Science",
-  "Machine Learning",
-  "Numpy",
-  "Pandas",
-  "Data Analytics"
-]
+{
+  "Python Programming": [
+    "files",
+    "functions",
+    "oops",
+    "error_handling",
+    "data_structures",
+    "advanced",
+    "applications",
+    "control_flow",
+    "intro",
+    "modules"
+  ],
+  "Web Development": [
+    "html_intro",
+    "html_forms",
+    "html_media",
+    "html_apis",
+    "css_intro",
+    "css_responsive",
+    "css_advanced",
+    "js_intro",
+    "js_bom",
+    "js_async",
+    "js_apis"
+  ],
+  "Data Science": [
+    "Data_Science_Fundamentals",
+    "Data_Collection_and_Preparation",
+    "Exploratory_Data_Analysis",
+    "Statistics_and_Probability",
+    "Machine_Learning",
+    "Deep_Learning",
+    "Data_Mining_and_Data_Wrangling",
+    "Databases_and_Big_Data_Technologies",
+    "Data_Visualization",
+    "Ethics_and_Data_Privacy",
+    "Domain_Specific_Applications"
+  ],
+  "Machine Learning": [
+    "Machine_Learning_Fundamentals",
+    "Supervised_Learning",
+    "Unsupervised_Learning",
+    "Reinforcement_Learning",
+    "Model_Evaluation_and_Selection",
+    "Feature_Engineering_and_Selection",
+    "Dimensionality_Reduction",
+    "Deep_Learning_Foundations",
+    "Natural_Language_Processing",
+    "Computer_Vision",
+    "Time_Series_Analysis",
+    "Ethical_Considerations_in_ML",
+    "Deployment_and_Productionization",
+    "Advanced_Topics_in_ML"
+  ],
+  "Numpy": [
+    "Introduction_to_NumPy",
+    "Creating_NumPy_Arrays",
+    "Array_Indexing_and_Slicing",
+    "Array_Manipulation",
+    "Basic_Array_Operations",
+    "Broadcasting",
+    "Mathematical_Functions",
+    "Working_with_Files",
+    "Advanced_Topics"
+  ],
+  "Pandas": [
+    "Introduction_to_Pandas",
+    "Creating_and_Reading_Data",
+    "Data_Exploration",
+    "Data_Manipulation",
+    "Data_Aggregation_and_Grouping",
+    "Merging_and_Joining_Data",
+    "Time_Series_Data",
+    "Data_Cleaning",
+    "Data_Visualization"
+  ],
+  "Data Analytics": [
+    "Data_Analytics_Lifecycle",
+    "Data_Warehousing_and_ETL",
+    "Data_Quality_and_Governance",
+    "Exploratory_Data_Analysis",
+    "Data_Visualization_and_Communication",
+    "Statistical_Foundations_for_Analytics",
+    "Predictive_Modeling_Techniques",
+    "Big_Data_Management_and_Analytics"
+  ]
+}
