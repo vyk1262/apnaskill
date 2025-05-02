@@ -144,86 +144,67 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Stack(
-        children: [
-          // Background Image
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image:
-                    AssetImage('assets/student_home/sd.jpg'), // Add your image
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.3),
-                  BlendMode.darken,
-                ),
-              ),
-            ),
-          ),
-
-          Center(
-            child: SingleChildScrollView(
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                constraints: BoxConstraints(maxWidth: 400),
-                padding: EdgeInsets.all(20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Auth Card
-                    Card(
-                      elevation: 15,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Container(
-                        padding: EdgeInsets.all(30),
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: _isSignIn
-                            ? SignInForm(
-                                emailController: _emailController,
-                                passwordController: _passwordController,
-                                onSignIn: _signIn,
-                                onGoogleSignIn: _signInWithGoogle,
-                              )
-                            : SignUpForm(
-                                emailController: _emailController,
-                                passwordController: _passwordController,
-                                mobileNumberController: _mobileNumberController,
-                                onSignUp: _signUp,
-                              ),
-                      ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.9,
+            constraints: BoxConstraints(maxWidth: 400),
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Auth Card
+                Card(
+                  elevation: 15,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      color: Colors.black87,
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    SizedBox(height: 30),
-
-                    // Toggle Button
-                    buildCtaButton(
-                      text: _isSignIn
-                          ? 'Create New Account'
-                          : 'Already Have an Account?',
-                      onPressed: _toggleForm,
-                    ),
-
-                    if (_isLoading)
-                      Container(
-                        color: Colors.black.withOpacity(0.5),
-                        child: Center(
-                          child: CircularProgressIndicator.adaptive(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              AppColors.primaryColor,
-                            ),
+                    child: _isSignIn
+                        ? SignInForm(
+                            emailController: _emailController,
+                            passwordController: _passwordController,
+                            onSignIn: _signIn,
+                            onGoogleSignIn: _signInWithGoogle,
+                          )
+                        : SignUpForm(
+                            emailController: _emailController,
+                            passwordController: _passwordController,
+                            mobileNumberController: _mobileNumberController,
+                            onSignUp: _signUp,
                           ),
+                  ),
+                ),
+                SizedBox(height: 30),
+
+                // Toggle Button
+                buildCtaButton(
+                  text: _isSignIn
+                      ? 'Create New Account'
+                      : 'Already Have an Account?',
+                  onPressed: _toggleForm,
+                ),
+
+                if (_isLoading)
+                  Container(
+                    color: Colors.black.withOpacity(0.5),
+                    child: Center(
+                      child: CircularProgressIndicator.adaptive(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          AppColors.primaryColor,
                         ),
                       ),
-                  ],
-                ),
-              ),
+                    ),
+                  ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }
