@@ -61,7 +61,7 @@ class _HeroWidgetState extends State<HeroWidget> {
         ),
         const SizedBox(height: 50),
         buildCtaButton(
-          text: 'Start Learning',
+          text: 'Start Testing',
           onPressed: () => context.go('/login'),
         ),
       ],
@@ -100,7 +100,7 @@ class _HeroWidgetState extends State<HeroWidget> {
           const Icon(Icons.call),
           const SizedBox(width: 8),
           Text(
-            "Call Us : 8175989767",
+            "Call Us : 8778605825",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.normal,

@@ -59,7 +59,7 @@ class CustomTheme {
       backgroundColor: AppColors.primaryColor,
     ),
     cardTheme: CardTheme(
-      color: Colors.purple[100],
+      // color: Colors.yellow[400],
       elevation: 4,
     ),
   );
