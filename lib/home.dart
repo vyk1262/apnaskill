@@ -79,10 +79,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(0.0),
                 child: Column(
                   children: [
-                    Container(
-                      color: Colors.black,
-                      child: HeroWidget(),
-                    ),
+                    HeroWidget(),
                     SizedBox(height: 20),
                     ...techContent.map(
                       (content) => FeatureSectionNew(
