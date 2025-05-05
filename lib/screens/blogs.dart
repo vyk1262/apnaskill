@@ -110,12 +110,12 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                                 child: Stack(
                                   children: [
                                     Positioned.fill(
-                                      child: Image.asset(
+                                      child: Image.network(
                                         blog['image'],
                                         fit: BoxFit.cover,
                                         errorBuilder:
                                             (context, error, stackTrace) {
-                                          return const SizedBox.shrink();
+                                          return const Icon(Icons.error);
                                         },
                                       ),
                                     ),

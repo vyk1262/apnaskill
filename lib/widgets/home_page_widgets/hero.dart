@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:skill_factorial/constants/colors.dart';
 import 'cta_button.dart';
 
 class HeroWidget extends StatefulWidget {
@@ -14,8 +14,18 @@ class HeroWidget extends StatefulWidget {
 class _HeroWidgetState extends State<HeroWidget> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: MediaQuery.of(context).size.height,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.primaryColor.withOpacity(0.1),
+            AppColors.secondaryColor.withOpacity(0.1),
+          ],
+        ),
+      ),
       child: Center(
         child: heroData(context),
       ),
@@ -55,8 +65,19 @@ class _HeroWidgetState extends State<HeroWidget> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const SizedBox(height: 20),
-        Image.asset(
-          'assets/student_home/sf_home_1.png',
+        Image.network(
+          'https://i.ibb.co/ZpqMW2Pw/sf-home-1.png',
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return Center(
+              child: CircularProgressIndicator(
+                value: loadingProgress.expectedTotalBytes != null
+                    ? loadingProgress.cumulativeBytesLoaded /
+                        loadingProgress.expectedTotalBytes!
+                    : null,
+              ),
+            );
+          },
         ),
         const SizedBox(height: 50),
         buildCtaButton(
@@ -72,8 +93,19 @@ class _HeroWidgetState extends State<HeroWidget> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const SizedBox(height: 20),
-        Image.asset(
-          'assets/student_home/sf_home_2.png',
+        Image.network(
+          'https://i.ibb.co/SDM6mLJB/sf-home-2.png',
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return Center(
+              child: CircularProgressIndicator(
+                value: loadingProgress.expectedTotalBytes != null
+                    ? loadingProgress.cumulativeBytesLoaded /
+                        loadingProgress.expectedTotalBytes!
+                    : null,
+              ),
+            );
+          },
         ),
         const SizedBox(height: 50),
         _buildContactButton(context),

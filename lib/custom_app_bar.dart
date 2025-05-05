@@ -72,8 +72,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
                           onTap: () => context.go('/'),
-                          child: Image.asset(
-                            'assets/student_home/sf45.png',
+                          child: Image.network(
+                            'https://i.ibb.co/5XKD72G4/logo.png',
                             width: 50,
                             height: 50,
                             fit: BoxFit.contain,

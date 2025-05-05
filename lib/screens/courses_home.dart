@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/screens/custom_search_bar.dart';
 
+import '../constants/image_urls.dart';
 import '../custom_app_bar.dart';
 import 'quiz_screen.dart';
 import 'syllabus_view.dart';
@@ -140,7 +141,8 @@ class _QuizListHomeState extends State<QuizListHome> {
             (internship) => internship['internshipName'] == internshipName) ??
         false;
 
-    String imagePath = 'assets/course_images/$internshipName.jpeg';
+    // String imagePath = 'assets/course_images/$internshipName.jpeg';
+    String imageUrl = ImageUrls.courseImages[internshipName] ?? 'assets/ai.jpg';
 
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
@@ -173,10 +175,23 @@ class _QuizListHomeState extends State<QuizListHome> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    imagePath,
+                  child: Image.network(
+                    imageUrl,
                     fit: BoxFit.cover,
                     width: double.infinity,
+                    errorBuilder: (context, error, stackTrace) =>
+                        const Icon(Icons.error, size: 50),
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  (loadingProgress.expectedTotalBytes ?? 1)
+                              : null,
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),

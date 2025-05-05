@@ -51,7 +51,7 @@ class FeatureSectionNew extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.asset(
+          child: Image.network(
             imageUrl,
             height: 400,
             fit: BoxFit.cover,
@@ -137,7 +137,7 @@ class FeatureModern extends StatelessWidget {
             ClipRRect(
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(20)),
-              child: Image.asset(
+              child: Image.network(
                 imageUrl,
                 width: double.infinity,
                 height: 250,
