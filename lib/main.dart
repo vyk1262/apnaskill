@@ -8,6 +8,7 @@ import 'package:skill_factorial/screens/courses_home.dart';
 import 'package:skill_factorial/screens/faqs.dart';
 import 'package:skill_factorial/screens/mentors.dart';
 import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/screens/jobs.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'Profile.dart';
@@ -64,6 +65,10 @@ final router = GoRouter(
         GoRoute(
           path: 'faqs',
           builder: (context, state) => FaqsScreen(),
+        ),
+        GoRoute(
+          path: 'jobs',
+          builder: (context, state) => const JobsScreen(),
         ),
       ],
     ),
