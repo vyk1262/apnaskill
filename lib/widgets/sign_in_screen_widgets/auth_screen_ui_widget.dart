@@ -24,46 +24,46 @@ class SignInForm extends StatelessWidget {
         GoogleSignInButton(
           onPressed: onGoogleSignIn,
         ),
-        const SizedBox(height: 20),
-        const Text(
-          'OR',
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        const SizedBox(height: 20),
-        TextField(
-          controller: emailController,
-          keyboardType: TextInputType.emailAddress,
-          style: const TextStyle(color: Colors.white),
-          decoration: const InputDecoration(
-            labelText: 'Email',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.email),
-          ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: passwordController,
-          obscureText: true,
-          style: const TextStyle(color: Colors.white),
-          decoration: const InputDecoration(
-            labelText: 'Password',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.lock),
-          ),
-        ),
-        const SizedBox(height: 16),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-          ),
-          onPressed: onSignIn,
-          child: const Text('Sign In', style: TextStyle(fontSize: 16)),
-        ),
+        // const SizedBox(height: 20),
+        // const Text(
+        //   'OR',
+        //   style: TextStyle(
+        //     fontSize: 28,
+        //     fontWeight: FontWeight.bold,
+        //     color: Colors.white,
+        //   ),
+        // ),
+        // const SizedBox(height: 20),
+        // TextField(
+        //   controller: emailController,
+        //   keyboardType: TextInputType.emailAddress,
+        //   style: const TextStyle(color: Colors.white),
+        //   decoration: const InputDecoration(
+        //     labelText: 'Email',
+        //     border: OutlineInputBorder(),
+        //     prefixIcon: Icon(Icons.email),
+        //   ),
+        // ),
+        // const SizedBox(height: 16),
+        // TextField(
+        //   controller: passwordController,
+        //   obscureText: true,
+        //   style: const TextStyle(color: Colors.white),
+        //   decoration: const InputDecoration(
+        //     labelText: 'Password',
+        //     border: OutlineInputBorder(),
+        //     prefixIcon: Icon(Icons.lock),
+        //   ),
+        // ),
+        // const SizedBox(height: 16),
+        // ElevatedButton(
+        //   style: ElevatedButton.styleFrom(
+        //     backgroundColor: AppColors.primaryColor,
+        //     padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+        //   ),
+        //   onPressed: onSignIn,
+        //   child: const Text('Sign In', style: TextStyle(fontSize: 16)),
+        // ),
       ],
     );
   }

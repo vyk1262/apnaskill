@@ -183,12 +183,12 @@ class _AuthScreenState extends State<AuthScreen> {
                 SizedBox(height: 30),
 
                 // Toggle Button
-                buildCtaButton(
-                  text: _isSignIn
-                      ? 'Create New Account'
-                      : 'Already Have an Account?',
-                  onPressed: _toggleForm,
-                ),
+                // buildCtaButton(
+                //   text: _isSignIn
+                //       ? 'Create New Account'
+                //       : 'Already Have an Account?',
+                //   onPressed: _toggleForm,
+                // ),
 
                 if (_isLoading)
                   Container(
