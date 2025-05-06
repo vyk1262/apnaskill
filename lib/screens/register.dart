@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 // import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -217,12 +217,14 @@ class _AuthScreenState extends State<AuthScreen> {
 
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       if (googleUser == null) {
-        // The user canceled the sign-in
         setState(() {
           _isLoading = false;
         });
         return;
       }
+
+      debugPrint(
+          'Google Sign-In successful. Google user ID: ${googleUser.id}, email: ${googleUser.email}');
 
       final GoogleSignInAuthentication googleAuth =
           await googleUser.authentication;
@@ -243,6 +245,7 @@ class _AuthScreenState extends State<AuthScreen> {
             .get();
 
         if (!userDoc.exists) {
+          debugPrint('User document does not exist. Creating new document...');
           await FirebaseFirestore.instance
               .collection('users')
               .doc(user.uid)
@@ -250,12 +253,19 @@ class _AuthScreenState extends State<AuthScreen> {
             'email': user.email,
             'createdAt': Timestamp.now(),
           });
+        } else {
+          debugPrint('User document already exists in Firestore.');
         }
+        context.go('/quizzes');
+      } else {
+        debugPrint('Firebase User object is null after Google Sign-In.');
       }
-
-      context.go('/quizzes');
     } on FirebaseAuthException catch (e) {
-      _showErrorDialog('Google Sign-In failed: ${e.message}');
+      debugPrint('FirebaseAuthException during Google Sign-In: ${e.message}');
+      _showErrorDialog('Google Sign-In failed');
+    } catch (e) {
+      debugPrint('An unexpected error occurred during Google Sign-In: $e');
+      _showErrorDialog('An unexpected error occurred during Sign-In.');
     } finally {
       setState(() {
         _isLoading = false;

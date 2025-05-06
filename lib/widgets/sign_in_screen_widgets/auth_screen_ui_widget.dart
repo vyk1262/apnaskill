@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import '../../constants/colors.dart';
+import 'google_sign_in_button.dart';
 
 class SignInForm extends StatelessWidget {
   final TextEditingController emailController;
@@ -20,7 +21,9 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildCtaButton(text: "Continue with Google", onPressed: onGoogleSignIn),
+        GoogleSignInButton(
+          onPressed: onGoogleSignIn,
+        ),
         const SizedBox(height: 20),
         const Text(
           'OR',
