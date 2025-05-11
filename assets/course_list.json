@@ -84,5 +84,61 @@
     "Statistical_Foundations_for_Analytics",
     "Predictive_Modeling_Techniques",
     "Big_Data_Management_and_Analytics"
+  ],
+  "Prompt Engineering": [
+    "Fundamentals_of_Prompt_Engineering",
+    "Prompt_Design_Patterns",
+    "Context_and_Instructions",
+    "Chain_of_Thought_Prompting",
+    "Few_Shot_Learning",
+    "System_and_User_Roles",
+    "Output_Formatting_and_Control",
+    "Prompt_Testing_and_Iteration",
+    "Advanced_Prompting_Techniques",
+    "Ethics_and_Best_Practices"
+  ],
+  "Cloud Computing": [
+    "Cloud_Fundamentals",
+    "Cloud_Service_Models",
+    "Cloud_Deployment_Models",
+    "Cloud_Security_and_Compliance",
+    "Cloud_Architecture_Design",
+    "Cloud_Infrastructure_Management",
+    "Containerization_and_Orchestration",
+    "Cloud_Storage_Solutions",
+    "Cloud_Networking",
+    "Serverless_Computing",
+    "Cloud_Cost_Management",
+    "Multi_Cloud_Strategies",
+    "Cloud_Migration_and_Integration",
+    "DevOps_in_Cloud"
+  ],
+  "Docker": [
+    "Docker_Fundamentals",
+    "Container_Basics",
+    "Dockerfile_and_Image_Creation",
+    "Container_Lifecycle_Management",
+    "Docker_Networking",
+    "Docker_Storage_and_Volumes",
+    "Docker_Compose",
+    "Docker_Security",
+    "Docker_Registry_and_Distribution",
+    "Docker_Best_Practices",
+    "Docker_in_Production",
+    "Docker_Monitoring_and_Logging"
+  ],
+  "Kubernetes": [
+    "Kubernetes_Architecture",
+    "Cluster_Management",
+    "Pod_Lifecycle_and_Design",
+    "Deployments_and_StatefulSets",
+    "Services_and_Networking",
+    "Storage_and_Persistence",
+    "Configuration_and_Security",
+    "Resource_Management",
+    "Monitoring_and_Logging",
+    "Scaling_and_Performance",
+    "CI_CD_with_Kubernetes",
+    "Advanced_Kubernetes_Concepts"
   ]
 }
