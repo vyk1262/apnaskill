@@ -1,0 +1,210 @@
+{
+  "result": [
+    {
+      "topic": "Exploratory_Data_Analysis",
+      "questions": [
+        {
+          "question": "What is the primary goal of Exploratory Data Analysis (EDA)?",
+          "options": {
+            "A": "To build predictive models.",
+            "B": "To confirm pre-existing hypotheses about the data.",
+            "C": "To understand the data's main characteristics, discover patterns, and formulate hypotheses.",
+            "D": "To clean and preprocess the data for modeling."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common technique used in EDA for summarizing the central tendency of a dataset?",
+          "options": {
+            "A": "Scatter plot",
+            "B": "Histogram",
+            "C": "Mean, median, and mode",
+            "D": "Box plot"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the standard deviation measure in EDA?",
+          "options": {
+            "A": "The central value of the data.",
+            "B": "The shape of the data distribution.",
+            "C": "The spread or dispersion of the data around the mean.",
+            "D": "The most frequent value in the data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which visualization tool is useful for displaying the distribution of a single numerical variable and identifying potential outliers?",
+          "options": {
+            "A": "Scatter plot",
+            "B": "Line chart",
+            "C": "Box plot",
+            "D": "Pie chart"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a histogram used for in EDA?",
+          "options": {
+            "A": "To show the relationship between two numerical variables.",
+            "B": "To compare categorical data.",
+            "C": "To visualize the frequency distribution of a numerical variable.",
+            "D": "To display trends over time."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which visualization is appropriate for exploring the relationship between two numerical variables?",
+          "options": {
+            "A": "Bar chart",
+            "B": "Pie chart",
+            "C": "Scatter plot",
+            "D": "Histogram"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of creating cross-tabulations (contingency tables) in EDA?",
+          "options": {
+            "A": "To visualize the distribution of a single numerical variable.",
+            "B": "To examine the relationship between two or more categorical variables.",
+            "C": "To identify missing values in the dataset.",
+            "D": "To calculate summary statistics for numerical variables."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are missing values, and why are they important to consider during EDA?",
+          "options": {
+            "A": "They are values that are unusually high or low and should be removed.",
+            "B": "They indicate a lack of data for certain observations and can affect analysis and modeling.",
+            "C": "They are always imputed with the mean of the column.",
+            "D": "They are irrelevant to the exploratory process."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are outliers, and why should they be investigated during EDA?",
+          "options": {
+            "A": "They are the most frequent values in the dataset and should be the focus of analysis.",
+            "B": "They are data points that deviate significantly from the rest of the data and may indicate errors or interesting phenomena.",
+            "C": "They should always be removed before any further analysis.",
+            "D": "They have no impact on statistical measures."
+          },
+
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which statistical measure is sensitive to outliers?",
+          "options": {
+            "A": "Median",
+            "B": "Mode",
+            "C": "Mean",
+            "D": "Interquartile Range (IQR)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the Interquartile Range (IQR) used for in EDA?",
+          "options": {
+            "A": "To measure the central tendency of the data.",
+            "B": "To determine the overall range of the data.",
+            "C": "To measure the spread of the middle 50% of the data and identify potential outliers.",
+            "D": "To visualize the frequency distribution of the data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of data visualization in EDA?",
+          "options": {
+            "A": "To create aesthetically pleasing reports.",
+            "B": "To summarize the data in a few key numbers.",
+            "C": "To gain visual insights into the data's distribution, relationships, and potential anomalies.",
+            "D": "To prepare the data for machine learning algorithms."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common step in the EDA process?",
+          "options": {
+            "A": "Building a complex predictive model.",
+            "B": "Deploying the model into a production environment.",
+            "C": "Calculating summary statistics and creating visualizations.",
+            "D": "Collecting large amounts of new data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the benefit of performing EDA before formal modeling?",
+          "options": {
+            "A": "It guarantees a perfect predictive model.",
+            "B": "It helps in understanding the data structure, identifying potential issues, and informing feature engineering and model selection.",
+            "C": "It eliminates the need for data cleaning.",
+            "D": "It automatically selects the best machine learning algorithm."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does it mean if a scatter plot shows a strong positive correlation between two variables?",
+          "options": {
+            "A": "As one variable increases, the other variable tends to decrease.",
+            "B": "As one variable increases, the other variable tends to increase.",
+            "C": "There is no linear relationship between the two variables.",
+            "D": "One variable causes the other to increase."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a pair plot (scatter plot matrix) useful for in EDA?",
+          "options": {
+            "A": "Visualizing the distribution of a single variable.",
+            "B": "Examining the pairwise relationships between multiple numerical variables.",
+            "C": "Comparing categorical variables.",
+            "D": "Displaying trends over time for multiple series."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of domain knowledge in EDA?",
+          "options": {
+            "A": "It is irrelevant to the EDA process.",
+            "B": "It can help in interpreting patterns, formulating relevant questions, and guiding the analysis.",
+            "C": "It is only important for the modeling phase.",
+            "D": "It dictates the specific statistical tests that should be used."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between univariate, bivariate, and multivariate analysis in EDA?",
+          "options": {
+            "A": "Univariate analyzes relationships, bivariate analyzes distributions, and multivariate analyzes central tendencies.",
+            "B": "Univariate involves one variable, bivariate involves two variables, and multivariate involves more than two variables.",
+            "C": "Univariate uses visualizations, bivariate uses statistics, and multivariate uses modeling.",
+            "D": "There is no difference; these terms are interchangeable."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is it important to document the findings and insights from EDA?",
+          "options": {
+            "A": "To make the EDA process longer.",
+            "B": "To ensure reproducibility, facilitate communication, and guide subsequent steps in the data analysis process.",
+            "C": "To keep the findings secret from stakeholders.",
+            "D": "It is not necessary to document EDA findings."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the relationship between EDA and hypothesis generation?",
+          "options": {
+            "A": "EDA is used to test pre-existing hypotheses.",
+            "B": "EDA helps in understanding the data, which can lead to the formulation of new hypotheses to be tested later.",
+            "C": "Hypothesis generation is done before EDA.",
+            "D": "There is no direct relationship between them."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

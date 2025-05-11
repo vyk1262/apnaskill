@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Warehousing_and_ETL",
+      "questions": [
+        {
+          "question": "What is the primary purpose of a data warehouse?",
+          "options": {
+            "A": "To store real-time transactional data for operational systems.",
+            "B": "To provide a consolidated and integrated view of historical data for analysis and decision support.",
+            "C": "To manage and process unstructured data in its raw format.",
+            "D": "To facilitate online transaction processing (OLTP)."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does ETL stand for in the context of data warehousing?",
+          "options": {
+            "A": "Extract, Transform, Load",
+            "B": "Enter, Transcribe, Link",
+            "C": "Evaluate, Translate, Locate",
+            "D": "Encrypt, Transfer, Log"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which stage of the ETL process involves retrieving data from various source systems?",
+          "options": {
+            "A": "Transformation",
+            "B": "Loading",
+            "C": "Extraction",
+            "D": "Validation"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What happens during the 'Transformation' phase of ETL?",
+          "options": {
+            "A": "Data is moved into the target data warehouse.",
+            "B": "Data is selected and copied from source systems.",
+            "C": "Data is cleaned, integrated, and converted into a consistent format.",
+            "D": "Data quality is assessed and reported."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the final step in the ETL process?",
+          "options": {
+            "A": "Data Extraction",
+            "B": "Data Transformation",
+            "C": "Data Loading",
+            "D": "Data Profiling"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the difference between OLTP and OLAP systems?",
+          "options": {
+            "A": "OLTP is used for analytical processing, while OLAP is for transactional processing.",
+            "B": "OLTP focuses on complex queries and historical data, while OLAP focuses on real-time transactions.",
+            "C": "OLTP is designed for high-volume, fast transactions, while OLAP is designed for analytical queries and reporting.",
+            "D": "There is no significant difference between them."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a data mart?",
+          "options": {
+            "A": "A large, centralized data repository for the entire organization.",
+            "B": "A subject-oriented subset of a data warehouse focused on a specific business area.",
+            "C": "A system used for real-time processing of transactional data.",
+            "D": "A tool for visualizing data and creating dashboards."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a common data warehouse architecture that organizes data into dimensions and facts?",
+          "options": {
+            "A": "Normalized model",
+            "B": "Entity-Relationship model",
+            "C": "Star schema or Snowflake schema",
+            "D": "Object-oriented model"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "In a star schema, what is a fact table?",
+          "options": {
+            "A": "A table that contains descriptive attributes of business entities.",
+            "B": "A central table that contains quantitative data (measures) and foreign keys to dimension tables.",
+            "C": "A table used for staging data before loading into the data warehouse.",
+            "D": "A table that stores metadata about the data warehouse."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are dimension tables in a star schema?",
+          "options": {
+            "A": "Tables that contain the primary quantitative data for analysis.",
+            "B": "Tables that provide context and descriptive attributes for the facts.",
+            "C": "Temporary tables used during the ETL process.",
+            "D": "Summary tables created for high-level reporting."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between a star schema and a snowflake schema?",
+          "options": {
+            "A": "A star schema has more fact tables than a snowflake schema.",
+            "B": "A snowflake schema normalizes dimension tables further, creating a more complex structure than a star schema.",
+            "C": "A star schema is used for real-time data, while a snowflake schema is for historical data.",
+            "D": "There is no structural difference between them; they are just different names for the same concept."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of data staging in the ETL process?",
+          "options": {
+            "A": "To directly load data into the final data warehouse tables.",
+            "B": "To provide a temporary area to clean, transform, and integrate data before loading.",
+            "C": "To store metadata about the source systems.",
+            "D": "To optimize query performance in the data warehouse."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common challenge in the ETL process?",
+          "options": {
+            "A": "The small volume of data to be processed.",
+            "B": "The consistency of data formats across all source systems.",
+            "C": "Handling data quality issues and inconsistencies from source systems.",
+            "D": "The high speed and low variety of incoming data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is change data capture (CDC) in the context of data warehousing?",
+          "options": {
+            "A": "A method for transforming data into different formats.",
+            "B": "A technique to identify and track changes in source systems and apply them to the data warehouse.",
+            "C": "A process for cleaning and validating data.",
+            "D": "A strategy for optimizing data warehouse query performance."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some benefits of using a data warehouse?",
+          "options": {
+            "A": "Improved performance of operational systems.",
+            "B": "Faster processing of real-time transactions.",
+            "C": "Enhanced business intelligence, reporting, and decision-making.",
+            "D": "Increased complexity in data management."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is an operational data store (ODS)?",
+          "options": {
+            "A": "A long-term storage for historical data.",
+            "B": "A database optimized for online analytical processing (OLAP).",
+            "C": "A database used for day-to-day transactional operations.",
+            "D": "A subject-oriented, integrated, volatile, current-valued database used for operational reporting."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How does data warehousing support business intelligence (BI)?",
+          "options": {
+            "A": "By directly processing real-time transactions.",
+            "B": "By providing a stable and integrated platform for querying and analyzing historical data.",
+            "C": "By managing the day-to-day operations of the business.",
+            "D": "By focusing on individual transactions rather than aggregated data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some common tools used for ETL processes?",
+          "options": {
+            "A": "Spreadsheet software like Microsoft Excel.",
+            "B": "Database management systems like MySQL or PostgreSQL.",
+            "C": "Dedicated ETL tools like Informatica PowerCenter, Apache NiFi, or AWS Glue.",
+            "D": "Data visualization tools like Tableau or Power BI."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of metadata in a data warehouse?",
+          "options": {
+            "A": "It is the primary data used for business analysis.",
+            "B": "It provides information about the data in the warehouse, such as its source, structure, and transformations.",
+            "C": "It is used for real-time processing of operational data.",
+            "D": "It defines the security policies for accessing the data warehouse."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is data latency in the context of data warehousing?",
+          "options": {
+            "A": "The speed at which queries are executed in the data warehouse.",
+            "B": "The time delay between when data is generated in the source system and when it becomes available in the data warehouse.",
+            "C": "The amount of storage space available in the data warehouse.",
+            "D": "The complexity of the transformations applied during the ETL process."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Statistical_Foundations_for_Analytics",
+      "questions": [
+        {
+          "question": "What is the difference between descriptive and inferential statistics?",
+          "options": {
+            "A": "Descriptive statistics are used to make predictions, while inferential statistics summarize data.",
+            "B": "Descriptive statistics summarize data, while inferential statistics are used to make generalizations about a population based on a sample.",
+            "C": "Descriptive statistics deal with qualitative data, while inferential statistics deal with quantitative data.",
+            "D": "There is no significant difference between them."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a measure of central tendency?",
+          "options": {
+            "A": "Standard deviation",
+            "B": "Variance",
+            "C": "Median",
+            "D": "Range"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the variance of a dataset measure?",
+          "options": {
+            "A": "The central value of the data.",
+            "B": "The spread or dispersion of the data around the mean.",
+            "C": "The shape of the data distribution.",
+            "D": "The most frequent value in the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a probability distribution?",
+          "options": {
+            "A": "A table that shows the frequency of each value in a dataset.",
+            "B": "A function that describes the likelihood of different outcomes in a random experiment.",
+            "C": "A graph that displays the relationship between two variables.",
+            "D": "A measure of the central tendency of a dataset."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is an example of a discrete probability distribution?",
+          "options": {
+            "A": "Normal distribution",
+            "B": "Exponential distribution",
+            "C": "Binomial distribution",
+            "D": "Uniform distribution (continuous)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the Central Limit Theorem?",
+          "options": {
+            "A": "It states that the mean of any sample will always be equal to the population mean.",
+            "B": "It describes the shape of the population distribution.",
+            "C": "It states that the distribution of sample means will tend to be normally distributed as the sample size increases, regardless of the shape of the original population distribution.",
+            "D": "It is used to calculate the probability of rare events."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a hypothesis test?",
+          "options": {
+            "A": "A method for calculating the mean of a sample.",
+            "B": "A procedure for using sample data to evaluate a claim about a population.",
+            "C": "A way to visualize the distribution of data.",
+            "D": "A technique for cleaning and preprocessing data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the null hypothesis ($H_0$) in hypothesis testing?",
+          "options": {
+            "A": "The hypothesis that the researcher is trying to prove.",
+            "B": "A statement of no effect or no difference.",
+            "C": "The alternative hypothesis.",
+            "D": "The hypothesis based on the sample data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the p-value in hypothesis testing?",
+          "options": {
+            "A": "The probability of the null hypothesis being true.",
+            "B": "The significance level of the test.",
+            "C": "The probability of observing data as extreme as, or more extreme than, the data collected if the null hypothesis were true.",
+            "D": "The probability of the alternative hypothesis being true."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the significance level ($alpha$) in hypothesis testing?",
+          "options": {
+            "A": "The probability of making a Type II error.",
+            "B": "A pre-determined threshold used to decide whether to reject the null hypothesis.",
+            "C": "The p-value of the test.",
+            "D": "The power of the test."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a Type I error in hypothesis testing?",
+          "options": {
+            "A": "Failing to reject a false null hypothesis.",
+            "B": "Rejecting a true null hypothesis.",
+            "C": "Incorrectly calculating the p-value.",
+            "D": "Choosing the wrong statistical test."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a Type II error in hypothesis testing?",
+          "options": {
+            "A": "Rejecting a true null hypothesis.",
+            "B": "Failing to reject a false null hypothesis.",
+            "C": "Using an inappropriate significance level.",
+            "D": "Misinterpreting the results of the test."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is correlation?",
+          "options": {
+            "A": "A measure of the central tendency of two variables.",
+            "B": "A statistical measure that describes the extent to which two variables tend to change together.",
+            "C": "A visual representation of the relationship between two variables.",
+            "D": "A method for predicting future values based on past data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does a correlation coefficient of -1 indicate?",
+          "options": {
+            "A": "A strong positive linear relationship.",
+            "B": "No linear relationship.",
+            "C": "A strong negative linear relationship.",
+            "D": "A perfect non-linear relationship."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is regression analysis?",
+          "options": {
+            "A": "A method for summarizing data using descriptive statistics.",
+            "B": "A statistical technique used to model the relationship between a dependent variable and one or more independent variables.",
+            "C": "A way to group data points into clusters.",
+            "D": "A technique for visualizing the distribution of a single variable."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "In simple linear regression, what does the slope of the regression line represent?",
+          "options": {
+            "A": "The average value of the dependent variable.",
+            "B": "The change in the dependent variable for a one-unit increase in the independent variable.",
+            "C": "The point where the regression line intersects the y-axis.",
+            "D": "The strength of the linear relationship between the variables."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is statistical power?",
+          "options": {
+            "A": "The probability of making a Type I error.",
+            "B": "The probability of correctly rejecting a false null hypothesis.",
+            "C": "The significance level of the test.",
+            "D": "The size of the sample used in the hypothesis test."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between a population and a sample?",
+          "options": {
+            "A": "A population is a subset of a sample.",
+            "B": "A sample is a subset of a population.",
+            "C": "Population refers to categorical data, while sample refers to numerical data.",
+            "D": "There is no difference between them in statistical analysis."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is sampling bias?",
+          "options": {
+            "A": "A random error that occurs during data collection.",
+            "B": "A systematic error that occurs when the sample is not representative of the population.",
+            "C": "A bias introduced during the analysis phase.",
+            "D": "A bias caused by outliers in the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why are statistical foundations important for data analytics?",
+          "options": {
+            "A": "They are not really necessary; intuition is sufficient.",
+            "B": "They provide the framework for understanding data, drawing valid inferences, and making informed decisions based on evidence.",
+            "C": "They are only important for academic research, not practical applications.",
+            "D": "They primarily dictate the choice of visualization techniques."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

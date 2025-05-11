@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Quality_and_Governance",
+      "questions": [
+        {
+          "question": "What is the primary goal of data quality management?",
+          "options": {
+            "A": "To increase the volume of data collected.",
+            "B": "To ensure data is fit for its intended uses.",
+            "C": "To accelerate the speed of data processing.",
+            "D": "To reduce the cost of data storage."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a key dimension of data quality?",
+          "options": {
+            "A": "Data Volume",
+            "B": "Data Velocity",
+            "C": "Completeness",
+            "D": "Data Variety"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does 'Accuracy' refer to as a dimension of data quality?",
+          "options": {
+            "A": "The degree to which data represents the true value.",
+            "B": "The availability of data when needed.",
+            "C": "The extent to which all required data is present.",
+            "D": "The consistency of data across different sources."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which data quality dimension focuses on whether all necessary data is included in the dataset?",
+          "options": {
+            "A": "Consistency",
+            "B": "Validity",
+            "C": "Completeness",
+            "D": "Timeliness"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does 'Consistency' in data quality mean?",
+          "options": {
+            "A": "Data being up-to-date.",
+            "B": "Data being free from errors.",
+            "C": "Data being the same across different systems and representations.",
+            "D": "All required data fields being present."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which data quality dimension refers to how current the data is for its intended use?",
+          "options": {
+            "A": "Accuracy",
+            "B": "Relevance",
+            "C": "Timeliness",
+            "D": "Validity"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is data governance?",
+          "options": {
+            "A": "The process of cleaning and transforming data.",
+            "B": "The overall management of the availability, usability, integrity, and security of data.",
+            "C": "The tools used for data analysis and reporting.",
+            "D": "The infrastructure for storing large volumes of data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a key component of a data governance framework?",
+          "options": {
+            "A": "Data mining algorithms",
+            "B": "Data visualization software",
+            "C": "Policies, procedures, and responsibilities",
+            "D": "Data storage hardware"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of data stewards in data governance?",
+          "options": {
+            "A": "To develop data storage solutions.",
+            "B": "To analyze data and generate reports.",
+            "C": "To oversee data assets and ensure data quality and compliance.",
+            "D": "To implement data security measures."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Why is data governance important for organizations?",
+          "options": {
+            "A": "To increase the speed of data collection.",
+            "B": "To improve data quality, ensure compliance, and support better decision-making.",
+            "C": "To reduce the variety of data sources.",
+            "D": "To simplify data processing techniques."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are data quality rules?",
+          "options": {
+            "A": "Guidelines for data storage and retrieval.",
+            "B": "Specifications for maintaining and improving data quality.",
+            "C": "Algorithms used for data analysis.",
+            "D": "Protocols for data security."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common data quality issue?",
+          "options": {
+            "A": "High data volume",
+            "B": "Fast data processing speed",
+            "C": "Duplicate records",
+            "D": "Diverse data formats"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is data profiling?",
+          "options": {
+            "A": "The process of securing sensitive data.",
+            "B": "The process of examining data to understand its structure, content, and relationships.",
+            "C": "The process of transforming data into a specific format.",
+            "D": "The process of visualizing data for reporting."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is data profiling important for data quality?",
+          "options": {
+            "A": "It helps in improving data processing speed.",
+            "B": "It assists in identifying data quality issues and understanding data characteristics.",
+            "C": "It automates data collection from various sources.",
+            "D": "It ensures compliance with data storage regulations."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are master data management (MDM) systems primarily focused on?",
+          "options": {
+            "A": "Analyzing large volumes of transactional data.",
+            "B": "Creating a single, consistent, and accurate view of core business entities.",
+            "C": "Managing the infrastructure for big data storage.",
+            "D": "Visualizing real-time data streams."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How does data cleansing contribute to data quality?",
+          "options": {
+            "A": "By increasing the variety of data formats.",
+            "B": "By identifying and correcting or removing errors and inconsistencies in data.",
+            "C": "By accelerating the rate at which data is generated.",
+            "D": "By reducing the amount of data stored."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of data validation?",
+          "options": {
+            "A": "To ensure data is stored efficiently.",
+            "B": "To check if data conforms to predefined rules and constraints.",
+            "C": "To transform data into a different format.",
+            "D": "To present data in a graphical format."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a benefit of implementing strong data quality and governance practices?",
+          "options": {
+            "A": "Reduced data volume.",
+            "B": "Faster data generation.",
+            "C": "Improved decision-making and operational efficiency.",
+            "D": "Decreased data security."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What role do metadata play in data governance?",
+          "options": {
+            "A": "They are the primary data used for analysis.",
+            "B": "They provide context and information about the data, making it easier to understand and manage.",
+            "C": "They are used to enforce data security policies directly on the data.",
+            "D": "They are the rules used for data validation."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the potential impact of poor data quality on an organization?",
+          "options": {
+            "A": "Increased innovation.",
+            "B": "Improved customer satisfaction.",
+            "C": "Inaccurate reporting and flawed decision-making.",
+            "D": "Reduced operational costs."
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

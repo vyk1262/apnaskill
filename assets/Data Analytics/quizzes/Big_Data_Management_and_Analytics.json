@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Big_Data_Management_and_Analytics",
+      "questions": [
+        {
+          "question": "What is typically considered the primary characteristic that distinguishes 'Big Data' from traditional data?",
+          "options": {
+            "A": "Its relational structure",
+            "B": "Its small size",
+            "C": "Its volume, velocity, variety, veracity, and value",
+            "D": "Its ease of processing with standard tools"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following best describes 'Volume' in the context of Big Data?",
+          "options": {
+            "A": "The speed at which data is generated and processed",
+            "B": "The different types and formats of data",
+            "C": "The sheer amount of data being generated",
+            "D": "The accuracy and trustworthiness of the data"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does 'Velocity' refer to in the 5Vs of Big Data?",
+          "options": {
+            "A": "The diversity of data formats",
+            "B": "The large size of datasets",
+            "C": "The speed of data generation and processing",
+            "D": "The reliability and quality of data"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which 'V' of Big Data encompasses the different forms data can take, such as structured, semi-structured, and unstructured?",
+          "options": {
+            "A": "Volume",
+            "B": "Velocity",
+            "C": "Variety",
+            "D": "Veracity"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does 'Veracity' signify in the context of Big Data?",
+          "options": {
+            "A": "The volume of data",
+            "B": "The speed of data processing",
+            "C": "The different data types",
+            "D": "The truthfulness and quality of the data"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Why is 'Value' considered an important aspect of Big Data?",
+          "options": {
+            "A": "It refers to the cost of storing large datasets.",
+            "B": "It highlights the importance of extracting meaningful insights from data.",
+            "C": "It describes the different types of analytical tools used.",
+            "D": "It measures the speed of data ingestion."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a distributed file system designed to handle large datasets and provide fault tolerance, commonly associated with Big Data?",
+          "options": {
+            "A": "FAT32",
+            "B": "NTFS",
+            "C": "HDFS (Hadoop Distributed File System)",
+            "D": "ext4"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is MapReduce in the context of Big Data processing?",
+          "options": {
+            "A": "A programming language for data analysis.",
+            "B": "A framework for distributed processing of large datasets.",
+            "C": "A type of NoSQL database.",
+            "D": "A tool for data visualization."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which component of the Hadoop ecosystem is responsible for resource management and job scheduling?",
+          "options": {
+            "A": "HDFS",
+            "B": "MapReduce",
+            "C": "YARN (Yet Another Resource Negotiator)",
+            "D": "HBase"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What type of database is designed to handle large volumes of unstructured or semi-structured data and does not adhere to the relational model?",
+          "options": {
+            "A": "SQL Database",
+            "B": "Relational Database",
+            "C": "NoSQL Database",
+            "D": "Transactional Database"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is an example of a NoSQL database?",
+          "options": {
+            "A": "MySQL",
+            "B": "PostgreSQL",
+            "C": "MongoDB",
+            "D": "Oracle"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is data warehousing typically used for in the context of Big Data?",
+          "options": {
+            "A": "Real-time processing of streaming data.",
+            "B": "Storing and analyzing large volumes of historical data for business intelligence.",
+            "C": "Managing fast and varied data in its raw format.",
+            "D": "Facilitating online transaction processing."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a data lake?",
+          "options": {
+            "A": "A structured repository for processed data.",
+            "B": "A central repository for storing vast amounts of raw data in its native format.",
+            "C": "A type of relational database optimized for large queries.",
+            "D": "A tool for visualizing real-time data streams."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a popular in-memory distributed data processing engine often used for Big Data analytics?",
+          "options": {
+            "A": "Hadoop MapReduce",
+            "B": "Apache Spark",
+            "C": "Apache Hive",
+            "D": "Apache Pig"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the primary purpose of data mining in Big Data analytics?",
+          "options": {
+            "A": "To store and manage large datasets.",
+            "B": "To clean and transform raw data.",
+            "C": "To discover patterns, trends, and insights from large datasets.",
+            "D": "To visualize data in real-time."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a scripting language used for data transformation and analysis in the Hadoop ecosystem?",
+          "options": {
+            "A": "Java",
+            "B": "Python",
+            "C": "Pig Latin",
+            "D": "Scala"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of data governance in Big Data management?",
+          "options": {
+            "A": "To accelerate data processing speeds.",
+            "B": "To ensure data quality, security, and compliance.",
+            "C": "To provide tools for data visualization.",
+            "D": "To manage the hardware infrastructure for Big Data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a key challenge associated with managing and analyzing Big Data?",
+          "options": {
+            "A": "The small size of the datasets.",
+            "B": "The lack of variety in data formats.",
+            "C": "The complexity of processing and storing massive and diverse datasets.",
+            "D": "The ease of integrating with traditional systems."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is real-time analytics in the context of Big Data?",
+          "options": {
+            "A": "Analyzing historical data for long-term trends.",
+            "B": "Analyzing data as it is generated to provide immediate insights.",
+            "C": "Analyzing data in batch processing mode.",
+            "D": "Analyzing only structured data sources."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can Big Data analytics contribute to business decision-making?",
+          "options": {
+            "A": "By increasing the volume of data collected.",
+            "B": "By providing insights into customer behavior, market trends, and operational efficiency.",
+            "C": "By ensuring data is stored in a relational database.",
+            "D": "By simplifying data processing with traditional tools."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}
