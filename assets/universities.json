@@ -1,0 +1,254 @@
+{
+  "countries": {
+    "United States": {
+      "states": {
+        "California": [
+          {
+            "name": "Stanford University",
+            "website": "https://www.stanford.edu",
+            "type": "Private",
+            "ranking": 4,
+            "established": 1885,
+            "location": "Stanford, CA",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Stanford_University_logo.svg"
+          },
+          {
+            "name": "University of California, Berkeley",
+            "website": "https://www.berkeley.edu",
+            "type": "Public",
+            "ranking": 15,
+            "established": 1868,
+            "location": "Berkeley, CA",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/University_of_California%2C_Berkeley_logo.svg"
+          },
+          {
+            "name": "California Institute of Technology",
+            "website": "https://www.caltech.edu",
+            "type": "Private",
+            "ranking": 7,
+            "established": 1891,
+            "location": "Pasadena, CA",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Caltech_logo.svg"
+          }
+        ],
+        "Massachusetts": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "website": "https://www.mit.edu",
+            "type": "Private",
+            "ranking": 1,
+            "established": 1861,
+            "location": "Cambridge, MA",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg"
+          },
+          {
+            "name": "Harvard University",
+            "website": "https://www.harvard.edu",
+            "type": "Private",
+            "ranking": 5,
+            "established": 1636,
+            "location": "Cambridge, MA",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/25/Harvard_University_logo.svg"
+          }
+        ],
+        "Connecticut": [
+          {
+            "name": "Yale University",
+            "website": "https://www.yale.edu",
+            "type": "Private",
+            "ranking": 8,
+            "established": 1701,
+            "location": "New Haven, CT",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Yale_University_logo.svg"
+          }
+        ],
+        "New Jersey": [
+          {
+            "name": "Princeton University",
+            "website": "https://www.princeton.edu",
+            "type": "Private",
+            "ranking": 6,
+            "established": 1746,
+            "location": "Princeton, NJ",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Princeton_University_logo.svg"
+          }
+        ],
+        "New York": [
+          {
+            "name": "Columbia University",
+            "website": "https://www.columbia.edu",
+            "type": "Private",
+            "ranking": 12,
+            "established": 1754,
+            "location": "New York, NY",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Columbia_University_logo.svg"
+          }
+        ]
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Flag_of_the_United_States.svg"
+    },
+    "United Kingdom": {
+      "states": {
+        "England": [
+          {
+            "name": "University of Cambridge",
+            "website": "https://www.cam.ac.uk",
+            "type": "Public",
+            "ranking": 2,
+            "established": 1209,
+            "location": "Cambridge, England",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Cambridge_University_logo.svg"
+          },
+          {
+            "name": "University of Oxford",
+            "website": "https://www.ox.ac.uk",
+            "type": "Public",
+            "ranking": 3,
+            "established": 1096,
+            "location": "Oxford, England",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Oxford_University_logo.svg"
+          },
+          {
+            "name": "Imperial College London",
+            "website": "https://www.imperial.ac.uk",
+            "type": "Public",
+            "ranking": 9,
+            "established": 1907,
+            "location": "London, England",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Imperial_College_London_logo.svg"
+          }
+        ],
+        "Scotland": [
+          {
+            "name": "University of Edinburgh",
+            "website": "https://www.ed.ac.uk",
+            "type": "Public",
+            "ranking": 22,
+            "established": 1582,
+            "location": "Edinburgh, Scotland",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/University_of_Edinburgh_logo.svg"
+          }
+        ]
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"
+    },
+    "Switzerland": {
+      "states": {
+        "Zürich": [
+          {
+            "name": "ETH Zurich",
+            "website": "https://ethz.ch",
+            "type": "Public",
+            "ranking": 10,
+            "established": 1855,
+            "location": "Zurich, Switzerland",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/ETH_Zurich_Logo.svg"
+          }
+        ]
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg"
+    },
+    "Singapore": {
+      "states": {
+        "Singapore": [
+          {
+            "name": "National University of Singapore",
+            "website": "https://www.nus.edu.sg",
+            "type": "Public",
+            "ranking": 11,
+            "established": 1905,
+            "location": "Singapore",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/NUS_logo.svg"
+          }
+        ]
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg"
+    },
+    "China": {
+      "states": {
+        "Beijing": [
+          {
+            "name": "Tsinghua University",
+            "website": "https://www.tsinghua.edu.cn",
+            "type": "Public",
+            "ranking": 13,
+            "established": 1911,
+            "location": "Beijing, China",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Tsinghua_University_Logo.svg"
+          },
+          {
+            "name": "Peking University",
+            "website": "https://www.pku.edu.cn",
+            "type": "Public",
+            "ranking": 14,
+            "established": 1898,
+            "location": "Beijing, China",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Peking_University_logo.svg"
+          }
+        ]
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg"
+    },
+    "Japan": {
+      "states": {
+        "Tokyo": [
+          {
+            "name": "University of Tokyo",
+            "website": "https://www.u-tokyo.ac.jp",
+            "type": "Public",
+            "ranking": 25,
+            "established": 1877,
+            "location": "Tokyo, Japan",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/University_of_Tokyo_logo.svg"
+          },
+          {
+            "name": "Tokyo Institute of Technology",
+            "website": "https://www.titech.ac.jp",
+            "type": "Public",
+            "ranking": 55,
+            "established": 1881,
+            "location": "Tokyo, Japan",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Tokyo_Institute_of_Technology_logo.svg"
+          }
+        ],
+        "Kyoto": [
+          {
+            "name": "Kyoto University",
+            "website": "https://www.kyoto-u.ac.jp",
+            "type": "Public",
+            "ranking": 33,
+            "established": 1897,
+            "location": "Kyoto, Japan",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kyoto_University_logo.svg"
+          }
+        ]
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg"
+    },
+    "South Korea": {
+      "states": {
+        "Seoul": [
+          {
+            "name": "Seoul National University",
+            "website": "https://www.snu.ac.kr",
+            "type": "Public",
+            "ranking": 29,
+            "established": 1946,
+            "location": "Seoul, South Korea",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/96/Seoul_National_University_logotype.svg"
+          },
+          {
+            "name": "KAIST",
+            "website": "https://www.kaist.ac.kr",
+            "type": "Public",
+            "ranking": 30,
+            "established": 1971,
+            "location": "Daejeon, South Korea",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/KAIST_logo.svg"
+          }
+        ]
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg"
+    }
+  }
+}
