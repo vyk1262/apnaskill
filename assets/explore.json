@@ -1,184 +1,173 @@
 {
-  "AI Chat Bots": [
+  "title": "The best AI productivity tools by category",
+  "AI Assistants (Chatbots)": [
+    { "title": "ChatGPT", "url": "https://openai.com/chatgpt" },
+    { "title": "Claude", "url": "https://www.anthropic.com/" },
+    { "title": "Meta AI", "url": "https://ai.meta.com/" },
     {
-      "title": "ChatGPT by OpenAI",
-      "url": "https://chat.openai.com/"
+      "title": "Zapier Agents",
+      "url": "https://zapier.com/features/ai-actions"
     },
-    {
-      "title": "Gemini AI by Google",
-      "url": "https://ai.google/"
-    },
-    {
-      "title": "Claude by Anthropic",
-      "url": "https://www.anthropic.com/claude"
-    },
-    {
-      "title": "Bard by Google",
-      "url": "https://bard.google.com/"
-    },
-    {
-      "title": "Jasper AI",
-      "url": "https://www.jasper.ai/"
-    },
+    { "title": "Gemini", "url": "https://gemini.google.com/" },
+    { "title": "DeepSeek", "url": "https://deepseek.com/" },
+    { "title": "Grok", "url": "https://x.ai/" },
+    { "title": "Bard", "url": "https://bard.google.com/" },
+    { "title": "Jasper AI", "url": "https://www.jasper.ai/" },
     {
       "title": "ChatSonic",
       "url": "https://writesonic.com/chatsonic-ai-chatbot"
-    },
-    {
-      "title": "Replika",
-      "url": "https://replika.ai/"
-    },
-    {
-      "title": "Character AI",
-      "url": "https://character.ai/"
-    },
-    {
-      "title": "YouChat",
-      "url": "https://you.com/search/chat"
-    },
-    {
-      "title": "Kuki AI",
-      "url": "https://www.kuki.ai/"
     }
   ],
-  "AI Writing Tools": [
+  "Search engines": [
+    { "title": "Perplexity", "url": "https://www.perplexity.ai/" },
+    { "title": "Google AI Overviews", "url": "https://www.google.com/" },
+    { "title": "Arc Search", "url": "https://arc.net/" },
     {
-      "title": "Grammarly",
-      "url": "https://www.grammarly.com/"
-    },
-    {
-      "title": "Quillbot",
-      "url": "https://quillbot.com/"
-    },
-    {
-      "title": "Copy.ai",
-      "url": "https://www.copy.ai/"
-    },
-    {
-      "title": "Writesonic",
-      "url": "https://writesonic.com/"
-    },
-    {
-      "title": "Rytr",
-      "url": "https://rytr.me/"
+      "title": "ChatGPT search",
+      "url": "https://openai.com/blog/chatgpt-browsing"
     }
   ],
-  "AI Music Generators": [
-    {
-      "title": "AIVA",
-      "url": "https://www.aiva.ai/"
-    },
-    {
-      "title": "Amper Music",
-      "url": "https://www.ampermusic.com/"
-    },
-    {
-      "title": "Soundraw",
-      "url": "https://soundraw.io/"
-    },
-    {
-      "title": "Boomy",
-      "url": "https://boomy.com/"
-    }
+  "Content creation": [
+    { "title": "Jasper", "url": "https://www.jasper.ai/" },
+    { "title": "Anyword", "url": "https://anyword.com/" },
+    { "title": "Writer", "url": "https://writer.com/" },
+    { "title": "Rytr", "url": "https://rytr.me/" },
+    { "title": "Sudowritethat's", "url": "https://www.sudowrite.com/" },
+    { "title": "Copy.ai", "url": "https://www.copy.ai/" },
+    { "title": "Writesonic", "url": "https://writesonic.com/" }
   ],
-  "AI Video Generators": [
-    {
-      "title": "Synthesia",
-      "url": "https://www.synthesia.io/"
-    },
-    {
-      "title": "Pictory",
-      "url": "https://pictory.ai/"
-    },
-    {
-      "title": "DeepBrain",
-      "url": "https://deepbrain.io/"
-    },
-    {
-      "title": "Runway ML",
-      "url": "https://runwayml.com/"
-    }
+  "Grammar checkers and rewording tools": [
+    { "title": "Grammarly", "url": "https://www.grammarly.com/" },
+    { "title": "Wordtune", "url": "https://www.wordtune.com/" },
+    { "title": "ProWritingAid", "url": "https://prowritingaid.com/" },
+    { "title": "Quillbot", "url": "https://quillbot.com/" }
   ],
-  "AI Image Generators": [
+  "Video creation and editing": [
+    { "title": "Runway", "url": "https://runwayml.com/" },
+    { "title": "Descript", "url": "https://descript.com/" },
     {
-      "title": "Midjourney",
-      "url": "https://www.midjourney.com/"
+      "title": "Wondershare Filmora",
+      "url": "https://filmora.wondershare.com/"
     },
+    { "title": "Synthesia", "url": "https://www.synthesia.io/" },
+    { "title": "OpusClip", "url": "https://opus.pro/" },
+    { "title": "Filmora", "url": "https://filmora.wondershare.com/" },
+    { "title": "Pictory", "url": "https://pictory.ai/" },
+    { "title": "DeepBrain", "url": "https://deepbrain.io/" }
+  ],
+  "Image generation": [
+    { "title": "DALL·E 3", "url": "https://openai.com/dall-e-3" },
+    { "title": "Midjourney", "url": "https://www.midjourney.com/" },
+    { "title": "Ideogram", "url": "https://ideogram.ai/" },
+    { "title": "GPT-4o", "url": "https://openai.com/gpt-4o" },
     {
       "title": "Deep Dream Generator",
       "url": "https://deepdreamgenerator.com/"
     },
-    {
-      "title": "Runway ML - Gen-2",
-      "url": "https://runwayml.com/gen2/"
-    },
-    {
-      "title": "Artbreeder",
-      "url": "https://www.artbreeder.com/"
-    }
+    { "title": "Runway ML - Gen-2", "url": "https://runwayml.com/gen2/" },
+    { "title": "Artbreeder", "url": "https://www.artbreeder.com/" }
   ],
-  "AI Voice Generators": [
-    {
-      "title": "Descript",
-      "url": "https://www.descript.com/"
-    },
-    {
-      "title": "Murf AI",
-      "url": "https://murf.ai/"
-    },
-    {
-      "title": "Resemble AI",
-      "url": "https://www.resemble.ai/"
-    },
-    {
-      "title": "Eleven Labs",
-      "url": "https://elevenlabs.io/"
-    }
+  "Social media management": [
+    { "title": "FeedHive", "url": "https://feedhive.com/" },
+    { "title": "Vista Social", "url": "https://vistasocial.com/" },
+    { "title": "Buffer", "url": "https://buffer.com/" }
   ],
-  "AI Art Generators": [
-    {
-      "title": "DeepArt",
-      "url": "https://deepart.io/"
-    },
-    {
-      "title": "StarryAI",
-      "url": "https://starryai.com/"
-    },
-    {
-      "title": "Fotor AI Art Generator",
-      "url": "https://www.fotor.com/features/ai-image-generator/"
-    },
-    {
-      "title": "Picsart AI Image Generator",
-      "url": "https://picsart.com/ai-image-generator"
-    }
+  "Voice and music generation": [
+    { "title": "ElevenLabs", "url": "https://elevenlabs.io/" },
+    { "title": "Suno", "url": "https://www.suno.ai/" },
+    { "title": "AIVA", "url": "https://www.aiva.ai/" },
+    { "title": "Murf", "url": "https://murf.ai/" },
+    { "title": "Udio", "url": "https://www.udio.com/" },
+    { "title": "Amper Music", "url": "https://www.ampermusic.com/" },
+    { "title": "Soundraw", "url": "https://soundraw.io/" },
+    { "title": "Boomy", "url": "https://boomy.com/" }
   ],
-  "Generate Images Using AI": [
-    {
-      "title": "DALL-E by OpenAI",
-      "url": "https://openai.com/dall-e-2/"
-    },
-    {
-      "title": "Stable Diffusion",
-      "url": "https://stablediffusionweb.com/"
-    },
-    {
-      "title": "NightCafe Studio",
-      "url": "https://nightcafe.studio/"
-    },
-    {
-      "title": "Artbreeder",
-      "url": "https://www.artbreeder.com/"
-    },
-    {
-      "title": "DeepAI Image Generator",
-      "url": "https://deepai.org/machine-learning-model/text2img"
-    },
-    {
-      "title": "Craiyon",
-      "url": "https://www.craiyon.com/"
-    }
+  "Knowledge management and AI grounding": [
+    { "title": "Mem", "url": "https://mem.ai/" },
+    { "title": "Notion AI Q&A", "url": "https://www.notion.so/product/ai" },
+    { "title": "Personal AI", "url": "https://personal.ai/" },
+    { "title": "Guru", "url": "https://www.getguru.com/" }
   ],
+  "Task and project management": [
+    { "title": "Asana", "url": "https://asana.com/" },
+    { "title": "Any.do", "url": "https://www.any.do/" },
+    { "title": "BeeDone", "url": "" },
+    { "title": "ClickUp", "url": "https://clickup.com/" }
+  ],
+  "Transcription and meeting assistants": [
+    { "title": "Fireflies", "url": "https://fireflies.ai/" },
+    { "title": "Avoma", "url": "https://www.avoma.com/" },
+    { "title": "tl;dv", "url": "https://tl.dv/" },
+    { "title": "Fathom", "url": "https://fathom.video/" },
+    { "title": "Nyota", "url": "" },
+    { "title": "Descript", "url": "https://www.descript.com/" }
+  ],
+  "Scheduling": [
+    { "title": "Reclaim", "url": "https://reclaim.ai/" },
+    { "title": "Clockwise", "url": "https://clockwise.ai/" },
+    { "title": "Motion", "url": "https://www.usemotion.com/" }
+  ],
+  "Email": [
+    { "title": "Shortwave", "url": "https://shortwave.com/" },
+    {
+      "title": "Microsoft Copilot Pro for Outlook",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot-for-microsoft-365"
+    },
+    {
+      "title": "Gemini for Gmail",
+      "url": "https://workspace.google.com/intl/en/products/gemini/"
+    },
+    {
+      "title": "Hubspot Email Writer",
+      "url": "https://www.hubspot.com/products/marketing/email"
+    },
+    { "title": "SaneBox", "url": "https://www.sanebox.com/" }
+  ],
+  "Slide decks and presentations": [
+    { "title": "Tome", "url": "https://tome.app/" },
+    { "title": "Beautiful.ai", "url": "https://www.beautiful.ai/" },
+    { "title": "Slidesgo", "url": "https://slidesgo.com/" },
+    { "title": "Gamma", "url": "https://gamma.app/" },
+    { "title": "Presentations.ai", "url": "https://presentations.ai/" }
+  ],
+  "Resume builders": [
+    { "title": "Teal", "url": "https://tealhq.com/" },
+    { "title": "Enhancv", "url": "https://enhancv.com/" },
+    { "title": "Kickresume", "url": "https://www.kickresume.com/" }
+  ],
+  "Automation": [
+    { "title": "Zapier", "url": "https://zapier.com/" },
+    { "title": "n8n", "url": "https://n8n.io/" }
+  ],
+  "Research/Education": [
+    { "title": "Deep Research", "url": "" },
+    { "title": "NotebookLM", "url": "https://notebooklm.google/" }
+  ],
+  "Graphic Design": [
+    {
+      "title": "Canva Magic Studio",
+      "url": "https://www.canva.com/magic-studio/"
+    },
+    { "title": "Looka", "url": "https://looka.com/" }
+  ],
+  "App Builders & Coding": [
+    { "title": "Bubble", "url": "https://bubble.io/" },
+    { "title": "Bolt", "url": "" },
+    { "title": "Lovable", "url": "" },
+    { "title": "Cursor", "url": "https://cursor.sh/" },
+    { "title": "v0", "url": "https://v0.dev/" }
+  ],
+  "Customer Service": [
+    { "title": "Tidio AI", "url": "https://www.tidio.com/ai-chatbots/" },
+    { "title": "Hiver", "url": "https://www.hiverhq.com/" }
+  ],
+  "Recruitment": [
+    { "title": "Textio", "url": "https://textio.com/" },
+    { "title": "CVViZ", "url": "https://www.cvviz.com/" }
+  ],
+  "Marketing": [{ "title": "AdCreative", "url": "https://www.adcreative.ai/" }],
+  "Sales": [{ "title": "Clay", "url": "https://clay.earth/" }],
+  "Legal": [{ "title": "Harvey", "url": "https://www.harvey.ai/" }],
   "AI Learning Resources": [
     {
       "title": "Coursera - AI for Everyone",
@@ -193,157 +182,15 @@
       "url": "https://www.fast.ai/"
     }
   ],
-  "Front End Resources": [
-    { "title": "MDN Web Docs", "url": "https://developer.mozilla.org/en-US/" },
-    { "title": "W3Schools", "url": "https://www.w3schools.com/" },
-    { "title": "CSS-Tricks", "url": "https://css-tricks.com/" },
-    { "title": "Frontend Mentor", "url": "https://www.frontendmentor.io/" },
-    { "title": "FreeCodeCamp", "url": "https://www.freecodecamp.org/" },
-    { "title": "CodePen", "url": "https://codepen.io/" },
-    { "title": "CSS Zen Garden", "url": "http://www.csszengarden.com/" },
-    { "title": "Awwwards", "url": "https://www.awwwards.com/" },
+  "Generate Images Using AI": [
+    { "title": "DALL-E by OpenAI", "url": "https://openai.com/dall-e-2/" },
+    { "title": "Stable Diffusion", "url": "https://stablediffusionweb.com/" },
+    { "title": "NightCafe Studio", "url": "https://nightcafe.studio/" },
+    { "title": "Artbreeder", "url": "https://www.artbreeder.com/" },
     {
-      "title": "Smashing Magazine",
-      "url": "https://www.smashingmagazine.com/"
+      "title": "DeepAI Image Generator",
+      "url": "https://deepai.org/machine-learning-model/text2img"
     },
-    { "title": "Frontend Resources", "url": "https://frontendresources.com/" }
-  ],
-  "Back End Resources": [
-    { "title": "Node.js", "url": "https://nodejs.org/en/docs/" },
-    {
-      "title": "Express.js",
-      "url": "https://expressjs.com/en/starter/installing.html"
-    },
-    { "title": "Django", "url": "https://www.djangoproject.com/" },
-    { "title": "Flask", "url": "https://flask.palletsprojects.com/en/2.0.x/" },
-    { "title": "Ruby on Rails", "url": "https://rubyonrails.org/" },
-    { "title": "Spring Boot", "url": "https://spring.io/projects/spring-boot" },
-    { "title": "Laravel", "url": "https://laravel.com/docs/8.x" }
-  ],
-  "Mobile Development Resources": [
-    { "title": "Flutter", "url": "https://flutter.dev/docs" },
-    {
-      "title": "React Native",
-      "url": "https://reactnative.dev/docs/getting-started"
-    },
-    { "title": "Xamarin", "url": "https://docs.microsoft.com/en-us/xamarin/" },
-    { "title": "Ionic", "url": "https://ionicframework.com/docs" },
-    {
-      "title": "SwiftUI",
-      "url": "https://developer.apple.com/documentation/swiftui"
-    }
-  ],
-  "Game Development Resources": [
-    { "title": "Unity", "url": "https://unity.com/learn" },
-    {
-      "title": "Unreal Engine",
-      "url": "https://www.unrealengine.com/en-US/onlinelearning-courses"
-    },
-    { "title": "Godot", "url": "https://godotengine.org/learn" },
-    {
-      "title": "GameMaker Studio",
-      "url": "https://www.yoyogames.com/en/gamemaker"
-    },
-    { "title": "CryEngine", "url": "https://www.cryengine.com/learn" }
-  ],
-  "Cloud Computing Resources": [
-    { "title": "AWS", "url": "https://aws.amazon.com/training/" },
-    { "title": "Google Cloud", "url": "https://cloud.google.com/training" },
-    {
-      "title": "Microsoft Azure",
-      "url": "https://learn.microsoft.com/en-us/training/azure/"
-    },
-    { "title": "IBM Cloud", "url": "https://www.ibm.com/cloud/training" },
-    { "title": "Oracle Cloud", "url": "https://learn.oracle.com/" }
-  ],
-  "DevOps Resources": [
-    { "title": "Docker", "url": "https://docs.docker.com/get-started/" },
-    { "title": "Kubernetes", "url": "https://kubernetes.io/docs/home/" },
-    { "title": "Jenkins", "url": "https://www.jenkins.io/doc/" },
-    { "title": "GitLab CI/CD", "url": "https://docs.gitlab.com/ee/ci/" },
-    { "title": "Terraform", "url": "https://www.terraform.io/docs/index.html" }
-  ],
-  "Cybersecurity Resources": [
-    { "title": "OWASP", "url": "https://owasp.org/" },
-    { "title": "Kali Linux", "url": "https://www.kali.org/docs/" },
-    { "title": "Metasploit", "url": "https://www.metasploit.com/docs/" },
-    {
-      "title": "Burp Suite",
-      "url": "https://portswigger.net/burp/documentation"
-    },
-    { "title": "Nmap", "url": "https://nmap.org/book/" }
-  ],
-  "Data Science Resources": [
-    { "title": "Kaggle", "url": "https://www.kaggle.com/" },
-    { "title": "Pandas", "url": "https://pandas.pydata.org/docs/" },
-    { "title": "NumPy", "url": "https://numpy.org/doc/stable/" },
-    {
-      "title": "Matplotlib",
-      "url": "https://matplotlib.org/stable/contents.html"
-    },
-    { "title": "Seaborn", "url": "https://seaborn.pydata.org/" }
-  ],
-  "Machine Learning Resources": [
-    { "title": "Scikit-learn", "url": "https://scikit-learn.org/stable/" },
-    { "title": "TensorFlow", "url": "https://www.tensorflow.org/" },
-    { "title": "PyTorch", "url": "https://pytorch.org/docs/stable/index.html" },
-    { "title": "Keras", "url": "https://keras.io/" },
-    { "title": "OpenCV", "url": "https://docs.opencv.org/master/" }
-  ],
-  "Blockchain Resources": [
-    { "title": "Ethereum", "url": "https://ethereum.org/en/developers/docs/" },
-    { "title": "Hyperledger", "url": "https://www.hyperledger.org/learn" },
-    { "title": "Solidity", "url": "https://docs.soliditylang.org/en/v0.8.0/" },
-    {
-      "title": "Truffle Suite",
-      "url": "https://www.trufflesuite.com/docs/truffle/"
-    },
-    { "title": "Web3.js", "url": "https://web3js.readthedocs.io/en/v1.5.2/" }
-  ],
-  "AR/VR Resources": [
-    {
-      "title": "Unity AR Foundation",
-      "url": "https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.0/manual/index.html"
-    },
-    { "title": "ARKit", "url": "https://developer.apple.com/arkit/" },
-    { "title": "ARCore", "url": "https://developers.google.com/ar" },
-    { "title": "Vuforia", "url": "https://developer.vuforia.com/" },
-    { "title": "OpenXR", "url": "https://www.khronos.org/openxr/" }
-  ],
-  "IoT Resources": [
-    {
-      "title": "Arduino",
-      "url": "https://www.arduino.cc/en/Tutorial/HomePage"
-    },
-    {
-      "title": "Raspberry Pi",
-      "url": "https://www.raspberrypi.org/documentation/"
-    },
-    { "title": "MQTT", "url": "http://mqtt.org/documentation" },
-    { "title": "Node-RED", "url": "https://nodered.org/docs/" },
-    { "title": "AWS IoT Core", "url": "https://aws.amazon.com/iot-core/" }
-  ],
-  "Web Development Resources": [
-    { "title": "HTML5", "url": "https://www.w3schools.com/html/" },
-    { "title": "CSS3", "url": "https://www.w3schools.com/css/" },
-    { "title": "JavaScript", "url": "https://www.w3schools.com/js/" },
-    {
-      "title": "React.js",
-      "url": "https://reactjs.org/docs/getting-started.html"
-    },
-    { "title": "Vue.js", "url": "https://vuejs.org/v2/guide/" }
-  ],
-  "Software Development Resources": [
-    { "title": "Git", "url": "https://git-scm.com/doc" },
-    { "title": "GitHub", "url": "https://docs.github.com/en" },
-    {
-      "title": "Bitbucket",
-      "url": "https://confluence.atlassian.com/bitbucket/"
-    },
-    { "title": "GitLab", "url": "https://docs.gitlab.com/ee/user/" },
-    {
-      "title": "Jira",
-      "url": "https://www.atlassian.com/software/jira/guides"
-    }
+    { "title": "Craiyon", "url": "https://www.craiyon.com/" }
   ]
 }
