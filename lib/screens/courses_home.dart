@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/screens/custom_search_bar.dart';
+import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 
 import '../constants/image_urls.dart';
 import '../custom_app_bar.dart';
@@ -175,23 +176,11 @@ class _QuizListHomeState extends State<QuizListHome> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.network(
-                    imageUrl,
-                    fit: BoxFit.cover,
+                  child: CachedNetworkImageWidget(
+                    imageUrl: imageUrl,
                     width: double.infinity,
-                    errorBuilder: (context, error, stackTrace) =>
-                        const Icon(Icons.error, size: 50),
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                        child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                  (loadingProgress.expectedTotalBytes ?? 1)
-                              : null,
-                        ),
-                      );
-                    },
+                    fit: BoxFit.cover,
+                    errorWidget: const Icon(Icons.broken_image),
                   ),
                 ),
               ),

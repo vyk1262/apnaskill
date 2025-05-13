@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
+import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'Profile.dart';
@@ -49,11 +50,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
                     onTap: () => context.go('/'),
-                    child: Image.network(
-                      'https://i.ibb.co/xtLkhZLb/logo.png',
+                    child: const CachedNetworkImageWidget(
+                      imageUrl: 'https://i.ibb.co/xtLkhZLb/logo.png',
                       width: 50,
                       height: 50,
-                      fit: BoxFit.contain,
+                      fit: BoxFit.cover,
+                      errorWidget: Icon(Icons.broken_image),
                     ),
                   ),
                 ),
@@ -108,7 +110,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               label: 'Blogs', screenName: 'blogs'),
                           if (user == null)
                             _buildNavButton(context,
-                                label: 'Login →', screenName: 'login'),
+                                label: 'Login', screenName: 'login'),
                           if (user != null)
                             ElevatedButton.icon(
                               icon: Icon(Icons.logout),

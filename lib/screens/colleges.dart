@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../widgets/cached_network_image_widget.dart';
+
 class UniversitiesScreen extends StatefulWidget {
   const UniversitiesScreen({Key? key}) : super(key: key);
 
@@ -291,23 +293,13 @@ class _UniversitiesScreenState extends State<UniversitiesScreen>
                                                   const BorderRadius.vertical(
                                                 top: Radius.circular(15),
                                               ),
-                                              child: Image.network(
-                                                university['image'],
+                                              child: CachedNetworkImageWidget(
+                                                imageUrl: university['image'],
                                                 height: 150,
                                                 width: double.infinity,
                                                 fit: BoxFit.cover,
-                                                errorBuilder: (context, error,
-                                                    stackTrace) {
-                                                  return Container(
-                                                    height: 150,
-                                                    color: Colors.grey[200],
-                                                    child: Icon(
-                                                      Icons.school,
-                                                      size: 50,
-                                                      color: Colors.grey[400],
-                                                    ),
-                                                  );
-                                                },
+                                                errorWidget: const Icon(
+                                                    Icons.broken_image),
                                               ),
                                             ),
                                             Padding(

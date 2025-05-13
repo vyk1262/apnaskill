@@ -160,17 +160,6 @@ class _HomePageState extends State<HomePage> {
                     // ContactForm(),
                     Container(
                       padding: const EdgeInsets.all(40),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            AppColors.primaryColor,
-                            AppColors.secondaryColor,
-                          ],
-                        ),
-                      ),
                       child: Column(
                         children: [
                           const Text(
@@ -184,6 +173,8 @@ class _HomePageState extends State<HomePage> {
                           buildCtaButton(
                             text: "Begin Your Quiz Journey",
                             onPressed: () => context.go('/login'),
+                            bgColor: Colors.black,
+                            fgColor: Colors.white,
                           )
                         ],
                       ),

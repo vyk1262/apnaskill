@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 
 class FeatureSectionNew extends StatelessWidget {
@@ -51,15 +52,11 @@ class FeatureSectionNew extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: CachedNetworkImage(
+          child: CachedNetworkImageWidget(
             imageUrl: imageUrl,
             height: 400,
             fit: BoxFit.cover,
-            errorWidget: (context, url, error) => Container(
-              height: 400,
-              color: Colors.grey[300],
-              child: const Icon(Icons.error),
-            ),
+            errorWidget: const Icon(Icons.broken_image),
           ),
         ),
       ),
@@ -71,15 +68,11 @@ class FeatureSectionNew extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: CachedNetworkImage(
+        child: CachedNetworkImageWidget(
           imageUrl: imageUrl,
           height: 400,
           fit: BoxFit.cover,
-          errorWidget: (context, url, error) => Container(
-            height: 400,
-            color: Colors.grey[300],
-            child: const Icon(Icons.error),
-          ),
+          errorWidget: const Icon(Icons.broken_image),
         ),
       ),
     );
@@ -147,16 +140,12 @@ class FeatureModern extends StatelessWidget {
             ClipRRect(
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(20)),
-              child: CachedNetworkImage(
+              child: CachedNetworkImageWidget(
                 imageUrl: imageUrl,
                 width: double.infinity,
                 height: 250,
                 fit: BoxFit.cover,
-                errorWidget: (context, url, error) => Container(
-                  height: 250,
-                  color: Colors.grey[300],
-                  child: const Icon(Icons.error),
-                ),
+                errorWidget: const Icon(Icons.broken_image),
               ),
             ),
             Padding(

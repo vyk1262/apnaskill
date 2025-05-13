@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
+import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import 'cta_button.dart';
 
 class HeroWidget extends StatefulWidget {
@@ -69,44 +70,24 @@ class _HeroWidgetState extends State<HeroWidget> {
   }
 
   Column newMethodOne(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Image.network(
-          'https://i.ibb.co/ZpqMW2Pw/sf-home-1.png',
-          loadingBuilder: (context, child, loadingProgress) {
-            if (loadingProgress == null) return child;
-            return Center(
-              child: CircularProgressIndicator(
-                value: loadingProgress.expectedTotalBytes != null
-                    ? loadingProgress.cumulativeBytesLoaded /
-                        loadingProgress.expectedTotalBytes!
-                    : null,
-              ),
-            );
-          },
+        CachedNetworkImageWidget(
+          imageUrl: 'https://i.ibb.co/ZpqMW2Pw/sf-home-1.png',
+          errorWidget: Icon(Icons.broken_image),
         ),
       ],
     );
   }
 
   Column newMethodTwo(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Image.network(
-          'https://i.ibb.co/SDM6mLJB/sf-home-2.png',
-          loadingBuilder: (context, child, loadingProgress) {
-            if (loadingProgress == null) return child;
-            return Center(
-              child: CircularProgressIndicator(
-                value: loadingProgress.expectedTotalBytes != null
-                    ? loadingProgress.cumulativeBytesLoaded /
-                        loadingProgress.expectedTotalBytes!
-                    : null,
-              ),
-            );
-          },
+        CachedNetworkImageWidget(
+          imageUrl: 'https://i.ibb.co/SDM6mLJB/sf-home-2.png',
+          errorWidget: Icon(Icons.broken_image),
         ),
       ],
     );
