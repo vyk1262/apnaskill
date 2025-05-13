@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Graph_Algorithms",
+      "questions": [
+        {
+          "question": "What is a 'graph' in the context of computer science?",
+          "options": {
+            "A": "A chart used to represent data visually.",
+            "B": "A data structure that consists of a finite set of vertices (or nodes) and a set of edges that connect pairs of vertices.",
+            "C": "A linear data structure where elements are arranged in a sequence.",
+            "D": "A tree-like structure with a root and children."
+          },
+          "correct_answer": "B",
+          "explanation": "Graphs are used to model relationships between objects."
+        },
+        {
+          "question": "What is the difference between a 'directed' and an 'undirected' graph?",
+          "options": {
+            "A": "Directed graphs have more vertices than undirected graphs.",
+            "B": "In a directed graph, edges have a direction, indicating a one-way relationship. In an undirected graph, edges have no direction, indicating a two-way relationship.",
+            "C": "Undirected graphs cannot have cycles.",
+            "D": "Directed graphs are always acyclic."
+          },
+          "correct_answer": "B",
+          "explanation": "The presence or absence of direction on the edges is the key distinction."
+        },
+        {
+          "question": "What are the two common ways to represent a graph in memory?",
+          "options": {
+            "A": "Arrays and linked lists.",
+            "B": "Adjacency matrix and adjacency list.",
+            "C": "Stacks and queues.",
+            "D": "Hash tables and trees."
+          },
+          "correct_answer": "B",
+          "explanation": "The choice between these representations depends on the density of the graph and the operations to be performed."
+        },
+        {
+          "question": "What is 'Breadth-First Search' (BFS)?",
+          "options": {
+            "A": "A graph traversal algorithm that explores as far as possible along each branch before backtracking.",
+            "B": "A graph traversal algorithm that explores all the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.",
+            "C": "An algorithm for finding the shortest path between two nodes in a weighted graph with non-negative edge weights.",
+            "D": "An algorithm for finding the minimum spanning tree of a weighted undirected graph."
+          },
+          "correct_answer": "B",
+          "explanation": "BFS uses a queue to manage the order of vertices to visit."
+        },
+        {
+          "question": "What is 'Depth-First Search' (DFS)?",
+          "options": {
+            "A": "A graph traversal algorithm that explores all the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.",
+            "B": "A graph traversal algorithm that explores as far as possible along each branch before backtracking.",
+            "C": "An algorithm for finding the shortest path between two nodes in a weighted graph.",
+            "D": "An algorithm for detecting cycles in a directed graph."
+          },
+          "correct_answer": "B",
+          "explanation": "DFS uses a stack (implicitly through recursion) to manage the order of vertices to visit."
+        },
+        {
+          "question": "What is 'Dijkstra's algorithm' used for?",
+          "options": {
+            "A": "Finding the minimum spanning tree of a weighted undirected graph.",
+            "B": "Finding the shortest path from a single source node to all other nodes in a weighted graph with non-negative edge weights.",
+            "C": "Traversing a graph in a breadth-first manner.",
+            "D": "Detecting cycles in an undirected graph."
+          },
+          "correct_answer": "B",
+          "explanation": "Dijkstra's algorithm maintains a set of visited nodes and a priority queue to find the shortest paths."
+        },
+        {
+          "question": "What is 'Bellman-Ford algorithm' used for?",
+          "options": {
+            "A": "Finding the minimum spanning tree.",
+            "B": "Finding the shortest path from a single source node to all other nodes in a weighted graph, and it can handle graphs with negative edge weights (and detect negative cycles).",
+            "C": "Traversing a graph in a depth-first manner.",
+            "D": "Finding all-pairs shortest paths."
+          },
+          "correct_answer": "B",
+          "explanation": "Bellman-Ford is more versatile than Dijkstra's in handling negative edge weights."
+        },
+        {
+          "question": "What is 'Floyd-Warshall algorithm' used for?",
+          "options": {
+            "A": "Finding the shortest path from a single source.",
+            "B": "Finding the minimum spanning tree.",
+            "C": "Finding the shortest paths between all pairs of vertices in a weighted graph (can handle negative edge weights but not negative cycles).",
+            "D": "Traversing a graph."
+          },
+          "correct_answer": "C",
+          "explanation": "Floyd-Warshall uses dynamic programming to compute all-pairs shortest paths."
+        },
+        {
+          "question": "What is a 'Minimum Spanning Tree' (MST)?",
+          "options": {
+            "A": "A subgraph that contains all the vertices of the original graph and has the minimum possible number of edges.",
+            "B": "A subgraph that connects all the vertices of the original graph with the minimum total edge weight and contains no cycles (for a weighted undirected graph).",
+            "C": "A tree that spans only a subset of the vertices with the lowest edge weights.",
+            "D": "A subgraph with the maximum total edge weight that connects all vertices."
+          },
+          "correct_answer": "B",
+          "explanation": "MSTs are fundamental in network design and similar applications."
+        },
+        {
+          "question": "What is 'Kruskal's algorithm' used for?",
+          "options": {
+            "A": "Finding the shortest path.",
+            "B": "Finding the minimum spanning tree of a weighted undirected graph by iteratively adding the cheapest edge that does not create a cycle.",
+            "C": "Graph traversal.",
+            "D": "Detecting negative cycles."
+          },
+          "correct_answer": "B",
+          "explanation": "Kruskal's algorithm uses the Disjoint Set Union (DSU) data structure to efficiently detect cycles."
+        },
+        {
+          "question": "What is 'Prim's algorithm' used for?",
+          "options": {
+            "A": "Finding the shortest path.",
+            "B": "Finding the minimum spanning tree of a weighted undirected graph by starting with an arbitrary vertex and iteratively adding the cheapest edge connecting the tree to a vertex not yet in the tree.",
+            "C": "Graph traversal.",
+            "D": "Finding all-pairs shortest paths."
+          },
+          "correct_answer": "B",
+          "explanation": "Prim's algorithm grows the MST from a single vertex."
+        },
+        {
+          "question": "What is 'Topological Sort'?",
+          "options": {
+            "A": "Sorting the vertices of a graph based on their degree.",
+            "B": "A linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge from vertex u to vertex v, u comes before v in the ordering.",
+            "C": "Sorting the edges of a graph by weight.",
+            "D": "Sorting the neighbors of each vertex alphabetically."
+          },
+          "correct_answer": "B",
+          "explanation": "Topological sort is useful for tasks with dependencies, like scheduling."
+        },
+        {
+          "question": "How can you detect a cycle in an undirected graph using graph traversal algorithms?",
+          "options": {
+            "A": "Cycles cannot be detected in undirected graphs.",
+            "B": "Using BFS or DFS, if we encounter a visited vertex that is not the immediate parent of the current vertex, then a cycle exists.",
+            "C": "Only by using algorithms specifically designed for cycle detection like Floyd-Warshall.",
+            "D": "By counting the number of edges and vertices."
+          },
+          "correct_answer": "B",
+          "explanation": "The condition of encountering a visited non-parent node indicates a back edge, which forms a cycle in an undirected graph."
+        },
+        {
+          "question": "How can you detect a cycle in a directed graph using graph traversal algorithms?",
+          "options": {
+            "A": "Cycles cannot be detected in directed graphs.",
+            "B": "Using DFS, if we encounter a vertex that is currently in the recursion stack, then a cycle exists (back edge to an ancestor in the current path).",
+            "C": "Only by using BFS.",
+            "D": "By counting the number of incoming and outgoing edges for each vertex."
+          },
+          "correct_answer": "B",
+          "explanation": "Keeping track of the vertices in the current recursion stack is crucial for detecting cycles in directed graphs."
+        },
+        {
+          "question": "What is the time complexity of Breadth-First Search (BFS) and Depth-First Search (DFS) on a graph with V vertices and E edges (using adjacency list representation)?",
+          "options": {
+            "A": "BFS: O(V^2), DFS: O(E^2)",
+            "B": "BFS: O(E), DFS: O(V)",
+            "C": "BFS: O(V + E), DFS: O(V + E)",
+            "D": "BFS: O(V * E), DFS: O(V * E)"
+          },
+          "correct_answer": "C",
+          "explanation": "Both algorithms visit each vertex and explore each edge at most once in an adjacency list representation."
+        },
+        {
+          "question": "What is the time complexity of Dijkstra's algorithm using a binary heap (priority queue)?",
+          "options": {
+            "A": "O(V^2)",
+            "B": "O(E log V)",
+            "C": "O(V log E)",
+            "D": "O(V * E)"
+          },
+          "correct_answer": "B",
+          "explanation": "Each edge is processed at most once, and priority queue operations (insert and extract-min) take O(log V) time."
+        },
+        {
+          "question": "What is the time complexity of Kruskal's algorithm using Disjoint Set Union (DSU)?",
+          "options": {
+            "A": "O(V^2)",
+            "B": "O(E log E) or O(E log V)",
+            "C": "O(E * V)",
+            "D": "O(V log V)"
+          },
+          "correct_answer": "B",
+          "explanation": "Sorting the edges takes O(E log E) time, and DSU operations take almost constant time per operation."
+        },
+        {
+          "question": "What is the time complexity of Floyd-Warshall algorithm?",
+          "options": {
+            "A": "O(V + E)",
+            "B": "O(E log V)",
+            "C": "O(V^3)",
+            "D": "O(V^2 log V)"
+          },
+          "correct_answer": "C",
+          "explanation": "The algorithm uses three nested loops, each iterating up to V times."
+        },
+        {
+          "question": "What is a common application of Topological Sort?",
+          "options": {
+            "A": "Finding the shortest path in a network.",
+            "B": "Scheduling tasks with dependencies.",
+            "C": "Finding the minimum cost to connect all computers in a network.",
+            "D": "Detecting bottlenecks in a flow network."
+          },
+          "correct_answer": "B",
+          "explanation": "Topological sort provides a linear ordering of tasks based on their dependencies."
+        },
+        {
+          "question": "What is a 'strongly connected component' (SCC) in a directed graph?",
+          "options": {
+            "A": "A subgraph where there is no path between any two distinct vertices.",
+            "B": "A subgraph where every vertex is reachable from every other vertex within the subgraph.",
+            "C": "A subgraph with the maximum number of edges.",
+            "D": "A subgraph that forms a cycle."
+          },
+          "correct_answer": "B",
+          "explanation": "Algorithms like Kosaraju's or Tarjan's can be used to find SCCs."
+        }
+      ]
+    }
+  ]
+}

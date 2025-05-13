@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Tree_Algorithms",
+      "questions": [
+        {
+          "question": "What is a 'tree' in the context of data structures?",
+          "options": {
+            "A": "A linear data structure where each element points to the next.",
+            "B": "A hierarchical data structure that consists of nodes connected by edges, with a root node and no cycles.",
+            "C": "A collection of nodes where each node can have multiple parents.",
+            "D": "A graph where every node is connected to every other node."
+          },
+          "correct_answer": "B",
+          "explanation": "The key characteristics of a tree are its hierarchical structure, a single root, and the absence of cycles."
+        },
+        {
+          "question": "What is the 'root' of a tree?",
+          "options": {
+            "A": "The bottom-most node in the tree.",
+            "B": "The topmost node in the tree, which has no parent.",
+            "C": "Any node in the tree that has no children.",
+            "D": "The node that is connected to the most other nodes."
+          },
+          "correct_answer": "B",
+          "explanation": "The root is the starting point for traversing the tree structure."
+        },
+        {
+          "question": "What are 'children' and 'parents' in a tree?",
+          "options": {
+            "A": "Children are nodes that have a root, and parents are nodes that have no children.",
+            "B": "Children are the nodes directly connected below a given node, and the parent is the node directly connected above a given node.",
+            "C": "These terms are only used for binary trees.",
+            "D": "These terms refer to the left and right subtrees."
+          },
+          "correct_answer": "B",
+          "explanation": "These relationships define the hierarchical structure of the tree."
+        },
+        {
+          "question": "What is a 'leaf' node in a tree?",
+          "options": {
+            "A": "The root node.",
+            "B": "A node that has no children.",
+            "C": "A node that has only one child.",
+            "D": "The node at the maximum depth of the tree."
+          },
+          "correct_answer": "B",
+          "explanation": "Leaf nodes are the endpoints of paths in the tree."
+        },
+        {
+          "question": "What is the 'depth' of a node in a tree?",
+          "options": {
+            "A": "The number of children a node has.",
+            "B": "The number of edges from the root to the node.",
+            "C": "The number of edges from the node to the farthest leaf in its subtree.",
+            "D": "The total number of nodes in the subtree rooted at that node."
+          },
+          "correct_answer": "B",
+          "explanation": "The depth indicates how far down the tree a node is located."
+        },
+        {
+          "question": "What is the 'height' of a tree?",
+          "options": {
+            "A": "The number of nodes in the longest path from the root to a leaf.",
+            "B": "The number of edges in the longest path from the root to a leaf.",
+            "C": "The total number of nodes in the tree.",
+            "D": "The average depth of all nodes in the tree."
+          },
+          "correct_answer": "B",
+          "explanation": "The height is a measure of the tree's overall vertical extent."
+        },
+        {
+          "question": "What is a 'Binary Tree'?",
+          "options": {
+            "A": "A tree where each node can have at most two children, typically referred to as the left child and the right child.",
+            "B": "A tree where each node can have any number of children.",
+            "C": "A tree that is always sorted.",
+            "D": "A tree with exactly two levels."
+          },
+          "correct_answer": "A",
+          "explanation": "Binary trees are fundamental in many data structures and algorithms."
+        },
+        {
+          "question": "What are the common ways to traverse a binary tree?",
+          "options": {
+            "A": "Forward, backward, and sideways.",
+            "B": "Pre-order, in-order, and post-order.",
+            "C": "Top-down and bottom-up.",
+            "D": "Left-to-right and right-to-left."
+          },
+          "correct_answer": "B",
+          "explanation": "These traversals visit each node in the tree in a specific order."
+        },
+        {
+          "question": "Describe the 'Pre-order' traversal of a binary tree.",
+          "options": {
+            "A": "Visit the left subtree, then the root, then the right subtree.",
+            "B": "Visit the root, then the left subtree, then the right subtree.",
+            "C": "Visit the left subtree, then the right subtree, then the root.",
+            "D": "Visit the nodes level by level."
+          },
+          "correct_answer": "B",
+          "explanation": "Pre-order traversal is often used to create a prefix expression of an expression tree."
+        },
+        {
+          "question": "Describe the 'In-order' traversal of a binary tree.",
+          "options": {
+            "A": "Visit the root, then the left subtree, then the right subtree.",
+            "B": "Visit the left subtree, then the root, then the right subtree.",
+            "C": "Visit the left subtree, then the right subtree, then the root.",
+            "D": "Visit the nodes level by level."
+          },
+          "correct_answer": "B",
+          "explanation": "In-order traversal of a Binary Search Tree (BST) yields the nodes in sorted order."
+        },
+        {
+          "question": "Describe the 'Post-order' traversal of a binary tree.",
+          "options": {
+            "A": "Visit the root, then the left subtree, then the right subtree.",
+            "B": "Visit the left subtree, then the root, then the right subtree.",
+            "C": "Visit the left subtree, then the right subtree, then the root.",
+            "D": "Visit the nodes level by level."
+          },
+          "correct_answer": "C",
+          "explanation": "Post-order traversal is often used in the evaluation of postfix expressions and in directory deletion."
+        },
+        {
+          "question": "What is 'Level-order' traversal (Breadth-First Search) of a tree?",
+          "options": {
+            "A": "Visiting the nodes in pre-order.",
+            "B": "Visiting the nodes in post-order.",
+            "C": "Visiting all the nodes at the current level before moving to the next level, typically using a queue.",
+            "D": "Visiting the nodes in in-order."
+          },
+          "correct_answer": "C",
+          "explanation": "Level-order traversal explores the tree horizontally."
+        },
+        {
+          "question": "What is a 'Binary Search Tree' (BST)?",
+          "options": {
+            "A": "A binary tree where the value of each node is less than or equal to the values in its left subtree and greater than or equal to the values in its right subtree.",
+            "B": "A binary tree where the value of each node is greater than or equal to the values in its left subtree and less than or equal to the values in its right subtree.",
+            "C": "A binary tree that is perfectly balanced.",
+            "D": "Any binary tree where the left child is always smaller than the right child."
+          },
+          "correct_answer": "B",
+          "explanation": "The BST property allows for efficient searching, insertion, and deletion of nodes."
+        },
+        {
+          "question": "What is a 'Balanced Binary Search Tree'?",
+          "options": {
+            "A": "A BST where all leaf nodes are at the same level.",
+            "B": "A BST where the height of the left and right subtrees of every node differ by at most a certain constant, ensuring that the tree's height remains logarithmic with respect to the number of nodes.",
+            "C": "A BST where the number of nodes in the left and right subtrees of every node is approximately equal.",
+            "D": "A BST that is also a complete binary tree."
+          },
+          "correct_answer": "B",
+          "explanation": "Balanced BSTs (like AVL trees and Red-Black trees) maintain logarithmic time complexity for operations."
+        },
+        {
+          "question": "What is a 'Minimum Spanning Tree' (MST) in the context of a graph?",
+          "options": {
+            "A": "A subgraph that connects all vertices with the maximum possible total edge weight.",
+            "B": "A subgraph that connects all vertices with the minimum possible number of edges.",
+            "C": "A subgraph that connects all vertices with the minimum possible total edge weight and contains no cycles (it's a tree).",
+            "D": "A tree that spans only a subset of the vertices with the lowest edge weights."
+          },
+          "correct_answer": "C",
+          "explanation": "MST algorithms like Kruskal's and Prim's are used to find such trees in weighted undirected graphs."
+        },
+        {
+          "question": "What is a 'Trie' (Prefix Tree)?",
+          "options": {
+            "A": "A binary tree used for sorting strings.",
+            "B": "A tree-like data structure used for storing a dynamic set of strings, where each node in the tree represents a prefix of a string.",
+            "C": "A tree where nodes store integers.",
+            "D": "A balanced binary search tree optimized for searching numbers."
+          },
+          "correct_answer": "B",
+          "explanation": "Tries are efficient for prefix-based search operations."
+        },
+        {
+          "question": "What is a 'Heap'?",
+          "options": {
+            "A": "A sorted array.",
+            "B": "A complete binary tree that satisfies the heap property: either the value of each node is greater than or equal to the value of its children (max-heap) or less than or equal to the value of its children (min-heap).",
+            "C": "A binary search tree.",
+            "D": "A tree where each node has at most two children and they are sorted."
+          },
+          "correct_answer": "B",
+          "explanation": "Heaps are used in algorithms like heap sort and priority queues."
+        },
+        {
+          "question": "What is the time complexity of searching for a node in a balanced Binary Search Tree with n nodes?",
+          "options": {
+            "A": "O(n)",
+            "B": "O(log n)",
+            "C": "O(n log n)",
+            "D": "O(1)"
+          },
+          "correct_answer": "B",
+          "explanation": "The balanced property ensures that the height of the tree is logarithmic, leading to logarithmic search time."
+        },
+        {
+          "question": "What is the time complexity of searching for a node in an unbalanced Binary Search Tree in the worst case?",
+          "options": {
+            "A": "O(log n)",
+            "B": "O(n log n)",
+            "C": "O(n)",
+            "D": "O(1)"
+          },
+          "correct_answer": "C",
+          "explanation": "In the worst case, an unbalanced BST can degenerate into a linked list, resulting in linear search time."
+        },
+        {
+          "question": "What is the use of 'Tree Traversal' algorithms?",
+          "options": {
+            "A": "To find the height of the tree only.",
+            "B": "To visit and process each node in the tree exactly once, which is fundamental for many tree-based operations like searching, insertion, deletion, and serialization.",
+            "C": "To balance the tree.",
+            "D": "To convert the tree into a graph."
+          },
+          "correct_answer": "B",
+          "explanation": "Traversal allows us to systematically access and manipulate the data stored in the tree."
+        }
+      ]
+    }
+  ]
+}

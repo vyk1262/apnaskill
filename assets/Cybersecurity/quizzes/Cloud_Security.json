@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Cloud_Security",
+      "questions": [
+        {
+          "question": "What is the primary purpose of cloud security?",
+          "options": {
+            "A": "To improve cloud performance",
+            "B": "To protect data, applications, and services in cloud environments",
+            "C": "To reduce cloud costs",
+            "D": "To increase storage capacity"
+          },
+          "correct_answer": "B",
+          "explanation": "Cloud security is designed to protect data, applications, and services hosted in cloud environments from unauthorized access, breaches, and other security risks."
+        },
+        {
+          "question": "What is the shared responsibility model in cloud security?",
+          "options": {
+            "A": "The cloud provider is responsible for all security",
+            "B": "The customer is responsible for all security",
+            "C": "Security responsibilities are shared between provider and customer",
+            "D": "Third-party vendors handle all security"
+          },
+          "correct_answer": "C",
+          "explanation": "The shared responsibility model divides security duties between the cloud provider (infrastructure) and the customer (data, applications, and settings)."
+        },
+        {
+          "question": "What is the purpose of data encryption in cloud security?",
+          "options": {
+            "A": "To compress data",
+            "B": "To speed up data transfer",
+            "C": "To convert data into protected ciphertext",
+            "D": "To reduce storage costs"
+          },
+          "correct_answer": "C",
+          "explanation": "Data encryption converts information into ciphertext, ensuring it can only be accessed by authenticated users with the proper encryption key."
+        },
+        {
+          "question": "What is Identity and Access Management (IAM) in cloud security?",
+          "options": {
+            "A": "A tool for monitoring cloud performance",
+            "B": "A system for controlling user access and permissions",
+            "C": "A method for data backup",
+            "D": "A network monitoring solution"
+          },
+          "correct_answer": "B",
+          "explanation": "IAM helps identify and control who has access to cloud resources, ensuring users can only access what they're authorized to use."
+        },
+        {
+          "question": "What is Multi-Factor Authentication (MFA) in cloud security?",
+          "options": {
+            "A": "Multiple user accounts",
+            "B": "Multiple security layers requiring different verification methods",
+            "C": "Multiple cloud providers",
+            "D": "Multiple backup systems"
+          },
+          "correct_answer": "B",
+          "explanation": "MFA requires users to verify their identity through multiple methods (like passwords and text codes) for enhanced security."
+        },
+        {
+          "question": "What is the purpose of network segmentation in cloud security?",
+          "options": {
+            "A": "To improve network speed",
+            "B": "To divide networks into isolated segments for better security",
+            "C": "To reduce network costs",
+            "D": "To increase network capacity"
+          },
+          "correct_answer": "B",
+          "explanation": "Network segmentation divides cloud networks into isolated segments to contain potential security breaches and protect sensitive resources."
+        },
+        {
+          "question": "What is a Cloud-Native Application Protection Platform (CNAPP)?",
+          "options": {
+            "A": "A development platform",
+            "B": "A centralized platform for cloud application security",
+            "C": "A data storage solution",
+            "D": "A network monitoring tool"
+          },
+          "correct_answer": "B",
+          "explanation": "CNAPP is a centralized platform that unifies various security technologies for protecting cloud-native applications."
+        },
+        {
+          "question": "What is the importance of security logging in cloud environments?",
+          "options": {
+            "A": "To track system performance",
+            "B": "To monitor and record security events and user activities",
+            "C": "To manage storage space",
+            "D": "To improve application speed"
+          },
+          "correct_answer": "B",
+          "explanation": "Security logging monitors and records security events and user activities to detect and investigate potential security incidents."
+        },
+        {
+          "question": "What is the purpose of vulnerability assessment in cloud security?",
+          "options": {
+            "A": "To measure cloud performance",
+            "B": "To identify and evaluate security weaknesses",
+            "C": "To optimize cloud costs",
+            "D": "To manage cloud storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Vulnerability assessment helps identify and evaluate security weaknesses in cloud environments to prevent potential exploits."
+        },
+        {
+          "question": "What is Zero Trust security model in cloud computing?",
+          "options": {
+            "A": "Trusting all internal users",
+            "B": "Never trusting any user by default and requiring verification",
+            "C": "Trusting all cloud providers",
+            "D": "Trusting all external users"
+          },
+          "correct_answer": "B",
+          "explanation": "Zero Trust security model operates on the principle of never trusting any user by default and requiring verification for all access requests."
+        },
+        {
+          "question": "What is the role of Data Loss Prevention (DLP) in cloud security?",
+          "options": {
+            "A": "To improve data transfer speed",
+            "B": "To prevent unauthorized data access and leakage",
+            "C": "To compress data",
+            "D": "To backup data"
+          },
+          "correct_answer": "B",
+          "explanation": "DLP tools help prevent unauthorized access to sensitive data and protect against data leakage in cloud environments."
+        },
+        {
+          "question": "What is the purpose of cloud security posture management?",
+          "options": {
+            "A": "To manage cloud costs",
+            "B": "To continuously monitor and assess security risks",
+            "C": "To improve cloud performance",
+            "D": "To manage cloud storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Cloud security posture management continuously monitors and assesses security risks to maintain a strong security stance."
+        },
+        {
+          "question": "What is the importance of incident response planning in cloud security?",
+          "options": {
+            "A": "To improve system performance",
+            "B": "To prepare for and respond to security incidents",
+            "C": "To reduce operational costs",
+            "D": "To manage cloud resources"
+          },
+          "correct_answer": "B",
+          "explanation": "Incident response planning helps organizations prepare for, respond to, and recover from security incidents in cloud environments."
+        },
+        {
+          "question": "What is the purpose of cloud workload protection?",
+          "options": {
+            "A": "To improve application performance",
+            "B": "To secure cloud-based applications and workloads",
+            "C": "To manage cloud costs",
+            "D": "To optimize storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Cloud workload protection focuses on securing cloud-based applications and workloads from security threats."
+        },
+        {
+          "question": "What is the role of configuration management in cloud security?",
+          "options": {
+            "A": "To manage cloud costs",
+            "B": "To ensure secure configuration of cloud resources",
+            "C": "To improve performance",
+            "D": "To manage storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Configuration management ensures cloud resources are securely configured to prevent vulnerabilities and security gaps."
+        },
+        {
+          "question": "What is the purpose of cloud security compliance?",
+          "options": {
+            "A": "To reduce costs",
+            "B": "To meet regulatory and industry security standards",
+            "C": "To improve performance",
+            "D": "To manage resources"
+          },
+          "correct_answer": "B",
+          "explanation": "Cloud security compliance ensures organizations meet regulatory requirements and industry security standards."
+        },
+        {
+          "question": "What is the importance of API security in cloud environments?",
+          "options": {
+            "A": "To improve API performance",
+            "B": "To protect APIs from unauthorized access and attacks",
+            "C": "To manage API costs",
+            "D": "To optimize API calls"
+          },
+          "correct_answer": "B",
+          "explanation": "API security protects cloud APIs from unauthorized access, attacks, and potential data breaches."
+        },
+        {
+          "question": "What is the role of container security in cloud environments?",
+          "options": {
+            "A": "To improve container performance",
+            "B": "To protect containerized applications and data",
+            "C": "To manage container costs",
+            "D": "To optimize container storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Container security focuses on protecting containerized applications and their data from security threats in cloud environments."
+        },
+        {
+          "question": "What is the purpose of cloud access security brokers (CASB)?",
+          "options": {
+            "A": "To improve cloud access speed",
+            "B": "To provide security policy enforcement points",
+            "C": "To manage cloud costs",
+            "D": "To optimize cloud storage"
+          },
+          "correct_answer": "B",
+          "explanation": "CASBs serve as security policy enforcement points between cloud service consumers and providers, ensuring secure cloud access."
+        },
+        {
+          "question": "What is the importance of key management in cloud security?",
+          "options": {
+            "A": "To manage cloud costs",
+            "B": "To secure encryption keys and access credentials",
+            "C": "To improve performance",
+            "D": "To optimize storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Key management ensures secure generation, storage, and rotation of encryption keys and access credentials in cloud environments."
+        }
+      ]
+    }
+  ]
+}

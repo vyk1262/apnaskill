@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Testing_Levels",
+      "questions": [
+        {
+          "question": "How many main levels of testing are commonly recognized?",
+          "options": {
+            "A": "Two",
+            "B": "Four",
+            "C": "Six",
+            "D": "Three"
+          },
+          "correct_answer": "B",
+          "explanation": "The four main levels are Unit, Integration, System, and Acceptance testing."
+        },
+        {
+          "question": "What is the focus of Unit Testing?",
+          "options": {
+            "A": "Testing the entire application as a whole.",
+            "B": "Testing individual components or modules of the software in isolation.",
+            "C": "Testing the interaction between different systems.",
+            "D": "Testing the software based on user needs and expectations."
+          },
+          "correct_answer": "B",
+          "explanation": "Unit testing verifies the functionality of small, independent parts of the code."
+        },
+        {
+          "question": "Who typically performs Unit Testing?",
+          "options": {
+            "A": "End-users.",
+            "B": "Developers.",
+            "C": "Independent testers.",
+            "D": "Business analysts."
+          },
+          "correct_answer": "B",
+          "explanation": "Developers usually write and execute unit tests for their own code."
+        },
+        {
+          "question": "What is the focus of Integration Testing?",
+          "options": {
+            "A": "Testing individual modules in isolation.",
+            "B": "Testing the interactions and interfaces between integrated components or systems.",
+            "C": "Testing the overall behavior of the complete application.",
+            "D": "Testing the software from the end-user's perspective."
+          },
+          "correct_answer": "B",
+          "explanation": "Integration testing ensures that different parts of the system work together correctly."
+        },
+        {
+          "question": "What are common approaches to Integration Testing?",
+          "options": {
+            "A": "Black-box and white-box testing.",
+            "B": "Top-down, bottom-up, and big-bang testing.",
+            "C": "Functional and non-functional testing.",
+            "D": "Manual and automated testing."
+          },
+          "correct_answer": "B",
+          "explanation": "These approaches define the order in which modules are integrated and tested."
+        },
+        {
+          "question": "What is the focus of System Testing?",
+          "options": {
+            "A": "Testing the individual units of the software.",
+            "B": "Testing the fully integrated software product as a complete system to evaluate its compliance with specified requirements.",
+            "C": "Testing the connections between different systems.",
+            "D": "Testing the software based on user acceptance criteria."
+          },
+          "correct_answer": "B",
+          "explanation": "System testing assesses the overall behavior and functionality of the entire application."
+        },
+        {
+          "question": "Who typically performs System Testing?",
+          "options": {
+            "A": "Developers.",
+            "B": "End-users.",
+            "C": "Independent testers.",
+            "D": "Business analysts."
+          },
+          "correct_answer": "C",
+          "explanation": "System testing is often performed by testers who are independent of the development team."
+        },
+        {
+          "question": "What is the focus of Acceptance Testing?",
+          "options": {
+            "A": "Testing the internal logic of the code.",
+            "B": "Testing the system from the perspective of the end-users or stakeholders to determine if it meets their needs and expectations.",
+            "C": "Testing the integration between different modules.",
+            "D": "Testing the performance of the system under load."
+          },
+          "correct_answer": "B",
+          "explanation": "Acceptance testing validates whether the system is acceptable to the stakeholders."
+        },
+        {
+          "question": "What are common forms of Acceptance Testing?",
+          "options": {
+            "A": "Alpha and Beta testing.",
+            "B": "Functional and non-functional testing.",
+            "C": "Black-box and white-box testing.",
+            "D": "Manual and automated testing."
+          },
+          "correct_answer": "A",
+          "explanation": "Alpha testing is done internally, while Beta testing involves external users."
+        },
+        {
+          "question": "In which testing level are 'smoke tests' typically performed?",
+          "options": {
+            "A": "Unit Testing.",
+            "B": "Integration Testing.",
+            "C": "System Testing.",
+            "D": "All of the above."
+          },
+          "correct_answer": "C",
+          "explanation": "Smoke tests are a subset of system tests that check the basic functionality of the application."
+        },
+        {
+          "question": "In which testing level is 'sanity testing' typically performed?",
+          "options": {
+            "A": "Unit Testing.",
+            "B": "Integration Testing.",
+            "C": "System Testing.",
+            "D": "Acceptance Testing."
+          },
+          "correct_answer": "C",
+          "explanation": "Sanity testing is done after a build to ensure that the major defects have been addressed and further testing is worthwhile."
+        },
+        {
+          "question": "What is the relationship between the different testing levels?",
+          "options": {
+            "A": "They are independent of each other.",
+            "B": "They are performed sequentially, building upon the results of the previous level.",
+            "C": "They are performed in parallel by different teams.",
+            "D": "The order in which they are performed is not important."
+          },
+          "correct_answer": "B",
+          "explanation": "Each level focuses on a different scope and builds confidence in the software quality."
+        },
+        {
+          "question": "Which testing level typically involves testing the user interface?",
+          "options": {
+            "A": "Unit Testing.",
+            "B": "Integration Testing.",
+            "C": "System Testing and Acceptance Testing.",
+            "D": "Only Acceptance Testing."
+          },
+          "correct_answer": "C",
+          "explanation": "User interface testing is usually part of evaluating the complete system and its usability for end-users."
+        },
+        {
+          "question": "What is the main benefit of having different testing levels?",
+          "options": {
+            "A": "It makes the testing process longer and more complex.",
+            "B": "It allows for a more thorough and comprehensive evaluation of the software at different stages of development.",
+            "C": "It reduces the need for testers.",
+            "D": "It ensures that all defects are found at the earliest stage."
+          },
+          "correct_answer": "B",
+          "explanation": "Different levels address different aspects and scopes of testing, leading to better quality."
+        },
+        {
+          "question": "Which testing level is most closely associated with business requirements?",
+          "options": {
+            "A": "Unit Testing.",
+            "B": "Integration Testing.",
+            "C": "System Testing.",
+            "D": "Acceptance Testing."
+          },
+          "correct_answer": "D",
+          "explanation": "Acceptance testing verifies if the system meets the needs and expectations defined by the business requirements."
+        },
+        {
+          "question": "What is the primary focus of 'component testing'?",
+          "options": {
+            "A": "Testing the entire system.",
+            "B": "Testing individual software components, which is often synonymous with unit testing.",
+            "C": "Testing the integration of different systems.",
+            "D": "Testing the usability of the software."
+          },
+          "correct_answer": "B",
+          "explanation": "Component testing ensures that individual parts of the software function correctly."
+        },
+        {
+          "question": "Which testing level often involves 'black-box' testing techniques?",
+          "options": {
+            "A": "Unit Testing.",
+            "B": "Integration Testing (can involve both black-box and white-box).",
+            "C": "System Testing and Acceptance Testing.",
+            "D": "Only White-box testing."
+          },
+          "correct_answer": "C",
+          "explanation": "System and acceptance testing typically focus on the external behavior of the software."
+        },
+        {
+          "question": "Which testing level might involve 'white-box' testing techniques?",
+          "options": {
+            "A": "Acceptance Testing.",
+            "B": "System Testing.",
+            "C": "Unit Testing and Integration Testing.",
+            "D": "Only Black-box testing."
+          },
+          "correct_answer": "C",
+          "explanation": "White-box testing involves examining the internal structure and code."
+        },
+        {
+          "question": "What is the relationship between testing levels and the Software Development Life Cycle (SDLC)?",
+          "options": {
+            "A": "Testing levels are independent of the SDLC.",
+            "B": "Different testing levels align with different phases of the SDLC, ensuring quality is built in throughout the process.",
+            "C": "Testing levels are only performed at the end of the SDLC.",
+            "D": "The SDLC dictates which testing levels are necessary."
+          },
+          "correct_answer": "B",
+          "explanation": "Testing activities are integrated into various stages of software development."
+        },
+        {
+          "question": "The primary goal of performing different levels of testing is to:",
+          "options": {
+            "A": "Increase the cost of software development.",
+            "B": "Find different types of defects at different stages and ensure a higher quality product.",
+            "C": "Make the testing process more complicated.",
+            "D": "Delay the software release."
+          },
+          "correct_answer": "B",
+          "explanation": "Each level of testing has a specific focus and contributes to overall software quality."
+        }
+      ]
+    }
+  ]
+}

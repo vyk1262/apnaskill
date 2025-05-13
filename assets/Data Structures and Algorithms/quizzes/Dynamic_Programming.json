@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Dynamic_Programming",
+      "questions": [
+        {
+          "question": "What is the core idea behind Dynamic Programming?",
+          "options": {
+            "A": "To solve problems by making locally optimal choices.",
+            "B": "To break down a problem into independent subproblems and solve them recursively.",
+            "C": "To solve complex problems by breaking them down into smaller, overlapping subproblems, solving each subproblem only once, and storing the solutions to avoid redundant computations.",
+            "D": "To try all possible solutions and choose the best one."
+          },
+          "correct_answer": "C",
+          "explanation": "Dynamic Programming leverages the concept of optimal substructure and overlapping subproblems for efficient problem-solving."
+        },
+        {
+          "question": "What are the two main approaches to implement Dynamic Programming?",
+          "options": {
+            "A": "Recursion and Iteration.",
+            "B": "Memoization (top-down) and Tabulation (bottom-up).",
+            "C": "Divide and Conquer and Greedy.",
+            "D": "Backtracking and Brute Force."
+          },
+          "correct_answer": "B",
+          "explanation": "Memoization uses recursion with caching of results, while tabulation builds the solution iteratively from the base cases."
+        },
+        {
+          "question": "What is 'Memoization' in Dynamic Programming?",
+          "options": {
+            "A": "A technique to forget previously computed results to save memory.",
+            "B": "An optimization technique where the results of expensive function calls are stored (usually in a cache) and returned when the same inputs occur again, avoiding redundant computations.",
+            "C": "A method for dividing a problem into smaller subproblems that are solved independently.",
+            "D": "A technique for making locally optimal choices at each step."
+          },
+          "correct_answer": "B",
+          "explanation": "Memoization is a top-down approach where we solve the problem recursively but store the results of subproblems to avoid recomputing them."
+        },
+        {
+          "question": "What is 'Tabulation' in Dynamic Programming?",
+          "options": {
+            "A": "A recursive approach to solving dynamic programming problems.",
+            "B": "A bottom-up approach where we build a table of solutions to subproblems, starting from the base cases and iteratively computing the solutions to larger subproblems until the final solution is reached.",
+            "C": "A method for solving problems by making locally optimal choices.",
+            "D": "A technique for exploring all possible solutions."
+          },
+          "correct_answer": "B",
+          "explanation": "Tabulation typically involves creating a table (e.g., an array or a 2D array) to store the results of subproblems in a systematic order."
+        },
+        {
+          "question": "What are the key properties a problem must exhibit to be solvable using Dynamic Programming?",
+          "options": {
+            "A": "Optimal substructure only.",
+            "B": "Overlapping subproblems only.",
+            "C": "Both optimal substructure and overlapping subproblems.",
+            "D": "Neither optimal substructure nor overlapping subproblems."
+          },
+          "correct_answer": "C",
+          "explanation": "Optimal substructure means an optimal solution to the problem contains optimal solutions to its subproblems, and overlapping subproblems means the same subproblems are solved multiple times in a recursive approach."
+        },
+        {
+          "question": "What does 'Optimal Substructure' mean in the context of Dynamic Programming?",
+          "options": {
+            "A": "The problem can be divided into independent subproblems.",
+            "B": "An optimal solution to the problem can be constructed from optimal solutions to its subproblems.",
+            "C": "All subproblems have the same structure as the original problem.",
+            "D": "The problem has only one optimal solution."
+          },
+          "correct_answer": "B",
+          "explanation": "This property allows us to build up the solution to the original problem from the solutions of its subproblems."
+        },
+        {
+          "question": "What does 'Overlapping Subproblems' mean in the context of Dynamic Programming?",
+          "options": {
+            "A": "The subproblems are independent of each other.",
+            "B": "Solving the problem involves solving the same subproblems multiple times.",
+            "C": "The number of subproblems is very large.",
+            "D": "The subproblems do not contribute to the final solution."
+          },
+          "correct_answer": "B",
+          "explanation": "Dynamic Programming efficiently solves problems with overlapping subproblems by computing each subproblem only once and storing its solution."
+        },
+        {
+          "question": "Consider the Fibonacci sequence (0, 1, 1, 2, 3, 5, ...). How can Dynamic Programming be used to find the nth Fibonacci number?",
+          "options": {
+            "A": "By directly applying the mathematical formula.",
+            "B": "By using a greedy approach of always picking the largest preceding numbers.",
+            "C": "By using memoization to store the results of Fibonacci numbers that have already been computed, or by using tabulation to build an array of Fibonacci numbers from the base cases up to n.",
+            "D": "By using a brute-force approach of trying all combinations of previous numbers."
+          },
+          "correct_answer": "C",
+          "explanation": "The Fibonacci sequence exhibits both optimal substructure (fib(n) = fib(n-1) + fib(n-2)) and overlapping subproblems (e.g., fib(3) is needed to compute both fib(4) and fib(5))."
+        },
+        {
+          "question": "What is the time complexity of computing the nth Fibonacci number using memoization or tabulation?",
+          "options": {
+            "A": "O(2^n)",
+            "B": "O(n^2)",
+            "C": "O(n)",
+            "D": "O(log n)"
+          },
+          "correct_answer": "C",
+          "explanation": "Both memoization and tabulation avoid redundant computations, resulting in a linear time complexity because each Fibonacci number up to n is computed only once."
+        },
+        {
+          "question": "What is the space complexity of computing the nth Fibonacci number using memoization or tabulation?",
+          "options": {
+            "A": "O(1)",
+            "B": "O(n)",
+            "C": "O(log n)",
+            "D": "O(2^n)"
+          },
+          "correct_answer": "B",
+          "explanation": "Memoization requires space to store the computed Fibonacci numbers (up to n in the worst case due to the recursion stack). Tabulation requires an array of size n+1 to store the Fibonacci numbers."
+        },
+        {
+          "question": "What is the '0/1 Knapsack Problem', and how can Dynamic Programming be used to solve it?",
+          "options": {
+            "A": "A problem of selecting items with maximum total value that can fit into a knapsack with a given weight capacity, where items can be taken in fractions. Dynamic Programming cannot solve this.",
+            "B": "A problem of selecting items with minimum total weight to achieve a certain value. Dynamic Programming can solve this using a greedy approach.",
+            "C": "A problem of selecting items with maximum total value that can fit into a knapsack with a given weight capacity, where each item can either be entirely included or excluded. Dynamic Programming can solve this by building a table of maximum values for different capacities and subsets of items.",
+            "D": "A problem of dividing items into two sets with equal total value. Dynamic Programming solves this using recursion without memoization."
+          },
+          "correct_answer": "C",
+          "explanation": "The 0/1 Knapsack Problem exhibits optimal substructure and overlapping subproblems, making it suitable for a Dynamic Programming solution."
+        },
+        {
+          "question": "In the Dynamic Programming solution for the 0/1 Knapsack Problem, what does the DP table typically represent?",
+          "options": {
+            "A": "The weight of the items considered so far.",
+            "B": "The value of the items considered so far.",
+            "C": "The maximum value that can be obtained with a subset of the first i items and a knapsack capacity of j.",
+            "D": "The number of items included in the knapsack."
+          },
+          "correct_answer": "C",
+          "explanation": "The DP table `dp[i][j]` usually stores the maximum value achievable using a subset of the first `i` items with a knapsack capacity of `j`."
+        },
+        {
+          "question": "What is the 'Longest Common Subsequence' (LCS) problem, and how can Dynamic Programming be used to solve it?",
+          "options": {
+            "A": "Finding the longest sequence of characters that appear in the same relative order (but not necessarily contiguous) in two strings. Dynamic Programming can solve this by building a table that stores the lengths of LCSs of prefixes of the two strings.",
+            "B": "Finding the longest contiguous substring common to two strings. Dynamic Programming is not applicable here.",
+            "C": "Finding the shortest common subsequence of two strings. Dynamic Programming can solve this using a greedy approach.",
+            "D": "Finding if one string is a subsequence of the other. Dynamic Programming is an overkill for this."
+          },
+          "correct_answer": "A",
+          "explanation": "The LCS problem has optimal substructure (the LCS of two sequences depends on the LCSs of their prefixes) and overlapping subproblems, making it solvable with Dynamic Programming."
+        },
+        {
+          "question": "In the Dynamic Programming solution for the LCS problem, what does the DP table typically represent?",
+          "options": {
+            "A": "The characters of the longest common subsequence.",
+            "B": "The length of the longest common subsequence of the first i characters of the first string and the first j characters of the second string.",
+            "C": "The number of common subsequences.",
+            "D": "The indices of the matching characters."
+          },
+          "correct_answer": "B",
+          "explanation": "The DP table `dp[i][j]` usually stores the length of the LCS of the prefixes `string1[0...i-1]` and `string2[0...j-1]`."
+        },
+        {
+          "question": "What is the 'Edit Distance' problem, and how can Dynamic Programming be used to solve it?",
+          "options": {
+            "A": "Finding the number of matching characters between two strings. Dynamic Programming is not used.",
+            "B": "Finding the minimum number of operations (insert, delete, or substitute a character) required to transform one string into the other. Dynamic Programming can solve this by building a table that stores the edit distances between prefixes of the two strings.",
+            "C": "Finding the longest common prefix of two strings. Dynamic Programming is an overkill.",
+            "D": "Reversing a string. Dynamic Programming is not applicable."
+          },
+          "correct_answer": "B",
+          "explanation": "The Edit Distance problem exhibits optimal substructure and overlapping subproblems, making it solvable with Dynamic Programming."
+        },
+        {
+          "question": "What is the space optimization that can sometimes be applied to Dynamic Programming solutions?",
+          "options": {
+            "A": "Always reducing the space complexity to O(1).",
+            "B": "Sometimes reducing the space complexity by observing that only a few previous rows or columns of the DP table are needed to compute the current state.",
+            "C": "Increasing the space complexity to improve time complexity.",
+            "D": "Eliminating the need for a DP table entirely."
+          },
+          "correct_answer": "B",
+          "explanation": "In some DP problems, we might only need to keep track of the previous row or column of the DP table, allowing us to reduce the space complexity from O(n*m) to O(min(n, m)) or even O(n) or O(m)."
+        },
+        {
+          "question": "Which of the following problems is typically solved using Dynamic Programming?",
+          "options": {
+            "A": "Finding the shortest path in a graph with non-negative edge weights (Dijkstra's algorithm).",
+            "B": "Sorting an array in O(n log n) time (Merge Sort).",
+            "C": "Finding the nth Fibonacci number efficiently.",
+            "D": "Searching for an element in a sorted array (Binary Search)."
+          },
+          "correct_answer": "C",
+          "explanation": "While Dijkstra's is greedy and Merge Sort is divide and conquer, the Fibonacci sequence with overlapping subproblems is a classic DP example. Binary search doesn't fit the DP paradigm."
+        },
+        {
+          "question": "What is the relationship between recursion and Dynamic Programming?",
+          "options": {
+            "A": "Dynamic Programming always uses iteration, and recursion is unrelated.",
+            "B": "Memoization is a top-down Dynamic Programming technique that uses recursion to explore the solution space while storing the results of subproblems. Tabulation is a bottom-up Dynamic Programming technique that is typically iterative.",
+            "C": "Recursion is always more efficient than Dynamic Programming.",
+            "D": "Dynamic Programming is simply a way to optimize tail recursion."
+          },
+          "correct_answer": "B",
+          "explanation": "Recursion with memoization is one way to implement Dynamic Programming, while tabulation provides an iterative alternative."
+        },
+        {
+          "question": "How does Dynamic Programming help in solving optimization problems?",
+          "options": {
+            "A": "By always finding all possible solutions.",
+            "B": "By breaking down the problem into subproblems and finding the optimal solution to each subproblem, then using these optimal solutions to build the optimal solution to the original problem.",
+            "C": "By making locally optimal choices that always lead to a global optimum.",
+            "D": "By randomly searching for a good solution."
+          },
+          "correct_answer": "B",
+          "explanation": "The principle of optimal substructure ensures that by finding the best way to solve the subproblems, we can find the best way to solve the overall problem."
+        },
+        {
+          "question": "What is a common pitfall to avoid when implementing Dynamic Programming?",
+          "options": {
+            "A": "Using too much iteration.",
+            "B": "Not correctly identifying the base cases and the recurrence relation.",
+            "C": "Storing the results of subproblems.",
+            "D": "Breaking the problem down into smaller pieces."
+          },
+          "correct_answer": "B",
+          "explanation": "Correctly defining the base cases (the smallest subproblems) and the recurrence relation (how to solve a larger subproblem using the solutions to smaller ones) is crucial for a correct DP solution."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Functional_NonFunctional_Testing",
+      "questions": [
+        {
+          "question": "What is the primary focus of Functional Testing?",
+          "options": {
+            "A": "How well the system performs under load.",
+            "B": "What the system does.",
+            "C": "How secure the system is.",
+            "D": "How easy the system is to use."
+          },
+          "correct_answer": "B",
+          "explanation": "Functional testing verifies that the software performs according to the specified requirements."
+        },
+        {
+          "question": "Which of the following is an example of a Functional Test?",
+          "options": {
+            "A": "Testing the response time of a web page under high user load.",
+            "B": "Verifying that a user can log in with valid credentials.",
+            "C": "Checking the system's resistance to SQL injection attacks.",
+            "D": "Evaluating the intuitiveness of the user interface."
+          },
+          "correct_answer": "B",
+          "explanation": "Login functionality is a specific action the system should perform."
+        },
+        {
+          "question": "What is the primary focus of Non-Functional Testing?",
+          "options": {
+            "A": "What the system does.",
+            "B": "How well the system works.",
+            "C": "Testing specific features of the system.",
+            "D": "Verifying data accuracy."
+          },
+          "correct_answer": "B",
+          "explanation": "Non-functional testing assesses the quality attributes of the software."
+        },
+        {
+          "question": "Which of the following is an example of a Non-Functional Test?",
+          "options": {
+            "A": "Verifying that a submitted form saves data to the database.",
+            "B": "Testing the system's response time when 100 users access it simultaneously.",
+            "C": "Ensuring that all required fields on a form are validated.",
+            "D": "Checking that error messages are displayed correctly."
+          },
+          "correct_answer": "B",
+          "explanation": "Response time under load is a performance characteristic."
+        },
+        {
+          "question": "Which of the following is a key category of Non-Functional Testing?",
+          "options": {
+            "A": "Unit Testing.",
+            "B": "Integration Testing.",
+            "C": "Performance Testing.",
+            "D": "Black-box Testing."
+          },
+          "correct_answer": "C",
+          "explanation": "Performance testing is a crucial aspect of how well the system works."
+        },
+        {
+          "question": "Usability Testing falls under which category?",
+          "options": {
+            "A": "Functional Testing.",
+            "B": "Non-Functional Testing.",
+            "C": "Both Functional and Non-Functional.",
+            "D": "Neither Functional nor Non-Functional."
+          },
+          "correct_answer": "B",
+          "explanation": "Usability assesses how easy and satisfying the system is to use, a quality attribute."
+        },
+        {
+          "question": "Security Testing falls under which category?",
+          "options": {
+            "A": "Functional Testing.",
+            "B": "Non-Functional Testing.",
+            "C": "Both Functional and Non-Functional.",
+            "D": "Neither Functional nor Non-Functional."
+          },
+          "correct_answer": "B",
+          "explanation": "Security testing evaluates the system's ability to protect data and prevent unauthorized access, a quality attribute."
+        },
+        {
+          "question": "Compatibility Testing primarily falls under which category?",
+          "options": {
+            "A": "Functional Testing.",
+            "B": "Non-Functional Testing.",
+            "C": "Both Functional and Non-Functional.",
+            "D": "Neither Functional nor Non-Functional."
+          },
+          "correct_answer": "B",
+          "explanation": "Compatibility assesses how well the software works across different environments, a quality attribute."
+        },
+        {
+          "question": "Reliability Testing falls under which category?",
+          "options": {
+            "A": "Functional Testing.",
+            "B": "Non-Functional Testing.",
+            "C": "Both Functional and Non-Functional.",
+            "D": "Neither Functional nor Non-Functional."
+          },
+          "correct_answer": "B",
+          "explanation": "Reliability assesses the system's ability to perform without failure for a specified period, a quality attribute."
+        },
+        {
+          "question": "Maintainability Testing falls under which category?",
+          "options": {
+            "A": "Functional Testing.",
+            "B": "Non-Functional Testing.",
+            "C": "Both Functional and Non-Functional.",
+            "D": "Neither Functional nor Non-Functional."
+          },
+          "correct_answer": "B",
+          "explanation": "Maintainability assesses the ease with which the software can be modified, a quality attribute related to its design and implementation."
+        },
+        {
+          "question": "What is the relationship between Functional and Non-Functional Testing?",
+          "options": {
+            "A": "They are independent and do not affect each other.",
+            "B": "Both are crucial for ensuring the overall quality and success of the software product.",
+            "C": "Functional testing is more important than non-functional testing.",
+            "D": "Non-functional testing is performed only after all functional testing is complete."
+          },
+          "correct_answer": "B",
+          "explanation": "Both aspects contribute to a holistic view of software quality."
+        },
+        {
+          "question": "Which of the following is a key aspect tested in Functional Testing?",
+          "options": {
+            "A": "Response time.",
+            "B": "Data integrity.",
+            "C": "User interface layout.",
+            "D": "Error handling."
+          },
+          "correct_answer": "D",
+          "explanation": "Error handling is a specific behavior the system should exhibit."
+        },
+        {
+          "question": "Which of the following is a key aspect tested in Performance Testing?",
+          "options": {
+            "A": "Data accuracy.",
+            "B": "Load handling capacity.",
+            "C": "Navigation flow.",
+            "D": "Spelling errors."
+          },
+          "correct_answer": "B",
+          "explanation": "Performance testing specifically evaluates the system under various loads."
+        },
+        {
+          "question": "What documentation is primarily used for Functional Testing?",
+          "options": {
+            "A": "Performance test scripts.",
+            "B": "Security policies.",
+            "C": "Requirements specifications and user stories.",
+            "D": "Usability guidelines."
+          },
+          "correct_answer": "C",
+          "explanation": "Functional tests are derived directly from what the system is supposed to do."
+        },
+        {
+          "question": "What documentation is often used for Non-Functional Testing?",
+          "options": {
+            "A": "User manuals.",
+            "B": "Functional design documents.",
+            "C": "Performance benchmarks, security standards, and usability guidelines.",
+            "D": "Code comments."
+          },
+          "correct_answer": "C",
+          "explanation": "Non-functional tests are based on quality attributes and their specific criteria."
+        },
+        {
+          "question": "Why is it important to conduct both Functional and Non-Functional Testing?",
+          "options": {
+            "A": "Functional testing ensures the software works, and non-functional testing ensures it works well.",
+            "B": "Non-functional testing is only needed for complex systems.",
+            "C": "Functional testing is more important for user satisfaction.",
+            "D": "They are redundant and testing only one type is sufficient."
+          },
+          "correct_answer": "A",
+          "explanation": "Both aspects are critical for a successful and high-quality software product."
+        },
+        {
+          "question": "What is 'Stress Testing' and under which category does it fall?",
+          "options": {
+            "A": "Testing the user interface under different color schemes (Functional).",
+            "B": "Testing the system beyond its normal operating capacity to identify the breaking point (Non-Functional - Performance).",
+            "C": "Testing individual units of code in isolation (Functional).",
+            "D": "Testing the security of the system against known vulnerabilities (Non-Functional - Security)."
+          },
+          "correct_answer": "B",
+          "explanation": "Stress testing pushes the system to its limits to assess its robustness."
+        },
+        {
+          "question": "What is 'Accessibility Testing' and under which category does it fall?",
+          "options": {
+            "A": "Testing if the software can be accessed from different geographical locations (Non-Functional - Compatibility).",
+            "B": "Testing the performance of the software for users with disabilities (Non-Functional - Usability/Accessibility).",
+            "C": "Testing the core features of the software (Functional).",
+            "D": "Testing the installation process of the software (Non-Functional - Installation)."
+          },
+          "correct_answer": "B",
+          "explanation": "Accessibility focuses on usability for users with disabilities."
+        },
+        {
+          "question": "How do Functional and Non-Functional requirements influence testing?",
+          "options": {
+            "A": "Only functional requirements drive testing efforts.",
+            "B": "Functional requirements define what to test, while non-functional requirements define how well to test it.",
+            "C": "Non-functional requirements are only considered after the software is deployed.",
+            "D": "Requirements have no direct impact on testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Requirements are the foundation for all testing activities."
+        },
+        {
+          "question": "The ultimate goal of considering both Functional and Non-Functional aspects in testing is to:",
+          "options": {
+            "A": "Find the maximum number of bugs, regardless of their type or impact.",
+            "B": "Deliver a software product that not only meets the specified functionalities but also provides a satisfactory user experience in terms of performance, security, usability, and other quality attributes.",
+            "C": "Make the testing process as long and detailed as possible.",
+            "D": "Focus primarily on whether the core features work, with secondary consideration for other aspects."
+          },
+          "correct_answer": "B",
+          "explanation": "A balanced approach ensures a high-quality and user-centric product."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Security_Operations",
+      "questions": [
+        {
+          "question": "What is Security Operations (SecOps)?",
+          "options": {
+            "A": "A software development methodology",
+            "B": "The practice of monitoring and protecting organizational assets",
+            "C": "A type of firewall",
+            "D": "A network protocol"
+          },
+          "correct_answer": "B",
+          "explanation": "Security Operations (SecOps) is the practice of continuously monitoring and protecting an organization's assets, data, and infrastructure."
+        },
+        {
+          "question": "What is the primary function of a Security Operations Center (SOC)?",
+          "options": {
+            "A": "Software development",
+            "B": "24/7 monitoring and response to security incidents",
+            "C": "Network maintenance",
+            "D": "Employee training"
+          },
+          "correct_answer": "B",
+          "explanation": "A SOC provides continuous monitoring of security events and responds to security incidents around the clock."
+        },
+        {
+          "question": "What is SIEM in security operations?",
+          "options": {
+            "A": "A type of firewall",
+            "B": "Security Information and Event Management system",
+            "C": "A network protocol",
+            "D": "An encryption method"
+          },
+          "correct_answer": "B",
+          "explanation": "SIEM is a system that collects, analyzes, and correlates security events from various sources for threat detection."
+        },
+        {
+          "question": "What is the purpose of security monitoring?",
+          "options": {
+            "A": "To slow down systems",
+            "B": "To detect and respond to security threats",
+            "C": "To block all traffic",
+            "D": "To collect user data"
+          },
+          "correct_answer": "B",
+          "explanation": "Security monitoring helps organizations detect and respond to security threats in real-time."
+        },
+        {
+          "question": "What is threat hunting in security operations?",
+          "options": {
+            "A": "Blocking all traffic",
+            "B": "Proactively searching for security threats",
+            "C": "Installing antivirus",
+            "D": "Training employees"
+          },
+          "correct_answer": "B",
+          "explanation": "Threat hunting involves proactively searching for security threats that may have evaded existing security controls."
+        },
+        {
+          "question": "What is security orchestration?",
+          "options": {
+            "A": "Manual security tasks",
+            "B": "Automation of security processes and responses",
+            "C": "Employee training",
+            "D": "Network maintenance"
+          },
+          "correct_answer": "B",
+          "explanation": "Security orchestration involves automating security processes and responses to improve efficiency and consistency."
+        },
+        {
+          "question": "What is the role of log management in security operations?",
+          "options": {
+            "A": "To waste storage space",
+            "B": "To collect and analyze security-related logs",
+            "C": "To slow down systems",
+            "D": "To block traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Log management involves collecting, storing, and analyzing security-related logs for threat detection and investigation."
+        },
+        {
+          "question": "What is vulnerability management in security operations?",
+          "options": {
+            "A": "Ignoring vulnerabilities",
+            "B": "Identifying and addressing security vulnerabilities",
+            "C": "Creating vulnerabilities",
+            "D": "Blocking all traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Vulnerability management involves identifying, assessing, and addressing security vulnerabilities in systems and applications."
+        },
+        {
+          "question": "What is the purpose of security metrics in operations?",
+          "options": {
+            "A": "To create confusion",
+            "B": "To measure security effectiveness and performance",
+            "C": "To waste time",
+            "D": "To slow down systems"
+          },
+          "correct_answer": "B",
+          "explanation": "Security metrics help measure and improve the effectiveness of security operations and controls."
+        },
+        {
+          "question": "What is security automation?",
+          "options": {
+            "A": "Manual security tasks",
+            "B": "Using technology to automate security tasks",
+            "C": "Ignoring security",
+            "D": "Creating problems"
+          },
+          "correct_answer": "B",
+          "explanation": "Security automation involves using technology to automate routine security tasks and responses."
+        },
+        {
+          "question": "What is the importance of asset management in security operations?",
+          "options": {
+            "A": "It's not important",
+            "B": "To track and protect organizational assets",
+            "C": "To waste resources",
+            "D": "To create confusion"
+          },
+          "correct_answer": "B",
+          "explanation": "Asset management helps organizations track and protect their valuable assets from security threats."
+        },
+        {
+          "question": "What is security reporting in operations?",
+          "options": {
+            "A": "Ignoring security events",
+            "B": "Documenting and communicating security status",
+            "C": "Creating problems",
+            "D": "Wasting time"
+          },
+          "correct_answer": "B",
+          "explanation": "Security reporting involves documenting and communicating security status, incidents, and metrics to stakeholders."
+        },
+        {
+          "question": "What is the role of threat intelligence in security operations?",
+          "options": {
+            "A": "To create confusion",
+            "B": "To provide information about potential threats",
+            "C": "To waste resources",
+            "D": "To slow down systems"
+          },
+          "correct_answer": "B",
+          "explanation": "Threat intelligence provides information about potential threats to help organizations improve their security posture."
+        },
+        {
+          "question": "What is security compliance monitoring?",
+          "options": {
+            "A": "Ignoring compliance",
+            "B": "Ensuring adherence to security policies and regulations",
+            "C": "Creating problems",
+            "D": "Wasting time"
+          },
+          "correct_answer": "B",
+          "explanation": "Compliance monitoring ensures organizations adhere to security policies, standards, and regulations."
+        },
+        {
+          "question": "What is incident detection in security operations?",
+          "options": {
+            "A": "Ignoring incidents",
+            "B": "Identifying potential security incidents",
+            "C": "Creating incidents",
+            "D": "Wasting time"
+          },
+          "correct_answer": "B",
+          "explanation": "Incident detection involves identifying potential security incidents through monitoring and analysis."
+        },
+        {
+          "question": "What is the purpose of security awareness in operations?",
+          "options": {
+            "A": "To confuse employees",
+            "B": "To educate staff about security practices",
+            "C": "To waste time",
+            "D": "To create problems"
+          },
+          "correct_answer": "B",
+          "explanation": "Security awareness educates employees about security best practices and their role in maintaining security."
+        },
+        {
+          "question": "What is security change management?",
+          "options": {
+            "A": "Making random changes",
+            "B": "Managing security-related changes systematically",
+            "C": "Ignoring changes",
+            "D": "Creating problems"
+          },
+          "correct_answer": "B",
+          "explanation": "Security change management ensures security-related changes are properly planned, tested, and implemented."
+        },
+        {
+          "question": "What is the role of access management in security operations?",
+          "options": {
+            "A": "Granting access to everyone",
+            "B": "Controlling and monitoring access to resources",
+            "C": "Blocking all access",
+            "D": "Creating confusion"
+          },
+          "correct_answer": "B",
+          "explanation": "Access management controls and monitors who can access organizational resources and systems."
+        },
+        {
+          "question": "What is security performance monitoring?",
+          "options": {
+            "A": "Ignoring performance",
+            "B": "Measuring security control effectiveness",
+            "C": "Creating problems",
+            "D": "Wasting resources"
+          },
+          "correct_answer": "B",
+          "explanation": "Security performance monitoring measures the effectiveness of security controls and operations."
+        },
+        {
+          "question": "What is the importance of documentation in security operations?",
+          "options": {
+            "A": "It's not important",
+            "B": "To maintain records of security activities and procedures",
+            "C": "To waste paper",
+            "D": "To create confusion"
+          },
+          "correct_answer": "B",
+          "explanation": "Documentation helps maintain records of security activities, procedures, and incidents for reference and compliance."
+        }
+      ]
+    }
+  ]
+}

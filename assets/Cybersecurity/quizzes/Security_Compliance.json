@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Security_Compliance",
+      "questions": [
+        {
+          "question": "What is security compliance management?",
+          "options": {
+            "A": "A one-time security check",
+            "B": "An ongoing process of defining and enforcing security policies",
+            "C": "A software installation process",
+            "D": "A network monitoring tool"
+          },
+          "correct_answer": "B",
+          "explanation": "Security compliance management is an ongoing process of defining security policies, auditing compliance, and ensuring violations are resolved."
+        },
+        {
+          "question": "What is ISO 27001?",
+          "options": {
+            "A": "A network security tool",
+            "B": "An international standard for information security management",
+            "C": "A type of firewall",
+            "D": "A data backup system"
+          },
+          "correct_answer": "B",
+          "explanation": "ISO 27001 is an international standard that provides a framework for information security management systems (ISMS)."
+        },
+        {
+          "question": "What is the primary purpose of HIPAA compliance?",
+          "options": {
+            "A": "To protect financial data",
+            "B": "To protect patient health information",
+            "C": "To secure email communications",
+            "D": "To manage network security"
+          },
+          "correct_answer": "B",
+          "explanation": "HIPAA (Health Insurance Portability and Accountability Act) is designed to protect the privacy and security of patient health information."
+        },
+        {
+          "question": "What is the main focus of GDPR?",
+          "options": {
+            "A": "Network security",
+            "B": "Data privacy and protection for EU residents",
+            "C": "Email security",
+            "D": "Cloud computing"
+          },
+          "correct_answer": "B",
+          "explanation": "GDPR (General Data Protection Regulation) focuses on protecting the privacy and data rights of European Union residents."
+        },
+        {
+          "question": "What is the purpose of security audits in compliance?",
+          "options": {
+            "A": "To increase system speed",
+            "B": "To assess security measures and identify gaps",
+            "C": "To backup data",
+            "D": "To install software"
+          },
+          "correct_answer": "B",
+          "explanation": "Security audits assess the effectiveness of security measures and identify gaps in compliance with standards and regulations."
+        },
+        {
+          "question": "What is the role of security policies in compliance?",
+          "options": {
+            "A": "To increase system performance",
+            "B": "To establish guidelines for security practices",
+            "C": "To store data",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Security policies establish guidelines and requirements for maintaining security and ensuring compliance with regulations."
+        },
+        {
+          "question": "What is the purpose of PCI DSS compliance?",
+          "options": {
+            "A": "To protect email communications",
+            "B": "To protect credit card holder data",
+            "C": "To secure network traffic",
+            "D": "To manage system backups"
+          },
+          "correct_answer": "B",
+          "explanation": "PCI DSS (Payment Card Industry Data Security Standard) focuses on protecting credit cardholder data and payment information."
+        },
+        {
+          "question": "What is the importance of documentation in compliance?",
+          "options": {
+            "A": "To increase system speed",
+            "B": "To prove adherence to security standards",
+            "C": "To store user data",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Documentation provides evidence of compliance with security standards and regulations, demonstrating proper implementation of controls."
+        },
+        {
+          "question": "What is the purpose of risk assessment in compliance?",
+          "options": {
+            "A": "To improve system performance",
+            "B": "To identify and evaluate security risks",
+            "C": "To backup data",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Risk assessment helps identify and evaluate potential security risks to ensure compliance with security standards."
+        },
+        {
+          "question": "What is the role of employee training in compliance?",
+          "options": {
+            "A": "To increase productivity",
+            "B": "To ensure understanding of security requirements",
+            "C": "To improve system speed",
+            "D": "To manage data storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Employee training ensures staff understand and follow security requirements and compliance standards."
+        },
+        {
+          "question": "What is the purpose of incident response in compliance?",
+          "options": {
+            "A": "To improve system performance",
+            "B": "To handle security breaches according to regulations",
+            "C": "To manage data storage",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Incident response ensures security breaches are handled in accordance with compliance requirements and regulations."
+        },
+        {
+          "question": "What is the role of access control in compliance?",
+          "options": {
+            "A": "To increase system speed",
+            "B": "To manage and restrict access to sensitive data",
+            "C": "To backup data",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Access control ensures only authorized individuals can access sensitive data, meeting compliance requirements."
+        },
+        {
+          "question": "What is the purpose of data classification in compliance?",
+          "options": {
+            "A": "To organize files",
+            "B": "To identify and protect sensitive information",
+            "C": "To improve system speed",
+            "D": "To manage backups"
+          },
+          "correct_answer": "B",
+          "explanation": "Data classification helps identify and apply appropriate protection measures to sensitive information as required by compliance standards."
+        },
+        {
+          "question": "What is the role of third-party assessments in compliance?",
+          "options": {
+            "A": "To improve system performance",
+            "B": "To verify compliance with security standards",
+            "C": "To manage data storage",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Third-party assessments provide independent verification of compliance with security standards and regulations."
+        },
+        {
+          "question": "What is the purpose of compliance monitoring?",
+          "options": {
+            "A": "To increase system speed",
+            "B": "To ensure ongoing adherence to security standards",
+            "C": "To backup data",
+            "D": "To manage network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Compliance monitoring ensures continuous adherence to security standards and regulations over time."
+        },
+        {
+          "question": "What is the importance of change management in compliance?",
+          "options": {
+            "A": "To improve system speed",
+            "B": "To control and document system changes",
+            "C": "To manage data storage",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Change management ensures system changes are controlled and documented to maintain compliance with security standards."
+        },
+        {
+          "question": "What is the role of security frameworks in compliance?",
+          "options": {
+            "A": "To increase system performance",
+            "B": "To provide guidance for implementing security controls",
+            "C": "To manage data storage",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Security frameworks provide structured guidance for implementing security controls and achieving compliance."
+        },
+        {
+          "question": "What is the purpose of vulnerability management in compliance?",
+          "options": {
+            "A": "To improve system speed",
+            "B": "To identify and address security weaknesses",
+            "C": "To manage data storage",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Vulnerability management helps identify and address security weaknesses to maintain compliance with security standards."
+        },
+        {
+          "question": "What is the role of security metrics in compliance?",
+          "options": {
+            "A": "To measure system performance",
+            "B": "To measure security effectiveness",
+            "C": "To manage data storage",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Security metrics help measure and demonstrate the effectiveness of security controls and compliance efforts."
+        },
+        {
+          "question": "What is the importance of data retention in compliance?",
+          "options": {
+            "A": "To save storage space",
+            "B": "To meet regulatory requirements for data storage",
+            "C": "To improve system speed",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Data retention policies ensure data is stored and disposed of in accordance with compliance requirements."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Data_Structures",
+      "questions": [
+        {
+          "question": "What is a 'hash table'?",
+          "options": {
+            "A": "A linear data structure that stores elements in a contiguous memory location.",
+            "B": "A data structure that uses a hash function to map keys to indices in an array (bucket array), allowing for (on average) constant-time complexity for insertion, deletion, and search operations.",
+            "C": "A tree-based data structure that maintains sorted order.",
+            "D": "A data structure that follows the LIFO principle."
+          },
+          "correct_answer": "B",
+          "explanation": "Hash tables are highly efficient for dictionary-like operations, provided a good hash function is used to minimize collisions."
+        },
+        {
+          "question": "What is a 'binary search tree' (BST)?",
+          "options": {
+            "A": "A tree where each node has at most one child.",
+            "B": "A tree where for each node, all nodes in its left subtree have values less than the node's value, and all nodes in its right subtree have values greater than the node's value.",
+            "C": "A tree where nodes can have any number of children.",
+            "D": "A tree that is always perfectly balanced."
+          },
+          "correct_answer": "B",
+          "explanation": "BSTs allow for efficient searching, insertion, and deletion of elements in logarithmic time on average, provided the tree remains relatively balanced."
+        },
+        {
+          "question": "What is a 'heap'?",
+          "options": {
+            "A": "A linear data structure that follows the FIFO principle.",
+            "B": "A specialized tree-based data structure that satisfies the heap property: in a min-heap, the value of each node is greater than or equal to the value of its parent, and in a max-heap, the value of each node is less than or equal to the value of its parent.",
+            "C": "A tree where each node has exactly two children.",
+            "D": "A data structure that does not allow duplicate elements."
+          },
+          "correct_answer": "B",
+          "explanation": "Heaps are commonly used to implement priority queues and in heap sort algorithms."
+        },
+        {
+          "question": "What is a 'priority queue'?",
+          "options": {
+            "A": "A queue where elements are processed in the order they were added.",
+            "B": "An abstract data type that behaves similarly to a regular queue, but each element has an associated 'priority'. Elements with higher priority are dequeued before elements with lower priority.",
+            "C": "A queue that only allows elements with the same priority.",
+            "D": "A queue that follows the LIFO principle."
+          },
+          "correct_answer": "B",
+          "explanation": "Priority queues are often implemented using heaps to efficiently manage elements based on their priority."
+        },
+        {
+          "question": "What is a 'B-tree'?",
+          "options": {
+            "A": "A binary tree that is always perfectly balanced.",
+            "B": "A self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time. It is generalized to allow for nodes with more than two children.",
+            "C": "A tree where each node has at most two children.",
+            "D": "A tree used only for in-memory data storage."
+          },
+          "correct_answer": "B",
+          "explanation": "B-trees are particularly well-suited for disk-based data storage systems like databases due to their ability to minimize disk I/O operations."
+        },
+        {
+          "question": "What is a 'red-black tree'?",
+          "options": {
+            "A": "A binary search tree that is always perfectly balanced.",
+            "B": "A self-balancing binary search tree where each node has a color (red or black), and these colors are used to ensure that the tree remains approximately balanced during insertions and deletions.",
+            "C": "A tree where all nodes are either red or black.",
+            "D": "A tree used only for storing color information."
+          },
+          "correct_answer": "B",
+          "explanation": "Red-black trees guarantee logarithmic time complexity for basic operations like insertion, deletion, and search."
+        },
+        {
+          "question": "What is a 'trie' (prefix tree)?",
+          "options": {
+            "A": "A binary tree used for storing numerical data.",
+            "B": "A tree-like data structure used for storing a dynamic set of strings, where each node represents a prefix of a string. It allows for efficient prefix searching and auto-completion.",
+            "C": "A tree where nodes store entire strings.",
+            "D": "A tree that is always perfectly balanced."
+          },
+          "correct_answer": "B",
+          "explanation": "Tries are very efficient for prefix-based search operations and are commonly used in dictionaries and search engines."
+        },
+        {
+          "question": "What is a 'segment tree'?",
+          "options": {
+            "A": "A binary tree where each node represents a segment (or range) of an underlying array. It is often used to efficiently answer range queries over the array.",
+            "B": "A tree used for storing segments of memory.",
+            "C": "A tree where all nodes represent single elements.",
+            "D": "A tree that is always linear."
+          },
+          "correct_answer": "A",
+          "explanation": "Segment trees allow for efficient range sum, range minimum/maximum, and other range-based queries and updates in logarithmic time."
+        },
+        {
+          "question": "What is a 'Fenwick tree' (Binary Indexed Tree)?",
+          "options": {
+            "A": "A tree used for storing binary numbers.",
+            "B": "A data structure that can efficiently update elements and calculate prefix sums in an array in logarithmic time.",
+            "C": "A tree where each node has at most two children.",
+            "D": "A tree used only for indexing binary files."
+          },
+          "correct_answer": "B",
+          "explanation": "Fenwick trees provide a space-efficient way to compute prefix sums and perform updates compared to segment trees in some scenarios."
+        },
+        {
+          "question": "What is a 'disjoint set union' (DSU) data structure?",
+          "options": {
+            "A": "A data structure used for storing sets that have no common elements.",
+            "B": "A data structure that keeps track of a collection of disjoint (non-overlapping) sets. It supports two main operations: finding which set an element belongs to and merging (union) two sets.",
+            "C": "A data structure that only allows union operations on sets.",
+            "D": "A data structure used for sorting disjoint sets."
+          },
+          "correct_answer": "B",
+          "explanation": "DSU is very efficient for problems involving connected components and is often used in graph algorithms like Kruskal's algorithm."
+        },
+        {
+          "question": "What is the average time complexity for searching an element in a hash table?",
+          "options": {
+            "A": "O(n)",
+            "B": "O(1)",
+            "C": "O(log n)",
+            "D": "O(n log n)"
+          },
+          "correct_answer": "B",
+          "explanation": "With a good hash function and proper collision handling, the average time complexity for search, insertion, and deletion in a hash table is O(1)."
+        },
+        {
+          "question": "What is the time complexity of searching for an element in a balanced binary search tree?",
+          "options": {
+            "A": "O(n)",
+            "B": "O(1)",
+            "C": "O(log n)",
+            "D": "O(n^2)"
+          },
+          "correct_answer": "C",
+          "explanation": "In a balanced BST (like a red-black tree or AVL tree), the height of the tree is logarithmic in the number of nodes, leading to O(log n) search time."
+        },
+        {
+          "question": "What is the time complexity of the 'push' and 'pop' operations in a heap?",
+          "options": {
+            "A": "O(1)",
+            "B": "O(log n)",
+            "C": "O(n)",
+            "D": "O(n log n)"
+          },
+          "correct_answer": "B",
+          "explanation": "Both 'push' (insertion) and 'pop' (deletion of the root) operations in a heap involve adjusting the heap structure to maintain the heap property, which takes O(log n) time."
+        },
+        {
+          "question": "Which advanced data structure is most suitable for implementing auto-completion features?",
+          "options": {
+            "A": "Red-Black Tree",
+            "B": "Hash Table",
+            "C": "Trie (Prefix Tree)",
+            "D": "Segment Tree"
+          },
+          "correct_answer": "C",
+          "explanation": "Tries are specifically designed for efficient prefix searching, making them ideal for auto-completion functionalities."
+        },
+        {
+          "question": "What is the time complexity of performing a range sum query using a segment tree?",
+          "options": {
+            "A": "O(n)",
+            "B": "O(1)",
+            "C": "O(log n)",
+            "D": "O(n log n)"
+          },
+          "correct_answer": "C",
+          "explanation": "A range sum query on a segment tree can be performed in O(log n) time by traversing a logarithmic number of nodes in the tree."
+        },
+        {
+          "question": "What are the two primary operations supported by a Disjoint Set Union (DSU) data structure, and what are their typical time complexities with path compression and union by rank/size?",
+          "options": {
+            "A": "Insert (O(1)), Delete (O(1))",
+            "B": "Find (O(n)), Union (O(n))",
+            "C": "Find (almost O(1)), Union (almost O(1))",
+            "D": "Search (O(log n)), Merge (O(log n))"
+          },
+          "correct_answer": "C",
+          "explanation": "The two primary operations are 'Find' (determining which set an element belongs to) and 'Union' (merging two sets). With optimizations like path compression and union by rank/size, their amortized time complexity is almost constant, often considered O(α(n)), where α(n) is the inverse Ackermann function, which grows extremely slowly."
+        },
+        {
+          "question": "In the context of B-trees, what is the significance of the 'order' of the tree?",
+          "options": {
+            "A": "It determines the height of the tree.",
+            "B": "It defines the minimum and maximum number of children a node can have, influencing the tree's branching factor and thus its search performance, especially for disk-based storage.",
+            "C": "It specifies the data types that can be stored in the tree.",
+            "D": "It indicates whether the tree is a min-B-tree or a max-B-tree."
+          },
+          "correct_answer": "B",
+          "explanation": "The order of a B-tree is a crucial parameter that affects its structure and efficiency for operations on large datasets stored on disk."
+        },
+        {
+          "question": "What is a common application of a priority queue?",
+          "options": {
+            "A": "Implementing a last-in, first-out cache.",
+            "B": "Scheduling tasks based on their importance.",
+            "C": "Storing elements in the order they were inserted.",
+            "D": "Searching for elements using a key."
+          },
+          "correct_answer": "B",
+          "explanation": "Priority queues are essential for scenarios where elements need to be processed based on their priority, such as task scheduling in operating systems or Dijkstra's algorithm for finding the shortest path."
+        },
+        {
+          "question": "What is the primary advantage of using a balanced binary search tree (like a Red-Black Tree or AVL Tree) over an unbalanced binary search tree?",
+          "options": {
+            "A": "Simpler implementation.",
+            "B": "Guaranteed logarithmic time complexity for search, insert, and delete operations in the worst case.",
+            "C": "Better performance for in-order traversal.",
+            "D": "Lower space complexity."
+          },
+          "correct_answer": "B",
+          "explanation": "Unbalanced BSTs can degenerate into a linked list in the worst case, leading to O(n) time complexity for operations. Balanced BSTs prevent this by maintaining a certain height balance."
+        },
+        {
+          "question": "Which advanced data structure is often used to efficiently solve range minimum/maximum query problems on a static array?",
+          "options": {
+            "A": "Hash Table",
+            "B": "Binary Search Tree",
+            "C": "Segment Tree",
+            "D": "Disjoint Set Union"
+          },
+          "correct_answer": "C",
+          "explanation": "Segment trees are specifically designed to handle range queries efficiently. After an initial O(n) build time, range minimum/maximum queries can be answered in O(log n) time."
+        }
+      ]
+    }
+  ]
+}

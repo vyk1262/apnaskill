@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Computer_Vision_AI",
+      "questions": [
+        {
+          "question": "What is the primary purpose of image preprocessing in computer vision?",
+          "options": {
+            "A": "To make images look more aesthetically pleasing",
+            "B": "To enhance image quality and prepare it for further analysis",
+            "C": "To reduce image file size",
+            "D": "To convert images to black and white only"
+          },
+          "correct_answer": "B",
+          "explanation": "Image preprocessing is crucial for improving image quality by reducing noise, normalizing brightness, enhancing contrast, and preparing the image for subsequent analysis tasks."
+        },
+        {
+          "question": "What is feature extraction in computer vision?",
+          "options": {
+            "A": "Converting images to different file formats",
+            "B": "Identifying and extracting meaningful patterns and characteristics from images",
+            "C": "Compressing image files",
+            "D": "Creating thumbnails of images"
+          },
+          "correct_answer": "B",
+          "explanation": "Feature extraction involves identifying and isolating distinctive characteristics in images that are useful for classification, detection, or other computer vision tasks."
+        },
+        {
+          "question": "What is semantic segmentation in computer vision?",
+          "options": {
+            "A": "Dividing images into equal-sized squares",
+            "B": "Assigning each pixel to a specific object class or category",
+            "C": "Converting color images to grayscale",
+            "D": "Reducing image resolution"
+          },
+          "correct_answer": "B",
+          "explanation": "Semantic segmentation involves classifying each pixel in an image into predefined categories, creating a pixel-wise understanding of scene content."
+        },
+        {
+          "question": "What role does deep learning play in modern computer vision?",
+          "options": {
+            "A": "It's only used for image storage",
+            "B": "It enables automatic learning of hierarchical features and complex visual patterns",
+            "C": "It's only used for image compression",
+            "D": "It's only used for image display"
+          },
+          "correct_answer": "B",
+          "explanation": "Deep learning has revolutionized computer vision by automatically learning hierarchical features from data, enabling more accurate and robust visual recognition systems."
+        },
+        {
+          "question": "What is transfer learning in computer vision?",
+          "options": {
+            "A": "Moving images between computers",
+            "B": "Using pre-trained models as a starting point for new tasks",
+            "C": "Converting between image formats",
+            "D": "Transferring image colors"
+          },
+          "correct_answer": "B",
+          "explanation": "Transfer learning involves using models pre-trained on large datasets as a starting point for new tasks, saving time and improving performance on limited data."
+        },
+        {
+          "question": "What is optical flow in computer vision?",
+          "options": {
+            "A": "The speed of image loading",
+            "B": "The pattern of apparent motion between consecutive frames in a video",
+            "C": "The brightness of images",
+            "D": "The size of image files"
+          },
+          "correct_answer": "B",
+          "explanation": "Optical flow tracks the motion of objects between consecutive video frames, essential for motion analysis and video understanding."
+        },
+        {
+          "question": "What is the purpose of data augmentation in computer vision?",
+          "options": {
+            "A": "To reduce dataset size",
+            "B": "To increase training data variety by applying transformations",
+            "C": "To compress image files",
+            "D": "To delete unnecessary images"
+          },
+          "correct_answer": "B",
+          "explanation": "Data augmentation involves creating modified versions of training images to increase dataset size and variety, improving model generalization."
+        },
+        {
+          "question": "What is instance segmentation in computer vision?",
+          "options": {
+            "A": "Counting total objects in an image",
+            "B": "Detecting and separately segmenting each instance of objects, even of the same class",
+            "C": "Measuring image dimensions",
+            "D": "Converting color spaces"
+          },
+          "correct_answer": "B",
+          "explanation": "Instance segmentation combines object detection and segmentation to identify and segment individual object instances, even of the same class."
+        },
+        {
+          "question": "What is the role of attention mechanisms in computer vision?",
+          "options": {
+            "A": "To make images brighter",
+            "B": "To help models focus on relevant parts of the image",
+            "C": "To reduce image size",
+            "D": "To convert image formats"
+          },
+          "correct_answer": "B",
+          "explanation": "Attention mechanisms help models focus on relevant image regions, improving performance in tasks like object detection and image captioning."
+        },
+        {
+          "question": "What is few-shot learning in computer vision?",
+          "options": {
+            "A": "Taking multiple photos quickly",
+            "B": "Learning to recognize objects from very few training examples",
+            "C": "Reducing image resolution",
+            "D": "Processing multiple images simultaneously"
+          },
+          "correct_answer": "B",
+          "explanation": "Few-shot learning enables models to learn from very few examples, making them more practical for real-world applications with limited data."
+        },
+        {
+          "question": "What is the purpose of image pyramids in computer vision?",
+          "options": {
+            "A": "To create 3D images",
+            "B": "To analyze images at multiple scales",
+            "C": "To store images efficiently",
+            "D": "To encrypt image data"
+          },
+          "correct_answer": "B",
+          "explanation": "Image pyramids create multi-scale representations of images, enabling analysis of objects at different sizes and distances."
+        },
+        {
+          "question": "What is the role of regularization in computer vision models?",
+          "options": {
+            "A": "To increase model complexity",
+            "B": "To prevent overfitting and improve generalization",
+            "C": "To speed up image processing",
+            "D": "To compress model size"
+          },
+          "correct_answer": "B",
+          "explanation": "Regularization techniques help prevent overfitting in computer vision models, ensuring better generalization to new, unseen data."
+        },
+        {
+          "question": "What is the purpose of non-maximum suppression in object detection?",
+          "options": {
+            "A": "To detect all possible objects",
+            "B": "To eliminate redundant detection boxes for the same object",
+            "C": "To increase detection speed",
+            "D": "To enhance image quality"
+          },
+          "correct_answer": "B",
+          "explanation": "Non-maximum suppression removes overlapping bounding boxes, keeping only the most confident detection for each object."
+        },
+        {
+          "question": "What is the role of anchor boxes in object detection?",
+          "options": {
+            "A": "To measure image size",
+            "B": "To provide predefined box shapes and sizes for detection",
+            "C": "To store image metadata",
+            "D": "To compress images"
+          },
+          "correct_answer": "B",
+          "explanation": "Anchor boxes are predefined box templates that help detection models predict object locations and dimensions more effectively."
+        },
+        {
+          "question": "What is the purpose of image registration in computer vision?",
+          "options": {
+            "A": "To catalog images in a database",
+            "B": "To align multiple images of the same scene or object",
+            "C": "To compress image files",
+            "D": "To convert image formats"
+          },
+          "correct_answer": "B",
+          "explanation": "Image registration aligns multiple images of the same scene taken from different viewpoints or times, essential for medical imaging and panorama creation."
+        },
+        {
+          "question": "What is the role of depth estimation in computer vision?",
+          "options": {
+            "A": "To measure image file size",
+            "B": "To predict the distance of objects from the camera",
+            "C": "To count image pixels",
+            "D": "To enhance image colors"
+          },
+          "correct_answer": "B",
+          "explanation": "Depth estimation predicts the distance of objects from the camera, crucial for 3D scene understanding and autonomous navigation."
+        },
+        {
+          "question": "What is the purpose of image stitching in computer vision?",
+          "options": {
+            "A": "To repair damaged images",
+            "B": "To combine multiple images into a panorama",
+            "C": "To reduce image size",
+            "D": "To enhance image quality"
+          },
+          "correct_answer": "B",
+          "explanation": "Image stitching combines multiple overlapping images to create panoramic views, useful in photography and virtual tours."
+        },
+        {
+          "question": "What is the role of pose estimation in computer vision?",
+          "options": {
+            "A": "To measure image dimensions",
+            "B": "To determine the position and orientation of objects or people",
+            "C": "To compress image data",
+            "D": "To enhance image colors"
+          },
+          "correct_answer": "B",
+          "explanation": "Pose estimation determines the position and orientation of objects or human bodies, essential for augmented reality and human-computer interaction."
+        },
+        {
+          "question": "What is zero-shot learning in computer vision?",
+          "options": {
+            "A": "Processing images without a computer",
+            "B": "Recognizing objects without any training examples",
+            "C": "Taking photos without light",
+            "D": "Analyzing images without color"
+          },
+          "correct_answer": "B",
+          "explanation": "Zero-shot learning enables models to recognize new object categories without any training examples, using semantic relationships between classes."
+        },
+        {
+          "question": "What is the purpose of image denoising in computer vision?",
+          "options": {
+            "A": "To add artistic effects",
+            "B": "To remove unwanted noise and artifacts from images",
+            "C": "To increase image size",
+            "D": "To change image format"
+          },
+          "correct_answer": "B",
+          "explanation": "Image denoising removes unwanted noise and artifacts from images, improving quality for both visual appearance and subsequent analysis tasks."
+        }
+      ]
+    }
+  ]
+}

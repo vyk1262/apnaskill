@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Competitive_Programming",
+      "questions": [
+        {
+          "question": "What is 'Competitive Programming'?",
+          "options": {
+            "A": "A type of programming focused on developing commercial software.",
+            "B": "A mind sport in which participants write programs to solve given computational problems under specified constraints (time and memory).",
+            "C": "A collaborative effort to build open-source software projects.",
+            "D": "A field of computer science that deals with the theoretical limits of computation."
+          },
+          "correct_answer": "B",
+          "explanation": "Competitive programming tests problem-solving skills, algorithmic thinking, and coding abilities."
+        },
+        {
+          "question": "What are some popular online platforms for competitive programming?",
+          "options": {
+            "A": "LinkedIn, GitHub, Stack Overflow.",
+            "B": "Codeforces, CodeChef, TopCoder, AtCoder, LeetCode, HackerRank.",
+            "C": "Facebook, Instagram, Twitter.",
+            "D": "Wikipedia, Google Scholar, ResearchGate."
+          },
+          "correct_answer": "B",
+          "explanation": "These platforms host regular contests and provide a vast archive of problems for practice."
+        },
+        {
+          "question": "What are some common topics and skills tested in competitive programming?",
+          "options": {
+            "A": "Web development, mobile app development, database administration.",
+            "B": "Data structures (arrays, linked lists, trees, graphs, etc.), algorithms (sorting, searching, dynamic programming, graph algorithms, etc.), mathematics (number theory, combinatorics, geometry), and problem-solving skills.",
+            "C": "Software testing, project management, user interface design.",
+            "D": "Computer architecture, operating systems, network protocols."
+          },
+          "correct_answer": "B",
+          "explanation": "A strong foundation in these areas is crucial for success in competitive programming."
+        },
+        {
+          "question": "What is 'Time Limit Exceeded' (TLE) in a competitive programming contest?",
+          "options": {
+            "A": "The program produced an incorrect output.",
+            "B": "The program used more memory than allowed.",
+            "C": "The program took longer to run than the specified time limit for a given test case.",
+            "D": "The program tried to access an invalid memory location."
+          },
+          "correct_answer": "C",
+          "explanation": "TLE usually indicates that the algorithm's time complexity is too high for the given constraints."
+        },
+        {
+          "question": "What is 'Memory Limit Exceeded' (MLE) in a competitive programming contest?",
+          "options": {
+            "A": "The program took too long to run.",
+            "B": "The program produced an incorrect output.",
+            "C": "The program used more memory than the specified limit.",
+            "D": "The program encountered a runtime error."
+          },
+          "correct_answer": "C",
+          "explanation": "MLE suggests that the data structures used by the program are consuming too much memory."
+        },
+        {
+          "question": "What is 'Wrong Answer' (WA) in a competitive programming contest?",
+          "options": {
+            "A": "The program crashed during execution.",
+            "B": "The program used too much time.",
+            "C": "The program's output did not match the expected output for one or more test cases.",
+            "D": "The program used more memory than allowed."
+          },
+          "correct_answer": "C",
+          "explanation": "WA means the logic of the solution is incorrect for some inputs."
+        },
+        {
+          "question": "What is 'Runtime Error' (RTE) in a competitive programming contest?",
+          "options": {
+            "A": "The program's execution exceeded the time limit.",
+            "B": "The program's output was incorrect.",
+            "C": "The program encountered an error during execution, such as division by zero or accessing an out-of-bounds array index.",
+            "D": "The program used too much memory."
+          },
+          "correct_answer": "C",
+          "explanation": "RTE indicates a problem with the program's execution that caused it to terminate prematurely."
+        },
+        {
+          "question": "What is the importance of 'Time Complexity' in competitive programming?",
+          "options": {
+            "A": "It determines the length of the code.",
+            "B": "It indicates how the running time of a solution scales with the input size, which is crucial for avoiding Time Limit Exceeded errors.",
+            "C": "It measures the amount of memory the program uses.",
+            "D": "It reflects the difficulty of understanding the solution."
+          },
+          "correct_answer": "B",
+          "explanation": "Choosing an algorithm with an appropriate time complexity is essential to solve problems within the given time constraints."
+        },
+        {
+          "question": "What is the importance of 'Space Complexity' in competitive programming?",
+          "options": {
+            "A": "It affects how easy the code is to write.",
+            "B": "It indicates the amount of memory the program uses, which must be within the specified Memory Limit.",
+            "C": "It determines how fast the program compiles.",
+            "D": "It reflects the elegance of the solution."
+          },
+          "correct_answer": "B",
+          "explanation": "Efficient use of memory is important to avoid Memory Limit Exceeded errors, especially for problems with large inputs."
+        },
+        {
+          "question": "What are some common strategies for approaching a competitive programming problem?",
+          "options": {
+            "A": "Immediately start coding the first idea that comes to mind.",
+            "B": "Read the problem carefully, understand the input and output format, identify constraints, brainstorm potential approaches, analyze their time and space complexity, choose the most promising one, and then implement it.",
+            "C": "Look for solutions online before attempting to solve it yourself.",
+            "D": "Focus only on writing the shortest possible code."
+          },
+          "correct_answer": "B",
+          "explanation": "A systematic approach is key to solving problems effectively in competitive programming."
+        },
+        {
+          "question": "What is the role of 'Mathematics' in competitive programming?",
+          "options": {
+            "A": "Mathematics is irrelevant to competitive programming.",
+            "B": "Concepts from various branches of mathematics, such as number theory, combinatorics, probability, linear algebra, and geometry, often appear in problems and are essential for devising efficient solutions.",
+            "C": "Only basic arithmetic is needed.",
+            "D": "Advanced calculus is the most important mathematical skill."
+          },
+          "correct_answer": "B",
+          "explanation": "A strong mathematical background can provide the tools and insights needed to solve a wide range of problems."
+        },
+        {
+          "question": "What is the benefit of participating in competitive programming?",
+          "options": {
+            "A": "It guarantees a high-paying job in the tech industry.",
+            "B": "It improves problem-solving skills, algorithmic thinking, coding speed and accuracy, and the ability to handle constraints, which are valuable in various areas of computer science and software development.",
+            "C": "It is a mandatory requirement for all computer science students.",
+            "D": "It primarily focuses on memorizing algorithms and data structures."
+          },
+          "correct_answer": "B",
+          "explanation": "The skills honed through competitive programming are highly transferable and beneficial for a career in technology."
+        },
+        {
+          "question": "What are some common 'STL' (Standard Template Library) containers and algorithms used in C++ for competitive programming?",
+          "options": {
+            "A": "Only basic input/output functions.",
+            "B": "Containers like `vector`, `list`, `deque`, `stack`, `queue`, `priority_queue`, `set`, `map`, and algorithms like `sort`, `binary_search`, `lower_bound`, `upper_bound`, `accumulate`, `min_element`, `max_element`.",
+            "C": "Only graphics and GUI libraries.",
+            "D": "Only file handling functions."
+          },
+          "correct_answer": "B",
+          "explanation": "The STL provides efficient and ready-to-use implementations of common data structures and algorithms, saving time and effort during contests."
+        },
+        {
+          "question": "What is the purpose of 'test cases' in a competitive programming problem?",
+          "options": {
+            "A": "To confuse the participants.",
+            "B": "To define the input format only.",
+            "C": "To evaluate the correctness of a submitted solution against various inputs, including edge cases and constraints.",
+            "D": "To provide hints about the solution."
+          },
+          "correct_answer": "C",
+          "explanation": "Submitting a solution that passes all test cases usually means it is correct according to the problem statement."
+        },
+        {
+          "question": "What is the importance of 'practice' in competitive programming?",
+          "options": {
+            "A": "Practice is not important; talent is the only factor.",
+            "B": "Consistent practice helps in improving problem-solving skills, recognizing patterns, becoming familiar with different algorithms and data structures, and increasing coding speed and accuracy.",
+            "C": "Practicing only a few problems is sufficient.",
+            "D": "Only participating in live contests matters; practice is a waste of time."
+          },
+          "correct_answer": "B",
+          "explanation": "Like any skill, proficiency in competitive programming requires dedicated and consistent practice."
+        },
+        {
+          "question": "What are 'Competitive Programming Contests' typically like?",
+          "options": {
+            "A": "They involve debugging existing code.",
+            "B": "Participants are given a set of problems to solve within a fixed time limit, usually a few hours. Solutions are submitted and automatically judged based on correctness and efficiency against hidden test cases.",
+            "C": "They require participants to build a complete software application.",
+            "D": "They are focused on testing knowledge of specific programming languages."
+          },
+          "correct_answer": "B",
+          "explanation": "Contests simulate real-world problem-solving scenarios under pressure."
+        },
+        {
+          "question": "What is 'Code Debugging' and why is it important in competitive programming?",
+          "options": {
+            "A": "Writing code that has no errors from the beginning.",
+            "B": "The process of identifying and fixing errors (bugs) in the submitted code. It is crucial because even a small mistake can lead to 'Wrong Answer' or 'Runtime Error' verdicts.",
+            "C": "Ignoring errors and hoping the solution passes.",
+            "D": "Asking others for the solution when encountering an error."
+          },
+          "correct_answer": "B",
+          "explanation": "Effective debugging skills are essential for getting correct solutions within the contest time."
+        },
+        {
+          "question": "What are some common 'algorithmic paradigms' used in competitive programming?",
+          "options": {
+            "A": "Only brute force and greedy approaches.",
+            "B": "Divide and Conquer, Greedy, Dynamic Programming, Backtracking, Graph Algorithms, Network Flow, String Algorithms, Computational Geometry, and more.",
+            "C": "Only object-oriented programming and functional programming.",
+            "D": "Only machine learning and artificial intelligence algorithms."
+          },
+          "correct_answer": "B",
+          "explanation": "Familiarity with various algorithmic paradigms allows participants to approach problems with a diverse set of tools."
+        },
+        {
+          "question": "What is the role of 'editorial' after a competitive programming contest?",
+          "options": {
+            "A": "To provide a summary of the contest results only.",
+            "B": "To offer explanations and solutions to the problems that were part of the contest, helping participants understand how to solve them correctly and efficiently.",
+            "C": "To criticize the participants' performance.",
+            "D": "To announce the dates of future contests only."
+          },
+          "correct_answer": "B",
+          "explanation": "Editorials are valuable resources for learning and improving after participating in a contest."
+        },
+        {
+          "question": "What is the 'Competitive Programming Community' and how can it be helpful?",
+          "options": {
+            "A": "A secret society of elite programmers.",
+            "B": "A global network of competitive programmers who share knowledge, discuss problems, provide support, and organize events. It can be helpful for learning new techniques, getting help with problems, and staying motivated.",
+            "C": "A group that only focuses on competing against each other.",
+            "D": "A platform for sharing plagiarized solutions."
+          },
+          "correct_answer": "B",
+          "explanation": "Engaging with the community can significantly enhance one's learning and growth in competitive programming."
+        }
+      ]
+    }
+  ]
+}

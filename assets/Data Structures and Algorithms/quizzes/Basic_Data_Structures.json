@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Basic_Data_Structures",
+      "questions": [
+        {
+          "question": "What is a 'data structure'?",
+          "options": {
+            "A": "A way to physically store data on a hard drive.",
+            "B": "A particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently.",
+            "C": "A programming language construct for defining variables.",
+            "D": "A set of rules for transmitting data over a network."
+          },
+          "correct_answer": "B",
+          "explanation": "A data structure provides a framework for organizing and managing data, enabling efficient operations."
+        },
+        {
+          "question": "What is an 'array'?",
+          "options": {
+            "A": "A collection of elements of different data types.",
+            "B": "A contiguous block of memory holding elements of the same data type, accessed using indices.",
+            "C": "A dynamic data structure that can grow or shrink in size.",
+            "D": "A data structure where elements are linked together using pointers."
+          },
+          "correct_answer": "B",
+          "explanation": "Arrays offer direct access to elements based on their index, making access time constant (O(1))."
+        },
+        {
+          "question": "What is a 'linked list'?",
+          "options": {
+            "A": "A contiguous block of memory holding elements of the same data type.",
+            "B": "A linear data structure where elements are stored in non-contiguous memory locations, with each element (node) containing a data part and a pointer to the next node.",
+            "C": "A data structure that allows access to elements using indices.",
+            "D": "A data structure that follows the Last-In, First-Out (LIFO) principle."
+          },
+          "correct_answer": "B",
+          "explanation": "Linked lists allow efficient insertion and deletion of elements but require traversal to access a specific element."
+        },
+        {
+          "question": "What is a 'stack'?",
+          "options": {
+            "A": "A data structure that follows the First-In, First-Out (FIFO) principle.",
+            "B": "A linear data structure that follows the Last-In, First-Out (LIFO) principle, where elements are added and removed from the top.",
+            "C": "A data structure where elements are stored in a hierarchical manner.",
+            "D": "A data structure that allows random access to its elements."
+          },
+          "correct_answer": "B",
+          "explanation": "Stacks are useful for managing function calls, undo/redo operations, and expression evaluation."
+        },
+        {
+          "question": "What is a 'queue'?",
+          "options": {
+            "A": "A data structure that follows the Last-In, First-Out (LIFO) principle.",
+            "B": "A linear data structure that follows the First-In, First-Out (FIFO) principle, where elements are added at the rear and removed from the front.",
+            "C": "A data structure where elements are linked together using pointers.",
+            "D": "A data structure that allows access to elements using indices."
+          },
+          "correct_answer": "B",
+          "explanation": "Queues are used in scenarios like task scheduling, print queues, and breadth-first search."
+        },
+        {
+          "question": "What is the difference between an array and a linked list?",
+          "options": {
+            "A": "Arrays can store elements of different data types, while linked lists cannot.",
+            "B": "Arrays have a fixed size (typically), while linked lists can dynamically grow or shrink. Arrays offer constant-time access to elements, while linked lists require traversal.",
+            "C": "Linked lists use contiguous memory, while arrays do not.",
+            "D": "Arrays support efficient insertion and deletion, while linked lists do not."
+          },
+          "correct_answer": "B",
+          "explanation": "The choice between an array and a linked list depends on the specific requirements of the application, such as the frequency of insertions/deletions and the need for random access."
+        },
+        {
+          "question": "What are the basic operations performed on a stack?",
+          "options": {
+            "A": "Enqueue and Dequeue.",
+            "B": "Push and Pop.",
+            "C": "Insert and Delete at any position.",
+            "D": "Search and Sort."
+          },
+          "correct_answer": "B",
+          "explanation": "'Push' adds an element to the top of the stack, and 'Pop' removes the top element."
+        },
+        {
+          "question": "What are the basic operations performed on a queue?",
+          "options": {
+            "A": "Push and Pop.",
+            "B": "Enqueue and Dequeue.",
+            "C": "Insert and Delete at any position.",
+            "D": "Search and Sort."
+          },
+          "correct_answer": "B",
+          "explanation": "'Enqueue' adds an element to the rear of the queue, and 'Dequeue' removes an element from the front."
+        },
+        {
+          "question": "What is a 'doubly linked list'?",
+          "options": {
+            "A": "A linked list where each node points only to the next node.",
+            "B": "A linked list where each node contains a data part and two pointers: one to the next node and one to the previous node.",
+            "C": "A linked list that can only be traversed in one direction.",
+            "D": "A linked list where the last node points to the first node (circular)."
+          },
+          "correct_answer": "B",
+          "explanation": "Doubly linked lists allow for efficient traversal in both forward and backward directions."
+        },
+        {
+          "question": "What is a 'circular linked list'?",
+          "options": {
+            "A": "A linked list where each node points to itself.",
+            "B": "A linked list where the last node points back to the first node, forming a cycle.",
+            "C": "A linked list that can only store circular data.",
+            "D": "A linked list with no nodes."
+          },
+          "correct_answer": "B",
+          "explanation": "Circular linked lists are useful for representing repeating structures or when a starting/ending point is not naturally defined."
+        },
+        {
+          "question": "What is the time complexity of accessing an element in an array by its index?",
+          "options": {
+            "A": "O(n)",
+            "B": "O(1)",
+            "C": "O(log n)",
+            "D": "O(n log n)"
+          },
+          "correct_answer": "B",
+          "explanation": "Accessing an element in an array by its index takes constant time because the memory location can be directly calculated."
+        },
+        {
+          "question": "What is the time complexity of inserting an element at the beginning of a singly linked list?",
+          "options": {
+            "A": "O(n)",
+            "B": "O(1)",
+            "C": "O(log n)",
+            "D": "O(n^2)"
+          },
+          "correct_answer": "B",
+          "explanation": "Inserting at the beginning involves updating the head pointer and the next pointer of the new node, which takes constant time."
+        },
+        {
+          "question": "What is the time complexity of searching for an element in an unsorted array?",
+          "options": {
+            "A": "O(1)",
+            "B": "O(n)",
+            "C": "O(log n)",
+            "D": "O(n log n)"
+          },
+          "correct_answer": "B",
+          "explanation": "In the worst case, you might need to examine every element in the array to find the target element."
+        },
+        {
+          "question": "What is the space complexity of an array of size n?",
+          "options": {
+            "A": "O(1)",
+            "B": "O(n)",
+            "C": "O(log n)",
+            "D": "O(n^2)"
+          },
+          "correct_answer": "B",
+          "explanation": "The space required is proportional to the number of elements in the array, which is n."
+        },
+        {
+          "question": "What is the space complexity of a singly linked list of n nodes?",
+          "options": {
+            "A": "O(1)",
+            "B": "O(n)",
+            "C": "O(log n)",
+            "D": "O(n^2)"
+          },
+          "correct_answer": "B",
+          "explanation": "Each node in the linked list requires a constant amount of space to store the data and the pointer to the next node, so for n nodes, the space complexity is O(n)."
+        },
+        {
+          "question": "In which scenario would a stack be most appropriate?",
+          "options": {
+            "A": "Managing tasks in the order they were received.",
+            "B": "Implementing an undo/redo functionality.",
+            "C": "Storing a list of student names in alphabetical order.",
+            "D": "Representing a hierarchical relationship."
+          },
+          "correct_answer": "B",
+          "explanation": "The LIFO nature of a stack makes it ideal for undo/redo operations, where the last action performed is the first one undone."
+        },
+        {
+          "question": "In which scenario would a queue be most appropriate?",
+          "options": {
+            "A": "Keeping track of the history of visited web pages.",
+            "B": "Processing print jobs in the order they were submitted.",
+            "C": "Evaluating arithmetic expressions with parentheses.",
+            "D": "Searching for a specific file in a directory structure (depth-first)."
+          },
+          "correct_answer": "B",
+          "explanation": "The FIFO nature of a queue ensures that tasks or requests are processed in the order they arrived."
+        },
+        {
+          "question": "What is a common use case for a doubly linked list?",
+          "options": {
+            "A": "Implementing a simple stack.",
+            "B": "Navigating forward and backward in a web browser's history.",
+            "C": "Storing a fixed-size list of items.",
+            "D": "Implementing a queue where elements are always added and removed from the same end."
+          },
+          "correct_answer": "B",
+          "explanation": "The ability to traverse in both directions makes doubly linked lists suitable for applications where bidirectional navigation is required."
+        },
+        {
+          "question": "What is a potential advantage of using a circular linked list?",
+          "options": {
+            "A": "More efficient random access compared to a singly linked list.",
+            "B": "The ability to easily return to the beginning of the list from any node.",
+            "C": "Simpler implementation of certain operations like reversing the list.",
+            "D": "Lower space complexity compared to a linear linked list."
+          },
+          "correct_answer": "B",
+          "explanation": "The circular nature allows for continuous traversal without needing to keep track of the end of the list explicitly in some applications."
+        },
+        {
+          "question": "Which basic data structure provides the fastest average time complexity for searching for a specific element (without any prior sorting)?",
+          "options": {
+            "A": "Singly Linked List",
+            "B": "Doubly Linked List",
+            "C": "Array",
+            "D": "All have the same average search time."
+          },
+          "correct_answer": "C",
+          "explanation": "On average, you might need to check half the elements in an unsorted array, resulting in O(n) time complexity. Linked lists also have an average search time of O(n). Without additional structure or indexing, none of these offer a significantly faster average search time."
+        }
+      ]
+    }
+  ]
+}

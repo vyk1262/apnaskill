@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "String_Algorithms",
+      "questions": [
+        {
+          "question": "What is 'String Matching'?",
+          "options": {
+            "A": "Combining two or more strings into one.",
+            "B": "Finding one or more occurrences of a pattern string within a larger text string.",
+            "C": "Reversing a given string.",
+            "D": "Comparing two strings for equality."
+          },
+          "correct_answer": "B",
+          "explanation": "String matching is a fundamental problem in computer science with various applications."
+        },
+        {
+          "question": "What is the 'Naive String Matching' algorithm?",
+          "options": {
+            "A": "A very efficient algorithm that uses hashing.",
+            "B": "A simple algorithm that slides the pattern over the text, one character at a time, and checks for a match at each position.",
+            "C": "A complex algorithm based on finite automata.",
+            "D": "An algorithm that first preprocesses the pattern to improve efficiency."
+          },
+          "correct_answer": "B",
+          "explanation": "The naive approach is easy to understand but can be inefficient in the worst case."
+        },
+        {
+          "question": "What is the worst-case time complexity of the Naive String Matching algorithm when searching for a pattern of length m in a text of length n?",
+          "options": {
+            "A": "O(n)",
+            "B": "O(m)",
+            "C": "O(n * m)",
+            "D": "O(n + m)"
+          },
+          "correct_answer": "C",
+          "explanation": "In the worst case, for each of the n-m+1 possible shifts, we might compare all m characters of the pattern."
+        },
+        {
+          "question": "What is the 'Rabin-Karp' algorithm used for?",
+          "options": {
+            "A": "Sorting a set of strings.",
+            "B": "Efficiently finding one or more occurrences of a pattern string within a text string using hashing.",
+            "C": "Reversing a string in linear time.",
+            "D": "Comparing two strings lexicographically."
+          },
+          "correct_answer": "B",
+          "explanation": "Rabin-Karp uses rolling hashes to quickly compare the pattern with substrings of the text."
+        },
+        {
+          "question": "What is the main idea behind the Rabin-Karp algorithm?",
+          "options": {
+            "A": "Comparing strings character by character.",
+            "B": "Using a hash function to convert strings into numerical values and comparing these hash values. Rolling hash is used to efficiently update the hash of the text's substring as the pattern slides.",
+            "C": "Preprocessing the text to build an index.",
+            "D": "Using a finite automaton to recognize the pattern."
+          },
+          "correct_answer": "B",
+          "explanation": "Hashing allows for quick comparisons of substrings, though collisions need to be handled."
+        },
+        {
+          "question": "What is the 'Knuth-Morris-Pratt' (KMP) algorithm?",
+          "options": {
+            "A": "A string matching algorithm that uses hashing.",
+            "B": "An efficient string matching algorithm that preprocesses the pattern to build a table (prefix function) that indicates how much to shift the pattern in case of a mismatch.",
+            "C": "A simple algorithm that slides the pattern one character at a time.",
+            "D": "An algorithm for finding the longest common subsequence of two strings."
+          },
+          "correct_answer": "B",
+          "explanation": "KMP avoids redundant comparisons by using information about matched prefixes of the pattern."
+        },
+        {
+          "question": "What is the purpose of the 'prefix function' (or 'failure function') in the KMP algorithm?",
+          "options": {
+            "A": "To determine the length of the longest suffix of the pattern that is also a prefix of the pattern.",
+            "B": "To indicate the next position to shift the pattern to after a mismatch, based on the longest proper prefix of the pattern that is also a suffix of the part of the text that matched the pattern so far.",
+            "C": "To calculate the hash value of the pattern.",
+            "D": "To reverse the pattern."
+          },
+          "correct_answer": "B",
+          "explanation": "The prefix function helps in making intelligent shifts of the pattern, improving efficiency."
+        },
+        {
+          "question": "What is the time complexity of the KMP algorithm for searching a pattern of length m in a text of length n?",
+          "options": {
+            "A": "O(n * m)",
+            "B": "O(m^2)",
+            "C": "O(n + m)",
+            "D": "O(n log m)"
+          },
+          "correct_answer": "C",
+          "explanation": "The preprocessing step takes O(m) time, and the searching step takes O(n) time."
+        },
+        {
+          "question": "What is the 'Boyer-Moore' algorithm?",
+          "options": {
+            "A": "A string matching algorithm that only compares the first character of the pattern.",
+            "B": "A highly efficient string matching algorithm that uses two heuristics (bad character rule and good suffix rule) to determine the amount to shift the pattern.",
+            "C": "A simple algorithm that always shifts the pattern by one.",
+            "D": "An algorithm for finding palindromic substrings."
+          },
+          "correct_answer": "B",
+          "explanation": "Boyer-Moore often achieves sublinear time complexity in practice."
+        },
+        {
+          "question": "What are the two main heuristics used in the Boyer-Moore algorithm?",
+          "options": {
+            "A": "Prefix rule and suffix rule.",
+            "B": "Bad character rule and good prefix rule.",
+            "C": "Bad character rule and good suffix rule.",
+            "D": "Hash rule and shift rule."
+          },
+          "correct_answer": "C",
+          "explanation": "These heuristics help in making larger shifts of the pattern, improving efficiency."
+        },
+        {
+          "question": "What is a 'Suffix Tree'?",
+          "options": {
+            "A": "A tree data structure that stores all suffixes of a given string, making it efficient for various string operations.",
+            "B": "A tree where each node represents a character of a string.",
+            "C": "A binary search tree containing all characters of a string.",
+            "D": "A tree used for Huffman coding of a string."
+          },
+          "correct_answer": "A",
+          "explanation": "Suffix trees can be used for efficient string searching, finding longest common substrings, and more."
+        },
+        {
+          "question": "What is a 'Suffix Array'?",
+          "options": {
+            "A": "An array containing all characters of a string in sorted order.",
+            "B": "A sorted array of all suffixes of a string.",
+            "C": "An array representing the prefix function of a string.",
+            "D": "An array used in the Rabin-Karp algorithm."
+          },
+          "correct_answer": "B",
+          "explanation": "Suffix arrays, often used in conjunction with LCP arrays, provide an alternative to suffix trees for many string algorithms."
+        },
+        {
+          "question": "What is the 'Longest Common Subsequence' (LCS) problem for strings?",
+          "options": {
+            "A": "Finding the longest substring that is common to all sequences in a set of sequences.",
+            "B": "Finding the longest sequence of characters that appear in the same relative order (but not necessarily contiguous) in two or more strings.",
+            "C": "Finding the longest prefix that is common to two strings.",
+            "D": "Finding the longest suffix that is common to two strings."
+          },
+          "correct_answer": "B",
+          "explanation": "Dynamic programming is a common approach to solve the LCS problem."
+        },
+        {
+          "question": "What is the 'Longest Common Substring' problem for strings?",
+          "options": {
+            "A": "Finding the longest sequence of characters that appear in the same relative order in two or more strings.",
+            "B": "Finding the longest contiguous sequence of characters that is a substring of two or more strings.",
+            "C": "Finding the longest prefix that is common to two strings.",
+            "D": "Finding the longest suffix that is common to two strings."
+          },
+          "correct_answer": "B",
+          "explanation": "Suffix trees or dynamic programming can be used to solve the longest common substring problem."
+        },
+        {
+          "question": "What is a 'Palindrome'?",
+          "options": {
+            "A": "A string that reads the same forwards and backward.",
+            "B": "A string that contains only alphabetic characters.",
+            "C": "A string that is sorted alphabetically.",
+            "D": "A string that has a length greater than one."
+          },
+          "correct_answer": "A",
+          "explanation": "Examples include 'racecar' and 'madam'."
+        },
+        {
+          "question": "How can dynamic programming be used to find the longest palindromic substring of a string?",
+          "options": {
+            "A": "By recursively checking all possible substrings.",
+            "B": "By building a table that indicates whether a substring is a palindrome, based on the palindromic nature of its sub-substrings.",
+            "C": "By reversing the string and finding the longest common subsequence with the original string.",
+            "D": "By using a greedy approach of expanding around each character."
+          },
+          "correct_answer": "B",
+          "explanation": "The DP approach allows for efficient computation by reusing results of subproblems."
+        },
+        {
+          "question": "What is the Z-algorithm used for?",
+          "options": {
+            "A": "String compression.",
+            "B": "Efficiently finding all occurrences of a pattern in a text.",
+            "C": "Reversing a string.",
+            "D": "Calculating the hash of a string."
+          },
+          "correct_answer": "B",
+          "explanation": "The Z-algorithm computes the Z-array, where Z[i] is the length of the longest substring starting at index i that is also a prefix of the string."
+        },
+        {
+          "question": "What is the time complexity of building a Suffix Tree for a string of length n?",
+          "options": {
+            "A": "O(n^2)",
+            "B": "O(n log n)",
+            "C": "O(n)",
+            "D": "O(n^3)"
+          },
+          "correct_answer": "C",
+          "explanation": "Suffix trees can be built in linear time using efficient algorithms like Ukkonen's algorithm."
+        },
+        {
+          "question": "What is the time complexity of building a Suffix Array for a string of length n?",
+          "options": {
+            "A": "O(n^2 log n)",
+            "B": "O(n log^2 n) or O(n log n) using more advanced algorithms.",
+            "C": "O(n^3)",
+            "D": "O(n)"
+          },
+          "correct_answer": "B",
+          "explanation": "Efficient algorithms can construct suffix arrays in O(n log^2 n) or even O(n log n) time."
+        },
+        {
+          "question": "What is 'String Searching with Wildcards'?",
+          "options": {
+            "A": "Searching for strings that contain only wildcard characters.",
+            "B": "Searching for a pattern in a text where the pattern may contain special characters (wildcards) that can match one or more other characters.",
+            "C": "Searching for strings that are very long.",
+            "D": "Searching for strings in a case-insensitive manner."
+          },
+          "correct_answer": "B",
+          "explanation": "Wildcards like '*' (matches zero or more characters) and '?' (matches any single character) add complexity to string matching."
+        }
+      ]
+    }
+  ]
+}

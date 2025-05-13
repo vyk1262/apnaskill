@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Test_Design_Execution",
+      "questions": [
+        {
+          "question": "What is the primary goal of Test Design?",
+          "options": {
+            "A": "To execute test cases and report defects.",
+            "B": "To create effective and efficient test cases that provide adequate coverage of the software.",
+            "C": "To set up the test environment.",
+            "D": "To analyze test results."
+          },
+          "correct_answer": "B",
+          "explanation": "Test design is about planning and creating the tests themselves."
+        },
+        {
+          "question": "What are some common Test Design Techniques?",
+          "options": {
+            "A": "Unit testing, integration testing, system testing.",
+            "B": "Black-box testing, white-box testing, and experience-based testing.",
+            "C": "Planning, analysis, design, implementation, execution.",
+            "D": "Severity, priority, status, resolution."
+          },
+          "correct_answer": "B",
+          "explanation": "These categories encompass various methods for creating test cases."
+        },
+        {
+          "question": "What is 'Boundary Value Analysis'?",
+          "options": {
+            "A": "A performance testing technique.",
+            "B": "A black-box test design technique where test cases are designed around the boundaries of input domains.",
+            "C": "A white-box testing technique focused on code coverage.",
+            "D": "An experience-based testing technique relying on tester intuition."
+          },
+          "correct_answer": "B",
+          "explanation": "BVA is effective for finding errors at the edges of valid input ranges."
+        },
+        {
+          "question": "What is 'Equivalence Partitioning'?",
+          "options": {
+            "A": "Dividing the test team into equal groups.",
+            "B": "A black-box test design technique where input data is divided into groups that are expected to exhibit similar behavior.",
+            "C": "Testing all possible input values.",
+            "D": "A method for prioritizing defects."
+          },
+          "correct_answer": "B",
+          "explanation": "EP helps reduce the number of test cases while maintaining good coverage."
+        },
+        {
+          "question": "What is 'Decision Table Testing'?",
+          "options": {
+            "A": "A method for making decisions about test strategy.",
+            "B": "A black-box test design technique used to test systems where different combinations of inputs produce different actions.",
+            "C": "A way to document test results.",
+            "D": "A technique for estimating test effort."
+          },
+          "correct_answer": "B",
+          "explanation": "Decision tables are useful for complex logical conditions."
+        },
+        {
+          "question": "What is 'State Transition Testing'?",
+          "options": {
+            "A": "Testing the transitions between different test phases.",
+            "B": "A black-box test design technique used to test systems that have a finite number of states and transitions between those states.",
+            "C": "Testing the performance of stateful applications.",
+            "D": "A method for managing the status of test cases."
+          },
+          "correct_answer": "B",
+          "explanation": "State transition testing is suitable for applications with defined states and behaviors."
+        },
+        {
+          "question": "What is 'Use Case Testing'?",
+          "options": {
+            "A": "Testing the user interface for usability.",
+            "B": "A black-box test design technique where test cases are derived from use cases, covering the system's functionality from a user's perspective.",
+            "C": "Testing the system under various usage scenarios.",
+            "D": "A method for documenting how users interact with the system."
+          },
+          "correct_answer": "B",
+          "explanation": "Use case testing ensures that the system functions according to user interactions."
+        },
+        {
+          "question": "What is 'White-Box Testing'?",
+          "options": {
+            "A": "Testing the system without any knowledge of its internal structure.",
+            "B": "Testing the internal structure, design, and coding of software.",
+            "C": "Testing the user interface for visual defects.",
+            "D": "Testing the system's performance under white light conditions."
+          },
+          "correct_answer": "B",
+          "explanation": "White-box testing involves examining the code."
+        },
+        {
+          "question": "What is 'Statement Coverage'?",
+          "options": {
+            "A": "A measure of the percentage of requirements covered by tests.",
+            "B": "A white-box testing metric that measures the percentage of executable statements in the code that have been executed by tests.",
+            "C": "The number of test cases written per requirement.",
+            "D": "The percentage of defects found during testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Statement coverage is a basic white-box coverage metric."
+        },
+        {
+          "question": "What is 'Branch Coverage'?",
+          "options": {
+            "A": "Testing different deployment branches.",
+            "B": "A white-box testing metric that measures the percentage of branches (outcomes of decision points) in the code that have been executed by tests.",
+            "C": "Testing the different branches of the organization involved in the project.",
+            "D": "The number of bug fixes applied to different code branches."
+          },
+          "correct_answer": "B",
+          "explanation": "Branch coverage is a more comprehensive white-box metric than statement coverage."
+        },
+        {
+          "question": "What is the primary goal of Test Execution?",
+          "options": {
+            "A": "To design test cases.",
+            "B": "To run the designed test cases on the software under test and record the outcomes.",
+            "C": "To plan the testing activities.",
+            "D": "To analyze the requirements."
+          },
+          "correct_answer": "B",
+          "explanation": "Test execution is the process of running the prepared tests."
+        },
+        {
+          "question": "What is a 'Test Log'?",
+          "options": {
+            "A": "A document describing the test environment setup.",
+            "B": "A chronological record of the execution of test cases, including the sequence of actions, inputs, and expected/actual results.",
+            "C": "A summary report of the test results.",
+            "D": "A list of all the testers involved in the project."
+          },
+          "correct_answer": "B",
+          "explanation": "Test logs provide a detailed history of test execution."
+        },
+        {
+          "question": "What is 'Test Evidence'?",
+          "options": {
+            "A": "The tester's opinion about the software quality.",
+            "B": "Records and artifacts that demonstrate the execution of tests and the outcomes (e.g., screenshots, log files, test reports).",
+            "C": "The requirements documents.",
+            "D": "The developer's confirmation that the code is bug-free."
+          },
+          "correct_answer": "B",
+          "explanation": "Test evidence supports the findings and conclusions of testing."
+        },
+        {
+          "question": "What is 'Defect Reporting'?",
+          "options": {
+            "A": "Ignoring any issues found during testing.",
+            "B": "The process of documenting and communicating the details of any discrepancies found between the expected and actual behavior of the software.",
+            "C": "Blaming developers for introducing bugs.",
+            "D": "Automatically fixing any defects found."
+          },
+          "correct_answer": "B",
+          "explanation": "Defect reports are crucial for tracking and resolving issues."
+        },
+        {
+          "question": "What information should be included in a good Defect Report?",
+          "options": {
+            "A": "Only the tester's name and the date.",
+            "B": "A clear description, steps to reproduce, expected and actual results, severity, priority, and environment details.",
+            "C": "Vague details to avoid overwhelming developers.",
+            "D": "Personal opinions about the software."
+          },
+          "correct_answer": "B",
+          "explanation": "Comprehensive defect reports facilitate efficient resolution."
+        },
+        {
+          "question": "What is 'Test Closure'?",
+          "options": {
+            "A": "The end of the development phase.",
+            "B": "The activities performed to formally conclude the testing effort, including collecting test logs, summarizing results, and archiving testware.",
+            "C": "The release of the software to production.",
+            "D": "The start of a new testing phase."
+          },
+          "correct_answer": "B",
+          "explanation": "Test closure marks the completion of testing activities."
+        },
+        {
+          "question": "How does Test Design influence Test Execution?",
+          "options": {
+            "A": "Test design has no impact on execution.",
+            "B": "A well-designed set of test cases ensures efficient and effective execution, covering the necessary aspects of the software.",
+            "C": "Test execution dictates how test cases should be designed.",
+            "D": "Test execution is only about running automated scripts, regardless of design."
+          },
+          "correct_answer": "B",
+          "explanation": "Good design leads to better execution and coverage."
+        },
+        {
+          "question": "What is the relationship between Test Design Techniques and Test Coverage?",
+          "options": {
+            "A": "Test design techniques are irrelevant to test coverage.",
+            "B": "Different test design techniques help achieve different types and levels of test coverage, ensuring a more thorough examination of the software.",
+            "C": "Higher test coverage automatically means better test design.",
+            "D": "Test coverage only depends on the number of test cases executed."
+          },
+          "correct_answer": "B",
+          "explanation": "Techniques are chosen to maximize coverage of various aspects."
+        },
+        {
+          "question": "Why is it important to prioritize test cases during Test Execution?",
+          "options": {
+            "A": "To make sure all testers are equally busy.",
+            "B": "To focus on executing the most critical and high-risk test cases first, especially when time or resources are limited.",
+            "C": "To execute the easiest test cases first to build confidence.",
+            "D": "To execute test cases in a random order to find unexpected defects."
+          },
+          "correct_answer": "B",
+          "explanation": "Prioritization ensures critical issues are addressed early."
+        },
+        {
+          "question": "The ultimate goal of effective Test Design and Execution is to:",
+          "options": {
+            "A": "Find as many bugs as possible, regardless of their impact.",
+            "B": "Ensure that the software is thoroughly tested against requirements and potential risks, leading to a high-quality product that meets user needs.",
+            "C": "Complete the testing phase as quickly as possible to meet deadlines.",
+            "D": "Make the developers rewrite significant portions of the code."
+          },
+          "correct_answer": "B",
+          "explanation": "The aim is to deliver a quality product through well-planned and executed testing."
+        }
+      ]
+    }
+  ]
+}

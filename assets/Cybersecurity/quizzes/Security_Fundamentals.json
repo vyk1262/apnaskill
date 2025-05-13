@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Security_Fundamentals",
+      "questions": [
+        {
+          "question": "What is the primary goal of information security?",
+          "options": {
+            "A": "To ensure all data is publicly accessible",
+            "B": "To protect the confidentiality, integrity, and availability of information",
+            "C": "To maximize system performance at all costs",
+            "D": "To prevent any changes to data, even authorized ones"
+          },
+          "correct_answer": "B",
+          "explanation": "Information security aims to safeguard information assets by ensuring their confidentiality (preventing unauthorized disclosure), integrity (maintaining accuracy and completeness), and availability (ensuring timely and reliable access)."
+        },
+        {
+          "question": "What does 'confidentiality' mean in the context of information security?",
+          "options": {
+            "A": "Ensuring data is accurate and complete",
+            "B": "Preventing unauthorized access and disclosure of information",
+            "C": "Guaranteeing that authorized users can access information when needed",
+            "D": "Tracking changes made to information"
+          },
+          "correct_answer": "B",
+          "explanation": "Confidentiality involves protecting sensitive information from being accessed or disclosed to unauthorized individuals, entities, or processes."
+        },
+        {
+          "question": "What does 'integrity' mean in the context of information security?",
+          "options": {
+            "A": "Preventing unauthorized access to information",
+            "B": "Ensuring that information is accurate, complete, and has not been tampered with",
+            "C": "Making sure systems are always operational",
+            "D": "Verifying the identity of users"
+          },
+          "correct_answer": "B",
+          "explanation": "Integrity refers to maintaining the trustworthiness and reliability of information and preventing unauthorized modification or deletion."
+        },
+        {
+          "question": "What does 'availability' mean in the context of information security?",
+          "options": {
+            "A": "Keeping information secret",
+            "B": "Ensuring authorized users can access information and resources when they need them",
+            "C": "Verifying the source of information",
+            "D": "Storing information securely"
+          },
+          "correct_answer": "B",
+          "explanation": "Availability ensures that systems, networks, and information are accessible and usable by authorized users in a timely manner."
+        },
+        {
+          "question": "What is a 'threat' in information security?",
+          "options": {
+            "A": "A weakness in a system",
+            "B": "A potential danger that can exploit a vulnerability",
+            "C": "A security policy implemented to protect assets",
+            "D": "A measure taken to reduce risk"
+          },
+          "correct_answer": "B",
+          "explanation": "A threat is a potential event or action that could exploit a vulnerability and cause harm to information assets."
+        },
+        {
+          "question": "What is a 'vulnerability' in information security?",
+          "options": {
+            "A": "A potential danger",
+            "B": "A weakness or flaw in a system, process, or policy",
+            "C": "A security control in place",
+            "D": "The impact of a security incident"
+          },
+          "correct_answer": "B",
+          "explanation": "A vulnerability is a weakness or gap in a security system that can be exploited by a threat to gain unauthorized access or cause harm."
+        },
+        {
+          "question": "What is 'risk' in information security?",
+          "options": {
+            "A": "A weakness in a system",
+            "B": "The likelihood of a threat exploiting a vulnerability and the potential impact",
+            "C": "A security measure implemented",
+            "D": "An event that has already occurred"
+          },
+          "correct_answer": "B",
+          "explanation": "Risk is the potential for loss or damage resulting from a threat exploiting a vulnerability. It is often calculated as the likelihood of an event multiplied by its impact."
+        },
+        {
+          "question": "What is a 'control' or 'countermeasure' in information security?",
+          "options": {
+            "A": "A potential security breach",
+            "B": "A measure taken to reduce or mitigate risk",
+            "C": "A type of malware",
+            "D": "A method for exploiting vulnerabilities"
+          },
+          "correct_answer": "B",
+          "explanation": "A control or countermeasure is a security safeguard or action implemented to reduce the likelihood or impact of a threat exploiting a vulnerability."
+        },
+        {
+          "question": "What is the principle of 'least privilege'?",
+          "options": {
+            "A": "Granting all users full access to all systems",
+            "B": "Granting users only the minimum level of access necessary to perform their job functions",
+            "C": "Regularly changing user passwords",
+            "D": "Separating duties among multiple users"
+          },
+          "correct_answer": "B",
+          "explanation": "The principle of least privilege dictates that users should be granted only the necessary rights and permissions to perform their tasks, minimizing the potential for accidental or malicious misuse of resources."
+        },
+        {
+          "question": "What is 'defense in depth'?",
+          "options": {
+            "A": "Relying on a single strong security control",
+            "B": "Implementing multiple layers of security controls to protect assets",
+            "C": "Keeping security measures secret to prevent attackers from knowing them",
+            "D": "Ignoring minor security vulnerabilities"
+          },
+          "correct_answer": "B",
+          "explanation": "Defense in depth is a security strategy that involves implementing multiple overlapping security controls to provide redundancy and increase the overall security posture."
+        },
+        {
+          "question": "What is 'authentication' in information security?",
+          "options": {
+            "A": "Granting access to resources",
+            "B": "Verifying the identity of a user, device, or process",
+            "C": "Encrypting data in transit",
+            "D": "Monitoring network activity"
+          },
+          "correct_answer": "B",
+          "explanation": "Authentication is the process of verifying the identity of an entity (user, device, or process) to ensure it is who or what it claims to be."
+        },
+        {
+          "question": "What is 'authorization' in information security?",
+          "options": {
+            "A": "Verifying the identity of a user",
+            "B": "Determining what actions an authenticated entity is allowed to perform",
+            "C": "Encrypting data at rest",
+            "D": "Detecting malicious software"
+          },
+          "correct_answer": "B",
+          "explanation": "Authorization is the process of determining the level of access or permissions that an authenticated entity has to resources."
+        },
+        {
+          "question": "What is 'non-repudiation'?",
+          "options": {
+            "A": "Ensuring data cannot be modified",
+            "B": "Providing undeniable proof of an action or event",
+            "C": "Making systems highly available",
+            "D": "Keeping communication secret"
+          },
+          "correct_answer": "B",
+          "explanation": "Non-repudiation provides assurance that someone cannot deny the validity of something, typically the sending or receiving of a message or the execution of a transaction."
+        },
+        {
+          "question": "What is a 'security policy'?",
+          "options": {
+            "A": "A specific hardware device used for security",
+            "B": "A document that outlines an organization's security objectives and rules",
+            "C": "A type of software that detects malware",
+            "D": "A process for responding to security incidents"
+          },
+          "correct_answer": "B",
+          "explanation": "A security policy is a high-level document that defines an organization's commitment to security and provides a framework for implementing security controls."
+        },
+        {
+          "question": "What is 'social engineering' in the context of security?",
+          "options": {
+            "A": "Using technical exploits to gain access",
+            "B": "Manipulating individuals to divulge confidential information or perform actions",
+            "C": "Analyzing network traffic patterns",
+            "D": "Developing secure software code"
+          },
+          "correct_answer": "B",
+          "explanation": "Social engineering is a manipulation technique that exploits human psychology to trick individuals into revealing sensitive information or performing actions that compromise security."
+        },
+        {
+          "question": "What is 'malware'?",
+          "options": {
+            "A": "A secure communication protocol",
+            "B": "Software designed to harm or disrupt computer systems",
+            "C": "A tool for network monitoring",
+            "D": "A method for encrypting data"
+          },
+          "correct_answer": "B",
+          "explanation": "Malware is a broad term for malicious software, such as viruses, worms, ransomware, and spyware, designed to damage or gain unauthorized access to computer systems."
+        },
+        {
+          "question": "What is a 'firewall'?",
+          "options": {
+            "A": "Software that encrypts data",
+            "B": "A network security system that monitors and controls incoming and outgoing network traffic",
+            "C": "A device that amplifies network signals",
+            "D": "A system for backing up data"
+          },
+          "correct_answer": "B",
+          "explanation": "A firewall acts as a barrier between a trusted internal network and an untrusted external network (like the internet), controlling traffic based on predefined security rules."
+        },
+        {
+          "question": "What is 'encryption'?",
+          "options": {
+            "A": "A method for compressing data",
+            "B": "The process of converting data into an unreadable format to protect its confidentiality",
+            "C": "A technique for speeding up data transfer",
+            "D": "A way to organize data storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Encryption is the process of encoding information so that it is unintelligible to unauthorized parties, ensuring confidentiality."
+        },
+        {
+          "question": "What is 'patch management'?",
+          "options": {
+            "A": "Regularly updating and fixing vulnerabilities in software and systems",
+            "B": "Physically securing computer hardware",
+            "C": "Managing user accounts and permissions",
+            "D": "Monitoring network performance"
+          },
+          "correct_answer": "A",
+          "explanation": "Patch management is the process of identifying, acquiring, installing, and verifying software updates (patches) to fix bugs and security vulnerabilities."
+        },
+        {
+          "question": "What is the purpose of 'security awareness training'?",
+          "options": {
+            "A": "To teach users how to code securely",
+            "B": "To educate users about security threats and best practices",
+            "C": "To install antivirus software on user devices",
+            "D": "To manage network infrastructure"
+          },
+          "correct_answer": "B",
+          "explanation": "Security awareness training aims to educate users about common security threats, organizational security policies, and best practices to help them make informed decisions and reduce security risks."
+        }
+      ]
+    }
+  ]
+}

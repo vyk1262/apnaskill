@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Network_Security",
+      "questions": [
+        {
+          "question": "What is the primary purpose of network security?",
+          "options": {
+            "A": "To improve network speed",
+            "B": "To protect network integrity and data from unauthorized access",
+            "C": "To reduce network costs",
+            "D": "To increase storage capacity"
+          },
+          "correct_answer": "B",
+          "explanation": "Network security is designed to protect the integrity of networks and data from unauthorized access, misuse, or attacks."
+        },
+        {
+          "question": "What are the three main levels of network security?",
+          "options": {
+            "A": "Physical, Technical, Administrative",
+            "B": "Hardware, Software, Firmware",
+            "C": "Low, Medium, High",
+            "D": "Basic, Advanced, Expert"
+          },
+          "correct_answer": "A",
+          "explanation": "Network security consists of Physical (protecting hardware), Technical (protecting data), and Administrative (managing user behavior) levels."
+        },
+        {
+          "question": "What is network segmentation?",
+          "options": {
+            "A": "Breaking the network into smaller pieces",
+            "B": "Dividing networks into isolated segments for better security",
+            "C": "Connecting multiple networks together",
+            "D": "Increasing network speed"
+          },
+          "correct_answer": "B",
+          "explanation": "Network segmentation involves dividing networks into isolated segments to contain security breaches and protect sensitive resources."
+        },
+        {
+          "question": "What is the purpose of a firewall in network security?",
+          "options": {
+            "A": "To speed up network traffic",
+            "B": "To filter and monitor network traffic",
+            "C": "To store network data",
+            "D": "To compress network packets"
+          },
+          "correct_answer": "B",
+          "explanation": "Firewalls act as barriers between trusted and untrusted networks, filtering traffic based on security rules."
+        },
+        {
+          "question": "What is an Intrusion Detection System (IDS)?",
+          "options": {
+            "A": "A system that blocks all network traffic",
+            "B": "A system that monitors network for suspicious activity",
+            "C": "A system that increases network speed",
+            "D": "A system that stores network data"
+          },
+          "correct_answer": "B",
+          "explanation": "An IDS monitors network traffic for suspicious activity and potential security breaches, alerting administrators to possible threats."
+        },
+        {
+          "question": "What is the purpose of Virtual Private Networks (VPNs)?",
+          "options": {
+            "A": "To increase internet speed",
+            "B": "To create secure, encrypted connections over public networks",
+            "C": "To store network data",
+            "D": "To compress network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "VPNs create secure, encrypted tunnels for data transmission over public networks, protecting sensitive information."
+        },
+        {
+          "question": "What is the role of access control in network security?",
+          "options": {
+            "A": "To speed up network access",
+            "B": "To manage and restrict user access to network resources",
+            "C": "To compress network data",
+            "D": "To store user credentials"
+          },
+          "correct_answer": "B",
+          "explanation": "Access control manages who can access network resources, ensuring only authorized users have appropriate permissions."
+        },
+        {
+          "question": "What is email security in network protection?",
+          "options": {
+            "A": "Speeding up email delivery",
+            "B": "Protecting email content and accounts from unauthorized access",
+            "C": "Compressing email attachments",
+            "D": "Storing email backups"
+          },
+          "correct_answer": "B",
+          "explanation": "Email security protects email accounts and content from unauthorized access, spam, and malicious attacks."
+        },
+        {
+          "question": "What is the purpose of network monitoring?",
+          "options": {
+            "A": "To increase network speed",
+            "B": "To track traffic and detect security issues",
+            "C": "To store network data",
+            "D": "To compress network packets"
+          },
+          "correct_answer": "B",
+          "explanation": "Network monitoring tracks traffic and user behavior to detect security issues and ensure network health."
+        },
+        {
+          "question": "What is a DDoS attack?",
+          "options": {
+            "A": "A type of network upgrade",
+            "B": "An attack that overwhelms network resources",
+            "C": "A network monitoring tool",
+            "D": "A security protocol"
+          },
+          "correct_answer": "B",
+          "explanation": "A DDoS (Distributed Denial of Service) attack overwhelms network resources to disrupt services."
+        },
+        {
+          "question": "What is the purpose of encryption in network security?",
+          "options": {
+            "A": "To speed up data transmission",
+            "B": "To protect data by converting it to unreadable form",
+            "C": "To compress network traffic",
+            "D": "To store network data"
+          },
+          "correct_answer": "B",
+          "explanation": "Encryption protects data by converting it into an unreadable form that can only be decrypted with proper keys."
+        },
+        {
+          "question": "What is network hardening?",
+          "options": {
+            "A": "Making the network physically stronger",
+            "B": "Implementing security measures to reduce vulnerabilities",
+            "C": "Increasing network speed",
+            "D": "Adding more network devices"
+          },
+          "correct_answer": "B",
+          "explanation": "Network hardening involves implementing security measures to reduce vulnerabilities and strengthen network defenses."
+        },
+        {
+          "question": "What is the purpose of patch management?",
+          "options": {
+            "A": "To repair physical network damage",
+            "B": "To update systems with security fixes",
+            "C": "To increase network bandwidth",
+            "D": "To manage network cables"
+          },
+          "correct_answer": "B",
+          "explanation": "Patch management involves regularly updating systems with security fixes to protect against known vulnerabilities."
+        },
+        {
+          "question": "What is the role of security policies in network protection?",
+          "options": {
+            "A": "To increase network speed",
+            "B": "To establish guidelines for network security practices",
+            "C": "To store network data",
+            "D": "To compress network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Security policies establish guidelines and rules for maintaining network security and protecting resources."
+        },
+        {
+          "question": "What is network authentication?",
+          "options": {
+            "A": "A way to speed up network access",
+            "B": "A process to verify user identity",
+            "C": "A method to store network data",
+            "D": "A type of network cable"
+          },
+          "correct_answer": "B",
+          "explanation": "Network authentication verifies the identity of users before granting access to network resources."
+        },
+        {
+          "question": "What is the purpose of security audits?",
+          "options": {
+            "A": "To measure network speed",
+            "B": "To assess network security measures and identify vulnerabilities",
+            "C": "To store audit logs",
+            "D": "To compress network data"
+          },
+          "correct_answer": "B",
+          "explanation": "Security audits assess the effectiveness of network security measures and identify potential vulnerabilities."
+        },
+        {
+          "question": "What is network perimeter security?",
+          "options": {
+            "A": "Physical barriers around network devices",
+            "B": "Protection of network boundaries from external threats",
+            "C": "Network speed optimization",
+            "D": "Network data storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Network perimeter security protects the boundaries between internal networks and external threats."
+        },
+        {
+          "question": "What is the purpose of incident response in network security?",
+          "options": {
+            "A": "To increase network speed",
+            "B": "To plan and handle security breaches",
+            "C": "To store incident reports",
+            "D": "To compress network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Incident response involves planning for and handling security breaches when they occur."
+        },
+        {
+          "question": "What is the role of network segmentation in security?",
+          "options": {
+            "A": "To increase network speed",
+            "B": "To isolate and contain security breaches",
+            "C": "To store network data",
+            "D": "To compress network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Network segmentation helps isolate and contain security breaches, preventing them from spreading across the network."
+        },
+        {
+          "question": "What is the importance of physical security in network protection?",
+          "options": {
+            "A": "It only protects against theft",
+            "B": "It prevents unauthorized physical access to network devices",
+            "C": "It improves network speed",
+            "D": "It compresses network data"
+          },
+          "correct_answer": "B",
+          "explanation": "Physical security prevents unauthorized physical access to network devices and infrastructure."
+        }
+      ]
+    }
+  ]
+}

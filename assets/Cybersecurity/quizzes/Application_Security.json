@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Application_Security",
+      "questions": [
+        {
+          "question": "What is application security?",
+          "options": {
+            "A": "A type of antivirus software",
+            "B": "Measures to protect applications from threats and vulnerabilities",
+            "C": "A network monitoring tool",
+            "D": "A backup system for applications"
+          },
+          "correct_answer": "B",
+          "explanation": "Application security encompasses measures and practices designed to protect applications from security threats and vulnerabilities."
+        },
+        {
+          "question": "Which of the following is a key component of threat modeling in application security?",
+          "options": {
+            "A": "Defining enterprise assets and application functions",
+            "B": "Choosing programming languages",
+            "C": "Selecting development tools",
+            "D": "Planning marketing strategies"
+          },
+          "correct_answer": "A",
+          "explanation": "Threat modeling involves defining enterprise assets and understanding how applications interact with these assets to create effective security profiles and countermeasures."
+        },
+        {
+          "question": "What is Static Application Security Testing (SAST)?",
+          "options": {
+            "A": "Testing application performance",
+            "B": "Analyzing running applications",
+            "C": "Analyzing source code for security flaws",
+            "D": "Testing user interface design"
+          },
+          "correct_answer": "C",
+          "explanation": "SAST helps detect code flaws by analyzing the application source files for root causes, enabling early detection of security problems."
+        },
+        {
+          "question": "What is the purpose of a Web Application Firewall (WAF)?",
+          "options": {
+            "A": "To improve website loading speed",
+            "B": "To monitor and filter HTTP traffic between Internet and web applications",
+            "C": "To manage database connections",
+            "D": "To optimize server performance"
+          },
+          "correct_answer": "B",
+          "explanation": "A WAF monitors and filters HTTP traffic between the Internet and web applications, protecting against various attacks like XSS, SQL injection, and CSRF."
+        },
+        {
+          "question": "What is Dynamic Application Security Testing (DAST)?",
+          "options": {
+            "A": "Testing application documentation",
+            "B": "Testing static code",
+            "C": "Simulating attacks on running applications",
+            "D": "Testing database performance"
+          },
+          "correct_answer": "C",
+          "explanation": "DAST is a proactive testing approach that simulates security breaches on running web applications to identify exploitable vulnerabilities."
+        },
+        {
+          "question": "Which of the following is a common application security challenge?",
+          "options": {
+            "A": "Inherited vulnerabilities",
+            "B": "Slow internet connection",
+            "C": "Limited storage space",
+            "D": "Hardware failures"
+          },
+          "correct_answer": "A",
+          "explanation": "Inherited vulnerabilities are a common challenge as software systems experience entropy, constantly changing and increasing in complexity."
+        },
+        {
+          "question": "What is the role of encryption in application security?",
+          "options": {
+            "A": "To compress data",
+            "B": "To speed up data transfer",
+            "C": "To encode data for authorized access only",
+            "D": "To organize data storage"
+          },
+          "correct_answer": "C",
+          "explanation": "Encryption tools encode user data in ciphertext so it can only be accessed by authenticated users with the right encryption key, preventing unauthorized access."
+        },
+        {
+          "question": "What is API security primarily concerned with?",
+          "options": {
+            "A": "API documentation",
+            "B": "Protecting data transmission between applications",
+            "C": "API performance optimization",
+            "D": "API design patterns"
+          },
+          "correct_answer": "B",
+          "explanation": "API security focuses on protecting the transmission of data between applications, ensuring secure intermediary communication."
+        },
+        {
+          "question": "What is Runtime Application Security Protection (RASP)?",
+          "options": {
+            "A": "A development framework",
+            "B": "A continuous security checking and response system",
+            "C": "A database management system",
+            "D": "A user authentication system"
+          },
+          "correct_answer": "B",
+          "explanation": "RASP tools work within the application to provide continuous security checks and automatically respond to possible breaches."
+        },
+        {
+          "question": "What is a credential stuffing attack?",
+          "options": {
+            "A": "Creating fake credentials",
+            "B": "Using bots to attempt login with stolen credentials",
+            "C": "Manually hacking accounts",
+            "D": "Deleting user credentials"
+          },
+          "correct_answer": "B",
+          "explanation": "Credential stuffing is when cybercriminals use bots to attempt logging into accounts with stolen credentials to validate them for fraud or dark web sales."
+        },
+        {
+          "question": "What is the purpose of Interactive Application Security Testing (IAST)?",
+          "options": {
+            "A": "To test user interactions",
+            "B": "To combine SAST and DAST elements for real-time analysis",
+            "C": "To measure application performance",
+            "D": "To design user interfaces"
+          },
+          "correct_answer": "B",
+          "explanation": "IAST utilizes both SAST and DAST elements to perform analysis in real-time or at any SDLC phase from within the application."
+        },
+        {
+          "question": "What is the main focus of Mobile Application Security Testing (MAST)?",
+          "options": {
+            "A": "Testing mobile app user interface",
+            "B": "Testing mobile-specific security issues",
+            "C": "Testing mobile app performance",
+            "D": "Testing mobile app features"
+          },
+          "correct_answer": "B",
+          "explanation": "MAST focuses on testing mobile-specific security issues and vulnerabilities, such as malicious WiFi networks, jailbreaking, and data leakage."
+        },
+        {
+          "question": "What is the primary purpose of asset tracking in application security?",
+          "options": {
+            "A": "To monitor application usage",
+            "B": "To maintain full visibility of assets for protection",
+            "C": "To track development costs",
+            "D": "To manage inventory"
+          },
+          "correct_answer": "B",
+          "explanation": "Asset tracking ensures organizations maintain full visibility over their assets to protect them effectively, which is crucial for establishing a secure development environment."
+        },
+        {
+          "question": "What is an Account Takeover (ATO) attack?",
+          "options": {
+            "A": "Creating new accounts",
+            "B": "Deleting user accounts",
+            "C": "Gaining unauthorized access using stolen credentials",
+            "D": "Modifying account settings"
+          },
+          "correct_answer": "C",
+          "explanation": "ATO attacks occur when cybercriminals gain unauthorized access to online accounts using stolen credentials to commit fraud or theft."
+        },
+        {
+          "question": "What is the role of a Cloud Native Application Protection Platform (CNAPP)?",
+          "options": {
+            "A": "To manage cloud storage",
+            "B": "To centralize control of cloud application security tools",
+            "C": "To improve cloud performance",
+            "D": "To develop cloud applications"
+          },
+          "correct_answer": "B",
+          "explanation": "CNAPP centralizes the control of all tools used to protect cloud native applications, unifying various security technologies and management capabilities."
+        },
+        {
+          "question": "What is the significance of shifting left in application security?",
+          "options": {
+            "A": "Moving security to production phase",
+            "B": "Implementing security early in development",
+            "C": "Changing development tools",
+            "D": "Reorganizing team structure"
+          },
+          "correct_answer": "B",
+          "explanation": "Shifting left means implementing security measures early in the development process, which is crucial for preventing vulnerabilities before they reach production."
+        },
+        {
+          "question": "What is the purpose of security logging in application security?",
+          "options": {
+            "A": "To track user preferences",
+            "B": "To monitor application performance",
+            "C": "To examine user activity for suspicious behavior",
+            "D": "To measure system resources"
+          },
+          "correct_answer": "C",
+          "explanation": "Security logging involves examining user activity to audit incidents of suspicious activity or breaches, helping detect and investigate security incidents."
+        },
+        {
+          "question": "What is the main purpose of validity checks in application security?",
+          "options": {
+            "A": "To verify user preferences",
+            "B": "To ensure data meets specific criteria",
+            "C": "To check system performance",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Validity checks ensure that data entered and processed meets specific criteria, helping prevent security vulnerabilities through input validation."
+        },
+        {
+          "question": "What is the primary goal of application security testing?",
+          "options": {
+            "A": "To improve application speed",
+            "B": "To identify and minimize software vulnerabilities",
+            "C": "To enhance user interface",
+            "D": "To reduce development costs"
+          },
+          "correct_answer": "B",
+          "explanation": "Application security testing aims to identify and minimize software vulnerabilities throughout the software development lifecycle to prevent security issues before deployment."
+        },
+        {
+          "question": "What is the role of access controls in application security?",
+          "options": {
+            "A": "To manage system resources",
+            "B": "To limit access based on authorization",
+            "C": "To improve application performance",
+            "D": "To monitor network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "Access controls limit access to applications based on IP addresses or authorized users, ensuring only legitimate users can access specific resources."
+        }
+      ]
+    }
+  ]
+}

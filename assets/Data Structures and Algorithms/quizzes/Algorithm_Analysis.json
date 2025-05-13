@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Algorithm_Analysis",
+      "questions": [
+        {
+          "question": "What is the primary goal of algorithm analysis?",
+          "options": {
+            "A": "To determine the exact running time of an algorithm on a specific machine.",
+            "B": "To predict the resources (such as time and memory) that an algorithm will consume as a function of the input size.",
+            "C": "To write efficient code in a specific programming language.",
+            "D": "To find and fix bugs in an algorithm."
+          },
+          "correct_answer": "B",
+          "explanation": "Algorithm analysis focuses on the inherent efficiency of an algorithm, independent of specific hardware or implementation details."
+        },
+        {
+          "question": "What is 'time complexity'?",
+          "options": {
+            "A": "The amount of memory an algorithm uses.",
+            "B": "The amount of time an algorithm takes to run as a function of the input size.",
+            "C": "The difficulty of understanding the algorithm's logic.",
+            "D": "The length of the algorithm's code."
+          },
+          "correct_answer": "B",
+          "explanation": "Time complexity is usually expressed using Big O notation, describing the upper bound of the growth rate of the running time."
+        },
+        {
+          "question": "What is 'space complexity'?",
+          "options": {
+            "A": "The amount of time an algorithm takes to run.",
+            "B": "The amount of memory space an algorithm uses as a function of the input size.",
+            "C": "The complexity of the algorithm's implementation.",
+            "D": "The number of lines of code in the algorithm."
+          },
+          "correct_answer": "B",
+          "explanation": "Space complexity considers both the auxiliary space used by the algorithm and the space occupied by the input itself."
+        },
+        {
+          "question": "What is 'Big O notation'?",
+          "options": {
+            "A": "A precise measurement of the exact running time of an algorithm.",
+            "B": "A mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity, often used to classify algorithms according to how their running time or space requirements grow as the input size grows.",
+            "C": "A way to count the exact number of operations in an algorithm.",
+            "D": "A method for optimizing the performance of an algorithm."
+          },
+          "correct_answer": "B",
+          "explanation": "Big O notation provides an upper bound on the growth rate, focusing on the dominant terms as the input size becomes very large."
+        },
+        {
+          "question": "What does O(1) time complexity represent?",
+          "options": {
+            "A": "The running time grows linearly with the input size.",
+            "B": "The running time is constant and does not depend on the input size.",
+            "C": "The running time grows logarithmically with the input size.",
+            "D": "The running time grows quadratically with the input size."
+          },
+          "correct_answer": "B",
+          "explanation": "An algorithm with O(1) time complexity takes the same amount of time to execute regardless of the input size (e.g., accessing an element in an array by its index)."
+        },
+        {
+          "question": "What does O(n) time complexity represent?",
+          "options": {
+            "A": "The running time is constant.",
+            "B": "The running time grows linearly with the input size.",
+            "C": "The running time grows logarithmically.",
+            "D": "The running time grows exponentially."
+          },
+          "correct_answer": "B",
+          "explanation": "An algorithm with O(n) time complexity takes time proportional to the input size (e.g., iterating through all elements in an array)."
+        },
+        {
+          "question": "What does O(log n) time complexity represent?",
+          "options": {
+            "A": "The running time is constant.",
+            "B": "The running time grows logarithmically with the input size, often seen in algorithms that divide the problem space in half at each step (e.g., binary search).",
+            "C": "The running time grows linearly.",
+            "D": "The running time grows quadratically."
+          },
+          "correct_answer": "B",
+          "explanation": "Algorithms with O(log n) complexity are generally very efficient for large input sizes."
+        },
+        {
+          "question": "What does O(n log n) time complexity represent?",
+          "options": {
+            "A": "The running time grows linearly.",
+            "B": "The running time grows logarithmically.",
+            "C": "The running time grows in a way that is a combination of linear and logarithmic growth, often found in efficient sorting algorithms (e.g., merge sort, heap sort).",
+            "D": "The running time grows exponentially."
+          },
+          "correct_answer": "C",
+          "explanation": "O(n log n) is generally better than quadratic or exponential time complexity for large inputs."
+        },
+        {
+          "question": "What does O(n^2) time complexity represent?",
+          "options": {
+            "A": "The running time grows linearly.",
+            "B": "The running time grows quadratically with the input size, often seen in algorithms with nested loops where both loops iterate up to n times (e.g., bubble sort, selection sort).",
+            "C": "The running time grows logarithmically.",
+            "D": "The running time is constant."
+          },
+          "correct_answer": "B",
+          "explanation": "O(n^2) algorithms become less efficient for larger input sizes compared to linear or logarithmic time complexities."
+        },
+        {
+          "question": "What does O(2^n) time complexity represent?",
+          "options": {
+            "A": "The running time grows linearly.",
+            "B": "The running time grows exponentially with the input size, often seen in algorithms that explore all possible subsets or permutations (e.g., some brute-force approaches to the traveling salesman problem).",
+            "C": "The running time grows polynomially.",
+            "D": "The running time is constant."
+          },
+          "correct_answer": "B",
+          "explanation": "O(2^n) algorithms become very inefficient very quickly as the input size increases."
+        },
+        {
+          "question": "What is the difference between 'worst-case', 'average-case', and 'best-case' time complexity?",
+          "options": {
+            "A": "They all refer to the same measure of efficiency.",
+            "B": "Worst-case is the maximum time an algorithm can take for any input of a given size, average-case is the expected time over all possible inputs of a given size, and best-case is the minimum time an algorithm can take for any input of a given size.",
+            "C": "Worst-case is for small inputs, average-case for medium inputs, and best-case for large inputs.",
+            "D": "They refer to the time complexity on different types of hardware."
+          },
+          "correct_answer": "B",
+          "explanation": "Understanding these different cases provides a comprehensive view of an algorithm's performance under various conditions."
+        },
+        {
+          "question": "When analyzing an algorithm, which case (worst, average, or best) is usually the most important to consider for practical purposes?",
+          "options": {
+            "A": "Best-case.",
+            "B": "Average-case.",
+            "C": "Worst-case.",
+            "D": "All are equally important."
+          },
+          "correct_answer": "C",
+          "explanation": "The worst-case time complexity provides an upper bound on the algorithm's running time, guaranteeing that it will not take longer than this, which is crucial for real-time and critical applications."
+        },
+        {
+          "question": "What factors other than input size can affect the running time of an algorithm in practice?",
+          "options": {
+            "A": "Only the programming language used.",
+            "B": "The programming language, the hardware on which it is run (processor speed, memory), and the specific implementation details.",
+            "C": "Only the amount of memory available.",
+            "D": "None; theoretical analysis accounts for all factors."
+          },
+          "correct_answer": "B",
+          "explanation": "While theoretical analysis focuses on the growth rate with input size, practical performance can be influenced by these other factors."
+        },
+        {
+          "question": "What is the space complexity of a recursive algorithm?",
+          "options": {
+            "A": "Always O(1).",
+            "B": "Depends on the depth of the recursion stack, which can be proportional to the input size in the worst case (e.g., linear recursion) or logarithmic in the best case (e.g., recursive binary search). It includes the space for local variables in each recursive call.",
+            "C": "Always O(n).",
+            "D": "Always O(log n)."
+          },
+          "correct_answer": "B",
+          "explanation": "The call stack used by recursion contributes to the space complexity, and its depth is related to the number of recursive calls."
+        },
+        {
+          "question": "How do you typically determine the time complexity of an iterative algorithm?",
+          "options": {
+            "A": "By counting the number of recursive calls.",
+            "B": "By analyzing the number of iterations of the loops and the complexity of the operations within the loops as a function of the input size.",
+            "C": "By measuring the actual execution time on different inputs.",
+            "D": "By looking at the number of variables used in the algorithm."
+          },
+          "correct_answer": "B",
+          "explanation": "The dominant factor in the time complexity of iterative algorithms is usually the number of times the main loops execute."
+        },
+        {
+          "question": "What is amortized analysis?",
+          "options": {
+            "A": "A method for analyzing the average performance of a sequence of operations, even if individual operations might be expensive. It looks at the total cost over a sequence rather than the cost of each operation in isolation.",
+            "B": "A way to analyze the best-case performance of an algorithm.",
+            "C": "A technique for simplifying the Big O notation.",
+            "D": "A method for analyzing the space complexity of an algorithm."
+          },
+          "correct_answer": "A",
+          "explanation": "Amortized analysis is useful for understanding the overall efficiency of data structures or algorithms where occasional expensive operations are offset by many cheap ones."
+        },
+        {
+          "question": "Why is it important to understand the time and space complexity of algorithms when choosing one for a particular task?",
+          "options": {
+            "A": "It only matters for very large datasets.",
+            "B": "It helps in selecting the most efficient algorithm that can meet the performance requirements of the task, especially as the input size grows. An inefficient algorithm can lead to unacceptable execution times or excessive memory usage.",
+            "C": "It only affects the readability of the code.",
+            "D": "Modern computers are fast enough that algorithm efficiency is no longer a concern."
+          },
+          "correct_answer": "B",
+          "explanation": "Choosing an algorithm with appropriate time and space complexity is crucial for developing scalable and performant software."
+        },
+        {
+          "question": "When comparing two algorithms with time complexities O(n log n) and O(n^2), which one would generally perform better for very large values of n?",
+          "options": {
+            "A": "O(n^2)",
+            "B": "O(n log n)",
+            "C": "They would perform the same.",
+            "D": "It depends on the specific implementation."
+          },
+          "correct_answer": "B",
+          "explanation": "For large n, the n log n growth rate is significantly slower than the n^2 growth rate, so the O(n log n) algorithm would be more efficient."
+        },
+        {
+          "question": "What is the time complexity of accessing an element in a hash table in the worst-case scenario?",
+          "options": {
+            "A": "O(1)",
+            "B": "O(log n)",
+            "C": "O(n)",
+            "D": "O(n^2)"
+          },
+          "correct_answer": "C",
+          "explanation": "In the worst case, if all keys hash to the same bucket, the hash table can behave like a linked list, leading to O(n) time complexity for search."
+        },
+        {
+          "question": "What is the space complexity of the merge sort algorithm?",
+          "options": {
+            "A": "O(1)",
+            "B": "O(log n)",
+            "C": "O(n)",
+            "D": "O(n log n)"
+          },
+          "correct_answer": "C",
+          "explanation": "Merge sort typically requires O(n) auxiliary space for the merging step."
+        }
+      ]
+    }
+  ]
+}

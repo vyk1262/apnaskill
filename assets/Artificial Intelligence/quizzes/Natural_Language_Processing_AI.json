@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Natural_Language_Processing_AI",
+      "questions": [
+        {
+          "question": "What is Natural Language Processing (NLP)?",
+          "options": {
+            "A": "A branch of AI focused on enabling computers to understand and process human language",
+            "B": "A programming language for artificial intelligence",
+            "C": "A method for processing numerical data",
+            "D": "A system for storing text documents"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of word embeddings in NLP?",
+          "options": {
+            "A": "To compress text files",
+            "B": "To represent words as dense vectors in a continuous vector space, capturing semantic relationships",
+            "C": "To encrypt text data",
+            "D": "To count word frequencies"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of attention mechanisms in modern NLP?",
+          "options": {
+            "A": "To reduce memory usage",
+            "B": "To help models focus on relevant parts of input sequences when processing language",
+            "C": "To speed up training time",
+            "D": "To compress model size"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is BERT?",
+          "options": {
+            "A": "A basic text editor",
+            "B": "A bidirectional transformer model pre-trained on large text corpora",
+            "C": "A programming language for NLP",
+            "D": "A database management system"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of named entity recognition (NER)?",
+          "options": {
+            "A": "To identify and classify named entities like person names, organizations, locations in text",
+            "B": "To count words in a document",
+            "C": "To translate text between languages",
+            "D": "To format text documents"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the main challenge in natural language understanding?",
+          "options": {
+            "A": "Storage of text data",
+            "B": "Dealing with ambiguity, context-dependence, and the complexity of human language",
+            "C": "Processing speed",
+            "D": "Data encryption"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of text summarization in NLP?",
+          "options": {
+            "A": "To count words in a document",
+            "B": "To automatically generate shorter versions of text while preserving key information",
+            "C": "To translate text",
+            "D": "To format documents"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of language models in NLP?",
+          "options": {
+            "A": "To store text data",
+            "B": "To predict the probability of sequences of words and generate human-like text",
+            "C": "To format documents",
+            "D": "To encrypt data"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of sentiment analysis?",
+          "options": {
+            "A": "To determine the emotional tone or opinion expressed in text",
+            "B": "To count words in a document",
+            "C": "To translate text",
+            "D": "To format documents"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the role of machine translation in NLP?",
+          "options": {
+            "A": "To count words",
+            "B": "To automatically translate text from one language to another",
+            "C": "To format documents",
+            "D": "To store text data"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of text classification in NLP?",
+          "options": {
+            "A": "To categorize text documents into predefined classes or categories",
+            "B": "To format text",
+            "C": "To translate text",
+            "D": "To store text"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the role of preprocessing in NLP?",
+          "options": {
+            "A": "To store text",
+            "B": "To clean and standardize text data for better processing (tokenization, normalization, etc.)",
+            "C": "To encrypt data",
+            "D": "To format documents"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of question answering systems in NLP?",
+          "options": {
+            "A": "To automatically understand and answer questions posed in natural language",
+            "B": "To store questions",
+            "C": "To format text",
+            "D": "To count words"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the role of transfer learning in NLP?",
+          "options": {
+            "A": "To store data",
+            "B": "To use knowledge learned from one task to improve performance on another related task",
+            "C": "To format text",
+            "D": "To count words"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of text generation in NLP?",
+          "options": {
+            "A": "To automatically create human-like text based on input or prompts",
+            "B": "To store text",
+            "C": "To format documents",
+            "D": "To count words"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What are the ethical considerations in NLP?",
+          "options": {
+            "A": "Only technical issues",
+            "B": "Bias in language models, privacy concerns, misuse of technology, and fairness",
+            "C": "Only cost considerations",
+            "D": "Only efficiency concerns"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of dialogue systems in NLP?",
+          "options": {
+            "A": "To enable natural language interaction between humans and computers",
+            "B": "To store conversations",
+            "C": "To format text",
+            "D": "To count words"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of information extraction in NLP?",
+          "options": {
+            "A": "To automatically extract structured information from unstructured text",
+            "B": "To store data",
+            "C": "To format documents",
+            "D": "To count words"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the role of evaluation metrics in NLP?",
+          "options": {
+            "A": "To store results",
+            "B": "To measure and compare the performance of NLP models and systems",
+            "C": "To format text",
+            "D": "To count words"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the key challenges in multilingual NLP?",
+          "options": {
+            "A": "Only technical issues",
+            "B": "Handling different language structures, scripts, and cultural contexts",
+            "C": "Only storage issues",
+            "D": "Only processing speed"
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

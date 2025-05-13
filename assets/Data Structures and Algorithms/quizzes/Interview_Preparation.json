@@ -1,0 +1,119 @@
+{
+  "result": [
+    {
+      "topic": "Interview_Preparation",
+      "questions": [
+        {
+          "question": "What are the most important Data Structures and Algorithms (DSA) topics to focus on for coding interviews?",
+          "options": {
+            "A": "Only advanced graph algorithms and dynamic programming.",
+            "B": "Arrays, strings, linked lists, stacks, queues, trees (especially binary trees and BSTs), heaps, hash tables, sorting, searching, and basic graph algorithms.",
+            "C": "Focus only on the specific technologies mentioned in the job description.",
+            "D": "Theoretical computer science concepts like automata theory and computational complexity."
+          },
+          "correct_answer": "B",
+          "explanation": "A strong foundation in these core DSA topics is generally expected across most software engineering roles."
+        },
+        {
+          "question": "How should I approach solving a DSA problem during a coding interview?",
+          "options": {
+            "A": "Start coding immediately with the first idea that comes to mind.",
+            "B": "Quickly state a potential solution and then immediately optimize it.",
+            "C": "Clarify the problem, discuss your approach (brute force first, then optimization), explain your time and space complexity analysis, and then start coding.",
+            "D": "Ask the interviewer for the optimal solution before attempting it yourself."
+          },
+          "correct_answer": "C",
+          "explanation": "A structured approach that emphasizes communication and analytical skills is crucial."
+        },
+        {
+          "question": "What is the importance of time and space complexity analysis in a coding interview?",
+          "options": {
+            "A": "It's not very important; the correctness of the solution is the only thing that matters.",
+            "B": "It demonstrates your understanding of algorithm efficiency and your ability to choose appropriate solutions for given constraints. Interviewers often ask for the Big O notation of your solution.",
+            "C": "You only need to mention it if the interviewer explicitly asks.",
+            "D": "It's only relevant for very advanced roles."
+          },
+          "correct_answer": "B",
+          "explanation": "Analyzing complexity shows your ability to think critically about the performance of your code."
+        },
+        {
+          "question": "How can I effectively practice DSA for coding interviews?",
+          "options": {
+            "A": "Memorizing solutions to common problems.",
+            "B": "Solving a large variety of problems on platforms like LeetCode, HackerRank, Codeforces, focusing on understanding the underlying patterns and techniques, and practicing consistently.",
+            "C": "Only solving problems that have appeared in previous interviews for specific companies.",
+            "D": "Ignoring problems that seem too difficult."
+          },
+          "correct_answer": "B",
+          "explanation": "Consistent practice and understanding the 'why' behind solutions are key to improvement."
+        },
+        {
+          "question": "What should I do if I get stuck on a DSA problem during an interview?",
+          "options": {
+            "A": "Give up immediately and say you can't solve it.",
+            "B": "Keep coding whatever comes to mind without explaining your thought process.",
+            "C": "Communicate your thought process, explain where you are stuck, ask clarifying questions, and explore alternative approaches. The interviewer might provide hints or guide you.",
+            "D": "Try to find the solution online during the interview."
+          },
+          "correct_answer": "C",
+          "explanation": "Problem-solving skills and communication are as important as getting the correct answer."
+        },
+        {
+          "question": "What are some common follow-up questions after solving a DSA problem in an interview?",
+          "options": {
+            "A": "Only questions about your resume.",
+            "B": "Questions about optimizing your solution for better time or space complexity, handling edge cases, or discussing alternative approaches.",
+            "C": "Questions about unrelated topics.",
+            "D": "Trick questions with no connection to the original problem."
+          },
+          "correct_answer": "B",
+          "explanation": "Interviewers often want to see if you can think critically about your solution and consider improvements."
+        },
+        {
+          "question": "How important is it to write clean and well-commented code during a coding interview?",
+          "options": {
+            "A": "Not very important; as long as the solution works.",
+            "B": "Very important. It demonstrates your ability to write maintainable and understandable code, which is a crucial skill for software engineers.",
+            "C": "Only important for senior-level roles.",
+            "D": "Comments are unnecessary as long as the code is short."
+          },
+          "correct_answer": "B",
+          "explanation": "Clean code and comments help the interviewer understand your thought process and coding style."
+        },
+        {
+          "question": "What should I do to prepare for system design interviews, which often build upon DSA concepts?",
+          "options": {
+            "A": "Focus solely on memorizing design patterns.",
+            "B": "Study fundamental DSA concepts thoroughly, understand trade-offs between different data structures and algorithms, and practice designing systems for scalability and efficiency.",
+            "C": "Only study the system designs of major tech companies.",
+            "D": "Assume that system design interviews are completely separate from DSA."
+          },
+          "correct_answer": "B",
+          "explanation": "A strong understanding of DSA is foundational for making informed decisions in system design."
+        },
+        {
+          "question": "How can I showcase my DSA skills on my resume?",
+          "options": {
+            "A": "Simply listing DSA topics you have studied.",
+            "B": "Highlighting relevant projects where you applied specific DSA concepts, mentioning your contributions to open-source projects, and noting your rankings or achievements in competitive programming contests.",
+            "C": "Claiming expertise in all DSA topics.",
+            "D": "Focusing only on your academic qualifications."
+          },
+          "correct_answer": "B",
+          "explanation": "Providing concrete examples of your DSA skills in action is more impactful than just listing topics."
+        },
+        {
+          "question": "What is the role of competitive programming in preparing for coding interviews?",
+          "options": {
+            "A": "It is the only way to prepare effectively.",
+            "B": "It can significantly enhance your problem-solving skills, algorithmic thinking, and coding speed, which are beneficial for coding interviews. However, it's not the only way, and focusing on interview-specific problems is also important.",
+            "C": "It is completely irrelevant to coding interviews.",
+            "D": "It only helps with very theoretical roles."
+          },
+          "correct_answer": "B",
+          "explanation": "Competitive programming provides excellent practice but should be complemented with interview-focused preparation."
+        }
+      ]
+    }
+  ]
+}

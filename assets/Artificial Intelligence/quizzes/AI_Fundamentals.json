@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "AI_Fundamentals",
+      "questions": [
+        {
+          "question": "What is Artificial Intelligence (AI)?",
+          "options": {
+            "A": "A programming language for robots",
+            "B": "The simulation of human intelligence by machines programmed to think and learn",
+            "C": "A type of computer hardware",
+            "D": "A database management system"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a main branch of AI?",
+          "options": {
+            "A": "Database Systems",
+            "B": "Web Development",
+            "C": "Machine Learning",
+            "D": "Cloud Computing"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the Turing Test?",
+          "options": {
+            "A": "A test to measure computer processing speed",
+            "B": "A test to evaluate a machine's capability to exhibit intelligent behavior equivalent to a human",
+            "C": "A test for computer hardware compatibility",
+            "D": "A test for network security"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Natural Language Processing (NLP)?",
+          "options": {
+            "A": "A programming language for AI",
+            "B": "The ability of computers to understand and process human language",
+            "C": "A type of computer memory",
+            "D": "A database query language"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of training data in AI?",
+          "options": {
+            "A": "To test the final AI system",
+            "B": "To help AI models learn patterns and make predictions",
+            "C": "To store AI program code",
+            "D": "To manage system resources"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is supervised learning?",
+          "options": {
+            "A": "Learning without any training data",
+            "B": "Learning from labeled training data to make predictions",
+            "C": "Learning only from human supervision",
+            "D": "Learning without any objectives"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is unsupervised learning?",
+          "options": {
+            "A": "Learning from unlabeled data to find patterns and structures",
+            "B": "Learning without computers",
+            "C": "Learning with constant human supervision",
+            "D": "Learning without any data"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is deep learning?",
+          "options": {
+            "A": "Learning that requires deep concentration",
+            "B": "A subset of machine learning using neural networks with multiple layers",
+            "C": "Learning from very large databases",
+            "D": "Learning that takes a long time"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is reinforcement learning?",
+          "options": {
+            "A": "Learning through trial and error with rewards and penalties",
+            "B": "Learning only from textbooks",
+            "C": "Learning without any feedback",
+            "D": "Learning from direct instructions"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is computer vision?",
+          "options": {
+            "A": "A type of computer display",
+            "B": "The ability of computers to understand and process visual information from the world",
+            "C": "A virtual reality system",
+            "D": "A type of computer graphics"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is an expert system?",
+          "options": {
+            "A": "A computer system that emulates human decision-making",
+            "B": "A system only used by experts",
+            "C": "A high-performance computer",
+            "D": "A system for training experts"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the role of algorithms in AI?",
+          "options": {
+            "A": "To store data",
+            "B": "To provide step-by-step instructions for solving problems and making decisions",
+            "C": "To create user interfaces",
+            "D": "To manage hardware resources"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is machine perception?",
+          "options": {
+            "A": "The ability of machines to receive and interpret sensory input",
+            "B": "A type of computer memory",
+            "C": "A mechanical sensor",
+            "D": "A virtual reality system"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is knowledge representation in AI?",
+          "options": {
+            "A": "Storing data in databases",
+            "B": "The way AI systems store and manipulate information about the world",
+            "C": "Creating user manuals",
+            "D": "Writing computer programs"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of feature extraction in AI?",
+          "options": {
+            "A": "To create new features in software",
+            "B": "To identify and select relevant characteristics from raw data for AI processing",
+            "C": "To extract files from archives",
+            "D": "To create user interfaces"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is artificial neural network (ANN)?",
+          "options": {
+            "A": "A computer network protocol",
+            "B": "A computing system inspired by biological neural networks in human brains",
+            "C": "A type of computer hardware",
+            "D": "A programming language"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of bias in AI systems?",
+          "options": {
+            "A": "To make systems faster",
+            "B": "To help neural networks adjust their output and learn patterns",
+            "C": "To store data",
+            "D": "To create user interfaces"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of validation data in AI?",
+          "options": {
+            "A": "To train the AI model",
+            "B": "To tune hyperparameters and evaluate model performance during development",
+            "C": "To store final results",
+            "D": "To create documentation"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is overfitting in machine learning?",
+          "options": {
+            "A": "When a model performs perfectly on all datasets",
+            "B": "When a model learns the training data too well, including noise and outliers",
+            "C": "When a model is too simple",
+            "D": "When a model runs too fast"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of activation functions in neural networks?",
+          "options": {
+            "A": "To store data",
+            "B": "To introduce non-linearity and help networks learn complex patterns",
+            "C": "To create user interfaces",
+            "D": "To manage memory"
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

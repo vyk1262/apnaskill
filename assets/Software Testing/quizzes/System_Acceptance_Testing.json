@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "System_Acceptance_Testing",
+      "questions": [
+        {
+          "question": "What is the primary goal of System Testing?",
+          "options": {
+            "A": "To test individual components in isolation.",
+            "B": "To test the interactions between integrated components.",
+            "C": "To evaluate the fully integrated system against specified requirements.",
+            "D": "To obtain stakeholder approval of the system."
+          },
+          "correct_answer": "C",
+          "explanation": "System testing verifies the overall functionality and quality of the complete application."
+        },
+        {
+          "question": "What is the primary goal of Acceptance Testing?",
+          "options": {
+            "A": "To find as many bugs as possible.",
+            "B": "To evaluate the system's compliance with business needs and end-user requirements, ultimately determining if it's acceptable.",
+            "C": "To test the performance of the system under load.",
+            "D": "To test the security vulnerabilities of the system."
+          },
+          "correct_answer": "B",
+          "explanation": "Acceptance testing is about stakeholder approval and meeting user expectations."
+        },
+        {
+          "question": "Who typically performs System Testing?",
+          "options": {
+            "A": "Developers.",
+            "B": "End-users.",
+            "C": "Independent testers.",
+            "D": "Business analysts."
+          },
+          "correct_answer": "C",
+          "explanation": "System testing is often done by a team independent of the development."
+        },
+        {
+          "question": "Who typically performs Acceptance Testing?",
+          "options": {
+            "A": "Independent testers.",
+            "B": "Developers.",
+            "C": "End-users, customers, or other stakeholders.",
+            "D": "Database administrators."
+          },
+          "correct_answer": "C",
+          "explanation": "Acceptance testing involves those who will use or benefit from the system."
+        },
+        {
+          "question": "What is the focus of System Testing?",
+          "options": {
+            "A": "Individual units of code.",
+            "B": "Interactions between modules.",
+            "C": "The entire integrated system, including functional and non-functional aspects.",
+            "D": "User experience and ease of use."
+          },
+          "correct_answer": "C",
+          "explanation": "System testing takes a holistic view of the application."
+        },
+        {
+          "question": "What is the focus of Acceptance Testing?",
+          "options": {
+            "A": "Internal code structure and logic.",
+            "B": "System performance under various loads.",
+            "C": "The system's fitness for purpose and alignment with user needs and business goals.",
+            "D": "Security vulnerabilities and data protection."
+          },
+          "correct_answer": "C",
+          "explanation": "Acceptance testing validates the business value and usability for stakeholders."
+        },
+        {
+          "question": "What are common types of Acceptance Testing?",
+          "options": {
+            "A": "Unit testing and integration testing.",
+            "B": "Black-box and white-box testing.",
+            "C": "User Acceptance Testing (UAT), Operational Acceptance Testing (OAT), and Contract Acceptance Testing.",
+            "D": "Load testing and stress testing."
+          },
+          "correct_answer": "C",
+          "explanation": "These are different forms of ensuring stakeholder satisfaction."
+        },
+        {
+          "question": "What is User Acceptance Testing (UAT)?",
+          "options": {
+            "A": "Testing performed by developers to accept their code.",
+            "B": "Testing performed by end-users to determine if the system meets their needs in a real-world scenario.",
+            "C": "Automated testing of the user interface.",
+            "D": "Testing the security of user accounts."
+          },
+          "correct_answer": "B",
+          "explanation": "UAT simulates how users will interact with the system."
+        },
+        {
+          "question": "What is Operational Acceptance Testing (OAT)?",
+          "options": {
+            "A": "Testing the system's functionality by business analysts.",
+            "B": "Testing the system's readiness for production, including aspects like maintainability, reliability, and supportability.",
+            "C": "Testing the system's performance under operational loads.",
+            "D": "Testing the user manuals and training materials."
+          },
+          "correct_answer": "B",
+          "explanation": "OAT ensures the system can be operated and maintained effectively."
+        },
+        {
+          "question": "How does the test environment typically differ between System and Acceptance Testing?",
+          "options": {
+            "A": "System testing uses the production environment, while acceptance testing uses a development environment.",
+            "B": "System testing uses a test environment that mimics production, while acceptance testing often uses an environment even closer to or the actual production environment.",
+            "C": "There is no difference in the test environment.",
+            "D": "Acceptance testing is always done in a completely isolated environment."
+          },
+          "correct_answer": "B",
+          "explanation": "Acceptance testing aims to validate readiness for live use."
+        },
+        {
+          "question": "What is the primary input for System Testing?",
+          "options": {
+            "A": "Unit test results.",
+            "B": "Integration test results.",
+            "C": "System requirements specification.",
+            "D": "User feedback from acceptance testing."
+          },
+          "correct_answer": "C",
+          "explanation": "System tests verify compliance with the defined system requirements."
+        },
+        {
+          "question": "What is the primary input for Acceptance Testing?",
+          "options": {
+            "A": "System test reports and user stories or business requirements.",
+            "B": "Code coverage reports.",
+            "C": "Performance test results.",
+            "D": "Security audit logs."
+          },
+          "correct_answer": "A",
+          "explanation": "Acceptance tests validate against user needs and business goals."
+        },
+        {
+          "question": "What types of defects are commonly found during System Testing?",
+          "options": {
+            "A": "Logic errors in individual modules.",
+            "B": "Interface issues between integrated components.",
+            "C": "Issues related to overall system functionality, performance, security, and usability.",
+            "D": "Deviations from end-user expectations."
+          },
+          "correct_answer": "C",
+          "explanation": "System testing covers a broad range of system-level attributes."
+        },
+        {
+          "question": "What types of issues are commonly identified during Acceptance Testing?",
+          "options": {
+            "A": "Low-level coding errors.",
+            "B": "Problems with system performance under heavy load.",
+            "C": "Discrepancies between the system's behavior and the end-users' needs or business processes.",
+            "D": "Security vulnerabilities in specific modules."
+          },
+          "correct_answer": "C",
+          "explanation": "Acceptance testing focuses on user satisfaction and business alignment."
+        },
+        {
+          "question": "How does automation typically differ between System and Acceptance Testing?",
+          "options": {
+            "A": "System testing is always automated, while acceptance testing is always manual.",
+            "B": "Both can be automated, but acceptance tests often focus on user workflows and may be more manual or use different tools.",
+            "C": "Acceptance testing has more sophisticated automation tools than system testing.",
+            "D": "Automation is not used in either system or acceptance testing."
+          },
+          "correct_answer": "B",
+          "explanation": "The focus on user perspective can influence automation approaches."
+        },
+        {
+          "question": "What is the significance of a 'sign-off' in Acceptance Testing?",
+          "options": {
+            "A": "It indicates that the developers have finished coding.",
+            "B": "It represents the formal agreement by stakeholders that the system meets their acceptance criteria and is ready for release.",
+            "C": "It signifies the completion of system testing.",
+            "D": "It means all defects have been fixed."
+          },
+          "correct_answer": "B",
+          "explanation": "Sign-off is the official approval for moving to the next phase (often deployment)."
+        },
+        {
+          "question": "What role do business requirements play in System and Acceptance Testing?",
+          "options": {
+            "A": "They only guide the development process.",
+            "B": "System testing verifies if the system meets the specified functional and non-functional requirements derived from business needs, while acceptance testing validates if the system fulfills those business needs and user expectations.",
+            "C": "They are only relevant to acceptance testing.",
+            "D": "They are not considered during testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Business requirements are the ultimate drivers for both testing levels."
+        },
+        {
+          "question": "How can defects found during Acceptance Testing impact the project?",
+          "options": {
+            "A": "They have no impact as the system has already been developed and tested.",
+            "B": "They can lead to delays in release, rework, or even project cancellation if the system is deemed unacceptable.",
+            "C": "They are always minor and easy to fix.",
+            "D": "They are solely the responsibility of the testing team."
+          },
+          "correct_answer": "B",
+          "explanation": "Acceptance failures indicate fundamental issues with meeting stakeholder needs."
+        },
+        {
+          "question": "What is the relationship between System Integration Testing and System Testing?",
+          "options": {
+            "A": "They are the same thing.",
+            "B": "System Integration Testing focuses on testing the interaction between different systems, while System Testing tests the integrated system as a whole.",
+            "C": "System Testing is performed before System Integration Testing.",
+            "D": "System Integration Testing is a type of Acceptance Testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Integration testing at the system level precedes the overall system evaluation."
+        },
+        {
+          "question": "The ultimate goal of successful System and Acceptance Testing is to:",
+          "options": {
+            "A": "Find the maximum number of defects.",
+            "B": "Ensure that a high-quality system is delivered that meets both the specified requirements and the needs and expectations of the stakeholders, leading to user satisfaction and business value.",
+            "C": "Complete the testing phase within the allocated budget and time.",
+            "D": "Make the developers rewrite significant portions of the code."
+          },
+          "correct_answer": "B",
+          "explanation": "These testing levels are crucial for delivering a valuable and accepted product."
+        }
+      ]
+    }
+  ]
+}

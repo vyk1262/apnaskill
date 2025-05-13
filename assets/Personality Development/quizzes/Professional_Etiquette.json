@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Professional_Etiquette",
+      "questions": [
+        {
+          "question": "What is the primary purpose of professional etiquette?",
+          "options": {
+            "A": "To make workplaces feel formal and uncomfortable.",
+            "B": "To establish guidelines for respectful, courteous, and effective interactions in a professional setting.",
+            "C": "To create unnecessary rules and regulations.",
+            "D": "To ensure everyone behaves exactly the same way."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional etiquette fosters a positive and productive work environment."
+        },
+        {
+          "question": "Which of the following is a fundamental aspect of professional etiquette?",
+          "options": {
+            "A": "Ignoring deadlines if you are busy.",
+            "B": "Being punctual for meetings and appointments.",
+            "C": "Speaking loudly on your phone in open workspaces.",
+            "D": "Taking credit for others' work."
+          },
+          "correct_answer": "B",
+          "explanation": "Punctuality demonstrates respect for others' time."
+        },
+        {
+          "question": "What is the appropriate way to introduce yourself in a professional setting?",
+          "options": {
+            "A": "Just stating your first name.",
+            "B": "Clearly stating your full name and, if relevant, your title or affiliation.",
+            "C": "Asking the other person to guess your name.",
+            "D": "Avoiding introductions altogether."
+          },
+          "correct_answer": "B",
+          "explanation": "A clear introduction helps establish your professional identity."
+        },
+        {
+          "question": "How should you handle phone calls in a professional environment?",
+          "options": {
+            "A": "Answering loudly and having personal conversations in open areas.",
+            "B": "Answering promptly, speaking clearly and courteously, and being mindful of your surroundings.",
+            "C": "Ignoring calls if you are in the middle of something.",
+            "D": "Putting callers on hold indefinitely without explanation."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional phone etiquette reflects positively on you and your organization."
+        },
+        {
+          "question": "What is appropriate email etiquette in a professional context?",
+          "options": {
+            "A": "Using informal language and slang.",
+            "B": "Using a clear subject line, professional tone, proper grammar and spelling, and a polite closing.",
+            "C": "Sending emails without proofreading.",
+            "D": "Replying to all emails with a one-word answer."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional emails ensure clear and respectful communication."
+        },
+        {
+          "question": "How should you dress in a professional setting?",
+          "options": {
+            "A": "Wearing whatever is most comfortable regardless of the workplace culture.",
+            "B": "Adhering to the company's dress code and presenting yourself in a neat and appropriate manner.",
+            "C": "Wearing overly casual or revealing attire.",
+            "D": "Ignoring personal hygiene."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional attire conveys respect and professionalism."
+        },
+        {
+          "question": "What is the appropriate way to handle business cards?",
+          "options": {
+            "A": "Stuffing them in your pocket without looking at them.",
+            "B": "Receiving them respectfully, taking a moment to look at them, and keeping them organized.",
+            "C": "Immediately discarding them after the interaction.",
+            "D": "Writing personal notes about the person on the front of the card."
+          },
+          "correct_answer": "B",
+          "explanation": "Handling business cards respectfully shows you value the connection."
+        },
+        {
+          "question": "How should you behave during business meetings?",
+          "options": {
+            "A": "Dominating the conversation and interrupting others frequently.",
+            "B": "Being prepared, arriving on time, listening attentively, and contributing respectfully.",
+            "C": "Multitasking on your laptop or phone throughout the meeting.",
+            "D": "Speaking negatively about colleagues or competitors."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional meeting behavior ensures productivity and respect."
+        },
+        {
+          "question": "What is the appropriate way to handle food and drinks at a professional event?",
+          "options": {
+            "A": "Taking more than your share and making a mess.",
+            "B": "Being mindful of others, taking reasonable portions, and eating and drinking politely.",
+            "C": "Complaining loudly about the food and drinks.",
+            "D": "Bringing your own food and drinks without considering the event's arrangements."
+          },
+          "correct_answer": "B",
+          "explanation": "Social graces are important in professional settings."
+        },
+        {
+          "question": "How should you handle workplace gossip?",
+          "options": {
+            "A": "Actively participating and spreading rumors.",
+            "B": "Avoiding it altogether and refraining from engaging in negative talk about colleagues.",
+            "C": "Confronting the subject of the gossip directly without knowing the facts.",
+            "D": "Sharing gossip with people outside the workplace."
+          },
+          "correct_answer": "B",
+          "explanation": "Avoiding gossip maintains professionalism and trust."
+        },
+        {
+          "question": "What is the appropriate way to give and receive feedback professionally?",
+          "options": {
+            "A": "Giving vague and unhelpful feedback.",
+            "B": "Giving specific, constructive feedback respectfully and being open to receiving feedback gracefully.",
+            "C": "Becoming defensive or dismissive when receiving feedback.",
+            "D": "Avoiding giving feedback to prevent discomfort."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional feedback exchange fosters growth and improvement."
+        },
+        {
+          "question": "How should you handle cultural differences in a professional setting?",
+          "options": {
+            "A": "Ignoring them and assuming everyone operates the same way.",
+            "B": "Being respectful, open-minded, and willing to learn about different customs and communication styles.",
+            "C": "Making jokes about cultural differences.",
+            "D": "Insisting that your own culture's norms are the only correct ones."
+          },
+          "correct_answer": "B",
+          "explanation": "Cultural sensitivity is crucial for effective global interactions."
+        },
+        {
+          "question": "What is the appropriate way to handle social media in relation to your professional life?",
+          "options": {
+            "A": "Posting anything you want without considering professional implications.",
+            "B": "Being mindful of your public image and avoiding posts that could reflect negatively on your professionalism or your company.",
+            "C": "Publicly criticizing your employer and colleagues.",
+            "D": "Sharing confidential company information."
+          },
+          "correct_answer": "B",
+          "explanation": "Your social media activity can impact your professional reputation."
+        },
+        {
+          "question": "How should you handle disagreements with colleagues professionally?",
+          "options": {
+            "A": "Resorting to personal attacks and insults.",
+            "B": "Focusing on the issue, expressing your views respectfully, and seeking a constructive resolution.",
+            "C": "Avoiding any form of disagreement to maintain harmony.",
+            "D": "Gossiping about the colleague to others."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional disagreement focuses on ideas, not personalities."
+        },
+        {
+          "question": "What is the appropriate way to ask for help or clarification in a professional setting?",
+          "options": {
+            "A": "Demanding assistance and acting entitled.",
+            "B": "Asking politely, being specific about what you need, and showing appreciation for the help received.",
+            "C": "Assuming someone will eventually figure out you need help.",
+            "D": "Asking the same question repeatedly without listening to the answer."
+          },
+          "correct_answer": "B",
+          "explanation": "Polite and clear requests are more likely to be well-received."
+        },
+        {
+          "question": "How should you handle confidential information in a professional environment?",
+          "options": {
+            "A": "Sharing it freely with anyone who asks.",
+            "B": "Treating it with utmost care and discretion, only sharing it with those who have a legitimate need to know.",
+            "C": "Using it for personal gain.",
+            "D": "Leaving sensitive documents in plain sight."
+          },
+          "correct_answer": "B",
+          "explanation": "Maintaining confidentiality is crucial for trust and security."
+        },
+        {
+          "question": "What is the role of empathy in professional etiquette?",
+          "options": {
+            "A": "Empathy has no place in the professional world.",
+            "B": "Understanding and considering the feelings and perspectives of others can lead to more considerate and effective interactions.",
+            "C": "Being overly empathetic can make you appear weak.",
+            "D": "You should only focus on your own tasks and deadlines."
+          },
+          "correct_answer": "B",
+          "explanation": "Empathy fosters positive relationships and understanding."
+        },
+        {
+          "question": "How should you handle mistakes you make in a professional setting?",
+          "options": {
+            "A": "Blaming others for your errors.",
+            "B": "Acknowledging the mistake, taking responsibility, and outlining steps to rectify it and prevent future occurrences.",
+            "C": "Trying to hide your mistakes and hoping no one notices.",
+            "D": "Ignoring the mistake and acting like it never happened."
+          },
+          "correct_answer": "B",
+          "explanation": "Taking responsibility demonstrates maturity and accountability."
+        },
+        {
+          "question": "What is the importance of showing respect to everyone in the workplace, regardless of their position?",
+          "options": {
+            "A": "You only need to be respectful to your superiors.",
+            "B": "Treating everyone with courtesy and respect fosters a positive and collaborative work environment.",
+            "C": "Being overly friendly with lower-level employees is unprofessional.",
+            "D": "Ignoring those who you don't think can benefit you."
+          },
+          "correct_answer": "B",
+          "explanation": "Respect for all contributes to a healthy and productive culture."
+        },
+        {
+          "question": "How can you continue to develop your professional etiquette?",
+          "options": {
+            "A": "Assuming you already know everything you need to know.",
+            "B": "Being observant of professional behavior, seeking feedback, and being open to learning and adapting.",
+            "C": "Ignoring any advice on professional conduct.",
+            "D": "Only focusing on your technical skills."
+          },
+          "correct_answer": "B",
+          "explanation": "Professional etiquette is an ongoing learning process."
+        }
+      ]
+    }
+  ]
+}

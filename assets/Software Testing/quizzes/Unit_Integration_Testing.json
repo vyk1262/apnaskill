@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Unit_Integration_Testing",
+      "questions": [
+        {
+          "question": "What is the primary focus of Unit Testing?",
+          "options": {
+            "A": "Testing interactions between software components.",
+            "B": "Testing individual software components in isolation.",
+            "C": "Testing the entire system's functionality.",
+            "D": "Testing the software from the end-user's perspective."
+          },
+          "correct_answer": "B",
+          "explanation": "Unit testing verifies the correctness of individual code units."
+        },
+        {
+          "question": "Who typically writes and executes Unit Tests?",
+          "options": {
+            "A": "Independent testers.",
+            "B": "Developers.",
+            "C": "Business analysts.",
+            "D": "End-users."
+          },
+          "correct_answer": "B",
+          "explanation": "Unit tests are usually created by the developers who wrote the code."
+        },
+        {
+          "question": "What is the main goal of Integration Testing?",
+          "options": {
+            "A": "To test individual modules for defects.",
+            "B": "To test the interfaces and interactions between integrated components or modules.",
+            "C": "To test the system as a whole against requirements.",
+            "D": "To test the user-friendliness of the application."
+          },
+          "correct_answer": "B",
+          "explanation": "Integration testing ensures that different parts of the system work together correctly."
+        },
+        {
+          "question": "What are 'stubs' and 'drivers' often used for in Integration Testing?",
+          "options": {
+            "A": "To monitor the performance of the integrated components.",
+            "B": "To simulate the behavior of missing or incomplete components during testing.",
+            "C": "To generate test data for integration testing.",
+            "D": "To document the integration test cases."
+          },
+          "correct_answer": "B",
+          "explanation": "Stubs and drivers help isolate and test the interactions between specific components."
+        },
+        {
+          "question": "Which of the following is a common approach to Integration Testing?",
+          "options": {
+            "A": "Black-box testing.",
+            "B": "White-box testing.",
+            "C": "Top-down, bottom-up, and big-bang testing.",
+            "D": "Acceptance testing."
+          },
+          "correct_answer": "C",
+          "explanation": "These approaches define the strategy for integrating and testing modules."
+        },
+        {
+          "question": "What is the primary difference in scope between Unit and Integration Testing?",
+          "options": {
+            "A": "Unit testing tests the entire system, while integration testing tests individual modules.",
+            "B": "Unit testing focuses on individual components, while integration testing focuses on the interactions between components.",
+            "C": "Unit testing is done by testers, and integration testing is done by developers.",
+            "D": "There is no significant difference in scope."
+          },
+          "correct_answer": "B",
+          "explanation": "Scope is the key differentiator between these two testing levels."
+        },
+        {
+          "question": "Why is it beneficial to perform Unit Testing before Integration Testing?",
+          "options": {
+            "A": "Integration testing is more important than unit testing.",
+            "B": "Finding and fixing defects at the unit level is generally cheaper and easier than at the integration level.",
+            "C": "Unit testing requires more resources than integration testing.",
+            "D": "Integration testing cannot be performed without first completing system testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Early defect detection reduces the complexity and cost of fixing issues later."
+        },
+        {
+          "question": "What types of defects are typically found during Integration Testing?",
+          "options": {
+            "A": "Defects in the logic of individual units.",
+            "B": "Defects related to the interfaces, data flow, and interactions between integrated components.",
+            "C": "Defects in the overall system functionality.",
+            "D": "Defects related to user experience."
+          },
+          "correct_answer": "B",
+          "explanation": "Integration testing specifically targets issues arising from the connection of different parts."
+        },
+        {
+          "question": "What is 'Big-Bang' Integration Testing?",
+          "options": {
+            "A": "Testing the user interface with a large amount of data.",
+            "B": "Integrating all modules at once and then testing the entire system.",
+            "C": "Testing the most critical modules first.",
+            "D": "A type of performance testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Big-bang integration can be efficient but makes defect isolation difficult."
+        },
+        {
+          "question": "What are the advantages of 'Top-Down' Integration Testing?",
+          "options": {
+            "A": "Lower-level modules are tested first.",
+            "B": "Major control or decision-making modules are tested early, facilitating early demonstration of system functionality.",
+            "C": "It requires drivers to simulate lower-level modules.",
+            "D": "It is easier to isolate defects in lower-level modules."
+          },
+          "correct_answer": "B",
+          "explanation": "Top-down integration allows for early visibility of the system's core functionality."
+        },
+        {
+          "question": "What are the advantages of 'Bottom-Up' Integration Testing?",
+          "options": {
+            "A": "Higher-level modules are tested first.",
+            "B": "Lower-level, basic functionality is tested early, and it's easier to test frequently used utilities.",
+            "C": "It requires stubs to simulate higher-level modules.",
+            "D": "Major control flow is tested early."
+          },
+          "correct_answer": "B",
+          "explanation": "Bottom-up integration ensures the reliability of foundational components."
+        },
+        {
+          "question": "How can automation be applied to Unit and Integration Testing?",
+          "options": {
+            "A": "Automation is not suitable for these testing levels.",
+            "B": "Test frameworks and tools can be used to automate the execution and verification of unit and integration tests.",
+            "C": "Only manual testing is effective for finding defects at these levels.",
+            "D": "Automation is only applicable to system and acceptance testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Automation increases efficiency and allows for frequent execution of these tests."
+        },
+        {
+          "question": "What is the relationship between Unit Tests and Code Coverage?",
+          "options": {
+            "A": "Code coverage is irrelevant to unit testing.",
+            "B": "Code coverage metrics can help assess the extent to which unit tests exercise the codebase.",
+            "C": "High code coverage guarantees the absence of defects.",
+            "D": "Unit tests should always aim for 100% code coverage."
+          },
+          "correct_answer": "B",
+          "explanation": "Code coverage provides insights into the thoroughness of unit testing."
+        },
+        {
+          "question": "What is the role of Test Data in Unit and Integration Testing?",
+          "options": {
+            "A": "Test data is only needed for system testing.",
+            "B": "Appropriate test data is crucial for exercising different scenarios and verifying the behavior of units and integrated components.",
+            "C": "Using real-world data is always the best approach.",
+            "D": "Test data should always be randomly generated."
+          },
+          "correct_answer": "B",
+          "explanation": "Well-designed test data ensures comprehensive testing."
+        },
+        {
+          "question": "How do Unit and Integration Testing contribute to the overall quality of the software?",
+          "options": {
+            "A": "They are the least important testing levels.",
+            "B": "By detecting and fixing defects early in the development cycle, they lead to more robust and reliable software.",
+            "C": "They only focus on the technical aspects and ignore user needs.",
+            "D": "They increase the time and cost of software development without significant benefit."
+          },
+          "correct_answer": "B",
+          "explanation": "Early testing builds a solid foundation for software quality."
+        },
+        {
+          "question": "What are 'mocks' often used for in Unit Testing?",
+          "options": {
+            "A": "To create realistic user interactions.",
+            "B": "To simulate the behavior of dependencies (other units or external systems) in a controlled way.",
+            "C": "To measure the performance of individual units.",
+            "D": "To generate code documentation."
+          },
+          "correct_answer": "B",
+          "explanation": "Mocks allow for isolated testing of a unit without relying on its actual dependencies."
+        },
+        {
+          "question": "What is the relationship between Unit Testing and Test-Driven Development (TDD)?",
+          "options": {
+            "A": "TDD is a type of integration testing.",
+            "B": "In TDD, unit tests are written before the code, guiding the development process.",
+            "C": "Unit testing is performed after the code is written in TDD.",
+            "D": "There is no direct relationship between unit testing and TDD."
+          },
+          "correct_answer": "B",
+          "explanation": "TDD leverages unit tests as a specification and verification tool."
+        },
+        {
+          "question": "How does continuous integration (CI) relate to Unit and Integration Testing?",
+          "options": {
+            "A": "CI replaces the need for unit and integration testing.",
+            "B": "CI often involves the automated execution of unit and integration tests whenever code changes are made.",
+            "C": "Unit and integration testing are performed manually and are separate from CI.",
+            "D": "CI is only relevant for deployment, not testing."
+          },
+          "correct_answer": "B",
+          "explanation": "CI integrates frequent testing into the development workflow."
+        },
+        {
+          "question": "What are some key metrics used to evaluate the effectiveness of Unit and Integration Testing?",
+          "options": {
+            "A": "Number of testers and test execution time.",
+            "B": "Code coverage, defect density, and test pass rate.",
+            "C": "Number of test cases written per day.",
+            "D": "User satisfaction scores."
+          },
+          "correct_answer": "B",
+          "explanation": "These metrics provide insights into the quality and thoroughness of testing."
+        },
+        {
+          "question": "The combined goal of effective Unit and Integration Testing is to:",
+          "options": {
+            "A": "Ensure the entire system meets user requirements.",
+            "B": "Build a solid and reliable foundation of well-tested individual components and their interactions.",
+            "C": "Focus solely on the performance of the application.",
+            "D": "Minimize the amount of testing needed at higher levels."
+          },
+          "correct_answer": "B",
+          "explanation": "These lower-level tests contribute significantly to the stability and quality of the overall system."
+        }
+      ]
+    }
+  ]
+}

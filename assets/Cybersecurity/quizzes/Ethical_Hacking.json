@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Ethical_Hacking",
+      "questions": [
+        {
+          "question": "What is ethical hacking?",
+          "options": {
+            "A": "Illegally accessing computer systems",
+            "B": "Penetrating systems with permission to identify vulnerabilities",
+            "C": "Distributing malware for research purposes",
+            "D": "Bypassing security controls without authorization"
+          },
+          "correct_answer": "B",
+          "explanation": "Ethical hacking involves legally and ethically penetrating computer systems and networks to identify security vulnerabilities and improve overall security posture."
+        },
+        {
+          "question": "Which of the following is a primary goal of ethical hacking?",
+          "options": {
+            "A": "Gaining personal financial benefit",
+            "B": "Exploiting vulnerabilities for malicious purposes",
+            "C": "Identifying and reporting security weaknesses to the organization",
+            "D": "Disrupting network services"
+          },
+          "correct_answer": "C",
+          "explanation": "The main goal of ethical hacking is to find security weaknesses before malicious actors do, allowing the organization to remediate them."
+        },
+        {
+          "question": "What is a penetration test (pentest)?",
+          "options": {
+            "A": "A method to improve software performance",
+            "B": "A simulated cyberattack to evaluate system security",
+            "C": "A technique for encrypting sensitive data",
+            "D": "A tool for monitoring network traffic"
+          },
+          "correct_answer": "B",
+          "explanation": "A penetration test is a simulated cyberattack performed by ethical hackers to identify and exploit vulnerabilities in a system or network."
+        },
+        {
+          "question": "Which phase of ethical hacking involves gathering information about the target?",
+          "options": {
+            "A": "Exploitation",
+            "B": "Scanning",
+            "C": "Reconnaissance",
+            "D": "Maintaining Access"
+          },
+          "correct_answer": "C",
+          "explanation": "Reconnaissance is the initial phase where the ethical hacker gathers as much information as possible about the target organization and its systems."
+        },
+        {
+          "question": "What is the purpose of the scanning phase in ethical hacking?",
+          "options": {
+            "A": "Exploiting identified vulnerabilities",
+            "B": "Identifying open ports and services on the target system",
+            "C": "Maintaining control over compromised systems",
+            "D": "Documenting the findings"
+          },
+          "correct_answer": "B",
+          "explanation": "During the scanning phase, ethical hackers use various tools to identify open ports, live hosts, and services running on the target system, which can reveal potential entry points."
+        },
+        {
+          "question": "What does the term 'vulnerability' refer to in the context of ethical hacking?",
+          "options": {
+            "A": "A strong security measure",
+            "B": "A weakness in a system that can be exploited",
+            "C": "A type of network protocol",
+            "D": "An encrypted communication channel"
+          },
+          "correct_answer": "B",
+          "explanation": "A vulnerability is a flaw or weakness in a system's design, implementation, or operation that could be exploited by a threat actor."
+        },
+        {
+          "question": "Which of the following is a common type of vulnerability exploited by ethical hackers?",
+          "options": {
+            "A": "Strong password policies",
+            "B": "Up-to-date software",
+            "C": "SQL injection",
+            "D": "Multi-factor authentication"
+          },
+          "correct_answer": "C",
+          "explanation": "SQL injection is a code injection technique used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution."
+        },
+        {
+          "question": "What is the 'exploitation' phase of ethical hacking?",
+          "options": {
+            "A": "Gathering information about the target",
+            "B": "Identifying vulnerabilities",
+            "C": "Leveraging identified vulnerabilities to gain access",
+            "D": "Reporting the findings"
+          },
+          "correct_answer": "C",
+          "explanation": "The exploitation phase involves using the vulnerabilities discovered during scanning to gain unauthorized access to the target system or its data."
+        },
+        {
+          "question": "What is 'maintaining access' in the context of ethical hacking?",
+          "options": {
+            "A": "Closing all open connections",
+            "B": "Ensuring continued unauthorized access to the compromised system",
+            "C": "Patching the identified vulnerabilities",
+            "D": "Erasing all logs of the attack"
+          },
+          "correct_answer": "B",
+          "explanation": "After gaining initial access, ethical hackers might simulate maintaining access to understand how long a threat actor could persist in the system and what they could do."
+        },
+        {
+          "question": "What is the final phase of ethical hacking?",
+          "options": {
+            "A": "Scanning",
+            "B": "Exploitation",
+            "C": "Reporting",
+            "D": "Reconnaissance"
+          },
+          "correct_answer": "C",
+          "explanation": "The reporting phase involves documenting all the findings, vulnerabilities discovered, and the steps taken during the penetration test, along with recommendations for remediation."
+        },
+        {
+          "question": "What is the importance of a 'rules of engagement' document in ethical hacking?",
+          "options": {
+            "A": "It outlines the tools to be used.",
+            "B": "It defines the scope, limitations, and terms of the penetration test.",
+            "C": "It specifies the payment for the ethical hacking services.",
+            "D": "It details the technical specifications of the target systems."
+          },
+          "correct_answer": "B",
+          "explanation": "The rules of engagement are crucial as they clearly define what is allowed, what is not allowed, the timeframe, and the objectives of the ethical hacking engagement."
+        },
+        {
+          "question": "What is a 'white box' penetration test?",
+          "options": {
+            "A": "The ethical hacker has no prior knowledge of the target system.",
+            "B": "The ethical hacker has full knowledge of the target system's architecture and source code.",
+            "C": "The ethical hacker only tests external-facing systems.",
+            "D": "The ethical hacker uses only open-source tools."
+          },
+          "correct_answer": "B",
+          "explanation": "In a white box pentest, the ethical hacker is provided with detailed information about the target system, including network diagrams, source code, and credentials."
+        },
+        {
+          "question": "What is a 'black box' penetration test?",
+          "options": {
+            "A": "The ethical hacker has full knowledge of the target system.",
+            "B": "The ethical hacker has limited or no prior knowledge of the target system.",
+            "C": "The ethical hacker only tests internal systems.",
+            "D": "The ethical hacker uses only commercial tools."
+          },
+          "correct_answer": "B",
+          "explanation": "In a black box pentest, the ethical hacker operates with little to no prior knowledge of the target system, simulating an external attacker's perspective."
+        },
+        {
+          "question": "What is a 'gray box' penetration test?",
+          "options": {
+            "A": "A test that only focuses on web applications.",
+            "B": "A test where the ethical hacker has some limited knowledge of the target system.",
+            "C": "A test performed without any specific tools.",
+            "D": "A test conducted by internal security teams only."
+          },
+          "correct_answer": "B",
+          "explanation": "A gray box pentest involves the ethical hacker having some level of knowledge about the target system, such as network diagrams or user credentials, but not full access to source code."
+        },
+        {
+          "question": "What is the importance of 'cleanliness' after an ethical hacking engagement?",
+          "options": {
+            "A": "To ensure the hacker's anonymity.",
+            "B": "To restore the systems to their original state and remove any tools or backdoors.",
+            "C": "To hide the fact that a penetration test was conducted.",
+            "D": "To improve system performance."
+          },
+          "correct_answer": "B",
+          "explanation": "'Cleanliness' involves ensuring that any changes made or tools deployed during the ethical hacking process are removed, and the systems are returned to their pre-test state to avoid leaving behind vulnerabilities or instability."
+        },
+        {
+          "question": "Which of the following is a common tool used during the reconnaissance phase?",
+          "options": {
+            "A": "Metasploit",
+            "B": "Nmap",
+            "C": "Wireshark",
+            "D": "WHOIS"
+          },
+          "correct_answer": "D",
+          "explanation": "WHOIS is a common tool used during reconnaissance to gather information about domain registration, ownership, and contact details."
+        },
+        {
+          "question": "Which of the following is a common tool used during the scanning phase?",
+          "options": {
+            "A": "Burp Suite",
+            "B": "Nmap",
+            "C": "Hydra",
+            "D": "Aircrack-ng"
+          },
+          "correct_answer": "B",
+          "explanation": "Nmap (Network Mapper) is a powerful tool used for network discovery and security auditing, often employed during the scanning phase to identify open ports and services."
+        },
+        {
+          "question": "Which of the following is a framework commonly used during the exploitation phase?",
+          "options": {
+            "A": "tcpdump",
+            "B": "John the Ripper",
+            "C": "Metasploit",
+            "D": "OWASP ZAP"
+          },
+          "correct_answer": "C",
+          "explanation": "Metasploit is a widely used framework that provides a collection of tools for developing and executing exploits against target systems."
+        },
+        {
+          "question": "What is the legal and ethical responsibility of an ethical hacker?",
+          "options": {
+            "A": "To exploit every vulnerability found.",
+            "B": "To operate within the agreed-upon scope and not cause harm.",
+            "C": "To disclose findings publicly without permission.",
+            "D": "To retain access to compromised systems indefinitely."
+          },
+          "correct_answer": "B",
+          "explanation": "Ethical hackers have a crucial responsibility to operate legally and ethically, adhering strictly to the rules of engagement and ensuring they do not cause any damage to the target systems or data."
+        }
+      ]
+    }
+  ]
+}

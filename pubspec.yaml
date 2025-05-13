@@ -104,6 +104,30 @@ flutter:
     - assets/Numpy/quizzes/
     - assets/Data Analytics/
     - assets/Data Analytics/quizzes/
+    - assets/Prompt Engineering/
+    - assets/Prompt Engineering/quizzes/
+    - assets/Cloud Computing/
+    - assets/Cloud Computing/quizzes/
+    - assets/Docker/
+    - assets/Docker/quizzes/
+    - assets/Kubernetes/
+    - assets/Kubernetes/quizzes/
+    - assets/Artificial Intelligence/
+    - assets/Artificial Intelligence/quizzes/
+    - assets/Cybersecurity/
+    - assets/Cybersecurity/quizzes/
+    - assets/DevOps/
+    - assets/DevOps/quizzes/
+    - assets/Blockchain/
+    - assets/Blockchain/quizzes/
+    - assets/Internet of Things/
+    - assets/Internet of Things/quizzes/
+    - assets/Data Structures and Algorithms/
+    - assets/Data Structures and Algorithms/quizzes/
+    - assets/Personality Development/
+    - assets/Personality Development/quizzes/
+    - assets/Software Testing/
+    - assets/Software Testing/quizzes/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
