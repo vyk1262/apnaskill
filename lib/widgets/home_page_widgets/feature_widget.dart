@@ -20,6 +20,7 @@ class FeatureItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       elevation: 4.0,
+      color: Color(0xFF804ee8), // Using hex color directly
       child: Padding(
         padding: const EdgeInsets.fromLTRB(40, 40, 40, 20),
         child: Column(
@@ -27,6 +28,7 @@ class FeatureItem extends StatelessWidget {
             Icon(
               icon,
               size: 48,
+              color: Colors.white,
             ),
             Divider(),
             SizedBox(height: 8),
@@ -35,7 +37,7 @@ class FeatureItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                // color: AppColors.primaryColor,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
@@ -45,7 +47,7 @@ class FeatureItem extends StatelessWidget {
               description,
               style: TextStyle(
                 fontSize: 14,
-                // color: Colors.black,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),

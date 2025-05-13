@@ -45,20 +45,18 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       )
                     : SizedBox.shrink(),
                 isMobile ? SizedBox.shrink() : SizedBox(width: 80),
-                isMobile
-                    ? SizedBox.shrink()
-                    : MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          onTap: () => context.go('/'),
-                          child: Image.network(
-                            'https://i.ibb.co/5XKD72G4/logo.png',
-                            width: 50,
-                            height: 50,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () => context.go('/'),
+                    child: Image.network(
+                      'https://i.ibb.co/xtLkhZLb/logo.png',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
                 RichText(
                   text: TextSpan(
                     children: [

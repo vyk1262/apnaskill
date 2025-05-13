@@ -21,24 +21,37 @@ class ContactCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       elevation: 4.0,
+      color: Color(0xFFe440ff), //#e440ff
       child: Padding(
         padding: const EdgeInsets.all(16.0), // Add consistent padding
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center, // Center-align content
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 40.0),
+            Icon(
+              icon,
+              size: 40.0,
+              color: Colors.white,
+            ),
             Divider(),
             const SizedBox(height: 8.0),
             Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+                color: Colors.white,
+              ),
               textAlign: TextAlign.center, // Center-align text
             ),
             Divider(),
             const SizedBox(height: 4.0),
             Text(
               text,
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Colors.white,
+              ),
               textAlign: TextAlign.center, // Center-align text
             ),
             if (child != null) ...[

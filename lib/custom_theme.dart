@@ -14,19 +14,8 @@ class CustomTheme {
         fontWeight: FontWeight.normal,
       ),
     ),
-    iconTheme: const IconThemeData(
-      color: AppColors.tertiaryColor,
-    ),
-    listTileTheme: const ListTileThemeData(
-      iconColor: Colors.white,
-      textColor: Colors.white,
-      selectedColor: Colors.white,
-      tileColor: Colors.purple,
-      selectedTileColor: Colors.blue,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(8)),
-      ),
-    ),
+    iconTheme: const IconThemeData(),
+    listTileTheme: const ListTileThemeData(),
     inputDecorationTheme: const InputDecorationTheme(
       labelStyle: TextStyle(color: Colors.white),
       hintStyle: TextStyle(color: Colors.grey),
@@ -58,9 +47,6 @@ class CustomTheme {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: AppColors.primaryColor,
     ),
-    cardTheme: CardTheme(
-      // color: Colors.yellow[400],
-      elevation: 4,
-    ),
+    cardTheme: CardTheme(),
   );
 }

@@ -51,10 +51,15 @@ class FeatureSectionNew extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.network(
-            imageUrl,
+          child: CachedNetworkImage(
+            imageUrl: imageUrl,
             height: 400,
             fit: BoxFit.cover,
+            errorWidget: (context, url, error) => Container(
+              height: 400,
+              color: Colors.grey[300],
+              child: const Icon(Icons.error),
+            ),
           ),
         ),
       ),
@@ -66,10 +71,15 @@ class FeatureSectionNew extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          imageUrl,
+        child: CachedNetworkImage(
+          imageUrl: imageUrl,
           height: 400,
           fit: BoxFit.cover,
+          errorWidget: (context, url, error) => Container(
+            height: 400,
+            color: Colors.grey[300],
+            child: const Icon(Icons.error),
+          ),
         ),
       ),
     );
@@ -137,11 +147,16 @@ class FeatureModern extends StatelessWidget {
             ClipRRect(
               borderRadius:
                   const BorderRadius.vertical(top: Radius.circular(20)),
-              child: Image.network(
-                imageUrl,
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
                 width: double.infinity,
                 height: 250,
                 fit: BoxFit.cover,
+                errorWidget: (context, url, error) => Container(
+                  height: 250,
+                  color: Colors.grey[300],
+                  child: const Icon(Icons.error),
+                ),
               ),
             ),
             Padding(
