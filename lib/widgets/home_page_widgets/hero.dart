@@ -14,20 +14,15 @@ class HeroWidget extends StatefulWidget {
 class _HeroWidgetState extends State<HeroWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.primaryColor.withOpacity(0.1),
-            AppColors.secondaryColor.withOpacity(0.1),
-          ],
+    return IntrinsicHeight(
+      child: Container(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height * 0.5,
+          maxHeight: MediaQuery.of(context).size.height * 0.9,
         ),
-      ),
-      child: Center(
-        child: heroData(context),
+        child: Center(
+          child: heroData(context),
+        ),
       ),
     );
   }
@@ -37,24 +32,37 @@ class _HeroWidgetState extends State<HeroWidget> {
     return isMobile
         ? SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 newMethodOne(context),
-                const SizedBox(height: 20),
                 newMethodTwo(context),
                 const SizedBox(height: 20),
+                buildCtaButton(
+                    text: 'Start Testing Your Skills',
+                    onPressed: () => context.go('/login'),
+                    bgColor: Colors.black),
               ],
             ),
           )
-        : Row(
+        : Column(
             children: [
-              Expanded(
-                flex: 1,
-                child: newMethodOne(context),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: newMethodOne(context),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: newMethodTwo(context),
+                  ),
+                ],
               ),
-              Expanded(
-                flex: 1,
-                child: newMethodTwo(context),
+              const SizedBox(height: 20),
+              buildCtaButton(
+                text: 'Start Testing Your Skills',
+                onPressed: () => context.go('/login'),
+                bgColor: Colors.black,
               ),
             ],
           );
@@ -64,7 +72,6 @@ class _HeroWidgetState extends State<HeroWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SizedBox(height: 20),
         Image.network(
           'https://i.ibb.co/ZpqMW2Pw/sf-home-1.png',
           loadingBuilder: (context, child, loadingProgress) {
@@ -79,11 +86,6 @@ class _HeroWidgetState extends State<HeroWidget> {
             );
           },
         ),
-        const SizedBox(height: 50),
-        buildCtaButton(
-          text: 'Start Testing',
-          onPressed: () => context.go('/login'),
-        ),
       ],
     );
   }
@@ -92,7 +94,6 @@ class _HeroWidgetState extends State<HeroWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const SizedBox(height: 20),
         Image.network(
           'https://i.ibb.co/SDM6mLJB/sf-home-2.png',
           loadingBuilder: (context, child, loadingProgress) {
@@ -107,39 +108,7 @@ class _HeroWidgetState extends State<HeroWidget> {
             );
           },
         ),
-        const SizedBox(height: 50),
-        _buildContactButton(context),
       ],
-    );
-  }
-
-  Widget _buildContactButton(BuildContext context) {
-    return TextButton(
-      onPressed: () {},
-      style: TextButton.styleFrom(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.blue,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        textStyle: const TextStyle(fontSize: 16),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Icon(Icons.call),
-          const SizedBox(width: 8),
-          Text(
-            "Call Us : 8778605825",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.normal,
-              fontSize: MediaQuery.of(context).size.width > 700 ? 20 : 16,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
