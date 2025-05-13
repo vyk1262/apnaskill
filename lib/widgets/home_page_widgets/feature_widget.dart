@@ -15,39 +15,52 @@ class FeatureItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.0),
+        gradient: AppColors.gradientPrimary,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: Offset(0, 4),
+          ),
+        ],
       ),
-      elevation: 4.0,
-      color: Color(0xFF804ee8), // Using hex color directly
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(40, 40, 40, 20),
+        padding: const EdgeInsets.all(24.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(
-              icon,
-              size: 48,
-              color: Colors.white,
+            Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Icon(
+                icon,
+                size: 32,
+                color: Colors.white,
+              ),
             ),
-            Divider(),
-            SizedBox(height: 8),
+            SizedBox(height: 20),
             Text(
               title,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
+                letterSpacing: 0.5,
               ),
-              textAlign: TextAlign.center,
             ),
-            Divider(),
-            SizedBox(height: 8),
+            SizedBox(height: 12),
             Text(
               description,
               style: TextStyle(
-                fontSize: 14,
-                color: Colors.white,
+                fontSize: 16,
+                color: Colors.white.withOpacity(0.9),
+                height: 1.5,
               ),
               textAlign: TextAlign.center,
             ),
