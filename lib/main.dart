@@ -77,6 +77,10 @@ final router = GoRouter(
         ),
       ],
     ),
+    GoRoute(
+      path: '/profile',
+      builder: (context, state) => const ProfileScreen(),
+    ),
   ],
   errorBuilder: (context, state) => const NotFoundPage(),
 );

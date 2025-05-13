@@ -18,27 +18,6 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
-  Map<String, dynamic>? userData;
-  @override
-  void initState() {
-    super.initState();
-    _fetchUserData();
-  }
-
-  Future<void> _fetchUserData() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      DocumentSnapshot snapshot = await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user.uid)
-          .get();
-
-      setState(() {
-        userData = snapshot.data() as Map<String, dynamic>?;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
@@ -103,33 +82,17 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ],
                   ),
                 ),
-                if (user != null)
-                  if (userData != null) ...[
-                    isMobile ? SizedBox.shrink() : Spacer(),
-                    isMobile
-                        ? SizedBox.shrink()
-                        : Text(
-                            "Welcome: ${userData!['name']}",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                            ),
-                          ),
-                    isMobile
-                        ? SizedBox.shrink()
-                        : IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Profile(
-                                      userData: userData), // Pass userData here
-                                ),
-                              );
-                            },
-                            icon: Icon(Icons.account_box)),
-                  ] else
-                    CircularProgressIndicator(),
+                if (user != null) ...[
+                  isMobile ? SizedBox.shrink() : Spacer(),
+                  isMobile
+                      ? SizedBox.shrink()
+                      : IconButton(
+                          onPressed: () {
+                            context.go(
+                                '/profile'); // Navigate to profile screen route
+                          },
+                          icon: Icon(Icons.account_box, color: Colors.white)),
+                ],
                 Spacer(),
                 isMobile
                     ? SizedBox.shrink()
@@ -193,32 +156,19 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         icon: Icon(
                           Icons.cancel,
                           size: 34,
+                          color: Colors.white,
                         ),
                       ),
                       SizedBox(height: 10),
-                      if (user != null)
-                        if (userData != null) ...[
-                          Text(
-                            "Welcome: ${userData!['name']}",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                          IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Profile(
-                                        userData:
-                                            userData), // Pass userData here
-                                  ),
-                                );
-                              },
-                              icon: Icon(Icons.account_box)),
-                        ] else
-                          CircularProgressIndicator(),
+                      if (user != null) ...[
+                        IconButton(
+                            onPressed: () {
+                              Navigator.pop(context); // Close drawer first
+                              context.go(
+                                  '/profile'); // Navigate to profile screen route
+                            },
+                            icon: Icon(Icons.account_box, color: Colors.white)),
+                      ],
                       SizedBox(height: 10),
                       _buildDrawerButton(context,
                           label: 'Home', screenName: '/'),
