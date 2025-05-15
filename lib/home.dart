@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
   List<dynamic> syllabus = [];
   bool isLoading = true;
   List<String> internshipTexts = [];
-  List<Map<String, dynamic>> techContent = [];
   List<Map<String, dynamic>> techContentRow = [];
 
   @override
@@ -45,7 +44,6 @@ class _HomePageState extends State<HomePage> {
 
     setState(() {
       internshipTexts = List<String>.from(data['internshipTexts']);
-      techContent = List<Map<String, dynamic>>.from(data['techContent']);
       techContentRow = List<Map<String, dynamic>>.from(data['techContentRow']);
     });
   }
@@ -64,35 +62,11 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     HeroWidget(),
                     SizedBox(height: 20),
-                    ...techContent.map(
-                      (content) => FeatureSectionRow(
-                        imageUrl: content["image"]!,
-                        title: content["title"]!,
-                        description: content["description"]!,
-                        type: techContent.indexOf(content) % 2 == 0
-                            ? "Image"
-                            : "Text",
-                      ),
-                    ),
+                    FeatureSectionRow.buildFeatureList(),
                     SizedBox(height: 20),
                     FeatureGrid(),
                     const SizedBox(height: 16),
-                    Wrap(
-                      spacing: 10,
-                      runSpacing: 10,
-                      children: techContentRow
-                          .map(
-                            (content) => SizedBox(
-                              width: 450,
-                              child: FeatureModernColumn(
-                                imageUrl: content["image"]!,
-                                title: content["title"]!,
-                                description: content["description"]!,
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
+                    FeatureModernColumn.buildFeatureGrid(),
                     SizedBox(height: 20),
                     // Padding(
                     //   padding: const EdgeInsets.all(16.0),

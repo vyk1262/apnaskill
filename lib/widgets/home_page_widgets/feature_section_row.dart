@@ -11,6 +11,36 @@ class FeatureSectionRow extends StatelessWidget {
   final String description;
   final String type;
 
+  static List<Map<String, String>> get techContent => [
+        {
+          "image": "https://i.ibb.co/bg7t9zWd/book-shelf.png",
+          "title": "Master Skills Through Engaging Quizzes",
+          "description":
+              "Unlock your potential with interactive quizzes designed for rapid learning and comprehensive understanding. Practice, reinforce your knowledge, and become a proficient professional faster."
+        },
+        {
+          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
+          "title": "Learn Faster, Understand Deeper with Quiz-Based Learning",
+          "description":
+              "Skill Factorial empowers you to grasp complex topics quickly through focused quizzes. Maximize your learning efficiency and gain a holistic understanding of subjects in less time. Start practicing and accelerate your skill development journey today!"
+        }
+      ];
+
+  static Widget buildFeatureList() {
+    return Column(
+      children: techContent
+          .map(
+            (content) => FeatureSectionRow(
+              imageUrl: content["image"]!,
+              title: content["title"]!,
+              description: content["description"]!,
+              type: techContent.indexOf(content) % 2 == 0 ? "Image" : "Text",
+            ),
+          )
+          .toList(),
+    );
+  }
+
   const FeatureSectionRow({
     super.key,
     required this.imageUrl,
