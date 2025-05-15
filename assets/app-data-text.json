@@ -76,19 +76,5 @@
       "title": "Immediate Quiz Results & Insights",
       "description": "Receive instant scores and detailed explanations after each quiz to track your progress and understand concepts quickly."
     }
-  ],
-  "contactData": [
-    { "icon": "email", "title": "Email", "text": "support@skillfactorial.com" },
-    { "icon": "phone", "title": "Phone", "text": "+91 8175989767" },
-    {
-      "icon": "message_rounded",
-      "title": "Whatsapp",
-      "text": "+91 8175989767"
-    },
-    {
-      "icon": "location_on",
-      "title": "Location",
-      "text": "Skill Factorial, Near to Archid Tower, Baner, Pune-422045"
-    }
   ]
 }

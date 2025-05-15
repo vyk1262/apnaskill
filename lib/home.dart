@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
   bool isLoading = true;
   List<String> internshipTexts = [];
   List<Map<String, dynamic>> featureData = [];
-  List<Map<String, dynamic>> contactData = [];
   List<Map<String, dynamic>> techContent = [];
   List<Map<String, dynamic>> techContentRow = [];
 
@@ -61,7 +60,6 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       internshipTexts = List<String>.from(data['internshipTexts']);
       featureData = List<Map<String, dynamic>>.from(data['featureData']);
-      contactData = List<Map<String, dynamic>>.from(data['contactData']);
       techContent = List<Map<String, dynamic>>.from(data['techContent']);
       techContentRow = List<Map<String, dynamic>>.from(data['techContentRow']);
     });
@@ -141,21 +139,7 @@ class _HomePageState extends State<HomePage> {
                     // SizedBox(height: 40),
                     // WhyChooseUs(),
                     const SizedBox(height: 40),
-                    Wrap(
-                      spacing: 16,
-                      runSpacing: 16,
-                      alignment: WrapAlignment.center,
-                      children: contactData.map((data) {
-                        return SizedBox(
-                          width: 250,
-                          child: ContactCard(
-                            icon: iconMapping[data['icon']] ?? Icons.help,
-                            title: data['title'],
-                            text: data['text'],
-                          ),
-                        );
-                      }).toList(),
-                    ),
+                    const ContactCard(),
                     SizedBox(height: 40),
                     // ContactForm(),
                     Container(

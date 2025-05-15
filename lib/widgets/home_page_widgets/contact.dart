@@ -1,140 +1,124 @@
 import 'package:flutter/material.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
+import 'package:flutter/services.dart';
+import 'package:cached_network_image/cached_network_image.dart'; // Import the package
 
 class ContactCard extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String text;
-  final Widget? child;
-
-  const ContactCard({
-    required this.icon,
-    required this.title,
-    required this.text,
-    this.child,
-  });
+  const ContactCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> contactData = [
+      {
+        'icon': Icons.email,
+        'title': 'Email',
+        'text': 'support@skillfactorial.com',
+      },
+      {'icon': Icons.phone, 'title': 'Phone', 'text': '+91 8175989767'},
+      {
+        'icon': Icons.message_rounded,
+        'title': 'Whatsapp',
+        'text': '+91 8175989767',
+      },
+      {
+        'icon': Icons.location_on,
+        'title': 'Location',
+        'text': 'Skill Factorial, Near to Archid Tower, Baner, Pune-422045',
+      }
+    ];
+
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(15.0),
       ),
-      elevation: 4.0,
-      color: Color(0xFFe440ff), //#e440ff
-      child: Padding(
-        padding: const EdgeInsets.all(16.0), // Add consistent padding
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center, // Center-align content
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              icon,
-              size: 40.0,
-              color: Colors.white,
-            ),
-            Divider(),
-            const SizedBox(height: 8.0),
-            Text(
-              title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0,
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center, // Center-align text
-            ),
-            Divider(),
-            const SizedBox(height: 4.0),
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center, // Center-align text
-            ),
-            if (child != null) ...[
-              const SizedBox(height: 8.0),
-              child!,
+      elevation: 8.0,
+      margin: const EdgeInsets.all(16), // Added margin for better spacing
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              const Color(0xFF10B981),
+              const Color(0xFF8B5CF6).withOpacity(0.8)
             ],
-          ],
+          ),
+          borderRadius: BorderRadius.circular(15.0),
         ),
-      ),
-    );
-  }
-}
-
-class ContactForm extends StatefulWidget {
-  const ContactForm({super.key});
-
-  @override
-  _ContactFormState createState() => _ContactFormState();
-}
-
-class _ContactFormState extends State<ContactForm> {
-  final _formKey = GlobalKey<FormState>();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      width: MediaQuery.of(context).size.width / 2,
-      child: Form(
-        key: _formKey,
-        child: Column(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center, // Changed to start
           children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Name',
-                border: OutlineInputBorder(),
+            Expanded(
+              child: CachedNetworkImage(
+                imageUrl:
+                    'https://i.ibb.co/wFTXw9s9/contact.png', // Corrected URL
+                placeholder: (context, url) =>
+                    const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) =>
+                    const Center(child: Icon(Icons.error)),
+                fit: BoxFit.cover, // Ensure the image fits within the container
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your name';
-                }
-                return null;
-              },
             ),
-            const SizedBox(height: 20),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Email',
-                border: OutlineInputBorder(),
+            Expanded(
+              // Added Expanded
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(right: 16.0), // Added right padding
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start, // Added this line
+                  children: contactData.map((data) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start, //added
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Icon(
+                              data['icon'] as IconData,
+                              color: Colors.white,
+                              size: 40.0,
+                            ),
+                          ),
+                          const SizedBox(width: 12.0),
+                          Expanded(
+                            // Use Expanded here
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  data['title'] as String,
+                                  style: const TextStyle(
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 2.0),
+                                Text(
+                                  data['text'] as String,
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    color: Colors.white.withOpacity(0.9),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }).toList(),
+                ),
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your email';
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: 20),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Message',
-                border: OutlineInputBorder(),
-                alignLabelWithHint: true,
-              ),
-              maxLines: 5,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your message';
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: 20),
-            buildCtaButton(
-              text: "Send Message",
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text('Message Sent - Testing Purpose Only')),
-                  );
-                }
-              },
             ),
           ],
         ),
