@@ -28,23 +28,8 @@ class _HomePageState extends State<HomePage> {
   List<dynamic> syllabus = [];
   bool isLoading = true;
   List<String> internshipTexts = [];
-  List<Map<String, dynamic>> featureData = [];
   List<Map<String, dynamic>> techContent = [];
   List<Map<String, dynamic>> techContentRow = [];
-
-  final Map<String, IconData> iconMapping = {
-    "clock": FontAwesomeIcons.clock,
-    "book": FontAwesomeIcons.book,
-    "chartLine": FontAwesomeIcons.chartLine,
-    "doubts": FontAwesomeIcons.question,
-    "person": Icons.person,
-    "lightbulb_outline": Icons.lightbulb_outline,
-    "menu_book": Icons.menu_book,
-    "email": Icons.email,
-    "phone": Icons.phone,
-    "whatsapp_rounded": Icons.message_rounded,
-    "location_on": Icons.location_on,
-  };
 
   @override
   void initState() {
@@ -59,7 +44,6 @@ class _HomePageState extends State<HomePage> {
 
     setState(() {
       internshipTexts = List<String>.from(data['internshipTexts']);
-      featureData = List<Map<String, dynamic>>.from(data['featureData']);
       techContent = List<Map<String, dynamic>>.from(data['techContent']);
       techContentRow = List<Map<String, dynamic>>.from(data['techContentRow']);
     });
@@ -90,21 +74,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    Wrap(
-                      spacing: 50,
-                      runSpacing: 20,
-                      alignment: WrapAlignment.center,
-                      children: featureData.map((data) {
-                        return SizedBox(
-                          width: 250,
-                          child: FeatureItem(
-                            icon: iconMapping[data['icon']] ?? Icons.help,
-                            title: data['title'],
-                            description: data['description'],
-                          ),
-                        );
-                      }).toList(),
-                    ),
+                    FeatureGrid(),
                     const SizedBox(height: 16),
                     Wrap(
                       spacing: 10,

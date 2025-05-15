@@ -39,42 +39,5 @@
     "The academic world can be challenging, but with structured practice through assignments and projects, you're building a solid foundation for success.",
     "Break away from traditional rote learning. Engage with flexible and interactive quizzes, assignments, and projects designed to fit your schedule.",
     "Ready to excel in your subjects? Practical learning through quizzes, assignments, and projects bridges the gap between theory and application, boosting your knowledge and skills."
-  ],
-  "featureData": [
-    {
-      "icon": "person",
-      "title": "Personalized Quiz Experience",
-      "description": "Quizzes tailored to your learning goals and progress, ensuring you focus on what matters most for your skill development."
-    },
-    {
-      "icon": "lightbulb_outline",
-      "title": "Learn from Expert Insights (via Quiz Design)",
-      "description": "Gain valuable insights and practical knowledge embedded within expertly crafted quiz questions and explanations."
-    },
-    {
-      "icon": "menu_book",
-      "title": "Concise Learning Through Quizzes",
-      "description": "Efficiently grasp core concepts across various topics through well-structured and focused quiz formats."
-    },
-    {
-      "icon": "doubts",
-      "title": "Weekly Quiz Doubt Clarification",
-      "description": "Get your questions answered in our weekly sessions dedicated to resolving any doubts you encounter while practicing the quizzes."
-    },
-    {
-      "icon": "person",
-      "title": "Quiz Anytime, Anywhere",
-      "description": "Access our quizzes at your convenience and learn according to your own schedule."
-    },
-    {
-      "icon": "book",
-      "title": "Explore Diverse Quiz Topics",
-      "description": "Choose from a wide range of subjects and expand your knowledge through engaging quizzes."
-    },
-    {
-      "icon": "chartLine",
-      "title": "Immediate Quiz Results & Insights",
-      "description": "Receive instant scores and detailed explanations after each quiz to track your progress and understand concepts quickly."
-    }
   ]
 }
