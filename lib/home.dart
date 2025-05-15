@@ -13,7 +13,8 @@ import 'package:skill_factorial/widgets/home_page_widgets/why.dart';
 import 'custom_app_bar.dart';
 import 'widgets/footer.dart';
 import 'widgets/home_page_widgets/contact.dart';
-import 'widgets/home_page_widgets/feature_section.dart';
+import 'widgets/home_page_widgets/feature_modern_column.dart';
+import 'widgets/home_page_widgets/feature_section_row.dart';
 import 'widgets/home_page_widgets/feature_widget.dart';
 import 'widgets/home_page_widgets/text_card_widget.dart';
 
@@ -64,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                     HeroWidget(),
                     SizedBox(height: 20),
                     ...techContent.map(
-                      (content) => FeatureSectionNew(
+                      (content) => FeatureSectionRow(
                         imageUrl: content["image"]!,
                         title: content["title"]!,
                         description: content["description"]!,
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                           .map(
                             (content) => SizedBox(
                               width: 450,
-                              child: FeatureModern(
+                              child: FeatureModernColumn(
                                 imageUrl: content["image"]!,
                                 title: content["title"]!,
                                 description: content["description"]!,
