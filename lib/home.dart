@@ -53,11 +53,10 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 20),
                     const TextCardWidget(),
                     const SizedBox(height: 20),
-                    // WhyChooseUs(),
+                    WhyChooseUs(),
                     const SizedBox(height: 20),
                     const ContactCard(),
                     const SizedBox(height: 20),
-                    // ContactForm(),
                     Container(
                       padding: const EdgeInsets.all(20),
                       child: Column(
@@ -79,8 +78,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 20),
                     Footer(),
                   ],
                 ),
