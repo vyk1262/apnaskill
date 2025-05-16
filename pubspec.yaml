@@ -89,7 +89,6 @@ flutter:
     - assets/student_home/
     - assets/faqs.json
     - assets/explore.json
-    - assets/app-data-text.json
     - assets/mentors.json
     - assets/Python Programming/
     - assets/Python Programming/quizzes/

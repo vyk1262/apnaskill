@@ -26,26 +26,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<dynamic> syllabus = [];
-  bool isLoading = true;
-  List<String> internshipTexts = [];
-  List<Map<String, dynamic>> techContentRow = [];
-
   @override
   void initState() {
     super.initState();
-    loadAppTextJsonData();
-  }
-
-  Future<void> loadAppTextJsonData() async {
-    final String response =
-        await rootBundle.loadString('assets/app-data-text.json');
-    final data = json.decode(response);
-
-    setState(() {
-      internshipTexts = List<String>.from(data['internshipTexts']);
-      techContentRow = List<Map<String, dynamic>>.from(data['techContentRow']);
-    });
   }
 
   @override
@@ -61,34 +44,22 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     HeroWidget(),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     FeatureSectionRow.buildFeatureList(),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     FeatureGrid(),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 20),
                     FeatureModernColumn.buildFeatureGrid(),
-                    SizedBox(height: 20),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(16.0),
-                    //   child: Column(
-                    //     crossAxisAlignment: CrossAxisAlignment.start,
-                    //     children: [
-                    //       for (final text in internshipTexts)
-                    //         AnimatedSwitcher(
-                    //           duration: const Duration(milliseconds: 500),
-                    //           child: buildTextCard(text),
-                    //         ),
-                    //     ],
-                    //   ),
-                    // ),
-                    // SizedBox(height: 40),
+                    const SizedBox(height: 20),
+                    const TextCardWidget(),
+                    const SizedBox(height: 20),
                     // WhyChooseUs(),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 20),
                     const ContactCard(),
-                    SizedBox(height: 40),
+                    const SizedBox(height: 20),
                     // ContactForm(),
                     Container(
-                      padding: const EdgeInsets.all(40),
+                      padding: const EdgeInsets.all(20),
                       child: Column(
                         children: [
                           const Text(
