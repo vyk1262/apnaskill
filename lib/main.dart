@@ -18,6 +18,7 @@ import 'firebase_options.dart';
 import 'home.dart';
 import 'model/user_model.dart';
 import 'screens/blogs.dart';
+import 'screens/games/game_chess.dart';
 import 'screens/url_not_found.dart';
 
 import 'package:go_router/go_router.dart';
@@ -74,6 +75,10 @@ final router = GoRouter(
         GoRoute(
           path: 'colleges',
           builder: (context, state) => const UniversitiesScreen(),
+        ),
+        GoRoute(
+          path: 'chess',
+          builder: (context, state) => const GameChess(),
         ),
       ],
     ),

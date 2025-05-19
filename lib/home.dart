@@ -78,6 +78,10 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
+                    buildCtaButton(
+                      text: "chess game",
+                      onPressed: () => context.go('/chess'),
+                    ),
                     const SizedBox(height: 20),
                     Footer(),
                   ],
