@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 
@@ -9,7 +8,7 @@ class FeatureSectionRow extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String description;
-  final String type;
+  final int index; // Add index to the constructor
 
   static List<Map<String, String>> get techContent => [
         {
@@ -23,18 +22,38 @@ class FeatureSectionRow extends StatelessWidget {
           "title": "Learn Faster, Understand Deeper with Quiz-Based Learning",
           "description":
               "Skill Factorial empowers you to grasp complex topics quickly through focused quizzes. Maximize your learning efficiency and gain a holistic understanding of subjects in less time. Start practicing and accelerate your skill development journey today!"
-        }
+        },
+        {
+          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
+          "title": "Unlock Your Potential with Skill Factorial",
+          "description":
+              "Skill Factorial.com is your gateway to mastering technology. We're passionate about empowering students like YOU with the skills and practical experience needed to excel in your studies."
+        },
+        {
+          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
+          "title": "Unlock Your Potential with Skill Factorial",
+          "description":
+              "The academic world can be challenging, but with structured practice through assignments and projects, you're building a solid foundation for success."
+        },
+        {
+          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
+          "title": "Unlock Your Potential with Skill Factorial",
+          "description":
+              "Ready to excel in your subjects? Practical learning through quizzes, assignments, and projects bridges the gap between theory and application, boosting your knowledge and skills."
+        },
       ];
 
   static Widget buildFeatureList() {
     return Column(
       children: techContent
+          .asMap() // Use asMap to get index along with content
+          .entries // Get iterable of MapEntry (index, content)
           .map(
-            (content) => FeatureSectionRow(
-              imageUrl: content["image"]!,
-              title: content["title"]!,
-              description: content["description"]!,
-              type: techContent.indexOf(content) % 2 == 0 ? "Image" : "Text",
+            (entry) => FeatureSectionRow(
+              imageUrl: entry.value["image"]!,
+              title: entry.value["title"]!,
+              description: entry.value["description"]!,
+              index: entry.key, // Pass the index here
             ),
           )
           .toList(),
@@ -46,7 +65,7 @@ class FeatureSectionRow extends StatelessWidget {
     required this.imageUrl,
     required this.title,
     required this.description,
-    required this.type,
+    required this.index, // Require index in the constructor
   });
 
   @override
@@ -56,6 +75,7 @@ class FeatureSectionRow extends StatelessWidget {
       child: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth < 700) {
+            // Mobile layout (image on top, then text)
             return Column(
               children: [
                 _buildMobileImage(),
@@ -64,11 +84,19 @@ class FeatureSectionRow extends StatelessWidget {
               ],
             );
           }
+          // Desktop layout
           return Row(
             children: [
-              if (type == "Image") _buildDesktopImage(),
-              Expanded(child: _buildContent(context)),
-              if (type == "Text") _buildDesktopImage(),
+              // Alternating logic based on index
+              if (index % 2 == 0) ...[
+                // Even index: Text on left, Image on right
+                Expanded(child: _buildContent(context)),
+                _buildDesktopImage()
+              ] else ...[
+                // Odd index: Image on left, Text on right
+                _buildDesktopImage(),
+                Expanded(child: _buildContent(context))
+              ],
             ],
           );
         },
