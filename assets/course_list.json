@@ -249,5 +249,33 @@
     "Test_Reporting_Analytics",
     "CI_CD_Integration",
     "Test_Data_Management"
+  ],
+  "Chess": [
+    "Chess_Fundamentals",
+    "Basic_Rules_and_Moves",
+    "Board_Setup_and_Pieces",
+    "Opening_Principles",
+    "Middle_Game_Strategies",
+    "End_Game_Techniques",
+    "Tactical_Patterns",
+    "Strategic_Planning",
+    "Game_Analysis",
+    "Tournament_Play",
+    "Chess_Psychology",
+    "Advanced_Tactics"
+  ],
+  "Sudoku": [
+    "Sudoku_Basics",
+    "Grid_Structure",
+    "Number_Placement_Rules",
+    "Basic_Solving_Techniques",
+    "Intermediate_Strategies",
+    "Advanced_Techniques",
+    "Pattern_Recognition",
+    "Logic_and_Reasoning",
+    "Speed_Solving_Methods",
+    "Puzzle_Creation",
+    "Variant_Sudoku_Types",
+    "Competition_Strategies"
   ]
 }

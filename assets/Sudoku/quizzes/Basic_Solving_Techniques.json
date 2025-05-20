@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Basic_Solving_Techniques",
+      "questions": [
+        {
+          "question": "What is the most fundamental basic solving technique in Sudoku?",
+          "options": {
+            "A": "Elimination based on row, column, and block constraints (Scanning/Single Candidate).",
+            "B": "Looking for 'Naked Pairs'.",
+            "C": "Using 'Hidden Singles'.",
+            "D": "Guessing."
+          },
+          "correct_answer": "A",
+          "explanation": "This involves checking each empty cell to see which numbers from 1-9 are already present in its row, column, and 3x3 block, leaving only one possibility."
+        },
+        {
+          "question": "What is 'Scanning' in Sudoku solving?",
+          "options": {
+            "A": "Quickly looking at the entire grid without focusing on specific cells.",
+            "B": "Systematically checking rows, columns, and blocks for places where a specific number must go or cannot go.",
+            "C": "Using a pencil to mark potential candidates in every empty cell.",
+            "D": "Using a computer program to find the solution."
+          },
+          "correct_answer": "B",
+          "explanation": "Scanning is a methodical way to apply the basic elimination rule."
+        },
+        {
+          "question": "What is a 'Single Candidate' (or 'Forced Move') technique?",
+          "options": {
+            "A": "When an empty cell has only one possible number that can be placed in it according to the Sudoku rules.",
+            "B": "When a row, column, or block has only one empty cell left.",
+            "C": "When you have only one number left to place in the entire grid.",
+            "D": "When you guess a number and it turns out to be correct."
+          },
+          "correct_answer": "A",
+          "explanation": "Finding these single candidates is often the first step in solving a Sudoku."
+        },
+        {
+          "question": "How do you identify a 'Single Candidate' in an empty cell?",
+          "options": {
+            "A": "By guessing a number and seeing if it fits.",
+            "B": "By checking the numbers already present in the same row, column, and 3x3 block; if only one number from 1-9 is missing from all three, it's the single candidate.",
+            "C": "By looking for patterns in the givens.",
+            "D": "By using advanced solving techniques."
+          },
+          "correct_answer": "B",
+          "explanation": "This process of elimination is key to finding single candidates."
+        },
+        {
+          "question": "What is a 'Naked Single'?",
+          "options": {
+            "A": "A single given number in a row, column, or block.",
+            "B": "An empty cell where, after eliminating all numbers present in its row, column, and block, only one possible candidate remains (same as Single Candidate/Forced Move).",
+            "C": "A single empty cell that is not in the same row, column, or block as any other empty cells.",
+            "D": "A single number that appears only once in the entire grid."
+          },
+          "correct_answer": "B",
+          "explanation": "Naked Single is another term for a Single Candidate."
+        },
+        {
+          "question": "What is a 'Hidden Single' technique?",
+          "options": {
+            "A": "A number that is hidden because it's written very small in a cell.",
+            "B": "A number that is the only possible candidate for a specific cell within a row, column, or 3x3 block, even if other candidates might also be possible for that cell based on just its row, column, and block.",
+            "C": "A single given number that is hard to see.",
+            "D": "A number that appears only once in the solved puzzle."
+          },
+          "correct_answer": "B",
+          "explanation": "Hidden Singles require looking within a row, column, or block to find a number that can only go in one specific empty cell within that unit."
+        },
+        {
+          "question": "How do you find a 'Hidden Single' for a specific number (e.g., the number '4') within a row?",
+          "options": {
+            "A": "Look for the cell that seems most likely to contain a '4'.",
+            "B": "Examine each empty cell in that row and see if '4' is a possible candidate. If '4' is a candidate for only one cell in that row, then '4' must go in that cell.",
+            "C": "Look for rows that are missing only the number '4'.",
+            "D": "Guess where the '4' might be hidden."
+          },
+          "correct_answer": "B",
+          "explanation": "The '4' might also be a candidate in other cells in that row based on column and block constraints, but if it's uniquely possible in one cell *within that row*, it's a Hidden Single."
+        },
+        {
+          "question": "Can 'Hidden Singles' occur in columns and 3x3 blocks as well as rows?",
+          "options": {
+            "A": "No, they only occur in rows.",
+            "B": "Yes, the same logic applies to columns and 3x3 blocks; a number might be a candidate in multiple cells within that unit, but if it's the *only* cell in that unit where it can go, it's a Hidden Single.",
+            "C": "Only in very easy puzzles.",
+            "D": "Only in very hard puzzles."
+          },
+          "correct_answer": "B",
+          "explanation": "The principle of Hidden Singles is fundamental to all three units of the Sudoku grid."
+        },
+        {
+          "question": "What is the relationship between 'Naked Singles' and 'Hidden Singles'?",
+          "options": {
+            "A": "They are the same thing.",
+            "B": "A Naked Single is when an empty cell has only one possible candidate remaining. A Hidden Single is when a number is the only possible candidate for a cell within a row, column, or block, even if that cell has other candidates.",
+            "C": "Naked Singles are easier to find than Hidden Singles.",
+            "D": "Hidden Singles always lead to Naked Singles."
+          },
+          "correct_answer": "B",
+          "explanation": "They are distinct basic techniques that rely on different levels of analysis."
+        },
+        {
+          "question": "When should you typically look for 'Hidden Singles' in your solving process?",
+          "options": {
+            "A": "Right at the beginning, before looking for Naked Singles.",
+            "B": "After you have exhausted the 'Naked Singles' and need to make more deductions.",
+            "C": "Only in very difficult puzzles.",
+            "D": "Only when you are completely stuck."
+          },
+          "correct_answer": "B",
+          "explanation": "Finding Naked Singles is often quicker initially, and then Hidden Singles can help to progress further."
+        },
+        {
+          "question": "What is the purpose of marking potential candidates (pencil marks) in empty cells?",
+          "options": {
+            "A": "To make the puzzle look more complicated.",
+            "B": "To help visualize all the possible numbers for each empty cell, making it easier to spot Naked and Hidden Singles, as well as more advanced patterns later on.",
+            "C": "To keep track of how many guesses you have made.",
+            "D": "It's only useful for beginners."
+          },
+          "correct_answer": "B",
+          "explanation": "Candidate marking is a valuable aid for more complex deductions."
+        },
+        {
+          "question": "When marking candidates, which numbers should you consider for a specific empty cell?",
+          "options": {
+            "A": "All numbers from 1 to 9.",
+            "B": "Only the numbers that are not already present in the same row.",
+            "C": "Only the numbers that are not already present in the same column.",
+            "D": "Only the numbers that are not already present in the same row, column, and 3x3 block."
+          },
+          "correct_answer": "D",
+          "explanation": "Candidates are the numbers that *could* potentially go in a cell without immediately violating the rules."
+        },
+        {
+          "question": "How can candidate marking help you find a 'Naked Single'?",
+          "options": {
+            "A": "It will highlight the cell where you should guess.",
+            "B": "If an empty cell has only one candidate marked in it, then that number must be the Naked Single for that cell.",
+            "C": "You need to erase all the other candidates to find the Naked Single.",
+            "D": "It doesn't help with Naked Singles."
+          },
+          "correct_answer": "B",
+          "explanation": "A single remaining candidate directly identifies a Naked Single."
+        },
+        {
+          "question": "How can candidate marking help you find a 'Hidden Single'?",
+          "options": {
+            "A": "It will automatically highlight Hidden Singles.",
+            "B": "By looking within a row, column, or block, if a particular number appears as a candidate in only one empty cell within that unit, then that number is a Hidden Single for that cell.",
+            "C": "You need to hide the other candidates to see the Hidden Single.",
+            "D": "It's more difficult to find Hidden Singles with candidate marking."
+          },
+          "correct_answer": "B",
+          "explanation": "Candidate marking makes it easier to see the unique placement possibilities within a unit."
+        },
+        {
+          "question": "What is the next step in solving a Sudoku after you have found all the 'Naked Singles' and 'Hidden Singles' you can easily identify?",
+          "options": {
+            "A": "Start guessing.",
+            "B": "Look for more advanced techniques like 'Pairs', 'Triples', etc.",
+            "C": "Give up and try a different puzzle.",
+            "D": "Erase all your pencil marks and start over."
+          },
+          "correct_answer": "B",
+          "explanation": "Basic techniques might not be sufficient for more challenging puzzles."
+        },
+        {
+          "question": "Is there a specific order in which you should always apply the basic solving techniques?",
+          "options": {
+            "A": "Yes, always start with Hidden Singles.",
+            "B": "Generally, it's efficient to look for Naked Singles first, as they are often the most direct deductions, followed by Hidden Singles.",
+            "C": "The order doesn't matter as long as you use all of them.",
+            "D": "You should alternate between them randomly."
+          },
+          "correct_answer": "B",
+          "explanation": "Naked Singles are usually easier to spot initially."
+        },
+        {
+          "question": "What should you do if you cannot find any 'Naked Singles' or 'Hidden Singles'?",
+          "options": {
+            "A": "The puzzle is unsolvable.",
+            "B": "You need to employ more advanced solving strategies.",
+            "C": "You should take a break and come back later.",
+            "D": "You probably made a mistake earlier."
+          },
+          "correct_answer": "B",
+          "explanation": "More complex puzzles require more sophisticated techniques."
+        },
+        {
+          "question": "Can you solve all Sudoku puzzles using only 'Naked Singles' and 'Hidden Singles'?",
+          "options": {
+            "A": "Yes, these are the only techniques you ever need.",
+            "B": "No, many puzzles, especially those with higher difficulty levels, require the use of more advanced strategies.",
+            "C": "Only if you are very skilled at spotting them.",
+            "D": "It depends on the size of the Sudoku grid."
+          },
+          "correct_answer": "B",
+          "explanation": "Basic techniques are the foundation, but not always sufficient."
+        },
+        {
+          "question": "Why are 'Naked Singles' and 'Hidden Singles' considered 'basic' solving techniques?",
+          "options": {
+            "A": "They are only used by beginners.",
+            "B": "They rely on direct logical deduction from the Sudoku rules without needing to consider complex patterns or multiple possibilities simultaneously.",
+            "C": "They are the fastest techniques to apply.",
+            "D": "They are the most frequently occurring situations in all Sudoku puzzles."
+          },
+          "correct_answer": "B",
+          "explanation": "These techniques are straightforward applications of the fundamental rules."
+        },
+        {
+          "question": "What is the ultimate goal of using basic solving techniques in Sudoku?",
+          "options": {
+            "A": "To fill as many cells as possible quickly.",
+            "B": "To logically deduce the correct number for each empty cell until the entire grid is filled according to the Sudoku rules.",
+            "C": "To find the hidden pattern in the puzzle.",
+            "D": "To prepare the grid for more advanced techniques."
+          },
+          "correct_answer": "B",
+          "explanation": "The aim is to solve the puzzle through logical deduction."
+        }
+      ]
+    }
+  ]
+}
