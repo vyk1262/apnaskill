@@ -202,87 +202,126 @@ class _QuizScreenState extends State<QuizScreen> {
     return Container(
       width: isMobile
           ? _showSidebarMobile
-              ? MediaQuery.of(context)
-                  .size
-                  .width // Occupy full width on mobile when open
+              ? MediaQuery.of(context).size.width
               : null
           : null,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF1A237E), Color(0xFF3949AB)],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
       child: ListView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         children: [
           if (isMobile)
-            ElevatedButton.icon(
-              icon: const Icon(
-                Icons.close,
-                size: 24,
+            Container(
+              margin: const EdgeInsets.only(bottom: 16),
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.close, size: 24, color: Colors.white),
+                label: const Text(
+                  "Close Menu",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white.withOpacity(0.2),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                onPressed: () => setState(() => _showSidebarMobile = false),
               ),
+            ),
+          Container(
+            margin: const EdgeInsets.only(bottom: 16),
+            child: ElevatedButton.icon(
+              icon: const Icon(Icons.arrow_back_ios_new, size: 20, color: Colors.white),
               label: const Text(
-                "Close Menu",
+                "Back to Courses",
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                backgroundColor: Colors.white.withOpacity(0.2),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              onPressed: () {
-                setState(() {
-                  _showSidebarMobile = false;
-                });
-              },
-            ),
-          if (isMobile) const SizedBox(height: 10),
-          ElevatedButton.icon(
-            icon: const Icon(
-              Icons.arrow_back,
-              size: 24,
-            ),
-            label: const Text(
-              "Go Back",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          const SizedBox(height: 10),
-          Text(
-            widget.internshipName.toUpperCase(),
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 20,
+              onPressed: () => Navigator.pop(context),
             ),
           ),
-          const Divider(),
           Container(
+            margin: const EdgeInsets.symmetric(vertical: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.school,
+                  size: 28,
+                  color: Colors.white,
+                ),
+                const SizedBox(width: 12),
+                Flexible(
+                  child: Text(
+                    widget.internshipName.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 8),
             decoration: BoxDecoration(
-              color: showGeneralInfo ? Colors.black : Colors.blue,
-              borderRadius: BorderRadius.circular(8),
+              color: showGeneralInfo
+                  ? Colors.white.withOpacity(0.15)
+                  : Colors.transparent,
+              borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: showGeneralInfo ? Colors.red : Colors.transparent,
+                color: showGeneralInfo
+                    ? Colors.white.withOpacity(0.5)
+                    : Colors.white.withOpacity(0.1),
+                width: 2,
               ),
             ),
-            margin: const EdgeInsets.symmetric(vertical: 4),
             child: ListTile(
-              leading: const Icon(
-                Icons.info,
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              leading: Icon(
+                Icons.info_outline,
+                color: Colors.white.withOpacity(0.9),
+                size: 26,
               ),
-              title: const Text("GENERAL INFO"),
-              selected: showGeneralInfo,
+              title: const Text(
+                "Course Overview",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
               onTap: () {
                 setState(() {
                   showGeneralInfo = true;
@@ -294,37 +333,82 @@ class _QuizScreenState extends State<QuizScreen> {
               },
             ),
           ),
-          const Divider(),
-          const Text(
-            "Quizzes",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 10),
-          ...widget.quizList.map((topic) {
-            return Container(
-              decoration: BoxDecoration(
-                  color: selectedQuiz == topic ? Colors.black : Colors.blue,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color:
-                        selectedQuiz == topic ? Colors.red : Colors.transparent,
-                  )),
-              margin: const EdgeInsets.symmetric(vertical: 4),
-              child: ListTile(
-                leading: const Icon(Icons.quiz),
-                title: Text(
-                  topic.replaceAll('-', ' ').toUpperCase(),
-                  style: const TextStyle(
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 16),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.quiz_outlined,
+                  color: Colors.white,
+                  size: 24,
+                ),
+                const SizedBox(width: 12),
+                const Text(
+                  "Available Quizzes",
+                  style: TextStyle(
+                    color: Colors.white,
                     fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
                   ),
                 ),
-                trailing: completedQuizzes.contains(topic)
-                    ? const Icon(Icons.done, color: Colors.white)
-                    : null,
-                selected: selectedQuiz == topic,
+              ],
+            ),
+          ),
+          ...widget.quizList.map((topic) {
+            final bool isSelected = selectedQuiz == topic;
+            final bool isCompleted = completedQuizzes.contains(topic);
+            return Container(
+              margin: const EdgeInsets.symmetric(vertical: 6),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? Colors.white.withOpacity(0.15)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: isSelected
+                      ? Colors.white.withOpacity(0.5)
+                      : Colors.white.withOpacity(0.1),
+                  width: 2,
+                ),
+              ),
+              child: ListTile(
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                leading: Stack(
+                  children: [
+                    Icon(
+                      Icons.assignment_outlined,
+                      color: Colors.white.withOpacity(0.9),
+                      size: 26,
+                    ),
+                    if (isCompleted)
+                      Positioned(
+                        right: -2,
+                        bottom: -2,
+                        child: Container(
+                          padding: const EdgeInsets.all(2),
+                          decoration: const BoxDecoration(
+                            color: Colors.green,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            Icons.check,
+                            size: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+                title: Text(
+                  topic.replaceAll('-', ' ').toUpperCase(),
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontSize: 15,
+                    fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
+                    letterSpacing: 0.5,
+                  ),
+                ),
                 onTap: () {
                   setState(() {
                     selectedQuiz = topic;
@@ -337,8 +421,6 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             );
           }).toList(),
-          const Divider(),
-          const SizedBox(height: 10),
         ],
       ),
     );
@@ -355,146 +437,357 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Widget buildQuizContent() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: ListView.builder(
-            itemCount: quizData.length,
-            itemBuilder: (context, index) {
-              final question = quizData[index];
-              return Card(
-                elevation: 4, // Subtle shadow
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12), // Rounded corners
-                ),
-                margin: const EdgeInsets.symmetric(
-                    vertical: 5, horizontal: 8), // Card margin
-                child: Padding(
-                  padding:
-                      const EdgeInsets.all(16.0), // Padding inside the card
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Question Text with enhanced styling
-                      Text(
-                        question['question'],
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: quizData.length,
+              itemBuilder: (context, index) {
+                final question = quizData[index];
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 10),
+                  child: Card(
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [Color(0xFF2C3E50), Color(0xFF3498DB)],
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      // Display options for the question
-                      ...question['options'].entries.map((entry) {
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 1.0),
-                          child: RadioListTile<String>(
-                            activeColor: Colors.black,
-                            contentPadding: const EdgeInsets.all(0),
-                            tileColor: Colors.black54,
-                            title: Text(
-                              entry.value,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 6),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.2),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    'Question ${index + 1}/${quizData.length}',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              question['question'],
                               style: const TextStyle(
-                                fontSize: 16,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                             ),
-                            value: entry.key,
-                            groupValue: _userAnswers[index],
-                            onChanged: (value) {
-                              setState(() {
-                                _userAnswers[index] = value;
-                              });
-                            },
-                          ),
-                        );
-                      }).toList(),
-                    ],
+                            const SizedBox(height: 10),
+                            ...question['options'].entries.map((entry) {
+                              bool isSelected =
+                                  _userAnswers[index] == entry.key;
+                              return Container(
+                                margin: const EdgeInsets.only(bottom: 10),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        _userAnswers[index] = entry.key;
+                                      });
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 16, vertical: 12),
+                                      decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? Colors.white.withOpacity(0.3)
+                                            : Colors.white.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(
+                                          color: isSelected
+                                              ? Colors.white
+                                              : Colors.white.withOpacity(0.3),
+                                          width: 2,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 20,
+                                            height: 20,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: isSelected
+                                                  ? Colors.white
+                                                  : Colors.transparent,
+                                              border: Border.all(
+                                                color: Colors.white,
+                                                width: 2,
+                                              ),
+                                            ),
+                                            child: isSelected
+                                                ? const Icon(
+                                                    Icons.check,
+                                                    size: 16,
+                                                    color: Color(0xFF2C3E50),
+                                                  )
+                                                : null,
+                                          ),
+                                          const SizedBox(width: 12),
+                                          Expanded(
+                                            child: Text(
+                                              entry.value,
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.white,
+                                                fontWeight: isSelected
+                                                    ? FontWeight.bold
+                                                    : FontWeight.normal,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            height: 30,
+            child: ElevatedButton(
+              onPressed: _submitQuiz,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF2ECC71),
+                // shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(25),
+                // ),
+                elevation: 5,
+              ),
+              child: const Text(
+                'Submit Quiz',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
                 ),
-              );
-            },
+              ),
+            ),
           ),
-        ),
-        SizedBox(
-          width: double.infinity,
-          child: ElevatedButton(
-            onPressed: _submitQuiz,
-            child: const Text('Submit'),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
   Widget buildGeneralInfoContent() {
-    return const Center(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF2C3E50), Color(0xFF3498DB)],
+        ),
+      ),
+      child: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  child: Column(
+                    children: [
+                      const Icon(
+                        Icons.quiz,
+                        size: 60,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(height: 20),
+                      const Text(
+                        "Welcome to the Quizzes!",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "Test your knowledge and track your progress",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white.withOpacity(0.8),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "How to Take the Quiz",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      buildInfoStep(
+                        icon: Icons.list,
+                        title: "Select a Quiz Topic",
+                        description:
+                            "Choose from the available quiz topics on the left side menu in desktop mode and from hamburger menu in mobile mode.",
+                      ),
+                      const SizedBox(height: 15),
+                      buildInfoStep(
+                        icon: Icons.question_answer,
+                        title: "Answer Questions",
+                        description:
+                            "Read each question carefully and select the best answer from the options provided.",
+                      ),
+                      const SizedBox(height: 15),
+                      buildInfoStep(
+                        icon: Icons.check_circle,
+                        title: "Submit Your Answers",
+                        description:
+                            "Click the 'Submit' button after answering all questions to see your results.",
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.white.withOpacity(0.2)),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Checking Your Scores",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      buildInfoStep(
+                        icon: Icons.desktop_windows,
+                        title: "Desktop Mode",
+                        description:
+                            "Click on the Profile Icon in the app bar at the top of the screen.",
+                      ),
+                      const SizedBox(height: 15),
+                      buildInfoStep(
+                        icon: Icons.phone_android,
+                        title: "Mobile View",
+                        description:
+                            "Tap the Hamburger Icon and select 'Profile' from the menu.",
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildInfoStep({
+    required IconData icon,
+    required String title,
+    required String description,
+  }) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: 24,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Welcome to the Quizzes!",
-                style: TextStyle(
-                  fontSize: 20,
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
-                textAlign: TextAlign.center,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 4),
               Text(
-                "Here's how to take the quizzes and check your scores:",
-                style: TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 15),
-              Text(
-                "1. **Select a Quiz Topic:** On the left side, you'll see a list of available quiz topics. Tap on the topic you want to attempt.",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "2. **Answer the Questions:** Once a topic is selected, the quiz questions will appear on the right side. Carefully read each question and select the best answer from the given options.",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "3. **Submit Your Answers:** After you have answered all the questions in the quiz, click the 'Submit' button at the bottom.",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 15),
-              Text(
-                "**Checking Your Scores:**",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "You can view your quiz results on the **Profile Screen**.",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "**Desktop Mode:** Look for a **Profile Icon** (usually a person icon) in the app bar at the top of the screen and click on it.",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "**Mobile View:** Tap on the **Hamburger Icon** (three horizontal lines) typically located in the top left or right corner of the app bar. This will open a menu where you can find the 'Profile' option.",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 15),
-              Text(
-                "On the Profile Screen, you will find a section dedicated to your quiz scores, showing the marks you obtained in each quiz you have completed.",
-                style: TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
+                description,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white.withOpacity(0.8),
+                ),
               ),
             ],
           ),
         ),
-      ),
+      ],
     );
   }
 }

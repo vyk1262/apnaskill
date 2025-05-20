@@ -26,7 +26,7 @@ class _QuizListHomeState extends State<QuizListHome> {
   Map<String, List<String>> quizTopics = {};
   List<String> allInternshipNames = [];
   List<String> filteredInternshipNames = [];
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
@@ -93,12 +93,12 @@ class _QuizListHomeState extends State<QuizListHome> {
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               CustomSearchBar(
                   controller: _searchController, hintText: 'Search topics...'),
-              const SizedBox(height: 16),
+              const SizedBox(height: 24),
               Expanded(
                 child: LayoutBuilder(
                   builder: (BuildContext context, BoxConstraints constraints) {
@@ -116,9 +116,9 @@ class _QuizListHomeState extends State<QuizListHome> {
                     return GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: crossAxisCount,
-                        childAspectRatio: 1.0,
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 16,
+                        childAspectRatio: 0.8,
+                        crossAxisSpacing: 20,
+                        mainAxisSpacing: 20,
                       ),
                       itemCount: filteredInternshipNames.length,
                       itemBuilder: (context, index) {
@@ -142,12 +142,13 @@ class _QuizListHomeState extends State<QuizListHome> {
             (internship) => internship['internshipName'] == internshipName) ??
         false;
 
-    // String imagePath = 'assets/course_images/$internshipName.jpeg';
     String imageUrl = ImageUrls.courseImages[internshipName] ?? 'assets/ai.jpg';
 
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
       child: InkWell(
+        borderRadius: BorderRadius.circular(15.0),
         onTap: () {
           if (user == null) {
             GoRouter.of(context).go('/login');
@@ -168,14 +169,13 @@ class _QuizListHomeState extends State<QuizListHome> {
           }
         },
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
                   child: CachedNetworkImageWidget(
                     imageUrl: imageUrl,
                     width: double.infinity,
@@ -184,62 +184,100 @@ class _QuizListHomeState extends State<QuizListHome> {
                   ),
                 ),
               ),
-              Icon(
-                isUnlocked ? Icons.check_circle : Icons.lock,
-                color: isUnlocked ? Colors.green : Colors.red,
-                size: 30,
-              ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 12),
               Text(
                 internshipName,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(height: 5),
-              Text(
-                isUnlocked ? "Unlocked" : "Locked",
-                style: TextStyle(color: isUnlocked ? Colors.green : Colors.red),
-              ),
               const SizedBox(height: 8),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      _loadSyllabus(context, internshipName);
-                    },
-                    child: const Text("Syllabus"),
+                  if (!isUnlocked)
+                    const Text(
+                      '₹99/-',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                    ),
+                  const SizedBox(width: 5),
+                  Text(
+                    isUnlocked ? "Unlocked" : "Free",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: isUnlocked ? Colors.green : Colors.amber[700],
+                    ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (user == null) {
-                        GoRouter.of(context).go('/login');
-                        return;
-                      }
-                      if (isUnlocked) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => QuizScreen(
-                              internshipName: internshipName,
-                              quizList: quizList,
+                ],
+              ),
+              const SizedBox(height: 12),
+              Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceEvenly, // Distribute space evenly
+                children: [
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: () {
+                        _loadSyllabus(context, internshipName);
+                      },
+                      icon: const Icon(Icons.menu_book, size: 18),
+                      label: const Text("Syllabus"),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Theme.of(context).colorScheme.primary,
+                        side: BorderSide(
+                            color: Theme.of(context).colorScheme.primary),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 10), // Space between buttons
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        if (user == null) {
+                          GoRouter.of(context).go('/login');
+                          return;
+                        }
+                        if (isUnlocked) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => QuizScreen(
+                                internshipName: internshipName,
+                                quizList: quizList,
+                              ),
                             ),
-                          ),
-                        );
-                      } else {
-                        _showUnlockDialog(context, internshipName);
-                      }
-                    },
-                    child: Text(isUnlocked ? "Start Quiz" : "Unlock"),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: isUnlocked ? Colors.green : Colors.red,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
+                          );
+                        } else {
+                          _showUnlockDialog(context, internshipName);
+                        }
+                      },
+                      icon: Icon(
+                          isUnlocked ? Icons.play_arrow : Icons.lock_open,
+                          size: 18),
+                      label: Text(isUnlocked ? "Start Quiz" : "Unlock"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: isUnlocked
+                            ? Colors.green
+                            : Theme.of(context).colorScheme.secondary,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                      ),
                     ),
                   ),
                 ],
@@ -281,7 +319,7 @@ class _QuizListHomeState extends State<QuizListHome> {
             onPressed: () async {
               if (upiController.text.isNotEmpty) {
                 await _unlockInternship(internshipName, upiController.text);
-                Navigator.of(context).pop();
+                if (mounted) Navigator.of(context).pop();
               }
             },
             child: const Text("Submit"),
@@ -335,28 +373,36 @@ class _QuizListHomeState extends State<QuizListHome> {
 
         if (syllabusData != null) {
           // Check if syllabusData was found
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SyllabusScreen(
-                internshipName: internshipName,
-                syllabusData: syllabusData, // Pass the syllabusData
+          if (mounted) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SyllabusScreen(
+                  internshipName: internshipName,
+                  syllabusData: syllabusData, // Pass the syllabusData
+                ),
               ),
-            ),
-          );
+            );
+          }
         } else {
           // Handle the case where the subject is not found
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text('Syllabus not found for $internshipName.')));
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text('Syllabus not found for $internshipName.')));
+          }
         }
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Invalid JSON format.')));
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Invalid JSON format.')));
+        }
       }
     } catch (e) {
       print("Error loading syllabus: $e");
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Error loading syllabus. Please try again.')));
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('Error loading syllabus. Please try again.')));
+      }
     }
   }
 }
