@@ -8,6 +8,7 @@ import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/grid_dot_paint.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/hero.dart';
+import 'package:skill_factorial/widgets/home_page_widgets/main_hero.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/why.dart';
 
 import 'custom_app_bar.dart';
@@ -16,7 +17,7 @@ import 'widgets/home_page_widgets/contact.dart';
 import 'widgets/home_page_widgets/feature_modern_column.dart';
 import 'widgets/home_page_widgets/feature_section_row.dart';
 import 'widgets/home_page_widgets/feature_widget.dart';
-import 'widgets/home_page_widgets/text_card_widget.dart';
+import 'widgets/home_page_widgets/footer_cta.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,7 +44,9 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(0.0),
                 child: Column(
                   children: [
-                    HeroWidget(),
+                    const MainHero(),
+                    const SizedBox(height: 20),
+                    const HeroWidget(),
                     const SizedBox(height: 20),
                     FeatureSectionRow.buildFeatureList(),
                     const SizedBox(height: 20),
@@ -51,37 +54,11 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 20),
                     FeatureModernColumn.buildFeatureGrid(),
                     const SizedBox(height: 20),
-                    const TextCardWidget(),
-                    const SizedBox(height: 20),
                     WhyChooseUs(),
                     const SizedBox(height: 20),
                     const ContactCard(),
                     const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-                          const Text(
-                            'Ready to Test Your Knowledge?',
-                            style: TextStyle(
-                              fontSize: 32,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                          buildCtaButton(
-                            text: "Begin Your Quiz Journey",
-                            onPressed: () => context.go('/login'),
-                            bgColor: Colors.black,
-                            fgColor: Colors.white,
-                          )
-                        ],
-                      ),
-                    ),
-                    buildCtaButton(
-                      text: "chess game",
-                      onPressed: () => context.go('/chess'),
-                    ),
+                    const FooterCTA(),
                     const SizedBox(height: 20),
                     Footer(),
                   ],

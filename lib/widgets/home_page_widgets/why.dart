@@ -7,9 +7,10 @@ class WhyChooseUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 1.5,
+      width: double.infinity,
+      margin: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(
           colors: [
             Theme.of(context).primaryColor.withOpacity(0.8),
@@ -26,25 +27,33 @@ class WhyChooseUs extends StatelessWidget {
           ),
         ],
       ),
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
       child: Column(
         children: [
-          const Text(
-            'Why Choose Us?',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: Column(
+              children: const [
+                Text(
+                  'Why Choose Us?',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Skill Factorial is among top-rated ed-tech companies providing Online Workshops with Certificates to the working professionals.',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            'Skill Factorial is among top-rated ed-tech companies providing Online Workshops with Certificates to the working professionals.',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),
           Wrap(
@@ -54,23 +63,23 @@ class WhyChooseUs extends StatelessWidget {
             children: const [
               BenefitItem(
                 icon: FontAwesomeIcons.users,
-                text: '100k+ Professionals Enrolled',
+                text: 'Enroll For Free',
               ),
               BenefitItem(
                 icon: FontAwesomeIcons.graduationCap,
-                text: 'Learn from Industry Experts',
+                text: 'Achieve Goals',
               ),
               BenefitItem(
                 icon: FontAwesomeIcons.certificate,
-                text: 'Verified Certificates',
+                text: 'Explanations Available',
               ),
               BenefitItem(
                 icon: FontAwesomeIcons.laptop,
-                text: 'Interactive Live Sessions',
+                text: 'Attempt Quizzes Online',
               ),
               BenefitItem(
                 icon: FontAwesomeIcons.handshake,
-                text: '24/7 Support Available',
+                text: 'Support Available',
               ),
             ],
           ),
