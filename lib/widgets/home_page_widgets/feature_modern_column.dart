@@ -72,54 +72,68 @@ class FeatureModernColumn extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius:
-                  const BorderRadius.vertical(top: Radius.circular(20)),
-              child: CachedNetworkImageWidget(
-                imageUrl: imageUrl,
-                width: double.infinity,
-                height: 250,
-                fit: BoxFit.cover,
-                errorWidget: const Icon(Icons.broken_image),
-              ),
+        color: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.white,
+                Colors.blue.shade50,
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+          ),
+          child: Column(
+            children: [
+              ClipRRect(
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(20)),
+                child: CachedNetworkImageWidget(
+                  imageUrl: imageUrl,
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                  errorWidget: const Icon(Icons.broken_image),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 100,
-                    child: SingleChildScrollView(
-                      child: Text(
-                        description,
-                        style: TextStyle(
-                          fontSize: 16,
-                          // color: Colors.grey.shade700,
-                          height: 1.5,
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      height: 100,
+                      child: SingleChildScrollView(
+                        child: Text(
+                          description,
+                          style: TextStyle(
+                            fontSize: 16,
+                            // color: Colors.grey.shade700,
+                            height: 1.5,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  buildCtaButton(
-                    text: "Learn More",
-                    onPressed: () => context.go('/login'),
-                  )
-                ],
+                    const SizedBox(height: 15),
+                    buildCtaButton(
+                      text: "Learn More",
+                      onPressed: () => context.go('/login'),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

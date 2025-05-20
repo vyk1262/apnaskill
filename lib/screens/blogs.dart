@@ -18,6 +18,7 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
   List<dynamic> _allBlogs = [];
   List<dynamic> _filteredBlogs = [];
   TextEditingController _searchController = TextEditingController();
+  int? _hoveredIndex;
 
   @override
   void initState() {
@@ -95,91 +96,109 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                     itemCount: _filteredBlogs.length,
                     itemBuilder: (context, index) {
                       final blog = _filteredBlogs[index];
-                      return InkWell(
-                        onTap: () {
-                          _launchURL(blog['articleLink']);
-                        },
-                        child: Card(
-                          clipBehavior: Clip.antiAlias,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Stack(
-                                  children: [
-                                    Positioned.fill(
-                                      child: CachedNetworkImageWidget(
-                                        imageUrl: blog['image'],
-                                        fit: BoxFit.cover,
-                                        errorWidget:
-                                            const Icon(Icons.broken_image),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                      return MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        onEnter: (_) => setState(() => _hoveredIndex = index),
+                        onExit: (_) => setState(() => _hoveredIndex = null),
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          curve: Curves.easeInOut,
+                          transform: Matrix4.identity()
+                            ..scale(_hoveredIndex == index ? 1.03 : 1.0),
+                          child: InkWell(
+                            onTap: () {
+                              _launchURL(blog['articleLink']);
+                            },
+                            child: Card(
+                              clipBehavior: Clip.antiAlias,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      blog['title'],
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      ),
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    const SizedBox(height: 4),
-                                    if (blog['category'] != null)
-                                      Text(
-                                        "#${blog['category']}",
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    const SizedBox(height: 4),
-                                    if (blog['description'] != null)
-                                      Text(
-                                        blog['description'],
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    const SizedBox(height: 8),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Stack(
                                       children: [
-                                        if (blog['date'] != null)
-                                          Text(
-                                            blog['date'],
-                                            style: const TextStyle(
-                                              fontSize: 10,
-                                            ),
+                                        Positioned.fill(
+                                          child: CachedNetworkImageWidget(
+                                            imageUrl: blog['image'],
+                                            fit: BoxFit.cover,
+                                            errorWidget:
+                                                const Icon(Icons.broken_image),
                                           ),
-                                        if (blog['readTime'] != null)
-                                          Text(
-                                            blog['readTime'],
-                                            style: const TextStyle(
-                                              fontSize: 10,
-                                            ),
-                                          ),
+                                        ),
                                       ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          blog['title'],
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        const SizedBox(height: 4),
+                                        if (blog['category'] != null)
+                                          Text(
+                                            "#${blog['category']}",
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        const SizedBox(height: 4),
+                                        if (blog['description'] != null)
+                                          Text(
+                                            blog['description'],
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        const SizedBox(height: 8),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            if (blog['date'] != null)
+                                              Text(
+                                                blog['date'],
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey[700],
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            if (blog['readTime'] != null)
+                                              Text(
+                                                blog['readTime'],
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey[700],
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
                       );
