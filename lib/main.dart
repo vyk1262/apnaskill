@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skill_factorial/custom_theme.dart';
 import 'package:skill_factorial/screens/explore.dart';
+import 'package:skill_factorial/screens/games/game_fast_math.dart';
+import 'package:skill_factorial/screens/games/game_number_series.dart';
 import 'package:skill_factorial/screens/syllabus_view.dart';
 import 'package:skill_factorial/screens/courses_home.dart';
 import 'package:skill_factorial/screens/faqs.dart';
@@ -79,6 +81,14 @@ final router = GoRouter(
         GoRoute(
           path: 'chess',
           builder: (context, state) => const GameChess(),
+        ),
+        GoRoute(
+          path: 'series',
+          builder: (context, state) => GameNumberSeries(),
+        ),
+        GoRoute(
+          path: 'fastmath',
+          builder: (context, state) => GameFastMath(),
         ),
       ],
     ),
