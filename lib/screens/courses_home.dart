@@ -11,7 +11,6 @@ import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import '../constants/image_urls.dart';
 import '../custom_app_bar.dart';
 import 'quiz_screen.dart';
-import 'syllabus_view.dart';
 
 class QuizListHome extends StatefulWidget {
   const QuizListHome({Key? key}) : super(key: key);
@@ -227,10 +226,10 @@ class _QuizListHomeState extends State<QuizListHome> {
                   Expanded(
                     child: OutlinedButton.icon(
                       onPressed: () {
-                        _loadSyllabus(context, internshipName);
+                        _loadTopics(context, internshipName);
                       },
                       icon: const Icon(Icons.menu_book, size: 18),
-                      label: const Text("Syllabus"),
+                      label: const Text("Topics"),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: Theme.of(context).colorScheme.primary,
                         side: BorderSide(
@@ -348,61 +347,46 @@ class _QuizListHomeState extends State<QuizListHome> {
     }
   }
 
-  Future<void> _loadSyllabus(
-      BuildContext context, String internshipName) async {
-    try {
-      String jsonString = await rootBundle.loadString('assets/api-data.json');
-      final jsonDataAll = jsonDecode(jsonString);
-
-      if (jsonDataAll['status'] == 'success' && jsonDataAll['result'] is List) {
-        List<dynamic> results = jsonDataAll['result'];
-
-        List<dynamic>?
-            syllabusData; // Declare syllabusData outside the loop, nullable
-
-        for (var subjectData in results) {
-          if (subjectData is Map &&
-              subjectData.containsKey('subject') &&
-              subjectData['subject'] == internshipName &&
-              subjectData.containsKey('syllabus') &&
-              subjectData['syllabus'] is List) {
-            syllabusData = subjectData['syllabus']; // Assign the syllabus here
-            break; // Exit the loop once the subject is found
-          }
-        }
-
-        if (syllabusData != null) {
-          // Check if syllabusData was found
-          if (mounted) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SyllabusScreen(
-                  internshipName: internshipName,
-                  syllabusData: syllabusData, // Pass the syllabusData
+  void _loadTopics(BuildContext context, String internshipName) {
+    List<String>? topics = quizTopics[internshipName];
+    if (topics != null && topics.isNotEmpty) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('$internshipName Topics'),
+          content: Container(
+            width: double.maxFinite,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: topics.length,
+              itemBuilder: (context, index) => Card(
+                margin: EdgeInsets.symmetric(vertical: 4),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    child: Text('${index + 1}',
+                        style: TextStyle(color: Colors.white)),
+                  ),
+                  title: Text(
+                    topics[index],
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
               ),
-            );
-          }
-        } else {
-          // Handle the case where the subject is not found
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text('Syllabus not found for $internshipName.')));
-          }
-        }
-      } else {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Invalid JSON format.')));
-        }
-      }
-    } catch (e) {
-      print("Error loading syllabus: $e");
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text('Error loading syllabus. Please try again.')));
-      }
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Close'),
+            ),
+          ],
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Topics not found for $internshipName.')),
+      );
     }
   }
 }

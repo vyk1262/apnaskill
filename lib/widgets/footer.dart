@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/home.dart';
-import 'package:skill_factorial/screens/syllabus_view.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:url_launcher/url_launcher.dart';
