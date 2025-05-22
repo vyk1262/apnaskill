@@ -16,6 +16,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   bool _isLoading = true;
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _nameController;
+  late TextEditingController _mobileNumberController;
   DateTime? _selectedDate;
   String? _selectedGender;
   List<String> genderOptions = ['Male', 'Female', 'Other', 'Prefer not to say'];
@@ -44,12 +45,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void initState() {
     super.initState();
     _nameController = TextEditingController();
+    _mobileNumberController = TextEditingController();
     _fetchUserData();
   }
 
   @override
   void dispose() {
     _nameController.dispose();
+    _mobileNumberController.dispose();
     super.dispose();
   }
 
@@ -69,6 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             userData = snapshot.data() as Map<String, dynamic>?;
             if (userData != null) {
               _nameController.text = userData!['name'] ?? '';
+              _mobileNumberController.text = userData!['mobileNumber'] ?? '';
               if (userData!['dateOfBirth'] != null &&
                   userData!['dateOfBirth'].isNotEmpty) {
                 try {
@@ -143,6 +147,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         try {
           Map<String, dynamic> updatedData = {
             'name': _nameController.text,
+            'mobileNumber': _mobileNumberController.text,
             'email': userData![
                 'email'], // Email is not editable, but good to keep it consistent
             'dateOfBirth': _selectedDate != null
@@ -161,6 +166,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
           setState(() {
             userData!['name'] = _nameController.text;
+            userData!['mobileNumber'] = _mobileNumberController.text;
             userData!['dateOfBirth'] = _selectedDate != null
                 ? DateFormat('yyyy-MM-dd').format(_selectedDate!)
                 : null;
@@ -324,6 +330,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your name';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 16),
+                            TextFormField(
+                              controller: _mobileNumberController,
+                              style: TextStyle(color: Colors.black87),
+                              decoration: InputDecoration(
+                                labelText: 'Mobile Number',
+                                labelStyle: TextStyle(color: Colors.grey[700]),
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(12)),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide:
+                                      BorderSide(color: Colors.grey[300]!),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide(
+                                      color: Theme.of(context).primaryColor),
+                                ),
+                                filled: true,
+                                fillColor: Colors.grey[50],
+                                prefixIcon: Icon(Icons.person_outline,
+                                    color: Colors.grey[600]),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your Mobile Number';
                                 }
                                 return null;
                               },

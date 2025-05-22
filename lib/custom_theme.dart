@@ -17,19 +17,19 @@ class CustomTheme {
     iconTheme: const IconThemeData(),
     listTileTheme: const ListTileThemeData(),
     inputDecorationTheme: const InputDecorationTheme(
-      labelStyle: TextStyle(color: Colors.white),
+      labelStyle: TextStyle(color: Colors.black),
       hintStyle: TextStyle(color: Colors.grey),
-      iconColor: Colors.white,
-      prefixIconColor: Colors.white,
-      suffixIconColor: Colors.white,
+      iconColor: Colors.black,
+      prefixIconColor: Colors.black,
+      suffixIconColor: Colors.black,
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.white),
+        borderSide: BorderSide(color: Colors.black),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.white),
+        borderSide: BorderSide(color: Colors.black),
       ),
       border: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.white),
+        borderSide: BorderSide(color: Colors.black),
       ),
     ),
     buttonTheme: const ButtonThemeData(

@@ -290,34 +290,65 @@ class _QuizListHomeState extends State<QuizListHome> {
 
   void _showUnlockDialog(BuildContext context, String internshipName) {
     final upiController = TextEditingController();
+    final mobileNumberController =
+        TextEditingController(text: userData?['mobileNumber'] ?? '');
+    final _formKey = GlobalKey<FormState>();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("Unlock $internshipName"),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text(
-              'Scan the QR code below to pay',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Image.asset(
-              'assets/student_home/qrcode.jpg',
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 8),
-            const Text("Enter UPI Transaction ID"),
-            TextField(controller: upiController),
-          ],
+        title: Text("Unlock - $internshipName"),
+        content: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // const Text(
+              //   'Scan the QR code below to pay',
+              //   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              // ),
+              // const SizedBox(height: 8),
+              // Image.asset(
+              //   'assets/student_home/qrcode.jpg',
+              //   width: 100,
+              //   height: 100,
+              //   fit: BoxFit.cover,
+              // ),
+              // const SizedBox(height: 8),
+              const Text("Enter Code below: FREE"), //Enter UPI Transaction ID
+              TextFormField(
+                controller: upiController,
+                decoration: InputDecoration(hintText: 'FREE'),
+                validator: (value) {
+                  if (value == null || value.isEmpty || value != 'FREE') {
+                    return 'Code is required';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 8),
+              const Text("Enter Mobile Number"),
+              TextFormField(
+                controller: mobileNumberController,
+                decoration: InputDecoration(hintText: 'Mobile Number'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Mobile Number is required';
+                  }
+                  if (value.length != 10) {
+                    return 'Enter a 10-digit mobile number';
+                  }
+                  return null;
+                },
+              ),
+            ],
+          ),
         ),
         actions: [
           TextButton(
             onPressed: () async {
-              if (upiController.text.isNotEmpty) {
-                await _unlockInternship(internshipName, upiController.text);
+              if (_formKey.currentState!.validate()) {
+                await _unlockInternshipAndStoreData(internshipName,
+                    upiController.text, mobileNumberController.text);
                 if (mounted) Navigator.of(context).pop();
               }
             },
@@ -332,7 +363,8 @@ class _QuizListHomeState extends State<QuizListHome> {
     );
   }
 
-  Future<void> _unlockInternship(String internshipName, String upiTraId) async {
+  Future<void> _unlockInternshipAndStoreData(
+      String internshipName, String upiTraId, String mobileNumber) async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       await FirebaseFirestore.instance
@@ -340,8 +372,12 @@ class _QuizListHomeState extends State<QuizListHome> {
           .doc(user.uid)
           .update({
         'internshipsList': FieldValue.arrayUnion([
-          {'internshipName': internshipName, 'upiTraId': upiTraId}
-        ])
+          {
+            'internshipName': internshipName,
+            'upiTraId': upiTraId,
+          }
+        ]),
+        'mobileNumber': mobileNumber
       });
       _fetchUserData(); // Refresh user data to reflect the new unlocked internship
     }
