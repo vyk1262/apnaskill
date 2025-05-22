@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skill_factorial/constants/colors.dart';
 import 'cta_button.dart';
 
 class MainHero extends StatelessWidget {
@@ -10,16 +11,7 @@ class MainHero extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.blue.shade800,
-            Colors.blue.shade500,
-            Colors.blue.shade200,
-            Colors.white,
-          ],
-        ),
+        gradient: AppColors.gradientPrimary,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 48.0),
@@ -36,7 +28,7 @@ class MainHero extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Join our platform to learn and grow with quizzes, and connect with experts to solve your doubts',
+              'Join our platform to learn and grow with quizzes, and Transform Your Future with Skill Factorial',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: Colors.white.withOpacity(0.9),
                   ),
@@ -49,8 +41,43 @@ class MainHero extends StatelessWidget {
               bgColor: Colors.white,
               fgColor: Colors.blue.shade800,
             ),
+            // const SizedBox(height: 48),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     _buildStatCard('10K+', 'Active Learners'),
+            //     _buildStatCard('500+', 'Expert Mentors'),
+            //     _buildStatCard('100+', 'Practice Tests'),
+            //   ],
+            // ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildStatCard(String number, String label) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          Text(
+            number,
+            style: const TextStyle(
+              color: AppColors.surfaceColor,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            label,
+            style: TextStyle(
+              color: AppColors.surfaceColor.withOpacity(0.8),
+              fontSize: 14,
+            ),
+          ),
+        ],
       ),
     );
   }

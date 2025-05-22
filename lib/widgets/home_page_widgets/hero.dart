@@ -39,9 +39,11 @@ class _HeroWidgetState extends State<HeroWidget> {
                 newMethodTwo(context),
                 const SizedBox(height: 20),
                 buildCtaButton(
-                    text: 'Start Testing Your Skills',
-                    onPressed: () => context.go('/login'),
-                    bgColor: Colors.black),
+                  text: 'Start Testing Your Skills',
+                  onPressed: () => context.go('/login'),
+                  bgColor: AppColors.primaryColor,
+                  fgColor: Colors.white,
+                ),
               ],
             ),
           )
@@ -63,7 +65,8 @@ class _HeroWidgetState extends State<HeroWidget> {
               buildCtaButton(
                 text: 'Start Testing Your Skills',
                 onPressed: () => context.go('/login'),
-                bgColor: Colors.black,
+                bgColor: AppColors.primaryColor,
+                fgColor: Colors.white,
               ),
             ],
           );
