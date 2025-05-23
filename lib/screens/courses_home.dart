@@ -141,7 +141,8 @@ class _QuizListHomeState extends State<QuizListHome> {
             (internship) => internship['internshipName'] == internshipName) ??
         false;
 
-    String imageUrl = ImageUrls.courseImages[internshipName] ?? 'assets/ai.jpg';
+    String imageUrl = ImageUrls.courseImages[internshipName] ??
+        'assets/student_home/sfcmp.png';
 
     return Card(
       elevation: 5,

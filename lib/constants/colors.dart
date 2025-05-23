@@ -28,6 +28,18 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+  static const LinearGradient gradientPrimaryMain = LinearGradient(
+    colors: [
+      Color.fromARGB(255, 2, 1, 110),
+      Color.fromARGB(255, 15, 12, 189),
+      Color.fromARGB(255, 69, 72, 238),
+      Color.fromARGB(255, 255, 255, 255)
+    ],
+    stops: [0.0, 0.3, 0.6, 1.0],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    tileMode: TileMode.decal,
+  );
 
   static const LinearGradient gradientSecondary = LinearGradient(
     colors: [Color(0xFF7C3AED), Color(0xFF10B981)],

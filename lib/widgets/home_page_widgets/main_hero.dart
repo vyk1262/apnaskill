@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
+import '../cached_network_image_widget.dart';
 import 'cta_button.dart';
 
 class MainHero extends StatelessWidget {
@@ -11,15 +12,15 @@ class MainHero extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        gradient: AppColors.gradientPrimary,
+        gradient: AppColors.gradientPrimaryMain,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 48.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Elevate Your Skills',
+              'Transform Your Future with Skill Factorial',
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -28,7 +29,7 @@ class MainHero extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Join our platform to learn and grow with quizzes, and Transform Your Future with Skill Factorial',
+              'Join our platform to learn and upskill with quizzes, ',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: Colors.white.withOpacity(0.9),
                   ),
@@ -50,6 +51,10 @@ class MainHero extends StatelessWidget {
             //     _buildStatCard('100+', 'Practice Tests'),
             //   ],
             // ),
+            CachedNetworkImageWidget(
+              imageUrl: 'https://i.ibb.co/TMTJDqGC/sf-hero-a.png',
+              errorWidget: Icon(Icons.broken_image),
+            ),
           ],
         ),
       ),
