@@ -374,6 +374,7 @@ class _QuizListHomeState extends State<QuizListHome> {
         'internshipsList': FieldValue.arrayUnion([
           {
             'internshipName': internshipName,
+            'quizMarks': [],
             'upiTraId': upiTraId,
           }
         ]),

@@ -56,16 +56,34 @@ class _QuizScreenState extends State<QuizScreen> {
   Future<void> _loadCompletedItems() async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      DocumentReference internshipRef =
-          FirebaseFirestore.instance.collection('internships').doc(user.uid);
+      DocumentSnapshot snapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .get();
 
-      DocumentSnapshot snapshot = await internshipRef.get();
-      Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
+      Map<String, dynamic>? userData = snapshot.data() as Map<String, dynamic>?;
 
-      completedQuizzes = (data?['quizMarks'] as List<dynamic>?)
-              ?.map((quiz) => quiz['quizName'] as String)
-              .toList() ??
-          [];
+      if (userData != null && userData.containsKey('internshipsList')) {
+        List<dynamic> internshipsList = userData['internshipsList'];
+
+        // Find the specific internship entry
+        var currentInternship = internshipsList.firstWhere(
+          (internship) => internship['internshipName'] == widget.internshipName,
+          orElse: () => null, // Return null if not found
+        );
+
+        if (currentInternship != null &&
+            currentInternship.containsKey('quizMarks')) {
+          completedQuizzes = (currentInternship['quizMarks'] as List<dynamic>?)
+                  ?.map((quiz) => quiz['quizName'] as String)
+                  .toList() ??
+              [];
+        } else {
+          completedQuizzes = [];
+        }
+      } else {
+        completedQuizzes = [];
+      }
       setState(() {});
     }
   }
@@ -78,7 +96,6 @@ class _QuizScreenState extends State<QuizScreen> {
       }
     }
 
-    String userEmail = FirebaseAuth.instance.currentUser?.email ?? '';
     String quizName = selectedQuiz ?? 'Unknown';
 
     // Create a quiz mark entry
@@ -89,37 +106,66 @@ class _QuizScreenState extends State<QuizScreen> {
 
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      DocumentReference internshipRef = FirebaseFirestore.instance
-          .collection('internships')
-          .doc(user.uid); // Using user UID as document ID
+      DocumentReference userDocRef =
+          FirebaseFirestore.instance.collection('users').doc(user.uid);
 
-      // First, fetch existing data to check if the quiz already exists
-      DocumentSnapshot snapshot = await internshipRef.get();
-      Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
-      List<dynamic> existingQuizMarks = data?['quizMarks'] ?? [];
-      // Check if this quiz already exists in the list
-      bool quizExists =
-          existingQuizMarks.any((entry) => entry['quizName'] == quizName);
+      // 1. Fetch the user's document
+      DocumentSnapshot userSnapshot = await userDocRef.get();
+      Map<String, dynamic>? userData =
+          userSnapshot.data() as Map<String, dynamic>?;
 
-      if (quizExists) {
-        // If quiz exists, compare marks and update if the new marks are higher
-        for (var entry in existingQuizMarks) {
-          if (entry['quizName'] == quizName &&
-              entry['marks'] < correctAnswers) {
-            entry['marks'] =
-                correctAnswers; // Update marks if new marks are higher
+      if (userData != null && userData.containsKey('internshipsList')) {
+        List<dynamic> internshipsList =
+            List.from(userData['internshipsList']); // Create a mutable copy
+
+        // 2. Find the index of the specific internship
+        int internshipIndex = internshipsList.indexWhere(
+          (internship) => internship['internshipName'] == widget.internshipName,
+        );
+
+        if (internshipIndex != -1) {
+          // 3. Get the specific internship map
+          Map<String, dynamic> currentInternship =
+              Map<String, dynamic>.from(internshipsList[internshipIndex]);
+
+          // Ensure 'quizMarks' exists in the internship map, initialize if not
+          if (!currentInternship.containsKey('quizMarks')) {
+            currentInternship['quizMarks'] = [];
           }
+
+          List<dynamic> existingQuizMarks =
+              List.from(currentInternship['quizMarks']);
+
+          // 4. Check if this quiz already exists in the quizMarks list for this internship
+          int quizMarkIndex = existingQuizMarks.indexWhere(
+            (entry) => entry['quizName'] == quizName,
+          );
+
+          if (quizMarkIndex != -1) {
+            // If quiz exists, compare marks and update if the new marks are higher
+            if (existingQuizMarks[quizMarkIndex]['marks'] < correctAnswers) {
+              existingQuizMarks[quizMarkIndex]['marks'] = correctAnswers;
+            }
+          } else {
+            // If quiz doesn't exist, add it to the array
+            existingQuizMarks.add(quizEntry);
+          }
+          // 5. Update the 'quizMarks' for the current internship
+          currentInternship['quizMarks'] = existingQuizMarks;
+          // 6. Update the internship entry in the internshipsList
+          internshipsList[internshipIndex] = currentInternship;
+          // 7. Update the entire 'internshipsList' in the user's document
+          await userDocRef.update({
+            'internshipsList': internshipsList,
+          });
+        } else {
+          // This case should ideally not happen if internshipName is always valid
+          // You might want to log a warning or handle it based on your app's logic
+          print(
+              "Error: Internship '${widget.internshipName}' not found for user.");
         }
-        await internshipRef.set({
-          'email': userEmail,
-          'quizMarks': existingQuizMarks,
-        }, SetOptions(merge: true));
       } else {
-        // If quiz doesn't exist, add it to the array
-        await internshipRef.set({
-          'email': userEmail,
-          'quizMarks': FieldValue.arrayUnion([quizEntry]),
-        }, SetOptions(merge: true));
+        print("Error: 'internshipsList' not found or is null for user.");
       }
     }
 
@@ -143,6 +189,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   showGeneralInfo = true;
                   selectedQuiz = '';
                 });
+                _loadCompletedItems(); // Reload completed items to update UI
               },
               child: const Text('OK'),
             ),
@@ -150,8 +197,9 @@ class _QuizScreenState extends State<QuizScreen> {
         );
       },
     );
-    completedQuizzes.add(quizName);
-    setState(() {});
+    // The completedQuizzes list is updated by _loadCompletedItems, so no direct add here.
+    // completedQuizzes.add(quizName); // This line is no longer needed here as _loadCompletedItems will refresh it
+    setState(() {}); // Trigger a rebuild to reflect the UI changes
   }
 
   @override
@@ -237,7 +285,10 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white.withOpacity(0.2),
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 12,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -248,7 +299,11 @@ class _QuizScreenState extends State<QuizScreen> {
           Container(
             margin: const EdgeInsets.only(bottom: 16),
             child: ElevatedButton.icon(
-              icon: const Icon(Icons.arrow_back_ios_new, size: 20, color: Colors.white),
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                size: 20,
+                color: Colors.white,
+              ),
               label: const Text(
                 "Back to Courses",
                 style: TextStyle(
@@ -259,7 +314,10 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white.withOpacity(0.2),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -308,7 +366,10 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ),
             child: ListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 8,
+              ),
               leading: Icon(
                 Icons.info_outline,
                 color: Colors.white.withOpacity(0.9),
@@ -373,7 +434,10 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               ),
               child: ListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 8,
+                ),
                 leading: Stack(
                   children: [
                     Icon(
