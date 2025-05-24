@@ -12,25 +12,25 @@ class FeatureSectionRow extends StatelessWidget {
 
   static List<Map<String, String>> get techContent => [
         {
-          "image": "https://i.ibb.co/bg7t9zWd/book-shelf.png",
+          "image": "https://i.ibb.co/q3cwJtB0/group-wh-d.png",
           "title": "Master Skills Through Engaging Quizzes",
           "description":
               "Unlock your potential with interactive quizzes designed for rapid learning and comprehensive understanding. Practice, reinforce your knowledge, and become a proficient professional faster."
         },
         {
-          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
+          "image": "https://i.ibb.co/kgrp7qL3/group-wh-a.png",
           "title": "Learn Faster, Understand Deeper with Quiz-Based Learning",
           "description":
               "Skill Factorial bridges the gap between theory and application and empowers you to grasp complex topics quickly through focused quizzes. Maximize your learning efficiency and gain a holistic understanding of subjects in less time. Start practicing and accelerate your skill development journey today!"
         },
         {
-          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
+          "image": "https://i.ibb.co/0pcVMkt3/group-wh-c.png",
           "title": "Unlock Your Potential with Skill Factorial",
           "description":
               "Skill Factorial.com is your gateway to mastering technology. We're passionate about empowering students like YOU with the skills and practical experience needed to excel in your studies."
         },
         {
-          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
+          "image": "https://i.ibb.co/gLm03C2w/group-wh-b.png",
           "title": "Unlock Your Potential with Skill Factorial",
           "description":
               "The academic world can be challenging, but with structured practice through assignments and projects, you're building a solid foundation for success."

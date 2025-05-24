@@ -12,25 +12,25 @@ class FeatureModernColumn extends StatelessWidget {
 
   static List<Map<String, String>> get techContent => [
         {
-          "image": "https://i.ibb.co/QvQng1gc/q1.png",
+          "image": "https://i.ibb.co/bM457PyY/row-thumb-a.png",
           "title": "Smart Quiz Technology",
           "description":
               "Experience intelligent quizzes that adapt to your learning pace and identify areas for improvement, ensuring efficient and personalized skill development."
         },
         {
-          "image": "https://i.ibb.co/ymn91tjg/q2.png",
+          "image": "https://i.ibb.co/r28pcYx0/row-cmp-a.png",
           "title": "Practice Makes Perfect: Your Path to Mastery",
           "description":
               "Dive into a world of targeted practice quizzes designed to transform you from a beginner to an expert. Consistent practice on Skill Factorial is your key to career success."
         },
         {
-          "image": "https://i.ibb.co/pjVQPd3S/q3.png",
+          "image": "https://i.ibb.co/vC51sHv4/row-cmp-d.png",
           "title": "Interactive Learning & Instant Feedback",
           "description":
               "Engage with dynamic quizzes and receive immediate feedback to reinforce your understanding and accelerate your learning journey."
         },
         {
-          "image": "https://i.ibb.co/KRVXDxc/q4.png",
+          "image": "https://i.ibb.co/XxKKxfM2/row-cmp-f.png",
           "title": "Unlock Your Potential with Skill Factorial's Quizzes",
           "description":
               "Based in Hyderabad, Skill Factorial is dedicated to empowering you with practical skills through innovative quiz-based learning. Bridge the gap between theory and application and achieve your career goals efficiently. Join us and grow!"
