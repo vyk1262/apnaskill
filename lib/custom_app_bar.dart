@@ -52,22 +52,23 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     onTap: () => context.go('/'),
                     child: const CachedNetworkImageWidget(
                       imageUrl: 'https://i.ibb.co/xtLkhZLb/logo.png',
-                      width: 50,
-                      height: 50,
+                      width: 30,
+                      height: 30,
                       fit: BoxFit.cover,
                       errorWidget: Icon(Icons.broken_image),
                     ),
                   ),
                 ),
                 RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     children: [
                       TextSpan(
                         text: 'Skill',
                         style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       TextSpan(
                         text: ' ',
@@ -75,7 +76,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       TextSpan(
                         text: 'Factorial',
                         style: TextStyle(
-                            color: AppColors.secondaryColor,
+                            color: Colors.white,
                             fontSize: 24,
                             fontWeight: FontWeight.bold),
                       ),
@@ -109,17 +110,40 @@ class _CustomAppBarState extends State<CustomAppBar> {
                           _buildNavButton(context,
                               label: 'Blogs', screenName: 'blogs'),
                           if (user == null)
-                            _buildNavButton(context,
-                                label: 'Login', screenName: 'login'),
+                            ElevatedButton.icon(
+                              icon: Icon(Icons.login, color: Colors.black),
+                              label: Text(
+                                "Login",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              onPressed: () {
+                                context.go('/login');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 16.0, vertical: 8.0),
+                              ),
+                            ),
                           if (user != null)
                             ElevatedButton.icon(
-                              icon: Icon(Icons.logout),
-                              label: Text("Logout"),
+                              icon: Icon(Icons.logout, color: Colors.black),
+                              label: Text("Logout",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  )),
                               onPressed: () async {
                                 await FirebaseAuth.instance.signOut();
                                 context.go('/');
                               },
                               style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 16.0, vertical: 8.0),
                               ),

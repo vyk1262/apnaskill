@@ -19,6 +19,7 @@ class MainHero extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: 16),
             Text(
               'Transform Your Future with Skill Factorial',
               style: Theme.of(context).textTheme.displayLarge?.copyWith(

@@ -96,7 +96,7 @@ class _QuizListHomeState extends State<QuizListHome> {
           child: Column(
             children: [
               CustomSearchBar(
-                  controller: _searchController, hintText: 'Search topics...'),
+                  controller: _searchController, hintText: 'Search Courses...'),
               const SizedBox(height: 24),
               Expanded(
                 child: LayoutBuilder(

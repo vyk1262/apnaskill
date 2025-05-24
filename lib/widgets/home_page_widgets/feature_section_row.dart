@@ -21,7 +21,7 @@ class FeatureSectionRow extends StatelessWidget {
           "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
           "title": "Learn Faster, Understand Deeper with Quiz-Based Learning",
           "description":
-              "Skill Factorial empowers you to grasp complex topics quickly through focused quizzes. Maximize your learning efficiency and gain a holistic understanding of subjects in less time. Start practicing and accelerate your skill development journey today!"
+              "Skill Factorial bridges the gap between theory and application and empowers you to grasp complex topics quickly through focused quizzes. Maximize your learning efficiency and gain a holistic understanding of subjects in less time. Start practicing and accelerate your skill development journey today!"
         },
         {
           "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
@@ -34,13 +34,7 @@ class FeatureSectionRow extends StatelessWidget {
           "title": "Unlock Your Potential with Skill Factorial",
           "description":
               "The academic world can be challenging, but with structured practice through assignments and projects, you're building a solid foundation for success."
-        },
-        {
-          "image": "https://i.ibb.co/GvkmhRQs/it.jpg",
-          "title": "Unlock Your Potential with Skill Factorial",
-          "description":
-              "Ready to excel in your subjects? Practical learning through quizzes, assignments, and projects bridges the gap between theory and application, boosting your knowledge and skills."
-        },
+        }
       ];
 
   static Widget buildFeatureList() {
