@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_NumPy",
+      "questions": [
+        {
+          "question": "What is NumPy primarily used for in Python?",
+          "options": {
+            "A": "For creating graphical user interfaces.",
+            "B": "For numerical computations and working with arrays.",
+            "C": "For web development.",
+            "D": "For handling large text files."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a key advantage of using NumPy arrays over standard Python lists for numerical operations?",
+          "options": {
+            "A": "They are more flexible in terms of data types within the same array.",
+            "B": "They offer significantly better performance for large numerical computations.",
+            "C": "They can be easily resized after creation.",
+            "D": "They support a wider range of built-in mathematical functions."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you install NumPy in a Python environment?",
+          "options": {
+            "A": "Using the command `install numpy` in the Python interpreter.",
+            "B": "By downloading the NumPy source code and running a setup script.",
+            "C": "Using a package manager like pip with the command `pip install numpy`.",
+            "D": "NumPy comes pre-installed with standard Python distributions."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the core data structure provided by NumPy?",
+          "options": {
+            "A": "List",
+            "B": "Tuple",
+            "C": "ndarray",
+            "D": "Series"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a characteristic of a NumPy ndarray?",
+          "options": {
+            "A": "It can store elements of different data types within the same array.",
+            "B": "It has a fixed size upon creation.",
+            "C": "Its elements are not necessarily stored in contiguous memory locations.",
+            "D": "It is less memory-efficient than Python lists for numerical data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does the 'dtype' attribute of a NumPy array represent?",
+          "options": {
+            "A": "The number of dimensions of the array.",
+            "B": "The shape of the array (number of elements in each dimension).",
+            "C": "The data type of the elements stored in the array.",
+            "D": "The total number of elements in the array."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function can be used to create a NumPy array from a Python list?",
+          "options": {
+            "A": "numpy.aslist()",
+            "B": "numpy.fromlist()",
+            "C": "numpy.array()",
+            "D": "numpy.convert_to_array()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you create a NumPy array filled with zeros?",
+          "options": {
+            "A": "numpy.empty()",
+            "B": "numpy.full(0)",
+            "C": "numpy.zeros()",
+            "D": "numpy.null_array()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function can create an array filled with a specified value?",
+          "options": {
+            "A": "numpy.zeros()",
+            "B": "numpy.ones()",
+            "C": "numpy.full()",
+            "D": "numpy.repeat()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What NumPy function is used to generate a sequence of numbers within a specified range?",
+          "options": {
+            "A": "numpy.sequence()",
+            "B": "numpy.range()",
+            "C": "numpy.arange()",
+            "D": "numpy.linspace()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which NumPy function generates evenly spaced numbers over a specified interval?",
+          "options": {
+            "A": "numpy.arange()",
+            "B": "numpy.random.rand()",
+            "C": "numpy.linspace()",
+            "D": "numpy.eye()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How do you access the element at the second row and third column of a 2D NumPy array named 'arr'?",
+          "options": {
+            "A": "arr[2, 3]",
+            "B": "arr(2)(3)",
+            "C": "arr[1][2]",
+            "D": "Both B and C"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the slicing `arr[1:5]` do to a 1D NumPy array 'arr'?",
+          "options": {
+            "A": "It selects elements from index 1 to 5 (inclusive).",
+            "B": "It selects elements from index 1 to 4 (inclusive).",
+            "C": "It selects elements from index 0 to 4 (inclusive).",
+            "D": "It selects elements starting from index 1 until the end of the array."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is boolean indexing in NumPy?",
+          "options": {
+            "A": "Indexing arrays using only True or False values to select elements.",
+            "B": "Indexing arrays using boolean data types.",
+            "C": "A method to check if an element exists in an array.",
+            "D": "Indexing arrays based on comparison operations."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is fancy indexing in NumPy?",
+          "options": {
+            "A": "Indexing arrays using a single integer or slice.",
+            "B": "Indexing arrays using other arrays of indices to select elements in a specific order or multiple times.",
+            "C": "Indexing arrays based on boolean conditions.",
+            "D": "Indexing arrays from the end using negative indices."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy method can be used to change the shape of an array without changing its data?",
+          "options": {
+            "A": "array.resize()",
+            "B": "array.reshape()",
+            "C": "array.shape()",
+            "D": "array.flatten()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you swap the rows and columns of a 2D NumPy array 'arr'?",
+          "options": {
+            "A": "arr.swapaxes(0, 1)",
+            "B": "arr.transpose()",
+            "C": "arr.T",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which NumPy function can be used to combine multiple arrays along an existing axis?",
+          "options": {
+            "A": "numpy.concatenate()",
+            "B": "numpy.stack()",
+            "C": "numpy.split()",
+            "D": "numpy.merge()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is 'broadcasting' in NumPy?",
+          "options": {
+            "A": "A method to transmit data between different computers using NumPy arrays.",
+            "B": "A set of rules that allow NumPy to perform arithmetic operations on arrays with different shapes.",
+            "C": "A technique for displaying NumPy arrays in a formatted way.",
+            "D": "A way to convert NumPy arrays to other data structures."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which NumPy function calculates the sine of each element in an array?",
+          "options": {
+            "A": "numpy.cos()",
+            "B": "numpy.tan()",
+            "C": "numpy.sin()",
+            "D": "numpy.arcsin()"
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

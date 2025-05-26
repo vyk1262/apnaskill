@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Intro_to_Testing",
+      "questions": [
+        {
+          "question": "What is the primary goal of software testing?",
+          "options": {
+            "A": "To prove that the software is defect-free.",
+            "B": "To identify defects and ensure the software meets specified requirements and user needs.",
+            "C": "To delay the release of the software.",
+            "D": "To make developers feel bad about their code."
+          },
+          "correct_answer": "B",
+          "explanation": "Testing aims to find issues and ensure quality, not guarantee perfection."
+        },
+        {
+          "question": "Why is software testing important?",
+          "options": {
+            "A": "It's just a mandatory step in the software development lifecycle.",
+            "B": "It helps prevent costly failures, improves software quality, and enhances user satisfaction.",
+            "C": "It makes the software development process longer.",
+            "D": "It's only important for large and complex software applications."
+          },
+          "correct_answer": "B",
+          "explanation": "Testing mitigates risks and ensures a better end product."
+        },
+        {
+          "question": "Who is typically involved in software testing?",
+          "options": {
+            "A": "Only dedicated testers.",
+            "B": "Testers, developers, business analysts, end-users, and other stakeholders.",
+            "C": "Only the project managers.",
+            "D": "Only the end-users after the software is released."
+          },
+          "correct_answer": "B",
+          "explanation": "Quality is a shared responsibility involving various roles."
+        },
+        {
+          "question": "What is the difference between verification and validation?",
+          "options": {
+            "A": "They are the same thing.",
+            "B": "Verification checks if the software is built right ('Are we building the product right?'), while validation checks if the right software is built ('Are we building the right product?').",
+            "C": "Verification is done by testers, and validation is done by developers.",
+            "D": "Verification happens after deployment, and validation happens before."
+          },
+          "correct_answer": "B",
+          "explanation": "Verification focuses on the process, while validation focuses on the outcome."
+        },
+        {
+          "question": "Which of the following is NOT a fundamental test process?",
+          "options": {
+            "A": "Test planning and control.",
+            "B": "Test analysis and design.",
+            "C": "Code development.",
+            "D": "Test implementation and execution."
+          },
+          "correct_answer": "C",
+          "explanation": "Code development is a separate activity that precedes testing."
+        },
+        {
+          "question": "What is a 'defect' in software testing?",
+          "options": {
+            "A": "A suggestion for improvement.",
+            "B": "A variance between the expected and actual behavior of the software.",
+            "C": "A feature that the user doesn't like.",
+            "D": "A part of the code that is difficult to understand."
+          },
+          "correct_answer": "B",
+          "explanation": "Defects are deviations from the required functionality or quality."
+        },
+        {
+          "question": "What is the 'Test Basis'?",
+          "options": {
+            "A": "The budget allocated for testing activities.",
+            "B": "The documentation on which test cases are based, such as requirements, design specifications, and user stories.",
+            "C": "The testing team's experience and skills.",
+            "D": "The tools used for test automation."
+          },
+          "correct_answer": "B",
+          "explanation": "The Test Basis provides the information needed to design tests."
+        },
+        {
+          "question": "What is the 'Oracle' in the context of testing?",
+          "options": {
+            "A": "A person with special testing abilities.",
+            "B": "A source used to determine the expected outcome of a test.",
+            "C": "A type of test automation tool.",
+            "D": "The final version of the software."
+          },
+          "correct_answer": "B",
+          "explanation": "An oracle helps testers determine if a test has passed or failed."
+        },
+        {
+          "question": "What is the 'Test Case'?",
+          "options": {
+            "A": "A group of related test scenarios.",
+            "B": "A set of conditions, inputs, actions, expected results, and preconditions/postconditions developed for a specific test objective.",
+            "C": "A summary report of testing activities.",
+            "D": "A high-level plan for testing the entire application."
+          },
+          "correct_answer": "B",
+          "explanation": "A test case provides detailed steps for verifying a specific aspect of the software."
+        },
+        {
+          "question": "What is the 'Test Suite'?",
+          "options": {
+            "A": "The testing team's meeting room.",
+            "B": "A collection of test cases that are intended to be executed together for a specific testing goal.",
+            "C": "The documentation describing the test environment.",
+            "D": "A tool used for managing test data."
+          },
+          "correct_answer": "B",
+          "explanation": "A test suite helps organize and execute related test cases efficiently."
+        },
+        {
+          "question": "What is the 'Test Plan'?",
+          "options": {
+            "A": "A detailed description of every test case.",
+            "B": "A document outlining the scope, objectives, approach, schedule, and resources for testing activities.",
+            "C": "A daily log of testing progress.",
+            "D": "A list of all known defects."
+          },
+          "correct_answer": "B",
+          "explanation": "The Test Plan provides the overall strategy and management for testing."
+        },
+        {
+          "question": "What is the 'Test Environment'?",
+          "options": {
+            "A": "The location where the testing team sits.",
+            "B": "The hardware, software, and network configuration on which the software under test and the testware are executed.",
+            "C": "The documentation describing the software architecture.",
+            "D": "The set of rules and procedures for testing."
+          },
+          "correct_answer": "B",
+          "explanation": "A proper test environment is crucial for accurate test execution."
+        },
+        {
+          "question": "What is the 'Software Development Life Cycle' (SDLC)?",
+          "options": {
+            "A": "The period of time a software application is used by end-users.",
+            "B": "A framework defining the stages involved in the development of software, from planning to maintenance.",
+            "C": "The process of writing code for a software application.",
+            "D": "The activities involved in testing software."
+          },
+          "correct_answer": "B",
+          "explanation": "Testing is an integral part of the overall SDLC."
+        },
+        {
+          "question": "What is the 'V-Model' in software development?",
+          "options": {
+            "A": "A model that only focuses on the coding phase.",
+            "B": "A sequential development model that emphasizes the relationship between each development phase and its corresponding testing phase.",
+            "C": "A model where testing is done only at the end.",
+            "D": "A model where requirements are gathered after development."
+          },
+          "correct_answer": "B",
+          "explanation": "The V-Model illustrates the parallel nature of development and testing activities."
+        },
+        {
+          "question": "What is the 'Agile' approach to software development?",
+          "options": {
+            "A": "A development approach with very long development cycles.",
+            "B": "An iterative and incremental development approach that emphasizes collaboration, flexibility, and rapid feedback.",
+            "C": "A development approach where testing is done by a separate team at the end.",
+            "D": "A development approach with no formal planning or documentation."
+          },
+          "correct_answer": "B",
+          "explanation": "Agile integrates testing throughout the development process."
+        },
+        {
+          "question": "What is 'Exploratory Testing'?",
+          "options": {
+            "A": "A type of automated testing.",
+            "B": "A hands-on approach to testing where testers simultaneously learn the software, design tests, and execute them.",
+            "C": "Testing based solely on formal test plans and test cases.",
+            "D": "Testing done without any knowledge of the software."
+          },
+          "correct_answer": "B",
+          "explanation": "Exploratory testing emphasizes learning and discovery during the testing process."
+        },
+        {
+          "question": "What is 'Regression Testing'?",
+          "options": {
+            "A": "Testing new features of the software.",
+            "B": "Re-testing previously tested parts of the application after changes have been made to ensure that no new defects have been introduced or existing ones have been fixed.",
+            "C": "Testing the performance of the software under heavy load.",
+            "D": "Testing the user-friendliness of the software."
+          },
+          "correct_answer": "B",
+          "explanation": "Regression testing ensures that changes haven't negatively impacted existing functionality."
+        },
+        {
+          "question": "What is the 'Principle of Early Testing'?",
+          "options": {
+            "A": "Testing should only begin after the software is fully developed.",
+            "B": "Testing activities should start as early as possible in the software development lifecycle to catch defects early when they are cheaper and easier to fix.",
+            "C": "The first round of testing is the most important.",
+            "D": "Only experienced testers should be involved in early testing."
+          },
+          "correct_answer": "B",
+          "explanation": "Early testing saves time, cost, and effort in the long run."
+        },
+        {
+          "question": "What does 'Traceability' refer to in software testing?",
+          "options": {
+            "A": "The ability to track the tester's actions during test execution.",
+            "B": "The ability to link test artifacts (e.g., test cases, defects) back to their origin in the requirements or design specifications.",
+            "C": "The speed at which tests are executed.",
+            "D": "The physical location of the testing team."
+          },
+          "correct_answer": "B",
+          "explanation": "Traceability helps ensure that all requirements are adequately tested."
+        },
+        {
+          "question": "What is the ultimate goal of software testing in the context of delivering value?",
+          "options": {
+            "A": "To find as many bugs as possible, regardless of their impact.",
+            "B": "To provide stakeholders with information about the quality of the software, enabling them to make informed decisions about its release and use.",
+            "C": "To make the testing process as complex as possible.",
+            "D": "To delay the software release until all testers are completely satisfied."
+          },
+          "correct_answer": "B",
+          "explanation": "Testing provides crucial quality-related insights for stakeholders."
+        }
+      ]
+    }
+  ]
+}

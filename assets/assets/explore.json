@@ -1,0 +1,196 @@
+{
+  "title": "The best AI productivity tools by category",
+  "AI Assistants (Chatbots)": [
+    { "title": "ChatGPT", "url": "https://openai.com/chatgpt" },
+    { "title": "Claude", "url": "https://www.anthropic.com/" },
+    { "title": "Meta AI", "url": "https://ai.meta.com/" },
+    {
+      "title": "Zapier Agents",
+      "url": "https://zapier.com/features/ai-actions"
+    },
+    { "title": "Gemini", "url": "https://gemini.google.com/" },
+    { "title": "DeepSeek", "url": "https://deepseek.com/" },
+    { "title": "Grok", "url": "https://x.ai/" },
+    { "title": "Bard", "url": "https://bard.google.com/" },
+    { "title": "Jasper AI", "url": "https://www.jasper.ai/" },
+    {
+      "title": "ChatSonic",
+      "url": "https://writesonic.com/chatsonic-ai-chatbot"
+    }
+  ],
+  "Search engines": [
+    { "title": "Perplexity", "url": "https://www.perplexity.ai/" },
+    { "title": "Google AI Overviews", "url": "https://www.google.com/" },
+    { "title": "Arc Search", "url": "https://arc.net/" },
+    {
+      "title": "ChatGPT search",
+      "url": "https://openai.com/blog/chatgpt-browsing"
+    }
+  ],
+  "Content creation": [
+    { "title": "Jasper", "url": "https://www.jasper.ai/" },
+    { "title": "Anyword", "url": "https://anyword.com/" },
+    { "title": "Writer", "url": "https://writer.com/" },
+    { "title": "Rytr", "url": "https://rytr.me/" },
+    { "title": "Sudowritethat's", "url": "https://www.sudowrite.com/" },
+    { "title": "Copy.ai", "url": "https://www.copy.ai/" },
+    { "title": "Writesonic", "url": "https://writesonic.com/" }
+  ],
+  "Grammar checkers and rewording tools": [
+    { "title": "Grammarly", "url": "https://www.grammarly.com/" },
+    { "title": "Wordtune", "url": "https://www.wordtune.com/" },
+    { "title": "ProWritingAid", "url": "https://prowritingaid.com/" },
+    { "title": "Quillbot", "url": "https://quillbot.com/" }
+  ],
+  "Video creation and editing": [
+    { "title": "Runway", "url": "https://runwayml.com/" },
+    { "title": "Descript", "url": "https://descript.com/" },
+    {
+      "title": "Wondershare Filmora",
+      "url": "https://filmora.wondershare.com/"
+    },
+    { "title": "Synthesia", "url": "https://www.synthesia.io/" },
+    { "title": "OpusClip", "url": "https://opus.pro/" },
+    { "title": "Filmora", "url": "https://filmora.wondershare.com/" },
+    { "title": "Pictory", "url": "https://pictory.ai/" },
+    { "title": "DeepBrain", "url": "https://deepbrain.io/" }
+  ],
+  "Image generation": [
+    { "title": "DALL·E 3", "url": "https://openai.com/dall-e-3" },
+    { "title": "Midjourney", "url": "https://www.midjourney.com/" },
+    { "title": "Ideogram", "url": "https://ideogram.ai/" },
+    { "title": "GPT-4o", "url": "https://openai.com/gpt-4o" },
+    {
+      "title": "Deep Dream Generator",
+      "url": "https://deepdreamgenerator.com/"
+    },
+    { "title": "Runway ML - Gen-2", "url": "https://runwayml.com/gen2/" },
+    { "title": "Artbreeder", "url": "https://www.artbreeder.com/" }
+  ],
+  "Social media management": [
+    { "title": "FeedHive", "url": "https://feedhive.com/" },
+    { "title": "Vista Social", "url": "https://vistasocial.com/" },
+    { "title": "Buffer", "url": "https://buffer.com/" }
+  ],
+  "Voice and music generation": [
+    { "title": "ElevenLabs", "url": "https://elevenlabs.io/" },
+    { "title": "Suno", "url": "https://www.suno.ai/" },
+    { "title": "AIVA", "url": "https://www.aiva.ai/" },
+    { "title": "Murf", "url": "https://murf.ai/" },
+    { "title": "Udio", "url": "https://www.udio.com/" },
+    { "title": "Amper Music", "url": "https://www.ampermusic.com/" },
+    { "title": "Soundraw", "url": "https://soundraw.io/" },
+    { "title": "Boomy", "url": "https://boomy.com/" }
+  ],
+  "Knowledge management and AI grounding": [
+    { "title": "Mem", "url": "https://mem.ai/" },
+    { "title": "Notion AI Q&A", "url": "https://www.notion.so/product/ai" },
+    { "title": "Personal AI", "url": "https://personal.ai/" },
+    { "title": "Guru", "url": "https://www.getguru.com/" }
+  ],
+  "Task and project management": [
+    { "title": "Asana", "url": "https://asana.com/" },
+    { "title": "Any.do", "url": "https://www.any.do/" },
+    { "title": "BeeDone", "url": "" },
+    { "title": "ClickUp", "url": "https://clickup.com/" }
+  ],
+  "Transcription and meeting assistants": [
+    { "title": "Fireflies", "url": "https://fireflies.ai/" },
+    { "title": "Avoma", "url": "https://www.avoma.com/" },
+    { "title": "tl;dv", "url": "https://tl.dv/" },
+    { "title": "Fathom", "url": "https://fathom.video/" },
+    { "title": "Nyota", "url": "" },
+    { "title": "Descript", "url": "https://www.descript.com/" }
+  ],
+  "Scheduling": [
+    { "title": "Reclaim", "url": "https://reclaim.ai/" },
+    { "title": "Clockwise", "url": "https://clockwise.ai/" },
+    { "title": "Motion", "url": "https://www.usemotion.com/" }
+  ],
+  "Email": [
+    { "title": "Shortwave", "url": "https://shortwave.com/" },
+    {
+      "title": "Microsoft Copilot Pro for Outlook",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot-for-microsoft-365"
+    },
+    {
+      "title": "Gemini for Gmail",
+      "url": "https://workspace.google.com/intl/en/products/gemini/"
+    },
+    {
+      "title": "Hubspot Email Writer",
+      "url": "https://www.hubspot.com/products/marketing/email"
+    },
+    { "title": "SaneBox", "url": "https://www.sanebox.com/" }
+  ],
+  "Slide decks and presentations": [
+    { "title": "Tome", "url": "https://tome.app/" },
+    { "title": "Beautiful.ai", "url": "https://www.beautiful.ai/" },
+    { "title": "Slidesgo", "url": "https://slidesgo.com/" },
+    { "title": "Gamma", "url": "https://gamma.app/" },
+    { "title": "Presentations.ai", "url": "https://presentations.ai/" }
+  ],
+  "Resume builders": [
+    { "title": "Teal", "url": "https://tealhq.com/" },
+    { "title": "Enhancv", "url": "https://enhancv.com/" },
+    { "title": "Kickresume", "url": "https://www.kickresume.com/" }
+  ],
+  "Automation": [
+    { "title": "Zapier", "url": "https://zapier.com/" },
+    { "title": "n8n", "url": "https://n8n.io/" }
+  ],
+  "Research/Education": [
+    { "title": "Deep Research", "url": "" },
+    { "title": "NotebookLM", "url": "https://notebooklm.google/" }
+  ],
+  "Graphic Design": [
+    {
+      "title": "Canva Magic Studio",
+      "url": "https://www.canva.com/magic-studio/"
+    },
+    { "title": "Looka", "url": "https://looka.com/" }
+  ],
+  "App Builders & Coding": [
+    { "title": "Bubble", "url": "https://bubble.io/" },
+    { "title": "Bolt", "url": "" },
+    { "title": "Lovable", "url": "" },
+    { "title": "Cursor", "url": "https://cursor.sh/" },
+    { "title": "v0", "url": "https://v0.dev/" }
+  ],
+  "Customer Service": [
+    { "title": "Tidio AI", "url": "https://www.tidio.com/ai-chatbots/" },
+    { "title": "Hiver", "url": "https://www.hiverhq.com/" }
+  ],
+  "Recruitment": [
+    { "title": "Textio", "url": "https://textio.com/" },
+    { "title": "CVViZ", "url": "https://www.cvviz.com/" }
+  ],
+  "Marketing": [{ "title": "AdCreative", "url": "https://www.adcreative.ai/" }],
+  "Sales": [{ "title": "Clay", "url": "https://clay.earth/" }],
+  "Legal": [{ "title": "Harvey", "url": "https://www.harvey.ai/" }],
+  "AI Learning Resources": [
+    {
+      "title": "Coursera - AI for Everyone",
+      "url": "https://www.coursera.org/learn/ai-for-everyone"
+    },
+    {
+      "title": "Deep Learning Specialization by Andrew Ng",
+      "url": "https://www.coursera.org/specializations/deep-learning"
+    },
+    {
+      "title": "Fast.ai - Practical Deep Learning",
+      "url": "https://www.fast.ai/"
+    }
+  ],
+  "Generate Images Using AI": [
+    { "title": "DALL-E by OpenAI", "url": "https://openai.com/dall-e-2/" },
+    { "title": "Stable Diffusion", "url": "https://stablediffusionweb.com/" },
+    { "title": "NightCafe Studio", "url": "https://nightcafe.studio/" },
+    { "title": "Artbreeder", "url": "https://www.artbreeder.com/" },
+    {
+      "title": "DeepAI Image Generator",
+      "url": "https://deepai.org/machine-learning-model/text2img"
+    },
+    { "title": "Craiyon", "url": "https://www.craiyon.com/" }
+  ]
+}

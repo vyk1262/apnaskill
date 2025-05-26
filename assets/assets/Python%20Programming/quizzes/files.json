@@ -1,0 +1,260 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "topic": "files",
+      "questions": [
+        {
+          "question": "What is the purpose of the 'open()' function in Python?",
+          "options": {
+            "a": "To create a new file",
+            "b": "To open an existing file",
+            "c": "To read or write to a file",
+            "d": "All of the above"
+          },
+          "correct_answer": "d"
+        },
+        {
+          "question": "What is the file mode 'r+' used for?",
+          "options": {
+            "a": "Read-only mode",
+            "b": "Write-only mode",
+            "c": "Append mode",
+            "d": "Read and write mode"
+          },
+          "correct_answer": "d"
+        },
+        {
+          "question": "How do you close a file in Python?",
+          "options": {
+            "a": "Using the 'close()' method",
+            "b": "Using the 'exit()' function",
+            "c": "Automatically closed when the script ends",
+            "d": "None of the above"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What is the difference between 'read()' and 'readline()' methods?",
+          "options": {
+            "a": "read() reads the entire file, readline() reads a single line",
+            "b": "read() reads a single line, readline() reads the entire file",
+            "c": "Both read the entire file",
+            "d": "Both read a single line"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "How do you write to a file in Python?",
+          "options": {
+            "a": "Using the 'write()' method",
+            "b": "Using the 'print()' function",
+            "c": "Both of the above",
+            "d": "None of the above"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What is the purpose of the 'with open() as f:' syntax?",
+          "options": {
+            "a": "To open a file in read-only mode",
+            "b": "To automatically close the file after use",
+            "c": "To write to a file in append mode",
+            "d": "To create a new file"
+          },
+          "correct_answer": "b"
+        },
+        {
+          "question": "What is the file mode 'w+' used for?",
+          "options": {
+            "a": "Write-only mode",
+            "b": "Read-only mode",
+            "c": "Read and write mode, overwriting existing content",
+            "d": "Read and write mode, appending to existing content"
+          },
+          "correct_answer": "c"
+        },
+        {
+          "question": "How do you check if a file exists in Python?",
+          "options": {
+            "a": "Using the 'isfile()' function from the 'os' module",
+            "b": "Using the 'exists()' function from the 'os.path' module",
+            "c": "Using the 'open()' function and catching exceptions",
+            "d": "All of the above"
+          },
+          "correct_answer": "d"
+        },
+        {
+          "question": "What is the purpose of the 'seek()' method?",
+          "options": {
+            "a": "To move the file pointer to a specific position",
+            "b": "To read a specific number of bytes from a file",
+            "c": "To write to a specific position in a file",
+            "d": "To close a file"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What is the file mode 'a+' used for?",
+          "options": {
+            "a": "Read-only mode",
+            "b": "Write-only mode",
+            "c": "Read and write mode, overwriting existing content",
+            "d": "Read and write mode, appending to existing content"
+          },
+          "correct_answer": "d"
+        },
+        {
+          "question": "What is the purpose of the 'tell()' method?",
+          "options": {
+            "a": "To move the file pointer to a specific position",
+            "b": "To read a specific number of bytes from a file",
+            "c": "To get the current position of the file pointer",
+            "d": "To close a file"
+          },
+          "correct_answer": "c"
+        },
+        {
+          "question": "What is the purpose of the 'os.remove()' function?",
+          "options": {
+            "a": "To create a new file",
+            "b": "To open an existing file",
+            "c": "To delete a file",
+            "d": "To rename a file"
+          },
+          "correct_answer": "c"
+        },
+        {
+          "question": "What is the purpose of the 'os.rename()' function?",
+          "options": {
+            "a": "To create a new file",
+            "b": "To open an existing file",
+            "c": "To delete a file",
+            "d": "To rename a file"
+          },
+          "correct_answer": "d"
+        },
+        {
+          "question": "What is the purpose of the 'os.path.exists()' function?",
+          "options": {
+            "a": "To check if a file or directory exists",
+            "b": "To create a new file",
+            "c": "To delete a file",
+            "d": "To rename a file"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What is the purpose of the 'os.path.isdir()' function?",
+          "options": {
+            "a": "To check if a path is a file",
+            "b": "To check if a path is a directory",
+            "c": "To create a new directory",
+            "d": "To delete a directory"
+          },
+          "correct_answer": "b"
+        },
+        {
+          "question": "What is the purpose of the 'os.mkdir()' function?",
+          "options": {
+            "a": "To create a new file",
+            "b": "To create a new directory",
+            "c": "To delete a file",
+            "d": "To delete a directory"
+          },
+          "correct_answer": "b"
+        },
+        {
+          "question": "What is the purpose of the 'os.rmdir()' function?",
+          "options": {
+            "a": "To create a new file",
+            "b": "To create a new directory",
+            "c": "To delete a file",
+            "d": "To delete a directory"
+          },
+          "correct_answer": "d"
+        },
+        {
+          "question": "What is the purpose of the 'os.listdir()' function?",
+          "options": {
+            "a": "To list all files and directories in a directory",
+            "b": "To create a new file",
+            "c": "To delete a file",
+            "d": "To rename a file"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What is the purpose of the 'os.walk()' function?",
+          "options": {
+            "a": "To recursively traverse a directory tree",
+            "b": "To create a new file",
+            "c": "To delete a file",
+            "d": "To rename a file"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What happens if you try to open a non-existing file in 'r' mode?",
+          "options": {
+            "a": "It creates the file",
+            "b": "It raises a FileNotFoundError",
+            "c": "It opens the file in write mode",
+            "d": "It does nothing"
+          },
+          "correct_answer": "b"
+        },
+        {
+          "question": "What does the 'wb' mode do?",
+          "options": {
+            "a": "Opens a file for writing in binary mode",
+            "b": "Opens a file for writing in text mode",
+            "c": "Opens a file for reading in binary mode",
+            "d": "Opens a file for reading and writing"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What does the 'try...except' block do?",
+          "options": {
+            "a": "Catches and handles errors",
+            "b": "Ignores all errors",
+            "c": "Automatically retries the code",
+            "d": "Exits the program on error"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What is the purpose of 'finally' in try...except...finally?",
+          "options": {
+            "a": "To handle specific exceptions",
+            "b": "To execute code after try, regardless of errors",
+            "c": "To execute code only if no error occurs",
+            "d": "To ignore all errors"
+          },
+          "correct_answer": "b"
+        },
+        {
+          "question": "How do you create a custom exception?",
+          "options": {
+            "a": "Using the 'raise' statement",
+            "b": "Using the 'throw' statement",
+            "c": "Using the 'error' statement",
+            "d": "Using the 'try' statement"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "question": "What does 'as' do in an 'except' block?",
+          "options": {
+            "a": "Assigns the exception to a variable",
+            "b": "Ends the exception handling",
+            "c": "Raises the exception again",
+            "d": "Suppresses the exception"
+          },
+          "correct_answer": "a"
+        }
+      ]
+    }
+  ]
+}

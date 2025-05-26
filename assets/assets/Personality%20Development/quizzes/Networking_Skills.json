@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Networking_Skills",
+      "questions": [
+        {
+          "question": "What is the primary purpose of networking?",
+          "options": {
+            "A": "Collecting as many business cards as possible.",
+            "B": "Building mutually beneficial relationships with other professionals.",
+            "C": "Selling your products or services to everyone you meet.",
+            "D": "Gossip and sharing personal information."
+          },
+          "correct_answer": "B",
+          "explanation": "Networking is about creating connections that can be mutually supportive and beneficial."
+        },
+        {
+          "question": "Which of the following is a key element of effective networking?",
+          "options": {
+            "A": "Talking only about yourself and your achievements.",
+            "B": "Showing genuine interest in others and what they do.",
+            "C": "Interrupting conversations frequently to make your point.",
+            "D": "Avoiding follow-up after meeting someone new."
+          },
+          "correct_answer": "B",
+          "explanation": "Authentic interest in others is crucial for building strong connections."
+        },
+        {
+          "question": "What is an 'elevator pitch' and why is it important for networking?",
+          "options": {
+            "A": "A long and detailed presentation about your entire career history.",
+            "B": "A brief, compelling summary of who you are, what you do, and what you're looking for, useful for making a quick and positive first impression.",
+            "C": "A sales tactic to pressure people into buying your products.",
+            "D": "A way to avoid talking about yourself."
+          },
+          "correct_answer": "B",
+          "explanation": "A well-crafted elevator pitch helps you introduce yourself effectively in brief encounters."
+        },
+        {
+          "question": "What role does 'active listening' play in networking?",
+          "options": {
+            "A": "It's not important; networking is about talking.",
+            "B": "It helps you understand the other person's needs, interests, and potential areas for collaboration.",
+            "C": "It gives you time to prepare what you want to say next.",
+            "D": "It makes you appear uninterested."
+          },
+          "correct_answer": "B",
+          "explanation": "Listening attentively allows for deeper connections and identification of mutual benefits."
+        },
+        {
+          "question": "What is the significance of 'follow-up' after a networking event or meeting?",
+          "options": {
+            "A": "It is unnecessary and can seem pushy.",
+            "B": "It helps solidify the connection, reinforce your conversation, and suggest next steps for collaboration or support.",
+            "C": "It should only be done if you want something from the other person immediately.",
+            "D": "It should be a generic email sent to everyone you met."
+          },
+          "correct_answer": "B",
+          "explanation": "Timely and personalized follow-up demonstrates professionalism and genuine interest."
+        },
+        {
+          "question": "Which of the following is a good way to build your professional network?",
+          "options": {
+            "A": "Only attending events directly related to your industry.",
+            "B": "Attending industry events, joining professional organizations, and engaging online on platforms like LinkedIn.",
+            "C": "Avoiding social interactions with colleagues.",
+            "D": "Keeping your professional life completely separate from your personal life."
+          },
+          "correct_answer": "B",
+          "explanation": "A multi-faceted approach to networking broadens your reach and opportunities."
+        },
+        {
+          "question": "What does 'give and take' refer to in the context of networking?",
+          "options": {
+            "A": "Always expecting something in return for your interactions.",
+            "B": "Being willing to offer help and support to others in your network, not just seeking assistance for yourself.",
+            "C": "Keeping all your knowledge and resources to yourself.",
+            "D": "Only connecting with people who are in a position to immediately help you."
+          },
+          "correct_answer": "B",
+          "explanation": "Reciprocity builds strong and lasting professional relationships."
+        },
+        {
+          "question": "How can you make a positive first impression when networking?",
+          "options": {
+            "A": "Being late and unprepared.",
+            "B": "Maintaining eye contact, using a confident and friendly demeanor, and having a concise introduction ready.",
+            "C": "Talking negatively about your current or previous employers.",
+            "D": "Focusing solely on your own problems and needs."
+          },
+          "correct_answer": "B",
+          "explanation": "A strong first impression sets the tone for a positive relationship."
+        },
+        {
+          "question": "What is the importance of 'authenticity' in networking?",
+          "options": {
+            "A": "Pretending to be someone you're not can lead to stronger connections.",
+            "B": "Being genuine and true to yourself helps build trust and attracts people who resonate with your values and personality.",
+            "C": "Exaggerating your achievements is necessary to impress others.",
+            "D": "Hiding your true self is essential for professional success."
+          },
+          "correct_answer": "B",
+          "explanation": "People are more likely to connect with someone who is genuine."
+        },
+        {
+          "question": "How can you effectively leverage online platforms like LinkedIn for networking?",
+          "options": {
+            "A": "Only using it to look for job openings.",
+            "B": "Actively participating in relevant groups, sharing valuable content, and engaging with others' posts.",
+            "C": "Sending generic connection requests to everyone.",
+            "D": "Listing all your skills without providing context or examples."
+          },
+          "correct_answer": "B",
+          "explanation": "Active engagement and providing value are key to effective online networking."
+        },
+        {
+          "question": "What should be your focus when attending a networking event?",
+          "options": {
+            "A": "Collecting as many business cards as possible without engaging in conversation.",
+            "B": "Having meaningful conversations and building genuine connections with a few people.",
+            "C": "Eating all the free food and drinks.",
+            "D": "Only talking to people who are at a higher professional level than you."
+          },
+          "correct_answer": "B",
+          "explanation": "Quality of connections is more important than quantity."
+        },
+        {
+          "question": "What is the role of 'mentorship' in networking?",
+          "options": {
+            "A": "Mentors only benefit from the relationship.",
+            "B": "Seeking out mentors can provide valuable guidance, insights, and support for your career development.",
+            "C": "Mentorship is a sign of weakness.",
+            "D": "You should only seek mentors who are in the exact same field as you."
+          },
+          "correct_answer": "B",
+          "explanation": "Mentors can offer invaluable experience and advice."
+        },
+        {
+          "question": "How can you maintain your professional network over time?",
+          "options": {
+            "A": "Only reaching out when you need something.",
+            "B": "Staying in touch regularly, offering support when possible, and nurturing the relationships you've built.",
+            "C": "Avoiding all contact unless you see them at an event.",
+            "D": "Deleting contacts who are not immediately useful."
+          },
+          "correct_answer": "B",
+          "explanation": "Nurturing relationships keeps your network active and supportive."
+        },
+        {
+          "question": "What should you do if someone in your network reaches out for help?",
+          "options": {
+            "A": "Ignore their request if you are busy.",
+            "B": "Offer assistance if you are able and it aligns with your values and capabilities.",
+            "C": "Immediately ask what they can do for you in return.",
+            "D": "Pretend you didn't see their message."
+          },
+          "correct_answer": "B",
+          "explanation": "Being helpful strengthens your network and fosters goodwill."
+        },
+        {
+          "question": "What is the potential downside of having a very large but shallow network?",
+          "options": {
+            "A": "There are no downsides; more connections are always better.",
+            "B": "You may lack deep, meaningful relationships and genuine support when you need it.",
+            "C": "It makes you appear more popular and influential.",
+            "D": "It guarantees you will always find a job."
+          },
+          "correct_answer": "B",
+          "explanation": "Quality over quantity is often more valuable in networking."
+        },
+        {
+          "question": "How can you gracefully exit a conversation at a networking event?",
+          "options": {
+            "A": "Abruptly walking away without saying anything.",
+            "B": "Summarizing the conversation, expressing pleasure in meeting them, and indicating you'd like to connect further (e.g., on LinkedIn) before moving on.",
+            "C": "Telling them you have to go to the restroom and never returning.",
+            "D": "Pretending to get a phone call."
+          },
+          "correct_answer": "B",
+          "explanation": "A polite and professional exit leaves a positive lasting impression."
+        },
+        {
+          "question": "What is the role of 'reciprocity' in long-term networking success?",
+          "options": {
+            "A": "It means always keeping score of who owes whom.",
+            "B": "A willingness to both give and receive support, advice, and opportunities fosters strong and sustainable relationships.",
+            "C": "It implies that every interaction must have an immediate tangible benefit.",
+            "D": "It suggests that you should only help others if they have helped you first."
+          },
+          "correct_answer": "B",
+          "explanation": "A balanced approach to giving and receiving builds trust and mutual respect."
+        },
+        {
+          "question": "How can you leverage your existing network for new opportunities?",
+          "options": {
+            "A": "Never asking for help or introductions.",
+            "B": "Informing your network about your goals and aspirations, and asking for advice or introductions to relevant contacts.",
+            "C": "Assuming your network already knows what you're looking for.",
+            "D": "Only reaching out to your closest friends and family."
+          },
+          "correct_answer": "B",
+          "explanation": "Your existing connections can be valuable resources for new opportunities."
+        },
+        {
+          "question": "What is the importance of having a diverse professional network?",
+          "options": {
+            "A": "Diversity in a network can lead to confusion and conflicting advice.",
+            "B": "A diverse network exposes you to different perspectives, industries, and opportunities that you might not encounter within a homogenous group.",
+            "C": "You should only network with people who have the same background and experiences as you.",
+            "D": "A large but undiverse network is more valuable."
+          },
+          "correct_answer": "B",
+          "explanation": "Diversity broadens your horizons and potential collaborations."
+        },
+        {
+          "question": "What is the ultimate goal of developing strong networking skills?",
+          "options": {
+            "A": "Becoming the most popular person in your industry.",
+            "B": "Building a supportive community of professionals who can offer guidance, opportunities, and mutual support throughout your career.",
+            "C": "Having a large number of social media followers.",
+            "D": "Winning every business card collecting contest."
+          },
+          "correct_answer": "B",
+          "explanation": "Strong networking skills contribute to long-term professional growth and success through meaningful relationships."
+        }
+      ]
+    }
+  ]
+}

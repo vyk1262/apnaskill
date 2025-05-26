@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Cryptography",
+      "questions": [
+        {
+          "question": "What is the primary purpose of cryptography?",
+          "options": {
+            "A": "To improve data processing speed",
+            "B": "To secure information and communications using codes",
+            "C": "To compress data files",
+            "D": "To organize data storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Cryptography is a technique of securing information and communications using codes to ensure confidentiality, integrity, and authentication."
+        },
+        {
+          "question": "What is the difference between plaintext and ciphertext?",
+          "options": {
+            "A": "Plaintext is shorter than ciphertext",
+            "B": "Plaintext is readable data, ciphertext is encrypted unreadable data",
+            "C": "Plaintext is in binary, ciphertext is in text",
+            "D": "There is no difference"
+          },
+          "correct_answer": "B",
+          "explanation": "Plaintext is the original readable message, while ciphertext is the encrypted, unreadable form of the message after encryption."
+        },
+        {
+          "question": "What is symmetric key cryptography?",
+          "options": {
+            "A": "Using different keys for encryption and decryption",
+            "B": "Using the same key for encryption and decryption",
+            "C": "Not using any keys",
+            "D": "Using multiple keys for encryption only"
+          },
+          "correct_answer": "B",
+          "explanation": "Symmetric key cryptography uses the same cryptographic key for both encryption and decryption of the message."
+        },
+        {
+          "question": "What is asymmetric key cryptography?",
+          "options": {
+            "A": "Using different keys for encryption and decryption",
+            "B": "Using the same key for encryption and decryption",
+            "C": "Not using any keys",
+            "D": "Using keys only for encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Asymmetric key cryptography uses different keys (public and private) for encryption and decryption processes."
+        },
+        {
+          "question": "What is a hash function in cryptography?",
+          "options": {
+            "A": "A function that compresses data",
+            "B": "A function that generates a fixed-length value from input data",
+            "C": "A function that encrypts data",
+            "D": "A function that decrypts data"
+          },
+          "correct_answer": "B",
+          "explanation": "A hash function computes a fixed-length hash value or 'fingerprint' from any input data, which is unique to that input."
+        },
+        {
+          "question": "What is the purpose of digital signatures?",
+          "options": {
+            "A": "To make documents look professional",
+            "B": "To verify the authenticity and integrity of messages",
+            "C": "To compress documents",
+            "D": "To encrypt documents"
+          },
+          "correct_answer": "B",
+          "explanation": "Digital signatures are used to verify the authenticity of the sender and ensure the message hasn't been tampered with."
+        },
+        {
+          "question": "What is the RSA algorithm?",
+          "options": {
+            "A": "A symmetric encryption algorithm",
+            "B": "An asymmetric encryption algorithm",
+            "C": "A hashing algorithm",
+            "D": "A compression algorithm"
+          },
+          "correct_answer": "B",
+          "explanation": "RSA is an asymmetric cryptographic algorithm that uses two different keys for encryption and works on a block cipher concept."
+        },
+        {
+          "question": "What is the purpose of key management in cryptography?",
+          "options": {
+            "A": "To create new encryption algorithms",
+            "B": "To manage the generation, distribution, and storage of cryptographic keys",
+            "C": "To compress encryption keys",
+            "D": "To eliminate the need for keys"
+          },
+          "correct_answer": "B",
+          "explanation": "Key management involves maintaining cryptographic keys, including their generation, distribution, storage, and rotation."
+        },
+        {
+          "question": "What is the principle of non-repudiation in cryptography?",
+          "options": {
+            "A": "Preventing message encryption",
+            "B": "Ensuring sender cannot deny sending a message",
+            "C": "Allowing message modification",
+            "D": "Speeding up message delivery"
+          },
+          "correct_answer": "B",
+          "explanation": "Non-repudiation ensures that a sender cannot deny the authenticity of their signature or the sending of a message."
+        },
+        {
+          "question": "What is the Advanced Encryption Standard (AES)?",
+          "options": {
+            "A": "A hash function",
+            "B": "An asymmetric encryption algorithm",
+            "C": "A symmetric encryption algorithm",
+            "D": "A digital signature algorithm"
+          },
+          "correct_answer": "C",
+          "explanation": "AES is a widely used symmetric encryption algorithm that provides strong security for data protection."
+        },
+        {
+          "question": "What is the purpose of a Public Key Infrastructure (PKI)?",
+          "options": {
+            "A": "To manage public transportation",
+            "B": "To manage and distribute public keys securely",
+            "C": "To create new encryption algorithms",
+            "D": "To compress public keys"
+          },
+          "correct_answer": "B",
+          "explanation": "PKI manages the creation, distribution, and verification of public keys used in public key cryptography."
+        },
+        {
+          "question": "What is the role of a Certificate Authority (CA)?",
+          "options": {
+            "A": "To create encryption algorithms",
+            "B": "To issue and verify digital certificates",
+            "C": "To encrypt messages",
+            "D": "To compress certificates"
+          },
+          "correct_answer": "B",
+          "explanation": "A Certificate Authority issues and verifies digital certificates that bind public keys to entities."
+        },
+        {
+          "question": "What is the purpose of SSL/TLS protocols?",
+          "options": {
+            "A": "To compress web traffic",
+            "B": "To secure communication over computer networks",
+            "C": "To speed up web browsing",
+            "D": "To store web passwords"
+          },
+          "correct_answer": "B",
+          "explanation": "SSL/TLS protocols provide secure communication over computer networks, particularly for web browsing and email."
+        },
+        {
+          "question": "What is the purpose of a cryptographic salt?",
+          "options": {
+            "A": "To add flavor to encryption",
+            "B": "To add random data to passwords before hashing",
+            "C": "To speed up encryption",
+            "D": "To compress data"
+          },
+          "correct_answer": "B",
+          "explanation": "A cryptographic salt is random data added to passwords before hashing to prevent rainbow table attacks."
+        },
+        {
+          "question": "What is the principle of Kerckhoffs in cryptography?",
+          "options": {
+            "A": "All algorithms should be secret",
+            "B": "System security should depend only on the key secrecy",
+            "C": "Encryption is unnecessary",
+            "D": "Keys should be public"
+          },
+          "correct_answer": "B",
+          "explanation": "Kerckhoffs's principle states that a cryptographic system should be secure even if everything about the system, except the key, is public knowledge."
+        },
+        {
+          "question": "What is a one-time pad in cryptography?",
+          "options": {
+            "A": "A reusable encryption key",
+            "B": "A random key used only once",
+            "C": "A type of digital signature",
+            "D": "A compression algorithm"
+          },
+          "correct_answer": "B",
+          "explanation": "A one-time pad is a perfectly secure encryption method that uses a random key only once and is never reused."
+        },
+        {
+          "question": "What is the purpose of forward secrecy?",
+          "options": {
+            "A": "To speed up encryption",
+            "B": "To protect past communications if keys are compromised",
+            "C": "To compress messages",
+            "D": "To eliminate the need for keys"
+          },
+          "correct_answer": "B",
+          "explanation": "Forward secrecy ensures that past communications remain secure even if current encryption keys are compromised."
+        },
+        {
+          "question": "What is the role of initialization vectors (IV) in cryptography?",
+          "options": {
+            "A": "To start encryption algorithms",
+            "B": "To add randomness to encryption",
+            "C": "To compress data",
+            "D": "To store keys"
+          },
+          "correct_answer": "B",
+          "explanation": "Initialization vectors add randomness to encryption, ensuring that identical plaintext messages encrypt to different ciphertext."
+        },
+        {
+          "question": "What is the purpose of key stretching in cryptography?",
+          "options": {
+            "A": "To make keys longer physically",
+            "B": "To strengthen weak keys against brute force attacks",
+            "C": "To compress keys",
+            "D": "To speed up encryption"
+          },
+          "correct_answer": "B",
+          "explanation": "Key stretching strengthens relatively weak keys (like passwords) by making them more resistant to brute force attacks."
+        },
+        {
+          "question": "What is the primary goal of quantum cryptography?",
+          "options": {
+            "A": "To make encryption faster",
+            "B": "To provide unbreakable encryption using quantum mechanics",
+            "C": "To eliminate the need for keys",
+            "D": "To compress quantum data"
+          },
+          "correct_answer": "B",
+          "explanation": "Quantum cryptography aims to provide absolutely secure communication using the principles of quantum mechanics."
+        }
+      ]
+    }
+  ]
+}

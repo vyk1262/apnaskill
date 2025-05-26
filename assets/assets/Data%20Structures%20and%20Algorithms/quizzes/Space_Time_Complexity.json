@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Space_Time_Complexity",
+      "questions": [
+        {
+          "question": "What is 'Time Complexity' of an algorithm?",
+          "options": {
+            "A": "The amount of memory an algorithm uses.",
+            "B": "The amount of time an algorithm takes to run as a function of the input size.",
+            "C": "The difficulty of understanding the algorithm's logic.",
+            "D": "The length of the algorithm's code."
+          },
+          "correct_answer": "B",
+          "explanation": "Time complexity is usually expressed using Big O notation, describing the upper bound of the growth rate of the running time with respect to the input size."
+        },
+        {
+          "question": "What is 'Space Complexity' of an algorithm?",
+          "options": {
+            "A": "The amount of time an algorithm takes to run.",
+            "B": "The amount of memory space an algorithm uses as a function of the input size. This includes the space for the input itself and any auxiliary space used by the algorithm.",
+            "C": "The complexity of the algorithm's implementation.",
+            "D": "The number of lines of code in the algorithm."
+          },
+          "correct_answer": "B",
+          "explanation": "Space complexity considers both the fixed part (independent of input size) and the variable part (dependent on input size) of the memory usage."
+        },
+        {
+          "question": "What does 'Big O notation' represent in the context of complexity analysis?",
+          "options": {
+            "A": "The exact number of operations an algorithm performs.",
+            "B": "A mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity, used to classify algorithms based on how their runtime or space requirements grow as the input size grows.",
+            "C": "The best-case performance of an algorithm.",
+            "D": "The average-case performance of an algorithm."
+          },
+          "correct_answer": "B",
+          "explanation": "Big O notation provides an upper bound on the growth rate, focusing on the dominant terms as the input size becomes very large."
+        },
+        {
+          "question": "What is O(1) time complexity?",
+          "options": {
+            "A": "The running time grows linearly with the input size.",
+            "B": "The running time is constant and does not depend on the input size.",
+            "C": "The running time grows logarithmically with the input size.",
+            "D": "The running time grows quadratically with the input size."
+          },
+          "correct_answer": "B",
+          "explanation": "An algorithm with O(1) time complexity takes the same amount of time regardless of the input size (e.g., accessing an element in an array by its index)."
+        },
+        {
+          "question": "What is O(n) time complexity?",
+          "options": {
+            "A": "The running time is constant.",
+            "B": "The running time grows linearly with the input size.",
+            "C": "The running time grows logarithmically.",
+            "D": "The running time grows exponentially."
+          },
+          "correct_answer": "B",
+          "explanation": "An algorithm with O(n) time complexity takes time proportional to the input size (e.g., iterating through all elements in an array)."
+        },
+        {
+          "question": "What is O(log n) time complexity?",
+          "options": {
+            "A": "The running time is constant.",
+            "B": "The running time grows logarithmically with the input size, often seen in algorithms that divide the problem space in half at each step (e.g., binary search).",
+            "C": "The running time grows linearly.",
+            "D": "The running time grows quadratically."
+          },
+          "correct_answer": "B",
+          "explanation": "Algorithms with O(log n) complexity are generally very efficient for large input sizes."
+        },
+        {
+          "question": "What is O(n log n) time complexity?",
+          "options": {
+            "A": "The running time grows linearly.",
+            "B": "The running time grows logarithmically.",
+            "C": "The running time grows in a way that is a combination of linear and logarithmic growth, often found in efficient sorting algorithms (e.g., merge sort, heap sort).",
+            "D": "The running time grows exponentially."
+          },
+          "correct_answer": "C",
+          "explanation": "O(n log n) is generally better than quadratic or exponential time complexity for large inputs."
+        },
+        {
+          "question": "What is O(n^2) time complexity?",
+          "options": {
+            "A": "The running time grows linearly.",
+            "B": "The running time grows quadratically with the input size, often seen in algorithms with nested loops where both loops iterate up to n times (e.g., bubble sort, selection sort).",
+            "C": "The running time grows logarithmically.",
+            "D": "The running time is constant."
+          },
+          "correct_answer": "B",
+          "explanation": "O(n^2) algorithms become less efficient for larger input sizes compared to linear or logarithmic time complexities."
+        },
+        {
+          "question": "What is O(2^n) time complexity?",
+          "options": {
+            "A": "The running time grows linearly.",
+            "B": "The running time grows exponentially with the input size, often seen in algorithms that explore all possible subsets or permutations (e.g., some brute-force approaches to the traveling salesman problem).",
+            "C": "The running time grows polynomially.",
+            "D": "The running time is constant."
+          },
+          "correct_answer": "B",
+          "explanation": "O(2^n) algorithms become very inefficient very quickly as the input size increases."
+        },
+        {
+          "question": "What is O(1) space complexity?",
+          "options": {
+            "A": "The algorithm uses space that grows linearly with the input size.",
+            "B": "The algorithm uses a constant amount of extra memory, regardless of the input size (though it may still use space for the input itself).",
+            "C": "The algorithm uses space that grows logarithmically with the input size.",
+            "D": "The algorithm uses space that grows exponentially with the input size."
+          },
+          "correct_answer": "B",
+          "explanation": "Examples include algorithms that only use a few variables."
+        },
+        {
+          "question": "What is O(n) space complexity?",
+          "options": {
+            "A": "The algorithm uses a constant amount of extra memory.",
+            "B": "The algorithm uses extra memory that grows linearly with the input size (e.g., storing n elements in an array).",
+            "C": "The algorithm uses extra memory that grows logarithmically with the input size.",
+            "D": "The algorithm uses extra memory that grows quadratically with the input size."
+          },
+          "correct_answer": "B",
+          "explanation": "This often occurs when the algorithm needs to store the input or create a data structure proportional to the input size."
+        },
+        {
+          "question": "What is O(log n) space complexity?",
+          "options": {
+            "A": "The algorithm uses a constant amount of extra memory.",
+            "B": "The algorithm uses extra memory that grows linearly with the input size.",
+            "C": "The algorithm uses extra memory that grows logarithmically with the input size, often due to the depth of recursion or the size of a tree-like data structure.",
+            "D": "The algorithm uses extra memory that grows exponentially with the input size."
+          },
+          "correct_answer": "C",
+          "explanation": "Recursive algorithms with a logarithmic call stack depth can have O(log n) space complexity."
+        },
+        {
+          "question": "What is O(n^2) space complexity?",
+          "options": {
+            "A": "The algorithm uses a constant amount of extra memory.",
+            "B": "The algorithm uses extra memory that grows linearly with the input size.",
+            "C": "The algorithm uses extra memory that grows logarithmically with the input size.",
+            "D": "The algorithm uses extra memory that grows quadratically with the input size, for example, when storing an n x n matrix."
+          },
+          "correct_answer": "D",
+          "explanation": "This can occur when the algorithm needs to store a 2D array or similar structure where the size is proportional to the square of the input size."
+        },
+        {
+          "question": "What is the time and space complexity of a simple linear search on an array of size n?",
+          "options": {
+            "A": "Time: O(log n), Space: O(1)",
+            "B": "Time: O(n), Space: O(1)",
+            "C": "Time: O(n log n), Space: O(n)",
+            "D": "Time: O(1), Space: O(n)"
+          },
+          "correct_answer": "B",
+          "explanation": "Linear search iterates through the array once (O(n) time) and uses a constant amount of extra memory (O(1) space)."
+        },
+        {
+          "question": "What is the time and space complexity of binary search on a sorted array of size n?",
+          "options": {
+            "A": "Time: O(n), Space: O(1)",
+            "B": "Time: O(log n), Space: O(1) (for iterative) or O(log n) (for recursive due to call stack)",
+            "C": "Time: O(n log n), Space: O(n)",
+            "D": "Time: O(1), Space: O(log n)"
+          },
+          "correct_answer": "B",
+          "explanation": "Binary search repeatedly halves the search space (O(log n) time). The iterative version uses constant extra space, while the recursive version uses space proportional to the depth of the recursion stack."
+        },
+        {
+          "question": "What is the time and space complexity of merge sort on an array of size n?",
+          "options": {
+            "A": "Time: O(n), Space: O(1)",
+            "B": "Time: O(n log n), Space: O(n)",
+            "C": "Time: O(n^2), Space: O(1)",
+            "D": "Time: O(log n), Space: O(n)"
+          },
+          "correct_answer": "B",
+          "explanation": "Merge sort has a time complexity of O(n log n) due to the divide and merge steps, and it typically requires O(n) auxiliary space for the merging process."
+        },
+        {
+          "question": "What is the time and space complexity of quick sort on an array of size n (average case)?",
+          "options": {
+            "A": "Time: O(n), Space: O(1)",
+            "B": "Time: O(n log n), Space: O(log n) (due to recursion depth)",
+            "C": "Time: O(n^2), Space: O(1)",
+            "D": "Time: O(log n), Space: O(n)"
+          },
+          "correct_answer": "B",
+          "explanation": "On average, quick sort has a time complexity of O(n log n). The space complexity is typically O(log n) due to the recursion stack in a typical implementation."
+        },
+        {
+          "question": "Why is it important to analyze both time and space complexity of an algorithm?",
+          "options": {
+            "A": "Time complexity is more important than space complexity in all cases.",
+            "B": "Space complexity is more important than time complexity in all cases.",
+            "C": "Both time and space complexity are crucial for understanding the efficiency and feasibility of an algorithm, especially for large input sizes and resource-constrained environments. A fast algorithm might use too much memory, and a memory-efficient algorithm might be too slow.",
+            "D": "Only the programming language used affects the performance."
+          },
+          "correct_answer": "C",
+          "explanation": "A balanced understanding of both complexities helps in choosing the most appropriate algorithm for a given task and constraints."
+        },
+        {
+          "question": "What is the trade-off between time and space complexity?",
+          "options": {
+            "A": "There is no trade-off; better time complexity always means better space complexity.",
+            "B": "Sometimes, we can reduce the time complexity of an algorithm by using more memory (e.g., using a hash table for faster lookups), or we can reduce space complexity at the cost of increased time complexity.",
+            "C": "Time and space complexity are independent of each other.",
+            "D": "The trade-off only applies to very complex algorithms."
+          },
+          "correct_answer": "B",
+          "explanation": "Choosing an algorithm often involves balancing these two resources based on the specific requirements of the problem and the available resources."
+        },
+        {
+          "question": "In competitive programming, why is it important to be mindful of both time and memory limits?",
+          "options": {
+            "A": "Only time limits affect whether a solution is accepted.",
+            "B": "Only memory limits affect whether a solution is accepted.",
+            "C": "Both time and memory limits are strictly enforced, and exceeding either can lead to a 'Time Limit Exceeded' or 'Memory Limit Exceeded' verdict, respectively.",
+            "D": "These limits are just guidelines and do not affect the judging of a solution."
+          },
+          "correct_answer": "C",
+          "explanation": "Submitting a solution that respects both constraints is crucial for getting an 'Accepted' verdict."
+        }
+      ]
+    }
+  ]
+}

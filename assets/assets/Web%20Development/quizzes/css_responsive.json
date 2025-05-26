@@ -1,0 +1,199 @@
+{
+  "result": [
+    {
+      "topic": "css_responsive",
+      "questions": [
+        {
+          "question": "What does RWD stand for in web development?",
+          "options": {
+            "A": "Responsive Web Design",
+            "B": "Real World Design",
+            "C": "Rapid Web Development",
+            "D": "Responsive Web Development"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the viewport meta tag?",
+          "options": {
+            "A": "To control the layout on mobile browsers",
+            "B": "To define the background color",
+            "C": "To set the font size",
+            "D": "To add a title to the page"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which CSS property is used to create a responsive grid layout?",
+          "options": {
+            "A": "display: flex;",
+            "B": "display: grid;",
+            "C": "display: inline-block;",
+            "D": "display: block;"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the use of media queries in responsive design?",
+          "options": {
+            "A": "To change styles based on device characteristics",
+            "B": "To control animations",
+            "C": "To set font sizes",
+            "D": "To manage image formats"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you make images responsive?",
+          "options": {
+            "A": "By using max-width: 100%;",
+            "B": "By using fixed width and height",
+            "C": "By using background images only",
+            "D": "By setting the height to auto"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What should you use for responsive video?",
+          "options": {
+            "A": "Setting width and height in pixels",
+            "B": "Using max-width: 100%; and height: auto;",
+            "C": "Using fixed aspect ratio only",
+            "D": "Embedding without any attributes"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a popular framework for responsive design?",
+          "options": {
+            "A": "Bootstrap",
+            "B": "jQuery",
+            "C": "Node.js",
+            "D": "Django"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of a responsive template?",
+          "options": {
+            "A": "To ensure consistency across different devices",
+            "B": "To set the layout in fixed widths",
+            "C": "To provide only desktop views",
+            "D": "To hide elements on mobile"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is a common breakpoint for mobile devices in media queries?",
+          "options": {
+            "A": "768px",
+            "B": "480px",
+            "C": "1024px",
+            "D": "1200px"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the default value of the 'box-sizing' property?",
+          "options": {
+            "A": "content-box",
+            "B": "border-box",
+            "C": "padding-box",
+            "D": "none"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which layout model is used in CSS Grid?",
+          "options": {
+            "A": "Grid model",
+            "B": "Flex model",
+            "C": "Table model",
+            "D": "Block model"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you define a grid container in CSS?",
+          "options": {
+            "A": "display: flex;",
+            "B": "display: grid;",
+            "C": "grid-container: true;",
+            "D": "grid: container;"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of 'grid-template-columns'?",
+          "options": {
+            "A": "To define the number of columns in a grid",
+            "B": "To set the height of the grid",
+            "C": "To apply styles to grid items",
+            "D": "To define rows in a grid"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create a grid item?",
+          "options": {
+            "A": "By using display: block;",
+            "B": "By placing a child element inside a grid container",
+            "C": "By using grid-item property",
+            "D": "By using display: inline;"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is SASS?",
+          "options": {
+            "A": "A CSS preprocessor",
+            "B": "A JavaScript framework",
+            "C": "A design tool",
+            "D": "A type of CSS framework"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is a feature of SASS?",
+          "options": {
+            "A": "Variables",
+            "B": "Mixins",
+            "C": "Nesting",
+            "D": "All of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What file extension does a SASS file have?",
+          "options": {
+            "A": ".css",
+            "B": ".scss",
+            "C": ".sass",
+            "D": ".sassc"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How do you define a variable in SASS?",
+          "options": {
+            "A": "$variableName: value;",
+            "B": "@variable variableName value;",
+            "C": "variableName: value;",
+            "D": "var variableName = value;"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which feature allows you to reuse styles in SASS?",
+          "options": {
+            "A": "Mixins",
+            "B": "Classes",
+            "C": "IDs",
+            "D": "Comments"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Model_Evaluation_and_Selection",
+      "questions": [
+        {
+          "question": "What is the primary purpose of model evaluation in machine learning?",
+          "options": {
+            "A": "To train the model on the entire dataset.",
+            "B": "To assess the performance and generalization ability of a trained model on unseen data.",
+            "C": "To select the features to be used for training.",
+            "D": "To tune the hyperparameters of the model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is it important to evaluate a model on a separate test set rather than the training set?",
+          "options": {
+            "A": "The test set is always larger than the training set.",
+            "B": "Evaluating on the training set can lead to an overly optimistic assessment of performance due to overfitting.",
+            "C": "The test set contains more accurate labels.",
+            "D": "Evaluating on the test set is computationally cheaper."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common evaluation metric for classification problems?",
+          "options": {
+            "A": "Mean Squared Error (MSE)",
+            "B": "R-squared",
+            "C": "Accuracy",
+            "D": "Root Mean Squared Error (RMSE)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does 'accuracy' measure in classification?",
+          "options": {
+            "A": "The proportion of actual positives that were correctly identified.",
+            "B": "The proportion of predicted positives that were actually positive.",
+            "C": "The overall proportion of correctly classified instances.",
+            "D": "The ability of the model to find all the positive instances."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "When might accuracy be a misleading evaluation metric for classification?",
+          "options": {
+            "A": "When the dataset has a balanced class distribution.",
+            "B": "When all classes are equally important.",
+            "C": "When the dataset has an imbalanced class distribution.",
+            "D": "Accuracy is always a reliable metric."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What do 'precision' and 'recall' measure in binary classification?",
+          "options": {
+            "A": "Precision: overall correctness; Recall: ability to avoid false positives.",
+            "B": "Precision: ability to find all positives; Recall: proportion of correct positive predictions.",
+            "C": "Precision: proportion of correct positive predictions; Recall: ability to find all positives.",
+            "D": "Precision and recall are the same metric."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the F1-score?",
+          "options": {
+            "A": "A simple average of precision and recall.",
+            "B": "The difference between precision and recall.",
+            "C": "The harmonic mean of precision and recall.",
+            "D": "Another term for accuracy."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the 'confusion matrix' show?",
+          "options": {
+            "A": "The correlation between different features.",
+            "B": "The distribution of the target variable.",
+            "C": "The counts of true positives, true negatives, false positives, and false negatives.",
+            "D": "The learning curve of the model."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the 'AUC' (Area Under the ROC Curve) measure?",
+          "options": {
+            "A": "The accuracy of the model at a specific threshold.",
+            "B": "The probability that a randomly chosen positive instance will be ranked higher than a randomly chosen negative instance.",
+            "C": "The precision of the model at a specific recall level.",
+            "D": "The area under the precision-recall curve."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common evaluation metric for regression problems?",
+          "options": {
+            "A": "F1-score",
+            "B": "AUC",
+            "C": "Mean Absolute Error (MAE)",
+            "D": "Precision"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does 'Mean Squared Error' (MSE) measure in regression?",
+          "options": {
+            "A": "The average absolute difference between predicted and actual values.",
+            "B": "The average of the squared differences between predicted and actual values.",
+            "C": "The square root of the average squared differences.",
+            "D": "The correlation between predicted and actual values."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does 'R-squared' measure in regression?",
+          "options": {
+            "A": "The average error of the model.",
+            "B": "The proportion of the variance in the dependent variable that is predictable from the independent variables.",
+            "C": "The correlation between the independent variables.",
+            "D": "The statistical significance of the model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'cross-validation' used for in model evaluation and selection?",
+          "options": {
+            "A": "To train the model on multiple datasets.",
+            "B": "To get a more robust estimate of the model's generalization performance by training and evaluating on multiple subsets of the data.",
+            "C": "To tune the hyperparameters of the model.",
+            "D": "To reduce the dimensionality of the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the common types of cross-validation?",
+          "options": {
+            "A": "Train-test split, simple validation.",
+            "B": "K-fold cross-validation, stratified k-fold cross-validation, leave-one-out cross-validation.",
+            "C": "Forward selection, backward elimination.",
+            "D": "L1 and L2 regularization."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'stratified k-fold cross-validation' particularly useful for?",
+          "options": {
+            "A": "Regression problems.",
+            "B": "Time series data.",
+            "C": "Classification problems with imbalanced class distributions.",
+            "D": "High-dimensional datasets."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is 'model selection' in machine learning?",
+          "options": {
+            "A": "The process of choosing the best features for a single model.",
+            "B": "The process of selecting the best performing model from a set of candidate models for a given task.",
+            "C": "The process of tuning the hyperparameters of a model.",
+            "D": "The process of deploying a trained model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can cross-validation be used for model selection?",
+          "options": {
+            "A": "By training all candidate models on the entire dataset and comparing their training errors.",
+            "B": "By evaluating each candidate model using cross-validation and comparing their average performance across the folds.",
+            "C": "By selecting the model with the fewest parameters.",
+            "D": "By choosing the model that trains the fastest."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are 'learning curves' and how can they help in model evaluation?",
+          "options": {
+            "A": "Curves that show the relationship between different features.",
+            "B": "Plots that show the training and validation error as a function of the training set size, helping to diagnose bias and variance issues.",
+            "C": "Visualizations of the model's decision boundaries.",
+            "D": "Plots that show the performance of different algorithms on the same dataset."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are 'validation curves' and how can they help in model evaluation?",
+          "options": {
+            "A": "Curves that show the performance of the model as a function of a hyperparameter value, helping to identify optimal hyperparameter settings.",
+            "B": "Plots that show the training error over time.",
+            "C": "Visualizations of the model's predictions on the test set.",
+            "D": "Curves that show the amount of data used for validation."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "When selecting a model, what factors beyond just performance metrics should be considered?",
+          "options": {
+            "A": "Only the training time of the model.",
+            "B": "Interpretability, complexity, scalability, and the specific requirements of the application.",
+            "C": "The programming language in which the model is implemented.",
+            "D": "The default hyperparameters of the algorithms."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Domain-Specific_Applications",
+      "questions": [
+        {
+          "question": "In the context of healthcare, how is data science commonly applied?",
+          "options": {
+            "A": "Designing hospital infrastructure.",
+            "B": "Developing new medical devices.",
+            "C": "Predicting disease outbreaks, personalizing treatment plans, and improving diagnostic accuracy.",
+            "D": "Managing hospital staff schedules."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are some applications of data science in the finance industry?",
+          "options": {
+            "A": "Creating marketing campaigns for non-financial products.",
+            "B": "Managing employee payroll.",
+            "C": "Fraud detection, risk assessment, algorithmic trading, and customer behavior analysis.",
+            "D": "Designing bank building layouts."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is data science used in marketing and advertising?",
+          "options": {
+            "A": "Printing brochures and flyers.",
+            "B": "Managing social media accounts manually.",
+            "C": "Customer segmentation, targeted advertising, predicting customer churn, and optimizing marketing spend.",
+            "D": "Distributing promotional materials door-to-door."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are some applications of data science in the field of transportation?",
+          "options": {
+            "A": "Designing vehicle interiors.",
+            "B": "Building roads and bridges.",
+            "C": "Optimizing traffic flow, predicting travel times, improving logistics, and autonomous driving.",
+            "D": "Managing parking lots manually."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is data science being used in the education sector?",
+          "options": {
+            "A": "Designing school uniforms.",
+            "B": "Managing school cafeteria menus.",
+            "C": "Personalized learning paths, student performance prediction, and resource allocation optimization.",
+            "D": "Organizing school events."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "In environmental science, how can data science be applied?",
+          "options": {
+            "A": "Landscaping public parks.",
+            "B": "Managing waste disposal manually.",
+            "C": "Climate modeling, predicting natural disasters, and monitoring biodiversity.",
+            "D": "Designing energy-efficient buildings."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are some ways data science is used in the retail industry?",
+          "options": {
+            "A": "Physically arranging products on shelves.",
+            "B": "Managing inventory using pen and paper.",
+            "C": "Inventory management, personalized recommendations, demand forecasting, and customer sentiment analysis.",
+            "D": "Hiring store staff."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is data science transforming the agriculture industry?",
+          "options": {
+            "A": "Plowing fields manually.",
+            "B": "Watering crops on a fixed schedule.",
+            "C": "Precision agriculture, yield prediction, disease detection in crops, and livestock management.",
+            "D": "Transporting harvested goods to market."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What role does data science play in the energy sector?",
+          "options": {
+            "A": "Digging for fossil fuels.",
+            "B": "Maintaining power lines manually.",
+            "C": "Predicting energy consumption, optimizing grid management, and improving renewable energy forecasting.",
+            "D": "Reading electricity meters."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is data science applied in the sports industry?",
+          "options": {
+            "A": "Designing sports equipment.",
+            "B": "Managing ticket sales manually.",
+            "C": "Player performance analysis, predicting game outcomes, and fan engagement.",
+            "D": "Refereeing games."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "In the context of cybersecurity, how is data science utilized?",
+          "options": {
+            "A": "Physically guarding computer hardware.",
+            "B": "Writing basic firewall rules manually.",
+            "C": "Threat detection, anomaly detection, and vulnerability analysis.",
+            "D": "Installing antivirus software on individual machines."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are some applications of data science in the entertainment industry?",
+          "options": {
+            "A": "Operating movie theater projectors.",
+            "B": "Manually distributing films to theaters.",
+            "C": "Recommendation systems, content personalization, and audience analytics.",
+            "D": "Designing movie posters."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is data science being used in human resources (HR)?",
+          "options": {
+            "A": "Manually processing job applications.",
+            "B": "Conducting interviews without any data analysis.",
+            "C": "Talent acquisition, employee retention prediction, and performance analysis.",
+            "D": "Managing office supplies."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What role can data science play in urban planning?",
+          "options": {
+            "A": "Drawing city maps by hand.",
+            "B": "Managing traffic lights without any data input.",
+            "C": "Optimizing public transportation, predicting urban growth, and resource allocation.",
+            "D": "Sweeping city streets."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is data science applied in the field of manufacturing?",
+          "options": {
+            "A": "Assembling products manually.",
+            "B": "Inspecting products visually without any data analysis.",
+            "C": "Predictive maintenance, quality control, and supply chain optimization.",
+            "D": "Packaging finished goods by hand."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are some applications of data science in the legal field?",
+          "options": {
+            "A": "Typing legal documents.",
+            "B": "Filing paperwork manually.",
+            "C": "Legal research, contract analysis, and predicting case outcomes.",
+            "D": "Serving legal documents in person."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is data science being used in the logistics and supply chain management?",
+          "options": {
+            "A": "Driving delivery trucks without GPS.",
+            "B": "Managing warehouses manually.",
+            "C": "Route optimization, demand forecasting, and inventory management.",
+            "D": "Loading and unloading goods by hand."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What role can data science play in scientific research across various disciplines?",
+          "options": {
+            "A": "Replacing traditional experimental methods entirely.",
+            "B": "Analyzing large datasets, identifying patterns, and accelerating the pace of discovery.",
+            "C": "Solely focusing on data collection and ignoring analysis.",
+            "D": "Only being applicable to computer science research."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can data science contribute to improving government services?",
+          "options": {
+            "A": "Replacing human interaction with citizens entirely.",
+            "B": "Optimizing resource allocation, improving policy-making, and enhancing citizen services.",
+            "C": "Solely focusing on collecting more citizen data.",
+            "D": "Automating all government functions without human oversight."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is domain-specific knowledge crucial when applying data science in different fields?",
+          "options": {
+            "A": "It is not important; data science techniques are universally applicable.",
+            "B": "It helps in understanding the unique challenges, data characteristics, and relevant questions within each domain, leading to more effective and impactful solutions.",
+            "C": "It is only needed for communicating the results to domain experts.",
+            "D": "It primarily helps in choosing the right data visualization techniques."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

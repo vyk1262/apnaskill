@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_Pandas",
+      "questions": [
+        {
+          "question": "What is Pandas primarily used for in Python?",
+          "options": {
+            "A": "For creating interactive visualizations.",
+            "B": "For numerical computations, especially with arrays.",
+            "C": "For data manipulation and analysis.",
+            "D": "For building web applications."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a core data structure in Pandas?",
+          "options": {
+            "A": "NumPy array",
+            "B": "Python list",
+            "C": "Series",
+            "D": "Dictionary"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a Pandas Series object most similar to?",
+          "options": {
+            "A": "A multi-dimensional array.",
+            "B": "A 2D table with rows and columns.",
+            "C": "A 1D labeled array.",
+            "D": "A collection of key-value pairs."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is another core data structure in Pandas, representing a 2D labeled table?",
+          "options": {
+            "A": "Series",
+            "B": "DataFrame",
+            "C": "Panel",
+            "D": "Array2D"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the two main components of a Pandas Series?",
+          "options": {
+            "A": "Values and columns.",
+            "B": "Index and data.",
+            "C": "Rows and values.",
+            "D": "Keys and values."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the index in a Pandas Series or DataFrame?",
+          "options": {
+            "A": "The actual data values.",
+            "B": "A label or sequence of labels used to identify the data.",
+            "C": "The number of dimensions of the data structure.",
+            "D": "The data type of the elements."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Can the index in a Pandas Series have duplicate labels?",
+          "options": {
+            "A": "No, the index labels must be unique.",
+            "B": "Yes, duplicate index labels are allowed.",
+            "C": "Only for integer-based indexing.",
+            "D": "Only for string-based indexing."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How do you import the Pandas library in Python, conventionally?",
+          "options": {
+            "A": "import pandas as pd",
+            "B": "from pandas import *",
+            "C": "import PyPandas as pp",
+            "D": "import pandas"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What kind of data can a Pandas Series hold?",
+          "options": {
+            "A": "Only numerical data.",
+            "B": "Only string data.",
+            "C": "Any data type (integers, floats, strings, booleans, etc.).",
+            "D": "Only homogeneous data of a single type within the Series."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "How is a Pandas DataFrame conceptually different from a collection of Pandas Series?",
+          "options": {
+            "A": "A DataFrame can only hold numerical data, while Series can hold any type.",
+            "B": "A DataFrame is a single 2D structure where each column is a Series sharing the same index.",
+            "C": "A DataFrame is just a list of Series objects.",
+            "D": "There is no conceptual difference; they are interchangeable."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is NOT a benefit of using Pandas for data analysis?",
+          "options": {
+            "A": "Powerful and flexible data structures.",
+            "B": "Tools for data cleaning and preparation.",
+            "C": "High-performance numerical computations on arrays.",
+            "D": "Easy handling of missing data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the equivalent of a column in a Pandas DataFrame?",
+          "options": {
+            "A": "A row.",
+            "B": "An index.",
+            "C": "A Series.",
+            "D": "A scalar value."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the equivalent of a row in a Pandas DataFrame?",
+          "options": {
+            "A": "A column.",
+            "B": "An index label.",
+            "C": "A Series.",
+            "D": "A record or observation across all columns."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Can you have different data types in different columns of a Pandas DataFrame?",
+          "options": {
+            "A": "No, all columns must have the same data type.",
+            "B": "Yes, each column in a DataFrame can have its own data type.",
+            "C": "Only if the DataFrame is created from a dictionary.",
+            "D": "Only for string-based DataFrames."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of the index in aligning data during operations between Pandas Series or DataFrames?",
+          "options": {
+            "A": "It determines the order of columns.",
+            "B": "It ensures that operations are performed on rows with matching labels.",
+            "C": "It specifies the data type of the resulting data structure.",
+            "D": "It has no role in data alignment."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which library does Pandas build upon for numerical computations?",
+          "options": {
+            "A": "SciPy",
+            "B": "NumPy",
+            "C": "Matplotlib",
+            "D": "Seaborn"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a potential drawback of using Pandas for extremely large datasets that exceed available RAM?",
+          "options": {
+            "A": "Pandas cannot handle such datasets at all.",
+            "B": "Performance can become slow as Pandas typically loads the entire dataset into memory.",
+            "C": "Data types are automatically converted to less memory-intensive formats.",
+            "D": "Visualization capabilities are limited for large datasets."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the `pd.set_option()` function in Pandas?",
+          "options": {
+            "A": "To set the data type of a Series or DataFrame.",
+            "B": "To configure various display options for Pandas objects.",
+            "C": "To optimize the performance of Pandas operations.",
+            "D": "To save Pandas objects to different file formats."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which Pandas data structure is best suited for representing time series data with associated labels?",
+          "options": {
+            "A": "A regular DataFrame with a DatetimeIndex.",
+            "B": "A Series with a DatetimeIndex.",
+            "C": "A Panel (though less commonly used now).",
+            "D": "A NumPy array."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "In summary, Pandas provides Python with powerful tools for:",
+          "options": {
+            "A": "Only numerical analysis.",
+            "B": "Only data visualization.",
+            "C": "Efficient data manipulation, analysis, and cleaning.",
+            "D": "Building machine learning models."
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Merging_and_Joining_Data",
+      "questions": [
+        {
+          "question": "Which Pandas function is used to combine two DataFrame objects?",
+          "options": {
+            "A": "pd.combine()",
+            "B": "pd.merge()",
+            "C": "pd.join()",
+            "D": "pd.concat()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the primary difference between `pd.merge()` and `pd.concat()`?",
+          "options": {
+            "A": "`pd.merge()` combines DataFrames horizontally based on common columns, while `pd.concat()` combines them vertically or horizontally along an axis.",
+            "B": "`pd.concat()` combines DataFrames based on common columns, while `pd.merge()` combines them along an axis.",
+            "C": "There is no significant difference; they can be used interchangeably.",
+            "D": "`pd.merge()` is used for Series, and `pd.concat()` is used for DataFrames."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which type of merge in `pd.merge()` keeps only the rows where the specified key columns have matching values in both DataFrames?",
+          "options": {
+            "A": "left",
+            "B": "right",
+            "C": "outer",
+            "D": "inner"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which type of merge in `pd.merge()` keeps all rows from the left DataFrame and the matching rows from the right DataFrame. If there is no match in the right DataFrame, NaN values are used?",
+          "options": {
+            "A": "inner",
+            "B": "right",
+            "C": "left",
+            "D": "outer"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which type of merge in `pd.merge()` keeps all rows from the right DataFrame and the matching rows from the left DataFrame. If there is no match in the left DataFrame, NaN values are used?",
+          "options": {
+            "A": "inner",
+            "B": "left",
+            "C": "right",
+            "D": "outer"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which type of merge in `pd.merge()` keeps all rows from both DataFrames. If there are no matching values in the key columns, NaN values are used for the missing parts?",
+          "options": {
+            "A": "inner",
+            "B": "left",
+            "C": "right",
+            "D": "outer"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What argument in `pd.merge()` specifies the column(s) to use for the merge?",
+          "options": {
+            "A": "on",
+            "B": "keys",
+            "C": "merge_on",
+            "D": "using"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "If the key columns have different names in the two DataFrames being merged, how do you specify them in `pd.merge()`?",
+          "options": {
+            "A": "using the `keys` argument with a tuple of column names.",
+            "B": "using the `left_on` and `right_on` arguments.",
+            "C": "by renaming the columns to be the same before merging.",
+            "D": "using the `on` argument with a dictionary of column name mappings."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What happens if there are columns with the same name (other than the merge keys) in both DataFrames being merged?",
+          "options": {
+            "A": "An error is raised.",
+            "B": "The columns are automatically renamed with suffixes like '_x' and '_y'.",
+            "C": "The columns from the right DataFrame overwrite the columns from the left DataFrame.",
+            "D": "The duplicate columns are dropped from the result."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you specify the suffixes to use for overlapping columns in `pd.merge()`?",
+          "options": {
+            "A": "using the `overlap_suffix` argument.",
+            "B": "using the `suffixes` argument with a tuple of strings.",
+            "C": "by manually renaming the columns after merging.",
+            "D": "using the `column_suffixes` argument."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which Pandas method provides a convenient way to perform joins based on the index of the DataFrames?",
+          "options": {
+            "A": "pd.index_merge()",
+            "B": "df1.join(df2)",
+            "C": "pd.merge_index()",
+            "D": "df1.merge(df2, on=df1.index)"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "By default, what type of join does the `.join()` method perform?",
+          "options": {
+            "A": "inner join based on index.",
+            "B": "left join based on index.",
+            "C": "right join based on index.",
+            "D": "outer join based on index."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you perform an inner join using the `.join()` method?",
+          "options": {
+            "A": "df1.join(df2, how='inner')",
+            "B": "df1.join(df2, type='inner')",
+            "C": "df1.join(df2, on_index='inner')",
+            "D": "df1.join(df2, join_type='inner')"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Can you join DataFrames based on specific columns using the `.join()` method?",
+          "options": {
+            "A": "No, `.join()` can only be used with the index.",
+            "B": "Yes, by using the `on` argument to specify the column(s).",
+            "C": "Only if the column names are the same in both DataFrames.",
+            "D": "You need to set those columns as the index first."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the purpose of the `pd.concat()` function?",
+          "options": {
+            "A": "To merge DataFrames based on common columns.",
+            "B": "To append or combine Pandas objects along a particular axis (rows or columns).",
+            "C": "To perform SQL-like joins between DataFrames.",
+            "D": "To reshape DataFrames by pivoting or unpivoting."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "By default, `pd.concat()` combines Pandas objects along which axis?",
+          "options": {
+            "A": "axis=0 (row-wise)",
+            "B": "axis=1 (column-wise)",
+            "C": "axis='index'",
+            "D": "axis='columns'"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you concatenate two DataFrames `df1` and `df2` column-wise?",
+          "options": {
+            "A": "pd.concat([df1, df2], axis='columns')",
+            "B": "pd.concat([df1, df2], axis=1)",
+            "C": "pd.concat([df1, df2], join='outer')",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What happens to the index when you concatenate DataFrames vertically using `pd.concat()` by default?",
+          "options": {
+            "A": "The index is reset to a sequential integer index.",
+            "B": "The original indices are kept, potentially resulting in duplicate index values.",
+            "C": "Only the index of the first DataFrame is kept.",
+            "D": "The indices are merged, keeping only the unique values."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you ensure that the concatenated DataFrame has a single, sequential index when using `pd.concat()`?",
+          "options": {
+            "A": "using the `ignore_index=True` argument.",
+            "B": "using the `reset_index()` method after concatenation.",
+            "C": "using the `reindex()` method.",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the purpose of the `keys` argument in `pd.concat()`?",
+          "options": {
+            "A": "To specify the columns to use for concatenation (similar to the 'on' argument in merge).",
+            "B": "To create a hierarchical index, allowing you to identify which original DataFrame each row belongs to.",
+            "C": "To rename the columns of the concatenated DataFrame.",
+            "D": "To specify the order in which the DataFrames should be concatenated."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

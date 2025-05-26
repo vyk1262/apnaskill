@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Defect_Management",
+      "questions": [
+        {
+          "question": "What is the primary goal of Defect Management?",
+          "options": {
+            "A": "To prevent developers from writing code with defects.",
+            "B": "To systematically identify, report, track, and resolve defects in software.",
+            "C": "To blame individuals for introducing defects.",
+            "D": "To ignore minor issues and focus only on critical ones."
+          },
+          "correct_answer": "B",
+          "explanation": "Defect management ensures that issues are handled effectively throughout the testing lifecycle."
+        },
+        {
+          "question": "What is the first step in the Defect Management process?",
+          "options": {
+            "A": "Fixing the defect.",
+            "B": "Reporting the defect.",
+            "C": "Analyzing the defect.",
+            "D": "Closing the defect."
+          },
+          "correct_answer": "B",
+          "explanation": "A defect needs to be reported before any other action can be taken."
+        },
+        {
+          "question": "What information should ideally be included in a defect report?",
+          "options": {
+            "A": "Only the tester's name and the date.",
+            "B": "A clear and concise description of the defect, steps to reproduce it, expected and actual results, severity, priority, and the environment.",
+            "C": "Vague details to avoid overwhelming developers.",
+            "D": "Personal opinions about the software."
+          },
+          "correct_answer": "B",
+          "explanation": "Comprehensive information helps developers understand and fix the defect efficiently."
+        },
+        {
+          "question": "What is 'Severity' in the context of defect management?",
+          "options": {
+            "A": "How quickly the defect needs to be fixed.",
+            "B": "The impact of the defect on the functionality or operation of the software.",
+            "C": "The complexity of the code where the defect is found.",
+            "D": "The tester's opinion of how important the defect is."
+          },
+          "correct_answer": "B",
+          "explanation": "Severity indicates the seriousness of the defect's impact."
+        },
+        {
+          "question": "What is 'Priority' in the context of defect management?",
+          "options": {
+            "A": "The impact of the defect on the software's functionality.",
+            "B": "The urgency with which the defect needs to be fixed.",
+            "C": "The number of times the defect has been reported.",
+            "D": "The developer who will be assigned to fix the defect."
+          },
+          "correct_answer": "B",
+          "explanation": "Priority dictates the order in which defects should be addressed."
+        },
+        {
+          "question": "Who typically performs 'Defect Triage'?",
+          "options": {
+            "A": "Only the testers.",
+            "B": "A team consisting of testers, developers, project managers, and sometimes business analysts to assess, prioritize, and assign defects.",
+            "C": "Only the developers who wrote the code.",
+            "D": "Only the end-users who reported the defects."
+          },
+          "correct_answer": "B",
+          "explanation": "Triage is a collaborative effort to manage the defect backlog effectively."
+        },
+        {
+          "question": "What are common defect statuses in a Defect Management lifecycle?",
+          "options": {
+            "A": "Happy, Sad, Angry.",
+            "B": "New, Open, Assigned, Fixed, Verified, Closed, Rejected, Deferred.",
+            "C": "High, Medium, Low.",
+            "D": "Yes, No, Maybe."
+          },
+          "correct_answer": "B",
+          "explanation": "These statuses track the progress of a defect from discovery to resolution."
+        },
+        {
+          "question": "What does it mean when a defect is marked as 'Assigned'?",
+          "options": {
+            "A": "The defect has been fixed by the developer.",
+            "B": "The defect has been given to a specific developer to work on.",
+            "C": "The defect has been reported for the first time.",
+            "D": "The defect has been closed and will not be fixed."
+          },
+          "correct_answer": "B",
+          "explanation": "Assignment indicates ownership of the defect resolution."
+        },
+        {
+          "question": "What does it mean when a defect is marked as 'Fixed'?",
+          "options": {
+            "A": "The tester has confirmed that the defect is resolved.",
+            "B": "The developer believes they have resolved the defect and has made the necessary code changes.",
+            "C": "The defect will not be addressed in the current release.",
+            "D": "The defect is no longer reproducible."
+          },
+          "correct_answer": "B",
+          "explanation": "'Fixed' indicates that the development work to resolve the issue is complete."
+        },
+        {
+          "question": "What does 'Verification' mean in the context of defect management?",
+          "options": {
+            "A": "The developer initially identifying the defect.",
+            "B": "The tester re-testing the fixed defect to confirm that it has been resolved and the fix has not introduced new issues.",
+            "C": "The project manager approving the defect report.",
+            "D": "The end-user confirming that the software meets their expectations."
+          },
+          "correct_answer": "B",
+          "explanation": "Verification ensures that the fix is effective."
+        },
+        {
+          "question": "What does it mean when a defect is marked as 'Closed'?",
+          "options": {
+            "A": "The defect has been reported but not yet addressed.",
+            "B": "The defect has been fixed and verified successfully.",
+            "C": "The defect was found to be invalid or not reproducible.",
+            "D": "The defect has been postponed to a future release."
+          },
+          "correct_answer": "B",
+          "explanation": "'Closed' signifies the final stage of a resolved defect."
+        },
+        {
+          "question": "What does it mean when a defect is marked as 'Rejected'?",
+          "options": {
+            "A": "The defect has been fixed but not yet verified.",
+            "B": "The reported issue is not considered a valid defect (e.g., it's a feature request or not reproducible).",
+            "C": "The defect will be fixed in the next release.",
+            "D": "The defect has been fixed and verified by a different tester."
+          },
+          "correct_answer": "B",
+          "explanation": "'Rejected' indicates that the reported issue is not a bug."
+        },
+        {
+          "question": "What does it mean when a defect is marked as 'Deferred'?",
+          "options": {
+            "A": "The defect has been fixed and verified.",
+            "B": "The defect will not be fixed in the current release but might be addressed in a future release.",
+            "C": "The defect is currently being worked on by a developer.",
+            "D": "The defect could not be reproduced."
+          },
+          "correct_answer": "B",
+          "explanation": "'Deferred' means the defect is postponed."
+        },
+        {
+          "question": "Why is it important to track the status of defects?",
+          "options": {
+            "A": "To make testers look busy.",
+            "B": "To provide visibility into the progress of defect resolution, identify bottlenecks, and ensure all reported issues are addressed.",
+            "C": "To create reports that blame developers for introducing bugs.",
+            "D": "To increase the number of reported defects."
+          },
+          "correct_answer": "B",
+          "explanation": "Tracking provides control and insights into the quality assurance process."
+        },
+        {
+          "question": "What are some common tools used for Defect Management?",
+          "options": {
+            "A": "Only text editors.",
+            "B": "Jira, Bugzilla, HP ALM, Azure DevOps, and Redmine.",
+            "C": "Only email.",
+            "D": "Only code repositories like Git."
+          },
+          "correct_answer": "B",
+          "explanation": "These tools facilitate the reporting, tracking, and management of defects."
+        },
+        {
+          "question": "What is the purpose of a 'Defect Life Cycle' or 'Bug Life Cycle'?",
+          "options": {
+            "A": "To describe the life of a software application.",
+            "B": "To define the various stages a defect goes through from its discovery to its closure.",
+            "C": "To track the performance of individual testers.",
+            "D": "To document the features of the software."
+          },
+          "correct_answer": "B",
+          "explanation": "The defect life cycle provides a structured approach to managing defects."
+        },
+        {
+          "question": "How can metrics related to defect management (e.g., defect density, defect leakage) be useful?",
+          "options": {
+            "A": "They are not useful at all.",
+            "B": "They can provide insights into the quality of the software, the effectiveness of the testing process, and areas for improvement.",
+            "C": "They are only used to evaluate the performance of the testing team.",
+            "D": "They are used to determine when testing should be stopped."
+          },
+          "correct_answer": "B",
+          "explanation": "Metrics offer quantitative data for quality assessment and process improvement."
+        },
+        {
+          "question": "What is 'Defect Prevention' and how does it relate to Defect Management?",
+          "options": {
+            "A": "Defect prevention is not possible in software development.",
+            "B": "Defect prevention involves implementing strategies and practices to minimize the introduction of defects in the first place, reducing the workload of defect management.",
+            "C": "Defect prevention is the sole responsibility of the testing team.",
+            "D": "Defect prevention only involves using better testing tools."
+          },
+          "correct_answer": "B",
+          "explanation": "Prevention is a proactive approach that complements reactive defect management."
+        },
+        {
+          "question": "How does effective Defect Management contribute to the overall quality of the software?",
+          "options": {
+            "A": "It doesn't have a significant impact on the final product quality.",
+            "B": "By ensuring that identified issues are properly addressed and resolved, it leads to a more stable, reliable, and user-friendly software product.",
+            "C": "It only makes the testing process longer and more expensive.",
+            "D": "It shifts the responsibility of quality from developers to testers."
+          },
+          "correct_answer": "B",
+          "explanation": "A robust defect management process is crucial for delivering high-quality software."
+        },
+        {
+          "question": "The ultimate goal of Defect Management in the software development lifecycle is to:",
+          "options": {
+            "A": "Find as many bugs as possible to prove the testers' worth.",
+            "B": "Ensure that the software meets the required quality standards and provides a positive user experience by effectively handling and resolving issues.",
+            "C": "Delay the release of the software until all defects are fixed (which is often unrealistic).",
+            "D": "Create detailed reports that criticize the developers' coding skills."
+          },
+          "correct_answer": "B",
+          "explanation": "Defect management is a key part of delivering a quality product that meets user needs."
+        }
+      ]
+    }
+  ]
+}

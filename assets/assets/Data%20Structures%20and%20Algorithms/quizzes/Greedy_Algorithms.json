@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Greedy_Algorithms",
+      "questions": [
+        {
+          "question": "What is the fundamental principle behind a Greedy Algorithm?",
+          "options": {
+            "A": "To explore all possible solutions to find the optimal one.",
+            "B": "To break down a problem into smaller overlapping subproblems and solve each only once.",
+            "C": "To make the locally optimal choice at each step with the hope of finding a global optimum.",
+            "D": "To solve a problem by starting from the end and working backwards."
+          },
+          "correct_answer": "C",
+          "explanation": "Greedy algorithms aim for simplicity and efficiency by making decisions based on the immediate best option."
+        },
+        {
+          "question": "For which types of problems are Greedy Algorithms typically suitable?",
+          "options": {
+            "A": "Problems where the optimal solution can always be found by making locally optimal choices.",
+            "B": "Problems with overlapping subproblems.",
+            "C": "Problems where all possible solutions need to be evaluated.",
+            "D": "Problems that require backtracking to find the solution."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'greedy choice property' and 'optimal substructure' are key indicators of a problem's suitability for a greedy approach."
+        },
+        {
+          "question": "What is the 'Greedy Choice Property'?",
+          "options": {
+            "A": "The property that a globally optimal solution can be reached by making a sequence of locally optimal choices.",
+            "B": "The property that any choice made by a greedy algorithm must be the absolute best possible choice at that step.",
+            "C": "The property that the problem can be broken down into smaller, independent subproblems.",
+            "D": "The property that the problem has multiple optimal solutions."
+          },
+          "correct_answer": "A",
+          "explanation": "This property is crucial for the correctness of a greedy algorithm."
+        },
+        {
+          "question": "What is 'Optimal Substructure' in the context of Greedy Algorithms?",
+          "options": {
+            "A": "The problem can be divided into independent subproblems.",
+            "B": "An optimal solution to the problem can be constructed from optimal solutions to its subproblems.",
+            "C": "All subproblems have the same structure as the original problem.",
+            "D": "The problem has only one optimal solution."
+          },
+          "correct_answer": "B",
+          "explanation": "While both Greedy and Dynamic Programming rely on optimal substructure, Greedy algorithms make a choice at each step without considering the solutions to subproblems."
+        },
+        {
+          "question": "Consider the 'Activity Selection Problem'. How does a greedy approach work here?",
+          "options": {
+            "A": "Select activities based on their earliest start time.",
+            "B": "Select activities based on their shortest duration.",
+            "C": "Select activities based on their latest finish time.",
+            "D": "Select activities based on their earliest finish time, and then select the next compatible activity."
+          },
+          "correct_answer": "D",
+          "explanation": "Choosing activities that finish earliest allows for the selection of the maximum number of non-overlapping activities."
+        },
+        {
+          "question": "Consider the 'Fractional Knapsack Problem'. How does a greedy approach find the optimal solution?",
+          "options": {
+            "A": "Always pick the item with the highest value first.",
+            "B": "Always pick the item with the lowest weight first.",
+            "C": "Calculate the value-to-weight ratio for each item and pick the items with the highest ratio first, taking fractions if necessary, until the knapsack is full.",
+            "D": "Try all combinations of fractions of items."
+          },
+          "correct_answer": "C",
+          "explanation": "The greedy strategy of prioritizing value per unit weight guarantees an optimal solution for the fractional knapsack problem."
+        },
+        {
+          "question": "What is 'Huffman Coding', and how does a greedy algorithm play a role?",
+          "options": {
+            "A": "A lossy data compression algorithm that uses a greedy approach to build an optimal prefix code based on the frequency of characters.",
+            "B": "A lossless data compression algorithm that uses a greedy approach to build an optimal prefix code based on the alphabetical order of characters.",
+            "C": "A lossless data compression algorithm that uses a greedy approach to build an optimal prefix code based on the frequency of characters.",
+            "D": "An encryption algorithm that uses a greedy approach to assign codes to characters."
+          },
+          "correct_answer": "C",
+          "explanation": "Huffman coding uses a greedy strategy of repeatedly merging the two least frequent characters to build the encoding tree."
+        },
+        {
+          "question": "What is 'Dijkstra's Algorithm', and why is it considered a greedy algorithm?",
+          "options": {
+            "A": "An algorithm for finding the minimum spanning tree by always adding the shortest edge.",
+            "B": "An algorithm for finding the shortest path from a single source to all other vertices in a weighted graph with non-negative edge weights, by always selecting the unvisited vertex with the smallest tentative distance from the source.",
+            "C": "An algorithm for finding all-pairs shortest paths using dynamic programming.",
+            "D": "An algorithm for traversing a graph in a depth-first manner."
+          },
+          "correct_answer": "B",
+          "explanation": "At each step, Dijkstra's algorithm greedily chooses the vertex with the smallest current shortest distance from the source that has not yet been finalized."
+        },
+        {
+          "question": "What is 'Prim's Algorithm', and why is it considered a greedy algorithm?",
+          "options": {
+            "A": "An algorithm for finding the shortest path by always selecting the lightest edge.",
+            "B": "An algorithm for finding the minimum spanning tree of a weighted undirected graph by starting with an arbitrary vertex and iteratively adding the cheapest edge connecting the tree to a vertex not yet in the tree.",
+            "C": "An algorithm for finding the minimum spanning tree by always selecting the lightest edge that doesn't form a cycle.",
+            "D": "A graph traversal algorithm that explores edges based on their weight."
+          },
+          "correct_answer": "B",
+          "explanation": "Prim's algorithm greedily adds the minimum weight edge that connects a vertex in the growing MST to a vertex outside the MST."
+        },
+        {
+          "question": "What is 'Kruskal's Algorithm', and why is it considered a greedy algorithm?",
+          "options": {
+            "A": "An algorithm for finding the shortest path using a disjoint set data structure.",
+            "B": "An algorithm for finding the minimum spanning tree by iteratively adding the cheapest edge that does not create a cycle.",
+            "C": "An algorithm for finding the maximum spanning tree.",
+            "D": "A graph traversal algorithm that prioritizes heavier edges."
+          },
+          "correct_answer": "B",
+          "explanation": "Kruskal's algorithm greedily selects the edges with the smallest weights as long as they don't form a cycle, until all vertices are connected."
+        },
+        {
+          "question": "Why doesn't a greedy approach always guarantee a globally optimal solution?",
+          "options": {
+            "A": "Greedy algorithms are too fast and don't consider all possibilities.",
+            "B": "Locally optimal choices might lead to a suboptimal overall solution if the problem does not have the greedy choice property or optimal substructure in a way that supports the greedy strategy.",
+            "C": "Greedy algorithms can only solve small problems.",
+            "D": "Greedy algorithms always get stuck in local optima."
+          },
+          "correct_answer": "B",
+          "explanation": "The lack of foresight in greedy algorithms can sometimes lead them down a path that is locally good but globally bad."
+        },
+        {
+          "question": "What is a classic example of a problem where a greedy approach does NOT yield the optimal solution?",
+          "options": {
+            "A": "Fractional Knapsack Problem.",
+            "B": "Activity Selection Problem.",
+            "C": "0/1 Knapsack Problem.",
+            "D": "Huffman Coding."
+          },
+          "correct_answer": "C",
+          "explanation": "For the 0/1 Knapsack Problem, taking the item with the highest value-to-weight ratio might not leave enough space for other more valuable combinations."
+        },
+        {
+          "question": "In the context of the 'Coin Change Problem' (finding the minimum number of coins to make a certain amount), when does a simple greedy approach (always pick the largest denomination less than or equal to the remaining amount) work optimally?",
+          "options": {
+            "A": "For all sets of coin denominations.",
+            "B": "Only for a specific set of 'canonical' coin denominations where the greedy choice property holds.",
+            "C": "When the target amount is small.",
+            "D": "When the number of different coin denominations is small."
+          },
+          "correct_answer": "B",
+          "explanation": "For non-canonical coin systems (e.g., {1, 3, 4} and a target of 6), the greedy approach (4 + 1 + 1 = 3 coins) is suboptimal compared to the optimal solution (3 + 3 = 2 coins)."
+        },
+        {
+          "question": "How do you prove that a greedy algorithm is correct for a particular problem?",
+          "options": {
+            "A": "By showing that it always runs faster than any other algorithm.",
+            "B": "By testing it on a large number of test cases.",
+            "C": "Typically by using an inductive argument or by showing that any optimal solution can be transformed into the greedy solution without worsening its value (staying ahead argument).",
+            "D": "By comparing its output with a brute-force solution for small inputs."
+          },
+          "correct_answer": "C",
+          "explanation": "A formal proof is required to guarantee the correctness of a greedy algorithm."
+        },
+        {
+          "question": "What is the time complexity typically associated with Greedy Algorithms?",
+          "options": {
+            "A": "Always O(n^2).",
+            "B": "Highly variable, often depending on the sorting step (if needed) and the number of steps to build the solution; it can range from O(n) to O(n log n) or higher.",
+            "C": "Always O(log n).",
+            "D": "Always O(2^n)."
+          },
+          "correct_answer": "B",
+          "explanation": "The time complexity depends on the specific greedy strategy and any preprocessing steps like sorting."
+        },
+        {
+          "question": "In the context of graph algorithms, which of the following is NOT a greedy algorithm?",
+          "options": {
+            "A": "Dijkstra's Algorithm.",
+            "B": "Prim's Algorithm.",
+            "C": "Kruskal's Algorithm.",
+            "D": "Floyd-Warshall Algorithm."
+          },
+          "correct_answer": "D",
+          "explanation": "Floyd-Warshall uses dynamic programming to find all-pairs shortest paths."
+        },
+        {
+          "question": "What is a common real-world application of Huffman Coding?",
+          "options": {
+            "A": "Sorting large datasets.",
+            "B": "Finding the shortest route on a map.",
+            "C": "Data compression in file formats like JPEG and ZIP.",
+            "D": "Scheduling tasks on a processor."
+          },
+          "correct_answer": "C",
+          "explanation": "Huffman coding is widely used for lossless data compression."
+        },
+        {
+          "question": "Why are Greedy Algorithms often preferred when they do provide an optimal solution?",
+          "options": {
+            "A": "They are always more accurate than other algorithms.",
+            "B": "They are often simpler to implement and more efficient in terms of time complexity compared to dynamic programming or other optimization techniques.",
+            "C": "They can solve a wider range of problems than other algorithms.",
+            "D": "They always find multiple optimal solutions."
+          },
+          "correct_answer": "B",
+          "explanation": "Simplicity and efficiency are key advantages of greedy algorithms when applicable."
+        },
+        {
+          "question": "What is the 'Set Cover Problem', and is there a known efficient greedy algorithm that always finds the optimal solution?",
+          "options": {
+            "A": "The problem of finding the smallest collection of sets whose union contains all elements of a universe. A greedy algorithm that repeatedly picks the set that covers the most uncovered elements provides an optimal solution.",
+            "B": "The problem of finding the largest collection of disjoint sets. A greedy algorithm that picks the smallest set first provides an optimal solution.",
+            "C": "The problem of finding the smallest collection of sets whose union contains all elements of a universe. A greedy algorithm that repeatedly picks the set that covers the most uncovered elements provides an approximation, but not always the optimal solution (it's NP-hard to find the exact optimal solution efficiently).",
+            "D": "The problem of covering all elements with the minimum number of sets, where each set has a fixed size. A greedy approach always finds the optimal solution."
+          },
+          "correct_answer": "C",
+          "explanation": "The Set Cover Problem is NP-hard, and the greedy approach provides a logarithmic approximation factor, not always the optimal solution."
+        },
+        {
+          "question": "In the context of task scheduling, what might be a greedy strategy to minimize the maximum lateness?",
+          "options": {
+            "A": "Schedule tasks in the order of their arrival.",
+            "B": "Schedule tasks in increasing order of their processing time.",
+            "C": "Schedule tasks in increasing order of their deadlines (Earliest Deadline First - EDF).",
+            "D": "Schedule tasks with the shortest remaining processing time first."
+          },
+          "correct_answer": "C",
+          "explanation": "The Earliest Deadline First (EDF) strategy is a greedy algorithm that is known to be optimal for minimizing maximum lateness on a single processor."
+        }
+      ]
+    }
+  ]
+}

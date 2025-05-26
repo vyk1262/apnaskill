@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Unsupervised_Learning",
+      "questions": [
+        {
+          "question": "What is the defining characteristic of unsupervised learning?",
+          "options": {
+            "A": "Learning from labeled data.",
+            "B": "Learning through interaction with an environment and receiving rewards.",
+            "C": "Learning patterns and structures from unlabeled data.",
+            "D": "Predicting a continuous output based on input features."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the primary goal of clustering in unsupervised learning?",
+          "options": {
+            "A": "To predict a target variable.",
+            "B": "To group similar data points together into clusters.",
+            "C": "To reduce the number of features in the dataset.",
+            "D": "To discover associations between different items."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common clustering algorithm?",
+          "options": {
+            "A": "Linear Regression",
+            "B": "Logistic Regression",
+            "C": "K-Means",
+            "D": "Support Vector Machines"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of the 'K' parameter in the K-Means algorithm?",
+          "options": {
+            "A": "It represents the learning rate of the algorithm.",
+            "B": "It specifies the number of clusters to be formed.",
+            "C": "It determines the maximum number of iterations.",
+            "D": "It controls the penalty for outliers."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is hierarchical clustering?",
+          "options": {
+            "A": "A clustering algorithm that assigns each data point to a predefined hierarchy of clusters.",
+            "B": "A clustering algorithm that builds a hierarchy of clusters, either top-down (divisive) or bottom-up (agglomerative).",
+            "C": "A clustering algorithm that requires the number of clusters to be specified beforehand.",
+            "D": "A clustering algorithm that is only suitable for large datasets."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is DBSCAN (Density-Based Spatial Clustering of Applications with Noise)?",
+          "options": {
+            "A": "A centroid-based clustering algorithm.",
+            "B": "A hierarchical clustering algorithm.",
+            "C": "A density-based clustering algorithm that groups together points that are closely packed together, marking as outliers points that lie alone in low-density regions.",
+            "D": "A clustering algorithm that requires specifying the number of clusters."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is dimensionality reduction in unsupervised learning?",
+          "options": {
+            "A": "The process of increasing the number of features in a dataset.",
+            "B": "The process of reducing the number of features in a dataset while preserving important information.",
+            "C": "The process of grouping similar data points together.",
+            "D": "The process of predicting a target variable without labels."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common dimensionality reduction technique?",
+          "options": {
+            "A": "K-Nearest Neighbors (KNN)",
+            "B": "Principal Component Analysis (PCA)",
+            "C": "Linear Regression",
+            "D": "Decision Trees"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the goal of Principal Component Analysis (PCA)?",
+          "options": {
+            "A": "To find the optimal number of clusters in a dataset.",
+            "B": "To transform the data into a new set of orthogonal variables (principal components) that capture the most variance in the data.",
+            "C": "To classify data points into predefined categories.",
+            "D": "To discover association rules between items."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is t-SNE (t-distributed Stochastic Neighbor Embedding)?",
+          "options": {
+            "A": "A linear dimensionality reduction technique.",
+            "B": "A non-linear dimensionality reduction technique primarily used for visualizing high-dimensional data in lower dimensions (typically 2D or 3D).",
+            "C": "A clustering algorithm based on density.",
+            "D": "A technique for feature selection."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is association rule mining in unsupervised learning?",
+          "options": {
+            "A": "A technique for predicting a continuous target variable.",
+            "B": "A technique for grouping similar data points together.",
+            "C": "A technique for discovering interesting relationships or associations between variables in large datasets.",
+            "D": "A technique for reducing the number of dimensions in the data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are 'support' and 'confidence' in the context of association rule mining?",
+          "options": {
+            "A": "Metrics for evaluating the performance of a classification model.",
+            "B": "Measures of the frequency and reliability of association rules.",
+            "C": "Parameters used in clustering algorithms.",
+            "D": "Techniques for dimensionality reduction."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is anomaly detection (or outlier detection) in unsupervised learning?",
+          "options": {
+            "A": "The process of finding the central tendency of the data.",
+            "B": "The process of identifying data points that deviate significantly from the majority of the data.",
+            "C": "The process of grouping similar data points.",
+            "D": "The process of reducing the number of features."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is an unsupervised anomaly detection technique?",
+          "options": {
+            "A": "Support Vector Machines (SVM)",
+            "B": "Logistic Regression",
+            "C": "Isolation Forest",
+            "D": "K-Nearest Neighbors (KNN) for classification"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How is the performance of unsupervised learning algorithms typically evaluated?",
+          "options": {
+            "A": "Using labeled data and accuracy metrics.",
+            "B": "Using intrinsic metrics (e.g., silhouette score for clustering) or extrinsic metrics (if some ground truth is available).",
+            "C": "By directly measuring the prediction error.",
+            "D": "By visualizing the decision boundaries."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the silhouette score used for?",
+          "options": {
+            "A": "Evaluating the performance of a regression model.",
+            "B": "Evaluating the quality of clusters formed by a clustering algorithm.",
+            "C": "Measuring the accuracy of a classification model.",
+            "D": "Assessing the amount of variance explained by principal components."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are autoencoders primarily used for in unsupervised learning?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Regression tasks.",
+            "C": "Dimensionality reduction and feature learning.",
+            "D": "Time series forecasting."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are generative models in the context of unsupervised learning?",
+          "options": {
+            "A": "Models that are used to classify data points.",
+            "B": "Models that learn the underlying probability distribution of the data and can generate new data points similar to the training data.",
+            "C": "Models that are used for dimensionality reduction.",
+            "D": "Models that are used for clustering data points."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is an example of a generative model in unsupervised learning?",
+          "options": {
+            "A": "K-Means Clustering",
+            "B": "Principal Component Analysis (PCA)",
+            "C": "Generative Adversarial Networks (GANs)",
+            "D": "Support Vector Machines (SVM)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "In what scenarios is unsupervised learning particularly useful?",
+          "options": {
+            "A": "When labeled data is abundant and readily available.",
+            "B": "When the goal is to predict a specific outcome with high accuracy.",
+            "C": "When the data is unlabeled and the goal is to discover hidden structures or patterns.",
+            "D": "When the problem involves sequential decision-making with rewards."
+          },
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

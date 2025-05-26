@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Deep_Learning_Foundations",
+      "questions": [
+        {
+          "question": "What is the fundamental building block of a neural network?",
+          "options": {
+            "A": "A kernel",
+            "B": "A neuron (or perceptron)",
+            "C": "A pooling layer",
+            "D": "A convolutional layer"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the main components of an artificial neuron?",
+          "options": {
+            "A": "Weights, bias, and activation function.",
+            "B": "Layers, nodes, and connections.",
+            "C": "Input, output, and hidden states.",
+            "D": "Kernels, filters, and strides."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the role of weights in a neural network?",
+          "options": {
+            "A": "To determine the architecture of the network.",
+            "B": "To control the learning rate of the network.",
+            "C": "To represent the strength of the connection between neurons and are adjusted during training.",
+            "D": "To introduce non-linearity into the network."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of the bias term in a neuron?",
+          "options": {
+            "A": "To scale the input values.",
+            "B": "To allow the neuron to activate even when all inputs are zero, providing an offset.",
+            "C": "To control the learning rate.",
+            "D": "To measure the error of the neuron."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is an activation function in a neural network?",
+          "options": {
+            "A": "A function that calculates the loss of the model.",
+            "B": "A function that introduces non-linearity to the output of a neuron, allowing the network to learn complex patterns.",
+            "C": "A function that optimizes the weights of the network.",
+            "D": "A function that preprocesses the input data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common activation function?",
+          "options": {
+            "A": "Mean Squared Error",
+            "B": "Cross-Entropy",
+            "C": "Sigmoid",
+            "D": "Principal Component Analysis (PCA)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a feedforward neural network?",
+          "options": {
+            "A": "A network with feedback connections.",
+            "B": "A network where information flows in one direction, from the input layer through hidden layers to the output layer, without any loops.",
+            "C": "A network designed for sequential data.",
+            "D": "A network with only one layer of neurons."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the input layer in a neural network?",
+          "options": {
+            "A": "The layer that produces the final output of the network.",
+            "B": "The layer that receives the raw input data.",
+            "C": "The intermediate layers between the input and output layers.",
+            "D": "A layer used for dimensionality reduction."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are hidden layers in a neural network?",
+          "options": {
+            "A": "The first layer that receives input data.",
+            "B": "The final layer that produces the output.",
+            "C": "The layers between the input and output layers where the network learns complex representations of the data.",
+            "D": "Layers used for evaluating the model's performance."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the output layer in a neural network?",
+          "options": {
+            "A": "The layer that receives the initial input.",
+            "B": "The layer that produces the final prediction or output of the network.",
+            "C": "The layers responsible for feature extraction.",
+            "D": "A layer used for regularization."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'deep learning' characterized by?",
+          "options": {
+            "A": "Using very simple neural networks with few layers.",
+            "B": "Employing neural networks with many layers (deep neural networks) to learn hierarchical representations of data.",
+            "C": "Applying traditional machine learning algorithms to large datasets.",
+            "D": "Focusing solely on unsupervised learning techniques."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is backpropagation?",
+          "options": {
+            "A": "A method for initializing the weights of a neural network.",
+            "B": "An algorithm for training neural networks by propagating the error backward through the network to adjust the weights.",
+            "C": "A technique for preventing overfitting in deep learning models.",
+            "D": "A type of activation function used in deep neural networks."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of the learning rate during neural network training?",
+          "options": {
+            "A": "It determines the complexity of the model.",
+            "B": "It controls the size of the weight updates during backpropagation.",
+            "C": "It defines the architecture of the neural network.",
+            "D": "It measures the accuracy of the model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is gradient descent?",
+          "options": {
+            "A": "A method for evaluating the performance of a trained network.",
+            "B": "An optimization algorithm used to minimize the loss function by iteratively adjusting the model's parameters in the direction of the negative gradient.",
+            "C": "A technique for reducing the number of layers in a neural network.",
+            "D": "A way to visualize the weights learned by the network."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of a loss function in deep learning?",
+          "options": {
+            "A": "To measure the accuracy of the model on the test set.",
+            "B": "To quantify the error between the model's predictions and the actual target values during training.",
+            "C": "To define the architecture of the neural network.",
+            "D": "To introduce non-linearity into the network."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between batch gradient descent, stochastic gradient descent (SGD), and mini-batch gradient descent?",
+          "options": {
+            "A": "They are all the same optimization algorithm.",
+            "B": "They differ in the amount of data used to calculate the gradient in each update step (entire dataset, single data point, or a small subset, respectively).",
+            "C": "They are used for different types of neural network architectures.",
+            "D": "They control the learning rate in different ways."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the vanishing gradient problem in deep neural networks?",
+          "options": {
+            "A": "A problem where the learning rate becomes too high.",
+            "B": "A problem where gradients become very small during backpropagation, making it difficult to train the earlier layers of deep networks effectively.",
+            "C": "A problem where the loss function has many local minima.",
+            "D": "A problem related to overfitting on the training data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which activation function is known to potentially contribute to the vanishing gradient problem?",
+          "options": {
+            "A": "ReLU",
+            "B": "Sigmoid",
+            "C": "Tanh",
+            "D": "Leaky ReLU"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some techniques used to mitigate the vanishing gradient problem?",
+          "options": {
+            "A": "Using simpler network architectures.",
+            "B": "Employing activation functions like ReLU, using batch normalization, and careful weight initialization.",
+            "C": "Reducing the learning rate.",
+            "D": "Increasing the amount of training data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the exploding gradient problem in deep neural networks?",
+          "options": {
+            "A": "A problem where the learning rate becomes too small.",
+            "B": "A problem where gradients become very large during backpropagation, leading to unstable training.",
+            "C": "A problem related to underfitting the training data.",
+            "D": "A problem that only occurs in recurrent neural networks."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

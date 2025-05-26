@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Computer_Vision",
+      "questions": [
+        {
+          "question": "What is Computer Vision?",
+          "options": {
+            "A": "Only image storage technology",
+            "B": "A branch of AI enabling computers to interpret and extract information from visual data",
+            "C": "Just a photo editing tool",
+            "D": "Exclusively for video recording"
+          },
+          "correct_answer": "B",
+          "explanation": "Computer Vision is a branch of AI that enables computers to interpret and extract information from images and videos, similar to human perception, using algorithms to process visual data."
+        },
+        {
+          "question": "What are the key mathematical prerequisites for Computer Vision?",
+          "options": {
+            "A": "Only basic arithmetic",
+            "B": "Linear algebra, probability and statistics, and signal processing",
+            "C": "Just geometry",
+            "D": "Exclusively calculus"
+          },
+          "correct_answer": "B",
+          "explanation": "Computer Vision requires understanding of linear algebra (vectors, matrices), probability and statistics (distributions, inference), and signal processing (filtering, transforms)."
+        },
+        {
+          "question": "What is the role of image enhancement in Computer Vision?",
+          "options": {
+            "A": "Only for artistic effects",
+            "B": "Improving visual quality and highlighting important features",
+            "C": "Just for storage",
+            "D": "Exclusively for compression"
+          },
+          "correct_answer": "B",
+          "explanation": "Image enhancement improves visual quality and clarity to highlight important features, minimize noise, and enhance contrast for better analysis."
+        },
+        {
+          "question": "What are Convolutional Neural Networks (CNNs) used for in Computer Vision?",
+          "options": {
+            "A": "Only for data storage",
+            "B": "Learning spatial hierarchies of features from images",
+            "C": "Just for file transfer",
+            "D": "Exclusively for text processing"
+          },
+          "correct_answer": "B",
+          "explanation": "CNNs are designed to learn spatial hierarchies of features from images through convolutional layers, pooling layers, and fully connected layers."
+        },
+        {
+          "question": "What is the purpose of feature extraction in Computer Vision?",
+          "options": {
+            "A": "Only for image compression",
+            "B": "Identifying distinctive points and patterns in images",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "Feature extraction identifies distinctive points and patterns in images using techniques like edge detection, corner detection, and feature descriptors."
+        },
+        {
+          "question": "What is the role of edge detection in Computer Vision?",
+          "options": {
+            "A": "Only for image borders",
+            "B": "Identifying significant changes in intensity or color for object boundaries",
+            "C": "Just for framing",
+            "D": "Exclusively for cropping"
+          },
+          "correct_answer": "B",
+          "explanation": "Edge detection identifies significant changes in intensity or color that correspond to object boundaries within an image."
+        },
+        {
+          "question": "What are Generative Adversarial Networks (GANs) used for in Computer Vision?",
+          "options": {
+            "A": "Only for data storage",
+            "B": "Creating realistic images through generator and discriminator networks",
+            "C": "Just for compression",
+            "D": "Exclusively for transmission"
+          },
+          "correct_answer": "B",
+          "explanation": "GANs use generator and discriminator networks to create realistic images, with various types designed for specific tasks and improvements."
+        },
+        {
+          "question": "What is the importance of image segmentation in Computer Vision?",
+          "options": {
+            "A": "Only for splitting files",
+            "B": "Dividing images into meaningful segments for analysis",
+            "C": "Just for storage",
+            "D": "Exclusively for transmission"
+          },
+          "correct_answer": "B",
+          "explanation": "Image segmentation divides images into meaningful segments or regions for detailed analysis and understanding of image content."
+        },
+        {
+          "question": "What is the role of object recognition in Computer Vision?",
+          "options": {
+            "A": "Only for counting objects",
+            "B": "Identifying and classifying objects within images",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "Object recognition involves identifying and classifying objects within images using various techniques and algorithms."
+        },
+        {
+          "question": "How is Computer Vision used in medical imaging?",
+          "options": {
+            "A": "Only for storage",
+            "B": "Analyzing medical images for diagnosis and treatment planning",
+            "C": "Just for display",
+            "D": "Exclusively for transmission"
+          },
+          "correct_answer": "B",
+          "explanation": "Computer Vision analyzes medical images like X-rays and CT scans for disease diagnosis, treatment planning, and monitoring."
+        },
+        {
+          "question": "What is the role of motion estimation in Computer Vision?",
+          "options": {
+            "A": "Only for video playback",
+            "B": "Tracking object movement and predicting trajectories",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "Motion estimation tracks object movement and predicts trajectories in video sequences for applications like surveillance and autonomous vehicles."
+        },
+        {
+          "question": "How is Computer Vision used in autonomous vehicles?",
+          "options": {
+            "A": "Only for parking",
+            "B": "Perceiving environment and making driving decisions",
+            "C": "Just for navigation",
+            "D": "Exclusively for speed control"
+          },
+          "correct_answer": "B",
+          "explanation": "Computer Vision helps autonomous vehicles perceive their environment, detect obstacles, and make driving decisions in real-time."
+        },
+        {
+          "question": "What is the purpose of image restoration in Computer Vision?",
+          "options": {
+            "A": "Only for artistic effects",
+            "B": "Recovering degraded or damaged image content",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "Image restoration focuses on recovering degraded or damaged image content to improve image quality and analysis."
+        },
+        {
+          "question": "How is Computer Vision used in quality control?",
+          "options": {
+            "A": "Only for counting products",
+            "B": "Detecting defects and ensuring product quality",
+            "C": "Just for packaging",
+            "D": "Exclusively for storage"
+          },
+          "correct_answer": "B",
+          "explanation": "Computer Vision systems inspect products for defects and ensure quality control in manufacturing processes."
+        },
+        {
+          "question": "What is the role of 3D reconstruction in Computer Vision?",
+          "options": {
+            "A": "Only for visualization",
+            "B": "Creating 3D models from 2D images",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "3D reconstruction creates three-dimensional models from two-dimensional images for applications like modeling and scene understanding."
+        },
+        {
+          "question": "How is Computer Vision used in facial recognition?",
+          "options": {
+            "A": "Only for photo tagging",
+            "B": "Identifying and verifying individuals through facial features",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "Facial recognition uses Computer Vision to identify and verify individuals by analyzing facial features and patterns."
+        },
+        {
+          "question": "What is the importance of data preprocessing in Computer Vision?",
+          "options": {
+            "A": "Only for storage",
+            "B": "Preparing images for analysis and improving results",
+            "C": "Just for display",
+            "D": "Exclusively for transmission"
+          },
+          "correct_answer": "B",
+          "explanation": "Data preprocessing prepares images for analysis by normalizing, enhancing, and cleaning the data to improve results."
+        },
+        {
+          "question": "How is Computer Vision used in augmented reality?",
+          "options": {
+            "A": "Only for display",
+            "B": "Integrating virtual objects with real-world environment",
+            "C": "Just for storage",
+            "D": "Exclusively for transmission"
+          },
+          "correct_answer": "B",
+          "explanation": "Computer Vision enables augmented reality by analyzing the real environment and integrating virtual objects seamlessly."
+        },
+        {
+          "question": "What is the role of pose estimation in Computer Vision?",
+          "options": {
+            "A": "Only for animation",
+            "B": "Detecting and tracking body positions and movements",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "Pose estimation detects and tracks body positions and movements for applications in gaming, sports, and healthcare."
+        },
+        {
+          "question": "How is Computer Vision used in security systems?",
+          "options": {
+            "A": "Only for recording",
+            "B": "Monitoring and detecting security threats",
+            "C": "Just for storage",
+            "D": "Exclusively for display"
+          },
+          "correct_answer": "B",
+          "explanation": "Computer Vision enhances security systems by monitoring environments and detecting potential security threats in real-time."
+        }
+      ]
+    }
+  ]
+}

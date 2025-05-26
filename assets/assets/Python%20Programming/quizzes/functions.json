@@ -1,0 +1,179 @@
+{
+  "result": [
+    {
+      "topic": "functions",
+      "questions": [
+        {
+          "question": "What is the correct way to define a function in Python?",
+          "options": {
+            "A": "function myFunction()",
+            "B": "def myFunction():",
+            "C": "define myFunction():",
+            "D": "func myFunction():"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which keyword is used to return a value from a function?",
+          "options": {
+            "A": "return",
+            "B": "yield",
+            "C": "output",
+            "D": "result"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you call a function named 'myFunction'?",
+          "options": {
+            "A": "call myFunction()",
+            "B": "myFunction()",
+            "C": "execute myFunction()",
+            "D": "invoke myFunction()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What will be the output of the following code?\n\ndef add(a, b):\n    return a + b\nprint(add(2, 3))",
+          "options": {
+            "A": "2",
+            "B": "3",
+            "C": "5",
+            "D": "None"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the default return value of a function that does not explicitly return anything?",
+          "options": {
+            "A": "None",
+            "B": "0",
+            "C": "False",
+            "D": "Error"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following can be used to pass a variable number of arguments to a function?",
+          "options": {
+            "A": "*args",
+            "B": "**kwargs",
+            "C": "Both A and B",
+            "D": "None of the above"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of the 'global' keyword in a function?",
+          "options": {
+            "A": "To define a global variable",
+            "B": "To modify a global variable inside a function",
+            "C": "To create a new global function",
+            "D": "To declare a variable as global"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a recursive function?",
+          "options": {
+            "A": "A function that calls itself",
+            "B": "A function that is defined outside another function",
+            "C": "A function that has no parameters",
+            "D": "A function that uses global variables"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will happen if a recursive function does not have a base case?",
+          "options": {
+            "A": "It will run indefinitely and cause a stack overflow",
+            "B": "It will execute only once",
+            "C": "It will return None",
+            "D": "It will raise an error"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following best describes 'scope' in Python?",
+          "options": {
+            "A": "The amount of memory a variable uses",
+            "B": "The region of the program where a variable can be accessed",
+            "C": "The type of variable being used",
+            "D": "The function where the variable is defined"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What will the following code print?\n\ndef myFunc():\n    x = 10\nmyFunc()\nprint(x)",
+          "options": {
+            "A": "10",
+            "B": "Error",
+            "C": "None",
+            "D": "0"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between positional arguments and keyword arguments?",
+          "options": {
+            "A": "Positional arguments must be specified in order, while keyword arguments can be specified out of order.",
+            "B": "Positional arguments can be omitted, while keyword arguments cannot.",
+            "C": "There is no difference.",
+            "D": "Positional arguments can only be integers, while keyword arguments can be strings."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the output of the following code?\n\ndef func(x):\n    return x * 2\nresult = func(5)\nprint(result)",
+          "options": {
+            "A": "2",
+            "B": "5",
+            "C": "10",
+            "D": "None"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you define a function with default parameters?",
+          "options": {
+            "A": "def myFunc(a=1):",
+            "B": "def myFunc(a): a = 1",
+            "C": "def myFunc(a): a.default(1)",
+            "D": "def myFunc(a: 1):"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will be the output of the following code?\n\ndef multiply(a, b=2):\n    return a * b\nprint(multiply(3))",
+          "options": {
+            "A": "3",
+            "B": "5",
+            "C": "6",
+            "D": "None"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is true about lambda functions?",
+          "options": {
+            "A": "They can have multiple statements",
+            "B": "They can take any number of arguments but can only have one expression",
+            "C": "They are defined using the def keyword",
+            "D": "They are named functions"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What will the output of the following code be?\n\ndef func():\n    return 'Hello'\nprint(func())",
+          "options": {
+            "A": "Hello",
+            "B": "'Hello'",
+            "C": "None",
+            "D": "Error"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

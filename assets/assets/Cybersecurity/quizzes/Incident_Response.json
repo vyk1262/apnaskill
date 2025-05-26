@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Incident_Response",
+      "questions": [
+        {
+          "question": "What is incident response in cybersecurity?",
+          "options": {
+            "A": "A way to prevent all cyber attacks",
+            "B": "A systematic approach to handling and managing security incidents",
+            "C": "A type of antivirus software",
+            "D": "A network monitoring tool"
+          },
+          "correct_answer": "B",
+          "explanation": "Incident response is a systematic, organized approach to detecting, managing, and recovering from cybersecurity incidents."
+        },
+        {
+          "question": "What is the first phase of the NIST incident response lifecycle?",
+          "options": {
+            "A": "Detection",
+            "B": "Preparation",
+            "C": "Response",
+            "D": "Recovery"
+          },
+          "correct_answer": "B",
+          "explanation": "Preparation is the first and most important phase of incident response, involving planning, policy development, and team training."
+        },
+        {
+          "question": "What is the purpose of incident detection and analysis?",
+          "options": {
+            "A": "To prevent all incidents",
+            "B": "To identify and understand security incidents",
+            "C": "To backup systems",
+            "D": "To train employees"
+          },
+          "correct_answer": "B",
+          "explanation": "Detection and analysis involves identifying security incidents and understanding their scope and impact."
+        },
+        {
+          "question": "What is containment in incident response?",
+          "options": {
+            "A": "Storing incident data",
+            "B": "Limiting and preventing further damage from an incident",
+            "C": "Training employees",
+            "D": "Writing reports"
+          },
+          "correct_answer": "B",
+          "explanation": "Containment involves taking steps to limit the damage and prevent further spread of a security incident."
+        },
+        {
+          "question": "What is the role of an incident response team?",
+          "options": {
+            "A": "To handle only network issues",
+            "B": "To manage and respond to security incidents",
+            "C": "To develop software",
+            "D": "To manage backups"
+          },
+          "correct_answer": "B",
+          "explanation": "An incident response team is responsible for managing and responding to security incidents within an organization."
+        },
+        {
+          "question": "What is the purpose of incident documentation?",
+          "options": {
+            "A": "To waste time",
+            "B": "To record incident details and response actions",
+            "C": "To create marketing materials",
+            "D": "To train new employees"
+          },
+          "correct_answer": "B",
+          "explanation": "Documentation helps track incident details, response actions, and lessons learned for future reference and improvement."
+        },
+        {
+          "question": "What is the importance of incident prioritization?",
+          "options": {
+            "A": "To ignore some incidents",
+            "B": "To allocate resources based on incident severity",
+            "C": "To create reports",
+            "D": "To train staff"
+          },
+          "correct_answer": "B",
+          "explanation": "Prioritization helps organizations allocate resources effectively by focusing on the most critical incidents first."
+        },
+        {
+          "question": "What is the purpose of post-incident analysis?",
+          "options": {
+            "A": "To assign blame",
+            "B": "To learn and improve from incidents",
+            "C": "To create reports only",
+            "D": "To waste time"
+          },
+          "correct_answer": "B",
+          "explanation": "Post-incident analysis helps organizations learn from incidents and improve their security measures and response procedures."
+        },
+        {
+          "question": "What is the role of communication in incident response?",
+          "options": {
+            "A": "To spread rumors",
+            "B": "To coordinate response efforts and inform stakeholders",
+            "C": "To create confusion",
+            "D": "To delay response"
+          },
+          "correct_answer": "B",
+          "explanation": "Effective communication is crucial for coordinating response efforts and keeping stakeholders informed during incidents."
+        },
+        {
+          "question": "What is incident escalation?",
+          "options": {
+            "A": "Ignoring incidents",
+            "B": "Involving higher levels of management based on incident severity",
+            "C": "Creating confusion",
+            "D": "Delaying response"
+          },
+          "correct_answer": "B",
+          "explanation": "Incident escalation involves engaging appropriate levels of management based on incident severity and impact."
+        },
+        {
+          "question": "What is the purpose of incident response metrics?",
+          "options": {
+            "A": "To create more work",
+            "B": "To measure and improve response effectiveness",
+            "C": "To confuse employees",
+            "D": "To waste resources"
+          },
+          "correct_answer": "B",
+          "explanation": "Metrics help organizations measure and improve the effectiveness of their incident response processes."
+        },
+        {
+          "question": "What is the importance of incident response training?",
+          "options": {
+            "A": "It's not important",
+            "B": "To prepare teams for handling incidents effectively",
+            "C": "To waste time",
+            "D": "To create confusion"
+          },
+          "correct_answer": "B",
+          "explanation": "Training ensures incident response teams are prepared to handle security incidents effectively."
+        },
+        {
+          "question": "What is the role of automation in incident response?",
+          "options": {
+            "A": "To replace human responders",
+            "B": "To speed up and standardize response actions",
+            "C": "To create more work",
+            "D": "To increase costs"
+          },
+          "correct_answer": "B",
+          "explanation": "Automation helps speed up response times and standardize routine incident response actions."
+        },
+        {
+          "question": "What is the purpose of incident response playbooks?",
+          "options": {
+            "A": "To confuse responders",
+            "B": "To provide step-by-step guidance for handling incidents",
+            "C": "To waste paper",
+            "D": "To increase costs"
+          },
+          "correct_answer": "B",
+          "explanation": "Playbooks provide detailed, step-by-step procedures for handling specific types of security incidents."
+        },
+        {
+          "question": "What is the role of forensics in incident response?",
+          "options": {
+            "A": "To slow down response",
+            "B": "To collect and analyze evidence of incidents",
+            "C": "To increase costs",
+            "D": "To create confusion"
+          },
+          "correct_answer": "B",
+          "explanation": "Forensics involves collecting and analyzing evidence to understand how incidents occurred and prevent future occurrences."
+        },
+        {
+          "question": "What is the importance of incident classification?",
+          "options": {
+            "A": "To create more work",
+            "B": "To categorize incidents for appropriate response",
+            "C": "To waste time",
+            "D": "To confuse responders"
+          },
+          "correct_answer": "B",
+          "explanation": "Classification helps determine the appropriate response level and resources needed for different types of incidents."
+        },
+        {
+          "question": "What is the purpose of incident response testing?",
+          "options": {
+            "A": "To waste resources",
+            "B": "To validate and improve response procedures",
+            "C": "To create stress",
+            "D": "To increase costs"
+          },
+          "correct_answer": "B",
+          "explanation": "Testing helps validate and improve incident response procedures through simulated incidents and exercises."
+        },
+        {
+          "question": "What is the role of stakeholder management in incident response?",
+          "options": {
+            "A": "To create confusion",
+            "B": "To keep relevant parties informed and involved",
+            "C": "To delay response",
+            "D": "To increase costs"
+          },
+          "correct_answer": "B",
+          "explanation": "Stakeholder management ensures all relevant parties are appropriately informed and involved during incident response."
+        },
+        {
+          "question": "What is the importance of incident response policies?",
+          "options": {
+            "A": "They aren't important",
+            "B": "To provide guidelines and requirements for incident handling",
+            "C": "To create paperwork",
+            "D": "To slow down response"
+          },
+          "correct_answer": "B",
+          "explanation": "Policies provide formal guidelines and requirements for handling security incidents within an organization."
+        },
+        {
+          "question": "What is the role of third-party services in incident response?",
+          "options": {
+            "A": "To increase costs only",
+            "B": "To provide additional expertise and resources",
+            "C": "To create confusion",
+            "D": "To slow down response"
+          },
+          "correct_answer": "B",
+          "explanation": "Third-party services can provide specialized expertise and additional resources for incident response when needed."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Algorithm_Design_Techniques",
+      "questions": [
+        {
+          "question": "What is the 'Divide and Conquer' algorithm design technique?",
+          "options": {
+            "A": "Solving a problem by iteratively improving a candidate solution.",
+            "B": "Breaking down a problem into smaller subproblems of the same or similar type, solving them recursively, and then combining their solutions to solve the original problem.",
+            "C": "Making locally optimal choices at each step with the hope of finding a global optimum.",
+            "D": "Storing the results of expensive function calls to avoid recomputing them."
+          },
+          "correct_answer": "B",
+          "explanation": "Divide and Conquer is a powerful technique used in algorithms like merge sort, quicksort, and binary search."
+        },
+        {
+          "question": "What is the 'Greedy' algorithm design technique?",
+          "options": {
+            "A": "Breaking down a problem into overlapping subproblems and solving each subproblem only once.",
+            "B": "Exploring all possible solutions to find the optimal one.",
+            "C": "Making the locally optimal choice at each step in the hope of finding a global optimum.",
+            "D": "Solving a problem by starting from the end and working backwards."
+          },
+          "correct_answer": "C",
+          "explanation": "Greedy algorithms are often simple and efficient but do not always guarantee the globally optimal solution."
+        },
+        {
+          "question": "What is 'Dynamic Programming'?",
+          "options": {
+            "A": "Solving a problem by making locally optimal choices.",
+            "B": "Breaking down a problem into smaller, overlapping subproblems, solving each subproblem only once, and storing their solutions to avoid redundant computations.",
+            "C": "Dividing a problem into independent subproblems and solving them recursively.",
+            "D": "Randomly searching for a solution."
+          },
+          "correct_answer": "B",
+          "explanation": "Dynamic Programming is effective for optimization problems with overlapping subproblems and optimal substructure."
+        },
+        {
+          "question": "What is 'Backtracking'?",
+          "options": {
+            "A": "A technique for solving optimization problems by making locally optimal choices.",
+            "B": "A general algorithmic technique for finding all (or some) solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons a candidate ('backtracks') as soon as it determines that this candidate cannot possibly lead to a valid solution.",
+            "C": "A method for solving problems by dividing them into smaller independent parts.",
+            "D": "A technique for storing intermediate results to speed up computation."
+          },
+          "correct_answer": "B",
+          "explanation": "Backtracking is often used for problems like N-Queens, Sudoku solvers, and finding all permutations."
+        },
+        {
+          "question": "What is the 'Brute Force' approach to algorithm design?",
+          "options": {
+            "A": "A sophisticated technique that uses mathematical optimization.",
+            "B": "A straightforward approach that tries all possible solutions to find the correct one.",
+            "C": "A method that relies on making educated guesses.",
+            "D": "A technique that breaks the problem into very small, easily solvable subproblems."
+          },
+          "correct_answer": "B",
+          "explanation": "Brute force algorithms are often simple to implement but can be very inefficient for large input sizes."
+        },
+        {
+          "question": "What is the 'Recursion' technique in algorithm design?",
+          "options": {
+            "A": "Solving a problem by repeatedly applying a different algorithm.",
+            "B": "A method where a function calls itself to solve smaller instances of the same problem.",
+            "C": "A technique for storing previously computed results.",
+            "D": "A way to divide a problem into non-overlapping subproblems."
+          },
+          "correct_answer": "B",
+          "explanation": "Recursion is a powerful tool for solving problems that have a self-similar structure, but it's important to ensure proper base cases to avoid infinite loops."
+        },
+        {
+          "question": "What is the 'Memoization' technique?",
+          "options": {
+            "A": "A way to forget previously computed results to save memory.",
+            "B": "An optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.",
+            "C": "A method for dividing a problem into smaller subproblems.",
+            "D": "A technique for making locally optimal choices."
+          },
+          "correct_answer": "B",
+          "explanation": "Memoization is a form of dynamic programming where the results of function calls are stored, usually in a hash table or an array."
+        },
+        {
+          "question": "What is the 'Iterative' approach to algorithm design?",
+          "options": {
+            "A": "Solving a problem by repeatedly calling the same function with smaller inputs.",
+            "B": "Solving a problem by using loops to repeat a set of instructions until a condition is met.",
+            "C": "A method for breaking down a problem into subproblems that are solved independently.",
+            "D": "A technique for making locally optimal choices at each step."
+          },
+          "correct_answer": "B",
+          "explanation": "Iterative solutions use constructs like 'for' and 'while' loops to achieve repetition."
+        },
+        {
+          "question": "What is the 'Branch and Bound' algorithm design technique?",
+          "options": {
+            "A": "A greedy approach combined with backtracking.",
+            "B": "An algorithm design paradigm generally used for solving discrete and combinatorial optimization problems. It systematically enumerates all candidate solutions and discards large subsets of fruitless candidates by using upper and lower estimated bounds of the quantity being optimized.",
+            "C": "A divide and conquer approach with memoization.",
+            "D": "A purely recursive technique without any iterative components."
+          },
+          "correct_answer": "B",
+          "explanation": "Branch and Bound is often used for problems like the Traveling Salesman Problem and integer programming."
+        },
+        {
+          "question": "What is the 'Randomized' algorithm design technique?",
+          "options": {
+            "A": "Algorithms that always produce the same output for the same input.",
+            "B": "Algorithms that use randomness as part of their logic. Their behavior can vary even for the same input.",
+            "C": "Algorithms that are designed to fail with a certain probability.",
+            "D": "Algorithms whose performance is unpredictable."
+          },
+          "correct_answer": "B",
+          "explanation": "Randomized algorithms can sometimes offer better performance or simpler solutions compared to deterministic algorithms for certain types of problems (e.g., quicksort with random pivot selection)."
+        },
+        {
+          "question": "In the 'Divide and Conquer' technique, what are the typical three steps?",
+          "options": {
+            "A": "Divide, Sort, Combine.",
+            "B": "Divide, Conquer, Combine.",
+            "C": "Divide, Conquer, Conquer.",
+            "D": "Divide, Solve, Iterate."
+          },
+          "correct_answer": "B",
+          "explanation": "The problem is divided into subproblems, each subproblem is solved (conquered) recursively, and then the solutions are combined to solve the original problem."
+        },
+        {
+          "question": "When is the 'Greedy' approach most likely to yield an optimal solution?",
+          "options": {
+            "A": "For all optimization problems.",
+            "B": "For problems that exhibit the 'optimal substructure' and 'greedy choice' properties.",
+            "C": "When the problem can be divided into overlapping subproblems.",
+            "D": "When all possible solutions need to be explored."
+          },
+          "correct_answer": "B",
+          "explanation": "Optimal substructure means an optimal solution to the problem contains optimal solutions to the subproblems, and greedy choice means a locally optimal choice leads to a globally optimal solution."
+        },
+        {
+          "question": "What is the key characteristic that distinguishes 'Dynamic Programming' from 'Divide and Conquer'?",
+          "options": {
+            "A": "Dynamic Programming uses recursion, while Divide and Conquer uses iteration.",
+            "B": "Dynamic Programming is used for optimization problems, while Divide and Conquer is used for sorting problems.",
+            "C": "Dynamic Programming solves overlapping subproblems by solving each only once and storing the results, while Divide and Conquer typically solves independent subproblems repeatedly.",
+            "D": "Divide and Conquer always finds the optimal solution, while Dynamic Programming may not."
+          },
+          "correct_answer": "C",
+          "explanation": "The handling of overlapping subproblems is the crucial difference; Dynamic Programming avoids recomputation through memoization or tabulation."
+        },
+        {
+          "question": "In 'Backtracking', what is the meaning of 'pruning'?",
+          "options": {
+            "A": "Rearranging the order of exploring potential solutions.",
+            "B": "Stopping the exploration of a branch of the solution space when it's determined that it cannot lead to a valid solution.",
+            "C": "Randomly selecting the next step in the search.",
+            "D": "Storing the intermediate states of the search."
+          },
+          "correct_answer": "B",
+          "explanation": "Pruning is essential for making backtracking algorithms more efficient by avoiding unnecessary exploration of the search space."
+        },
+        {
+          "question": "What is a major disadvantage of the 'Brute Force' approach?",
+          "options": {
+            "A": "It is often difficult to implement.",
+            "B": "It guarantees finding the optimal solution.",
+            "C": "It can be very time-consuming and inefficient, especially for large input sizes, due to exploring all possibilities.",
+            "D": "It does not work for all types of problems."
+          },
+          "correct_answer": "C",
+          "explanation": "The exponential or factorial time complexity of brute force algorithms makes them impractical for many real-world problems."
+        },
+        {
+          "question": "When designing a recursive algorithm, what is the most important thing to ensure?",
+          "options": {
+            "A": "That the recursive calls are always to the original problem size.",
+            "B": "That there is a well-defined 'base case' that stops the recursion.",
+            "C": "That the function calls itself an infinite number of times.",
+            "D": "That the function does not use any local variables."
+          },
+          "correct_answer": "B",
+          "explanation": "A base case is essential to prevent infinite recursion and ensure that the algorithm eventually terminates."
+        },
+        {
+          "question": "What is the space complexity trade-off often associated with 'Memoization'?",
+          "options": {
+            "A": "It reduces both time and space complexity.",
+            "B": "It typically reduces time complexity by using extra space to store the computed results.",
+            "C": "It increases both time and space complexity.",
+            "D": "It reduces space complexity at the cost of increased time complexity."
+          },
+          "correct_answer": "B",
+          "explanation": "Memoization saves computation time by storing results, but this requires additional memory to store these results."
+        },
+        {
+          "question": "Which of the following algorithm design techniques is often used to find the shortest path in a graph?",
+          "options": {
+            "A": "Divide and Conquer (e.g., Merge Sort)",
+            "B": "Greedy (e.g., Dijkstra's algorithm)",
+            "C": "Dynamic Programming (e.g., Floyd-Warshall algorithm)",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D",
+          "explanation": "Dijkstra's algorithm is a greedy approach for single-source shortest paths, while Floyd-Warshall is a dynamic programming approach for all-pairs shortest paths."
+        },
+        {
+          "question": "What is a potential drawback of 'Randomized' algorithms?",
+          "options": {
+            "A": "They always have a higher time complexity than deterministic algorithms.",
+            "B": "They might not always produce the correct answer, although the probability of error can often be made very small.",
+            "C": "They are always more difficult to implement than deterministic algorithms.",
+            "D": "They cannot be analyzed theoretically."
+          },
+          "correct_answer": "B",
+          "explanation": "The probabilistic nature of randomized algorithms means there's a chance of getting an incorrect result, although this probability can be controlled."
+        },
+        {
+          "question": "When might a 'Brute Force' approach be acceptable or even preferred?",
+          "options": {
+            "A": "For very large input sizes.",
+            "B": "When the problem has a very small input size, or when simplicity of implementation is more important than efficiency, and the time constraints are not strict.",
+            "C": "When the problem has overlapping subproblems.",
+            "D": "When a locally optimal choice guarantees a global optimum."
+          },
+          "correct_answer": "B",
+          "explanation": "For small inputs, the overhead of implementing a more complex algorithm might outweigh the benefits of its efficiency."
+        }
+      ]
+    }
+  ]
+}

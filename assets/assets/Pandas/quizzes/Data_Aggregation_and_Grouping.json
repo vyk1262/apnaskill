@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Aggregation_and_Grouping",
+      "questions": [
+        {
+          "question": "What is the purpose of the `.groupby()` method in Pandas?",
+          "options": {
+            "A": "To sort the DataFrame by specified columns.",
+            "B": "To filter the DataFrame based on certain conditions.",
+            "C": "To group rows in a DataFrame based on one or more columns.",
+            "D": "To merge two DataFrames together."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the output of the `.groupby()` method?",
+          "options": {
+            "A": "A new DataFrame with the grouped data.",
+            "B": "A GroupBy object, which is an intermediate representation.",
+            "C": "A Series containing the unique values of the grouped column(s).",
+            "D": "A dictionary where keys are the group names and values are DataFrames."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "After grouping a DataFrame by a column named 'Category' using `df.groupby('Category')`, how can you calculate the mean of a column named 'Price' for each category?",
+          "options": {
+            "A": "df.groupby('Category')['Price'].mean()",
+            "B": "df.groupby('Category').mean()['Price']",
+            "C": "df.groupby('Category').agg({'Price': 'mean'})",
+            "D": "all of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which Pandas method is used to apply aggregation functions to the grouped data?",
+          "options": {
+            "A": ".apply()",
+            "B": ".transform()",
+            "C": ".agg()",
+            "D": ".filter()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you calculate multiple aggregations (e.g., mean and standard deviation) on the 'Price' column after grouping by 'Category'?",
+          "options": {
+            "A": "df.groupby('Category')['Price'].agg(['mean', 'std'])",
+            "B": "df.groupby('Category').agg({'Price': ['mean', 'std']})",
+            "C": "df.groupby('Category').agg(mean=('Price', 'mean'), std=('Price', 'std'))",
+            "D": "all of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the purpose of the `.apply()` method after grouping?",
+          "options": {
+            "A": "To perform element-wise operations on each group.",
+            "B": "To apply a function to each group as a whole and return a result.",
+            "C": "To filter groups based on a certain condition.",
+            "D": "To combine the results of different aggregations."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you apply a custom function `calculate_range(series)` to the 'Price' column for each group in `df.groupby('Category')`?",
+          "options": {
+            "A": "df.groupby('Category')['Price'].calculate_range()",
+            "B": "df.groupby('Category').apply(lambda x: calculate_range(x['Price']))",
+            "C": "df.groupby('Category')['Price'].apply(calculate_range)",
+            "D": "df.groupby('Category').agg({'Price': calculate_range})"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of the `.transform()` method after grouping?",
+          "options": {
+            "A": "To calculate summary statistics for each group.",
+            "B": "To apply a function to each group and return a Series with the same index as the original DataFrame.",
+            "C": "To filter out certain groups based on a condition.",
+            "D": "To reshape the DataFrame after grouping."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "If you group a DataFrame `df` by 'Category' and then use `transform('mean')` on the 'Price' column, what will be the result?",
+          "options": {
+            "A": "A Series containing the mean price for each category.",
+            "B": "A DataFrame with the mean price for each category repeated for all rows in that category.",
+            "C": "The original DataFrame with an additional column containing the mean price per category.",
+            "D": "An error, as 'mean' is an aggregation, not a transformation."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the `.filter()` method after grouping?",
+          "options": {
+            "A": "To select specific columns within each group.",
+            "B": "To remove rows based on conditions within each group.",
+            "C": "To filter out entire groups based on a condition applied to the group as a whole.",
+            "D": "To sort the data within each group."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you filter groups in `df.groupby('Category')` where the sum of 'Quantity' in that category is greater than 100?",
+          "options": {
+            "A": "df.groupby('Category').filter(lambda x: sum(x['Quantity']) > 100)",
+            "B": "df.groupby('Category').where(sum(df['Quantity']) > 100)",
+            "C": "df.groupby('Category').agg(total_quantity=('Quantity', 'sum')).filter('total_quantity > 100')",
+            "D": "df.groupby('Category').query('sum(Quantity) > 100')"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Can you group by multiple columns in Pandas?",
+          "options": {
+            "A": "No, `.groupby()` only accepts a single column name.",
+            "B": "Yes, you can pass a list of column names to `.groupby()`.",
+            "C": "Only if the columns are of the same data type.",
+            "D": "You need to group by one column at a time and then group the result."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "If you group by two columns, 'Category' and 'Subcategory', what will be the index of the resulting grouped object after aggregation?",
+          "options": {
+            "A": "A single index containing the unique combinations of 'Category' and 'Subcategory'.",
+            "B": "A MultiIndex (hierarchical index) with levels 'Category' and 'Subcategory'.",
+            "C": "A new integer-based index.",
+            "D": "The index of the original DataFrame."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you reset the index of a grouped and aggregated DataFrame back to regular columns?",
+          "options": {
+            "A": ".reset_group()",
+            "B": ".unstack()",
+            "C": ".reset_index()",
+            "D": ".melt()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the difference between `.size()` and `.count()` after a `.groupby()` operation?",
+          "options": {
+            "A": "`.size()` counts the number of non-NaN values, while `.count()` counts all values.",
+            "B": "`.count()` counts the number of non-NaN values for each column in each group, while `.size()` counts the number of rows in each group.",
+            "C": "`.size()` includes NaN values in the count, while `.count()` excludes them.",
+            "D": "There is no difference; they both return the number of rows in each group."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you iterate through the groups of a GroupBy object?",
+          "options": {
+            "A": "Using a for loop directly on the GroupBy object (e.g., `for name, group in grouped_df:`).",
+            "B": "By converting the GroupBy object to a list of (name, group) tuples.",
+            "C": "Using the `.groups` attribute and iterating through the keys.",
+            "D": "Both A and B"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What information does the `.groups` attribute of a GroupBy object provide?",
+          "options": {
+            "A": "The names of the groups.",
+            "B": "A dictionary where keys are group names and values are the row indices belonging to that group.",
+            "C": "The result of the aggregation performed on each group.",
+            "D": "The columns that were used for grouping."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a common use case for grouping and aggregating data in Pandas?",
+          "options": {
+            "A": "To clean missing values in a dataset.",
+            "B": "To calculate summary statistics for different categories in a dataset.",
+            "C": "To visualize the distribution of a single variable.",
+            "D": "To merge multiple datasets based on common columns."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following aggregation functions can you directly use with the `.agg()` method after grouping?",
+          "options": {
+            "A": "'mean'",
+            "B": "'sum'",
+            "C": "'min'",
+            "D": "all of the above"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Can you apply different aggregation functions to different columns after grouping?",
+          "options": {
+            "A": "No, the same aggregation function is applied to all columns.",
+            "B": "Yes, by passing a dictionary to `.agg()` where keys are column names and values are the aggregation function(s).",
+            "C": "Only if you group by a single column.",
+            "D": "You need to perform separate grouping and aggregation for each column."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

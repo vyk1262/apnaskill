@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Machine_Learning_Fundamentals",
+      "questions": [
+        {
+          "question": "What is the core idea behind machine learning?",
+          "options": {
+            "A": "Writing explicit instructions for computers to perform tasks.",
+            "B": "Enabling computers to learn from data without being explicitly programmed.",
+            "C": "Creating static models based on predefined rules.",
+            "D": "Developing complex algorithms for data storage."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is NOT a main type of machine learning?",
+          "options": {
+            "A": "Supervised Learning",
+            "B": "Unsupervised Learning",
+            "C": "Reinforcement Learning",
+            "D": "Rule-Based Learning"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "In supervised learning, what type of data is used for training?",
+          "options": {
+            "A": "Unlabeled data only.",
+            "B": "Labeled data with input features and corresponding output targets.",
+            "C": "Data with only numerical features.",
+            "D": "Data that is randomly generated."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the primary goal of unsupervised learning?",
+          "options": {
+            "A": "To predict future outcomes based on labeled data.",
+            "B": "To discover hidden patterns and structures in unlabeled data.",
+            "C": "To learn through trial and error with a reward system.",
+            "D": "To classify data into predefined categories."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the key characteristic of reinforcement learning?",
+          "options": {
+            "A": "Learning from a teacher who provides correct answers.",
+            "B": "Learning patterns from data without any specific guidance.",
+            "C": "Learning through interaction with an environment and receiving rewards or penalties.",
+            "D": "Learning to classify data based on similarity."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a 'feature' in the context of machine learning?",
+          "options": {
+            "A": "The predicted output of a model.",
+            "B": "An individual measurable property or characteristic of a data point.",
+            "C": "A parameter that the model learns during training.",
+            "D": "A method for evaluating the performance of a model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a 'target variable' (or 'label') in supervised learning?",
+          "options": {
+            "A": "An input feature used for prediction.",
+            "B": "The output variable that the model is trying to predict.",
+            "C": "A hyperparameter that controls the learning process.",
+            "D": "A measure of the model's error."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of splitting a dataset into training and testing sets?",
+          "options": {
+            "A": "To train the model on all available data.",
+            "B": "To evaluate the model's performance on unseen data after training.",
+            "C": "To increase the size of the dataset for better training.",
+            "D": "To visualize the data distribution."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'overfitting' in machine learning?",
+          "options": {
+            "A": "When a model performs poorly on both training and testing data.",
+            "B": "When a model learns the training data too well, including noise, and performs poorly on new data.",
+            "C": "When a model generalizes well to unseen data.",
+            "D": "When the training data is insufficient to learn the underlying patterns."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'underfitting' in machine learning?",
+          "options": {
+            "A": "When a model performs very well on the training data but poorly on testing data.",
+            "B": "When a model fails to capture the underlying patterns in the training data and performs poorly on both training and testing data.",
+            "C": "When the model is too complex for the amount of data.",
+            "D": "When the learning rate is set too high."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the 'bias-variance tradeoff' in machine learning?",
+          "options": {
+            "A": "The tradeoff between model complexity and training time.",
+            "B": "The tradeoff between the amount of data used for training and testing.",
+            "C": "The tradeoff between a model's tendency to underfit (high bias) and overfit (high variance).",
+            "D": "The tradeoff between precision and recall in classification."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a 'hyperparameter' in a machine learning model?",
+          "options": {
+            "A": "A parameter that the model learns from the data during training.",
+            "B": "A parameter that is set prior to training and controls the learning process.",
+            "C": "An input feature used to make predictions.",
+            "D": "The predicted output of the model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of 'model evaluation' in machine learning?",
+          "options": {
+            "A": "To train the model on the entire dataset.",
+            "B": "To assess the performance of a trained model on unseen data.",
+            "C": "To select the features to be used for training.",
+            "D": "To tune the hyperparameters of the model."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a 'loss function' (or 'cost function') used for in training machine learning models?",
+          "options": {
+            "A": "To measure the performance of the model on the testing data.",
+            "B": "To quantify the error between the model's predictions and the actual target values during training.",
+            "C": "To determine the optimal hyperparameters of the model.",
+            "D": "To visualize the learning process."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'gradient descent'?",
+          "options": {
+            "A": "A method for evaluating the gradient of the loss function on the test set.",
+            "B": "An optimization algorithm used to find the minimum of a function (e.g., the loss function) by iteratively moving in the direction of steepest descent.",
+            "C": "A technique for reducing the dimensionality of the input data.",
+            "D": "A way to prevent overfitting by penalizing large weights."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between a 'parameter' and a 'hyperparameter' in machine learning?",
+          "options": {
+            "A": "Parameters are set before training, while hyperparameters are learned during training.",
+            "B": "Hyperparameters are set before training, while parameters are learned during training.",
+            "C": "Parameters are used for unsupervised learning, while hyperparameters are for supervised learning.",
+            "D": "There is no significant difference between them."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the goal of 'feature scaling'?",
+          "options": {
+            "A": "To select the most important features for the model.",
+            "B": "To transform numerical features to a similar scale, which can improve the performance of some algorithms.",
+            "C": "To create new features from existing ones.",
+            "D": "To convert categorical features into numerical representations."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is 'feature encoding' primarily used for?",
+          "options": {
+            "A": "Scaling numerical features.",
+            "B": "Handling missing values in the data.",
+            "C": "Converting categorical features into a numerical format that machine learning algorithms can understand.",
+            "D": "Selecting the most relevant features."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the machine learning lifecycle?",
+          "options": {
+            "A": "A linear process of data collection, model training, and evaluation.",
+            "B": "An iterative process that includes problem definition, data collection, data preparation, model selection, training, evaluation, and deployment.",
+            "C": "A one-time process of building a machine learning model.",
+            "D": "The period from when a model is deployed until it becomes obsolete."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Why is interpretability sometimes important in machine learning models?",
+          "options": {
+            "A": "It always leads to higher accuracy.",
+            "B": "It allows humans to understand how the model makes decisions, which is crucial in sensitive applications like healthcare or finance.",
+            "C": "It simplifies the model development process.",
+            "D": "It is only important for very simple models like linear regression."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

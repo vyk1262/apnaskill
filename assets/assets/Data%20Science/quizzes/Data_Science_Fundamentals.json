@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Science_Fundamentals",
+      "questions": [
+        {
+          "question": "Which of the following best describes Data Science?",
+          "options": {
+            "A": "The process of designing and building efficient software applications.",
+            "B": "The study of algorithms and data structures.",
+            "C": "An interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from noisy, structured, and unstructured data.",
+            "D": "The management and organization of large databases."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the primary goal of data science?",
+          "options": {
+            "A": "To create visually appealing charts and graphs.",
+            "B": "To develop new programming languages.",
+            "C": "To discover patterns, insights, and knowledge from data.",
+            "D": "To automate repetitive tasks."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is NOT typically considered a core component of data science?",
+          "options": {
+            "A": "Statistics and Probability",
+            "B": "Machine Learning",
+            "C": "Web Development",
+            "D": "Domain Expertise"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What role does domain expertise play in data science?",
+          "options": {
+            "A": "It is not important as data can speak for itself.",
+            "B": "It helps in understanding the context of the data and formulating relevant questions.",
+            "C": "It is only necessary for presenting the findings.",
+            "D": "It is primarily used for data cleaning."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which stage of the data science lifecycle involves understanding the business problem and defining objectives?",
+          "options": {
+            "A": "Data Exploration",
+            "B": "Data Modeling",
+            "C": "Business Understanding",
+            "D": "Deployment"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of Exploratory Data Analysis (EDA)?",
+          "options": {
+            "A": "To build predictive models.",
+            "B": "To clean and preprocess the data.",
+            "C": "To summarize the main characteristics of a dataset, often using visual methods.",
+            "D": "To deploy the machine learning model."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common programming language used in data science?",
+          "options": {
+            "A": "HTML",
+            "B": "CSS",
+            "C": "Python",
+            "D": "Java"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the difference between structured and unstructured data?",
+          "options": {
+            "A": "Structured data is numerical, while unstructured data is textual.",
+            "B": "Structured data has a predefined format (e.g., tables), while unstructured data does not (e.g., text, images).",
+            "C": "Structured data is easier to analyze than unstructured data.",
+            "D": "There is no significant difference between them."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is an example of structured data?",
+          "options": {
+            "A": "A customer review.",
+            "B": "A social media post.",
+            "C": "A spreadsheet with customer information.",
+            "D": "An image of a product."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of algorithms in data science?",
+          "options": {
+            "A": "To store and manage large datasets.",
+            "B": "To automate the process of data collection.",
+            "C": "To provide a set of rules or steps to solve a specific problem, such as pattern recognition or prediction.",
+            "D": "To visualize data effectively."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the significance of 'big data' in the context of data science?",
+          "options": {
+            "A": "It refers to data that is too large to be processed by traditional methods, requiring specialized tools and techniques.",
+            "B": "It is simply a large collection of any type of data.",
+            "C": "It only includes unstructured data from the internet.",
+            "D": "It is important for visualization purposes only."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is a key challenge associated with big data?",
+          "options": {
+            "A": "The small variety of data formats.",
+            "B": "The ease of processing with traditional software.",
+            "C": "The volume, velocity, variety, veracity, and value of the data.",
+            "D": "The lack of need for specialized analytical techniques."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of data preprocessing?",
+          "options": {
+            "A": "To build machine learning models.",
+            "B": "To visualize the final results.",
+            "C": "To clean, transform, and organize raw data into a suitable format for analysis.",
+            "D": "To deploy the model into production."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the difference between correlation and causation?",
+          "options": {
+            "A": "They are the same thing and can be used interchangeably.",
+            "B": "Correlation implies that one variable causes another, while causation indicates a statistical relationship.",
+            "C": "Correlation indicates a statistical relationship between two or more variables, while causation implies that one variable directly influences another.",
+            "D": "Causation is easier to determine from observational data than correlation."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the role of data visualization in data science?",
+          "options": {
+            "A": "To store large amounts of data efficiently.",
+            "B": "To build complex machine learning models.",
+            "C": "To communicate insights and patterns in data effectively to a wider audience.",
+            "D": "To clean and preprocess the data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is an example of a data science application in the healthcare industry?",
+          "options": {
+            "A": "Designing user interfaces for medical devices.",
+            "B": "Developing algorithms for disease prediction and diagnosis.",
+            "C": "Managing hospital finances.",
+            "D": "Training medical staff."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some ethical considerations in data science?",
+          "options": {
+            "A": "Data privacy and security.",
+            "B": "Bias in algorithms.",
+            "C": "Responsible use of AI.",
+            "D": "All of the above."
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "What is the purpose of a data science workflow or pipeline?",
+          "options": {
+            "A": "To confuse stakeholders with technical jargon.",
+            "B": "To provide a structured and reproducible approach to solving data-driven problems.",
+            "C": "To limit creativity in data analysis.",
+            "D": "To make the process more complex."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common type of bias that can occur in data?",
+          "options": {
+            "A": "Random sampling bias.",
+            "B": "Selection bias.",
+            "C": "Computational bias.",
+            "D": "Algorithmic efficiency bias."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the importance of reproducibility in data science research?",
+          "options": {
+            "A": "It makes the research faster to conduct.",
+            "B": "It allows others to verify the findings and build upon the work.",
+            "C": "It ensures that the data is always perfectly clean.",
+            "D": "It simplifies the deployment of machine learning models."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

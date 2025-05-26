@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Neural_Networks",
+      "questions": [
+        {
+          "question": "What is a neural network?",
+          "options": {
+            "A": "A computer program that simulates human behavior",
+            "B": "A mathematical model inspired by biological neural networks that processes information through interconnected nodes",
+            "C": "A database system for storing large amounts of data",
+            "D": "A programming language for artificial intelligence"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which component of a neural network processes and transmits information?",
+          "options": {
+            "A": "Neuron (node)",
+            "B": "Database",
+            "C": "Memory unit",
+            "D": "Control panel"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is backpropagation in neural networks?",
+          "options": {
+            "A": "A method to input data into the network",
+            "B": "An algorithm that calculates gradients and updates weights to minimize error",
+            "C": "A way to store network parameters",
+            "D": "A technique to visualize network architecture"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the activation function in a neural network?",
+          "options": {
+            "A": "To store data temporarily",
+            "B": "To introduce non-linearity and help the network learn complex patterns",
+            "C": "To connect different layers",
+            "D": "To initialize network weights"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is NOT a common activation function?",
+          "options": {
+            "A": "ReLU (Rectified Linear Unit)",
+            "B": "Sigmoid",
+            "C": "Gaussian",
+            "D": "Tanh"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is a deep neural network?",
+          "options": {
+            "A": "A neural network with many input nodes",
+            "B": "A neural network with multiple hidden layers",
+            "C": "A neural network that processes images only",
+            "D": "A neural network with high accuracy"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the loss function in neural networks?",
+          "options": {
+            "A": "To measure the difference between predicted and actual outputs",
+            "B": "To activate neurons",
+            "C": "To store network parameters",
+            "D": "To process input data"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is dropout in neural networks?",
+          "options": {
+            "A": "A type of activation function",
+            "B": "A regularization technique that randomly deactivates neurons during training",
+            "C": "A method to initialize weights",
+            "D": "A way to structure network layers"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a convolutional neural network (CNN) primarily used for?",
+          "options": {
+            "A": "Text processing",
+            "B": "Image recognition and processing",
+            "C": "Sound analysis",
+            "D": "Data storage"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is batch normalization?",
+          "options": {
+            "A": "A method to organize training data",
+            "B": "A technique to normalize layer inputs during training",
+            "C": "A way to initialize network weights",
+            "D": "A type of activation function"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the vanishing gradient problem?",
+          "options": {
+            "A": "When the network has too many layers",
+            "B": "When gradients become extremely small, making training difficult",
+            "C": "When the network uses too much memory",
+            "D": "When the input data is too large"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a recurrent neural network (RNN)?",
+          "options": {
+            "A": "A network that processes images",
+            "B": "A network with connections forming a directed cycle",
+            "C": "A network with only one layer",
+            "D": "A network that only uses binary data"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of learning rate in neural networks?",
+          "options": {
+            "A": "To control how much weights are updated during training",
+            "B": "To determine the network size",
+            "C": "To calculate the final output",
+            "D": "To store training data"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is transfer learning in neural networks?",
+          "options": {
+            "A": "Moving data between computers",
+            "B": "Using a pre-trained model for a new but related task",
+            "C": "Transferring weights between layers",
+            "D": "Converting between different file formats"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the softmax function?",
+          "options": {
+            "A": "To normalize input data",
+            "B": "To convert outputs into probability distributions",
+            "C": "To initialize weights",
+            "D": "To reduce network size"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is an epoch in neural network training?",
+          "options": {
+            "A": "A type of neuron",
+            "B": "One complete pass through the entire training dataset",
+            "C": "A method to save the model",
+            "D": "A type of activation function"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of early stopping?",
+          "options": {
+            "A": "To initialize the network faster",
+            "B": "To prevent overfitting by stopping training when validation error increases",
+            "C": "To reduce memory usage",
+            "D": "To speed up training"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a Long Short-Term Memory (LSTM) network?",
+          "options": {
+            "A": "A type of feedforward network",
+            "B": "A special type of RNN designed to handle long-term dependencies",
+            "C": "A network that only processes short sequences",
+            "D": "A network with limited memory capacity"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of data augmentation in neural networks?",
+          "options": {
+            "A": "To reduce the dataset size",
+            "B": "To artificially increase the training dataset size by creating modified versions of existing data",
+            "C": "To compress the network",
+            "D": "To initialize weights"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between supervised and unsupervised learning in neural networks?",
+          "options": {
+            "A": "Supervised learning requires more computing power",
+            "B": "Supervised learning uses labeled data for training, while unsupervised learning finds patterns in unlabeled data",
+            "C": "Unsupervised learning is always more accurate",
+            "D": "There is no difference between them"
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

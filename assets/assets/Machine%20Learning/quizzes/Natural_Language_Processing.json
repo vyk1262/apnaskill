@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Natural_Language_Processing",
+      "questions": [
+        {
+          "question": "What is the primary goal of Natural Language Processing (NLP)?",
+          "options": {
+            "A": "To convert human language into computer code.",
+            "B": "To enable computers to understand, interpret, and generate human language.",
+            "C": "To analyze numerical data using statistical methods.",
+            "D": "To create visual representations of text data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a fundamental task in NLP?",
+          "options": {
+            "A": "Image recognition",
+            "B": "Sentiment analysis",
+            "C": "Time series forecasting",
+            "D": "Clustering of numerical data"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does tokenization refer to in NLP?",
+          "options": {
+            "A": "Converting text to lowercase.",
+            "B": "Splitting a text into individual units (tokens) such as words or punctuation.",
+            "C": "Removing stop words from the text.",
+            "D": "Assigning grammatical tags to words."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are stop words in NLP?",
+          "options": {
+            "A": "Words that carry significant meaning in a sentence.",
+            "B": "Common words (e.g., 'the', 'a', 'is') that are often removed during preprocessing.",
+            "C": "Words that indicate the end of a sentence.",
+            "D": "Words that are specific to a particular domain."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is stemming in NLP?",
+          "options": {
+            "A": "Assigning part-of-speech tags to words.",
+            "B": "Reducing words to their root or base form (e.g., 'running' to 'run').",
+            "C": "Converting text to uppercase.",
+            "D": "Removing punctuation from the text."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is lemmatization in NLP?",
+          "options": {
+            "A": "Splitting text into sentences.",
+            "B": "Reducing words to their base or dictionary form (lemma), considering the word's meaning and context.",
+            "C": "Identifying named entities in the text.",
+            "D": "Translating text from one language to another."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Part-of-Speech (POS) tagging?",
+          "options": {
+            "A": "Identifying the main topic of a document.",
+            "B": "Assigning grammatical tags (e.g., noun, verb, adjective) to each word in a text.",
+            "C": "Removing irrelevant words from the text.",
+            "D": "Combining words into phrases."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is Named Entity Recognition (NER)?",
+          "options": {
+            "A": "Identifying the sentiment expressed in a text.",
+            "B": "Identifying and classifying named entities (e.g., persons, organizations, locations) in a text.",
+            "C": "Translating named entities into different languages.",
+            "D": "Generating names based on a given context."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is sentiment analysis?",
+          "options": {
+            "A": "Summarizing a long text into a shorter version.",
+            "B": "Determining the emotional tone or attitude expressed in a piece of text (e.g., positive, negative, neutral).",
+            "C": "Identifying the grammatical structure of a sentence.",
+            "D": "Extracting key information from a document."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is text classification?",
+          "options": {
+            "A": "Grouping similar documents together.",
+            "B": "Assigning predefined categories or labels to text documents based on their content.",
+            "C": "Generating new text based on a given style.",
+            "D": "Translating text between languages."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is text summarization?",
+          "options": {
+            "A": "Analyzing the sentiment of a text.",
+            "B": "Condensing a longer piece of text into a shorter version while retaining the main information.",
+            "C": "Identifying the language of a text.",
+            "D": "Correcting spelling and grammatical errors in a text."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is machine translation?",
+          "options": {
+            "A": "Understanding the meaning of a text in a single language.",
+            "B": "Automatically converting text from one human language to another.",
+            "C": "Generating text in a specific style.",
+            "D": "Analyzing the frequency of words in a text."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are word embeddings (e.g., Word2Vec, GloVe)?",
+          "options": {
+            "A": "Numerical representations of words in a high-dimensional space that capture semantic relationships between words.",
+            "B": "Methods for counting the frequency of words in a document.",
+            "C": "Techniques for stemming and lemmatizing words.",
+            "D": "Ways to represent the grammatical structure of sentences."
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What are sequence-to-sequence models commonly used for in NLP?",
+          "options": {
+            "A": "Classifying individual words.",
+            "B": "Mapping an input sequence to an output sequence, such as in machine translation or text summarization.",
+            "C": "Analyzing the sentiment of short phrases.",
+            "D": "Identifying named entities in single sentences."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are Recurrent Neural Networks (RNNs) particularly well-suited for in NLP?",
+          "options": {
+            "A": "Processing images.",
+            "B": "Handling sequential data like text by maintaining a hidden state.",
+            "C": "Clustering documents based on topic.",
+            "D": "Predicting continuous values from independent features."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are Transformers and why have they become prominent in NLP?",
+          "options": {
+            "A": "A type of RNN architecture designed for very long sequences.",
+            "B": "A neural network architecture that relies on the attention mechanism to model dependencies between words in a sequence, allowing for parallel processing and better handling of long-range dependencies.",
+            "C": "A traditional statistical method for language modeling.",
+            "D": "A technique for visualizing word embeddings."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the attention mechanism in Transformer networks?",
+          "options": {
+            "A": "A way to focus on the most frequent words in a sentence.",
+            "B": "A mechanism that allows the model to weigh the importance of different parts of the input sequence when processing it.",
+            "C": "A method for reducing the dimensionality of word embeddings.",
+            "D": "A technique for generating new words based on context."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are large language models (LLMs) like GPT and BERT?",
+          "options": {
+            "A": "Simple rule-based systems for generating text.",
+            "B": "Deep learning models with billions of parameters, trained on massive text corpora, capable of performing a wide range of NLP tasks.",
+            "C": "Traditional statistical models for language analysis.",
+            "D": "Algorithms for compressing text data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some ethical considerations in NLP?",
+          "options": {
+            "A": "Only concerns about the computational resources required for training models.",
+            "B": "Issues related to bias in training data leading to unfair or discriminatory outcomes, privacy concerns regarding text data, and the potential for misuse of language generation models.",
+            "C": "Primarily about the accuracy of language translation.",
+            "D": "Mostly focused on the efficiency of text processing algorithms."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are some real-world applications of NLP?",
+          "options": {
+            "A": "Only used in academic research.",
+            "B": "Chatbots, virtual assistants, machine translation, sentiment analysis of customer reviews, text summarization of news articles, and spam detection.",
+            "C": "Primarily for analyzing numerical data.",
+            "D": "Mainly used for image and video processing."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

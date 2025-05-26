@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. Sarah Johnson",
+    "profession": "Senior Software Engineer",
+    "expertise": ["Flutter", "Dart", "Mobile Development", "iOS", "Android"],
+    "experience": 8,
+    "price": 45.0,
+    "image": "assets/mentors/sarah_johnson.jpg",
+    "bio": "A passionate software engineer with 8+ years of industry experience, specializing in mobile app development. Led teams at major tech companies and contributed to several successful app launches with millions of downloads.",
+    "education": "PhD in Computer Science, MIT",
+    "rating": 4.9,
+    "availability": {
+      "weekdays": ["Monday", "Wednesday", "Friday"],
+      "timeSlots": ["9:00 AM - 12:00 PM", "2:00 PM - 6:00 PM"]
+    },
+    "languages": ["English", "Spanish"],
+    "achievements": [
+      "Google Developer Expert",
+      "Published 3 research papers on Mobile Development",
+      "Speaker at Flutter Global Summit 2023"
+    ],
+    "testimonials": [
+      {
+        "student": "Alex Chen",
+        "text": "Dr. Johnson's guidance helped me land my dream job at Google.",
+        "rating": 5.0
+      }
+    ],
+    "socialLinks": {
+      "linkedin": "linkedin.com/sarahjohnson",
+      "github": "github.com/sarahj",
+      "twitter": "twitter.com/sarahj_tech"
+    }
+  },
+  {
+    "id": "2",
+    "name": "David Lee",
+    "profession": "Data Scientist & AI Researcher",
+    "expertise": [
+      "Python",
+      "Machine Learning",
+      "AI",
+      "Deep Learning",
+      "Natural Language Processing"
+    ],
+    "experience": 5,
+    "price": 50.0,
+    "image": "assets/mentors/david_lee.jpg",
+    "bio": "Former AI researcher at DeepMind with a passion for making complex concepts simple. Specialized in deep learning and natural language processing with practical industry experience.",
+    "education": "Master's in Data Science, Stanford",
+    "rating": 4.7,
+    "availability": {
+      "weekdays": ["Tuesday", "Thursday", "Saturday"],
+      "timeSlots": ["10:00 AM - 2:00 PM", "4:00 PM - 8:00 PM"]
+    },
+    "languages": ["English", "Mandarin"],
+    "achievements": [
+      "Published in Nature Machine Intelligence",
+      "Led AI projects at Fortune 500 companies",
+      "Kaggle Competition Grandmaster"
+    ],
+    "testimonials": [
+      {
+        "student": "Maria Garcia",
+        "text": "David's practical approach to machine learning concepts is outstanding.",
+        "rating": 4.8
+      }
+    ],
+    "socialLinks": {
+      "linkedin": "linkedin.com/davidlee",
+      "github": "github.com/dlee_ai",
+      "medium": "medium.com/@david_ai"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Emily Zhang",
+    "profession": "Full Stack Developer & DevOps Expert",
+    "expertise": ["React", "Node.js", "AWS", "Docker", "Kubernetes"],
+    "experience": 6,
+    "price": 55.0,
+    "image": "assets/mentors/emily_zhang.jpg",
+    "bio": "Full stack developer with expertise in modern web technologies and cloud architecture. Passionate about teaching best practices in software development and DevOps.",
+    "education": "BSc in Software Engineering, UC Berkeley",
+    "rating": 4.8,
+    "availability": {
+      "weekdays": ["Monday", "Tuesday", "Thursday"],
+      "timeSlots": ["11:00 AM - 3:00 PM", "5:00 PM - 9:00 PM"]
+    },
+    "languages": ["English", "Mandarin", "Cantonese"],
+    "achievements": [
+      "AWS Certified Solutions Architect",
+      "Created popular open-source DevOps tools",
+      "Tech lead at a unicorn startup"
+    ],
+    "testimonials": [
+      {
+        "student": "James Wilson",
+        "text": "Emily's DevOps expertise helped our team implement CI/CD successfully.",
+        "rating": 4.9
+      }
+    ],
+    "socialLinks": {
+      "linkedin": "linkedin.com/emilyzhang",
+      "github": "github.com/emily_dev",
+      "blog": "emilyzhang.dev"
+    }
+  }
+]

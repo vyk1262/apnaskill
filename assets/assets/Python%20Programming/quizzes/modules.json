@@ -1,0 +1,189 @@
+{
+  "result": [
+    {
+      "topic": "modules",
+      "questions": [
+        {
+          "question": "What is a module in Python?",
+          "options": {
+            "A": "A file containing Python code",
+            "B": "A built-in function",
+            "C": "A type of data structure",
+            "D": "A programming language"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you import a module in Python?",
+          "options": {
+            "A": "import module_name",
+            "B": "require module_name",
+            "C": "load module_name",
+            "D": "include module_name"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is a standard library module in Python?",
+          "options": {
+            "A": "numpy",
+            "B": "math",
+            "C": "requests",
+            "D": "pandas"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the __init__.py file in a package?",
+          "options": {
+            "A": "To mark a directory as a package",
+            "B": "To initialize variables",
+            "C": "To define functions",
+            "D": "To import other modules"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you import a specific function from a module?",
+          "options": {
+            "A": "from module_name import function_name",
+            "B": "import function_name from module_name",
+            "C": "load function_name from module_name",
+            "D": "include function_name from module_name"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will happen if you import the same module multiple times in Python?",
+          "options": {
+            "A": "It will be loaded only once",
+            "B": "It will cause an error",
+            "C": "It will slow down the program",
+            "D": "It will overwrite the module"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which command is used to list all functions in a module?",
+          "options": {
+            "A": "dir()",
+            "B": "list()",
+            "C": "functions()",
+            "D": "help()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create a module in Python?",
+          "options": {
+            "A": "By saving a .py file with functions and variables",
+            "B": "By defining a class",
+            "C": "By using the import keyword",
+            "D": "By using the def keyword"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the difference between a module and a package?",
+          "options": {
+            "A": "A package is a collection of modules",
+            "B": "A module is a collection of packages",
+            "C": "There is no difference",
+            "D": "Modules can only contain functions"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following is used to generate random numbers in Python?",
+          "options": {
+            "A": "random",
+            "B": "math",
+            "C": "os",
+            "D": "sys"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create a package in Python?",
+          "options": {
+            "A": "By creating a directory with __init__.py files",
+            "B": "By creating a single .py file",
+            "C": "By using the import statement",
+            "D": "By using the def keyword"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the os module provide?",
+          "options": {
+            "A": "Functions to interact with the operating system",
+            "B": "Mathematical functions",
+            "C": "File handling functions",
+            "D": "Network functions"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What will the following code output?\n\nimport math\nprint(math.sqrt(16))",
+          "options": {
+            "A": "4.0",
+            "B": "16",
+            "C": "Error",
+            "D": "4"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which statement imports all functions from a module?",
+          "options": {
+            "A": "from module_name import *",
+            "B": "import module_name all",
+            "C": "load module_name functions",
+            "D": "include all from module_name"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you handle errors that occur when importing a module?",
+          "options": {
+            "A": "Using try...except",
+            "B": "Using if...else",
+            "C": "Using a loop",
+            "D": "Using a function"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the sys module provide access to?",
+          "options": {
+            "A": "System-specific parameters and functions",
+            "B": "Mathematical operations",
+            "C": "Random number generation",
+            "D": "File handling"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which of the following functions can be used to get the current working directory?",
+          "options": {
+            "A": "os.getcwd()",
+            "B": "os.get()",
+            "C": "os.current_directory()",
+            "D": "os.dir()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the math module?",
+          "options": {
+            "A": "To perform mathematical operations",
+            "B": "To handle file operations",
+            "C": "To manage system commands",
+            "D": "To create GUIs"
+          },
+          "correct_answer": "A"
+        }
+      ]
+    }
+  ]
+}

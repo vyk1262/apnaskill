@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Predictive_Modeling_Techniques",
+      "questions": [
+        {
+          "question": "What is the primary goal of predictive modeling?",
+          "options": {
+            "A": "To describe historical data.",
+            "B": "To identify patterns in past data to forecast future outcomes.",
+            "C": "To clean and preprocess data.",
+            "D": "To visualize data insights."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a supervised learning technique used for prediction?",
+          "options": {
+            "A": "K-Means Clustering",
+            "B": "Principal Component Analysis (PCA)",
+            "C": "Linear Regression",
+            "D": "Association Rule Mining"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What type of predictive modeling is used when the target variable is continuous?",
+          "options": {
+            "A": "Classification",
+            "B": "Clustering",
+            "C": "Regression",
+            "D": "Association"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which algorithm is a popular linear model used for regression?",
+          "options": {
+            "A": "Decision Tree",
+            "B": "Support Vector Machine (SVM)",
+            "C": "Linear Regression",
+            "D": "K-Nearest Neighbors (KNN)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of splitting a dataset into training and testing sets in predictive modeling?",
+          "options": {
+            "A": "To increase the size of the dataset.",
+            "B": "To evaluate the performance of the model on unseen data.",
+            "C": "To make the model training faster.",
+            "D": "To perform exploratory data analysis."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common metric used to evaluate the performance of a regression model?",
+          "options": {
+            "A": "Accuracy",
+            "B": "Precision",
+            "C": "Mean Squared Error (MSE)",
+            "D": "F1-Score"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What type of predictive modeling is used when the target variable is categorical?",
+          "options": {
+            "A": "Regression",
+            "B": "Clustering",
+            "C": "Classification",
+            "D": "Time Series Analysis"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which algorithm is a tree-based classification technique?",
+          "options": {
+            "A": "Linear Regression",
+            "B": "Logistic Regression",
+            "C": "Decision Tree",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of a confusion matrix in classification?",
+          "options": {
+            "A": "To visualize the distribution of data points.",
+            "B": "To evaluate the performance of a classification model by showing the counts of true positives, true negatives, false positives, and false negatives.",
+            "C": "To identify the most important features in the data.",
+            "D": "To reduce the dimensionality of the data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a common metric used to evaluate the performance of a classification model?",
+          "options": {
+            "A": "R-squared",
+            "B": "Root Mean Squared Error (RMSE)",
+            "C": "Accuracy",
+            "D": "Mean Absolute Error (MAE)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the goal of Logistic Regression?",
+          "options": {
+            "A": "To predict a continuous outcome.",
+            "B": "To group data points into clusters.",
+            "C": "To predict the probability of a binary outcome.",
+            "D": "To reduce the number of features in the data."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What are ensemble methods in predictive modeling?",
+          "options": {
+            "A": "Techniques for visualizing model predictions.",
+            "B": "Methods that combine the predictions of multiple models to improve overall performance.",
+            "C": "Algorithms that work well with small datasets.",
+            "D": "Approaches for simplifying complex models."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is an example of an ensemble method?",
+          "options": {
+            "A": "Linear Regression",
+            "B": "K-Nearest Neighbors (KNN)",
+            "C": "Random Forest",
+            "D": "Principal Component Analysis (PCA)"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is feature engineering in predictive modeling?",
+          "options": {
+            "A": "The process of selecting the best machine learning algorithm.",
+            "B": "The process of transforming raw data into features that better represent the underlying problem to the predictive models.",
+            "C": "The process of evaluating the performance of a model.",
+            "D": "The process of deploying a model into production."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of cross-validation in predictive modeling?",
+          "options": {
+            "A": "To increase the training data size.",
+            "B": "To get a more robust estimate of the model's performance by training and evaluating it on multiple subsets of the data.",
+            "C": "To simplify the model architecture.",
+            "D": "To visualize the model's decision boundaries."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is regularization in the context of linear models?",
+          "options": {
+            "A": "A technique for handling missing values.",
+            "B": "A method to prevent overfitting by adding a penalty term to the model's loss function.",
+            "C": "A way to select the most important features.",
+            "D": "A technique for scaling features."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a time series forecasting technique?",
+          "options": {
+            "A": "Support Vector Machines (SVM)",
+            "B": "K-Means Clustering",
+            "C": "ARIMA (Autoregressive Integrated Moving Average)",
+            "D": "Naive Bayes"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the bias-variance tradeoff in predictive modeling?",
+          "options": {
+            "A": "The tradeoff between model complexity and interpretability.",
+            "B": "The tradeoff between the amount of training data and model performance.",
+            "C": "The tradeoff between a model's tendency to underfit (high bias) and overfit (high variance) the data.",
+            "D": "The tradeoff between different evaluation metrics."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is hyperparameter tuning in machine learning?",
+          "options": {
+            "A": "The process of training the model on the entire dataset.",
+            "B": "The process of selecting the best values for the parameters within a model.",
+            "C": "The process of selecting the best values for the settings that control the learning algorithm.",
+            "D": "The process of evaluating the model's performance on the test set."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Why is model interpretability important in some predictive modeling applications?",
+          "options": {
+            "A": "It always leads to better predictive accuracy.",
+            "B": "It helps in understanding why a model makes certain predictions, which is crucial for trust, debugging, and regulatory compliance in some domains.",
+            "C": "It makes the model training process faster.",
+            "D": "It reduces the complexity of the model."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

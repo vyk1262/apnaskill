@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Exploratory_Data_Analysis",
+      "questions": [
+        {
+          "question": "What is the primary goal of Exploratory Data Analysis (EDA)?",
+          "options": {
+            "A": "To build predictive models.",
+            "B": "To clean and preprocess the data.",
+            "C": "To understand the data's main characteristics, patterns, anomalies, and relationships.",
+            "D": "To deploy machine learning models."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which of the following is a common technique used in EDA for numerical data?",
+          "options": {
+            "A": "Bar charts",
+            "B": "Histograms",
+            "C": "Pie charts",
+            "D": "Word clouds"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What type of plot is useful for visualizing the distribution of a single numerical variable and identifying potential outliers?",
+          "options": {
+            "A": "Scatter plot",
+            "B": "Line plot",
+            "C": "Box plot",
+            "D": "Heatmap"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which EDA technique helps in understanding the relationship between two numerical variables?",
+          "options": {
+            "A": "Histogram",
+            "B": "Box plot",
+            "C": "Scatter plot",
+            "D": "Violin plot"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What type of chart is typically used to display the frequency or proportion of different categories in categorical data?",
+          "options": {
+            "A": "Scatter plot",
+            "B": "Histogram",
+            "C": "Bar chart",
+            "D": "Line plot"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does a correlation matrix help to visualize?",
+          "options": {
+            "A": "The distribution of individual variables.",
+            "B": "The relationships between multiple numerical variables.",
+            "C": "The frequency of categorical variables.",
+            "D": "The trend of a variable over time."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a summary statistic that describes the central tendency of a numerical dataset?",
+          "options": {
+            "A": "Range",
+            "B": "Variance",
+            "C": "Median",
+            "D": "Standard deviation"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the standard deviation measure?",
+          "options": {
+            "A": "The central value of the data.",
+            "B": "The spread or dispersion of the data around the mean.",
+            "C": "The shape of the data distribution.",
+            "D": "The correlation between variables."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the interquartile range (IQR) used for in EDA?",
+          "options": {
+            "A": "To measure the central tendency of the data.",
+            "B": "To measure the total spread of the data.",
+            "C": "To measure the spread of the middle 50% of the data and identify potential outliers.",
+            "D": "To determine the correlation between variables."
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the purpose of identifying missing values during EDA?",
+          "options": {
+            "A": "To remove all rows with missing values.",
+            "B": "To decide how to handle or impute missing data for further analysis.",
+            "C": "To convert missing values into a specific numerical value.",
+            "D": "Missing values do not affect data analysis."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What are the benefits of using visualizations in EDA?",
+          "options": {
+            "A": "They always provide definitive answers.",
+            "B": "They can reveal patterns, trends, and outliers that might not be apparent in summary statistics alone.",
+            "C": "They are only useful for presenting the final results.",
+            "D": "They eliminate the need for statistical analysis."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a heatmap commonly used for in EDA?",
+          "options": {
+            "A": "Visualizing the distribution of a single variable.",
+            "B": "Displaying the correlation matrix between multiple numerical variables.",
+            "C": "Showing the trend of a variable over time.",
+            "D": "Representing categorical data frequencies."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of a pair plot (scatter plot matrix)?",
+          "options": {
+            "A": "To visualize the distribution of a single variable.",
+            "B": "To visualize the pairwise relationships between multiple numerical variables.",
+            "C": "To show the hierarchical clustering of data points.",
+            "D": "To display geographical data."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What insights can be gained from examining the distribution of a variable?",
+          "options": {
+            "A": "Only the mean and median.",
+            "B": "The central tendency, spread, skewness, and presence of multiple modes.",
+            "C": "The correlation with other variables.",
+            "D": "The number of missing values."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does a skewed distribution indicate?",
+          "options": {
+            "A": "The data is perfectly symmetrical.",
+            "B": "The data has a long tail on one side of the distribution.",
+            "C": "The data has a very narrow spread.",
+            "D": "The data has no central tendency."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the role of domain knowledge in performing EDA?",
+          "options": {
+            "A": "It is not relevant to EDA.",
+            "B": "It helps in formulating relevant questions, interpreting findings, and identifying potential anomalies.",
+            "C": "It is only needed for the data collection phase.",
+            "D": "It is primarily used for building machine learning models."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the difference between univariate, bivariate, and multivariate EDA?",
+          "options": {
+            "A": "Univariate deals with time series data, bivariate with spatial data, and multivariate with textual data.",
+            "B": "Univariate explores one variable at a time, bivariate explores the relationship between two variables, and multivariate explores relationships among three or more variables.",
+            "C": "Univariate uses tables, bivariate uses charts, and multivariate uses statistical models.",
+            "D": "There is no significant difference between them."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which of the following is a tool or library commonly used for EDA in Python?",
+          "options": {
+            "A": "TensorFlow",
+            "B": "PyTorch",
+            "C": "Pandas and Matplotlib/Seaborn",
+            "D": "SQLAlchemy"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What is the importance of documenting the findings of an EDA process?",
+          "options": {
+            "A": "It is not necessary as EDA is just an initial step.",
+            "B": "It helps in communicating insights, justifying subsequent steps in the data science pipeline, and ensuring reproducibility.",
+            "C": "It is only useful for academic research.",
+            "D": "It is primarily for data cleaning purposes."
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the relationship between EDA and hypothesis generation?",
+          "options": {
+            "A": "EDA is performed after hypothesis testing.",
+            "B": "EDA can help in formulating initial hypotheses about the data that can be tested later.",
+            "C": "Hypothesis generation is not related to EDA.",
+            "D": "EDA is only used to confirm existing hypotheses."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

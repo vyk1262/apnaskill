@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "css_advanced",
+      "questions": [
+        {
+          "question": "What CSS property is used to create rounded corners?",
+          "options": {
+            "A": "border-radius",
+            "B": "corner-radius",
+            "C": "border-style",
+            "D": "border-corner"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which CSS property is used to apply an image as a border?",
+          "options": {
+            "A": "border-image",
+            "B": "background-image",
+            "C": "image-border",
+            "D": "border-style"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which property is used to set the background color of an element?",
+          "options": {
+            "A": "bg-color",
+            "B": "background-color",
+            "C": "color",
+            "D": "background"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does the 'rgba' function stand for in CSS?",
+          "options": {
+            "A": "Red, Green, Blue, Alpha",
+            "B": "Red, Green, Blue, Adjustment",
+            "C": "Red, Gray, Blue, Alpha",
+            "D": "Red, Green, Blue, Add"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which CSS function creates a gradient?",
+          "options": {
+            "A": "color-gradient()",
+            "B": "linear-gradient()",
+            "C": "gradient()",
+            "D": "bg-gradient()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the purpose of the 'box-shadow' property?",
+          "options": {
+            "A": "To create a shadow effect around an element",
+            "B": "To control text opacity",
+            "C": "To set the border color",
+            "D": "To add a background image"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which CSS property is used to apply a text shadow?",
+          "options": {
+            "A": "text-shadow",
+            "B": "shadow-text",
+            "C": "font-shadow",
+            "D": "text-effect"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What are web fonts used for in CSS?",
+          "options": {
+            "A": "To define font sizes",
+            "B": "To apply custom fonts that are not installed on the user's system",
+            "C": "To create bold text",
+            "D": "To manage text color"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which property is used to apply 2D transformations in CSS?",
+          "options": {
+            "A": "transform-2D",
+            "B": "transform",
+            "C": "2D-transform",
+            "D": "rotate"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What does the 'perspective' property affect in 3D transforms?",
+          "options": {
+            "A": "The height of an element",
+            "B": "The distance between the viewer and the object",
+            "C": "The rotation speed",
+            "D": "The color depth"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which CSS property allows you to animate changes to CSS properties?",
+          "options": {
+            "A": "animation",
+            "B": "transition",
+            "C": "transform",
+            "D": "effect"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which property is used to define a CSS animation's duration?",
+          "options": {
+            "A": "animation-time",
+            "B": "animation-duration",
+            "C": "transition-time",
+            "D": "animation-speed"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is a CSS tooltip?",
+          "options": {
+            "A": "A small popup that appears when a user hovers over an element",
+            "B": "A property to control z-index",
+            "C": "A method to change font size",
+            "D": "A way to animate elements"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the 'object-fit' property in CSS?",
+          "options": {
+            "A": "To specify how an element should be resized to fit its container",
+            "B": "To change the alignment of text",
+            "C": "To control the size of fonts",
+            "D": "To set the color of an object"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How do you create a reflection effect for an image in CSS?",
+          "options": {
+            "A": "Using the 'reflection' property",
+            "B": "Using 'image-reflection' property",
+            "C": "Using 'filter: reflect' property",
+            "D": "CSS does not support reflections"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What does the 'masking' property in CSS do?",
+          "options": {
+            "A": "Hides an element completely",
+            "B": "Creates a mask to show or hide parts of an element",
+            "C": "Changes the color of an element",
+            "D": "Adds a border to an element"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which CSS property is used to set custom variables?",
+          "options": {
+            "A": "--variable-name",
+            "B": "var()",
+            "C": "property",
+            "D": "custom-property"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the '@property' rule in CSS do?",
+          "options": {
+            "A": "Defines custom properties",
+            "B": "Specifies the order of styles",
+            "C": "Creates animations",
+            "D": "Sets the margin and padding"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of media queries in CSS?",
+          "options": {
+            "A": "To apply styles based on screen size or device characteristics",
+            "B": "To control animations",
+            "C": "To manage font sizes",
+            "D": "To create gradients"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What does the 'flexbox' layout model help with?",
+          "options": {
+            "A": "Creating multi-column layouts",
+            "B": "Aligning and distributing space among items in a container",
+            "C": "Animating elements",
+            "D": "Creating background images"
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

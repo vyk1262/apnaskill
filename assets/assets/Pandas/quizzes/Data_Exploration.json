@@ -1,0 +1,209 @@
+{
+  "result": [
+    {
+      "topic": "Data_Exploration",
+      "questions": [
+        {
+          "question": "Which Pandas method provides a concise summary of a DataFrame, including the data types of each column, the number of non-null values, and memory usage?",
+          "options": {
+            "A": ".describe()",
+            "B": ".info()",
+            "C": ".head()",
+            "D": ".shape"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you display the first 5 rows of a Pandas DataFrame named `df`?",
+          "options": {
+            "A": "print(df.first(5))",
+            "B": "df.head()",
+            "C": "df.show(5)",
+            "D": "df.top(5)"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you display the last 10 rows of a Pandas DataFrame named `df`?",
+          "options": {
+            "A": "df.tail(10)",
+            "B": "print(df.last(10))",
+            "C": "df.bottom(10)",
+            "D": "df.end(10)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which Pandas attribute returns the number of rows and columns of a DataFrame?",
+          "options": {
+            "A": ".size",
+            "B": ".ndim",
+            "C": ".shape",
+            "D": ".len()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you get a list of all the column names in a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.columns()",
+            "B": "list(df)",
+            "C": "df.columns.tolist()",
+            "D": "df.get_columns()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "Which Pandas method calculates descriptive statistics of the numerical columns in a DataFrame, such as count, mean, standard deviation, min, and max?",
+          "options": {
+            "A": ".summary()",
+            "B": ".describe()",
+            "C": ".statistics()",
+            "D": ".analyze()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you get the data type of each column in a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.dtypes",
+            "B": "df.type()",
+            "C": "df.column_types",
+            "D": "df.get_dtype()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which Pandas method returns the number of unique values in each column of a DataFrame?",
+          "options": {
+            "A": ".nunique()",
+            "B": ".unique_count()",
+            "C": ".value_counts().nunique()",
+            "D": ".count_unique()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you get the unique values of a specific column named 'Category' in a DataFrame `df`?",
+          "options": {
+            "A": "df['Category'].unique()",
+            "B": "df.unique('Category')",
+            "C": "df.Category.distinct()",
+            "D": "df['Category'].distinct()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which Pandas method returns the frequency count of each unique value in a Series?",
+          "options": {
+            "A": ".count()",
+            "B": ".frequency()",
+            "C": ".value_counts()",
+            "D": ".unique().count()"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "How can you check for missing values (NaN) in a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.isnull()",
+            "B": "df.missing()",
+            "C": "df.hasna()",
+            "D": "df.checkna()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which Pandas method returns a DataFrame of the same shape as the original, with boolean values indicating whether each value is NaN?",
+          "options": {
+            "A": ".isna()",
+            "B": ".notna()",
+            "C": ".isnull().sum()",
+            "D": ".fillna(0)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you get the number of missing values in each column of a DataFrame `df`?",
+          "options": {
+            "A": "df.isnull().count()",
+            "B": "df.isnull().sum()",
+            "C": "df.missing().sum()",
+            "D": "df.na_count()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which Pandas method can be used to get a random sample of rows from a DataFrame?",
+          "options": {
+            "A": ".sample()",
+            "B": ".random()",
+            "C": ".choice()",
+            "D": ".draw()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you get a 10% random sample of rows from a DataFrame `df`?",
+          "options": {
+            "A": "df.sample(frac=0.1)",
+            "B": "df.sample(n=0.1)",
+            "C": "df.sample(percent=10)",
+            "D": "df.sample(size=0.1)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "Which Pandas attribute provides access to the underlying NumPy array representing the data in a DataFrame?",
+          "options": {
+            "A": ".values",
+            "B": ".data",
+            "C": ".array",
+            "D": ".to_numpy()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "How can you transpose a Pandas DataFrame `df` (swap rows and columns)?",
+          "options": {
+            "A": "df.swap()",
+            "B": "df.transpose()",
+            "C": "df.T",
+            "D": "Both B and C"
+          },
+          "correct_answer": "D"
+        },
+        {
+          "question": "Which Pandas method can be used to get information about the index of a DataFrame?",
+          "options": {
+            "A": ".index_info()",
+            "B": ".index",
+            "C": ".get_index()",
+            "D": ".describe_index()"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "How can you sort the index of a Pandas DataFrame `df`?",
+          "options": {
+            "A": "df.sort_index()",
+            "B": "df.index.sort()",
+            "C": "df.sortby_index()",
+            "D": "df.order_index()"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What is the purpose of the `.value_counts(normalize=True)` method on a Pandas Series?",
+          "options": {
+            "A": "It returns the sum of the values.",
+            "B": "It returns the frequency of each unique value as a percentage.",
+            "C": "It returns the unique values sorted alphabetically.",
+            "D": "It returns the number of non-null values."
+          },
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}
