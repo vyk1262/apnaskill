@@ -11,14 +11,14 @@ class ContactCard extends StatelessWidget {
       {
         'icon': Icons.email,
         'title': 'Email',
-        'text': 'support@skillfactorial.com',
+        'text': 'skillfactorial@gmail.com',
       },
-      {'icon': Icons.phone, 'title': 'Phone', 'text': '+91 8175989767'},
-      {
-        'icon': Icons.message_rounded,
-        'title': 'Whatsapp',
-        'text': '+91 8175989767',
-      },
+      // {'icon': Icons.phone, 'title': 'Phone', 'text': '+91 8778605825'},
+      // {
+      //   'icon': Icons.message_rounded,
+      //   'title': 'Whatsapp',
+      //   'text': '+91 8778605825',
+      // },
       {
         'icon': Icons.location_on,
         'title': 'Location',

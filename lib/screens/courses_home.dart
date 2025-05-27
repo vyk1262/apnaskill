@@ -142,7 +142,7 @@ class _QuizListHomeState extends State<QuizListHome> {
         false;
 
     String imageUrl = ImageUrls.courseImages[internshipName] ??
-        'assets/student_home/sfcmp.png';
+        'https://i.ibb.co/W4KbgWSq/sfcmp.png';
 
     return Card(
       elevation: 5,
