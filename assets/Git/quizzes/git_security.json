@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "git_security",
+      "questions": [
+        {
+          "question": "What is the primary benefit of 'GPG signing' your Git commits?",
+          "options": {
+            "A": "It compresses the repository for secure transfer.",
+            "B": "It encrypts the commit message.",
+            "C": "It cryptographically verifies the identity of the commit author and ensures the integrity of the commit's content, preventing tampering.",
+            "D": "It automatically reverts malicious commits."
+          },
+          "correct_answer": "C",
+          "explanation": "GPG signing adds a layer of trust and accountability to your commit history, allowing others to verify that commits truly came from you and haven't been altered."
+        },
+        {
+          "question": "Which of the following is considered the most secure way to authenticate with remote Git repositories (e.g., GitHub, GitLab) for automated scripts or frequent pushes?",
+          "options": {
+            "A": "Typing your username and password every time.",
+            "B": "Storing your password directly in the `.git/config` file.",
+            "C": "Using SSH keys.",
+            "D": "Using HTTP with embedded credentials in the URL."
+          },
+          "correct_answer": "C",
+          "explanation": "SSH keys provide strong cryptographic authentication without requiring you to expose your password directly. They are more secure and convenient for regular use."
+        },
+        {
+          "question": "You accidentally committed a file containing sensitive API keys. What is the most effective way to remove this file from your Git history (not just the latest commit) to prevent future exposure?",
+          "options": {
+            "A": "`git rm sensitive_file.txt`",
+            "B": "`git revert <commit-hash>`",
+            "C": "Using tools like `git filter-repo` or BFG Repo-Cleaner to rewrite history.",
+            "D": "Adding `sensitive_file.txt` to `.gitignore`."
+          },
+          "correct_answer": "C",
+          "explanation": "Simply reverting or deleting the file in a new commit doesn't remove it from the historical commits. Tools like `git filter-repo` (or the older `git filter-branch` / BFG Repo-Cleaner) are necessary to completely scrub sensitive data from the repository's history. This rewrites history and should only be done with extreme caution on shared repos."
+        },
+        {
+          "question": "Why is it a bad practice to commit `node_modules/` or compiled binaries to your Git repository?",
+          "options": {
+            "A": "They are too small to track.",
+            "B": "They contain sensitive user data.",
+            "C": "They are often large, frequently change, can contain platform-specific compiled code, and bloat the repository, making cloning and operations slower.",
+            "D": "They are automatically ignored by Git."
+          },
+          "correct_answer": "C",
+          "explanation": "Such files should typically be excluded using `.gitignore` and managed by package managers (e.g., npm, Maven) rather than Git."
+        },
+        {
+          "question": "Which file should you use to tell Git which files and directories it should explicitly ignore and not track?",
+          "options": {
+            "A": "`.gitconfig`",
+            "B": "`.gitattributes`",
+            "C": "`.gitignore`",
+            "D": "`.gitmodules`"
+          },
+          "correct_answer": "C",
+          "explanation": "Properly configured `.gitignore` files are essential for preventing accidental commits of temporary files, build artifacts, IDE-specific files, and sensitive configurations."
+        },
+        {
+          "question": "What is the purpose of a 'Git credential helper'?",
+          "options": {
+            "A": "To help resolve merge conflicts.",
+            "B": "To securely store and retrieve Git credentials (like usernames and passwords or personal access tokens) in memory or on disk, so you don't have to enter them repeatedly.",
+            "C": "To help with GPG signing.",
+            "D": "To manage multiple Git identities."
+          },
+          "correct_answer": "B",
+          "explanation": "Credential helpers (e.g., `cache`, `store`, `osxkeychain`, `manager`) improve security and convenience by reducing the need to repeatedly input credentials."
+        },
+        {
+          "question": "You need to grant a continuous integration (CI) system access to your private Git repository. What is the recommended secure method for this?",
+          "options": {
+            "A": "Provide it with your personal username and password.",
+            "B": "Generate a dedicated deploy key (SSH) or a fine-grained personal access token with minimum required permissions for the CI system.",
+            "C": "Make the repository public temporarily.",
+            "D": "Store credentials directly in the CI script."
+          },
+          "correct_answer": "B",
+          "explanation": "Granting specific, limited-scope access tokens or deploy keys follows the principle of least privilege and provides better security posture, as they can be revoked independently."
+        },
+        {
+          "question": "Why should you avoid including sensitive information (e.g., passwords, API keys) directly in commit messages?",
+          "options": {
+            "A": "Commit messages are always public.",
+            "B": "They can be easily retrieved from the Git history, even if the commit is later reverted or rebased, making it difficult to fully remove the sensitive data.",
+            "C": "Commit messages are encrypted by default.",
+            "D": "It slows down `git log`."
+          },
+          "correct_answer": "B",
+          "explanation": "Always treat commit messages as public information. Secrets should be managed using environment variables or dedicated secret management systems."
+        },
+        {
+          "question": "What type of Git hook is typically used on the *server-side* to enforce policies, such as rejecting pushes that introduce certain file types or contain specific keywords?",
+          "options": {
+            "A": "`pre-commit`",
+            "B": "`post-merge`",
+            "C": "`pre-receive`",
+            "D": "`applypatch-msg`"
+          },
+          "correct_answer": "C",
+          "explanation": "Pre-receive hooks run on the remote repository server *before* a push is accepted, allowing for centralized policy enforcement and security checks."
+        },
+        {
+          "question": "If you are concerned about someone gaining unauthorized access to your Git repository, what is a crucial practice regarding your SSH keys or Personal Access Tokens?",
+          "options": {
+            "A": "Share them with your team for convenience.",
+            "B": "Store them in a public cloud storage.",
+            "C": "Keep them private and secure, and revoke them immediately if compromised.",
+            "D": "Embed them directly into your application code."
+          },
+          "correct_answer": "C",
+          "explanation": "Your SSH keys and PATs are akin to your passwords; their compromise grants direct access to your repositories."
+        },
+        {
+          "question": "Why should you generally avoid using `git push --force` on shared branches?",
+          "options": {
+            "A": "It can cause merge conflicts.",
+            "B": "It always requires rebase.",
+            "C": "It rewrites history on the remote, which can orphan collaborators' work, cause data loss, and create significant integration challenges for the team.",
+            "D": "It consumes more bandwidth."
+          },
+          "correct_answer": "C",
+          "explanation": "`git push --force` should only be used with extreme caution and clear communication, as it can be highly disruptive in a collaborative environment."
+        },
+        {
+          "question": "What does a 'squash' operation in Git (e.g., via interactive rebase) contribute to repository security?",
+          "options": {
+            "A": "It encrypts the commit history.",
+            "B": "It makes it harder to review changes.",
+            "C": "It can help consolidate multiple small commits (some of which might have temporarily contained sensitive data) into a cleaner commit, making it easier to audit and reducing the chances of secrets being spread across many commits.",
+            "D": "It automatically removes all sensitive data."
+          },
+          "correct_answer": "C",
+          "explanation": "While not a primary security tool, a clean, squashed history can simplify auditing and reduce the likelihood of secrets lingering in intermediate commits."
+        },
+        {
+          "question": "Is it generally safe to make your Git repository public if it contains code that needs to interact with private APIs (e.g., using API keys)?",
+          "options": {
+            "A": "Yes, as long as the API keys are in a separate file.",
+            "B": "No, unless you've ensured that all sensitive information (like API keys) is *never* committed to the repository and is handled via environment variables or secure secret management systems.",
+            "C": "Only if the API keys are encrypted.",
+            "D": "Only if the repository is read-only."
+          },
+          "correct_answer": "B",
+          "explanation": "Public repositories mean public access to *everything* within them. Sensitive data must be completely externalized and never checked into Git."
+        },
+        {
+          "question": "What is a 'pre-commit hook' primarily used for in terms of security?",
+          "options": {
+            "A": "To verify that all commits are signed.",
+            "B": "To ensure that files with sensitive extensions (e.g., `.pem`, `.key`) or specific patterns (e.g., API key formats) are not accidentally staged or committed.",
+            "C": "To prevent unauthorized users from committing.",
+            "D": "To automatically encrypt files before committing."
+          },
+          "correct_answer": "B",
+          "explanation": "Pre-commit hooks are excellent for client-side enforcement of security policies, catching potential leaks before they even enter the local repository."
+        },
+        {
+          "question": "If you notice a large binary file (e.g., a `.zip` archive) has been committed and pushed to your remote repository, significantly bloating its size, what is the best tool to mitigate this *after* the fact?",
+          "options": {
+            "A": "`git rm large_file.zip`",
+            "B": "`git revert <commit-hash>`",
+            "C": "Git LFS (Large File Storage) for future files, and a history rewriting tool (like `git filter-repo`) for existing historical large files.",
+            "D": "`git clean -f`"
+          },
+          "correct_answer": "C",
+          "explanation": "Git LFS handles large files going forward, but to remove them from *past history* and reclaim space, you need a history rewriting tool."
+        },
+        {
+          "question": "Which of the following is NOT a good practice for securing your Git workflow?",
+          "options": {
+            "A": "Regularly reviewing code for hardcoded credentials.",
+            "B": "Using multi-factor authentication (MFA) for your Git hosting provider account.",
+            "C": "Embedding API keys directly into your source code for easier access.",
+            "D": "Educating your team on Git security best practices."
+          },
+          "correct_answer": "C",
+          "explanation": "Hardcoding credentials is a major security vulnerability. They should be managed externally."
+        },
+        {
+          "question": "When configuring Git globally, it's recommended to set your `user.name` and `user.email`. Why is using a consistent, verifiable email important for security and auditing?",
+          "options": {
+            "A": "It encrypts your commits.",
+            "B": "It allows others to trace who made specific changes and contact the author if issues arise, aiding in auditing and accountability.",
+            "C": "It prevents merge conflicts.",
+            "D": "It automatically signs your commits."
+          },
+          "correct_answer": "B",
+          "explanation": "Consistent and accurate author information is vital for traceability and understanding the history of a project, especially in team environments."
+        },
+        {
+          "question": "What is the primary risk of cloning repositories from untrusted sources?",
+          "options": {
+            "A": "They might consume too much disk space.",
+            "B": "They might contain malicious hooks, scripts, or content that could compromise your system when executed.",
+            "C": "They might have too many branches.",
+            "D": "They might have large merge conflicts."
+          },
+          "correct_answer": "B",
+          "explanation": "Always be cautious when cloning from unknown sources. Malicious actors can embed harmful code, particularly in Git hooks, that could execute on your machine."
+        },
+        {
+          "question": "For personal access tokens (PATs) used with Git hosting services, what is a crucial security recommendation?",
+          "options": {
+            "A": "Generate one token and use it for all your repositories indefinitely.",
+            "B": "Generate tokens with the broadest possible scopes (permissions) to avoid future issues.",
+            "C": "Generate tokens with the principle of least privilege (minimum necessary scopes) and set an expiration date if possible.",
+            "D": "Share your PATs with your team for collaborative access."
+          },
+          "correct_answer": "C",
+          "explanation": "Limiting permissions and setting expiration dates reduces the attack surface and potential damage if a token is compromised."
+        },
+        {
+          "question": "True or False: Deleting a sensitive file from your working directory and committing that deletion is sufficient to remove it permanently from the entire Git repository's history, including past commits.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Deleting a file and committing only removes it from the repository from that commit onwards. It remains in all prior commits' history. To fully purge it, history rewriting tools are required."
+        }
+      ]
+    }
+  ]
+}

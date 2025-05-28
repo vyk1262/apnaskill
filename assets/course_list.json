@@ -40,6 +40,20 @@
     "node_performance",
     "node_architecture"
   ],
+  "Git": [
+    "git_intro",
+    "git_commands",
+    "git_repositories",
+    "git_branches",
+    "git_merging",
+    "git_collaboration",
+    "git_undoing_changes",
+    "git_rebasing",
+    "git_advanced",
+    "git_security",
+    "git_deployment",
+    "git_optimization"
+  ],
   "Data Science": [
     "Data_Science_Fundamentals",
     "Data_Collection_and_Preparation",

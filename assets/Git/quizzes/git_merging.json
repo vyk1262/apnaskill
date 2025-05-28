@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "git_merging",
+      "questions": [
+        {
+          "question": "What is the primary purpose of `git merge`?",
+          "options": {
+            "A": "To create a new branch.",
+            "B": "To combine changes from one or more branches into your current branch.",
+            "C": "To delete a branch from the repository.",
+            "D": "To revert to a previous commit."
+          },
+          "correct_answer": "B",
+          "explanation": "`git merge` integrates divergent lines of development, bringing commits from another branch into your current one."
+        },
+        {
+          "question": "If you are on the `main` branch and want to integrate changes from your `feature` branch into `main`, which command sequence would you use?",
+          "options": {
+            "A": "`git merge main feature`",
+            "B": "`git checkout feature` then `git merge main`",
+            "C": "`git checkout main` then `git merge feature`",
+            "D": "`git pull feature main`"
+          },
+          "correct_answer": "C",
+          "explanation": "You always merge *into* your current branch. So, switch to `main` first, then merge `feature` into it."
+        },
+        {
+          "question": "What is a 'Fast-Forward merge' in Git?",
+          "options": {
+            "A": "A merge that involves complex conflict resolution.",
+            "B": "A merge where Git only moves the current branch pointer forward because the target branch's commits are direct ancestors of the current branch, resulting in no new merge commit.",
+            "C": "A merge that automatically creates a new commit every time.",
+            "D": "A merge that re-applies commits on top of another branch."
+          },
+          "correct_answer": "B",
+          "explanation": "Fast-forward merges occur when there are no divergent commits between the source and target branches. The history remains linear."
+        },
+        {
+          "question": "When does a 'Three-Way merge' occur?",
+          "options": {
+            "A": "When three branches are merged simultaneously.",
+            "B": "When the branch being merged has no common history with the target branch.",
+            "C": "When the histories of the two branches being merged have diverged, requiring Git to find a common ancestor and combine changes from both branches.",
+            "D": "When the merge operation is done manually."
+          },
+          "correct_answer": "C",
+          "explanation": "Git uses the common ancestor (the 'third way') and the tips of the two branches to combine changes, resulting in a new merge commit."
+        },
+        {
+          "question": "What is a 'merge conflict'?",
+          "options": {
+            "A": "An error that prevents Git from tracking changes.",
+            "B": "A situation where Git cannot automatically combine changes from two branches because the same lines of code have been modified differently.",
+            "C": "A problem with connecting to the remote repository.",
+            "D": "A conflict between two Git users over who can commit first."
+          },
+          "correct_answer": "B",
+          "explanation": "Merge conflicts require manual intervention from the developer to resolve the discrepancies and tell Git how the final code should look."
+        },
+        {
+          "question": "When a merge conflict occurs, what state is your repository in?",
+          "options": {
+            "A": "Clean, all changes are discarded.",
+            "B": "A detached HEAD state.",
+            "C": "A 'merging' state, indicated by `(merging)` next to the branch name in `git status`.",
+            "D": "A 'rebasing' state."
+          },
+          "correct_answer": "C",
+          "explanation": "Git pauses the merge process and expects you to resolve the conflicts before committing the merge."
+        },
+        {
+          "question": "Which file markers indicate a merge conflict in a file?",
+          "options": {
+            "A": "`<<<<<<<`, `=======`, `>>>>>>>`",
+            "B": "`### CONFLICT ###`",
+            "C": "`--- MERGE ---`",
+            "D": "`// Conflict detected`"
+          },
+          "correct_answer": "A",
+          "explanation": "Git inserts these markers to show you the conflicting sections. `<<<<<<< HEAD` marks your current branch's changes, `=======` separates the conflicting parts, and `>>>>>>> <branch_name>` marks the incoming branch's changes."
+        },
+        {
+          "question": "After resolving conflicts in a file, what is the next step before committing the merge?",
+          "options": {
+            "A": "`git commit -m \"Resolved conflicts\"`",
+            "B": "`git push`",
+            "C": "`git add <conflicted_file>`",
+            "D": "`git checkout <conflicted_file>`"
+          },
+          "correct_answer": "C",
+          "explanation": "You must `git add` the resolved file(s) to the staging area to tell Git that the conflicts have been resolved and the file is ready to be committed as part of the merge."
+        },
+        {
+          "question": "What command allows you to abort a merge in progress, returning your repository to the state it was in before you started the merge?",
+          "options": {
+            "A": "`git merge --cancel`",
+            "B": "`git merge --abort`",
+            "C": "`git reset --hard HEAD`",
+            "D": "`git clean -fd`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git merge --abort` is specifically designed to stop an ongoing merge and revert to the pre-merge state."
+        },
+        {
+          "question": "What is `git mergetool` used for?",
+          "options": {
+            "A": "To perform a merge automatically.",
+            "B": "To launch an external visual diff/merge tool to help resolve merge conflicts more easily.",
+            "C": "To show a graphical representation of the merge history.",
+            "D": "To verify if a merge was successful."
+          },
+          "correct_answer": "B",
+          "explanation": "Many developers prefer visual tools (like VS Code, KDiff3, Meld) for complex merge conflicts, and `git mergetool` integrates with them."
+        },
+        {
+          "question": "After `git merge` completes successfully (without conflicts or after resolving them), what does Git automatically do?",
+          "options": {
+            "A": "Pushes the changes to the remote.",
+            "B": "Creates a new merge commit (for three-way merges).",
+            "C": "Deletes the merged branch.",
+            "D": "Prompts for `git rebase`."
+          },
+          "correct_answer": "B",
+          "explanation": "Unless it's a fast-forward merge, a new commit is created to record the integration of the two histories."
+        },
+        {
+          "question": "If you perform a `git merge --no-ff feature` while on `main`, what does the `--no-ff` option ensure?",
+          "options": {
+            "A": "It forces a fast-forward merge.",
+            "B": "It prevents a fast-forward merge, forcing a new merge commit even if a fast-forward is possible.",
+            "C": "It aborts the merge if it would be a fast-forward.",
+            "D": "It merges all changes without any commit."
+          },
+          "correct_answer": "B",
+          "explanation": "`--no-ff` is useful for preserving the history of a feature branch explicitly, making it clear when a feature was integrated."
+        },
+        {
+          "question": "What is the common merge strategy Git uses by default for divergent branches?",
+          "options": {
+            "A": "Ours strategy",
+            "B": "Theirs strategy",
+            "C": "Recursive strategy",
+            "D": "Subtree strategy"
+          },
+          "correct_answer": "C",
+          "explanation": "The recursive strategy is Git's default for standard merges with common ancestors, balancing speed and robustness."
+        },
+        {
+          "question": "True or False: A fast-forward merge always creates a new merge commit.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. A fast-forward merge simply moves the branch pointer forward without creating a new merge commit, resulting in a linear history."
+        },
+        {
+          "question": "In a merge conflict, if you want to keep only the changes from 'your' (current branch) version of the conflicted file, what should you do?",
+          "options": {
+            "A": "Delete the file and revert it.",
+            "B": "Manually edit the file, remove the conflict markers, and keep only the `<<<<<<< HEAD` section's content, then `git add` and `git commit`.",
+            "C": "Run `git merge --theirs`.",
+            "D": "Run `git checkout --ours <file>`."
+          },
+          "correct_answer": "B",
+          "explanation": "While `git checkout --ours <file>` can be used, the manual edit followed by `git add` and `git commit` is the most common way to explicitly choose sides in a conflict."
+        },
+        {
+          "question": "If you have a file with merge conflicts and you accidentally make changes that break the file, but haven't staged it yet, how can you reset that specific file to its state before you started trying to resolve the conflict (i.e., with conflict markers)?",
+          "options": {
+            "A": "`git reset HEAD <file>`",
+            "B": "`git clean <file>`",
+            "C": "`git checkout --conflict <file>`",
+            "D": "`git checkout --merge <file>`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git checkout --merge <file>` (or simply `git checkout <file>`) effectively re-creates the file with the conflict markers, allowing you to start the resolution process for that file again."
+        },
+        {
+          "question": "What happens if you try to merge two branches that have no common history?",
+          "options": {
+            "A": "It will automatically create a new common ancestor.",
+            "B": "Git will refuse to merge them unless you use the `--allow-unrelated-histories` option.",
+            "C": "It will perform a fast-forward merge.",
+            "D": "It will delete both branches."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a safety feature to prevent accidental merging of completely separate projects. You typically encounter this when merging two distinct initial commits."
+        },
+        {
+          "question": "Consider a scenario where `main` has a commit, and `feature` has a commit that directly descends from `main`'s commit. If you `git merge feature` from `main`, what kind of merge will occur by default?",
+          "options": {
+            "A": "Three-Way Merge",
+            "B": "Recursive Merge",
+            "C": "Fast-Forward Merge",
+            "D": "Rebase Merge"
+          },
+          "correct_answer": "C",
+          "explanation": "Since `feature`'s history is a direct linear extension of `main`'s, Git can simply move `main`'s pointer forward."
+        },
+        {
+          "question": "What is the purpose of the `MERGE_HEAD` file in the `.git` directory during a merge conflict?",
+          "options": {
+            "A": "It points to the commit of the current branch.",
+            "B": "It points to the commit of the branch being merged into the current branch.",
+            "C": "It indicates the common ancestor of the two branches.",
+            "D": "It's a temporary file used for conflict resolution notes."
+          },
+          "correct_answer": "B",
+          "explanation": "`MERGE_HEAD` is a reference that Git sets during a merge to point to the tip of the branch that you are merging *from*."
+        },
+        {
+          "question": "After resolving a merge conflict and staging the files, what will the default commit message suggest?",
+          "options": {
+            "A": "`WIP: Merge conflict resolved.`",
+            "B": "A pre-filled message indicating a merge commit, typically including the names of the merged branches.",
+            "C": "`Merge complete.`",
+            "D": "A blank message, requiring full input."
+          },
+          "correct_answer": "B",
+          "explanation": "Git auto-generates a useful default merge commit message, often including information about the branches involved and the merge strategy, which you can edit before finalizing the commit."
+        }
+      ]
+    }
+  ]
+}

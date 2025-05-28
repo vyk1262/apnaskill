@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "git_intro",
+      "questions": [
+        {
+          "question": "What is Git primarily used for?",
+          "options": {
+            "A": "Writing and editing text documents.",
+            "B": "Managing database systems.",
+            "C": "Version control of source code and other files.",
+            "D": "Sending emails between developers."
+          },
+          "correct_answer": "C",
+          "explanation": "Git is a Distributed Version Control System (DVCS) designed to track changes in source code during software development."
+        },
+        {
+          "question": "Which of the following best describes Git's nature?",
+          "options": {
+            "A": "Centralized Version Control System (CVCS)",
+            "B": "Distributed Version Control System (DVCS)",
+            "C": "File Transfer Protocol (FTP) client",
+            "D": "Integrated Development Environment (IDE)"
+          },
+          "correct_answer": "B",
+          "explanation": "In Git, every developer's working copy of the code is a full-fledged repository with complete history and not just a snapshot, making it distributed."
+        },
+        {
+          "question": "What is a 'repository' in Git?",
+          "options": {
+            "A": "A single file in a project.",
+            "B": "A central server where all code is stored exclusively.",
+            "C": "A directory where your project's files are stored, along with the complete history of changes.",
+            "D": "A temporary storage location for deleted files."
+          },
+          "correct_answer": "C",
+          "explanation": "A Git repository (or 'repo') contains all the project files and the Git database, which tracks changes over time."
+        },
+        {
+          "question": "What does 'version control' mean in the context of Git?",
+          "options": {
+            "A": "Controlling which programming language to use.",
+            "B": "Keeping track of changes made to files over time, allowing you to revert to previous versions.",
+            "C": "Controlling access permissions for users.",
+            "D": "Managing software licenses."
+          },
+          "correct_answer": "B",
+          "explanation": "Version control allows you to record changes to a file or set of files over time so that you can recall specific versions later."
+        },
+        {
+          "question": "What is a 'commit' in Git?",
+          "options": {
+            "A": "A request to delete a file.",
+            "B": "A saved snapshot of your project's files at a specific point in time, along with a message describing the changes.",
+            "C": "A temporary backup of your work.",
+            "D": "A command to connect to a remote server."
+          },
+          "correct_answer": "B",
+          "explanation": "A commit is a fundamental unit of change in Git. Each commit has a unique ID and points to a previous commit, forming a history."
+        },
+        {
+          "question": "Which of the following is NOT a core advantage of using Git?",
+          "options": {
+            "A": "Collaboration among multiple developers.",
+            "B": "Ability to easily revert to previous states of the project.",
+            "C": "Automatic debugging of code errors.",
+            "D": "Tracking changes in source code history."
+          },
+          "correct_answer": "C",
+          "explanation": "Git is a version control system, not a debugging tool. While it helps track changes that might introduce bugs, it doesn't automatically debug code."
+        },
+        {
+          "question": "What is the 'working directory' in Git?",
+          "options": {
+            "A": "The area where Git stores all repository history.",
+            "B": "The directory on your file system where you currently have a snapshot of your project checked out for editing.",
+            "C": "A cloud storage location for your code.",
+            "D": "The place where compiled code is stored."
+          },
+          "correct_answer": "B",
+          "explanation": "The working directory is the actual set of files you are currently modifying and seeing on your local machine."
+        },
+        {
+          "question": "What is the 'staging area' (also known as the 'index') in Git?",
+          "options": {
+            "A": "A place where Git stores old versions of files.",
+            "B": "A temporary waiting area for files that you want to include in the next commit.",
+            "C": "The directory where all Git commands are executed.",
+            "D": "A remote server for collaboration."
+          },
+          "correct_answer": "B",
+          "explanation": "The staging area allows you to selectively choose which changes you want to include in your next commit. You `add` files to the staging area before `commit`ting them."
+        },
+        {
+          "question": "What is a 'remote repository' in Git?",
+          "options": {
+            "A": "A repository that is only accessible offline.",
+            "B": "A local copy of a repository on your machine.",
+            "C": "A version of your repository hosted on the Internet or network, used for collaboration.",
+            "D": "A repository that stores only images."
+          },
+          "correct_answer": "C",
+          "explanation": "Remote repositories (like those on GitHub, GitLab, Bitbucket) are central points for developers to share and collaborate on code."
+        },
+        {
+          "question": "Why is Git considered 'distributed'?",
+          "options": {
+            "A": "Because it runs on multiple computers simultaneously.",
+            "B": "Because every developer has a complete copy of the entire repository history locally.",
+            "C": "Because it distributes compiled code to users.",
+            "D": "Because it distributes tasks to different developers."
+          },
+          "correct_answer": "B",
+          "explanation": "This distributed nature is a key advantage, allowing developers to work offline and making data loss less likely."
+        },
+        {
+          "question": "What is the primary function of the `git init` command?",
+          "options": {
+            "A": "To commit changes to the repository.",
+            "B": "To create a new, empty Git repository or reinitialize an existing one in the current directory.",
+            "C": "To clone an existing repository from a remote server.",
+            "D": "To delete a repository."
+          },
+          "correct_answer": "B",
+          "explanation": "`git init` sets up the necessary Git files and directories to start tracking a project."
+        },
+        {
+          "question": "What is the primary function of the `git clone` command?",
+          "options": {
+            "A": "To create a new local repository.",
+            "B": "To copy changes from the staging area to the repository.",
+            "C": "To create a local copy of an existing remote repository.",
+            "D": "To delete files from the working directory."
+          },
+          "correct_answer": "C",
+          "explanation": "`git clone` is how you get a copy of a project that's already under Git version control, typically from a remote server."
+        },
+        {
+          "question": "Before making a commit, where do changes from your working directory need to be moved first?",
+          "options": {
+            "A": "To the remote repository.",
+            "B": "To a temporary backup folder.",
+            "C": "To the staging area (index).",
+            "D": "Directly to the previous commit."
+          },
+          "correct_answer": "C",
+          "explanation": "You use `git add` to move changes from the working directory to the staging area, preparing them for the next commit."
+        },
+        {
+          "question": "What is a 'hash' (or SHA-1 hash) in Git?",
+          "options": {
+            "A": "A secret password for the repository.",
+            "B": "A unique identifier for each commit, branch, and other Git objects.",
+            "C": "A command to delete history.",
+            "D": "A type of network connection."
+          },
+          "correct_answer": "B",
+          "explanation": "Git uses SHA-1 hashes to uniquely identify content and ensure data integrity. Every commit, tree, and blob object has a unique SHA-1 hash."
+        },
+        {
+          "question": "What is the role of the `.git` directory inside a Git repository?",
+          "options": {
+            "A": "It contains all the project's source code.",
+            "B": "It's the actual Git repository, containing all the history, configuration, and internal data.",
+            "C": "It's a temporary folder for cached files.",
+            "D": "It stores only the license information."
+          },
+          "correct_answer": "B",
+          "explanation": "The `.git` directory is where Git stores everything it needs to track your project, including the object database, references, hooks, etc."
+        },
+        {
+          "question": "How does Git primarily store changes?",
+          "options": {
+            "A": "As a series of diffs (differences) between files.",
+            "B": "As snapshots of the entire project at each commit point.",
+            "C": "By compressing all files into a single archive.",
+            "D": "By deleting old versions of files."
+          },
+          "correct_answer": "B",
+          "explanation": "Git stores data as a series of snapshots. When you commit, Git records a snapshot of your entire project. If files haven't changed, Git links to the previous identical file, saving space efficiently."
+        },
+        {
+          "question": "What is the purpose of a 'branch' in Git (at an introductory level)?",
+          "options": {
+            "A": "To permanently separate project files.",
+            "B": "To create a separate line of development to work on new features or fixes without affecting the main codebase.",
+            "C": "To backup the entire repository.",
+            "D": "To connect to a different remote server."
+          },
+          "correct_answer": "B",
+          "explanation": "Branches allow developers to experiment with new ideas or work on features in isolation, which can then be merged back into the main line of development."
+        },
+        {
+          "question": "Which command is used to record changes to the repository?",
+          "options": {
+            "A": "`git add`",
+            "B": "`git status`",
+            "C": "`git commit`",
+            "D": "`git log`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git commit` takes the changes from the staging area and permanently records them into the repository's history."
+        },
+        {
+          "question": "What does `git status` command typically show?",
+          "options": {
+            "A": "The last commit message.",
+            "B": "Information about the current branch, modified files, staged files, and untracked files.",
+            "C": "Network connection status.",
+            "D": "The current working directory's file size."
+          },
+          "correct_answer": "B",
+          "explanation": "`git status` provides a summary of the current state of your working directory and staging area, indicating what changes are ready to be committed or still need to be staged."
+        },
+        {
+          "question": "Can you use Git effectively without an internet connection after cloning a repository?",
+          "options": {
+            "A": "No, Git always requires an internet connection.",
+            "B": "Yes, because Git is distributed, you have a full local copy of the repository and can commit changes offline.",
+            "C": "Only for viewing file history.",
+            "D": "Only if you are the sole developer."
+          },
+          "correct_answer": "B",
+          "explanation": "This offline capability is a significant advantage of DVCS like Git over CVCS, allowing developers to work on their local copy and sync later."
+        }
+      ]
+    }
+  ]
+}

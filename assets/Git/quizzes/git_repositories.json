@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "git_repositories",
+      "questions": [
+        {
+          "question": "What is the fundamental difference between a 'local repository' and a 'remote repository' in Git?",
+          "options": {
+            "A": "Local repositories store only code, while remote repositories store only history.",
+            "B": "Local repositories exist on your machine for personal work; remote repositories are hosted elsewhere (e.g., GitHub) for collaboration.",
+            "C": "Local repositories are read-only; remote repositories are read-write.",
+            "D": "There is no difference; they are interchangeable terms."
+          },
+          "correct_answer": "B",
+          "explanation": "Every Git clone creates a full local repository on your machine, allowing offline work. Remote repositories serve as central points for sharing and syncing changes."
+        },
+        {
+          "question": "Which command is used to create a brand new, empty Git repository in your current working directory?",
+          "options": {
+            "A": "`git clone`",
+            "B": "`git new`",
+            "C": "`git create`",
+            "D": "`git init`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git init` initializes a new Git repository, creating the hidden `.git` directory to store all repository metadata and history."
+        },
+        {
+          "question": "After running `git init`, what crucial directory is created that contains all of Git's internal data for the repository?",
+          "options": {
+            "A": "`.git_cache`",
+            "B": "`.git`",
+            "C": "`.repo`",
+            "D": "`.gitignore`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `.git` directory is the core of your repository, storing all commits, branches, configurations, and other Git objects."
+        },
+        {
+          "question": "If you want to start working on an existing project that's already in a remote Git repository, which command would you use to get a local copy?",
+          "options": {
+            "A": "`git init`",
+            "B": "`git download`",
+            "C": "`git pull`",
+            "D": "`git clone`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git clone <repository_url>` creates a complete local copy of the remote repository, including all its history and branches, and automatically sets up a default remote named `origin`."
+        },
+        {
+          "question": "By default, when you clone a repository, what is the name given to the primary remote repository that it's linked to?",
+          "options": {
+            "A": "`main`",
+            "B": "`master`",
+            "C": "`origin`",
+            "D": "`remote`"
+          },
+          "correct_answer": "C",
+          "explanation": "Git automatically names the remote from which you cloned as `origin`, making it easy to refer to the original remote repository."
+        },
+        {
+          "question": "Which command is used to see a list of all configured remote repositories for your current local repository?",
+          "options": {
+            "A": "`git status`",
+            "B": "`git log`",
+            "C": "`git remote -v`",
+            "D": "`git config --list`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git remote -v` shows the short names of your remotes along with their corresponding URLs (fetch and push URLs)."
+        },
+        {
+          "question": "You've created a new empty local repository (`git init`). Now you want to link it to a remote repository on GitHub. Which command would you use?",
+          "options": {
+            "A": "`git push origin main`",
+            "B": "`git clone <url>`",
+            "C": "`git remote add origin <url>`",
+            "D": "`git link <url>`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git remote add <name> <url>` adds a new remote to your local repository. `origin` is the conventional name for the primary remote."
+        },
+        {
+          "question": "What is the purpose of the `.gitignore` file in a Git repository?",
+          "options": {
+            "A": "To specify which files should be committed to the repository.",
+            "B": "To list files and directories that Git should explicitly ignore and not track.",
+            "C": "To store secret credentials for the repository.",
+            "D": "To define the license of the project."
+          },
+          "correct_answer": "B",
+          "explanation": "`.gitignore` is crucial for preventing unnecessary files (like `node_modules`, build artifacts, or sensitive configuration) from being accidentally committed to your repository."
+        },
+        {
+          "question": "Which Git command is used to remove a remote repository connection from your local Git configuration?",
+          "options": {
+            "A": "`git remote delete <name>`",
+            "B": "`git remote rm <name>`",
+            "C": "`git disconnect <name>`",
+            "D": "`git unlink <name>`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git remote rm` is the command to remove a remote, meaning Git will no longer track that remote URL."
+        },
+        {
+          "question": "What happens when you `git fetch origin`?",
+          "options": {
+            "A": "It merges remote changes into your current local branch.",
+            "B": "It downloads new commits and objects from the 'origin' remote but does NOT merge them into your local branches.",
+            "C": "It sends your local commits to the 'origin' remote.",
+            "D": "It deletes all remote branches."
+          },
+          "correct_answer": "B",
+          "explanation": "`git fetch` updates your local copy of the remote repository's branches (e.g., `origin/main`), but keeps your local working branch separate, allowing you to review changes before merging."
+        },
+        {
+          "question": "Which command is a combination of `git fetch` and `git merge` (or `git rebase`, depending on configuration)?",
+          "options": {
+            "A": "`git sync`",
+            "B": "`git update`",
+            "C": "`git pull`",
+            "D": "`git download`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git pull` is a convenience command that first fetches content from the remote and then integrates it into your current local branch. Be cautious with `git pull` if you prefer to review changes before merging."
+        },
+        {
+          "question": "When you `git push origin main`, what does `origin` refer to?",
+          "options": {
+            "A": "The branch name you are pushing to.",
+            "B": "The specific commit hash.",
+            "C": "The name of the remote repository.",
+            "D": "The user who committed the changes."
+          },
+          "correct_answer": "C",
+          "explanation": "`origin` is the default alias for the remote repository that your local repository was cloned from (or the first remote added)."
+        },
+        {
+          "question": "If you are working in a local repository and want to set up a new remote repository named `my_backup` pointing to a new URL, which command would you use?",
+          "options": {
+            "A": "`git remote new my_backup <url>`",
+            "B": "`git add remote my_backup <url>`",
+            "C": "`git remote add my_backup <url>`",
+            "D": "`git link my_backup <url>`"
+          },
+          "correct_answer": "C",
+          "explanation": "This command correctly adds a new remote with a custom name to your local Git configuration."
+        },
+        {
+          "question": "What is the default main development branch usually named in Git when you initialize a new repository or clone one?",
+          "options": {
+            "A": "`develop` or `dev`",
+            "B": "`master` (historically) or `main` (increasingly common)",
+            "C": "`release`",
+            "D": "`feature`"
+          },
+          "correct_answer": "B",
+          "explanation": "Historically, `master` was the default. Due to inclusive language initiatives, `main` has become the new default in many Git hosting platforms like GitHub and GitLab."
+        },
+        {
+          "question": "You have a local repository and a remote repository. You've made several local commits. To send these commits to the remote, ensuring your local branch is linked to the remote, what's a common initial `git push` command?",
+          "options": {
+            "A": "`git push`",
+            "B": "`git push --all`",
+            "C": "`git push -u origin main`",
+            "D": "`git push --force`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git push -u origin main` (or `git push --set-upstream origin main`) sets up the upstream tracking for your local `main` branch, so subsequent `git push` and `git pull` commands don't need `origin main` explicitly."
+        },
+        {
+          "question": "What happens if you try to `git push` to a remote repository that has changes you haven't pulled yet?",
+          "options": {
+            "A": "Your changes will overwrite the remote changes.",
+            "B": "Git will automatically merge your changes with the remote.",
+            "C": "The push will be rejected, and Git will advise you to `git pull` first.",
+            "D": "Git will create a new branch on the remote."
+          },
+          "correct_answer": "C",
+          "explanation": "This is Git's safety mechanism to prevent overwriting history. You must integrate the remote changes into your local branch first (usually with `git pull`) before you can push."
+        },
+        {
+          "question": "When cloning a repository, what does the `--bare` option do (e.g., `git clone --bare my_project`)?",
+          "options": {
+            "A": "Clones only the latest commit without history.",
+            "B": "Clones the repository without the working directory, creating a bare repository that is typically used as a central remote repository.",
+            "C": "Clones only the `.gitignore` file.",
+            "D": "Clones the repository and immediately deletes all files."
+          },
+          "correct_answer": "B",
+          "explanation": "A bare repository doesn't have a working directory checkout, making it suitable for acting as a central server where developers push and pull from, rather than directly working in it."
+        },
+        {
+          "question": "If you realize you made a mistake and accidentally added a sensitive file (e.g., a `.env` file) to your repository that should be ignored, what is the first step you should take?",
+          "options": {
+            "A": "Delete the file directly from your working directory.",
+            "B": "Add the file's name to `.gitignore`.",
+            "C": "Commit the `.env` file and then remove it.",
+            "D": "Rename the `.env` file."
+          },
+          "correct_answer": "B",
+          "explanation": "Adding it to `.gitignore` prevents future accidental commits. Afterwards, you'd typically need to `git rm --cached` the file if it's already tracked, to remove it from the repository without deleting it locally, then commit that removal."
+        },
+        {
+          "question": "What is the purpose of `git remote set-url origin <new_url>`?",
+          "options": {
+            "A": "To add a new remote named `origin`.",
+            "B": "To delete the `origin` remote.",
+            "C": "To change the URL for an existing remote named `origin`.",
+            "D": "To push all branches to a new URL."
+          },
+          "correct_answer": "C",
+          "explanation": "This command is used when the URL of your remote repository changes (e.g., if you migrate from one hosting service to another)."
+        },
+        {
+          "question": "Is it possible for a single local Git repository to be connected to multiple remote repositories?",
+          "options": {
+            "A": "No, a local repository can only have one remote.",
+            "B": "Yes, you can add multiple remotes using `git remote add <name> <url>`.",
+            "C": "Only if the remotes are on the same hosting platform.",
+            "D": "Only if you clone from multiple URLs at once."
+          },
+          "correct_answer": "B",
+          "explanation": "This is common in scenarios like open-source contributions (e.g., having an `origin` for your fork and an `upstream` for the original project) or when replicating a repository to multiple backup locations."
+        }
+      ]
+    }
+  ]
+}

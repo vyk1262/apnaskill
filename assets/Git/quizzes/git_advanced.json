@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "git_advanced",
+      "questions": [
+        {
+          "question": "What is the primary use case for `git cherry-pick <commit-hash>`?",
+          "options": {
+            "A": "To revert a commit from a feature branch.",
+            "B": "To apply a specific commit from one branch onto another branch, without merging the entire branch.",
+            "C": "To create a new branch from a specific commit.",
+            "D": "To compare two commits."
+          },
+          "correct_answer": "B",
+          "explanation": "Cherry-picking is useful for applying a single fix or feature from one branch to another without integrating the entire branch history, e.g., applying a hotfix from a dev branch to a release branch."
+        },
+        {
+          "question": "You're working on a feature, but an urgent bug fix is required on `main`. You don't want to commit incomplete work. Which command should you use to temporarily save your changes without committing them, allowing you to switch branches?",
+          "options": {
+            "A": "`git save`",
+            "B": "`git hold`",
+            "C": "`git stash`",
+            "D": "`git snapshot`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git stash` saves your modified tracked files and staged changes onto a stack, returning your working directory to a clean state."
+        },
+        {
+          "question": "After stashing your changes, how do you reapply them to your current branch?",
+          "options": {
+            "A": "`git restore`",
+            "B": "`git apply stash`",
+            "C": "`git stash pop` or `git stash apply`",
+            "D": "`git load stash`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git stash pop` applies the latest stash and removes it from the stash list. `git stash apply` applies it but keeps it in the list."
+        },
+        {
+          "question": "What are 'Git Hooks'?",
+          "options": {
+            "A": "Graphical user interfaces for Git.",
+            "B": "Built-in scripts that Git automatically executes before or after events like commit, push, or receive.",
+            "C": "External tools for managing Git repositories.",
+            "D": "Commands for linking remote repositories."
+          },
+          "correct_answer": "B",
+          "explanation": "Git hooks are powerful for automating workflows, enforcing coding standards, running tests, or integrating with CI/CD systems."
+        },
+        {
+          "question": "Which file within the `.git/hooks` directory would you modify to run a script *before* a commit is created?",
+          "options": {
+            "A": "`post-commit`",
+            "B": "`pre-receive`",
+            "C": "`pre-commit`",
+            "D": "`post-merge`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `pre-commit` hook runs after you type your commit message but before Git actually creates the commit, making it ideal for linting, code formatting, or running quick tests."
+        },
+        {
+          "question": "What is `git tag` primarily used for?",
+          "options": {
+            "A": "To categorize commits by author.",
+            "B": "To mark specific points in history as important, typically for releases (e.g., `v1.0.0`).",
+            "C": "To add comments to files.",
+            "D": "To track file permissions."
+          },
+          "correct_answer": "B",
+          "explanation": "Tags are like immutable branches; they point to a specific commit and are often used to denote release versions of your software."
+        },
+        {
+          "question": "What is the difference between an 'annotated' tag and a 'lightweight' tag?",
+          "options": {
+            "A": "Annotated tags are only for remote repositories.",
+            "B": "Annotated tags are stored as full Git objects, include a message, author, date, and can be signed; lightweight tags are just pointers to commits.",
+            "C": "Lightweight tags can be pushed; annotated tags cannot.",
+            "D": "Annotated tags are mutable; lightweight tags are not."
+          },
+          "correct_answer": "B",
+          "explanation": "Annotated tags are preferred for public releases because they contain more metadata and can be cryptographically signed, providing more context and authenticity."
+        },
+        {
+          "question": "What is the purpose of `git bisect`?",
+          "options": {
+            "A": "To split a large commit into smaller ones.",
+            "B": "To find the specific commit that introduced a bug by performing a binary search on the commit history.",
+            "C": "To compare two different branches.",
+            "D": "To merge two branches with conflicts."
+          },
+          "correct_answer": "B",
+          "explanation": "`git bisect` automates the process of narrowing down which commit introduced a regression, significantly speeding up debugging."
+        },
+        {
+          "question": "What does `git blame <file>` show?",
+          "options": {
+            "A": "Who is responsible for the last commit in the repository.",
+            "B": "The commit that introduced each line of code in a file, along with the author and date.",
+            "C": "A list of all contributors to the project.",
+            "D": "Performance metrics of the Git repository."
+          },
+          "correct_answer": "B",
+          "explanation": "`git blame` is useful for understanding the history of specific lines in a file, for debugging or understanding context."
+        },
+        {
+          "question": "What is a 'Git submodule' used for?",
+          "options": {
+            "A": "To create smaller, more manageable Git repositories.",
+            "B": "To embed one Git repository as a sub-directory inside another Git repository, maintaining separate version control for the embedded project.",
+            "C": "To store very large files efficiently.",
+            "D": "To backup a repository to multiple locations."
+          },
+          "correct_answer": "B",
+          "explanation": "Submodules are useful for managing external dependencies (like libraries or frameworks) that are developed and versioned independently of the main project."
+        },
+        {
+          "question": "What is the concept of a 'detached HEAD' state in Git?",
+          "options": {
+            "A": "When your repository is corrupted.",
+            "B": "When your `HEAD` pointer is directly pointing to a specific commit, rather than to the tip of a named branch.",
+            "C": "When your branch is not connected to a remote.",
+            "D": "When your working directory is empty."
+          },
+          "correct_answer": "B",
+          "explanation": "You enter a detached HEAD state when you `git checkout` a specific commit or a remote-tracking branch. While you can commit, new commits won't be on a named branch, so you should create a new branch from them to avoid 'losing' them."
+        },
+        {
+          "question": "To recover from a 'detached HEAD' state and save new commits made in that state, what should you do?",
+          "options": {
+            "A": "`git merge HEAD`",
+            "B": "`git branch <new-branch-name>` (to create a branch at `HEAD`) and then `git checkout <new-branch-name>`.",
+            "C": "`git reset --hard origin/main`",
+            "D": "Restart Git and clone the repository again."
+          },
+          "correct_answer": "B",
+          "explanation": "This creates a new branch pointer at your current detached HEAD, allowing you to then continue development on that new branch."
+        },
+        {
+          "question": "What is a 'blob' object in Git?",
+          "options": {
+            "A": "A compressed archive of the entire repository.",
+            "B": "A representation of a directory tree.",
+            "C": "A binary representation of a file's content.",
+            "D": "A unique identifier for a commit."
+          },
+          "correct_answer": "C",
+          "explanation": "Git's internal object model includes blobs (file content), trees (directories), commits (snapshots with metadata), and tags."
+        },
+        {
+          "question": "How can you create a custom shortcut (alias) for a Git command, for example, `git st` for `git status`?",
+          "options": {
+            "A": "By editing a `.gitconfig` file directly.",
+            "B": "`git alias st status`",
+            "C": "`git config --global alias.st status`",
+            "D": "You cannot create custom aliases in Git."
+          },
+          "correct_answer": "C",
+          "explanation": "Git aliases can significantly speed up your workflow by shortening frequently used commands. They are stored in your Git configuration file."
+        },
+        {
+          "question": "What is the purpose of `git fsck`?",
+          "options": {
+            "A": "To fix file permissions in the working directory.",
+            "B": "To check the integrity of the Git object database and identify corrupted or dangling objects.",
+            "C": "To optimize the repository size.",
+            "D": "To verify remote connections."
+          },
+          "correct_answer": "B",
+          "explanation": "`git fsck` is a diagnostic tool for finding issues within Git's internal object store, which can be useful for troubleshooting repository corruption."
+        },
+        {
+          "question": "If you want to view a log of all `HEAD` movements in your local repository (even those that might seem 'lost' from `git log`), which command is invaluable?",
+          "options": {
+            "A": "`git blame`",
+            "B": "`git status`",
+            "C": "`git reflog`",
+            "D": "`git history`"
+          },
+          "correct_answer": "C",
+          "explanation": "The reflog is an essential safety net, allowing you to recover from operations like hard resets or failed rebases by seeing where `HEAD` was at various points in time."
+        },
+        {
+          "question": "What is 'sparse checkout' in Git used for?",
+          "options": {
+            "A": "To check out only a specific file from a repository.",
+            "B": "To check out only a subset of directories or files from a repository into the working directory, even if the full repository is cloned.",
+            "C": "To check out a remote branch.",
+            "D": "To check out an older version of the repository."
+          },
+          "correct_answer": "B",
+          "explanation": "Sparse checkout is useful for very large monorepos where developers only need to work on a small part of the codebase, saving disk space and reducing checkout time."
+        },
+        {
+          "question": "When configuring a Git hook, what permission should the hook script typically have?",
+          "options": {
+            "A": "Read-only permission.",
+            "B": "Write-only permission.",
+            "C": "Execute permission.",
+            "D": "No specific permissions needed."
+          },
+          "correct_answer": "C",
+          "explanation": "Git hooks are executable scripts. For Git to run them, they must have execute permissions (`chmod +x <hook-file>`)."
+        },
+        {
+          "question": "What is the primary function of `git rebase --interactive` (beyond simple rebase)?",
+          "options": {
+            "A": "To force push changes to a remote.",
+            "B": "To rewrite a series of commits (e.g., reword, squash, reorder, drop) for a cleaner, more focused history.",
+            "C": "To merge multiple branches at once.",
+            "D": "To automatically resolve all merge conflicts."
+          },
+          "correct_answer": "B",
+          "explanation": "Interactive rebase is the swiss army knife for local history cleanup, making your commits more presentable before sharing them."
+        },
+        {
+          "question": "Which Git command can you use to change the default branch name when initializing new repositories globally?",
+          "options": {
+            "A": "`git config --global init.defaultBranch <name>`",
+            "B": "`git init --default-branch <name>`",
+            "C": "`git branch --global <name>`",
+            "D": "`git set-default-branch <name>`"
+          },
+          "correct_answer": "A",
+          "explanation": "This configuration allows you to set `main` (or any other name) as the default branch for all new repositories you initialize, aligning with modern naming conventions."
+        }
+      ]
+    }
+  ]
+}

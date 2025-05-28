@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "git_rebasing",
+      "questions": [
+        {
+          "question": "What is the primary purpose of `git rebase`?",
+          "options": {
+            "A": "To combine changes from one or more branches into your current branch, always creating a merge commit.",
+            "B": "To move or combine a sequence of commits to a new base commit, effectively rewriting history to create a linear project history.",
+            "C": "To revert changes from previous commits.",
+            "D": "To push local commits to a remote repository."
+          },
+          "correct_answer": "B",
+          "explanation": "Rebasing takes a branch, finds the common ancestor, and then applies the commits from that branch one by one onto the new base, effectively moving the branch's starting point."
+        },
+        {
+          "question": "How does `git rebase` differ from `git merge` in terms of project history?",
+          "options": {
+            "A": "`git rebase` always creates a merge commit, while `git merge` never does.",
+            "B": "`git rebase` rewrites history to create a linear path, while `git merge` preserves original history by creating merge commits.",
+            "C": "`git rebase` can only be used on remote branches; `git merge` only on local.",
+            "D": "They are functionally identical in how they record history."
+          },
+          "correct_answer": "B",
+          "explanation": "This is the core distinction: `rebase` makes history cleaner (linear) by changing commit SHA-1s, `merge` preserves the exact historical branching structure."
+        },
+        {
+          "question": "When should you typically use `git rebase` over `git merge`?",
+          "options": {
+            "A": "When merging a feature branch into a shared `main` branch that others are pulling from.",
+            "B": "When you want to integrate changes from a frequently updated upstream branch into your local, unpushed feature branch, keeping its history clean and linear.",
+            "C": "When you need to undo a commit that has already been pushed.",
+            "D": "When resolving merge conflicts in a shared branch."
+          },
+          "correct_answer": "B",
+          "explanation": "Rebasing your *local* feature branch onto `main` before pushing helps keep your branch's commits 'on top' of `main`'s latest state, making the final merge a fast-forward."
+        },
+        {
+          "question": "What is the consequence of rebasing a branch that has already been pushed to a remote and shared with other collaborators?",
+          "options": {
+            "A": "It will automatically update all collaborators' repositories.",
+            "B": "It will have no effect on remote branches.",
+            "C": "It rewrites shared history, leading to divergence, requiring collaborators to force-push their changes and potentially creating confusion and lost work.",
+            "D": "Git will simply create a new merge commit."
+          },
+          "correct_answer": "C",
+          "explanation": "This is the golden rule of Git rebase: 'Never rebase public history.' Rewriting history that others rely on breaks their local copies and can lead to complex recovery scenarios."
+        },
+        {
+          "question": "You are on `feature-branch` and want to rebase it onto the latest `main`. Which command would you use?",
+          "options": {
+            "A": "`git rebase feature-branch main`",
+            "B": "`git checkout main; git rebase feature-branch`",
+            "C": "`git rebase main` (while on `feature-branch`)",
+            "D": "`git rebase --onto main`"
+          },
+          "correct_answer": "C",
+          "explanation": "When you are on `feature-branch`, `git rebase main` means 'take the commits on `feature-branch` that are not on `main`, and reapply them *on top of* `main`'."
+        },
+        {
+          "question": "What does `git rebase -i HEAD~3` allow you to do?",
+          "options": {
+            "A": "Merge the last 3 commits into the current branch.",
+            "B": "Interactively modify the last 3 commits on the current branch (e.g., reword, squash, reorder, drop).",
+            "C": "Revert the last 3 commits.",
+            "D": "Push the last 3 commits to the remote."
+          },
+          "correct_answer": "B",
+          "explanation": "Interactive rebase (`-i`) is a powerful tool for cleaning up your commit history before sharing it, making it more readable and concise."
+        },
+        {
+          "question": "In an interactive rebase (`git rebase -i`), what does the `squash` command do?",
+          "options": {
+            "A": "Keeps the commit as is.",
+            "B": "Combines the commit with the previous one, discarding its commit message.",
+            "C": "Combines the commit with the previous one, keeping both commit messages for editing.",
+            "D": "Deletes the commit entirely."
+          },
+          "correct_answer": "C",
+          "explanation": "`squash` is used to combine multiple commits into a single, more meaningful commit, allowing you to edit the combined message."
+        },
+        {
+          "question": "During a `git rebase`, if a conflict occurs, what should be your first action after manually resolving the conflict in the file?",
+          "options": {
+            "A": "`git commit`",
+            "B": "`git rebase --abort`",
+            "C": "`git add <conflicted_file>`",
+            "D": "`git push`"
+          },
+          "correct_answer": "C",
+          "explanation": "Just like a merge conflict, you must `git add` the resolved file to tell Git that the conflict is handled."
+        },
+        {
+          "question": "After resolving conflicts and adding the conflicted files during a rebase, what command do you use to continue the rebase process?",
+          "options": {
+            "A": "`git rebase --continue`",
+            "B": "`git rebase --next`",
+            "C": "`git commit --rebase`",
+            "D": "`git resume`"
+          },
+          "correct_answer": "A",
+          "explanation": "`git rebase --continue` tells Git to apply the next commit in the rebase sequence."
+        },
+        {
+          "question": "What does the `reword` command in an interactive rebase allow you to do?",
+          "options": {
+            "A": "Change the author of the commit.",
+            "B": "Change the commit message of a specific commit.",
+            "C": "Reorder the commits in the history.",
+            "D": "Revert the changes introduced by a commit."
+          },
+          "correct_answer": "B",
+          "explanation": "`reword` is useful for cleaning up commit messages in your history without altering the actual code changes."
+        },
+        {
+          "question": "If you decide to abandon a rebase operation completely and return to the state before you started it, which command should you use?",
+          "options": {
+            "A": "`git rebase --skip`",
+            "B": "`git rebase --abort`",
+            "C": "`git reset --hard HEAD`",
+            "D": "`git clean -f`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git rebase --abort` is the safe way to exit a rebase that has gone wrong or is no longer desired."
+        },
+        {
+          "question": "What is the main benefit of having a linear history that `git rebase` often creates?",
+          "options": {
+            "A": "It makes the repository size smaller.",
+            "B": "It simplifies understanding the project's evolution, makes `git log` output cleaner, and often results in easier reverts if needed.",
+            "C": "It automatically fixes all bugs.",
+            "D": "It prevents merge conflicts."
+          },
+          "correct_answer": "B",
+          "explanation": "A linear history can be easier to read and navigate, especially for complex projects, as it removes extraneous merge commits."
+        },
+        {
+          "question": "When should you use `git rebase --skip` during an interactive rebase?",
+          "options": {
+            "A": "To stop the rebase entirely.",
+            "B": "To skip the current commit being applied (e.g., if it's causing unresolvable conflicts or is no longer needed).",
+            "C": "To move to the next commit immediately without applying the current one.",
+            "D": "To force the rebase to succeed."
+          },
+          "correct_answer": "B",
+          "explanation": "`--skip` is used when you want to drop a specific commit that is causing issues or is deemed unnecessary during the rebase process."
+        },
+        {
+          "question": "What does the `edit` (or `e`) command in an interactive rebase allow you to do?",
+          "options": {
+            "A": "Edit the commit message only.",
+            "B": "Stop the rebase process at that specific commit to amend it or perform other Git operations (like splitting it into multiple commits).",
+            "C": "Delete the commit and its changes.",
+            "D": "Reapply the commit without any changes."
+          },
+          "correct_answer": "B",
+          "explanation": "The `edit` action is very powerful for fine-tuning individual commits during a rebase, allowing for detailed modifications."
+        },
+        {
+          "question": "If you perform `git pull --rebase` instead of `git pull`, what is the key difference?",
+          "options": {
+            "A": "It will always create a merge commit.",
+            "B": "It will fetch remote changes and then rebase your local commits on top of them, instead of merging, to keep history linear.",
+            "C": "It will push your local changes to the remote first.",
+            "D": "It will only fetch, not integrate."
+          },
+          "correct_answer": "B",
+          "explanation": "`git pull --rebase` is a very common and recommended practice for keeping feature branches clean and up-to-date with the main branch, avoiding unnecessary merge commits."
+        },
+        {
+          "question": "What does `git rebase --onto <newbase> <oldbase> <branch>` do?",
+          "options": {
+            "A": "Rebases the `branch` onto `newbase`, but only includes commits from `branch` that are not reachable from `oldbase`.",
+            "B": "Rebases `newbase` onto `oldbase`.",
+            "C": "Deletes `oldbase` and creates `newbase`.",
+            "D": "Merges `branch` into `newbase`."
+          },
+          "correct_answer": "A",
+          "explanation": "This more advanced form of `rebase` allows you to pick a specific range of commits from one branch and apply them onto another base, useful for splitting history or moving commit ranges."
+        },
+        {
+          "question": "What is the purpose of the `pick` command in an interactive rebase?",
+          "options": {
+            "A": "To discard the commit.",
+            "B": "To use the commit as is.",
+            "C": "To edit the commit.",
+            "D": "To squash the commit."
+          },
+          "correct_answer": "B",
+          "explanation": "`pick` is the default action, meaning 'keep this commit and reapply it'."
+        },
+        {
+          "question": "True or False: If you rebase your feature branch onto `main` and then push your feature branch using a regular `git push`, it will likely be rejected by the remote if `main` has advanced.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Because rebase rewrites history, your local feature branch's commits will have new SHA-1s, making its history different from the remote. You would typically need to `git push --force-with-lease` (or `git push --force`, though the former is safer) to overwrite the remote branch."
+        },
+        {
+          "question": "When resolving a conflict during a rebase, what information does Git typically show you in the conflicted file (similar to a merge conflict)?",
+          "options": {
+            "A": "Just your changes.",
+            "B": "Just the changes from the branch being rebased onto.",
+            "C": "Conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) showing `HEAD` (your commit's state) and the incoming change from the base commit.",
+            "D": "A summary of all conflicts in the repository."
+          },
+          "correct_answer": "C",
+          "explanation": "The conflict markers are the same as in a merge, but the meaning of `HEAD` and the 'incoming' part changes slightly to reflect the rebase operation."
+        },
+        {
+          "question": "If you've rebased a branch and want to push it to a remote that already has an older version of that branch, which push command is generally the safest way to overwrite the remote history, *after* confirming it's safe to do so?",
+          "options": {
+            "A": "`git push`",
+            "B": "`git push --force`",
+            "C": "`git push --force-with-lease`",
+            "D": "`git push --set-upstream`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git push --force-with-lease` is safer than `git push --force` because it will only force push if the remote branch hasn't been updated by someone else in the meantime, preventing accidental overwrites of new work."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "git_commands",
+      "questions": [
+        {
+          "question": "Which command is used to initialize a new Git repository in the current directory?",
+          "options": {
+            "A": "`git commit`",
+            "B": "`git clone`",
+            "C": "`git init`",
+            "D": "`git status`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git init` creates a new, empty Git repository, setting up the `.git` directory."
+        },
+        {
+          "question": "To add changes from the working directory to the staging area, which command do you use?",
+          "options": {
+            "A": "`git commit`",
+            "B": "`git save`",
+            "C": "`git stage`",
+            "D": "`git add`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git add <file>` adds a specific file, and `git add .` adds all modified/new files in the current directory and subdirectories to the staging area."
+        },
+        {
+          "question": "Which command records the staged changes permanently into the repository history with a message?",
+          "options": {
+            "A": "`git push`",
+            "B": "`git save`",
+            "C": "`git commit`",
+            "D": "`git log`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git commit -m \"Your message\"` is used to create a new commit from the staged changes."
+        },
+        {
+          "question": "What does the command `git status` typically show?",
+          "options": {
+            "A": "The last commit message.",
+            "B": "The IP address of the remote repository.",
+            "C": "The current state of the working directory and staging area, including modified, staged, and untracked files.",
+            "D": "Network connection speed."
+          },
+          "correct_answer": "C",
+          "explanation": "`git status` is essential for understanding what changes are present and what needs to be done next."
+        },
+        {
+          "question": "How do you view the commit history, showing past commits and their messages?",
+          "options": {
+            "A": "`git history`",
+            "B": "`git show`",
+            "C": "`git log`",
+            "D": "`git commits`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git log` displays a detailed history of commits, including author, date, and commit message. Options like `--oneline` or `--graph` can customize the output."
+        },
+        {
+          "question": "Which command is used to download an existing remote repository to your local machine?",
+          "options": {
+            "A": "`git init`",
+            "B": "`git copy`",
+            "C": "`git download`",
+            "D": "`git clone`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git clone <repository_url>` creates a local copy, including all history and branches, and sets up a default remote."
+        },
+        {
+          "question": "To create a new branch named `feature-x` and switch to it immediately, which command combines these two actions?",
+          "options": {
+            "A": "`git branch feature-x`",
+            "B": "`git checkout feature-x`",
+            "C": "`git branch -c feature-x`",
+            "D": "`git checkout -b feature-x`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git checkout -b <new-branch-name>` is a convenient shortcut for `git branch <new-branch-name>` followed by `git checkout <new-branch-name>`."
+        },
+        {
+          "question": "You have made changes in your working directory but haven't staged them yet. You want to see the differences between your current working directory and the last commit. Which command should you use?",
+          "options": {
+            "A": "`git diff --staged`",
+            "B": "`git diff HEAD`",
+            "C": "`git diff` (without arguments)",
+            "D": "`git log -p`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git diff` (without arguments) shows changes in the working directory that are not yet in the staging area. `git diff --staged` shows changes that are in the staging area but not yet committed."
+        },
+        {
+          "question": "Which command is used to switch between existing branches?",
+          "options": {
+            "A": "`git branch <branch-name>`",
+            "B": "`git move <branch-name>`",
+            "C": "`git change <branch-name>`",
+            "D": "`git checkout <branch-name>`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git checkout` changes the currently active branch in your working directory. (Note: `git switch` is a newer alternative for this specific action)."
+        },
+        {
+          "question": "To integrate changes from one branch (e.g., `feature`) into your current branch (e.g., `main`), which command would you use while on `main`?",
+          "options": {
+            "A": "`git integrate feature`",
+            "B": "`git pull feature`",
+            "C": "`git merge feature`",
+            "D": "`git checkout feature`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git merge <branch-to-merge>` combines the history of the specified branch into the current branch."
+        },
+        {
+          "question": "Which command sends your committed changes from your local repository to a remote repository?",
+          "options": {
+            "A": "`git send`",
+            "B": "`git fetch`",
+            "C": "`git push`",
+            "D": "`git sync`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git push <remote-name> <branch-name>` updates the remote repository with your local commits."
+        },
+        {
+          "question": "To download new commits and objects from a remote repository into your local repository, but without merging them into your current branch, which command is used?",
+          "options": {
+            "A": "`git pull`",
+            "B": "`git sync`",
+            "C": "`git update`",
+            "D": "`git fetch`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git fetch` retrieves changes from a remote repository. It updates remote-tracking branches but doesn't modify your local working branches."
+        },
+        {
+          "question": "What is the result of running `git pull`?",
+          "options": {
+            "A": "It only pushes local changes to the remote.",
+            "B": "It's a combination of `git fetch` followed by `git merge` (or `git rebase` depending on configuration).",
+            "C": "It deletes local uncommitted changes.",
+            "D": "It creates a new branch."
+          },
+          "correct_answer": "B",
+          "explanation": "`git pull` is a convenience command that fetches content from a remote repository and immediately integrates it into the current local branch."
+        },
+        {
+          "question": "How do you check which remote repositories are configured for your current local repository?",
+          "options": {
+            "A": "`git info`",
+            "B": "`git remote -v`",
+            "C": "`git config --list`",
+            "D": "`git status -r`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git remote -v` lists the names of your remotes along with the URLs they correspond to."
+        },
+        {
+          "question": "To configure your username and email for Git commits globally, which command would you use?",
+          "options": {
+            "A": "`git user.name \"Your Name\"`",
+            "B": "`git config user.name \"Your Name\"` and `git config user.email \"your@example.com\"`",
+            "C": "`git setup user.name`",
+            "D": "`git init --global`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git config` is used to set Git configuration values. Adding `--global` applies the setting to all your Git repositories."
+        },
+        {
+          "question": "You have a file `old_name.txt` that you want to rename to `new_name.txt` and track this change with Git. Which command is best suited for this?",
+          "options": {
+            "A": "`mv old_name.txt new_name.txt`",
+            "B": "`git rename old_name.txt new_name.txt`",
+            "C": "`git mv old_name.txt new_name.txt`",
+            "D": "`git rm old_name.txt; git add new_name.txt`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git mv` renames a file and stages the change for commit, ensuring Git properly tracks it as a rename rather than a deletion and a new addition."
+        },
+        {
+          "question": "To remove a file `old_file.txt` from your working directory and stage its deletion, which command do you use?",
+          "options": {
+            "A": "`rm old_file.txt`",
+            "B": "`git delete old_file.txt`",
+            "C": "`git remove old_file.txt`",
+            "D": "`git rm old_file.txt`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git rm` deletes the file from the working directory and stages the deletion, so it will be removed from the repository on the next commit."
+        },
+        {
+          "question": "If you want to view a concise one-line summary of each commit, which `git log` option is most appropriate?",
+          "options": {
+            "A": "`git log --graph`",
+            "B": "`git log --pretty=format:%s`",
+            "C": "`git log --oneline`",
+            "D": "`git log --stat`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git log --oneline` displays each commit on a single line, showing the abbreviated commit hash and the first line of the commit message."
+        },
+        {
+          "question": "Which command temporarily shelves (stores) changes you've made in your working directory and staging area, allowing you to switch branches or do other work, and then reapply them later?",
+          "options": {
+            "A": "`git hide`",
+            "B": "`git save`",
+            "C": "`git stash`",
+            "D": "`git store`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git stash` is incredibly useful for saving your work-in-progress when you need to switch contexts quickly without committing incomplete changes."
+        },
+        {
+          "question": "What is the purpose of the `git config --list` command?",
+          "options": {
+            "A": "To list all files in the repository.",
+            "B": "To show all the Git configuration settings (system, global, and local).",
+            "C": "To list all branches in the repository.",
+            "D": "To show all remote repositories."
+          },
+          "correct_answer": "B",
+          "explanation": "`git config --list` provides a comprehensive view of all configuration values Git is currently using, which can be useful for troubleshooting."
+        }
+      ]
+    }
+  ]
+}

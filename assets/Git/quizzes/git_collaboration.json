@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "git_collaboration",
+      "questions": [
+        {
+          "question": "What is the primary purpose of a 'Pull Request' (or 'Merge Request' on GitLab/Bitbucket) in collaborative Git workflows?",
+          "options": {
+            "A": "To directly merge changes into the main branch without review.",
+            "B": "To request feedback on a new feature or bug fix and propose its integration into another branch (typically `main` or `develop`).",
+            "C": "To download the latest changes from a remote repository.",
+            "D": "To force push changes to a remote branch."
+          },
+          "correct_answer": "B",
+          "explanation": "Pull Requests facilitate code review, discussion, and automated checks (CI) before merging changes, ensuring quality and alignment with project standards."
+        },
+        {
+          "question": "Which command is used to send your local committed changes to a remote repository?",
+          "options": {
+            "A": "`git fetch`",
+            "B": "`git pull`",
+            "C": "`git send`",
+            "D": "`git push`"
+          },
+          "correct_answer": "D",
+          "explanation": "`git push <remote> <branch>` uploads your local commits to the specified remote branch."
+        },
+        {
+          "question": "What does `git pull` typically do in a collaborative workflow?",
+          "options": {
+            "A": "It only downloads changes without merging them.",
+            "B": "It sends your local changes to the remote repository.",
+            "C": "It fetches changes from the remote repository AND merges them into your current local branch.",
+            "D": "It creates a new branch from the remote."
+          },
+          "correct_answer": "C",
+          "explanation": "`git pull` is a convenience command that combines `git fetch` (download) and `git merge` (integrate)."
+        },
+        {
+          "question": "You want to get the latest changes from the `origin` remote but prefer to review them before integrating into your current branch. Which command should you use?",
+          "options": {
+            "A": "`git pull origin main`",
+            "B": "`git fetch origin`",
+            "C": "`git merge origin/main`",
+            "D": "`git rebase origin/main`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git fetch` updates your remote-tracking branches (e.g., `origin/main`) without touching your local working branches, giving you the opportunity to inspect changes before merging or rebasing."
+        },
+        {
+          "question": "What is the 'Forking Workflow' commonly used for in open-source projects?",
+          "options": {
+            "A": "Multiple developers committing directly to a shared main branch.",
+            "B": "Each developer maintains their own server and merges changes manually.",
+            "C": "Each developer 'forks' the main repository, works in their own fork, and then submits Pull Requests to the original repository.",
+            "D": "Developers only work on private branches."
+          },
+          "correct_answer": "C",
+          "explanation": "Forking provides a sandboxed environment for contributors to work without directly needing write access to the original project, making it ideal for open-source collaboration."
+        },
+        {
+          "question": "In a shared repository workflow (common in private teams), what is the typical way developers collaborate?",
+          "options": {
+            "A": "Every developer has their own separate repository.",
+            "B": "All developers clone a single central repository and push/pull directly from it, often using feature branches and pull requests.",
+            "C": "Collaboration happens via email attachments of code.",
+            "D": "Only one developer can work on the repository at a time."
+          },
+          "correct_answer": "B",
+          "explanation": "This is common in smaller teams where direct access to a single shared repository is managed (e.g., through access control lists)."
+        },
+        {
+          "question": "What is 'upstream' in Git terminology when referring to a remote repository?",
+          "options": {
+            "A": "The branch you are currently working on.",
+            "B": "The default remote repository you push to.",
+            "C": "The original repository from which you cloned or forked, often where the main project development happens.",
+            "D": "A temporary staging area for commits."
+          },
+          "correct_answer": "C",
+          "explanation": "In a forking workflow, the original repository is often referred to as `upstream`, while your personal fork is `origin`."
+        },
+        {
+          "question": "Which protocol is generally recommended for secure remote Git access, especially for automation or server-to-server communication?",
+          "options": {
+            "A": "HTTP",
+            "B": "FTP",
+            "C": "SSH",
+            "D": "Telnet"
+          },
+          "correct_answer": "C",
+          "explanation": "SSH provides strong encryption and authentication based on SSH keys, making it more secure and often more convenient for automated processes than HTTPS with credentials."
+        },
+        {
+          "question": "When does a 'push rejection' occur during `git push`?",
+          "options": {
+            "A": "When you have too many local commits.",
+            "B": "When the remote branch you are pushing to has new commits that you haven't integrated into your local branch yet.",
+            "C": "When your internet connection is slow.",
+            "D": "When you don't have enough disk space."
+          },
+          "correct_answer": "B",
+          "explanation": "Git prevents a 'non-fast-forward' push to avoid overwriting history. You must `pull` (fetch and merge/rebase) the remote changes first."
+        },
+        {
+          "question": "What is the primary benefit of code review in a collaborative Git workflow?",
+          "options": {
+            "A": "To assign blame for bugs.",
+            "B": "To ensure code quality, catch bugs early, share knowledge, and promote consistency across the codebase.",
+            "C": "To automatically fix all code errors.",
+            "D": "To increase the number of commits."
+          },
+          "correct_answer": "B",
+          "explanation": "Code review is a crucial practice for maintaining a high-quality codebase and fostering collaboration and learning within a team."
+        },
+        {
+          "question": "You've created a new local branch `my-feature`. To push it to `origin` and set it to track `origin/my-feature` so future pushes/pulls are simpler, what command would you use?",
+          "options": {
+            "A": "`git push origin my-feature`",
+            "B": "`git push -u origin my-feature`",
+            "C": "`git push --set-upstream my-feature`",
+            "D": "`git push --force origin my-feature`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git push -u` (or `--set-upstream`) is used only once per branch to establish the tracking relationship, allowing subsequent `git push` and `git pull` commands without specifying the remote and branch."
+        },
+        {
+          "question": "What is 'Git LFS' (Large File Storage) used for in collaborative projects?",
+          "options": {
+            "A": "To compress the entire Git repository.",
+            "B": "To store very large files (e.g., binaries, media files) outside the Git repository, replacing them with text pointers in the repo to keep the main repo lightweight.",
+            "C": "To secure large files with encryption.",
+            "D": "To automatically delete large files after a period."
+          },
+          "correct_answer": "B",
+          "explanation": "Git is designed for text-based code; storing large binary files directly in the history can bloat the repository. LFS addresses this by externalizing such files."
+        },
+        {
+          "question": "When contributing to an open-source project via a fork, after making changes in your fork and committing them, what is the next step to propose them back to the original project?",
+          "options": {
+            "A": "Directly `git push` to the original repository.",
+            "B": "Create a new branch in the original repository.",
+            "C": "Submit a Pull Request from your fork's branch to the original repository's `main` branch.",
+            "D": "Email the patch files to the project maintainers."
+          },
+          "correct_answer": "C",
+          "explanation": "The Pull Request mechanism is the standard way to propose changes from a fork back to the upstream project."
+        },
+        {
+          "question": "What does a good commit message in a collaborative environment typically include?",
+          "options": {
+            "A": "Just the file names that were changed.",
+            "B": "A concise subject line (first line) summarizing the change, followed by an optional blank line and a more detailed body explaining *what* and *why*.",
+            "C": "Only the developer's name and date.",
+            "D": "A random string of characters."
+          },
+          "correct_answer": "B",
+          "explanation": "Clear and informative commit messages are crucial for understanding project history, debugging, and code review in a team setting."
+        },
+        {
+          "question": "If your local `main` branch is behind `origin/main` (i.e., `git status` shows 'Your branch is behind...'), what command should you use to update your local `main` branch?",
+          "options": {
+            "A": "`git push origin main`",
+            "B": "`git branch -d main`",
+            "C": "`git pull origin main`",
+            "D": "`git rebase origin main`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git pull origin main` will fetch the latest changes from `origin/main` and merge them into your local `main` branch."
+        },
+        {
+          "question": "What is `git fetch --prune` used for?",
+          "options": {
+            "A": "To remove all local branches.",
+            "B": "To remove any local remote-tracking branches that no longer exist on the remote.",
+            "C": "To delete all files from your working directory.",
+            "D": "To compress the remote repository."
+          },
+          "correct_answer": "B",
+          "explanation": "When branches are deleted on the remote (e.g., after a PR is merged and the feature branch is removed), `--prune` cleans up their corresponding remote-tracking branches locally, keeping your remote branch list tidy."
+        },
+        {
+          "question": "What is the common approach for resolving merge conflicts that arise during `git pull` in a collaborative setting?",
+          "options": {
+            "A": "Immediately `git push --force` to overwrite remote.",
+            "B": "Manually edit the conflicted files, `git add` them, and then `git commit` to complete the merge.",
+            "C": "Delete the local repository and clone it again.",
+            "D": "Ask another developer to resolve it for you."
+          },
+          "correct_answer": "B",
+          "explanation": "Conflict resolution is a standard part of collaborative Git. You must manually decide how to integrate the conflicting changes."
+        },
+        {
+          "question": "Which type of Git hosting platform allows teams to manage repositories, conduct code reviews, and automate CI/CD pipelines?",
+          "options": {
+            "A": "Local file system",
+            "B": "Email server",
+            "C": "GitHub, GitLab, Bitbucket",
+            "D": "Standard web server"
+          },
+          "correct_answer": "C",
+          "explanation": "These platforms provide a comprehensive suite of tools for collaborative development beyond just hosting repositories."
+        },
+        {
+          "question": "When working on a feature branch, it's good practice to regularly `pull` from the `main` (or `develop`) branch of the shared repository. Why?",
+          "options": {
+            "A": "To share your new feature with others.",
+            "B": "To keep your feature branch up-to-date with the latest changes in the main development line, minimizing potential merge conflicts later.",
+            "C": "To backup your work.",
+            "D": "To delete old commits."
+          },
+          "correct_answer": "B",
+          "explanation": "Frequent integration of upstream changes makes the final merge smoother and reduces the scope of potential conflicts."
+        },
+        {
+          "question": "True or False: If you forcefully push (`git push --force`) to a shared branch that others are working on, it can rewrite history and cause major problems for collaborators.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Force pushing should be done with extreme caution and only when you fully understand the consequences, ideally only to your own private branches or after communicating with your team and ensuring no one else will be impacted."
+        }
+      ]
+    }
+  ]
+}
