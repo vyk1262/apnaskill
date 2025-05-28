@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_performance",
+      "questions": [
+        {
+          "question": "What is a primary bottleneck for Node.js application performance if not handled correctly?",
+          "options": {
+            "A": "Excessive disk space usage.",
+            "B": "CPU-bound tasks that block the single-threaded Event Loop.",
+            "C": "Too few network requests.",
+            "D": "Using too many modules."
+          },
+          "correct_answer": "B",
+          "explanation": "Node.js excels at I/O-bound tasks due to its non-blocking nature. However, CPU-intensive operations performed on the main thread will block the Event Loop, leading to poor responsiveness and throughput."
+        },
+        {
+          "question": "How can Node.js applications best handle CPU-intensive tasks without blocking the main thread?",
+          "options": {
+            "A": "By running them synchronously on the main thread.",
+            "B": "By using `setTimeout` with a very short delay.",
+            "C": "By offloading them to Worker Threads or separate microservices.",
+            "D": "By increasing the server's RAM."
+          },
+          "correct_answer": "C",
+          "explanation": "Worker Threads allow CPU-bound operations to run in parallel on separate threads. Alternatively, such tasks can be moved to dedicated services or background jobs."
+        },
+        {
+          "question": "What is the purpose of 'clustering' a Node.js application in terms of performance?",
+          "options": {
+            "A": "To group related files together.",
+            "B": "To create multiple Node.js processes that share the same server port, allowing the application to utilize multiple CPU cores and handle more concurrent requests.",
+            "C": "To compress HTTP responses.",
+            "D": "To reduce network latency."
+          },
+          "correct_answer": "B",
+          "explanation": "The `cluster` module (or process managers like PM2) helps distribute the load across multiple CPU cores, effectively turning a single-threaded Node.js app into a multi-process solution for better performance and fault tolerance."
+        },
+        {
+          "question": "Which of the following generally helps improve API response times in a Node.js application?",
+          "options": {
+            "A": "Performing blocking I/O operations synchronously.",
+            "B": "Minimizing database queries and optimizing complex queries.",
+            "C": "Removing all error handling.",
+            "D": "Increasing the number of `console.log` statements."
+          },
+          "correct_answer": "B",
+          "explanation": "Database interactions are often the slowest part of an API request. Optimizing queries, reducing their number, and using proper indexing can significantly improve performance."
+        },
+        {
+          "question": "What is 'Caching' and how does it benefit Node.js application performance?",
+          "options": {
+            "A": "Storing data only in the database.",
+            "B": "Storing frequently accessed data (e.g., API responses, database query results) in a faster-access memory location (e.g., in-memory, Redis) to reduce redundant computations or database lookups.",
+            "C": "Encrypting all network traffic.",
+            "D": "Compiling JavaScript code to native binaries."
+          },
+          "correct_answer": "B",
+          "explanation": "Caching reduces the load on backend services and speeds up data retrieval, leading to lower latency and higher throughput."
+        },
+        {
+          "question": "When serving static assets (HTML, CSS, JS, images) from an Express.js application, what is a best practice for performance?",
+          "options": {
+            "A": "Serve them directly from the Node.js application without any caching.",
+            "B": "Use a CDN (Content Delivery Network) or a reverse proxy (like Nginx) to serve and cache static files, offloading this task from Node.js.",
+            "C": "Bundle all static files into a single large file.",
+            "D": "Encrypt all static files on the fly."
+          },
+          "correct_answer": "B",
+          "explanation": "Node.js is not optimized for serving static files; CDNs and reverse proxies are highly efficient at this, reducing the load on your Node.js server and improving client-side load times."
+        },
+        {
+          "question": "What is 'Gzip Compression' and why is it used for web application performance?",
+          "options": {
+            "A": "A method to compress database files.",
+            "B": "A data compression method used to reduce the size of HTTP responses (e.g., HTML, CSS, JavaScript), leading to faster download times for clients.",
+            "C": "A way to encrypt network traffic.",
+            "D": "A technique to increase server CPU speed."
+          },
+          "correct_answer": "B",
+          "explanation": "Smaller response sizes mean less data needs to be transferred over the network, improving perceived load times and reducing bandwidth costs."
+        },
+        {
+          "question": "How can verbose logging (e.g., extensive `console.log` statements) impact Node.js application performance in production?",
+          "options": {
+            "A": "It has no impact.",
+            "B": "It significantly improves performance by providing more data.",
+            "C": "It can be a performance bottleneck due to synchronous I/O operations to write to disk, especially with high request volumes, blocking the Event Loop.",
+            "D": "It only impacts memory usage."
+          },
+          "correct_answer": "C",
+          "explanation": "While logging is essential, excessive or synchronous logging in production can lead to I/O bottlenecks. Asynchronous logging, using dedicated logging libraries (like Winston or Pino), and logging to external services are better practices."
+        },
+        {
+          "question": "What is 'Memory Leakage' in Node.js, and how does it affect performance?",
+          "options": {
+            "A": "When the application runs out of disk space.",
+            "B": "When memory is allocated but never released, leading to increasing memory consumption over time, eventually causing the application to slow down or crash.",
+            "C": "When the application uses too much CPU.",
+            "D": "When data is accidentally overwritten in memory."
+          },
+          "correct_answer": "B",
+          "explanation": "Common causes include unclosed database connections, lingering event listeners, global caches that grow indefinitely, and improper handling of closures."
+        },
+        {
+          "question": "Which tool or technique is commonly used to identify performance bottlenecks and memory leaks in Node.js applications?",
+          "options": {
+            "A": "Unit tests.",
+            "B": "Linters.",
+            "C": "Profiling tools (e.g., Node.js built-in profiler, Chrome DevTools for Node.js, third-party APM solutions).",
+            "D": "Version control systems."
+          },
+          "correct_answer": "C",
+          "explanation": "Profiling allows you to analyze CPU usage, memory consumption, and function call stacks to pinpoint where your application is spending most of its time or leaking memory."
+        },
+        {
+          "question": "What is the benefit of using `async/await` for database operations over traditional callbacks or `.then().catch()` chains, specifically concerning readability and maintainability for performance?",
+          "options": {
+            "A": "It makes the database queries run faster.",
+            "B": "It eliminates the need for error handling.",
+            "C": "It simplifies asynchronous code, making it more readable and easier to reason about, which indirectly aids in identifying and optimizing slow operations.",
+            "D": "It automatically caches database results."
+          },
+          "correct_answer": "C",
+          "explanation": "While `async/await` doesn't inherently make operations faster, its synchronous-like syntax improves code clarity, which is crucial for complex applications and optimizing performance by understanding flow."
+        },
+        {
+          "question": "How does using a 'Connection Pool' for database interactions improve Node.js application performance?",
+          "options": {
+            "A": "It encrypts database connections.",
+            "B": "It eliminates the overhead of repeatedly opening and closing new database connections for each request by maintaining a pool of ready-to-use connections.",
+            "C": "It stores database credentials securely.",
+            "D": "It automatically optimizes SQL queries."
+          },
+          "correct_answer": "B",
+          "explanation": "Establishing a database connection is an expensive operation. Connection pooling reuses existing connections, reducing latency and resource consumption."
+        },
+        {
+          "question": "What is 'Load Testing' in the context of Node.js performance?",
+          "options": {
+            "A": "Testing how fast the application loads on a browser.",
+            "B": "Simulating a high volume of concurrent users or requests to evaluate an application's performance, stability, and scalability under various load conditions.",
+            "C": "Testing the application's battery consumption.",
+            "D": "Testing only the database's performance."
+          },
+          "correct_answer": "B",
+          "explanation": "Load testing helps identify bottlenecks, breaking points, and maximum capacity before deploying to production, ensuring the application can handle expected traffic."
+        },
+        {
+          "question": "When a Node.js application uses an ORM/ODM (like Mongoose or Sequelize), what is a common performance pitfall related to database queries?",
+          "options": {
+            "A": "Querying for too little data.",
+            "B": "The 'N+1 query problem' where fetching a list of items leads to N additional queries for related data, causing many unnecessary database round-trips.",
+            "C": "Using too many indexes.",
+            "D": "Not using a connection pool."
+          },
+          "correct_answer": "B",
+          "explanation": "The N+1 query problem is a classic issue. Solutions involve eager loading (e.g., Mongoose `populate()`, Sequelize `include: { all: true }`) or joining data in a single, more complex query."
+        },
+        {
+          "question": "What role does 'garbage collection' play in Node.js performance?",
+          "options": {
+            "A": "It compresses log files.",
+            "B": "It automatically frees up memory that is no longer referenced by the application, but frequent or long-running GC cycles can temporarily pause the JavaScript execution (stop-the-world) and impact responsiveness.",
+            "C": "It collects unused CPU cycles.",
+            "D": "It optimizes network traffic."
+          },
+          "correct_answer": "B",
+          "explanation": "While essential for memory management, developers should be aware of patterns that can lead to excessive GC activity, causing performance hiccups."
+        },
+        {
+          "question": "Why might 'Blocking I/O' be detrimental to Node.js application performance, even if the operation is fast?",
+          "options": {
+            "A": "It uses too much memory.",
+            "B": "It pauses the entire Node.js process until the I/O operation completes, preventing the Event Loop from processing other concurrent requests or callbacks.",
+            "C": "It causes network errors.",
+            "D": "It only impacts file system operations."
+          },
+          "correct_answer": "B",
+          "explanation": "The non-blocking, asynchronous nature of Node.js is its core strength for concurrency. Using synchronous I/O functions (e.g., `fs.readFileSync`) is strongly discouraged in server-side code unless absolutely necessary for initialization."
+        },
+        {
+          "question": "What is 'Application Performance Monitoring (APM)' and how is it useful for Node.js?",
+          "options": {
+            "A": "A tool for debugging frontend code.",
+            "B": "A system that monitors and manages the performance and availability of software applications, providing insights into bottlenecks, errors, and resource usage in production.",
+            "C": "A method to compress application bundles.",
+            "D": "A database system for storing performance metrics."
+          },
+          "correct_answer": "B",
+          "explanation": "APM tools (e.g., New Relic, Datadog, Prometheus) provide crucial visibility into the health and performance of your deployed Node.js applications."
+        },
+        {
+          "question": "What is 'Rate Limiting' used for, related to performance and security?",
+          "options": {
+            "A": "To limit the speed of database queries.",
+            "B": "To restrict the number of requests a user or client can make within a given time frame, preventing abuse, brute-force attacks, and protecting against Denial of Service (DoS) attacks by controlling load.",
+            "C": "To limit the size of HTTP responses.",
+            "D": "To limit the number of functions in a module."
+          },
+          "correct_answer": "B",
+          "explanation": "Rate limiting protects your application from being overwhelmed and ensures fair resource usage."
+        },
+        {
+          "question": "Which type of caching is often used for frequently accessed, but infrequently changing data, typically storing it in a key-value store like Redis?",
+          "options": {
+            "A": "CPU Cache",
+            "B": "Browser Cache",
+            "C": "Distributed Cache (e.g., using Redis or Memcached)",
+            "D": "Disk Cache"
+          },
+          "correct_answer": "C",
+          "explanation": "Distributed caches allow multiple Node.js instances to share cached data, making them ideal for scaled applications."
+        },
+        {
+          "question": "When designing a Node.js API for performance, what should be minimized in terms of network requests between the backend and frontend?",
+          "options": {
+            "A": "The number of API endpoints.",
+            "B": "The number of redundant or excessively large requests; prefer efficient data fetching (e.g., GraphQL) or batching requests.",
+            "C": "The use of HTTPS.",
+            "D": "The total request size."
+          },
+          "correct_answer": "B",
+          "explanation": "Reducing network overhead by fetching only necessary data and minimizing round trips is crucial for improving perceived performance for end-users, especially on high-latency networks."
+        }
+      ]
+    }
+  ]
+}

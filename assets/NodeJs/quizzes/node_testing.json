@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_testing",
+      "questions": [
+        {
+          "question": "What is the primary goal of 'Unit Testing' in Node.js?",
+          "options": {
+            "A": "To test the entire application end-to-end with a UI.",
+            "B": "To verify the functionality of individual, isolated units or components of code (e.g., a single function, a module).",
+            "C": "To test the interaction between different services.",
+            "D": "To ensure database integrity."
+          },
+          "correct_answer": "B",
+          "explanation": "Unit tests focus on the smallest testable parts of an application, ensuring each component works as expected in isolation."
+        },
+        {
+          "question": "Which of the following is a popular testing framework for Node.js?",
+          "options": {
+            "A": "React Testing Library",
+            "B": "Selenium",
+            "C": "Jest",
+            "D": "Cypress (primarily E2E for web)"
+          },
+          "correct_answer": "C",
+          "explanation": "Jest is a widely used and powerful testing framework for JavaScript, including Node.js, known for its zero-config setup, mocking capabilities, and snapshot testing."
+        },
+        {
+          "question": "What is 'Integration Testing' in Node.js?",
+          "options": {
+            "A": "Testing a single function's logic.",
+            "B": "Testing the interactions and communication between different modules, components, or services within an application (e.g., an Express route interacting with a database).",
+            "C": "Testing external APIs only.",
+            "D": "Testing UI responsiveness."
+          },
+          "correct_answer": "B",
+          "explanation": "Integration tests ensure that different parts of your application work correctly together, validating the connections and data flow between them."
+        },
+        {
+          "question": "In the context of testing, what does 'Mocking' or 'Stubbing' refer to?",
+          "options": {
+            "A": "Writing test cases that are intentionally broken.",
+            "B": "Creating dummy versions of external dependencies (like databases, APIs, or modules) to control their behavior and isolate the code being tested.",
+            "C": "Running tests in a production environment.",
+            "D": "Measuring application performance."
+          },
+          "correct_answer": "B",
+          "explanation": "Mocking is essential for unit testing, allowing you to test a component in isolation without relying on actual external resources, making tests faster and more reliable."
+        },
+        {
+          "question": "Which Jest feature allows you to capture the rendered output of a component or a data structure and compare it to a previously saved snapshot?",
+          "options": {
+            "A": "Jest Spies",
+            "B": "Snapshot Testing",
+            "C": "Code Coverage",
+            "D": "Asynchronous Testing"
+          },
+          "correct_answer": "B",
+          "explanation": "Snapshot testing is particularly useful for UI components or configurations, ensuring that unintended changes don't occur."
+        },
+        {
+          "question": "What is the purpose of an 'Assertion Library' (e.g., Chai, Node.js built-in `assert`) in Node.js testing?",
+          "options": {
+            "A": "To create new test files.",
+            "B": "To define the structure of test suites.",
+            "C": "To provide functions that allow you to declare how values should behave (e.g., `expect(value).to.be.true;`).",
+            "D": "To run tests in parallel."
+          },
+          "correct_answer": "C",
+          "explanation": "Assertion libraries provide a rich set of methods to write expressive and readable test assertions, checking if expected conditions are met."
+        },
+        {
+          "question": "When testing asynchronous code (e.g., Promises, callbacks) in Node.js, how can Jest or Mocha ensure the test waits for the asynchronous operation to complete?",
+          "options": {
+            "A": "By marking the test as `sync`.",
+            "B": "By explicitly calling `done()` in callbacks, returning a Promise, or using `async/await` with `await`.",
+            "C": "Asynchronous code cannot be tested.",
+            "D": "By setting a very long timeout."
+          },
+          "correct_answer": "B",
+          "explanation": "Test runners need explicit signals to know when an asynchronous test has finished. The `done()` callback, returning a Promise, or using `async/await` are standard methods."
+        },
+        {
+          "question": "What is 'End-to-End (E2E) Testing' for a Node.js web application?",
+          "options": {
+            "A": "Testing a single backend API endpoint.",
+            "B": "Testing the entire application flow from a user's perspective, including UI, backend, and database interactions, often using a browser automation tool.",
+            "C": "Testing only the database layer.",
+            "D": "Testing external integrations in isolation."
+          },
+          "correct_answer": "B",
+          "explanation": "E2E tests simulate real user scenarios to ensure the entire system works as expected across all layers."
+        },
+        {
+          "question": "Which tool is commonly used for E2E testing of web applications, often integrating with Node.js backends?",
+          "options": {
+            "A": "Jasmine",
+            "B": "Supertest",
+            "C": "Cypress or Playwright",
+            "D": "Nock"
+          },
+          "correct_answer": "C",
+          "explanation": "Cypress and Playwright are modern E2E testing frameworks that provide powerful APIs for browser automation, interacting with both the frontend and the backend."
+        },
+        {
+          "question": "What is the purpose of `supertest` in Node.js Express API testing?",
+          "options": {
+            "A": "To run unit tests on individual functions.",
+            "B": "To mock HTTP requests and responses for API integration tests without actually starting an HTTP server.",
+            "C": "To test database connections only.",
+            "D": "To monitor API performance."
+          },
+          "correct_answer": "B",
+          "explanation": "Supertest is a convenient library for testing HTTP assertions. It allows you to make HTTP requests to your Express app directly, making integration tests faster and easier to write."
+        },
+        {
+          "question": "When writing tests, what does 'Test Driven Development (TDD)' emphasize?",
+          "options": {
+            "A": "Writing all code first, then writing tests.",
+            "B": "Writing failing tests before writing the production code, then writing just enough code to make the tests pass.",
+            "C": "Only writing tests for critical features.",
+            "D": "Writing tests only after deployment."
+          },
+          "correct_answer": "B",
+          "explanation": "TDD is a development methodology that promotes thinking about the desired behavior of the code first, leading to cleaner, more testable, and more robust code."
+        },
+        {
+          "question": "What is 'Code Coverage' in testing?",
+          "options": {
+            "A": "The speed at which tests run.",
+            "B": "The percentage of your application's code that is executed by your test suite, indicating how much of your codebase is being tested.",
+            "C": "The number of tests written.",
+            "D": "The number of bugs found by tests."
+          },
+          "correct_answer": "B",
+          "explanation": "While high code coverage doesn't guarantee bug-free code, it's a useful metric to identify untested areas and ensure a comprehensive test suite."
+        },
+        {
+          "question": "What is the role of `beforeEach()` and `afterEach()` hooks in testing frameworks like Jest or Mocha?",
+          "options": {
+            "A": "To define global setup and teardown for all tests.",
+            "B": "To set up conditions before each test case and clean up after each test case, ensuring test isolation.",
+            "C": "To run tests only once.",
+            "D": "To skip certain tests."
+          },
+          "correct_answer": "B",
+          "explanation": "These hooks are crucial for creating a clean and consistent state for each test, preventing side effects from one test affecting another."
+        },
+        {
+          "question": "Which of the following is a good practice for writing isolated unit tests for Node.js modules?",
+          "options": {
+            "A": "Allowing tests to access actual external databases.",
+            "B": "Mocking or stubbing all external dependencies (e.g., database calls, HTTP requests) to focus solely on the module's logic.",
+            "C": "Writing one large test file for the entire application.",
+            "D": "Skipping tests that rely on external services."
+          },
+          "correct_answer": "B",
+          "explanation": "Isolation is key for unit tests. Mocking dependencies ensures that a test only fails if the unit under test has a bug, not if an external service is down or behaving unexpectedly."
+        },
+        {
+          "question": "What is the primary benefit of running tests as part of a CI/CD pipeline?",
+          "options": {
+            "A": "It makes tests run faster.",
+            "B": "It ensures that code changes are automatically tested upon every commit, catching bugs early and maintaining code quality before deployment.",
+            "C": "It helps manage test data.",
+            "D": "It generates test reports automatically."
+          },
+          "correct_answer": "B",
+          "explanation": "Automated testing in CI/CD is a cornerstone of modern software development, preventing regressions and enabling faster, more confident deployments."
+        },
+        {
+          "question": "What does `jest.spyOn()` do?",
+          "options": {
+            "A": "It creates a new mock function.",
+            "B": "It observes calls to a specific method of an object without changing its implementation, allowing you to assert if it was called, with what arguments, etc.",
+            "C": "It replaces a function with a dummy implementation.",
+            "D": "It creates a snapshot of an object."
+          },
+          "correct_answer": "B",
+          "explanation": "Spies are useful when you want to verify interactions with existing functions without completely replacing them, for example, to check if a callback was triggered."
+        },
+        {
+          "question": "If you are testing a Node.js application that makes external HTTP requests (e.g., to a third-party API), which library could you use to mock these requests in your tests?",
+          "options": {
+            "A": "Express",
+            "B": "Axios",
+            "C": "Nock",
+            "D": "Mongoose"
+          },
+          "correct_answer": "C",
+          "explanation": "Nock is a popular library for mocking HTTP requests in Node.js tests, allowing you to define expected requests and mock responses, ensuring your tests are fast and reliable."
+        },
+        {
+          "question": "What is `describe()` commonly used for in testing frameworks like Jest or Mocha?",
+          "options": {
+            "A": "To define an individual test case.",
+            "B": "To group related test cases into a test suite, providing a logical structure for your tests.",
+            "C": "To perform assertions.",
+            "D": "To mock dependencies."
+          },
+          "correct_answer": "B",
+          "explanation": "`describe()` blocks help organize tests, making test files more readable and manageable, especially as the number of tests grows."
+        },
+        {
+          "question": "What does `it()` or `test()` do in Jest/Mocha?",
+          "options": {
+            "A": "Defines a test suite.",
+            "B": "Defines an individual test case, describing what should be tested and containing the actual test logic and assertions.",
+            "C": "Configures the testing environment.",
+            "D": "Generates test reports."
+          },
+          "correct_answer": "B",
+          "explanation": "These functions are aliases for defining the actual tests within a suite, providing a clear description of what each test verifies."
+        },
+        {
+          "question": "Is it a good practice to test Node.js application configurations (e.g., environment variables, `config.json` values) as part of your test suite?",
+          "options": {
+            "A": "No, configurations are not part of the code and don't need testing.",
+            "B": "Yes, verifying that configurations are loaded correctly and have expected values is important for application stability across environments.",
+            "C": "Only if the application is very complex.",
+            "D": "Only in production environments."
+          },
+          "correct_answer": "B",
+          "explanation": "Incorrect configurations can lead to application failures. Simple tests to ensure configuration values are loaded and interpreted correctly can prevent common deployment issues."
+        }
+      ]
+    }
+  ]
+}

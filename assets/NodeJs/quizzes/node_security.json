@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_security",
+      "questions": [
+        {
+          "question": "Which of the following is a critical first step to prevent most common web vulnerabilities in a Node.js application?",
+          "options": {
+            "A": "Disabling all security headers.",
+            "B": "Only using GET requests.",
+            "C": "Implementing robust input validation and sanitization on all user-supplied data.",
+            "D": "Storing all secrets directly in environment variables."
+          },
+          "correct_answer": "C",
+          "explanation": "Input validation and sanitization are fundamental to prevent various injection attacks (SQL Injection, XSS, Command Injection) by ensuring that inputs conform to expected formats and do not contain malicious code."
+        },
+        {
+          "question": "Why should sensitive data like API keys, database credentials, and cryptographic keys never be hardcoded directly into a Node.js application's source code?",
+          "options": {
+            "A": "It slows down the application's startup.",
+            "B": "It makes the code harder to read.",
+            "C": "It exposes these secrets if the codebase is ever compromised or publicly accessible (e.g., in a Git repository).",
+            "D": "It prevents the application from being deployed."
+          },
+          "correct_answer": "C",
+          "explanation": "Hardcoding secrets is a major security risk. They should be stored in environment variables, secret management services, or encrypted configuration files, and never committed to version control."
+        },
+        {
+          "question": "What is 'SQL Injection' and how can it be prevented in Node.js applications interacting with relational databases?",
+          "options": {
+            "A": "Injecting CSS styles into a webpage.",
+            "B": "Injecting malicious SQL code into input fields to manipulate database queries. Prevented by using parameterized queries or ORMs/ODMs with built-in protection.",
+            "C": "Injecting JavaScript into the client-side.",
+            "D": "Injecting arbitrary commands into the operating system."
+          },
+          "correct_answer": "B",
+          "explanation": "Parameterized queries (or prepared statements) separate the SQL logic from user input, preventing attackers from altering the query structure. ORMs like Sequelize or Knex.js typically handle this by default."
+        },
+        {
+          "question": "What is 'Cross-Site Scripting (XSS)' from a Node.js backend perspective, and how can the backend help mitigate it?",
+          "options": {
+            "A": "Attacking another server from your Node.js application.",
+            "B": "Injecting malicious scripts into a website viewed by other users. The backend mitigates by sanitizing user-generated content before storing and displaying it, and by using appropriate `Content-Type` headers.",
+            "C": "Accessing data across different origins without permission.",
+            "D": "Denying legitimate users access to a service."
+          },
+          "correct_answer": "B",
+          "explanation": "While front-end frameworks (like React) offer XSS protection, the backend is responsible for ensuring that all user-generated content (e.g., blog comments, user profiles) is properly sanitized before storage and retrieval to prevent XSS. Setting proper `Content-Type` headers (e.g., `application/json` instead of `text/html`) also helps."
+        },
+        {
+          "question": "What is 'Cross-Site Request Forgery (CSRF)' and how can it be mitigated in Node.js applications?",
+          "options": {
+            "A": "Forcing users to visit malicious websites.",
+            "B": "An attack that tricks a victim into submitting a malicious request to a web application. Mitigated using CSRF tokens, `SameSite` cookies, and origin/referrer header validation.",
+            "C": "Unauthorized access to a server's file system.",
+            "D": "Overloading a server with too many requests."
+          },
+          "correct_answer": "B",
+          "explanation": "CSRF tokens (random, unique values) must be present in requests to verify they originated from the legitimate application. `SameSite` cookie attribute and checking `Origin` and `Referer` headers also provide defense."
+        },
+        {
+          "question": "Which HTTP header is crucial for preventing 'Clickjacking' attacks in an Express.js application?",
+          "options": {
+            "A": "`Content-Type`",
+            "B": "`Authorization`",
+            "C": "`X-Frame-Options` or `Content-Security-Policy: frame-ancestors`",
+            "D": "`Cache-Control`"
+          },
+          "correct_answer": "C",
+          "explanation": "`X-Frame-Options` (e.g., `DENY` or `SAMEORIGIN`) prevents your page from being loaded in an `iframe` on another site. `Content-Security-Policy` with `frame-ancestors` directive offers more granular control."
+        },
+        {
+          "question": "What is 'Rate Limiting' and why is it important for Node.js APIs?",
+          "options": {
+            "A": "Limiting the speed of network connection.",
+            "B": "Restricting the number of requests a client can make to an API within a given timeframe, preventing abuse, brute-force attacks, and Denial of Service (DoS) attacks.",
+            "C": "Limiting the number of concurrent users on a website.",
+            "D": "Limiting the size of API responses."
+          },
+          "correct_answer": "B",
+          "explanation": "Rate limiting is essential to protect your API from being overwhelmed by malicious or abusive clients, ensuring fair usage and preventing service disruption."
+        },
+        {
+          "question": "When handling user passwords in a Node.js application, what is the most secure practice?",
+          "options": {
+            "A": "Storing them in plain text in the database.",
+            "B": "Storing them using simple hashing algorithms like MD5.",
+            "C": "Hashing them with a strong, slow, one-way cryptographic hashing function (e.g., bcrypt, scrypt) with a salt.",
+            "D": "Encrypting them with a reversible encryption algorithm."
+          },
+          "correct_answer": "C",
+          "explanation": "Strong, slow hashing algorithms with unique salts make rainbow table attacks impractical and brute-forcing computationally expensive, even if the database is compromised."
+        },
+        {
+          "question": "What is the purpose of the `Helmet` middleware in an Express.js application?",
+          "options": {
+            "A": "To compress HTTP responses.",
+            "B": "To set various HTTP headers to improve application security.",
+            "C": "To handle authentication and authorization.",
+            "D": "To log all incoming requests."
+          },
+          "correct_answer": "B",
+          "explanation": "Helmet is a collection of 14 small middleware functions that set various security-related HTTP headers like `X-Content-Type-Options`, `Strict-Transport-Security`, `X-XSS-Protection`, etc."
+        },
+        {
+          "question": "Why should you regularly update Node.js, Express.js, and other npm dependencies in your project?",
+          "options": {
+            "A": "To gain access to new experimental features.",
+            "B": "To receive critical security patches, bug fixes, and performance improvements.",
+            "C": "To increase bundle size.",
+            "D": "To break existing functionality."
+          },
+          "correct_answer": "B",
+          "explanation": "Outdated software is a common source of vulnerabilities. Regular updates ensure your application benefits from the latest security advisories and fixes."
+        },
+        {
+          "question": "When handling user sessions in Node.js, why are `HttpOnly` cookies generally preferred for storing session IDs or authentication tokens?",
+          "options": {
+            "A": "They are faster to transmit.",
+            "B": "They can only be read by the server and are inaccessible to client-side JavaScript, mitigating cookie theft via XSS attacks.",
+            "C": "They automatically encrypt the session data.",
+            "D": "They expire automatically after a short time."
+          },
+          "correct_answer": "B",
+          "explanation": "Making cookies `HttpOnly` is a crucial defense against XSS. Even if an attacker injects malicious JavaScript, they cannot access the session cookie containing sensitive authentication information."
+        },
+        {
+          "question": "What is 'Parameter Pollution' and how can it occur in Node.js APIs?",
+          "options": {
+            "A": "Sending too many parameters in a request.",
+            "B": "When an attacker sends multiple HTTP parameters with the same name, potentially overriding expected values or causing unexpected behavior in the application logic.",
+            "C": "Injecting unwanted characters into parameter values.",
+            "D": "Using insecure parameter names."
+          },
+          "correct_answer": "B",
+          "explanation": "If not handled carefully (e.g., by taking only the first occurrence or explicitly validating), parameter pollution can lead to bypasses in authentication/authorization or data manipulation."
+        },
+        {
+          "question": "Which of the following is NOT a good practice for error handling from a security perspective in Node.js?",
+          "options": {
+            "A": "Logging detailed error messages on the server-side.",
+            "B": "Exposing verbose error messages (e.g., stack traces, database errors) directly to the client in production environments.",
+            "C": "Implementing a centralized error handling middleware.",
+            "D": "Using `try...catch` blocks for synchronous code and `.catch()` for Promises."
+          },
+          "correct_answer": "B",
+          "explanation": "Verbose error messages provide attackers with valuable information about your application's internals, aiding in further exploitation. Generic error messages should be returned to clients in production."
+        },
+        {
+          "question": "What is the role of 'CORS' (Cross-Origin Resource Sharing) in Node.js API security?",
+          "options": {
+            "A": "It automatically encrypts API requests.",
+            "B": "It's a browser security feature that prevents web pages from making requests to a different domain than the one that served the web page, unless explicitly allowed by the server.",
+            "C": "It prevents SQL injection attacks.",
+            "D": "It's a server-side framework for routing."
+          },
+          "correct_answer": "B",
+          "explanation": "While CORS is primarily enforced by browsers, the Node.js API needs to implement the correct CORS headers (`Access-Control-Allow-Origin`, etc.) to permit legitimate cross-origin requests from frontends while restricting others."
+        },
+        {
+          "question": "Should sensitive data be passed in URL query parameters when making API requests from a Node.js backend?",
+          "options": {
+            "A": "Yes, it's the most secure way for GET requests.",
+            "B": "No, query parameters are often logged in server logs, browser history, and proxy servers, making them easily discoverable and insecure for sensitive data.",
+            "C": "Only if the data is very short.",
+            "D": "Only if the API endpoint is public."
+          },
+          "correct_answer": "B",
+          "explanation": "Sensitive data should always be sent in the request body (for POST/PUT/PATCH) and transmitted over HTTPS to ensure confidentiality and avoid exposure in logs or browser history."
+        },
+        {
+          "question": "When serving static files in Express.js, what is a security concern if not properly configured?",
+          "options": {
+            "A": "Increased network latency.",
+            "B": "Directory traversal or path manipulation vulnerabilities if user input is used to construct file paths.",
+            "C": "Static files are always safe.",
+            "D": "The files might be corrupted."
+          },
+          "correct_answer": "B",
+          "explanation": "If your static file serving mechanism uses user input to determine paths, an attacker could craft requests to access unauthorized files outside the intended static directory (e.g., `../../etc/passwd`). Use `path.resolve()` or `path.join()` carefully and ensure strict sanitization."
+        },
+        {
+          "question": "What is 'Dependency Confusion' in Node.js development, and how can it be mitigated?",
+          "options": {
+            "A": "When multiple packages have similar names.",
+            "B": "An attack where a malicious package with the same name as an internal or private package is published to a public registry, tricking build systems into installing the malicious version. Mitigated by using private registries, scoping packages, and careful dependency management.",
+            "C": "When a package has too many sub-dependencies.",
+            "D": "When `npm install` fails to resolve dependencies."
+          },
+          "correct_answer": "B",
+          "explanation": "This attack relies on how package managers resolve dependencies. Ensuring your private packages are always prioritized or hosted securely, and using scoped packages (e.g., `@myorg/private-lib`), are key mitigations."
+        },
+        {
+          "question": "What is the primary benefit of using `bcrypt` for password hashing over simpler methods like MD5 or SHA-256?",
+          "options": {
+            "A": "It's faster to compute.",
+            "B": "It produces shorter hash strings.",
+            "C": "It is designed to be computationally slow and includes a salting mechanism, making it highly resistant to brute-force and rainbow table attacks.",
+            "D": "It allows for easy decryption of passwords."
+          },
+          "correct_answer": "C",
+          "explanation": "The 'slowness' of bcrypt is a feature, as it makes it significantly more expensive for attackers to crack passwords, even with powerful hardware. Salting protects against rainbow tables."
+        },
+        {
+          "question": "What is 'Command Injection' in a Node.js context?",
+          "options": {
+            "A": "Injecting database commands.",
+            "B": "Injecting malicious operating system commands into an application that executes system commands based on user input, often via `child_process` functions.",
+            "C": "Injecting commands into the browser's console.",
+            "D": "Injecting commands into HTML attributes."
+          },
+          "correct_answer": "B",
+          "explanation": "If user input is directly used in `exec()` or `spawn()` without proper sanitization, an attacker can execute arbitrary commands on the server. Always use `spawn()` with arguments as a separate array and sanitize inputs."
+        },
+        {
+          "question": "Which `process` object property is commonly used to access environment variables in Node.js?",
+          "options": {
+            "A": "`process.args`",
+            "B": "`process.config`",
+            "C": "`process.env`",
+            "D": "`process.pid`"
+          },
+          "correct_answer": "C",
+          "explanation": "`process.env` is an object that contains the user environment, including any environment variables set for the process. This is the standard way to load secrets or configuration from the environment."
+        }
+      ]
+    }
+  ]
+}

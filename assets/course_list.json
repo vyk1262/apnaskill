@@ -14,7 +14,7 @@
   "HTML": ["html_intro", "html_forms", "html_media", "html_apis"],
   "CSS": ["css_intro", "css_responsive", "css_advanced"],
   "JavaScript": ["js_intro", "js_bom", "js_async", "js_apis"],
-  "React": [
+  "ReactJs": [
     "react_intro",
     "react_components",
     "react_state_management",
@@ -27,7 +27,7 @@
     "react_security",
     "react_accessibility"
   ],
-  "Node.js": [
+  "NodeJs": [
     "node_intro",
     "node_apis",
     "node_express",

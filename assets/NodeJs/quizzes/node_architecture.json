@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_architecture",
+      "questions": [
+        {
+          "question": "What is the fundamental architectural characteristic of Node.js that makes it efficient for I/O-bound operations?",
+          "options": {
+            "A": "Multi-threading with shared memory.",
+            "B": "Synchronous, blocking execution.",
+            "C": "Single-threaded Event Loop with non-blocking I/O.",
+            "D": "Distributed ledger technology."
+          },
+          "correct_answer": "C",
+          "explanation": "Node.js's architecture allows it to handle many concurrent connections efficiently by performing I/O operations asynchronously without blocking the main JavaScript thread."
+        },
+        {
+          "question": "What is a 'Monolithic Architecture' in the context of a Node.js application?",
+          "options": {
+            "A": "An application built with a single, standalone codebase where all functionalities (frontend, backend, database interactions) are tightly coupled.",
+            "B": "An application distributed across multiple independent services.",
+            "C": "A serverless application with no distinct backend.",
+            "D": "An application that only uses one programming language."
+          },
+          "correct_answer": "A",
+          "explanation": "In a monolith, all components are part of a single deployable unit. While simpler to start, they can become harder to scale and maintain as they grow."
+        },
+        {
+          "question": "What is 'Microservices Architecture' for Node.js, and what is its primary benefit?",
+          "options": {
+            "A": "Building a single, small Node.js service.",
+            "B": "Breaking down an application into a collection of small, independent, loosely coupled services, each running in its own process and communicating via lightweight mechanisms, enabling independent development, deployment, and scaling.",
+            "C": "An architecture where all logic runs on the client-side.",
+            "D": "A database-centric architecture."
+          },
+          "correct_answer": "B",
+          "explanation": "Microservices offer advantages in terms of scalability, fault isolation, technology diversity, and organizational agility for large, complex applications."
+        },
+        {
+          "question": "When adopting a Microservices architecture with Node.js, what pattern is commonly used as a single entry point for all client requests?",
+          "options": {
+            "A": "Direct service-to-service communication from the client.",
+            "B": "API Gateway pattern.",
+            "C": "Database Load Balancer.",
+            "D": "Client-Side Routing only."
+          },
+          "correct_answer": "B",
+          "explanation": "An API Gateway aggregates multiple service endpoints, handles routing, authentication, rate limiting, and transforms requests/responses, simplifying client interaction with microservices."
+        },
+        {
+          "question": "What is 'Horizontal Scaling' in the context of Node.js architecture?",
+          "options": {
+            "A": "Upgrading a single server with more CPU and RAM.",
+            "B": "Adding more identical servers (or instances) to distribute the load across them.",
+            "C": "Scaling the database vertically.",
+            "D": "Optimizing the code within a single process."
+          },
+          "correct_answer": "B",
+          "explanation": "Horizontal scaling is the preferred method for stateless Node.js applications, as it provides high availability and allows for virtually unlimited scalability by adding more nodes to a cluster."
+        },
+        {
+          "question": "What is 'Vertical Scaling'?",
+          "options": {
+            "A": "Adding more servers to the system.",
+            "B": "Upgrading a single server with more resources (e.g., more CPU cores, more RAM).",
+            "C": "Distributing the application across different geographical regions.",
+            "D": "Using serverless functions for scalability."
+          },
+          "correct_answer": "B",
+          "explanation": "Vertical scaling has limitations as there's an upper bound to how much you can upgrade a single server. It's often easier to implement initially but less flexible for extreme scalability."
+        },
+        {
+          "question": "What is the purpose of a 'Message Queue' (e.g., RabbitMQ, Kafka, AWS SQS) in a Node.js distributed architecture?",
+          "options": {
+            "A": "To handle synchronous communication between services.",
+            "B": "To enable asynchronous communication between services, decoupling them and buffering messages for reliable processing.",
+            "C": "To store static assets.",
+            "D": "To manage database transactions."
+          },
+          "correct_answer": "B",
+          "explanation": "Message queues are fundamental for building resilient and scalable distributed systems by enabling producers and consumers to communicate without direct coupling, handling spikes in traffic, and ensuring reliable delivery."
+        },
+        {
+          "question": "What is the 'Backend-for-Frontend (BFF)' pattern in a Node.js context?",
+          "options": {
+            "A": "A single backend API serving all types of clients.",
+            "B": "Creating a dedicated backend service (often in Node.js) tailored specifically for a particular frontend application (e.g., web, mobile), aggregating data and optimizing API calls for that client.",
+            "C": "A pattern for serving static files only.",
+            "D": "A database optimization technique."
+          },
+          "correct_answer": "B",
+          "explanation": "The BFF pattern allows frontends to have specialized APIs that meet their specific needs, reducing complexity on the client and potentially improving performance by minimizing round-trips."
+        },
+        {
+          "question": "Why is 'Statelessness' a desirable characteristic for Node.js services in a scalable architecture?",
+          "options": {
+            "A": "It means the service doesn't need a database.",
+            "B": "It simplifies horizontal scaling, as any instance can handle any request without needing to share session data or other state between instances.",
+            "C": "It reduces the amount of code in the application.",
+            "D": "It makes debugging easier."
+          },
+          "correct_answer": "B",
+          "explanation": "Stateless services can be easily scaled up or down, replaced, or restarted without impacting ongoing user sessions, as all necessary state is maintained by the client or an external, shared store (like Redis for sessions)."
+        },
+        {
+          "question": "Which of the 'Twelve-Factor App' principles is crucial for Node.js applications regarding configuration?",
+          "options": {
+            "A": "Store config in the code.",
+            "B": "Config: Store configuration in the environment.",
+            "C": "Databases: Rely on local files.",
+            "D": "Dependencies: Commit all dependencies."
+          },
+          "correct_answer": "B",
+          "explanation": "The Twelve-Factor App methodology promotes best practices for building scalable, maintainable, and deployable applications, and storing configuration in environment variables is key for portability across environments."
+        },
+        {
+          "question": "What is the primary architectural benefit of using Docker containers for Node.js deployment?",
+          "options": {
+            "A": "It eliminates the need for an operating system.",
+            "B": "It provides consistent and isolated environments for applications and their dependencies, from development to production, simplifying deployment and preventing 'works on my machine' issues.",
+            "C": "It automatically scales the application horizontally.",
+            "D": "It reduces code complexity."
+          },
+          "correct_answer": "B",
+          "explanation": "Containerization ensures that the application runs identically regardless of the underlying host environment, leading to more reliable deployments."
+        },
+        {
+          "question": "When designing a highly available Node.js application, why is 'redundancy' important?",
+          "options": {
+            "A": "To increase development time.",
+            "B": "To ensure that if one component or server fails, other identical components or servers can take over its workload, preventing single points of failure and maintaining service availability.",
+            "C": "To complicate the application architecture.",
+            "D": "To reduce network traffic."
+          },
+          "correct_answer": "B",
+          "explanation": "Redundancy is achieved through techniques like clustering, load balancing, and deploying across multiple availability zones or regions."
+        },
+        {
+          "question": "What is 'Eventual Consistency' in distributed Node.js systems (e.g., with NoSQL databases)?",
+          "options": {
+            "A": "Data is always immediately consistent across all replicas.",
+            "B": "A consistency model where updates might not propagate immediately to all replicas, but eventually, all replicas will converge to the same state.",
+            "C": "A model where data is never consistent.",
+            "D": "A consistency model where data is only consistent at the end of the day."
+          },
+          "correct_answer": "B",
+          "explanation": "Eventual consistency allows for higher availability and partition tolerance but requires applications to be designed to handle temporary inconsistencies. Many NoSQL databases (like MongoDB in certain configurations) offer this model."
+        },
+        {
+          "question": "What is the primary goal of 'Observability' in a Node.js architectural design?",
+          "options": {
+            "A": "To make the code readable.",
+            "B": "To allow engineers to understand the internal state of a system based on its external outputs (logs, metrics, traces), enabling easier debugging and performance analysis in production.",
+            "C": "To encrypt all data within the application.",
+            "D": "To prevent unauthorized access to the application."
+          },
+          "correct_answer": "B",
+          "explanation": "Observability relies on robust logging, metrics collection (e.g., Prometheus, Grafana), and distributed tracing to provide deep insights into a distributed system's behavior."
+        },
+        {
+          "question": "When building a highly available Node.js application, deploying across multiple 'Availability Zones' (AZs) in a cloud region helps to:",
+          "options": {
+            "A": "Reduce development costs.",
+            "B": "Protect against single data center failures.",
+            "C": "Improve CPU performance of a single instance.",
+            "D": "Decrease network latency within the same AZ."
+          },
+          "correct_answer": "B",
+          "explanation": "AZs are physically isolated locations within a region. Deploying across multiple AZs ensures that a failure in one location does not bring down your entire application."
+        },
+        {
+          "question": "What is the primary role of a 'Load Balancer' in a scaled Node.js architecture?",
+          "options": {
+            "A": "To manage database connections.",
+            "B": "To distribute incoming network traffic across multiple servers or instances, ensuring efficient resource utilization and high availability.",
+            "C": "To monitor application logs.",
+            "D": "To deploy new code changes."
+          },
+          "correct_answer": "B",
+          "explanation": "Load balancers are essential for distributing traffic to horizontally scaled applications, preventing overload on any single server and improving overall responsiveness."
+        },
+        {
+          "question": "What is 'Service Discovery' in a Microservices architecture (especially relevant for Node.js services)?",
+          "options": {
+            "A": "Discovering new NPM packages.",
+            "B": "A mechanism for services to find and communicate with each other dynamically, often through a registry where services register themselves and can be looked up by others.",
+            "C": "Discovering external APIs on the internet.",
+            "D": "Finding unused services to shut down."
+          },
+          "correct_answer": "B",
+          "explanation": "As services scale up and down, and instances come and go, service discovery becomes vital for maintaining correct inter-service communication without hardcoding addresses."
+        },
+        {
+          "question": "What is the architectural pattern where Node.js can be used to build a 'server-side rendered' (SSR) application?",
+          "options": {
+            "A": "The Node.js server only serves API endpoints.",
+            "B": "The Node.js server renders the initial HTML for a web page on the server before sending it to the client, improving initial load times and SEO.",
+            "C": "The Node.js server only handles database queries.",
+            "D": "The Node.js server acts as a reverse proxy only."
+          },
+          "correct_answer": "B",
+          "explanation": "SSR frameworks (like Next.js for React, Nuxt.js for Vue) leverage Node.js to pre-render pages, which is beneficial for performance and search engine optimization."
+        },
+        {
+          "question": "Why is 'Decoupling' important in a modern Node.js application architecture?",
+          "options": {
+            "A": "It means the application is built as a single, large codebase.",
+            "B": "It increases the complexity of development.",
+            "C": "It reduces dependencies between components or services, allowing them to be developed, deployed, and scaled independently, and making the system more resilient to changes.",
+            "D": "It prevents the use of external libraries."
+          },
+          "correct_answer": "C",
+          "explanation": "Decoupling is a core principle of microservices and leads to more flexible, maintainable, and robust systems."
+        },
+        {
+          "question": "In a Node.js microservices setup, what is the role of a 'Container Orchestration' platform like Kubernetes?",
+          "options": {
+            "A": "To manually start and stop each container.",
+            "B": "To automate the deployment, scaling, and management of containerized applications across a cluster of hosts, ensuring high availability and efficient resource utilization.",
+            "C": "To write application code within containers.",
+            "D": "To monitor database performance."
+          },
+          "correct_answer": "B",
+          "explanation": "Kubernetes and similar platforms (e.g., Docker Swarm, AWS ECS) are essential for managing the complexity of many containers in a production microservices environment."
+        }
+      ]
+    }
+  ]
+}

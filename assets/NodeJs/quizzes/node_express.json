@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_express",
+      "questions": [
+        {
+          "question": "What is Express.js?",
+          "options": {
+            "A": "A front-end JavaScript framework for building user interfaces.",
+            "B": "A database system used with Node.js.",
+            "C": "A fast, unopinionated, minimalist web framework for Node.js.",
+            "D": "A Node.js package manager."
+          },
+          "correct_answer": "C",
+          "explanation": "Express.js is a widely used and flexible web application framework for Node.js, providing a robust set of features for web and mobile applications."
+        },
+        {
+          "question": "Which of the following commands is used to install Express.js in a Node.js project?",
+          "options": {
+            "A": "`npm create express`",
+            "B": "`npm install express`",
+            "C": "`node install express`",
+            "D": "`express init`"
+          },
+          "correct_answer": "B",
+          "explanation": "`npm install express` downloads and installs the Express.js package into your project's `node_modules` directory and updates `package.json`."
+        },
+        {
+          "question": "How do you typically create an Express application instance?",
+          "options": {
+            "A": "`const app = new Express();`",
+            "B": "`const app = express();`",
+            "C": "`const app = createApplication();`",
+            "D": "`const app = express.createServer();`"
+          },
+          "correct_answer": "B",
+          "explanation": "After requiring Express (`const express = require('express');`), you create an application instance by calling the `express()` function."
+        },
+        {
+          "question": "What is 'routing' in Express.js?",
+          "options": {
+            "A": "The process of redirecting users to external websites.",
+            "B": "Defining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, etc.).",
+            "C": "Connecting the application to a database.",
+            "D": "Compressing HTTP responses."
+          },
+          "correct_answer": "B",
+          "explanation": "Routing in Express involves mapping HTTP methods and URL paths to specific handler functions that process the request and send a response."
+        },
+        {
+          "question": "Which HTTP method is used to retrieve data from the server?",
+          "options": {
+            "A": "POST",
+            "B": "PUT",
+            "C": "DELETE",
+            "D": "GET"
+          },
+          "correct_answer": "D",
+          "explanation": "GET requests are used to request data from a specified resource and should ideally be idempotent (making the same request multiple times has the same effect)."
+        },
+        {
+          "question": "Which HTTP method is used to submit data to be processed to a specified resource?",
+          "options": {
+            "A": "GET",
+            "B": "POST",
+            "C": "PATCH",
+            "D": "HEAD"
+          },
+          "correct_answer": "B",
+          "explanation": "POST requests are typically used to send data to the server, often to create new resources."
+        },
+        {
+          "question": "What is 'middleware' in Express.js?",
+          "options": {
+            "A": "A database query language.",
+            "B": "Functions that have access to the request object (`req`), the response object (`res`), and the `next` middleware function in the application’s request-response cycle.",
+            "C": "A templating engine for rendering HTML.",
+            "D": "A tool for deploying Express applications."
+          },
+          "correct_answer": "B",
+          "explanation": "Middleware functions can perform tasks like logging, authentication, parsing request bodies, etc., before the final route handler sends a response."
+        },
+        {
+          "question": "What is the purpose of the `next()` function in an Express.js middleware?",
+          "options": {
+            "A": "To terminate the request-response cycle.",
+            "B": "To send a response to the client.",
+            "C": "To pass control to the next middleware function in the stack.",
+            "D": "To redirect the client to a new URL."
+          },
+          "correct_answer": "C",
+          "explanation": "Calling `next()` is crucial for the request to proceed through the middleware chain and eventually reach the appropriate route handler."
+        },
+        {
+          "question": "How do you access URL parameters (e.g., `:id` in `/users/:id`) in an Express.js route handler?",
+          "options": {
+            "A": "`req.query.id`",
+            "B": "`req.body.id`",
+            "C": "`req.params.id`",
+            "D": "`req.headers.id`"
+          },
+          "correct_answer": "C",
+          "explanation": "URL parameters are extracted from the path and are available on the `req.params` object."
+        },
+        {
+          "question": "Which built-in Express.js middleware is commonly used to parse incoming request bodies in JSON format?",
+          "options": {
+            "A": "`express.static()`",
+            "B": "`express.json()`",
+            "C": "`express.urlencoded()`",
+            "D": "`express.raw()`"
+          },
+          "correct_answer": "B",
+          "explanation": "`express.json()` parses incoming requests with JSON payloads and makes the parsed data available on `req.body`."
+        },
+        {
+          "question": "How do you send a JSON response from an Express.js route handler?",
+          "options": {
+            "A": "`res.send(data)`",
+            "B": "`res.end(data)`",
+            "C": "`res.json(data)`",
+            "D": "`res.write(data)`"
+          },
+          "correct_answer": "C",
+          "explanation": "`res.json()` sends a JSON response. It also sets the `Content-Type` header to `application/json`."
+        },
+        {
+          "question": "What is the purpose of `app.use()` in Express.js?",
+          "options": {
+            "A": "To define a specific route handler.",
+            "B": "To register middleware functions that will be executed for every incoming request (or for specific paths).",
+            "C": "To start the Express server.",
+            "D": "To handle errors only."
+          },
+          "correct_answer": "B",
+          "explanation": "`app.use()` is used to mount middleware functions at a specified path. If no path is specified, the middleware is executed for every request."
+        },
+        {
+          "question": "What is the order of execution for middleware functions in Express.js?",
+          "options": {
+            "A": "Random order.",
+            "B": "Based on the length of their paths.",
+            "C": "In the order they are defined/mounted using `app.use()` and route-specific methods.",
+            "D": "From the last defined to the first defined."
+          },
+          "correct_answer": "C",
+          "explanation": "The order in which middleware and route handlers are defined is crucial, as Express executes them sequentially."
+        },
+        {
+          "question": "How can you serve static files (like HTML, CSS, images) using Express.js?",
+          "options": {
+            "A": "By manually creating routes for each static file.",
+            "B": "Using `express.static()` middleware.",
+            "C": "Express.js does not support serving static files.",
+            "D": "By directly accessing them from the client-side."
+          },
+          "correct_answer": "B",
+          "explanation": "`express.static()` is built-in middleware that serves static assets from a specified directory, making it easy to host your front-end files."
+        },
+        {
+          "question": "Where should error-handling middleware be placed in the Express.js middleware stack?",
+          "options": {
+            "A": "At the very beginning, before any other middleware.",
+            "B": "Immediately after the routing handlers, but before any `app.use()` calls.",
+            "C": "At the very end of the middleware stack, after all other `app.use()` calls and routes.",
+            "D": "It doesn't matter where it's placed."
+          },
+          "correct_answer": "C",
+          "explanation": "Error-handling middleware (which takes four arguments: `(err, req, res, next)`) must be defined after all other middleware and routes, so it can catch errors propagated by `next(err)`."
+        },
+        {
+          "question": "What does `app.listen()` do in an Express.js application?",
+          "options": {
+            "A": "It listens for database changes.",
+            "B": "It starts the server and listens for incoming connections on a specified port.",
+            "C": "It listens for events emitted by other parts of the application.",
+            "D": "It establishes a WebSocket connection."
+          },
+          "correct_answer": "B",
+          "explanation": "`app.listen()` binds the Express application to a specific network port, making it ready to accept HTTP requests."
+        },
+        {
+          "question": "What is `req.body` used for in Express.js?",
+          "options": {
+            "A": "To access URL query parameters.",
+            "B": "To access the parsed data sent in the HTTP request body (e.g., from POST/PUT requests).",
+            "C": "To access HTTP headers.",
+            "D": "To get the client's IP address."
+          },
+          "correct_answer": "B",
+          "explanation": "`req.body` contains the parsed data from the request body, typically populated by middleware like `express.json()` or `express.urlencoded()`."
+        },
+        {
+          "question": "Which of the following describes `res.status()` in Express.js?",
+          "options": {
+            "A": "It sends the response immediately.",
+            "B": "It sets the HTTP status code for the response, but doesn't send the response itself.",
+            "C": "It redirects the client.",
+            "D": "It logs the status of the server."
+          },
+          "correct_answer": "B",
+          "explanation": "`res.status(statusCode)` sets the status code. You then typically chain it with `res.send()`, `res.json()`, or `res.end()` to send the response with that status."
+        },
+        {
+          "question": "What is an 'Express Router' and its benefit?",
+          "options": {
+            "A": "A tool to automatically generate routes.",
+            "B": "A separate instance of middleware and routes that can be used to modularize route handling, allowing for better organization of large applications.",
+            "C": "A component that dictates how data flows between middleware.",
+            "D": "A database connection pool."
+          },
+          "correct_answer": "B",
+          "explanation": "Express Routers (`express.Router()`) allow you to group related routes and middleware, making your application code cleaner and more manageable."
+        },
+        {
+          "question": "How do you handle a route not found (404 error) in Express.js?",
+          "options": {
+            "A": "Express handles it automatically with a default 404.",
+            "B": "By placing a middleware function without a path (or with `'/*'`) and sending a 404 response, *after* all other routes and middleware.",
+            "C": "By using `res.redirect()` for all invalid routes.",
+            "D": "By installing a specific 404 handling package."
+          },
+          "correct_answer": "B",
+          "explanation": "A common pattern is to define a catch-all middleware at the very end of your middleware stack that sends a 404 status and message, as it will only be reached if no other routes matched."
+        }
+      ]
+    }
+  ]
+}
