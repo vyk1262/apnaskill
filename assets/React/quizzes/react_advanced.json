@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_advanced",
+      "questions": [
+        {
+          "question": "What is the concept of 'Reconciliation' in React?",
+          "options": {
+            "A": "The process of fetching data from a server.",
+            "B": "The algorithm React uses to diff the Virtual DOM with the actual DOM and efficiently update the UI.",
+            "C": "The process of combining multiple components into one.",
+            "D": "The method for styling components."
+          },
+          "correct_answer": "B",
+          "explanation": "Reconciliation is the core algorithm that allows React to be efficient by minimizing direct DOM manipulations."
+        },
+        {
+          "question": "What is the purpose of `React.memo()`?",
+          "options": {
+            "A": "To memoize state values in functional components.",
+            "B": "To prevent a functional component from re-rendering if its props have not changed.",
+            "C": "To create a memoized callback function.",
+            "D": "To store data in local storage."
+          },
+          "correct_answer": "B",
+          "explanation": "`React.memo()` is a higher-order component that optimizes functional components by preventing unnecessary re-renders when props are shallowly equal."
+        },
+        {
+          "question": "When using `React.memo()`, what type of comparison is performed on props by default?",
+          "options": {
+            "A": "Deep comparison (compares values inside objects/arrays).",
+            "B": "Strict equality comparison (compares references).",
+            "C": "Shallow comparison (compares primitive values and references for objects/arrays).",
+            "D": "No comparison, it always re-renders."
+          },
+          "correct_answer": "C",
+          "explanation": "By default, `React.memo()` performs a shallow comparison of props. For deep comparisons, a custom comparison function can be provided as a second argument."
+        },
+        {
+          "question": "What is a 'Higher-Order Component' (HOC) in React?",
+          "options": {
+            "A": "A component that renders other components as its children.",
+            "B": "A function that takes a component as an argument and returns a new component with enhanced functionality.",
+            "C": "A component that uses Hooks for state management.",
+            "D": "A component that only renders static content."
+          },
+          "correct_answer": "B",
+          "explanation": "HOCs are a powerful pattern for reusing component logic. They are a functional approach to composition for components."
+        },
+        {
+          "question": "What is the primary motivation for using HOCs?",
+          "options": {
+            "A": "To replace standard React components.",
+            "B": "To share reusable logic across multiple components without duplicating code.",
+            "C": "To introduce side effects in functional components.",
+            "D": "To directly manipulate the DOM."
+          },
+          "correct_answer": "B",
+          "explanation": "HOCs abstract common patterns, like data fetching or authentication, and apply them to various components."
+        },
+        {
+          "question": "What is the 'Context API' in React typically used for?",
+          "options": {
+            "A": "Managing component-specific local state.",
+            "B": "Prop drilling through many levels of the component tree.",
+            "C": "Sharing data that is considered 'global' for a tree of React components (e.g., theme, authentication status) without explicit prop passing.",
+            "D": "Performing complex animations."
+          },
+          "correct_answer": "C",
+          "explanation": "Context API provides a way to pass data deeply into the component tree without manually passing props at every level."
+        },
+        {
+          "question": "When should you NOT use React Context?",
+          "options": {
+            "A": "For simple, local component state.",
+            "B": "For infrequent updates to static data.",
+            "C": "For highly dynamic state that changes frequently and affects many components in the tree.",
+            "D": "For passing authentication tokens."
+          },
+          "correct_answer": "C",
+          "explanation": "While Context can manage dynamic state, it's not optimized for frequent, fine-grained updates across a large tree, as it can cause performance issues due to re-renders. State management libraries are better for this."
+        },
+        {
+          "question": "What is a 'Portal' in React?",
+          "options": {
+            "A": "A component that renders its children into a different DOM node outside of the parent component's hierarchy.",
+            "B": "A way to communicate between sibling components.",
+            "C": "A method for lazy loading components.",
+            "D": "A built-in feature for routing."
+          },
+          "correct_answer": "A",
+          "explanation": "Portals are useful for modals, tooltips, or components that need to break out of their parent's CSS stacking context."
+        },
+        {
+          "question": "Why would you use a React Portal?",
+          "options": {
+            "A": "To improve component reusability.",
+            "B": "To avoid CSS `z-index` issues and maintain semantic HTML structure for elements like modals, tooltips, or dropdowns.",
+            "C": "To manage state in a global store.",
+            "D": "To optimize API calls."
+          },
+          "correct_answer": "B",
+          "explanation": "Portals allow elements to render visually outside their parent's DOM hierarchy while retaining React event bubbling."
+        },
+        {
+          "question": "What is 'Error Boundary' in React?",
+          "options": {
+            "A": "A component that catches JavaScript errors anywhere in its child component tree, logs those errors, and displays a fallback UI.",
+            "B": "A component that throws errors intentionally.",
+            "C": "A tool for debugging network requests.",
+            "D": "A way to prevent component re-renders."
+          },
+          "correct_answer": "A",
+          "explanation": "Error Boundaries prevent entire UI crashes and provide a graceful fallback for users when errors occur within a part of the application."
+        },
+        {
+          "question": "Can an Error Boundary catch errors within itself?",
+          "options": {
+            "A": "Yes, always.",
+            "B": "No, it only catches errors in its children component tree.",
+            "C": "Only if it's a functional component.",
+            "D": "Only in development mode."
+          },
+          "correct_answer": "B",
+          "explanation": "Error boundaries only catch errors in the components below them in the tree. An error boundary cannot catch an error within itself."
+        },
+        {
+          "question": "Which lifecycle method is used by a class component to become an Error Boundary?",
+          "options": {
+            "A": "`componentDidMount()`",
+            "B": "`componentDidUpdate()`",
+            "C": "`getDerivedStateFromError()` or `componentDidCatch()`",
+            "D": "`render()`"
+          },
+          "correct_answer": "C",
+          "explanation": "These two static methods are the only ones that make a class component an Error Boundary. `getDerivedStateFromError` is for updating state to show fallback UI, and `componentDidCatch` is for logging error info."
+        },
+        {
+          "question": "What is 'Lazy Loading' (or Code Splitting) in React?",
+          "options": {
+            "A": "Fetching all application code at once on initial load.",
+            "B": "Loading components or modules only when they are needed, reducing the initial bundle size and improving load time.",
+            "C": "A way to force components to re-render.",
+            "D": "A technique for server-side rendering."
+          },
+          "correct_answer": "B",
+          "explanation": "Lazy loading is a performance optimization that defers loading of non-critical JavaScript until it's actually required."
+        },
+        {
+          "question": "Which React feature is used in conjunction with `import()` for lazy loading components?",
+          "options": {
+            "A": "`React.createElement()`",
+            "B": "`React.lazy()`",
+            "C": "`ReactDOM.render()`",
+            "D": "`React.PureComponent`"
+          },
+          "correct_answer": "B",
+          "explanation": "`React.lazy()` allows you to render a dynamic import as a regular component."
+        },
+        {
+          "question": "What component is used to display a fallback UI while a lazy-loaded component is loading?",
+          "options": {
+            "A": "`<ErrorFallback>`",
+            "B": "`<Suspense>`",
+            "C": "`<LoadingSpinner>`",
+            "D": "`<Placeholder>`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `<Suspense>` component lets you 'wait' for some code to load and specify a loading indicator (fallback) while it's happening."
+        },
+        {
+          "question": "What is a 'Render Prop' pattern in React?",
+          "options": {
+            "A": "A component prop that expects a string value.",
+            "B": "A technique where a component passes a function as a prop to its child, and that function returns a React element.",
+            "C": "A way to render a component on the server.",
+            "D": "A prop used only for styling."
+          },
+          "correct_answer": "B",
+          "explanation": "The render prop pattern allows sharing code between components using a prop whose value is a function that renders something."
+        },
+        {
+          "question": "What is the primary benefit of the Render Prop pattern?",
+          "options": {
+            "A": "It eliminates the need for state.",
+            "B": "It promotes code reuse and simplifies logic sharing between components.",
+            "C": "It significantly improves component performance.",
+            "D": "It's only useful for complex animations."
+          },
+          "correct_answer": "B",
+          "explanation": "Similar to HOCs, render props provide a flexible way to share logic and behavior across components."
+        },
+        {
+          "question": "What is 'Server-Side Rendering' (SSR) in React?",
+          "options": {
+            "A": "Rendering React components only on the client-side.",
+            "B": "Rendering React components to HTML on the server, sending fully rendered HTML to the client, and then 'hydrating' it on the client-side.",
+            "C": "Using a Node.js backend to serve API endpoints.",
+            "D": "Running all JavaScript code on the server."
+          },
+          "correct_answer": "B",
+          "explanation": "SSR improves initial page load times and SEO by sending ready-to-display HTML to the browser."
+        },
+        {
+          "question": "What is 'Hydration' in the context of React SSR?",
+          "options": {
+            "A": "The process of re-rendering the entire page on the client.",
+            "B": "The process where React attaches event listeners and makes the server-rendered HTML interactive on the client-side.",
+            "C": "Fetching data from an API after the page loads.",
+            "D": "Adding water to a dehydrated component."
+          },
+          "correct_answer": "B",
+          "explanation": "Hydration is crucial for making SSR applications interactive once the JavaScript bundle loads on the client."
+        },
+        {
+          "question": "What is the main advantage of SSR over Client-Side Rendering (CSR) for an initial page load?",
+          "options": {
+            "A": "Faster subsequent page navigations.",
+            "B": "Better SEO and faster initial content display.",
+            "C": "Reduced server load.",
+            "D": "Simpler development setup."
+          },
+          "correct_answer": "B",
+          "explanation": "SSR delivers fully formed HTML, which is crawlable by search engines and viewable by users faster, especially on slow networks."
+        }
+      ]
+    }
+  ]
+}

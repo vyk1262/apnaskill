@@ -11,18 +11,34 @@
     "intro",
     "modules"
   ],
-  "Web Development": [
-    "html_intro",
-    "html_forms",
-    "html_media",
-    "html_apis",
-    "css_intro",
-    "css_responsive",
-    "css_advanced",
-    "js_intro",
-    "js_bom",
-    "js_async",
-    "js_apis"
+  "HTML": ["html_intro", "html_forms", "html_media", "html_apis"],
+  "CSS": ["css_intro", "css_responsive", "css_advanced"],
+  "JavaScript": ["js_intro", "js_bom", "js_async", "js_apis"],
+  "React": [
+    "react_intro",
+    "react_components",
+    "react_state_management",
+    "react_routing",
+    "react_apis",
+    "react_advanced",
+    "react_hooks",
+    "react_optimization",
+    "react_deployment",
+    "react_security",
+    "react_accessibility"
+  ],
+  "Node.js": [
+    "node_intro",
+    "node_apis",
+    "node_express",
+    "node_mongodb",
+    "node_security",
+    "node_deployment",
+    "node_advanced",
+    "node_cloud",
+    "node_testing",
+    "node_performance",
+    "node_architecture"
   ],
   "Data Science": [
     "Data_Science_Fundamentals",

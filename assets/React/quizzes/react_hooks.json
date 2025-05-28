@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_hooks",
+      "questions": [
+        {
+          "question": "What are React Hooks?",
+          "options": {
+            "A": "Functions that let you 'hook into' React state and lifecycle features from class components.",
+            "B": "Functions that let you 'hook into' React state and lifecycle features from functional components.",
+            "C": "A new way to create class components.",
+            "D": "A replacement for all external state management libraries."
+          },
+          "correct_answer": "B",
+          "explanation": "Hooks enable functional components to have state and side effects, which were previously only available in class components."
+        },
+        {
+          "question": "Which Hook is used to add state to a functional component?",
+          "options": {
+            "A": "`useReducer`",
+            "B": "`useEffect`",
+            "C": "`useState`",
+            "D": "`useRef`"
+          },
+          "correct_answer": "C",
+          "explanation": "`useState` is the foundational Hook for managing local component state."
+        },
+        {
+          "question": "What is returned by the `useState` Hook?",
+          "options": {
+            "A": "The state value itself.",
+            "B": "An object containing the state value and a reducer function.",
+            "C": "An array containing the current state value and a function to update it.",
+            "D": "A Promise that resolves with the state value."
+          },
+          "correct_answer": "C",
+          "explanation": "It returns a pair: the current state and a function to update that state."
+        },
+        {
+          "question": "Which Hook is used to perform side effects in functional components (e.g., data fetching, subscriptions, DOM manipulation)?",
+          "options": {
+            "A": "`useState`",
+            "B": "`useContext`",
+            "C": "`useEffect`",
+            "D": "`useCallback`"
+          },
+          "correct_answer": "C",
+          "explanation": "`useEffect` allows you to perform side effects after every render of a functional component."
+        },
+        {
+          "question": "What happens if the dependency array in `useEffect` is empty (`[]`)?",
+          "options": {
+            "A": "The effect runs on every render.",
+            "B": "The effect runs only once after the initial render (like `componentDidMount`).",
+            "C": "The effect never runs.",
+            "D": "The effect runs only when the component unmounts."
+          },
+          "correct_answer": "B",
+          "explanation": "An empty dependency array tells React that the effect doesn't depend on any values from the component's scope and should only run once."
+        },
+        {
+          "question": "What is the purpose of the return function inside `useEffect`?",
+          "options": {
+            "A": "To return the next state value.",
+            "B": "To perform cleanup (e.g., unsubscribe, clear timers) when the component unmounts or before the effect re-runs.",
+            "C": "To re-run the effect immediately.",
+            "D": "To define the component's render output."
+          },
+          "correct_answer": "B",
+          "explanation": "The return function acts as a cleanup mechanism, preventing memory leaks and resource exhaustion."
+        },
+        {
+          "question": "Which Hook is used to access the value of a React Context in a functional component?",
+          "options": {
+            "A": "`useState`",
+            "B": "`useReducer`",
+            "C": "`useCallback`",
+            "D": "`useContext`"
+          },
+          "correct_answer": "D",
+          "explanation": "`useContext` simplifies consuming context values within functional components, replacing the older `Context.Consumer` API."
+        },
+        {
+          "question": "When would you prefer `useReducer` over `useState`?",
+          "options": {
+            "A": "For simple, independent state variables.",
+            "B": "When state logic is complex, involves multiple sub-values, or the next state depends on the previous one.",
+            "C": "When you need to perform side effects.",
+            "D": "When accessing DOM elements directly."
+          },
+          "correct_answer": "B",
+          "explanation": "`useReducer` is often a better choice for state that requires more sophisticated update logic, similar to Redux patterns."
+        },
+        {
+          "question": "What is the primary benefit of `useCallback`?",
+          "options": {
+            "A": "To memoize a component's render output.",
+            "B": "To prevent a function from being recreated on every render if its dependencies haven't changed, optimizing child components that rely on referential equality.",
+            "C": "To manage asynchronous operations.",
+            "D": "To get a mutable ref object."
+          },
+          "correct_answer": "B",
+          "explanation": "`useCallback` memoizes the callback function itself, which is useful when passing callbacks to optimized child components to prevent unnecessary re-renders."
+        },
+        {
+          "question": "What is the primary benefit of `useMemo`?",
+          "options": {
+            "A": "To memoize the entire component.",
+            "B": "To memoize the result of a computation, preventing expensive calculations on every render if dependencies haven't changed.",
+            "C": "To create a stable reference to a DOM element.",
+            "D": "To manage form state."
+          },
+          "correct_answer": "B",
+          "explanation": "`useMemo` memoizes a value, recomputing it only when its dependencies change, which can improve performance for expensive calculations."
+        },
+        {
+          "question": "What is the purpose of the `useRef` Hook?",
+          "options": {
+            "A": "To create a state variable that triggers re-renders.",
+            "B": "To get a mutable ref object that can hold a value (e.g., a DOM element, or any mutable value) that persists across renders without causing re-renders when updated.",
+            "C": "To define a function that runs after every render.",
+            "D": "To manage context values."
+          },
+          "correct_answer": "B",
+          "explanation": "`useRef` is commonly used for direct DOM interactions or to store mutable values that don't need to trigger re-renders."
+        },
+        {
+          "question": "Can you use Hooks inside conditional statements (if/else)?",
+          "options": {
+            "A": "Yes, always.",
+            "B": "No, Hooks must be called at the top level of your functional component.",
+            "C": "Only if they are inside a `useEffect`.",
+            "D": "Only when rendering the component for the first time."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a fundamental rule of Hooks, ensuring that Hooks are called in the same order on every render. Breaking this rule leads to unpredictable behavior and errors."
+        },
+        {
+          "question": "Can you use Hooks inside regular JavaScript functions (not React components)?",
+          "options": {
+            "A": "Yes, always.",
+            "B": "No, Hooks can only be called from React functional components or custom Hooks.",
+            "C": "Only if the function is exported.",
+            "D": "Only if it's a utility function."
+          },
+          "correct_answer": "B",
+          "explanation": "Hooks rely on React's internal state management, which is tied to the component lifecycle. They cannot be used outside of a React component or a custom Hook."
+        },
+        {
+          "question": "What is a 'Custom Hook' in React?",
+          "options": {
+            "A": "A Hook provided by a third-party library.",
+            "B": "A JavaScript function whose name starts with `use` and calls other Hooks, allowing you to encapsulate and reuse stateful logic.",
+            "C": "A Hook that modifies the browser's DOM directly.",
+            "D": "A Hook that connects to a backend API."
+          },
+          "correct_answer": "B",
+          "explanation": "Custom Hooks are a powerful pattern for abstracting and sharing complex logic between components, making them more readable and maintainable."
+        },
+        {
+          "question": "What is the naming convention for Custom Hooks?",
+          "options": {
+            "A": "They must start with `get`.",
+            "B": "They must start with `handle`.",
+            "C": "They must start with `use`.",
+            "D": "There is no specific naming convention."
+          },
+          "correct_answer": "C",
+          "explanation": "The `use` prefix is a convention that allows React's linter to enforce the Rules of Hooks and clearly identify custom Hooks."
+        },
+        {
+          "question": "What is the primary benefit of Custom Hooks?",
+          "options": {
+            "A": "They eliminate the need for `useState` and `useEffect`.",
+            "B": "They enable sharing of stateful logic and behavior between components without component tree changes or prop drilling.",
+            "C": "They automatically optimize all components.",
+            "D": "They replace Redux for all state management needs."
+          },
+          "correct_answer": "B",
+          "explanation": "Custom Hooks promote code reuse and separation of concerns by encapsulating complex logic that might otherwise be duplicated across multiple components."
+        },
+        {
+          "question": "Which Hook is best suited for scenarios where you need to manage focus, text selection, or media playback?",
+          "options": {
+            "A": "`useState`",
+            "B": "`useEffect`",
+            "C": "`useRef`",
+            "D": "`useContext`"
+          },
+          "correct_answer": "C",
+          "explanation": "`useRef` allows direct interaction with the DOM or holding mutable values that don't trigger re-renders, making it ideal for these imperative operations."
+        },
+        {
+          "question": "When should you use `useLayoutEffect` instead of `useEffect`?",
+          "options": {
+            "A": "They are interchangeable.",
+            "B": "When you need to perform DOM mutations that are visible to the user before the browser paints the screen, to avoid visual glitches.",
+            "C": "For asynchronous operations.",
+            "D": "Only in class components."
+          },
+          "correct_answer": "B",
+          "explanation": "`useLayoutEffect` runs synchronously after all DOM mutations but before the browser paints, making it suitable for effects that need to read or modify the DOM layout before the user sees it."
+        },
+        {
+          "question": "What is the main difference in execution timing between `useEffect` and `useLayoutEffect`?",
+          "options": {
+            "A": "`useEffect` runs before render, `useLayoutEffect` runs after render.",
+            "B": "`useEffect` runs after paint, `useLayoutEffect` runs synchronously after DOM mutations but before paint.",
+            "C": "`useEffect` is for mounting, `useLayoutEffect` is for updating.",
+            "D": "There is no difference in timing."
+          },
+          "correct_answer": "B",
+          "explanation": "This timing difference is crucial for preventing visual inconsistencies. `useEffect` is generally preferred for most side effects due to its non-blocking nature."
+        },
+        {
+          "question": "What concept do Hooks aim to simplify or replace from class components?",
+          "options": {
+            "A": "The `render()` method.",
+            "B": "Component lifecycle methods (`componentDidMount`, `componentDidUpdate`, `componentWillUnmount`) and `this.state`.",
+            "C": "JSX syntax.",
+            "D": "Prop passing."
+          },
+          "correct_answer": "B",
+          "explanation": "Hooks provide functional alternatives to class-based lifecycle methods and state management, aiming for more readable and reusable code."
+        }
+      ]
+    }
+  ]
+}

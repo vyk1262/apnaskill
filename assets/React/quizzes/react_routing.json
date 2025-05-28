@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_routing",
+      "questions": [
+        {
+          "question": "What is the primary purpose of client-side routing in a Single Page Application (SPA) like React?",
+          "options": {
+            "A": "To refresh the entire page for every navigation.",
+            "B": "To handle server-side redirects.",
+            "C": "To update the URL and render corresponding UI components without a full page reload.",
+            "D": "To manage database queries."
+          },
+          "correct_answer": "C",
+          "explanation": "Client-side routing allows SPAs to simulate multi-page behavior by dynamically updating the UI based on the URL, providing a smoother user experience."
+        },
+        {
+          "question": "What is the most widely used library for routing in React applications?",
+          "options": {
+            "A": "React Router",
+            "B": "React Navigation",
+            "C": "React Redux",
+            "D": "React Spring"
+          },
+          "correct_answer": "A",
+          "explanation": "React Router is the de-facto standard for declarative routing in React applications."
+        },
+        {
+          "question": "Which of the following is NOT a core component provided by React Router?",
+          "options": {
+            "A": "`BrowserRouter`",
+            "B": "`Route`",
+            "C": "`Component`",
+            "D": "`Link`"
+          },
+          "correct_answer": "C",
+          "explanation": "`Component` is a general React concept, not a specific routing component from React Router. `BrowserRouter`, `Route`, and `Link` are fundamental to its functionality."
+        },
+        {
+          "question": "What is the purpose of the `BrowserRouter` component in React Router?",
+          "options": {
+            "A": "To handle server-side routing.",
+            "B": "To keep the UI in sync with the URL using the HTML5 history API.",
+            "C": "To define individual routes.",
+            "D": "To navigate programmatically."
+          },
+          "correct_answer": "B",
+          "explanation": "`BrowserRouter` is a router that uses the HTML5 history API (`pushState`, `replaceState`, and the `popstate` event) to keep your UI in sync with the URL."
+        },
+        {
+          "question": "How do you define a route that renders a specific component when the URL matches a given path?",
+          "options": {
+            "A": "Using `<Route path='/path' component={MyComponent} />`",
+            "B": "Using `<Link to='/path' />`",
+            "C": "Using `<Navigate to='/path' />`",
+            "D": "Using `<BrowserRouter path='/path' />`"
+          },
+          "correct_answer": "A",
+          "explanation": "The `Route` component maps a URL `path` to a specific React `component` to render."
+        },
+        {
+          "question": "What is the purpose of the `Link` component in React Router?",
+          "options": {
+            "A": "To create external hyperlinks that trigger full page reloads.",
+            "B": "To programmatically navigate to a different route.",
+            "C": "To create declarative, accessible navigation links within your application without causing a full page reload.",
+            "D": "To fetch data from an API."
+          },
+          "correct_answer": "C",
+          "explanation": "`Link` prevents the default browser behavior of full page reloads and instead uses the router to update the URL and render the appropriate component."
+        },
+        {
+          "question": "How do you define a dynamic segment in a route path (e.g., for user profiles like `/users/:id`)?",
+          "options": {
+            "A": "Using `path='/users/*' `",
+            "B": "Using `path='/users/{id}' `",
+            "C": "Using `path='/users/:id' `",
+            "D": "Using `path='/users/id=' ` "
+          },
+          "correct_answer": "C",
+          "explanation": "The colon `:` is used to define URL parameters (dynamic segments) in React Router paths."
+        },
+        {
+          "question": "How do you access URL parameters (e.g., `id` from `/users/:id`) in a functional component using React Router v6?",
+          "options": {
+            "A": "Using `this.props.match.params.id`",
+            "B": "Using the `useParams()` Hook.",
+            "C": "Using `window.location.id`",
+            "D": "By directly reading from the URL string."
+          },
+          "correct_answer": "B",
+          "explanation": "The `useParams()` Hook provides an object of key/value pairs of URL parameters in functional components in React Router v6."
+        },
+        {
+          "question": "What is the purpose of the `exact` prop on a `Route` component?",
+          "options": {
+            "A": "To ensure the route matches only if the path is an exact match to the URL, without any trailing characters.",
+            "B": "To ensure the route matches if the path is a partial match.",
+            "C": "To make the route case-sensitive.",
+            "D": "To enable server-side rendering for that route."
+          },
+          "correct_answer": "A",
+          "explanation": "Without `exact`, a route like `/about` would also match `/about/us`. `exact` ensures a precise match."
+        },
+        {
+          "question": "How do you programmatically navigate to a different route in React Router v6?",
+          "options": {
+            "A": "By calling `window.location.href = '/new-path'`",
+            "B": "By using the `useNavigate()` Hook and calling the returned function.",
+            "C": "By using `history.push('/new-path')` (deprecated in v6).",
+            "D": "By clicking a `Link` component."
+          },
+          "correct_answer": "B",
+          "explanation": "The `useNavigate()` Hook provides a function to imperatively change the URL."
+        },
+        {
+          "question": "What is the `Outlet` component used for in React Router v6?",
+          "options": {
+            "A": "To create external links.",
+            "B": "To define the top-level router for the application.",
+            "C": "To render child routes within a parent route's component.",
+            "D": "To display a 404 Not Found page."
+          },
+          "correct_answer": "C",
+          "explanation": "`Outlet` is used in layout routes to render the content of matched child routes."
+        },
+        {
+          "question": "Which of the following is the correct way to nest routes in React Router v6?",
+          "options": {
+            "A": "By placing `<Route>` components inside each other without `Routes`.",
+            "B": "By wrapping child `<Route>` components within a parent `<Route>` that also contains an `<Outlet />`.",
+            "C": "Nesting routes is not supported in React Router v6.",
+            "D": "By creating a separate `BrowserRouter` for each nested route."
+          },
+          "correct_answer": "B",
+          "explanation": "React Router v6 embraces nested routing using `Routes` and `Outlet` to represent shared layouts and hierarchical URLs."
+        },
+        {
+          "question": "What is the purpose of `useLocation()` Hook?",
+          "options": {
+            "A": "To get the current route parameters.",
+            "B": "To get the current pathname, search parameters, hash, and state object of the URL.",
+            "C": "To navigate to a new URL.",
+            "D": "To get the user's geographical location."
+          },
+          "correct_answer": "B",
+          "explanation": "`useLocation()` provides access to the current `location` object, which contains details about the current URL."
+        },
+        {
+          "question": "How do you handle a '404 Not Found' page in React Router v6?",
+          "options": {
+            "A": "By defining a `Route` with `path='*'` as the last route within `Routes`.",
+            "B": "React Router automatically handles 404s.",
+            "C": "By manually checking the URL and redirecting.",
+            "D": "By using the `ErrorComponent` from React Router."
+          },
+          "correct_answer": "A",
+          "explanation": "A `path='*'` (wildcard) route will match any URL that hasn't been matched by previous routes, making it ideal for a 404 page."
+        },
+        {
+          "question": "What is the `useSearchParams()` Hook used for in React Router v6?",
+          "options": {
+            "A": "To access URL path parameters.",
+            "B": "To access and manage query parameters in the URL's search string (e.g., `?name=Alice&age=30`).",
+            "C": "To search for routes by name.",
+            "D": "To filter components based on a search term."
+          },
+          "correct_answer": "B",
+          "explanation": "This hook returns a URLSearchParams object and a setter function, making it easy to read and update query parameters."
+        },
+        {
+          "question": "When would you typically use `HashRouter` instead of `BrowserRouter`?",
+          "options": {
+            "A": "For server-side rendering.",
+            "B": "When you need clean URLs without hashes.",
+            "C": "In environments where server configuration for clean URLs is not possible (e.g., static file servers, older browsers).",
+            "D": "When building mobile applications."
+          },
+          "correct_answer": "C",
+          "explanation": " `HashRouter` uses the URL hash (`#`) for routing, which does not require server-side configuration, making it suitable for static sites."
+        },
+        {
+          "question": "What is the purpose of a 'layout route' in React Router v6?",
+          "options": {
+            "A": "To define the initial path for the application.",
+            "B": "To group routes that share a common UI structure (e.g., header, sidebar, footer).",
+            "C": "To handle authentication and authorization.",
+            "D": "To create animations between route transitions."
+          },
+          "correct_answer": "B",
+          "explanation": "Layout routes wrap child routes, providing a consistent layout for a group of pages."
+        },
+        {
+          "question": "Which component would you use to redirect a user from one URL to another in React Router v6?",
+          "options": {
+            "A": "`<Link>`",
+            "B": "`<Redirect>` (deprecated)",
+            "C": "`<Navigate>`",
+            "D": "`<History>`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `<Navigate>` component is the modern way to perform declarative redirects in React Router v6."
+        },
+        {
+          "question": "What is the primary benefit of declarative routing in React Router?",
+          "options": {
+            "A": "It requires more boilerplate code.",
+            "B": "It makes routing logic harder to understand.",
+            "C": "It allows you to define your routing as part of your component tree, making it easy to see how your UI and URLs relate.",
+            "D": "It forces full page reloads."
+          },
+          "correct_answer": "C",
+          "explanation": "Declarative routing means you describe 'what' you want to render for a given path, rather than 'how' to imperatively manipulate the browser history."
+        },
+        {
+          "question": "Can you have multiple `BrowserRouter` instances in a single React application?",
+          "options": {
+            "A": "Yes, it is common practice.",
+            "B": "No, you should typically wrap your entire application with a single `BrowserRouter` at the top level.",
+            "C": "Only if you are using lazy loading.",
+            "D": "Only for specific, isolated sub-applications."
+          },
+          "correct_answer": "B",
+          "explanation": "Having multiple `BrowserRouter` instances can lead to unexpected behavior and is generally discouraged. The router should manage the entire application's URL synchronization."
+        }
+      ]
+    }
+  ]
+}

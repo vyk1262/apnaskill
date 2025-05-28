@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_accessibility",
+      "questions": [
+        {
+          "question": "What is the primary goal of web accessibility (a11y)?",
+          "options": {
+            "A": "To make web applications load faster.",
+            "B": "To ensure web applications are usable by people with disabilities (e.g., visual, auditory, motor, cognitive impairments).",
+            "C": "To improve the visual design of web applications.",
+            "D": "To reduce the bundle size of web applications."
+          },
+          "correct_answer": "B",
+          "explanation": "Web accessibility aims to provide equal access and opportunities for people with diverse abilities to perceive, understand, navigate, and interact with the web."
+        },
+        {
+          "question": "Why is using semantic HTML important for accessibility in React applications?",
+          "options": {
+            "A": "It makes components easier to style with CSS.",
+            "B": "It helps search engines index content faster.",
+            "C": "It provides meaning and structure to content for assistive technologies (like screen readers) and improves overall readability and navigability.",
+            "D": "It automatically applies ARIA attributes."
+          },
+          "correct_answer": "C",
+          "explanation": "Semantic HTML tags (e.g., `<button>`, `<nav>`, `<footer>`) convey meaning beyond their visual appearance, allowing assistive technologies to interpret content correctly."
+        },
+        {
+          "question": "What is the purpose of the `alt` attribute on an `<img>` tag for accessibility?",
+          "options": {
+            "A": "It provides a tooltip when hovering over the image.",
+            "B": "It's used by search engines to categorize images.",
+            "C": "It provides a textual description of the image content for users who cannot see the image (e.g., screen reader users, broken image links).",
+            "D": "It defines the image's width and height."
+          },
+          "correct_answer": "C",
+          "explanation": "Alt text is crucial for visually impaired users and also helps when images fail to load, providing context to the content."
+        },
+        {
+          "question": "Which set of attributes in HTML is specifically designed to improve accessibility for dynamic content and custom UI components?",
+          "options": {
+            "A": "CSS properties",
+            "B": "HTML data attributes",
+            "C": "ARIA (Accessible Rich Internet Applications) attributes",
+            "D": "JavaScript event handlers"
+          },
+          "correct_answer": "C",
+          "explanation": "ARIA attributes provide semantic meaning and roles to elements, states, and properties, making custom widgets and dynamic content understandable by assistive technologies."
+        },
+        {
+          "question": "When building a custom button component in React (e.g., using a `<div>`), what ARIA role should it typically have to be accessible?",
+          "options": {
+            "A": "`role='region'`",
+            "B": "`role='banner'`",
+            "C": "`role='button'`",
+            "D": "`role='contentinfo'`"
+          },
+          "correct_answer": "C",
+          "explanation": "Assigning `role='button'` signals to assistive technologies that the `<div>` functions as a button, enabling proper interaction and announcement."
+        },
+        {
+          "question": "How can you ensure keyboard navigation is properly handled in a custom React component that requires user interaction (e.g., a custom dropdown or tab interface)?",
+          "options": {
+            "A": "By only using mouse events.",
+            "B": "By setting `tabIndex='-1'` on all interactive elements.",
+            "C": "By carefully managing focus using `tabIndex` and programmatic focus with `useRef` or `componentDidMount`/`componentDidUpdate`.",
+            "D": "Keyboard navigation is automatically handled by React."
+          },
+          "correct_answer": "C",
+          "explanation": "Keyboard users rely on `tabIndex` for focus order and programmatic focus management to navigate complex custom components, as standard browser behavior might not suffice."
+        },
+        {
+          "question": "What is 'Focus Management' in React accessibility?",
+          "options": {
+            "A": "Keeping the user's attention on specific content only.",
+            "B": "Ensuring the logical and predictable movement of keyboard focus throughout the application, especially after dynamic content changes or dialogs appear.",
+            "C": "Highlighting focused elements with bright colors.",
+            "D": "Automatically scrolling the page to the top on every interaction."
+          },
+          "correct_answer": "B",
+          "explanation": "Effective focus management is crucial for keyboard and screen reader users to understand where they are on the page and what they can interact with, especially after UI changes."
+        },
+        {
+          "question": "When a modal dialog opens in a React application, what is an important accessibility consideration for focus?",
+          "options": {
+            "A": "Move focus to the document body.",
+            "B": "Keep focus on the element that triggered the modal.",
+            "C": "Trap focus within the modal, preventing users from tabbing outside it, and return focus to the triggering element upon closing.",
+            "D": "Automatically close the modal after a few seconds."
+          },
+          "correct_answer": "C",
+          "explanation": "Focus trapping ensures that keyboard users do not lose their place or accidentally interact with background content while the modal is open. Returning focus after closing provides a seamless experience."
+        },
+        {
+          "question": "What is the purpose of `aria-label` or `aria-labelledby` attributes for accessibility?",
+          "options": {
+            "A": "To create a visual label for an element.",
+            "B": "To associate a label with a form input programmatically.",
+            "C": "To provide a readable name for an element that might not have visible text or a standard HTML label, for assistive technologies.",
+            "D": "To define the background color of an element."
+          },
+          "correct_answer": "C",
+          "explanation": "`aria-label` provides a direct string, while `aria-labelledby` points to an existing element's ID. Both provide accessible names where none exist or are sufficient."
+        },
+        {
+          "question": "For forms in React, which HTML element should be used to explicitly associate a text label with an input field?",
+          "options": {
+            "A": "`<span>`",
+            "B": "`<p>`",
+            "C": "`<label>`",
+            "D": "`<div>`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `<label>` element, linked to an input using `for` and `id` attributes (or nested), improves usability for all users, especially those with screen readers, allowing them to activate the input by clicking its label."
+        },
+        {
+          "question": "What is the significance of color contrast for accessibility in React applications?",
+          "options": {
+            "A": "It makes the application look more modern.",
+            "B": "High contrast improves readability for users with visual impairments (e.g., low vision, color blindness).",
+            "C": "It helps organize content into different sections.",
+            "D": "It speeds up image loading."
+          },
+          "correct_answer": "B",
+          "explanation": "Sufficient color contrast between text and its background is critical for users with various visual impairments to distinguish content. WCAG guidelines specify minimum contrast ratios."
+        },
+        {
+          "question": "When creating dynamic content that appears/disappears (e.g., an alert message or a live region update), which ARIA attribute can notify screen readers of the change?",
+          "options": {
+            "A": "`aria-hidden`",
+            "B": "`aria-label`",
+            "C": "`aria-live`",
+            "D": "`aria-disabled`"
+          },
+          "correct_answer": "C",
+          "explanation": "`aria-live` regions (e.g., `aria-live='polite'` or `assertive'`) instruct screen readers to announce updates to a specific area of the page without requiring the user to manually navigate to it."
+        },
+        {
+          "question": "What is `role='alert'` typically used for in ARIA?",
+          "options": {
+            "A": "To mark a clickable element.",
+            "B": "To indicate an important, time-sensitive message that should be announced immediately to the user by assistive technologies.",
+            "C": "To designate a section for pop-up ads.",
+            "D": "To signify a section of navigation links."
+          },
+          "correct_answer": "B",
+          "explanation": "`role='alert'` is an `aria-live` region with an implicit `aria-live='assertive'`, used for urgent and important messages that require immediate user attention."
+        },
+        {
+          "question": "What is a common pitfall when styling interactive elements (like buttons or links) for accessibility?",
+          "options": {
+            "A": "Using too many colors.",
+            "B": "Removing default browser focus outlines (e.g., `outline: none;`) without providing an alternative visual focus indicator.",
+            "C": "Making them too small.",
+            "D": "Using semantic HTML tags."
+          },
+          "correct_answer": "B",
+          "explanation": "Keyboard users rely on visual focus indicators to know which element is currently active. Removing the default outline without a custom one creates a significant accessibility barrier."
+        },
+        {
+          "question": "Which React tool or approach helps lint for common accessibility issues directly in your JSX?",
+          "options": {
+            "A": "React DevTools Profiler",
+            "B": "ESLint plugin `eslint-plugin-jsx-a11y`",
+            "C": "Create React App's default setup (no extra tools needed)",
+            "D": "Jest testing framework"
+          },
+          "correct_answer": "B",
+          "explanation": "The `eslint-plugin-jsx-a11y` plugin integrates accessibility checks directly into your development workflow, identifying potential issues as you code."
+        },
+        {
+          "question": "How can you make a non-interactive element (e.g., a `<div>` used as a custom control) keyboard focusable?",
+          "options": {
+            "A": "By setting its `style` to `display: block;`.",
+            "B": "By adding `onClick` handler only.",
+            "C": "By setting `tabIndex='0'` or a positive `tabIndex` value.",
+            "D": "It's not possible to make non-interactive elements focusable."
+          },
+          "correct_answer": "C",
+          "explanation": "`tabIndex='0'` places the element in the default tab order, allowing it to be focused by keyboard. Positive `tabIndex` values define a specific order (though generally discouraged for natural flow)."
+        },
+        {
+          "question": "What is the purpose of the `htmlFor` attribute in React (equivalent to `for` in plain HTML) when used with `<label>`?",
+          "options": {
+            "A": "It defines the styling for the label.",
+            "B": "It specifies the target element for the label, associating it with an input field by its `id`.",
+            "C": "It sets the default value of the input.",
+            "D": "It determines if the label is visible."
+          },
+          "correct_answer": "B",
+          "explanation": "Connecting a label to its input with `htmlFor` and `id` improves accessibility by allowing screen readers to announce the label when the input is focused and enabling users to click the label to focus the input."
+        },
+        {
+          "question": "What is a 'landmark role' in ARIA, and why is it important for navigation?",
+          "options": {
+            "A": "A role that marks a component for styling only.",
+            "B": "A role that defines specific regions of a page (e.g., `role='main'`, `role='navigation'`, `role='complementary'`) that screen reader users can quickly jump between.",
+            "C": "A role used for interactive elements like buttons.",
+            "D": "A role that indicates dynamic content updates."
+          },
+          "correct_answer": "B",
+          "explanation": "Landmark roles provide a structural outline of the page, allowing screen reader users to efficiently navigate to different sections without having to tab through all content."
+        },
+        {
+          "question": "When dynamically showing or hiding elements in React, what is an accessible way to ensure they are properly announced or hidden from assistive technologies?",
+          "options": {
+            "A": "Using `display: none;` for hidden elements and `display: block;` for visible elements only.",
+            "B": "Using `aria-hidden='true'` for hidden elements and ensuring visible elements are semantically correct, or using conditional rendering.",
+            "C": "Setting `opacity: 0;` for hidden elements.",
+            "D": "There is no special consideration needed; React handles it."
+          },
+          "correct_answer": "B",
+          "explanation": "While `display: none;` hides elements from screen readers, `aria-hidden='true'` explicitly tells assistive technologies to ignore an element. Conditional rendering (mounting/unmounting) is also an effective way to handle this."
+        },
+        {
+          "question": "Which of the following would generally be considered an accessibility anti-pattern in React development?",
+          "options": {
+            "A": "Using `<button>` elements for all clickable actions.",
+            "B": "Relying solely on visual cues (e.g., color) to convey important information.",
+            "C": "Implementing skip links for keyboard users.",
+            "D": "Ensuring all images have descriptive `alt` text."
+          },
+          "correct_answer": "B",
+          "explanation": "Relying only on color for meaning (e.g., 'Red text means error') creates barriers for color-blind users. Information should be conveyed through multiple means (text, icons, ARIA attributes)."
+        }
+      ]
+    }
+  ]
+}
