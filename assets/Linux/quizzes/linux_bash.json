@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "linux_bash",
+      "questions": [
+        {
+          "question": "What is the primary purpose of the Bash shell in Linux?",
+          "options": {
+            "A": "To provide a graphical user interface.",
+            "B": "To execute commands and scripts.",
+            "C": "To manage network connections.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "B",
+          "explanation": "The Bash shell in Linux is used to execute commands and scripts, providing a command-line interface for interacting with the system."
+        },
+        {
+          "question": "Which command is used to list files and directories in Bash?",
+          "options": {
+            "A": "ls",
+            "B": "dir",
+            "C": "list",
+            "D": "show"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'ls' command in Bash is used to list files and directories, displaying their names and attributes."
+        },
+        {
+          "question": "What is the function of the 'cd' command in Bash?",
+          "options": {
+            "A": "To copy files.",
+            "B": "To change directories.",
+            "C": "To delete files.",
+            "D": "To display file contents."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'cd' command in Bash is used to change directories, allowing users to navigate the file system."
+        },
+        {
+          "question": "Which tool in Bash provides text editing capabilities?",
+          "options": {
+            "A": "nano",
+            "B": "edit",
+            "C": "text",
+            "D": "write"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'nano' tool in Bash provides text editing capabilities, allowing users to create and modify text files."
+        },
+        {
+          "question": "How can you view the contents of a file in Bash?",
+          "options": {
+            "A": "Using the 'cat' command.",
+            "B": "Through the 'view' command.",
+            "C": "By editing the file.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'cat' command in Bash is used to view the contents of a file, displaying its text in the terminal."
+        },
+        {
+          "question": "What is the purpose of the 'grep' command in Bash?",
+          "options": {
+            "A": "To search for text patterns.",
+            "B": "To manage user permissions.",
+            "C": "To monitor system performance.",
+            "D": "To configure network settings."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'grep' command in Bash is used to search for text patterns within files, filtering lines that match the specified criteria."
+        },
+        {
+          "question": "Which Bash feature assists with command automation?",
+          "options": {
+            "A": "Automation scripts.",
+            "B": "Automation tools.",
+            "C": "Automation commands.",
+            "D": "Automation management."
+          },
+          "correct_answer": "A",
+          "explanation": "Automation scripts in Bash help users automate repetitive tasks by executing a series of commands in sequence."
+        },
+        {
+          "question": "What is the role of 'alias' in Bash?",
+          "options": {
+            "A": "To create shortcuts for commands.",
+            "B": "To manage user accounts.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'alias' command in Bash is used to create shortcuts for commands, simplifying complex or frequently used command sequences."
+        },
+        {
+          "question": "How can you enable command history in Bash?",
+          "options": {
+            "A": "By editing the configuration file.",
+            "B": "Through the terminal settings.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Command history in Bash can be enabled through the terminal settings, allowing users to recall and reuse previous commands."
+        },
+        {
+          "question": "Which feature in Bash helps with command substitution?",
+          "options": {
+            "A": "Substitution management.",
+            "B": "Substitution optimization.",
+            "C": "Substitution configuration.",
+            "D": "Substitution execution."
+          },
+          "correct_answer": "D",
+          "explanation": "Command substitution in Bash allows users to execute a command and use its output as an argument in another command."
+        },
+        {
+          "question": "What is the purpose of 'pipes' in Bash?",
+          "options": {
+            "A": "To connect commands together.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "Pipes in Bash are used to connect commands together, allowing the output of one command to be used as the input for another."
+        },
+        {
+          "question": "How can you enable advanced scripting features in Bash?",
+          "options": {
+            "A": "By installing a scripting package.",
+            "B": "Through the scripting manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced scripting features in Bash can be enabled through the scripting manager, providing tools for creating and managing scripts."
+        },
+        {
+          "question": "Which Bash feature assists with error handling?",
+          "options": {
+            "A": "Error management.",
+            "B": "Error optimization.",
+            "C": "Error configuration.",
+            "D": "Error handling."
+          },
+          "correct_answer": "D",
+          "explanation": "Error handling features in Bash help users manage errors in scripts, providing mechanisms for detecting and responding to errors."
+        },
+        {
+          "question": "What is the function of 'loops' in Bash?",
+          "options": {
+            "A": "To repeat commands.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "Loops in Bash are used to repeat commands, allowing users to execute a series of commands multiple times."
+        },
+        {
+          "question": "How can you enable advanced debugging features in Bash?",
+          "options": {
+            "A": "By installing a debugging package.",
+            "B": "Through the debugging manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced debugging features in Bash can be enabled through the debugging manager, providing tools for identifying and resolving script errors."
+        },
+        {
+          "question": "Which feature in Bash helps with variable management?",
+          "options": {
+            "A": "Variable management.",
+            "B": "Variable optimization.",
+            "C": "Variable configuration.",
+            "D": "Variable execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Variable management features in Bash help users define, modify, and use variables in scripts, providing flexibility and control over data."
+        },
+        {
+          "question": "What is the purpose of 'functions' in Bash?",
+          "options": {
+            "A": "To organize code into reusable blocks.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "Functions in Bash are used to organize code into reusable blocks, allowing users to define and call functions within scripts."
+        },
+        {
+          "question": "How can you enable advanced input/output features in Bash?",
+          "options": {
+            "A": "By installing an input/output package.",
+            "B": "Through the input/output manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced input/output features in Bash can be enabled through the input/output manager, providing tools for managing data input and output."
+        },
+        {
+          "question": "Which Bash feature assists with script execution?",
+          "options": {
+            "A": "Execution management.",
+            "B": "Execution optimization.",
+            "C": "Execution configuration.",
+            "D": "Execution handling."
+          },
+          "correct_answer": "A",
+          "explanation": "Execution management features in Bash help users execute scripts, providing tools for running and managing script execution."
+        }
+      ]
+    }
+  ]
+}

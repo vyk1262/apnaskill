@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "linux_accessibility",
+      "questions": [
+        {
+          "question": "What is the primary purpose of accessibility features in Linux?",
+          "options": {
+            "A": "To enhance security.",
+            "B": "To improve performance.",
+            "C": "To assist users with disabilities.",
+            "D": "To provide additional software packages."
+          },
+          "correct_answer": "C",
+          "explanation": "Accessibility features in Linux are designed to assist users with disabilities, making the system more usable for everyone."
+        },
+        {
+          "question": "Which command is used to enable screen reader support in Linux?",
+          "options": {
+            "A": "orca",
+            "B": "speak",
+            "C": "reader",
+            "D": "voice"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'orca' command is used to enable screen reader support in Linux, providing auditory feedback for visually impaired users."
+        },
+        {
+          "question": "What is the function of the 'sticky keys' feature in Linux?",
+          "options": {
+            "A": "To lock the screen.",
+            "B": "To simplify keyboard shortcuts.",
+            "C": "To enhance audio output.",
+            "D": "To manage network connections."
+          },
+          "correct_answer": "B",
+          "explanation": "'Sticky keys' allow users to press keyboard shortcuts one key at a time, simplifying the process for those with limited dexterity."
+        },
+        {
+          "question": "Which tool in Linux provides magnification for users with low vision?",
+          "options": {
+            "A": "Zoom",
+            "B": "Magnifier",
+            "C": "Enlarge",
+            "D": "Magnus"
+          },
+          "correct_answer": "B",
+          "explanation": "The 'Magnifier' tool in Linux provides screen magnification, aiding users with low vision by enlarging text and images."
+        },
+        {
+          "question": "How can you enable high contrast mode in Linux?",
+          "options": {
+            "A": "Through the terminal.",
+            "B": "Using the settings menu.",
+            "C": "By editing configuration files.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "High contrast mode can be enabled through the settings menu, providing better visibility for users with visual impairments."
+        },
+        {
+          "question": "What is the purpose of the 'on-screen keyboard' in Linux?",
+          "options": {
+            "A": "To provide a virtual keyboard for touchscreens.",
+            "B": "To enhance typing speed.",
+            "C": "To replace physical keyboards.",
+            "D": "To manage keyboard layouts."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'on-screen keyboard' provides a virtual keyboard interface, useful for touchscreen devices and users with mobility impairments."
+        },
+        {
+          "question": "Which Linux feature assists users with color blindness?",
+          "options": {
+            "A": "Color inversion.",
+            "B": "Color correction.",
+            "C": "Color enhancement.",
+            "D": "Color adjustment."
+          },
+          "correct_answer": "B",
+          "explanation": "Color correction features in Linux help users with color blindness by adjusting colors to more distinguishable shades."
+        },
+        {
+          "question": "What is the role of 'mouse keys' in Linux?",
+          "options": {
+            "A": "To control the mouse pointer using the keyboard.",
+            "B": "To enhance mouse sensitivity.",
+            "C": "To lock the mouse pointer.",
+            "D": "To configure mouse settings."
+          },
+          "correct_answer": "A",
+          "explanation": "'Mouse keys' allow users to control the mouse pointer using the keyboard, aiding those with limited hand movement."
+        },
+        {
+          "question": "How can you enable speech recognition in Linux?",
+          "options": {
+            "A": "By installing a speech recognition package.",
+            "B": "Through the accessibility settings.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "Speech recognition in Linux can be enabled by installing a speech recognition package, allowing voice commands and dictation."
+        },
+        {
+          "question": "Which feature in Linux helps users with hearing impairments?",
+          "options": {
+            "A": "Visual alerts.",
+            "B": "Audio amplification.",
+            "C": "Sound equalization.",
+            "D": "Noise cancellation."
+          },
+          "correct_answer": "A",
+          "explanation": "Visual alerts in Linux provide notifications through visual cues, assisting users with hearing impairments."
+        },
+        {
+          "question": "What is the purpose of 'bounce keys' in Linux?",
+          "options": {
+            "A": "To prevent accidental key presses.",
+            "B": "To enhance typing speed.",
+            "C": "To lock the keyboard.",
+            "D": "To configure keyboard layouts."
+          },
+          "correct_answer": "A",
+          "explanation": "'Bounce keys' help prevent accidental key presses by ignoring repeated keystrokes, useful for users with tremors."
+        },
+        {
+          "question": "How can you enable braille support in Linux?",
+          "options": {
+            "A": "By connecting a braille display.",
+            "B": "Through the accessibility settings.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "Braille support in Linux can be enabled by connecting a braille display, providing tactile feedback for visually impaired users."
+        },
+        {
+          "question": "Which Linux feature assists users with limited mobility?",
+          "options": {
+            "A": "Voice commands.",
+            "B": "Gesture control.",
+            "C": "Eye tracking.",
+            "D": "Head movement detection."
+          },
+          "correct_answer": "A",
+          "explanation": "Voice commands in Linux allow users with limited mobility to control the system using their voice, providing hands-free operation."
+        },
+        {
+          "question": "What is the function of 'repeat keys' in Linux?",
+          "options": {
+            "A": "To repeat the last command.",
+            "B": "To enhance typing speed.",
+            "C": "To lock the keyboard.",
+            "D": "To configure keyboard layouts."
+          },
+          "correct_answer": "B",
+          "explanation": "'Repeat keys' allow users to hold down a key to repeat its action, useful for users with limited dexterity."
+        },
+        {
+          "question": "How can you enable text-to-speech in Linux?",
+          "options": {
+            "A": "By installing a text-to-speech package.",
+            "B": "Through the accessibility settings.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "Text-to-speech in Linux can be enabled by installing a text-to-speech package, converting text into spoken words."
+        },
+        {
+          "question": "Which feature in Linux helps users with cognitive impairments?",
+          "options": {
+            "A": "Simplified interface.",
+            "B": "Enhanced security.",
+            "C": "Advanced settings.",
+            "D": "Customizable themes."
+          },
+          "correct_answer": "A",
+          "explanation": "A simplified interface in Linux helps users with cognitive impairments by reducing complexity and providing easier navigation."
+        },
+        {
+          "question": "What is the purpose of 'slow keys' in Linux?",
+          "options": {
+            "A": "To delay key presses.",
+            "B": "To enhance typing speed.",
+            "C": "To lock the keyboard.",
+            "D": "To configure keyboard layouts."
+          },
+          "correct_answer": "A",
+          "explanation": "'Slow keys' introduce a delay before a key press is registered, helping users with tremors or limited dexterity."
+        },
+        {
+          "question": "How can you enable closed captions in Linux?",
+          "options": {
+            "A": "Through the media player settings.",
+            "B": "Using a command-line tool.",
+            "C": "By editing configuration files.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "Closed captions can be enabled through the media player settings, providing text descriptions of audio content for users with hearing impairments."
+        },
+        {
+          "question": "Which Linux feature assists users with speech impairments?",
+          "options": {
+            "A": "Speech synthesis.",
+            "B": "Speech recognition.",
+            "C": "Speech enhancement.",
+            "D": "Speech correction."
+          },
+          "correct_answer": "B",
+          "explanation": "Speech recognition in Linux assists users with speech impairments by allowing them to control the system using voice commands."
+        }
+      ]
+    }
+  ]
+}

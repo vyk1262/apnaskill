@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "topic": "linux_permissions",
+      "questions": [
+        {
+          "question": "What is the primary purpose of file permissions in Linux?",
+          "options": {
+            "A": "To enhance graphical performance.",
+            "B": "To control access to files and directories.",
+            "C": "To increase network connectivity.",
+            "D": "To provide better user interface."
+          },
+          "correct_answer": "B",
+          "explanation": "File permissions in Linux are used to control access to files and directories, ensuring security and privacy."
+        },
+        {
+          "question": "Which command is used to change file permissions in Linux?",
+          "options": {
+            "A": "chmod",
+            "B": "chperm",
+            "C": "permchange",
+            "D": "chaccess"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'chmod' command in Linux is used to change file permissions, allowing users to modify access rights."
+        },
+        {
+          "question": "What is the function of the 'chown' command in Linux?",
+          "options": {
+            "A": "To change file ownership.",
+            "B": "To delete files.",
+            "C": "To move files.",
+            "D": "To rename files."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'chown' command in Linux is used to change file ownership, allowing users to assign files to different owners."
+        },
+        {
+          "question": "Which tool in Linux helps with managing user permissions?",
+          "options": {
+            "A": "usermod",
+            "B": "permtool",
+            "C": "usertool",
+            "D": "userwatch"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'usermod' tool in Linux helps with managing user permissions, allowing administrators to modify user accounts."
+        },
+        {
+          "question": "How can you view file permissions in Linux?",
+          "options": {
+            "A": "Using the 'ls -l' command.",
+            "B": "Through the 'permview' command.",
+            "C": "By editing the file system.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'ls -l' command in Linux is used to view file permissions, displaying detailed information about files and directories."
+        },
+        {
+          "question": "What is the purpose of the 'umask' command in Linux?",
+          "options": {
+            "A": "To set default file permissions.",
+            "B": "To manage user permissions.",
+            "C": "To configure network settings.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'umask' command in Linux is used to set default file permissions, determining the permissions for newly created files."
+        },
+        {
+          "question": "Which Linux feature assists with group permissions?",
+          "options": {
+            "A": "Group management.",
+            "B": "Group optimization.",
+            "C": "Group configuration.",
+            "D": "Group execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Group management features in Linux help users manage group permissions, allowing multiple users to share access rights."
+        },
+        {
+          "question": "What is the role of 'setfacl' in Linux?",
+          "options": {
+            "A": "To set file access control lists.",
+            "B": "To configure network settings.",
+            "C": "To monitor system performance.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'setfacl' command in Linux is used to set file access control lists, providing more granular control over file permissions."
+        },
+        {
+          "question": "How can you enable advanced permission management features in Linux?",
+          "options": {
+            "A": "By installing a permission management package.",
+            "B": "Through the permission manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced permission management features in Linux can be enabled through the permission manager, providing tools for configuring and managing permissions."
+        },
+        {
+          "question": "Which feature in Linux helps with user access control?",
+          "options": {
+            "A": "Access management.",
+            "B": "Access optimization.",
+            "C": "Access configuration.",
+            "D": "Access execution."
+          },
+          "correct_answer": "A",
+          "explanation": "User access control features in Linux help users manage access rights, ensuring security and privacy for files and directories."
+        },
+        {
+          "question": "What is the purpose of 'getfacl' in Linux?",
+          "options": {
+            "A": "To display file access control lists.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'getfacl' command in Linux is used to display file access control lists, showing detailed information about file permissions."
+        },
+        {
+          "question": "How can you enable advanced file access control features in Linux?",
+          "options": {
+            "A": "By installing a file access control package.",
+            "B": "Through the access control manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced file access control features in Linux can be enabled through the access control manager, providing tools for configuring and managing access rights."
+        },
+        {
+          "question": "Which Linux feature assists with security permissions?",
+          "options": {
+            "A": "Security management.",
+            "B": "Security optimization.",
+            "C": "Security configuration.",
+            "D": "Security execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Security management features in Linux help users manage security permissions, ensuring protection for files and directories."
+        },
+        {
+          "question": "What is the function of 'lsattr' in Linux?",
+          "options": {
+            "A": "To display file attributes.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'lsattr' command in Linux is used to display file attributes, showing information about special file properties."
+        },
+        {
+          "question": "How can you enable advanced security permission features in Linux?",
+          "options": {
+            "A": "By installing a security permission package.",
+            "B": "Through the security manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced security permission features in Linux can be enabled through the security manager, providing tools for configuring and managing security settings."
+        },
+        {
+          "question": "Which Linux feature assists with system permission management?",
+          "options": {
+            "A": "Permission management.",
+            "B": "Permission optimization.",
+            "C": "Permission configuration.",
+            "D": "Permission execution."
+          },
+          "correct_answer": "A",
+          "explanation": "System permission management features in Linux help users manage permissions, providing tools for monitoring and controlling access rights."
+        }
+      ]
+    }
+  ]
+}

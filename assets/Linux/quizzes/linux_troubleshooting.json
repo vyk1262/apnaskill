@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "topic": "linux_troubleshooting",
+      "questions": [
+        {
+          "question": "What is the primary purpose of troubleshooting in Linux?",
+          "options": {
+            "A": "To enhance graphical performance.",
+            "B": "To identify and resolve system issues.",
+            "C": "To increase network connectivity.",
+            "D": "To provide better user interface."
+          },
+          "correct_answer": "B",
+          "explanation": "Troubleshooting in Linux is used to identify and resolve system issues, ensuring smooth operation and performance."
+        },
+        {
+          "question": "Which command is used to check disk usage in Linux?",
+          "options": {
+            "A": "df",
+            "B": "diskcheck",
+            "C": "diskusage",
+            "D": "checkdisk"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'df' command in Linux is used to check disk usage, displaying information about available and used disk space."
+        },
+        {
+          "question": "What is the function of the 'dmesg' command in Linux?",
+          "options": {
+            "A": "To display kernel messages.",
+            "B": "To delete files.",
+            "C": "To move files.",
+            "D": "To rename files."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'dmesg' command in Linux is used to display kernel messages, providing information about system events and errors."
+        },
+        {
+          "question": "Which tool in Linux helps with network troubleshooting?",
+          "options": {
+            "A": "ping",
+            "B": "nettool",
+            "C": "networktool",
+            "D": "netwatch"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'ping' tool in Linux helps with network troubleshooting, testing connectivity between devices on a network."
+        },
+        {
+          "question": "How can you view system logs in Linux?",
+          "options": {
+            "A": "Using the 'cat' command.",
+            "B": "Through the 'logview' command.",
+            "C": "By editing the log files.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'cat' command in Linux is used to view system logs, displaying log entries in the terminal."
+        },
+        {
+          "question": "What is the purpose of the 'top' command in Linux?",
+          "options": {
+            "A": "To monitor system resource usage.",
+            "B": "To manage user permissions.",
+            "C": "To configure network settings.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'top' command in Linux is used to monitor system resource usage, providing real-time information about CPU and memory usage."
+        },
+        {
+          "question": "Which Linux feature assists with process management?",
+          "options": {
+            "A": "Process management.",
+            "B": "Process optimization.",
+            "C": "Process configuration.",
+            "D": "Process execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Process management features in Linux help users manage running processes, providing tools for monitoring and controlling system resources."
+        },
+        {
+          "question": "What is the role of 'ps' in Linux?",
+          "options": {
+            "A": "To display running processes.",
+            "B": "To configure network settings.",
+            "C": "To monitor system performance.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'ps' command in Linux is used to display running processes, showing information about active processes on the system."
+        },
+        {
+          "question": "How can you enable advanced troubleshooting features in Linux?",
+          "options": {
+            "A": "By installing a troubleshooting package.",
+            "B": "Through the troubleshooting manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced troubleshooting features in Linux can be enabled through the troubleshooting manager, providing tools for diagnosing and resolving system issues."
+        },
+        {
+          "question": "Which feature in Linux helps with system diagnostics?",
+          "options": {
+            "A": "Diagnostics management.",
+            "B": "Diagnostics optimization.",
+            "C": "Diagnostics configuration.",
+            "D": "Diagnostics execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Diagnostics management features in Linux help users diagnose system issues, providing tools for identifying and resolving problems."
+        },
+        {
+          "question": "What is the purpose of 'strace' in Linux?",
+          "options": {
+            "A": "To trace system calls and signals.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'strace' command in Linux is used to trace system calls and signals, providing insight into program execution and behavior."
+        },
+        {
+          "question": "How can you enable advanced diagnostics features in Linux?",
+          "options": {
+            "A": "By installing a diagnostics package.",
+            "B": "Through the diagnostics manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced diagnostics features in Linux can be enabled through the diagnostics manager, providing tools for diagnosing and resolving system issues."
+        },
+        {
+          "question": "Which Linux feature assists with system monitoring?",
+          "options": {
+            "A": "Monitoring management.",
+            "B": "Monitoring optimization.",
+            "C": "Monitoring configuration.",
+            "D": "Monitoring execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Monitoring management features in Linux help users monitor system performance, providing tools for tracking resource usage and identifying potential issues."
+        },
+        {
+          "question": "What is the function of 'vmstat' in Linux?",
+          "options": {
+            "A": "To display system resource usage.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'vmstat' command in Linux is used to display system resource usage, showing information about memory, CPU, and process activity."
+        },
+        {
+          "question": "How can you enable advanced monitoring features in Linux?",
+          "options": {
+            "A": "By installing a monitoring package.",
+            "B": "Through the monitoring manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced monitoring features in Linux can be enabled through the monitoring manager, providing tools for tracking resource usage and identifying potential issues."
+        },
+        {
+          "question": "Which Linux feature assists with system performance optimization?",
+          "options": {
+            "A": "Performance management.",
+            "B": "Performance optimization.",
+            "C": "Performance configuration.",
+            "D": "Performance execution."
+          },
+          "correct_answer": "B",
+          "explanation": "Performance optimization features in Linux help users optimize system performance, ensuring efficient resource usage and operation."
+        }
+      ]
+    }
+  ]
+}
