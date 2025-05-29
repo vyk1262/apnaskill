@@ -24,16 +24,16 @@ class AppColors {
 
   // Gradients
   static const LinearGradient gradientPrimary = LinearGradient(
-    colors: [Color(0xFF2563EB), Color(0xFF7C3AED)],
+    colors: [primaryColor, secondaryColor],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
-  static const LinearGradient gradientPrimaryMain = LinearGradient(
+  static LinearGradient gradientPrimaryMain = LinearGradient(
     colors: [
-      Color.fromARGB(255, 2, 1, 110),
-      Color.fromARGB(255, 15, 12, 189),
-      Color.fromARGB(255, 69, 72, 238),
-      Color.fromARGB(255, 255, 255, 255)
+      primaryColor,
+      primaryColor.withOpacity(0.7),
+      primaryColor.withOpacity(0.4),
+      primaryColor.withOpacity(0.1),
     ],
     stops: [0.0, 0.3, 0.6, 1.0],
     begin: Alignment.topCenter,

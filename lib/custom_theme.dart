@@ -7,7 +7,7 @@ class CustomTheme {
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
-      color: Color.fromARGB(255, 2, 1, 110),
+      color: AppColors.primaryColor,
       titleTextStyle: TextStyle(
         color: Colors.white,
         fontSize: 20,

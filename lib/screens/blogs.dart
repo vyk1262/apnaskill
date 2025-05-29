@@ -7,6 +7,8 @@ import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../constants/colors.dart';
+
 class BlogHomeScreen extends StatefulWidget {
   const BlogHomeScreen({super.key});
 
@@ -89,7 +91,7 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                   return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: crossAxisCount,
-                      childAspectRatio: 1.0, // Adjust as needed
+                      childAspectRatio: 1.5, // Adjust as needed
                       crossAxisSpacing: 16,
                       mainAxisSpacing: 16,
                     ),
@@ -112,23 +114,48 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                             child: Card(
                               clipBehavior: Clip.antiAlias,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                                  borderRadius: BorderRadius.circular(8),
+                                  side: BorderSide(
+                                    color: _hoveredIndex == index
+                                        ? Colors.yellow
+                                        : Colors.black,
+                                    width: 2,
+                                  )),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  // const Expanded(
+                                  //   child: Stack(
+                                  //     children: [
+                                  //       Positioned.fill(
+                                  //         child: CachedNetworkImageWidget(
+                                  //           imageUrl: blog['image'],
+                                  //           fit: BoxFit.cover,
+                                  //           errorWidget:
+                                  //               const Icon(Icons.broken_image),
+                                  //         ),
+                                  //       ),
+                                  //     ],
+                                  //   ),
+                                  // ),
                                   Expanded(
-                                    child: Stack(
-                                      children: [
-                                        Positioned.fill(
-                                          child: CachedNetworkImageWidget(
-                                            imageUrl: blog['image'],
-                                            fit: BoxFit.cover,
-                                            errorWidget:
-                                                const Icon(Icons.broken_image),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: const BoxDecoration(
+                                        gradient: AppColors.gradientPrimary,
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          blog['title'],
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 35,
                                           ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
-                                      ],
+                                      ),
                                     ),
                                   ),
                                   Padding(
@@ -137,16 +164,6 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          blog['title'],
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        const SizedBox(height: 4),
                                         if (blog['category'] != null)
                                           Text(
                                             "#${blog['category']}",
