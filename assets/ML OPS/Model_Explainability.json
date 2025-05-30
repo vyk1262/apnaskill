@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Model_Explainability",
+      "questions": [
+        {
+          "question": "What is the primary goal of model explainability?",
+          "options": {
+            "A": "To make the model's predictions understandable to humans.",
+            "B": "To eliminate all models.",
+            "C": "To duplicate models.",
+            "D": "To increase the number of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Model explainability aims to make the model's predictions understandable to humans, providing insights into how decisions are made."
+        },
+        {
+          "question": "Which technique is commonly used for explaining machine learning models?",
+          "options": {
+            "A": "SHAP values",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values are a widely used technique for explaining machine learning models, providing insights into feature importance."
+        },
+        {
+          "question": "What is the purpose of using SHAP values in model explainability?",
+          "options": {
+            "A": "To provide insights into feature importance.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values are used to provide insights into feature importance, helping to understand the contribution of each feature to the model's predictions."
+        },
+        {
+          "question": "Which method is used to explain machine learning models in a comprehensive manner?",
+          "options": {
+            "A": "LIME",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "LIME is a method used to explain machine learning models in a comprehensive manner, providing local explanations for individual predictions."
+        },
+        {
+          "question": "What is the benefit of model explainability in machine learning?",
+          "options": {
+            "A": "Providing insights into how decisions are made.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Model explainability provides insights into how decisions are made, enhancing trust and transparency in machine learning models."
+        },
+        {
+          "question": "Which algorithm is used for explaining machine learning models by providing local explanations?",
+          "options": {
+            "A": "LIME",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "LIME is an algorithm used for explaining machine learning models by providing local explanations for individual predictions."
+        },
+        {
+          "question": "What is the purpose of using LIME in model explainability?",
+          "options": {
+            "A": "To provide local explanations for individual predictions.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "LIME is used to provide local explanations for individual predictions, helping to understand the model's behavior for specific instances."
+        },
+        {
+          "question": "Which technique is used for explaining machine learning models by providing insights into feature importance?",
+          "options": {
+            "A": "SHAP values",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values are a technique used for explaining machine learning models by providing insights into feature importance."
+        },
+        {
+          "question": "What is the benefit of using SHAP values in model explainability?",
+          "options": {
+            "A": "Providing insights into feature importance.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values provide insights into feature importance, helping to understand the contribution of each feature to the model's predictions."
+        },
+        {
+          "question": "Which method is used for explaining machine learning models by providing local explanations?",
+          "options": {
+            "A": "LIME",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "LIME is a method used for explaining machine learning models by providing local explanations for individual predictions."
+        },
+        {
+          "question": "What is the purpose of using LIME in model explainability?",
+          "options": {
+            "A": "To provide local explanations for individual predictions.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "LIME is used to provide local explanations for individual predictions, helping to understand the model's behavior for specific instances."
+        },
+        {
+          "question": "Which algorithm is used for explaining machine learning models by providing insights into feature importance?",
+          "options": {
+            "A": "SHAP values",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values are an algorithm used for explaining machine learning models by providing insights into feature importance."
+        },
+        {
+          "question": "What is the benefit of using SHAP values in model explainability?",
+          "options": {
+            "A": "Providing insights into feature importance.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values provide insights into feature importance, helping to understand the contribution of each feature to the model's predictions."
+        },
+        {
+          "question": "Which technique is used for explaining machine learning models by providing local explanations?",
+          "options": {
+            "A": "LIME",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "LIME is a technique used for explaining machine learning models by providing local explanations for individual predictions."
+        },
+        {
+          "question": "What is the benefit of using LIME in model explainability?",
+          "options": {
+            "A": "Providing local explanations for individual predictions.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "LIME provides local explanations for individual predictions, helping to understand the model's behavior for specific instances."
+        },
+        {
+          "question": "Which method is used for explaining machine learning models by providing insights into feature importance?",
+          "options": {
+            "A": "SHAP values",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values are a method used for explaining machine learning models by providing insights into feature importance."
+        },
+        {
+          "question": "What is the purpose of using SHAP values in model explainability?",
+          "options": {
+            "A": "To provide insights into feature importance.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "SHAP values are used to provide insights into feature importance, helping to understand the contribution of each feature to the model's predictions."
+        }
+      ]
+    }
+  ]
+}

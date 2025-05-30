@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_Matplotlib",
+      "questions": [
+        {
+          "question": "What is Matplotlib primarily used for?",
+          "options": {
+            "A": "Creating static, interactive, and animated visualizations in Python.",
+            "B": "Storing data.",
+            "C": "Performing data analysis.",
+            "D": "Managing databases."
+          },
+          "correct_answer": "A",
+          "explanation": "Matplotlib is primarily used for creating static, interactive, and animated visualizations in Python, making it a versatile tool for data representation."
+        },
+        {
+          "question": "Which command is used to import Matplotlib in Python?",
+          "options": {
+            "A": "import matplotlib.pyplot as plt",
+            "B": "import matplotlib as mpl",
+            "C": "import matplotlib.pyplot as mp",
+            "D": "import matplotlib.pyplot as py"
+          },
+          "correct_answer": "A",
+          "explanation": "The command 'import matplotlib.pyplot as plt' is used to import Matplotlib in Python, providing access to its plotting functions."
+        },
+        {
+          "question": "What is the purpose of the plot() function in Matplotlib?",
+          "options": {
+            "A": "To create line plots.",
+            "B": "To store data.",
+            "C": "To perform data analysis.",
+            "D": "To manage databases."
+          },
+          "correct_answer": "A",
+          "explanation": "The plot() function in Matplotlib is used to create line plots, providing a simple way to visualize data trends."
+        },
+        {
+          "question": "Which function is used to display a plot in Matplotlib?",
+          "options": {
+            "A": "show()",
+            "B": "display()",
+            "C": "render()",
+            "D": "view()"
+          },
+          "correct_answer": "A",
+          "explanation": "The show() function in Matplotlib is used to display a plot, rendering the visualization for viewing."
+        },
+        {
+          "question": "What is the purpose of the xlabel() function in Matplotlib?",
+          "options": {
+            "A": "To set the label for the x-axis.",
+            "B": "To set the label for the y-axis.",
+            "C": "To set the plot title.",
+            "D": "To add a legend."
+          },
+          "correct_answer": "A",
+          "explanation": "The xlabel() function in Matplotlib is used to set the label for the x-axis, providing context for the data represented along the horizontal axis."
+        },
+        {
+          "question": "Which function is used to set the label for the y-axis in Matplotlib?",
+          "options": {
+            "A": "ylabel()",
+            "B": "xlabel()",
+            "C": "title()",
+            "D": "legend()"
+          },
+          "correct_answer": "A",
+          "explanation": "The ylabel() function in Matplotlib is used to set the label for the y-axis, providing context for the data represented along the vertical axis."
+        },
+        {
+          "question": "What is the function of the title() method in Matplotlib?",
+          "options": {
+            "A": "To set the title of the plot.",
+            "B": "To set the label for the x-axis.",
+            "C": "To set the label for the y-axis.",
+            "D": "To add a legend."
+          },
+          "correct_answer": "A",
+          "explanation": "The title() method in Matplotlib is used to set the title of the plot, providing a descriptive heading for the visualization."
+        },
+        {
+          "question": "Which function is used to add a legend to a plot in Matplotlib?",
+          "options": {
+            "A": "legend()",
+            "B": "xlabel()",
+            "C": "ylabel()",
+            "D": "title()"
+          },
+          "correct_answer": "A",
+          "explanation": "The legend() function in Matplotlib is used to add a legend to a plot, providing a key for interpreting the data series represented."
+        },
+        {
+          "question": "What is the purpose of the grid() function in Matplotlib?",
+          "options": {
+            "A": "To add a grid to the plot.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The grid() function in Matplotlib is used to add a grid to the plot, providing reference lines for easier interpretation of data points."
+        },
+        {
+          "question": "Which function is used to save a plot to a file in Matplotlib?",
+          "options": {
+            "A": "savefig()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The savefig() function in Matplotlib is used to save a plot to a file, allowing for sharing and reuse of visualizations."
+        },
+        {
+          "question": "What is the function of the tight_layout() method in Matplotlib?",
+          "options": {
+            "A": "To automatically adjust subplot parameters for a neat layout.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The tight_layout() method in Matplotlib is used to automatically adjust subplot parameters for a neat layout, ensuring elements do not overlap."
+        },
+        {
+          "question": "Which function is used to create a figure in Matplotlib?",
+          "options": {
+            "A": "figure()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The figure() function in Matplotlib is used to create a figure, serving as a container for all plot elements."
+        },
+        {
+          "question": "What is the purpose of the subplot() function in Matplotlib?",
+          "options": {
+            "A": "To create multiple subplots in a single figure.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The subplot() function in Matplotlib is used to create multiple subplots in a single figure, allowing for comparison of different data sets."
+        },
+        {
+          "question": "Which function is used to customize the tick labels in Matplotlib?",
+          "options": {
+            "A": "xticks() and yticks()",
+            "B": "xlabel() and ylabel()",
+            "C": "title() and legend()",
+            "D": "plot() and scatter()"
+          },
+          "correct_answer": "A",
+          "explanation": "The xticks() and yticks() functions in Matplotlib are used to customize the tick labels, providing control over the appearance of axis ticks."
+        },
+        {
+          "question": "What is the function of the set_facecolor() method in Matplotlib?",
+          "options": {
+            "A": "To set the background color of the plot.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The set_facecolor() method in Matplotlib is used to set the background color of the plot, enhancing the visual appeal of the visualization."
+        },
+        {
+          "question": "Which function is used to create a scatter plot in Matplotlib?",
+          "options": {
+            "A": "scatter()",
+            "B": "plot()",
+            "C": "bar()",
+            "D": "hist()"
+          },
+          "correct_answer": "A",
+          "explanation": "The scatter() function in Matplotlib is used to create scatter plots, allowing for visualization of data points in two dimensions."
+        }
+      ]
+    }
+  ]
+}

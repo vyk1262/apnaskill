@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Data_Integration_and_Connections",
+      "questions": [
+        {
+          "question": "What is data integration in Power BI?",
+          "options": {
+            "A": "The process of combining data from different sources into a single, unified view.",
+            "B": "The process of deleting data from sources.",
+            "C": "The process of visualizing data.",
+            "D": "The process of analyzing data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data integration in Power BI involves combining data from different sources into a single, unified view, enabling comprehensive analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI data connectors?",
+          "options": {
+            "A": "To connect Power BI to various data sources.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data connectors allow you to connect Power BI to various data sources, facilitating data integration and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI dataflows?",
+          "options": {
+            "A": "To create and manage data transformation processes.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI dataflows create and manage data transformation processes, providing efficient and scalable data management."
+        },
+        {
+          "question": "What is the purpose of Power BI gateways?",
+          "options": {
+            "A": "To connect on-premises data sources to Power BI.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI gateways connect on-premises data sources to Power BI, enabling secure and reliable data access."
+        },
+        {
+          "question": "What is the purpose of Power BI APIs?",
+          "options": {
+            "A": "To programmatically interact with Power BI service.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI APIs allow you to programmatically interact with Power BI service, providing automation and integration capabilities."
+        },
+        {
+          "question": "What is the purpose of Power BI templates?",
+          "options": {
+            "A": "To create reusable report templates.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI templates allow you to create reusable report templates, providing consistency and efficiency in report creation."
+        },
+        {
+          "question": "What is the purpose of Power BI themes?",
+          "options": {
+            "A": "To apply consistent styling to reports.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI themes allow you to apply consistent styling to reports, providing a cohesive and professional appearance."
+        },
+        {
+          "question": "What is the purpose of Power BI bookmarks?",
+          "options": {
+            "A": "To save and share specific views of reports.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI bookmarks allow you to save and share specific views of reports, providing quick access to important insights."
+        },
+        {
+          "question": "What is the purpose of Power BI Q&A?",
+          "options": {
+            "A": "To interact with reports using natural language queries.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Q&A allows you to interact with reports using natural language queries, providing intuitive and accessible data exploration."
+        },
+        {
+          "question": "What is the purpose of Power BI alerts?",
+          "options": {
+            "A": "To notify users of important changes in reports.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI alerts notify users of important changes in reports, providing timely and relevant information."
+        },
+        {
+          "question": "What is the purpose of Power BI subscriptions?",
+          "options": {
+            "A": "To automatically send reports to users on a regular basis.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI subscriptions automatically send reports to users on a regular basis, providing consistent and reliable access to insights."
+        },
+        {
+          "question": "What is the purpose of Power BI workspaces?",
+          "options": {
+            "A": "To organize and collaborate on content.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI workspaces organize and collaborate on content, providing a structured and collaborative environment for data analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI dataflows?",
+          "options": {
+            "A": "To create and manage data transformation processes.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI dataflows create and manage data transformation processes, providing efficient and scalable data management."
+        },
+        {
+          "question": "What is the purpose of Power BI visuals?",
+          "options": {
+            "A": "To create custom visualizations.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI visuals allow you to create custom visualizations, providing flexibility and creativity in data presentation."
+        },
+        {
+          "question": "What is the purpose of Power BI templates?",
+          "options": {
+            "A": "To create reusable report templates.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI templates allow you to create reusable report templates, providing consistency and efficiency in report creation."
+        },
+        {
+          "question": "What is the purpose of Power BI themes?",
+          "options": {
+            "A": "To apply consistent styling to reports.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI themes allow you to apply consistent styling to reports, providing a cohesive and professional appearance."
+        },
+        {
+          "question": "What is the purpose of Power BI bookmarks?",
+          "options": {
+            "A": "To save and share specific views of reports.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI bookmarks allow you to save and share specific views of reports, providing quick access to important insights."
+        },
+        {
+          "question": "What is the purpose of Power BI Q&A?",
+          "options": {
+            "A": "To interact with reports using natural language queries.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Q&A allows you to interact with reports using natural language queries, providing intuitive and accessible data exploration."
+        },
+        {
+          "question": "What is the purpose of Power BI alerts?",
+          "options": {
+            "A": "To notify users of important changes in reports.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI alerts notify users of important changes in reports, providing timely and relevant information."
+        }
+      ]
+    }
+  ]
+}

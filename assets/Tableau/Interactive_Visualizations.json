@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Interactive_Visualizations",
+      "questions": [
+        {
+          "question": "What are interactive visualizations in Tableau?",
+          "options": {
+            "A": "Visualizations that allow user interaction for deeper data analysis.",
+            "B": "Static visualizations.",
+            "C": "Visualizations used for data storage.",
+            "D": "Visualizations used for data filtering."
+          },
+          "correct_answer": "A",
+          "explanation": "Interactive visualizations in Tableau allow user interaction for deeper data analysis, enhancing data exploration."
+        },
+        {
+          "question": "What is the purpose of a filter action in Tableau?",
+          "options": {
+            "A": "To filter data across multiple visualizations based on user interaction.",
+            "B": "To store data values.",
+            "C": "To perform data calculations.",
+            "D": "To create visualizations."
+          },
+          "correct_answer": "A",
+          "explanation": "Filter actions in Tableau filter data across multiple visualizations based on user interaction, allowing for focused data analysis."
+        },
+        {
+          "question": "What is a highlight action in Tableau?",
+          "options": {
+            "A": "An action that highlights specific data points across visualizations.",
+            "B": "An action that stores data values.",
+            "C": "An action used for data filtering.",
+            "D": "An action used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Highlight actions in Tableau highlight specific data points across visualizations, drawing attention to key insights."
+        },
+        {
+          "question": "What is a URL action in Tableau?",
+          "options": {
+            "A": "An action that opens a web page when a data point is clicked.",
+            "B": "An action that stores data values.",
+            "C": "An action used for data filtering.",
+            "D": "An action used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "URL actions in Tableau open a web page when a data point is clicked, providing additional context to data insights."
+        },
+        {
+          "question": "What is a parameter action in Tableau?",
+          "options": {
+            "A": "An action that changes parameter values based on user interaction.",
+            "B": "An action that stores data values.",
+            "C": "An action used for data filtering.",
+            "D": "An action used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Parameter actions in Tableau change parameter values based on user interaction, allowing for dynamic data analysis."
+        },
+        {
+          "question": "What is a sheet selector in Tableau?",
+          "options": {
+            "A": "A control that allows users to switch between different sheets.",
+            "B": "A control that stores data values.",
+            "C": "A control used for data filtering.",
+            "D": "A control used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Sheet selectors in Tableau allow users to switch between different sheets, enhancing data exploration."
+        },
+        {
+          "question": "What is a navigation button in Tableau?",
+          "options": {
+            "A": "A button that navigates users to different dashboards or sheets.",
+            "B": "A button that stores data values.",
+            "C": "A button used for data filtering.",
+            "D": "A button used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Navigation buttons in Tableau navigate users to different dashboards or sheets, facilitating seamless data exploration."
+        },
+        {
+          "question": "What is a tooltip in Tableau?",
+          "options": {
+            "A": "A pop-up box that provides additional information about a data point.",
+            "B": "A box that stores data values.",
+            "C": "A box used for data filtering.",
+            "D": "A box used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Tooltips in Tableau provide additional information about a data point, enhancing data analysis."
+        },
+        {
+          "question": "What is a dashboard filter in Tableau?",
+          "options": {
+            "A": "A filter that limits the data displayed across multiple visualizations.",
+            "B": "A filter that stores data values.",
+            "C": "A filter used for data calculations.",
+            "D": "A filter used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard filters in Tableau limit the data displayed across multiple visualizations, allowing users to focus on specific data insights."
+        },
+        {
+          "question": "What is a dashboard highlight in Tableau?",
+          "options": {
+            "A": "A highlight that emphasizes specific data points across visualizations.",
+            "B": "A highlight that stores data values.",
+            "C": "A highlight used for data calculations.",
+            "D": "A highlight used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard highlights in Tableau emphasize specific data points across visualizations, drawing attention to key insights."
+        },
+        {
+          "question": "What is a dashboard URL in Tableau?",
+          "options": {
+            "A": "A URL that opens a web page when a data point is clicked.",
+            "B": "A URL that stores data values.",
+            "C": "A URL used for data calculations.",
+            "D": "A URL used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard URLs in Tableau open a web page when a data point is clicked, providing additional context to data insights."
+        },
+        {
+          "question": "What is a dashboard parameter in Tableau?",
+          "options": {
+            "A": "A parameter that changes values based on user interaction.",
+            "B": "A parameter that stores data values.",
+            "C": "A parameter used for data calculations.",
+            "D": "A parameter used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard parameters in Tableau change values based on user interaction, allowing for dynamic data analysis."
+        },
+        {
+          "question": "What is a dashboard sheet selector in Tableau?",
+          "options": {
+            "A": "A selector that allows users to switch between different sheets.",
+            "B": "A selector that stores data values.",
+            "C": "A selector used for data calculations.",
+            "D": "A selector used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard sheet selectors in Tableau allow users to switch between different sheets, enhancing data exploration."
+        },
+        {
+          "question": "What is a dashboard navigation button in Tableau?",
+          "options": {
+            "A": "A button that navigates users to different dashboards or sheets.",
+            "B": "A button that stores data values.",
+            "C": "A button used for data calculations.",
+            "D": "A button used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard navigation buttons in Tableau navigate users to different dashboards or sheets, facilitating seamless data exploration."
+        },
+        {
+          "question": "What is a dashboard export option in Tableau?",
+          "options": {
+            "A": "An option that allows users to export dashboard data and visualizations.",
+            "B": "An option that stores data values.",
+            "C": "An option used for data calculations.",
+            "D": "An option used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard export options in Tableau allow users to export dashboard data and visualizations, enabling data sharing and reporting."
+        },
+        {
+          "question": "What is a dashboard tooltip in Tableau?",
+          "options": {
+            "A": "A tooltip that provides additional information about a data point.",
+            "B": "A tooltip that stores data values.",
+            "C": "A tooltip used for data calculations.",
+            "D": "A tooltip used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard tooltips in Tableau provide additional information about a data point, enhancing data analysis."
+        },
+        {
+          "question": "What is a dashboard filter action in Tableau?",
+          "options": {
+            "A": "An action that filters data across multiple visualizations.",
+            "B": "An action that stores data values.",
+            "C": "An action used for data calculations.",
+            "D": "An action used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard filter actions in Tableau filter data across multiple visualizations, allowing for focused data analysis."
+        }
+      ]
+    }
+  ]
+}

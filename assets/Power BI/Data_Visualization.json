@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Data_Visualization",
+      "questions": [
+        {
+          "question": "What is data visualization in Power BI?",
+          "options": {
+            "A": "The graphical representation of data.",
+            "B": "The process of cleaning data.",
+            "C": "The process of analyzing data.",
+            "D": "The process of transforming data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data visualization in Power BI involves the graphical representation of data, enabling users to understand complex data insights."
+        },
+        {
+          "question": "What is the purpose of charts in Power BI?",
+          "options": {
+            "A": "To visually represent data.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Charts in Power BI visually represent data, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of dashboards in Power BI?",
+          "options": {
+            "A": "To provide a comprehensive view of data.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboards in Power BI provide a comprehensive view of data, enabling users to monitor and analyze data insights."
+        },
+        {
+          "question": "What is the purpose of reports in Power BI?",
+          "options": {
+            "A": "To present data insights.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Reports in Power BI present data insights, providing a detailed view of data analysis."
+        },
+        {
+          "question": "What is the purpose of slicers in Power BI?",
+          "options": {
+            "A": "To filter data in visualizations.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Slicers in Power BI filter data in visualizations, allowing users to focus on specific data insights."
+        },
+        {
+          "question": "What is the purpose of bookmarks in Power BI?",
+          "options": {
+            "A": "To save specific views of reports.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Bookmarks in Power BI save specific views of reports, enabling users to quickly access important data insights."
+        },
+        {
+          "question": "What is the purpose of themes in Power BI?",
+          "options": {
+            "A": "To customize the appearance of reports.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Themes in Power BI customize the appearance of reports, providing a consistent and professional look."
+        },
+        {
+          "question": "What is the purpose of data labels in Power BI?",
+          "options": {
+            "A": "To provide additional information in visualizations.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data labels in Power BI provide additional information in visualizations, enhancing data insights."
+        },
+        {
+          "question": "What is the purpose of tooltips in Power BI?",
+          "options": {
+            "A": "To provide detailed information on data points.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Tooltips in Power BI provide detailed information on data points, enhancing data analysis."
+        },
+        {
+          "question": "What is the purpose of drillthrough in Power BI?",
+          "options": {
+            "A": "To navigate to detailed reports from visualizations.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Drillthrough in Power BI navigates to detailed reports from visualizations, providing deeper data insights."
+        },
+        {
+          "question": "What is the purpose of cross-filtering in Power BI?",
+          "options": {
+            "A": "To filter data across multiple visualizations.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Cross-filtering in Power BI filters data across multiple visualizations, providing comprehensive data analysis."
+        },
+        {
+          "question": "What is the purpose of visual interactions in Power BI?",
+          "options": {
+            "A": "To define how visualizations interact with each other.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Visual interactions in Power BI define how visualizations interact with each other, enhancing data exploration."
+        },
+        {
+          "question": "What is the purpose of custom visuals in Power BI?",
+          "options": {
+            "A": "To extend visualization capabilities.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Custom visuals in Power BI extend visualization capabilities, providing unique data insights."
+        },
+        {
+          "question": "What is the purpose of KPI visuals in Power BI?",
+          "options": {
+            "A": "To track key performance indicators.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "KPI visuals in Power BI track key performance indicators, providing insights into business performance."
+        },
+        {
+          "question": "What is the purpose of map visuals in Power BI?",
+          "options": {
+            "A": "To visualize geographical data.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Map visuals in Power BI visualize geographical data, providing spatial insights."
+        },
+        {
+          "question": "What is the purpose of matrix visuals in Power BI?",
+          "options": {
+            "A": "To display data in a tabular format.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Matrix visuals in Power BI display data in a tabular format, providing detailed data analysis."
+        },
+        {
+          "question": "What is the purpose of table visuals in Power BI?",
+          "options": {
+            "A": "To present data in rows and columns.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Table visuals in Power BI present data in rows and columns, providing a structured view of data."
+        },
+        {
+          "question": "What is the purpose of card visuals in Power BI?",
+          "options": {
+            "A": "To display single data points.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Card visuals in Power BI display single data points, providing quick insights into key metrics."
+        },
+        {
+          "question": "What is the purpose of gauge visuals in Power BI?",
+          "options": {
+            "A": "To visualize progress towards a target.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Gauge visuals in Power BI visualize progress towards a target, providing insights into performance metrics."
+        }
+      ]
+    }
+  ]
+}

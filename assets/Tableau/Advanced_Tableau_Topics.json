@@ -1,0 +1,207 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Tableau_Topics",
+      "questions": [
+        {
+          "question": "What is a calculated field in Tableau?",
+          "options": {
+            "A": "A field created by the user to perform calculations on data.",
+            "B": "A field that automatically updates based on data changes.",
+            "C": "A field that stores raw data values.",
+            "D": "A field used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "A calculated field in Tableau is created by the user to perform calculations on data, allowing for customized data analysis."
+        },
+        {
+          "question": "What is the purpose of a parameter in Tableau?",
+          "options": {
+            "A": "To allow users to dynamically change values in calculations.",
+            "B": "To store static data values.",
+            "C": "To create visualizations.",
+            "D": "To filter data."
+          },
+          "correct_answer": "A",
+          "explanation": "Parameters in Tableau allow users to dynamically change values in calculations, providing flexibility in data analysis."
+        },
+        {
+          "question": "What is a data blend in Tableau?",
+          "options": {
+            "A": "A method of combining data from different sources.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data blending in Tableau is a method of combining data from different sources, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a dual-axis chart in Tableau?",
+          "options": {
+            "A": "A chart that uses two axes to display data.",
+            "B": "A chart that uses a single axis to display data.",
+            "C": "A chart that displays data in a table format.",
+            "D": "A chart that displays data in a pie format."
+          },
+          "correct_answer": "A",
+          "explanation": "A dual-axis chart in Tableau uses two axes to display data, allowing for comparison of different data sets."
+        },
+        {
+          "question": "What is the purpose of a dashboard in Tableau?",
+          "options": {
+            "A": "To provide a comprehensive view of multiple visualizations.",
+            "B": "To store raw data values.",
+            "C": "To perform data calculations.",
+            "D": "To filter data."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboards in Tableau provide a comprehensive view of multiple visualizations, enabling users to analyze data insights."
+        },
+        {
+          "question": "What is a story in Tableau?",
+          "options": {
+            "A": "A sequence of visualizations that convey a data narrative.",
+            "B": "A single visualization.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A story in Tableau is a sequence of visualizations that convey a data narrative, providing insights into data trends."
+        },
+        {
+          "question": "What is the purpose of a filter in Tableau?",
+          "options": {
+            "A": "To limit the data displayed in visualizations.",
+            "B": "To store data values.",
+            "C": "To perform data calculations.",
+            "D": "To create visualizations."
+          },
+          "correct_answer": "A",
+          "explanation": "Filters in Tableau limit the data displayed in visualizations, allowing users to focus on specific data insights."
+        },
+        {
+          "question": "What is a hierarchy in Tableau?",
+          "options": {
+            "A": "A structured organization of data fields.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A hierarchy in Tableau is a structured organization of data fields, enabling users to drill down into data details."
+        },
+        {
+          "question": "What is a set in Tableau?",
+          "options": {
+            "A": "A custom grouping of data based on specific conditions.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A set in Tableau is a custom grouping of data based on specific conditions, allowing for targeted data analysis."
+        },
+        {
+          "question": "What is a group in Tableau?",
+          "options": {
+            "A": "A collection of data points combined into a single category.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A group in Tableau is a collection of data points combined into a single category, simplifying data analysis."
+        },
+        {
+          "question": "What is a bin in Tableau?",
+          "options": {
+            "A": "A range of data values grouped together.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A bin in Tableau is a range of data values grouped together, allowing for analysis of data distribution."
+        },
+        {
+          "question": "What is a trend line in Tableau?",
+          "options": {
+            "A": "A line that shows the general direction of data over time.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A trend line in Tableau is a line that shows the general direction of data over time, providing insights into data trends."
+        },
+        {
+          "question": "What is a reference line in Tableau?",
+          "options": {
+            "A": "A line added to a chart to highlight a specific value.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A reference line in Tableau is a line added to a chart to highlight a specific value, providing context to data analysis."
+        },
+        {
+          "question": "What is a calculated measure in Tableau?",
+          "options": {
+            "A": "A measure created by the user to perform calculations on data.",
+            "B": "A measure that automatically updates based on data changes.",
+            "C": "A measure that stores raw data values.",
+            "D": "A measure used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "A calculated measure in Tableau is created by the user to perform calculations on data, allowing for customized data analysis."
+        },
+        {
+          "question": "What is a calculated dimension in Tableau?",
+          "options": {
+            "A": "A dimension created by the user to perform calculations on data.",
+            "B": "A dimension that automatically updates based on data changes.",
+            "C": "A dimension that stores raw data values.",
+            "D": "A dimension used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "A calculated dimension in Tableau is created by the user to perform calculations on data, allowing for customized data analysis."
+        },
+        {
+          "question": "What is a calculated field in Tableau?",
+          "options": {
+            "A": "A field created by the user to perform calculations on data.",
+            "B": "A field that automatically updates based on data changes.",
+            "C": "A field that stores raw data values.",
+            "D": "A field used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "A calculated field in Tableau is created by the user to perform calculations on data, allowing for customized data analysis."
+        },
+        {
+          "question": "What is a parameter in Tableau?",
+          "options": {
+            "A": "A user-defined variable that can be used in calculations.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A parameter in Tableau is a user-defined variable that can be used in calculations, providing flexibility in data analysis."
+        },
+        {
+          "question": "What is a data source in Tableau?",
+          "options": {
+            "A": "A connection to a database or file that provides data for analysis.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data source in Tableau is a connection to a database or file that provides data for analysis, enabling comprehensive data analysis."
+        }
+      ]
+    }
+  ]
+}

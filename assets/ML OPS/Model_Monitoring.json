@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Model_Monitoring",
+      "questions": [
+        {
+          "question": "What is the primary goal of model monitoring?",
+          "options": {
+            "A": "To ensure the model's performance remains consistent over time.",
+            "B": "To eliminate all models.",
+            "C": "To duplicate models.",
+            "D": "To increase the number of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Model monitoring aims to ensure the model's performance remains consistent over time, detecting any deviations or drifts."
+        },
+        {
+          "question": "Which technique is commonly used for monitoring machine learning models?",
+          "options": {
+            "A": "Drift Detection",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection is a widely used technique for monitoring machine learning models, identifying changes in data distribution."
+        },
+        {
+          "question": "What is the purpose of using Drift Detection in model monitoring?",
+          "options": {
+            "A": "To identify changes in data distribution.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection is used to identify changes in data distribution, helping to maintain model accuracy and reliability."
+        },
+        {
+          "question": "Which method is used to monitor machine learning models in a comprehensive manner?",
+          "options": {
+            "A": "Performance Metrics",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Performance Metrics are a method used to monitor machine learning models in a comprehensive manner, providing insights into model performance over time."
+        },
+        {
+          "question": "What is the benefit of model monitoring in machine learning?",
+          "options": {
+            "A": "Ensuring consistent model performance over time.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Model monitoring ensures consistent model performance over time, detecting any deviations or drifts."
+        },
+        {
+          "question": "Which algorithm is used for monitoring machine learning models by providing insights into model performance over time?",
+          "options": {
+            "A": "Performance Metrics",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Performance Metrics are an algorithm used for monitoring machine learning models by providing insights into model performance over time."
+        },
+        {
+          "question": "What is the purpose of using Performance Metrics in model monitoring?",
+          "options": {
+            "A": "To provide insights into model performance over time.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Performance Metrics are used to provide insights into model performance over time, helping to maintain model accuracy and reliability."
+        },
+        {
+          "question": "Which technique is used for monitoring machine learning models by identifying changes in data distribution?",
+          "options": {
+            "A": "Drift Detection",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection is a technique used for monitoring machine learning models by identifying changes in data distribution."
+        },
+        {
+          "question": "What is the benefit of using Drift Detection in model monitoring?",
+          "options": {
+            "A": "Ensuring consistent model performance over time.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection ensures consistent model performance over time, detecting any deviations or drifts."
+        },
+        {
+          "question": "Which method is used for monitoring machine learning models by providing insights into model performance over time?",
+          "options": {
+            "A": "Performance Metrics",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Performance Metrics are a method used for monitoring machine learning models by providing insights into model performance over time."
+        },
+        {
+          "question": "What is the purpose of using Performance Metrics in model monitoring?",
+          "options": {
+            "A": "To provide insights into model performance over time.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Performance Metrics are used to provide insights into model performance over time, helping to maintain model accuracy and reliability."
+        },
+        {
+          "question": "Which algorithm is used for monitoring machine learning models by identifying changes in data distribution?",
+          "options": {
+            "A": "Drift Detection",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection is an algorithm used for monitoring machine learning models by identifying changes in data distribution."
+        },
+        {
+          "question": "What is the benefit of using Drift Detection in model monitoring?",
+          "options": {
+            "A": "Ensuring consistent model performance over time.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection ensures consistent model performance over time, detecting any deviations or drifts."
+        },
+        {
+          "question": "Which technique is used for monitoring machine learning models by providing insights into model performance over time?",
+          "options": {
+            "A": "Performance Metrics",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Performance Metrics are a technique used for monitoring machine learning models by providing insights into model performance over time."
+        },
+        {
+          "question": "What is the benefit of using Performance Metrics in model monitoring?",
+          "options": {
+            "A": "Ensuring consistent model performance over time.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Performance Metrics ensure consistent model performance over time, detecting any deviations or drifts."
+        },
+        {
+          "question": "Which method is used for monitoring machine learning models by identifying changes in data distribution?",
+          "options": {
+            "A": "Drift Detection",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection is a method used for monitoring machine learning models by identifying changes in data distribution."
+        },
+        {
+          "question": "What is the purpose of using Drift Detection in model monitoring?",
+          "options": {
+            "A": "To identify changes in data distribution.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Drift Detection is used to identify changes in data distribution, helping to maintain model accuracy and reliability."
+        }
+      ]
+    }
+  ]
+}

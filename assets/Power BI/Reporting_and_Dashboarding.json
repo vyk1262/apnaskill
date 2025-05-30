@@ -1,0 +1,207 @@
+{
+  "result": [
+    {
+      "topic": "Reporting_and_Dashboarding",
+      "questions": [
+        {
+          "question": "What is the purpose of reporting in Power BI?",
+          "options": {
+            "A": "To present data insights in a structured format.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Reporting in Power BI presents data insights in a structured format, enabling users to make informed decisions."
+        },
+        {
+          "question": "What is the purpose of dashboarding in Power BI?",
+          "options": {
+            "A": "To provide a real-time view of key metrics.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboarding in Power BI provides a real-time view of key metrics, enabling users to monitor performance."
+        },
+        {
+          "question": "What is the purpose of Power BI Service for reporting?",
+          "options": {
+            "A": "To share and collaborate on reports.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Service for reporting allows users to share and collaborate on reports, enhancing data accessibility."
+        },
+        {
+          "question": "What is the purpose of Power BI Desktop for reporting?",
+          "options": {
+            "A": "To design and create reports.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Desktop for reporting is used to design and create reports, providing a comprehensive environment for data analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI Mobile for dashboarding?",
+          "options": {
+            "A": "To view dashboards on mobile devices.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Mobile for dashboarding allows users to view dashboards on mobile devices, providing access to data insights on the go."
+        },
+        {
+          "question": "What is the purpose of Power BI Report Server for reporting?",
+          "options": {
+            "A": "To host reports on-premises.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Report Server for reporting hosts reports on-premises, providing a secure environment for data analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI Embedded for dashboarding?",
+          "options": {
+            "A": "To embed dashboards into applications.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Embedded for dashboarding embeds dashboards into applications, providing interactive data insights."
+        },
+        {
+          "question": "What is the purpose of Power BI Q&A for reporting?",
+          "options": {
+            "A": "To ask questions about data in natural language.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Q&A for reporting allows users to ask questions about data in natural language, providing quick insights into data."
+        },
+        {
+          "question": "What is the purpose of Power BI Visuals for dashboarding?",
+          "options": {
+            "A": "To enhance data insights with custom visuals.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Visuals for dashboarding enhance data insights with custom visuals, providing unique ways to visualize data."
+        },
+        {
+          "question": "What is the purpose of Power BI Dataflows for reporting?",
+          "options": {
+            "A": "To create reusable data transformation logic.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Dataflows for reporting create reusable data transformation logic, enabling efficient data preparation."
+        },
+        {
+          "question": "What is the purpose of Power BI DAX for reporting?",
+          "options": {
+            "A": "To create custom calculations.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI DAX for reporting creates custom calculations, providing advanced data analysis capabilities."
+        },
+        {
+          "question": "What is the purpose of Power BI RLS for reporting?",
+          "options": {
+            "A": "To implement row-level security.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI RLS for reporting implements row-level security, ensuring data privacy and security."
+        },
+        {
+          "question": "What is the purpose of Power BI AI Insights for reporting?",
+          "options": {
+            "A": "To apply AI models to data.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI AI Insights for reporting applies AI models to data, providing advanced data analysis capabilities."
+        },
+        {
+          "question": "What is the purpose of Power BI Paginated Reports for reporting?",
+          "options": {
+            "A": "To create pixel-perfect reports.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Paginated Reports for reporting create pixel-perfect reports, providing detailed data insights."
+        },
+        {
+          "question": "What is the purpose of Power BI Data Alerts for reporting?",
+          "options": {
+            "A": "To set alerts on data changes.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Data Alerts for reporting set alerts on data changes, providing timely notifications."
+        },
+        {
+          "question": "What is the purpose of Power BI Quick Insights for reporting?",
+          "options": {
+            "A": "To generate automated insights from data.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Quick Insights for reporting generates automated insights from data, providing quick data analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI Content Packs for reporting?",
+          "options": {
+            "A": "To provide pre-packaged content for specific data sources.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Content Packs for reporting provide pre-packaged content for specific data sources, providing ready-to-use data insights."
+        },
+        {
+          "question": "What is the purpose of Power BI Workspaces for reporting?",
+          "options": {
+            "A": "To create collaborative environments for sharing reports.",
+            "B": "To clean data.",
+            "C": "To analyze data.",
+            "D": "To transform data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Workspaces for reporting create collaborative environments for sharing reports, enabling team collaboration."
+        }
+      ]
+    }
+  ]
+}

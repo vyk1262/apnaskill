@@ -1,0 +1,207 @@
+{
+  "result": [
+    {
+      "topic": "Data_Visualization_Basics",
+      "questions": [
+        {
+          "question": "What is data visualization in Tableau?",
+          "options": {
+            "A": "The process of representing data graphically.",
+            "B": "The process of storing data.",
+            "C": "The process of filtering data.",
+            "D": "The process of analyzing data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data visualization in Tableau involves representing data graphically, enabling users to understand data insights easily."
+        },
+        {
+          "question": "What is the purpose of a bar chart in Tableau?",
+          "options": {
+            "A": "To compare data across categories.",
+            "B": "To store data values.",
+            "C": "To perform data calculations.",
+            "D": "To filter data."
+          },
+          "correct_answer": "A",
+          "explanation": "Bar charts in Tableau are used to compare data across categories, providing a clear visual representation of data differences."
+        },
+        {
+          "question": "What is a line chart in Tableau?",
+          "options": {
+            "A": "A chart that shows data trends over time.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Line charts in Tableau show data trends over time, providing insights into data patterns and changes."
+        },
+        {
+          "question": "What is a pie chart in Tableau?",
+          "options": {
+            "A": "A chart that shows data proportions as slices of a circle.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Pie charts in Tableau show data proportions as slices of a circle, providing a visual representation of data distribution."
+        },
+        {
+          "question": "What is a scatter plot in Tableau?",
+          "options": {
+            "A": "A chart that shows relationships between two variables.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Scatter plots in Tableau show relationships between two variables, providing insights into data correlations."
+        },
+        {
+          "question": "What is a histogram in Tableau?",
+          "options": {
+            "A": "A chart that shows the distribution of data values.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Histograms in Tableau show the distribution of data values, providing insights into data frequency and spread."
+        },
+        {
+          "question": "What is a heat map in Tableau?",
+          "options": {
+            "A": "A chart that uses color to represent data density.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Heat maps in Tableau use color to represent data density, providing a visual representation of data concentration."
+        },
+        {
+          "question": "What is a tree map in Tableau?",
+          "options": {
+            "A": "A chart that uses nested rectangles to represent data hierarchy.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Tree maps in Tableau use nested rectangles to represent data hierarchy, providing a visual representation of data structure."
+        },
+        {
+          "question": "What is a bubble chart in Tableau?",
+          "options": {
+            "A": "A chart that uses bubbles to represent data values and categories.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Bubble charts in Tableau use bubbles to represent data values and categories, providing a visual representation of data relationships."
+        },
+        {
+          "question": "What is a dual-axis chart in Tableau?",
+          "options": {
+            "A": "A chart that uses two axes to display data.",
+            "B": "A chart that uses a single axis to display data.",
+            "C": "A chart that displays data in a table format.",
+            "D": "A chart that displays data in a pie format."
+          },
+          "correct_answer": "A",
+          "explanation": "A dual-axis chart in Tableau uses two axes to display data, allowing for comparison of different data sets."
+        },
+        {
+          "question": "What is a gantt chart in Tableau?",
+          "options": {
+            "A": "A chart that shows project timelines and tasks.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Gantt charts in Tableau show project timelines and tasks, providing a visual representation of project schedules."
+        },
+        {
+          "question": "What is a waterfall chart in Tableau?",
+          "options": {
+            "A": "A chart that shows cumulative changes in data values.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Waterfall charts in Tableau show cumulative changes in data values, providing insights into data progression."
+        },
+        {
+          "question": "What is a box plot in Tableau?",
+          "options": {
+            "A": "A chart that shows the distribution of data values using quartiles.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Box plots in Tableau show the distribution of data values using quartiles, providing insights into data variability."
+        },
+        {
+          "question": "What is a bullet chart in Tableau?",
+          "options": {
+            "A": "A chart that compares data values against a target.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Bullet charts in Tableau compare data values against a target, providing insights into data performance."
+        },
+        {
+          "question": "What is a funnel chart in Tableau?",
+          "options": {
+            "A": "A chart that shows data progression through stages.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Funnel charts in Tableau show data progression through stages, providing insights into data flow."
+        },
+        {
+          "question": "What is a highlight table in Tableau?",
+          "options": {
+            "A": "A table that uses color to emphasize data values.",
+            "B": "A table that stores data values.",
+            "C": "A table used for data filtering.",
+            "D": "A table used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Highlight tables in Tableau use color to emphasize data values, providing a visual representation of data importance."
+        },
+        {
+          "question": "What is a text table in Tableau?",
+          "options": {
+            "A": "A table that displays data values in text format.",
+            "B": "A table that stores data values.",
+            "C": "A table used for data filtering.",
+            "D": "A table used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Text tables in Tableau display data values in text format, providing a clear representation of data details."
+        },
+        {
+          "question": "What is a packed bubble chart in Tableau?",
+          "options": {
+            "A": "A chart that uses packed bubbles to represent data values and categories.",
+            "B": "A chart that stores data values.",
+            "C": "A chart used for data filtering.",
+            "D": "A chart used for data calculations."
+          },
+          "correct_answer": "A",
+          "explanation": "Packed bubble charts in Tableau use packed bubbles to represent data values and categories, providing a visual representation of data relationships."
+        }
+      ]
+    }
+  ]
+}
