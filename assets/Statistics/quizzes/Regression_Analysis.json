@@ -1,0 +1,163 @@
+{
+    "result": [
+        {
+            "topic": "Regression_Analysis",
+            "questions": [
+    {
+      "question": "What is the primary purpose of regression analysis?",
+      "options": {
+        "A": "To summarize data.",
+        "B": "To predict the value of a dependent variable based on an independent variable.",
+        "C": "To test for independence.",
+        "D": "To calculate probabilities."
+      },
+      "correct_answer": "B",
+      "explanation": "Regression analysis is used to predict the value of a dependent variable based on the value of one or more independent variables."
+    },
+    {
+      "question": "What is a linear regression model?",
+      "options": {
+        "A": "A model that predicts a dependent variable using a linear combination of independent variables.",
+        "B": "A model that predicts a dependent variable using a non-linear combination of independent variables.",
+        "C": "A model that predicts a dependent variable using categorical variables.",
+        "D": "A model that predicts a dependent variable using a single independent variable."
+      },
+      "correct_answer": "A",
+      "explanation": "A linear regression model predicts a dependent variable using a linear combination of independent variables, assuming a linear relationship."
+    },
+    {
+      "question": "What is the purpose of the coefficient of determination (R-squared)?",
+      "options": {
+        "A": "To measure the strength and direction of a linear relationship between two variables.",
+        "B": "To calculate probabilities.",
+        "C": "To summarize data.",
+        "D": "To indicate the proportion of variance in the dependent variable explained by the independent variables."
+      },
+      "correct_answer": "D",
+      "explanation": "The coefficient of determination (R-squared) indicates the proportion of variance in the dependent variable explained by the independent variables, providing a measure of model fit."
+    },
+    {
+      "question": "What is the purpose of a residual in regression analysis?",
+      "options": {
+        "A": "To measure the difference between observed and predicted values.",
+        "B": "To calculate probabilities.",
+        "C": "To summarize data.",
+        "D": "To test for independence."
+      },
+      "correct_answer": "A",
+      "explanation": "A residual measures the difference between observed and predicted values, providing insight into the accuracy of the regression model."
+    },
+    {
+      "question": "What is the purpose of a multiple regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To predict a dependent variable using categorical variables.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "B",
+      "explanation": "A multiple regression model predicts a dependent variable using multiple independent variables, allowing for more complex relationships."
+    },
+    {
+      "question": "What is the purpose of a logistic regression model?",
+      "options": {
+        "A": "To predict a continuous dependent variable.",
+        "B": "To predict a categorical dependent variable.",
+        "C": "To predict a dependent variable using a non-linear combination of independent variables.",
+        "D": "To predict a dependent variable using a single independent variable."
+      },
+      "correct_answer": "B",
+      "explanation": "A logistic regression model predicts a categorical dependent variable, often used for binary outcomes."
+    },
+    {
+      "question": "What is the purpose of a polynomial regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a linear combination of independent variables.",
+        "B": "To predict a dependent variable using a non-linear combination of independent variables.",
+        "C": "To predict a dependent variable using categorical variables.",
+        "D": "To predict a dependent variable using a single independent variable."
+      },
+      "correct_answer": "B",
+      "explanation": "A polynomial regression model predicts a dependent variable using a non-linear combination of independent variables, allowing for more complex relationships."
+    },
+    {
+      "question": "What is the purpose of a stepwise regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To select the most important independent variables for predicting a dependent variable.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "C",
+      "explanation": "A stepwise regression model selects the most important independent variables for predicting a dependent variable, improving model simplicity and interpretability."
+    },
+    {
+      "question": "What is the purpose of a ridge regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To reduce multicollinearity by adding a penalty term to the regression model.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "C",
+      "explanation": "A ridge regression model reduces multicollinearity by adding a penalty term to the regression model, improving model stability."
+    },
+    {
+      "question": "What is the purpose of a lasso regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To reduce multicollinearity and select important variables by adding a penalty term to the regression model.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "C",
+      "explanation": "A lasso regression model reduces multicollinearity and selects important variables by adding a penalty term to the regression model, improving model simplicity and interpretability."
+    },
+    {
+      "question": "What is the purpose of an elastic net regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To combine the benefits of ridge and lasso regression by adding a penalty term to the regression model.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "C",
+      "explanation": "An elastic net regression model combines the benefits of ridge and lasso regression by adding a penalty term to the regression model, improving model stability and interpretability."
+    },
+    {
+      "question": "What is the purpose of a hierarchical regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To test the incremental value of adding new independent variables to a regression model.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "C",
+      "explanation": "A hierarchical regression model tests the incremental value of adding new independent variables to a regression model, providing insight into their contribution."
+    },
+    {
+      "question": "What is the purpose of a robust regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To reduce the influence of outliers on the regression model.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "C",
+      "explanation": "A robust regression model reduces the influence of outliers on the regression model, improving model accuracy and stability."
+    },
+    {
+      "question": "What is the purpose of a Bayesian regression model?",
+      "options": {
+        "A": "To predict a dependent variable using a single independent variable.",
+        "B": "To predict a dependent variable using multiple independent variables.",
+        "C": "To incorporate prior knowledge and uncertainty into the regression model.",
+        "D": "To predict a dependent variable using a non-linear combination of independent variables."
+      },
+      "correct_answer": "C",
+      "explanation": "A Bayesian regression model incorporates prior knowledge and uncertainty into the regression model, providing a flexible framework for reasoning under uncertainty."
+    }
+  ]
+        }
+    ]
+}

@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "topic": "Data_Analysis_and_Interpretation",
+      "questions": [
+        {
+          "question": "What is data analysis?",
+          "options": {
+            "A": "The process of collecting data.",
+            "B": "The process of inspecting, cleansing, transforming, and modeling data.",
+            "C": "The process of ignoring data.",
+            "D": "The process of destroying data."
+          },
+          "correct_answer": "B",
+          "explanation": "Data analysis involves inspecting, cleansing, transforming, and modeling data to discover useful information and support decision-making."
+        },
+        {
+          "question": "What is the purpose of data interpretation?",
+          "options": {
+            "A": "To make sense of data and draw conclusions.",
+            "B": "To collect data.",
+            "C": "To ignore data.",
+            "D": "To destroy data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data interpretation involves making sense of data and drawing conclusions to inform decision-making."
+        },
+        {
+          "question": "What is a data set?",
+          "options": {
+            "A": "A collection of related data points.",
+            "B": "A single data point.",
+            "C": "An unrelated group of data points.",
+            "D": "A destroyed set of data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data set is a collection of related data points, often organized in a table or database."
+        },
+        {
+          "question": "What is the purpose of data visualization?",
+          "options": {
+            "A": "To represent data graphically.",
+            "B": "To destroy data.",
+            "C": "To ignore data.",
+            "D": "To collect data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data visualization involves representing data graphically to make it easier to understand and interpret."
+        },
+        {
+          "question": "What is a histogram?",
+          "options": {
+            "A": "A graphical representation of the distribution of numerical data.",
+            "B": "A textual representation of data.",
+            "C": "A destroyed set of data.",
+            "D": "An unrelated group of data points."
+          },
+          "correct_answer": "A",
+          "explanation": "A histogram is a graphical representation of the distribution of numerical data, often used to visualize frequency distributions."
+        },
+        {
+          "question": "What is a scatter plot?",
+          "options": {
+            "A": "A graph that uses dots to represent the values obtained for two different variables.",
+            "B": "A textual representation of data.",
+            "C": "A destroyed set of data.",
+            "D": "An unrelated group of data points."
+          },
+          "correct_answer": "A",
+          "explanation": "A scatter plot is a graph that uses dots to represent the values obtained for two different variables, often used to identify relationships between them."
+        },
+        {
+          "question": "What is a line chart?",
+          "options": {
+            "A": "A type of chart that displays information as a series of data points called 'markers' connected by straight line segments.",
+            "B": "A textual representation of data.",
+            "C": "A destroyed set of data.",
+            "D": "An unrelated group of data points."
+          },
+          "correct_answer": "A",
+          "explanation": "A line chart is a type of chart that displays information as a series of data points called 'markers' connected by straight line segments, often used to visualize trends over time."
+        },
+        {
+          "question": "What is a bar chart?",
+          "options": {
+            "A": "A chart that presents categorical data with rectangular bars.",
+            "B": "A textual representation of data.",
+            "C": "A destroyed set of data.",
+            "D": "An unrelated group of data points."
+          },
+          "correct_answer": "A",
+          "explanation": "A bar chart presents categorical data with rectangular bars, often used to compare different categories."
+        },
+        {
+          "question": "What is a pie chart?",
+          "options": {
+            "A": "A circular statistical graphic divided into slices to illustrate numerical proportions.",
+            "B": "A textual representation of data.",
+            "C": "A destroyed set of data.",
+            "D": "An unrelated group of data points."
+          },
+          "correct_answer": "A",
+          "explanation": "A pie chart is a circular statistical graphic divided into slices to illustrate numerical proportions, often used to show percentage breakdowns."
+        },
+        {
+          "question": "What is a box plot?",
+          "options": {
+            "A": "A standardized way of displaying the distribution of data based on a five-number summary.",
+            "B": "A textual representation of data.",
+            "C": "A destroyed set of data.",
+            "D": "An unrelated group of data points."
+          },
+          "correct_answer": "A",
+          "explanation": "A box plot is a standardized way of displaying the distribution of data based on a five-number summary, often used to identify outliers."
+        },
+        {
+          "question": "What is data cleaning?",
+          "options": {
+            "A": "The process of detecting and correcting (or removing) corrupt or inaccurate records from a data set.",
+            "B": "The process of destroying data.",
+            "C": "The process of ignoring data.",
+            "D": "The process of collecting data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data cleaning involves detecting and correcting (or removing) corrupt or inaccurate records from a data set, ensuring data quality."
+        },
+        {
+          "question": "What is data transformation?",
+          "options": {
+            "A": "The process of converting data from one format or structure into another.",
+            "B": "The process of destroying data.",
+            "C": "The process of ignoring data.",
+            "D": "The process of collecting data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data transformation involves converting data from one format or structure into another, often used to prepare data for analysis."
+        },
+        {
+          "question": "What is data modeling?",
+          "options": {
+            "A": "The process of creating a data model for the data to be stored in a database.",
+            "B": "The process of destroying data.",
+            "C": "The process of ignoring data.",
+            "D": "The process of collecting data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data modeling involves creating a data model for the data to be stored in a database, defining how data is connected and processed."
+        },
+        {
+          "question": "What is data mining?",
+          "options": {
+            "A": "The process of discovering patterns in large data sets.",
+            "B": "The process of destroying data.",
+            "C": "The process of ignoring data.",
+            "D": "The process of collecting data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data mining involves discovering patterns in large data sets, often used to extract useful information and insights."
+        },
+        {
+          "question": "What is a data warehouse?",
+          "options": {
+            "A": "A central repository of integrated data from one or more disparate sources.",
+            "B": "A destroyed set of data.",
+            "C": "An unrelated group of data points.",
+            "D": "A textual representation of data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data warehouse is a central repository of integrated data from one or more disparate sources, used for reporting and data analysis."
+        },
+        {
+          "question": "What is big data?",
+          "options": {
+            "A": "Large and complex data sets that traditional data processing software cannot manage.",
+            "B": "Small and simple data sets.",
+            "C": "Destroyed data sets.",
+            "D": "Unrelated data points."
+          },
+          "correct_answer": "A",
+          "explanation": "Big data refers to large and complex data sets that traditional data processing software cannot manage, often requiring advanced tools and techniques."
+        }
+      ]
+    }
+  ]
+}

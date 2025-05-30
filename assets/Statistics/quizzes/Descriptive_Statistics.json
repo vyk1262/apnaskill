@@ -1,0 +1,207 @@
+{
+    "result": [
+        {
+            "topic": "Descriptive_Statistics",
+            "questions": [
+    {
+      "question": "What is the primary purpose of descriptive statistics?",
+      "options": {
+        "A": "To infer population parameters.",
+        "B": "To summarize and describe the features of a dataset.",
+        "C": "To test hypotheses.",
+        "D": "To predict future outcomes."
+      },
+      "correct_answer": "B",
+      "explanation": "Descriptive statistics are used to summarize and describe the main features of a dataset, providing a simple overview."
+    },
+    {
+      "question": "Which measure of central tendency is the middle value in a dataset?",
+      "options": {
+        "A": "Mean",
+        "B": "Median",
+        "C": "Mode",
+        "D": "Range"
+      },
+      "correct_answer": "B",
+      "explanation": "The median is the middle value in a dataset when the data points are arranged in order."
+    },
+    {
+      "question": "What is the purpose of a frequency distribution?",
+      "options": {
+        "A": "To display the number of occurrences of each value in a dataset.",
+        "B": "To calculate the mean.",
+        "C": "To test for independence.",
+        "D": "To predict future outcomes."
+      },
+      "correct_answer": "A",
+      "explanation": "A frequency distribution displays the number of occurrences of each value in a dataset, helping to understand the distribution."
+    },
+    {
+      "question": "Which graphical representation is used to show the relationship between two variables?",
+      "options": {
+        "A": "Bar chart",
+        "B": "Pie chart",
+        "C": "Scatter plot",
+        "D": "Line graph"
+      },
+      "correct_answer": "C",
+      "explanation": "A scatter plot is used to show the relationship between two variables by displaying data points on a two-dimensional graph."
+    },
+    {
+      "question": "What is the purpose of a histogram?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the distribution of a dataset.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A histogram is used to show the distribution of a dataset by displaying the frequency of data points within certain ranges."
+    },
+    {
+      "question": "Which measure of variability is the average of the squared differences from the mean?",
+      "options": {
+        "A": "Variance",
+        "B": "Standard deviation",
+        "C": "Range",
+        "D": "Interquartile range"
+      },
+      "correct_answer": "A",
+      "explanation": "Variance is the average of the squared differences from the mean, providing a measure of how much the data points vary."
+    },
+    {
+      "question": "What is the purpose of a box plot?",
+      "options": {
+        "A": "To display the distribution of a dataset.",
+        "B": "To show the relationship between two variables.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize categorical data."
+      },
+      "correct_answer": "A",
+      "explanation": "A box plot displays the distribution of a dataset by showing the median, quartiles, and potential outliers."
+    },
+    {
+      "question": "What is the purpose of a pie chart?",
+      "options": {
+        "A": "To display the distribution of a dataset.",
+        "B": "To show the relationship between two variables.",
+        "C": "To display categorical data as proportions.",
+        "D": "To calculate probabilities."
+      },
+      "correct_answer": "C",
+      "explanation": "A pie chart displays categorical data as proportions of a whole, with each slice representing a category's proportion."
+    },
+    {
+      "question": "Which measure of central tendency is the most frequently occurring value in a dataset?",
+      "options": {
+        "A": "Mean",
+        "B": "Median",
+        "C": "Mode",
+        "D": "Range"
+      },
+      "correct_answer": "C",
+      "explanation": "The mode is the most frequently occurring value in a dataset, representing the most common data point."
+    },
+    {
+      "question": "What is the purpose of a line graph?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show trends over time.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A line graph is used to show trends over time by connecting data points with a line, illustrating changes in values."
+    },
+    {
+      "question": "What is the purpose of a bar chart?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the relationship between two variables.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "A",
+      "explanation": "A bar chart displays categorical data by representing each category with a bar, showing the frequency or proportion of each category."
+    },
+    {
+      "question": "Which measure of variability is the square root of the variance?",
+      "options": {
+        "A": "Variance",
+        "B": "Standard deviation",
+        "C": "Range",
+        "D": "Interquartile range"
+      },
+      "correct_answer": "B",
+      "explanation": "Standard deviation is the square root of the variance, providing a measure of how much the data points deviate from the mean."
+    },
+    {
+      "question": "What is the purpose of a stem-and-leaf plot?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the distribution of a dataset.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A stem-and-leaf plot displays the distribution of a dataset by showing the frequency of data points within certain ranges."
+    },
+    {
+      "question": "What is the purpose of a dot plot?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the distribution of a dataset.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A dot plot displays the distribution of a dataset by showing the frequency of data points within certain ranges."
+    },
+    {
+      "question": "What is the purpose of a Pareto chart?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the distribution of a dataset.",
+        "C": "To identify the most significant factors in a dataset.",
+        "D": "To calculate probabilities."
+      },
+      "correct_answer": "C",
+      "explanation": "A Pareto chart identifies the most significant factors in a dataset by displaying the frequency or proportion of each category."
+    },
+    {
+      "question": "What is the purpose of a cumulative frequency distribution?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the distribution of a dataset.",
+        "C": "To calculate probabilities.",
+        "D": "To show the cumulative frequency of data points."
+      },
+      "correct_answer": "D",
+      "explanation": "A cumulative frequency distribution shows the cumulative frequency of data points, helping to understand the distribution."
+    },
+    {
+      "question": "What is the purpose of a frequency polygon?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the distribution of a dataset.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A frequency polygon shows the distribution of a dataset by connecting the midpoints of each class interval with a line."
+    },
+    {
+      "question": "What is the purpose of a contingency table?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the relationship between two variables.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A contingency table shows the relationship between two variables by displaying the frequency of data points in each category."
+    }
+  ]
+        }
+    ]
+}

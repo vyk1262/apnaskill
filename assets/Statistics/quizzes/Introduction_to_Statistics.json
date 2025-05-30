@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_Statistics",
+      "questions": [
+        {
+          "question": "What is the primary purpose of statistics?",
+          "options": {
+            "A": "To collect data.",
+            "B": "To analyze and interpret data.",
+            "C": "To store data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "B",
+          "explanation": "Statistics is primarily used to analyze and interpret data to make informed decisions."
+        },
+        {
+          "question": "Which measure of central tendency is most affected by extreme values?",
+          "options": {
+            "A": "Mean",
+            "B": "Median",
+            "C": "Mode",
+            "D": "Range"
+          },
+          "correct_answer": "A",
+          "explanation": "The mean is most affected by extreme values because it takes into account all data points."
+        },
+        {
+          "question": "What is a null hypothesis?",
+          "options": {
+            "A": "A hypothesis that predicts a positive outcome.",
+            "B": "A hypothesis that predicts a negative outcome.",
+            "C": "A hypothesis that there is no effect or difference.",
+            "D": "A hypothesis that predicts a significant effect."
+          },
+          "correct_answer": "C",
+          "explanation": "A null hypothesis states that there is no effect or difference, and it is tested to determine if it can be rejected."
+        },
+        {
+          "question": "Which statistical test is used to compare the means of two groups?",
+          "options": {
+            "A": "Chi-square test",
+            "B": "t-test",
+            "C": "ANOVA",
+            "D": "Regression analysis"
+          },
+          "correct_answer": "B",
+          "explanation": "A t-test is used to compare the means of two groups to determine if they are significantly different."
+        },
+        {
+          "question": "What does a p-value indicate in hypothesis testing?",
+          "options": {
+            "A": "The probability of the null hypothesis being true.",
+            "B": "The probability of observing the data given the null hypothesis is true.",
+            "C": "The probability of the alternative hypothesis being true.",
+            "D": "The probability of making a Type I error."
+          },
+          "correct_answer": "B",
+          "explanation": "A p-value indicates the probability of observing the data, or something more extreme, given that the null hypothesis is true."
+        },
+        {
+          "question": "What is the purpose of a confidence interval?",
+          "options": {
+            "A": "To estimate the range of values for a population parameter.",
+            "B": "To determine the sample size needed.",
+            "C": "To test a hypothesis.",
+            "D": "To calculate the mean."
+          },
+          "correct_answer": "A",
+          "explanation": "A confidence interval provides a range of values that is likely to contain the population parameter with a certain level of confidence."
+        },
+        {
+          "question": "Which type of data is represented by categories?",
+          "options": {
+            "A": "Quantitative data",
+            "B": "Qualitative data",
+            "C": "Continuous data",
+            "D": "Discrete data"
+          },
+          "correct_answer": "B",
+          "explanation": "Qualitative data is represented by categories or labels, rather than numerical values."
+        },
+        {
+          "question": "What is the purpose of regression analysis?",
+          "options": {
+            "A": "To summarize data.",
+            "B": "To predict the value of a dependent variable based on an independent variable.",
+            "C": "To test for independence.",
+            "D": "To calculate probabilities."
+          },
+          "correct_answer": "B",
+          "explanation": "Regression analysis is used to predict the value of a dependent variable based on the value of one or more independent variables."
+        },
+        {
+          "question": "Which graphical representation is used to show the distribution of a dataset?",
+          "options": {
+            "A": "Bar chart",
+            "B": "Pie chart",
+            "C": "Histogram",
+            "D": "Line graph"
+          },
+          "correct_answer": "C",
+          "explanation": "A histogram is used to show the distribution of a dataset by displaying the frequency of data points within certain ranges."
+        },
+        {
+          "question": "What is the difference between a population and a sample?",
+          "options": {
+            "A": "A population is a subset of a sample.",
+            "B": "A sample is a subset of a population.",
+            "C": "A population is always larger than a sample.",
+            "D": "A sample is always larger than a population."
+          },
+          "correct_answer": "B",
+          "explanation": "A sample is a subset of a population, selected to represent the population in statistical analysis."
+        },
+        {
+          "question": "What is the purpose of a scatter plot?",
+          "options": {
+            "A": "To show the relationship between two variables.",
+            "B": "To display categorical data.",
+            "C": "To summarize data.",
+            "D": "To calculate probabilities."
+          },
+          "correct_answer": "A",
+          "explanation": "A scatter plot is used to show the relationship between two variables by displaying data points on a two-dimensional graph."
+        },
+        {
+          "question": "What is the role of a control group in an experiment?",
+          "options": {
+            "A": "To receive the treatment being tested.",
+            "B": "To provide a baseline for comparison.",
+            "C": "To ensure the experiment is valid.",
+            "D": "To increase the sample size."
+          },
+          "correct_answer": "B",
+          "explanation": "A control group provides a baseline for comparison, allowing researchers to determine the effect of the treatment being tested."
+        },
+        {
+          "question": "Which measure of variability is the difference between the highest and lowest values?",
+          "options": {
+            "A": "Variance",
+            "B": "Standard deviation",
+            "C": "Range",
+            "D": "Interquartile range"
+          },
+          "correct_answer": "C",
+          "explanation": "The range is the difference between the highest and lowest values in a dataset, providing a measure of variability."
+        },
+        {
+          "question": "What is the purpose of a box plot?",
+          "options": {
+            "A": "To display the distribution of a dataset.",
+            "B": "To show the relationship between two variables.",
+            "C": "To calculate probabilities.",
+            "D": "To summarize categorical data."
+          },
+          "correct_answer": "A",
+          "explanation": "A box plot displays the distribution of a dataset by showing the median, quartiles, and potential outliers."
+        },
+        {
+          "question": "What is the significance level in hypothesis testing?",
+          "options": {
+            "A": "The probability of rejecting the null hypothesis when it is true.",
+            "B": "The probability of accepting the null hypothesis when it is false.",
+            "C": "The probability of observing the data given the null hypothesis is true.",
+            "D": "The probability of making a Type II error."
+          },
+          "correct_answer": "A",
+          "explanation": "The significance level is the probability of rejecting the null hypothesis when it is true, often set at 0.05 or 5%."
+        },
+        {
+          "question": "What is the purpose of a correlation coefficient?",
+          "options": {
+            "A": "To measure the strength and direction of a linear relationship between two variables.",
+            "B": "To calculate probabilities.",
+            "C": "To summarize data.",
+            "D": "To test for independence."
+          },
+          "correct_answer": "A",
+          "explanation": "A correlation coefficient measures the strength and direction of a linear relationship between two variables, ranging from -1 to 1."
+        },
+        {
+          "question": "What is the purpose of a chi-square test?",
+          "options": {
+            "A": "To compare the means of two groups.",
+            "B": "To test for independence between categorical variables.",
+            "C": "To predict the value of a dependent variable.",
+            "D": "To calculate probabilities."
+          },
+          "correct_answer": "B",
+          "explanation": "A chi-square test is used to test for independence between categorical variables, determining if there is a significant association."
+        },
+        {
+          "question": "What is the purpose of a normal distribution?",
+          "options": {
+            "A": "To display categorical data.",
+            "B": "To model continuous data that is symmetrically distributed.",
+            "C": "To calculate probabilities.",
+            "D": "To summarize data."
+          },
+          "correct_answer": "B",
+          "explanation": "A normal distribution models continuous data that is symmetrically distributed, with most data points clustering around the mean."
+        },
+        {
+          "question": "What is the purpose of a z-score?",
+          "options": {
+            "A": "To measure the strength of a relationship between two variables.",
+            "B": "To calculate probabilities.",
+            "C": "To standardize a data point relative to the mean and standard deviation.",
+            "D": "To summarize data."
+          },
+          "correct_answer": "C",
+          "explanation": "A z-score standardizes a data point relative to the mean and standard deviation, indicating how many standard deviations it is from the mean."
+        }
+      ]
+    }
+  ]
+}
