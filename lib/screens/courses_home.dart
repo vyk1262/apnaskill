@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/custom_search_bar.dart';
 import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 
@@ -91,13 +92,10 @@ class _QuizListHomeState extends State<QuizListHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
+      body: Stack(
+        children: [
+          Column(
             children: [
-              CustomSearchBar(
-                  controller: _searchController, hintText: 'Search Courses...'),
-              const SizedBox(height: 24),
               Expanded(
                 child: LayoutBuilder(
                   builder: (BuildContext context, BoxConstraints constraints) {
@@ -131,7 +129,19 @@ class _QuizListHomeState extends State<QuizListHome> {
                 ),
               ),
             ],
-          )),
+          ),
+          // The CustomSearchBar, positioned at the top
+          Positioned(
+            top: 16.0,
+            left: 16.0,
+            right: 16.0,
+            child: CustomSearchBar(
+              controller: _searchController,
+              hintText: 'Search Courses...',
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -146,7 +156,13 @@ class _QuizListHomeState extends State<QuizListHome> {
 
     return Card(
       elevation: 5,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+        side: BorderSide(
+          color: isUnlocked ? Colors.green : Colors.amber[700] ?? Colors.black,
+          width: 2.0,
+        ),
+      ),
       child: InkWell(
         borderRadius: BorderRadius.circular(15.0),
         onTap: () {
@@ -174,13 +190,39 @@ class _QuizListHomeState extends State<QuizListHome> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
+                // child: ClipRRect(
+                //   borderRadius: BorderRadius.circular(10.0),
+                //   child: CachedNetworkImageWidget(
+                //     imageUrl: imageUrl,
+                //     width: double.infinity,
+                //     fit: BoxFit.cover,
+                //     errorWidget: const Icon(Icons.broken_image),
+                //   ),
+                // ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
-                  child: CachedNetworkImageWidget(
-                    imageUrl: imageUrl,
+                  child: Container(
                     width: double.infinity,
-                    fit: BoxFit.cover,
-                    errorWidget: const Icon(Icons.broken_image),
+                    decoration: const BoxDecoration(
+                      gradient: AppColors.gradientPrimary,
+                    ),
+                    child: Center(
+                      child: Text(
+                        internshipName.split(' ').map((word) {
+                          if (word.isEmpty) {
+                            return '';
+                          }
+                          return word[0].toUpperCase() +
+                              word.substring(1).toLowerCase();
+                        }).join(' '),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
