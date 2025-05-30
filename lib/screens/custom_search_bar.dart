@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CustomSearchBar extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
+  final VoidCallback? onClose;
 
   const CustomSearchBar({
     super.key,
     required this.controller,
     this.hintText = 'Search',
+    this.onClose,
   });
 
   @override
@@ -18,6 +20,12 @@ class CustomSearchBar extends StatelessWidget {
         hintText: hintText,
         hintStyle: const TextStyle(color: Colors.grey),
         prefixIcon: const Icon(Icons.search, color: Colors.grey),
+        suffixIcon: onClose != null
+            ? IconButton(
+                icon: const Icon(Icons.close, color: Colors.grey),
+                onPressed: onClose,
+              )
+            : null,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,

@@ -27,6 +27,7 @@ class _QuizListHomeState extends State<QuizListHome> {
   List<String> allInternshipNames = [];
   List<String> filteredInternshipNames = [];
   final TextEditingController _searchController = TextEditingController();
+  bool _isSearching = false;
 
   @override
   void initState() {
@@ -34,6 +35,12 @@ class _QuizListHomeState extends State<QuizListHome> {
     _fetchUserData();
     _loadInternshipAndTopics();
     _searchController.addListener(_filterInternships);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
   }
 
   Future<void> _fetchUserData() async {
@@ -111,6 +118,17 @@ class _QuizListHomeState extends State<QuizListHome> {
                     }
 
                     return GridView.builder(
+                      // Add conditional padding to avoid overlap with the search bar
+                      padding: EdgeInsets.only(
+                        top: _isSearching
+                            ? 80.0
+                            : 16.0, // Adjust top padding when search bar is visible
+                        bottom: _isSearching
+                            ? 16.0
+                            : 80.0, // Adjust bottom padding when button is visible
+                        left: 16.0,
+                        right: 16.0,
+                      ),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: crossAxisCount,
                         childAspectRatio: 0.8,
@@ -130,14 +148,63 @@ class _QuizListHomeState extends State<QuizListHome> {
               ),
             ],
           ),
-          // The CustomSearchBar, positioned at the top
+
+          // 1. Floating Action Button (Bottom Right)
           Positioned(
-            top: 16.0,
-            left: 16.0,
+            bottom: 16.0,
             right: 16.0,
-            child: CustomSearchBar(
-              controller: _searchController,
-              hintText: 'Search Courses...',
+            child: AnimatedOpacity(
+              opacity: _isSearching ? 0.0 : 1.0, // Fade out when searching
+              duration: const Duration(milliseconds: 300),
+              child: IgnorePointer(
+                // Prevent clicks when faded out
+                ignoring: _isSearching,
+                child: FloatingActionButton(
+                  backgroundColor: Colors.black,
+                  onPressed: () {
+                    setState(() {
+                      _isSearching = true;
+                    });
+                  },
+                  mini: true,
+                  child:
+                      const Icon(Icons.search, size: 24, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+
+          // 2. Expanded Search Bar (Top Center)
+          Positioned(
+            top: 16.0, // Position at the top
+            left: 0, // Extend across full width to allow centering
+            right: 0,
+            child: AnimatedOpacity(
+              opacity: _isSearching ? 1.0 : 0.0, // Fade in when searching
+              duration: const Duration(milliseconds: 300),
+              child: IgnorePointer(
+                // Prevent clicks when faded out
+                ignoring: !_isSearching,
+                child: Align(
+                  // Align the search bar to the center
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width *
+                        0.7, // Desired width when expanded
+                    child: CustomSearchBar(
+                      controller: _searchController,
+                      hintText: 'Search Courses...',
+                      onClose: () {
+                        setState(() {
+                          _isSearching = false;
+                          _searchController.clear(); // Clear text when closing
+                          _filterInternships(); // Re-filter to show all when cleared
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ],
@@ -360,7 +427,7 @@ class _QuizListHomeState extends State<QuizListHome> {
               const Text("Enter Code below: FREE"), //Enter UPI Transaction ID
               TextFormField(
                 controller: upiController,
-                decoration: InputDecoration(hintText: 'FREE'),
+                decoration: const InputDecoration(hintText: 'FREE'),
                 validator: (value) {
                   if (value == null || value.isEmpty || value != 'FREE') {
                     return 'Code is required';
@@ -372,7 +439,7 @@ class _QuizListHomeState extends State<QuizListHome> {
               const Text("Enter Mobile Number"),
               TextFormField(
                 controller: mobileNumberController,
-                decoration: InputDecoration(hintText: 'Mobile Number'),
+                decoration: const InputDecoration(hintText: 'Mobile Number'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Mobile Number is required';
@@ -434,22 +501,22 @@ class _QuizListHomeState extends State<QuizListHome> {
         context: context,
         builder: (context) => AlertDialog(
           title: Text('$internshipName Topics'),
-          content: Container(
+          content: SizedBox(
             width: double.maxFinite,
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: topics.length,
               itemBuilder: (context, index) => Card(
-                margin: EdgeInsets.symmetric(vertical: 4),
+                margin: const EdgeInsets.symmetric(vertical: 4),
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     child: Text('${index + 1}',
-                        style: TextStyle(color: Colors.white)),
+                        style: const TextStyle(color: Colors.white)),
                   ),
                   title: Text(
                     topics[index],
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
               ),
@@ -458,7 +525,7 @@ class _QuizListHomeState extends State<QuizListHome> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         ),

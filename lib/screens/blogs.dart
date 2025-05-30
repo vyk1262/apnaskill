@@ -232,13 +232,15 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
                 // Prevent clicks when faded out
                 ignoring: _isSearching,
                 child: FloatingActionButton(
+                  backgroundColor: Colors.black,
                   onPressed: () {
                     setState(() {
                       _isSearching = true;
                     });
                   },
                   mini: true,
-                  child: const Icon(Icons.search),
+                  child:
+                      const Icon(Icons.search, size: 24, color: Colors.white),
                 ),
               ),
             ),
