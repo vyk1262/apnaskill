@@ -1,0 +1,225 @@
+{
+  "result": [
+    {
+      "topic": "Interpolation",
+      "questions": [
+        {
+          "question": "What is the primary purpose of interpolation in scientific computing?",
+          "options": {
+            "A": "To extrapolate data points beyond the known range.",
+            "B": "To find the best-fit line for a set of data points.",
+            "C": "To estimate unknown data points that lie *between* known data points.",
+            "D": "To smooth out noise in a dataset."
+          },
+          "correct_answer": "C",
+          "explanation": "Interpolation is about filling in gaps or finding values at intermediate positions within a known data range."
+        },
+        {
+          "question": "Which SciPy sub-package provides a variety of interpolation routines?",
+          "options": {
+            "A": "`scipy.optimize`",
+            "B": "`scipy.stats`",
+            "C": "`scipy.integrate`",
+            "D": "`scipy.interpolate`"
+          },
+          "correct_answer": "D",
+          "explanation": "`scipy.interpolate` is the dedicated module for all interpolation-related tasks."
+        },
+        {
+          "question": "Which `scipy.interpolate` function is commonly used for 1-dimensional interpolation?",
+          "options": {
+            "A": "`scipy.interpolate.griddata`",
+            "B": "`scipy.interpolate.interp1d`",
+            "C": "`scipy.interpolate.interp2d`",
+            "D": "`scipy.interpolate.Rbf`"
+          },
+          "correct_answer": "B",
+          "explanation": "`interp1d` creates a callable interpolation function based on 1D data points."
+        },
+        {
+          "question": "When using `scipy.interpolate.interp1d`, what does the `kind` parameter allow you to specify?",
+          "options": {
+            "A": "The number of data points to interpolate.",
+            "B": "The type of interpolation method (e.g., 'linear', 'cubic', 'nearest').",
+            "C": "Whether to extrapolate or not.",
+            "D": "The axis along which to interpolate."
+          },
+          "correct_answer": "B",
+          "explanation": "The `kind` parameter is crucial for defining the smoothness and behavior of the interpolation. 'linear' is piecewise linear, 'cubic' uses cubic splines, 'nearest' finds the closest point."
+        },
+        {
+          "question": "What is the main characteristic of 'linear interpolation'?",
+          "options": {
+            "A": "It uses a polynomial of degree two.",
+            "B": "It connects adjacent data points with straight lines.",
+            "C": "It uses a cubic polynomial to connect points smoothly.",
+            "D": "It selects the value of the nearest known data point."
+          },
+          "correct_answer": "B",
+          "explanation": "Linear interpolation is the simplest form, creating a piecewise linear function that passes through all known points."
+        },
+        {
+          "question": "Which interpolation method typically results in a smoother curve, avoiding sharp angles between data points, compared to linear interpolation?",
+          "options": {
+            "A": "Nearest-neighbor interpolation",
+            "B": "Linear interpolation",
+            "C": "Cubic spline interpolation",
+            "D": "Constant interpolation"
+          },
+          "correct_answer": "C",
+          "explanation": "Cubic spline interpolation uses piecewise cubic polynomials, ensuring continuity of the function and its first and second derivatives, resulting in a much smoother curve."
+        },
+        {
+          "question": "What is the difference between 'interpolation' and 'extrapolation'?",
+          "options": {
+            "A": "They are the same concept.",
+            "B": "Interpolation estimates values *between* known data points, while extrapolation estimates values *outside* the range of known data points.",
+            "C": "Interpolation works for 1D data, extrapolation for 2D data.",
+            "D": "Interpolation requires more data points than extrapolation."
+          },
+          "correct_answer": "B",
+          "explanation": "Extrapolation is generally more risky than interpolation as it involves making predictions beyond the observed data patterns."
+        },
+        {
+          "question": "For 2-dimensional scattered data (i.e., data points (x, y, z) where x and y are not on a regular grid), which `scipy.interpolate` function is recommended for interpolating values onto a new grid?",
+          "options": {
+            "A": "`scipy.interpolate.interp1d`",
+            "B": "`scipy.interpolate.interp2d` (deprecated for scattered data)",
+            "C": "`scipy.interpolate.griddata`",
+            "D": "`scipy.interpolate.UnivariateSpline`"
+          },
+          "correct_answer": "C",
+          "explanation": "`griddata` is designed for interpolating scattered data onto a regular grid. `interp2d` is primarily for data already on a rectangular grid, though it can handle scattered data with limitations."
+        },
+        {
+          "question": "What kind of interpolation does `scipy.interpolate.Rbf` (Radial Basis Functions) perform?",
+          "options": {
+            "A": "Only linear interpolation.",
+            "B": "Interpolation using a sum of radial basis functions, which can be useful for interpolating scattered multidimensional data.",
+            "C": "Interpolation that always results in a straight line.",
+            "D": "Interpolation specifically for time series data."
+          },
+          "correct_answer": "B",
+          "explanation": "RBFs are powerful for interpolating scattered data points in higher dimensions and can handle complex shapes."
+        },
+        {
+          "question": "When would 'nearest-neighbor interpolation' be a suitable choice?",
+          "options": {
+            "A": "When you need a very smooth interpolation.",
+            "B": "When data points are very dense and computational speed is critical, or when dealing with categorical data where values should not be averaged.",
+            "C": "When extrapolating far beyond known data points.",
+            "D": "When the underlying function is known to be linear."
+          },
+          "correct_answer": "B",
+          "explanation": "Nearest-neighbor is simple and fast, but it produces a piecewise constant function, leading to a 'blocky' appearance."
+        },
+        {
+          "question": "What is a 'spline' in the context of interpolation?",
+          "options": {
+            "A": "A single polynomial that fits all data points.",
+            "B": "A smooth, piecewise polynomial function that passes through a given set of data points.",
+            "C": "A method for finding the mean of data points.",
+            "D": "A way to reduce the number of data points."
+          },
+          "correct_answer": "B",
+          "explanation": "Splines are powerful for creating smooth and continuous interpolations, especially for complex curves."
+        },
+        {
+          "question": "Which `scipy.interpolate` class is used to create a 1-D spline interpolation given a set of data points `x` and `y`?",
+          "options": {
+            "A": "`scipy.interpolate.interp1d`",
+            "B": "`scipy.interpolate.UnivariateSpline`",
+            "C": "`scipy.interpolate.BivariateSpline`",
+            "D": "`scipy.interpolate.RectBivariateSpline`"
+          },
+          "correct_answer": "B",
+          "explanation": "`UnivariateSpline` allows for specifying smoothing parameters and other controls over the spline fit."
+        },
+        {
+          "question": "What is a common application of interpolation in signal processing or data acquisition?",
+          "options": {
+            "A": "Filtering out unwanted frequencies.",
+            "B": "Resampling a signal to a higher frequency (upsampling) by estimating values between existing samples.",
+            "C": "Compressing signal data.",
+            "D": "Detecting anomalies in signals."
+          },
+          "correct_answer": "B",
+          "explanation": "Interpolation is essential for changing the sampling rate of digital signals or images."
+        },
+        {
+          "question": "When `scipy.interpolate.interp1d` is created, it returns a callable object. How do you use this object to get interpolated values?",
+          "options": {
+            "A": "Call its `evaluate()` method.",
+            "B": "Pass the new x-coordinates directly to the object like a function, e.g., `f(new_x)`.",
+            "C": "Access its `values` attribute.",
+            "D": "Print the object to see the interpolated values."
+          },
+          "correct_answer": "B",
+          "explanation": "The returned object behaves like a function, making it intuitive to get interpolated values for new points."
+        },
+        {
+          "question": "True or False: Interpolation can be used to fill in missing values (NaNs) in a dataset.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Interpolation is a common method for 'imputing' or filling in missing data points based on surrounding known values."
+        },
+        {
+          "question": "What might be a drawback of using a very high-degree polynomial for interpolating many data points (Runge's phenomenon)?",
+          "options": {
+            "A": "It always results in the smoothest curve.",
+            "B": "It can lead to oscillations and poor interpolation performance, especially near the boundaries of the data range.",
+            "C": "It is computationally very fast.",
+            "D": "It can only be used for linear data."
+          },
+          "correct_answer": "B",
+          "explanation": "Runge's phenomenon illustrates that increasing polynomial degree doesn't always improve interpolation and can lead to undesired oscillatory behavior."
+        },
+        {
+          "question": "Which `scipy.interpolate` function is suited for interpolating values on a 2D rectangular grid given two 1D arrays `x` and `y` defining the grid axes and a 2D array `Z` for the values?",
+          "options": {
+            "A": "`scipy.interpolate.interp1d`",
+            "B": "`scipy.interpolate.griddata`",
+            "C": "`scipy.interpolate.RectBivariateSpline`",
+            "D": "`scipy.interpolate.Rbf`"
+          },
+          "correct_answer": "C",
+          "explanation": "`RectBivariateSpline` is optimized for interpolating functions defined on a rectangular grid, providing efficient and smooth 2D spline interpolation."
+        },
+        {
+          "question": "If you have data points $(x_i, y_i)$ that are noisy, and you want to fit a smooth curve that *approximates* the data rather than strictly passing through every point, which `scipy.interpolate` concept might you use (often with a smoothing parameter)?",
+          "options": {
+            "A": "Exact interpolation (e.g., `interp1d(kind='cubic')`)",
+            "B": "Nearest-neighbor interpolation",
+            "C": "Smoothing splines (e.g., `UnivariateSpline` with `s > 0`)",
+            "D": "Linear interpolation"
+          },
+          "correct_answer": "C",
+          "explanation": "Smoothing splines (where the smoothing parameter `s` is greater than zero) balance fidelity to the data points with the desire for a smooth curve, avoiding overfitting to noise."
+        },
+        {
+          "question": "What is the result of interpolating outside the known data range using `interp1d` if `fill_value='extrapolate'` is not set?",
+          "options": {
+            "A": "An error will be raised.",
+            "B": "The interpolated values will be 0.",
+            "C": "The interpolated values will be `nan` (Not a Number).",
+            "D": "The nearest known value will be used."
+          },
+          "correct_answer": "C",
+          "explanation": "By default, `interp1d` does not extrapolate and returns `nan` for points outside the range. You must explicitly set `fill_value='extrapolate'` or provide a specific value for extrapolation."
+        },
+        {
+          "question": "True or False: Interpolation is a form of prediction, similar to forecasting in time series, but specifically for points *within* the observed data range.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Interpolation estimates unknown values based on surrounding known values, making it a form of prediction within the existing data domain."
+        }
+      ]
+    }
+  ]
+}

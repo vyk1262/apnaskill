@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_SciPy",
+      "questions": [
+        {
+          "question": "What is SciPy primarily built upon and extended by?",
+          "options": {
+            "A": "Matplotlib and Pandas",
+            "B": "NumPy and its array object",
+            "C": "Scikit-learn and TensorFlow",
+            "D": "Python's built-in lists and dictionaries"
+          },
+          "correct_answer": "B",
+          "explanation": "SciPy's fundamental data structure is the NumPy array, and it provides a wide range of scientific computing functionalities built on top of NumPy."
+        },
+        {
+          "question": "What kind of functionalities does SciPy offer that NumPy typically does not?",
+          "options": {
+            "A": "Basic array operations and mathematical functions (e.g., addition, subtraction, `sin`, `cos`).",
+            "B": "Advanced scientific computing modules for tasks like optimization, integration, interpolation, signal processing, and statistics.",
+            "C": "Tools for creating high-quality static, interactive, and animated visualizations.",
+            "D": "Data manipulation and analysis capabilities for tabular data."
+          },
+          "correct_answer": "B",
+          "explanation": "NumPy provides the foundational array object and basic array-oriented computing, while SciPy adds the specialized algorithms and tools for various scientific domains."
+        },
+        {
+          "question": "Which of the following sub-packages is NOT a core part of SciPy?",
+          "options": {
+            "A": "`scipy.stats`",
+            "B": "`scipy.linalg`",
+            "C": "`scipy.learn`",
+            "D": "`scipy.optimize`"
+          },
+          "correct_answer": "C",
+          "explanation": "Scikit-learn is a separate, although related, library (`sklearn`) focused on machine learning. SciPy's core doesn't have a `scipy.learn` sub-package."
+        },
+        {
+          "question": "To import the statistical functions from SciPy, which specific sub-package would you typically import?",
+          "options": {
+            "A": "`import scipy.math`",
+            "B": "`import scipy.statistics`",
+            "C": "`import scipy.stats`",
+            "D": "`import scipy.data`"
+          },
+          "correct_answer": "C",
+          "explanation": "The standard convention for importing the statistics module is `import scipy.stats`."
+        },
+        {
+          "question": "SciPy is an open-source library. What does this mean for its users?",
+          "options": {
+            "A": "It is always free to use, but its code is proprietary.",
+            "B": "Its source code is publicly available, can be inspected, modified, and distributed, and it is generally free to use.",
+            "C": "It requires a paid license for commercial use.",
+            "D": "It can only be used by academic institutions."
+          },
+          "correct_answer": "B",
+          "explanation": "Open-source means the code is transparent, auditable, and encourages community contribution and innovation."
+        },
+        {
+          "question": "Which type of data does SciPy excel at handling due to its reliance on NumPy arrays?",
+          "options": {
+            "A": "Tabular data with mixed types (strings, numbers, dates).",
+            "B": "Unstructured text data.",
+            "C": "Numerical data, especially multi-dimensional arrays (vectors, matrices, tensors).",
+            "D": "Image and video files as raw binary data."
+          },
+          "correct_answer": "C",
+          "explanation": "NumPy's efficient array operations are fundamental to SciPy's performance with numerical computations."
+        },
+        {
+          "question": "What is the relationship between NumPy and SciPy in terms of functionality?",
+          "options": {
+            "A": "SciPy is a complete replacement for NumPy.",
+            "B": "NumPy provides basic numerical operations, while SciPy provides more advanced, specialized scientific algorithms built upon NumPy's arrays.",
+            "C": "They are completely independent libraries with no overlap.",
+            "D": "NumPy is used for machine learning, and SciPy for data visualization."
+          },
+          "correct_answer": "B",
+          "explanation": "SciPy extends NumPy; you typically use both together, with NumPy for array creation/manipulation and SciPy for specific algorithms."
+        },
+        {
+          "question": "Which of the following is NOT a primary application area for SciPy?",
+          "options": {
+            "A": "Signal Processing",
+            "B": "Web Development (backend frameworks like Django/Flask)",
+            "C": "Optimization problems",
+            "D": "Image Processing"
+          },
+          "correct_answer": "B",
+          "explanation": "SciPy is focused on scientific and technical computing, not general web development. While Python is used for web dev, SciPy is not the tool for that."
+        },
+        {
+          "question": "If you need to perform numerical integration, which SciPy sub-package would you most likely use?",
+          "options": {
+            "A": "`scipy.signal`",
+            "B": "`scipy.integrate`",
+            "C": "`scipy.interpolate`",
+            "D": "`scipy.fft`"
+          },
+          "correct_answer": "B",
+          "explanation": "`scipy.integrate` contains functions for numerical integration (quadrature) and solving ordinary differential equations."
+        },
+        {
+          "question": "What is the typical alias used when importing the top-level SciPy package?",
+          "options": {
+            "A": "`import scipy as sp`",
+            "B": "`import scipy as sci`",
+            "C": "`import scipy as scp`",
+            "D": "`import scipy as p`"
+          },
+          "correct_answer": "A",
+          "explanation": "While less common than `import numpy as np`, `import scipy as sp` is the generally accepted alias for the top-level SciPy package."
+        },
+        {
+          "question": "SciPy functions are often implemented using highly optimized, compiled code (like Fortran or C). What is the benefit of this for users?",
+          "options": {
+            "A": "It makes the code harder to read.",
+            "B": "It allows for faster execution and better performance compared to pure Python implementations.",
+            "C": "It removes the need for NumPy.",
+            "D": "It makes the library incompatible with other Python libraries."
+          },
+          "correct_answer": "B",
+          "explanation": "The underlying compiled code is crucial for SciPy's speed and efficiency in computationally intensive scientific tasks."
+        },
+        {
+          "question": "Which SciPy sub-package provides functionalities for working with sparse matrices?",
+          "options": {
+            "A": "`scipy.sparse`",
+            "B": "`scipy.linalg`",
+            "C": "`scipy.optimize`",
+            "D": "`scipy.ndimage`"
+          },
+          "correct_answer": "A",
+          "explanation": "`scipy.sparse` offers various formats for sparse matrices and algorithms optimized for them, which are essential for memory efficiency and speed when dealing with matrices with many zero elements."
+        },
+        {
+          "question": "If you need to find the roots of equations or minimize/maximize functions, which SciPy sub-package would be most relevant?",
+          "options": {
+            "A": "`scipy.integrate`",
+            "B": "`scipy.optimize`",
+            "C": "`scipy.fftpack`",
+            "D": "`scipy.spatial`"
+          },
+          "correct_answer": "B",
+          "explanation": "`scipy.optimize` contains a wide array of algorithms for numerical optimization, including root finding, curve fitting, and minimization of functions."
+        },
+        {
+          "question": "What does the `scipy.fft` (or `scipy.fftpack`) sub-package deal with?",
+          "options": {
+            "A": "File system operations.",
+            "B": "Fast Fourier Transforms and related algorithms for signal processing.",
+            "C": "Fuzzy logic calculations.",
+            "D": "Financial time series analysis."
+          },
+          "correct_answer": "B",
+          "explanation": "FFT (Fast Fourier Transform) is a cornerstone of signal processing for converting signals between time and frequency domains."
+        },
+        {
+          "question": "Is SciPy typically used for creating interactive plots and visualizations?",
+          "options": {
+            "A": "Yes, it has extensive built-in plotting capabilities.",
+            "B": "No, SciPy focuses on numerical algorithms; plotting is usually handled by libraries like Matplotlib or Seaborn.",
+            "C": "Only for 3D plots.",
+            "D": "It generates plots in a separate window, but they are not interactive."
+          },
+          "correct_answer": "B",
+          "explanation": "SciPy provides the computational backbone, but for visualization, it relies on dedicated plotting libraries in the Python scientific stack."
+        },
+        {
+          "question": "Which of the following is a key advantage of using SciPy for scientific computing in Python?",
+          "options": {
+            "A": "It simplifies web server deployment.",
+            "B": "It provides robust, efficient, and well-tested implementations of complex mathematical and scientific algorithms.",
+            "C": "It is a graphical user interface (GUI) framework.",
+            "D": "It replaces the need for understanding underlying mathematical concepts."
+          },
+          "correct_answer": "B",
+          "explanation": "SciPy's strength lies in providing production-ready algorithms that scientists and engineers can readily use without implementing them from scratch."
+        },
+        {
+          "question": "How do you install SciPy using pip?",
+          "options": {
+            "A": "`pip install scipy-latest`",
+            "B": "`pip install scipy`",
+            "C": "`pip install scientificpython`",
+            "D": "`python -m install scipy`"
+          },
+          "correct_answer": "B",
+          "explanation": "The standard command for installing SciPy (and most Python packages) via pip."
+        },
+        {
+          "question": "What is the primary data type used by SciPy functions for input and output?",
+          "options": {
+            "A": "Python lists",
+            "B": "Pandas DataFrames",
+            "C": "NumPy arrays",
+            "D": "Dictionaries"
+          },
+          "correct_answer": "C",
+          "explanation": "All SciPy functions are designed to operate efficiently on NumPy arrays, leveraging NumPy's optimized C implementations."
+        },
+        {
+          "question": "Which module would you use for advanced image processing tasks in SciPy?",
+          "options": {
+            "A": "`scipy.picture`",
+            "B": "`scipy.image`",
+            "C": "`scipy.ndimage`",
+            "D": "`scipy.graphics`"
+          },
+          "correct_answer": "C",
+          "explanation": "`scipy.ndimage` provides n-dimensional image processing functions, including filtering, morphology, and interpolation."
+        },
+        {
+          "question": "True or False: SciPy is a standalone library and does not require NumPy to be installed.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. SciPy has NumPy as a fundamental dependency. You cannot use SciPy without NumPy."
+        }
+      ]
+    }
+  ]
+}

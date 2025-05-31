@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Signal_Processing",
+      "questions": [
+        {
+          "question": "Which SciPy sub-package is primarily used for signal processing tasks?",
+          "options": {
+            "A": "`scipy.optimize`",
+            "B": "`scipy.linalg`",
+            "C": "`scipy.integrate`",
+            "D": "`scipy.signal`"
+          },
+          "correct_answer": "D",
+          "explanation": "`scipy.signal` provides functions for filter design, filtering, convolution, spectral analysis, and more."
+        },
+        {
+          "question": "What is the purpose of 'filtering' a signal?",
+          "options": {
+            "A": "To increase the signal's amplitude.",
+            "B": "To remove unwanted components (e.g., noise) or extract specific frequency components from a signal.",
+            "C": "To convert an analog signal to a digital signal.",
+            "D": "To change the time scale of a signal."
+          },
+          "correct_answer": "B",
+          "explanation": "Filters are fundamental tools in signal processing for enhancing or isolating specific characteristics of a signal."
+        },
+        {
+          "question": "Which `scipy.signal` function is commonly used to design a Butterworth filter?",
+          "options": {
+            "A": "`scipy.signal.firwin`",
+            "B": "`scipy.signal.cheby1`",
+            "C": "`scipy.signal.butter`",
+            "D": "`scipy.signal.medfilt`"
+          },
+          "correct_answer": "C",
+          "explanation": "`butter` designs an Nth-order digital or analog Butterworth filter, known for its maximally flat frequency response in the passband."
+        },
+        {
+          "question": "After designing a filter (e.g., using `scipy.signal.butter` to get filter coefficients `b` and `a`), which function is typically used to apply this filter to a signal `x`?",
+          "options": {
+            "A": "`scipy.signal.correlate(x, b)`",
+            "B": "`scipy.signal.convolve(x, b)`",
+            "C": "`scipy.signal.lfilter(b, a, x)` (or `scipy.signal.filtfilt` for zero-phase filtering)",
+            "D": "`scipy.signal.resample(x)`"
+          },
+          "correct_answer": "C",
+          "explanation": "`lfilter` applies a linear filter. `filtfilt` applies the filter twice (once forward, once backward) to achieve zero-phase distortion, which is often preferred for analysis."
+        },
+        {
+          "question": "What is the primary difference between FIR (Finite Impulse Response) and IIR (Infinite Impulse Response) filters?",
+          "options": {
+            "A": "FIR filters are analog, IIR are digital.",
+            "B": "FIR filters have a finite impulse response (output depends only on current and past inputs); IIR filters have an infinite impulse response (output depends on current and past inputs AND past outputs).",
+            "C": "FIR filters are only for low-pass, IIR for high-pass.",
+            "D": "IIR filters are always faster than FIR filters."
+          },
+          "correct_answer": "B",
+          "explanation": "This distinction affects their stability, phase response, and computational efficiency."
+        },
+        {
+          "question": "Which SciPy function computes the discrete convolution of two 1-D arrays?",
+          "options": {
+            "A": "`scipy.signal.correlate`",
+            "B": "`scipy.signal.fft`",
+            "C": "`scipy.signal.convolve`",
+            "D": "`scipy.signal.resample`"
+          },
+          "correct_answer": "C",
+          "explanation": "Convolution is a fundamental operation in signal processing, used for filtering, smoothing, and system response calculations."
+        },
+        {
+          "question": "What is the purpose of applying a 'window function' (e.g., Hanning, Hamming) to a signal before performing a Fourier Transform?",
+          "options": {
+            "A": "To increase the signal's sampling rate.",
+            "B": "To reduce spectral leakage and improve the accuracy of frequency estimation by smoothly tapering the signal to zero at its ends.",
+            "C": "To completely remove all noise from the signal.",
+            "D": "To convert the signal from the frequency domain to the time domain."
+          },
+          "correct_answer": "B",
+          "explanation": "Windowing helps to mitigate the effects of the finite length of the signal, which can otherwise introduce artifacts in the frequency spectrum."
+        },
+        {
+          "question": "Which SciPy module or function is used for performing the Fast Fourier Transform (FFT)?",
+          "options": {
+            "A": "`scipy.signal.fft`",
+            "B": "`scipy.linalg.fft`",
+            "C": "`scipy.fft.fft` (from `scipy.fft` module, or `scipy.fftpack.fft`)",
+            "D": "`scipy.integrate.fft`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `scipy.fft` module (and its predecessor `scipy.fftpack`) provides highly optimized FFT routines. While `scipy.signal` uses FFT internally for some operations, the direct functions are in `scipy.fft`."
+        },
+        {
+          "question": "To estimate the Power Spectral Density (PSD) of a signal using Welch's method, which `scipy.signal` function would you use?",
+          "options": {
+            "A": "`scipy.signal.periodogram`",
+            "B": "`scipy.signal.welch`",
+            "C": "`scipy.signal.stft`",
+            "D": "`scipy.signal.resample`"
+          },
+          "correct_answer": "B",
+          "explanation": "Welch's method averages modified periodograms to reduce noise in the PSD estimate."
+        },
+        {
+          "question": "What does 'upsampling' a signal mean?",
+          "options": {
+            "A": "Decreasing its sampling rate.",
+            "B": "Increasing its amplitude.",
+            "C": "Increasing its sampling rate by inserting new samples, often through interpolation.",
+            "D": "Converting it to a lower frequency."
+          },
+          "correct_answer": "C",
+          "explanation": "Upsampling is a form of resampling used to increase the resolution of a digital signal."
+        },
+        {
+          "question": "What does `scipy.signal.resample` do?",
+          "options": {
+            "A": "Filters a signal using a median filter.",
+            "B": "Resamples a signal to `num` samples using the FFT method.",
+            "C": "Generates a random signal.",
+            "D": "Finds the peak frequency of a signal."
+          },
+          "correct_answer": "B",
+          "explanation": "`resample` is a convenient function for changing the sampling rate of a signal."
+        },
+        {
+          "question": "If you observe aliasing in the frequency spectrum of a sampled signal, what is the most likely cause?",
+          "options": {
+            "A": "Too many samples were taken.",
+            "B": "The sampling rate was too low (below the Nyquist rate) for the highest frequency components in the original analog signal.",
+            "C": "The signal was filtered incorrectly.",
+            "D": "The signal had no DC component."
+          },
+          "correct_answer": "B",
+          "explanation": "Aliasing occurs when high-frequency components in the analog signal appear as lower frequencies in the sampled digital signal due to insufficient sampling rate."
+        },
+        {
+          "question": "What is the purpose of `scipy.signal.medfilt`?",
+          "options": {
+            "A": "To apply a low-pass filter.",
+            "B": "To perform non-linear median filtering, often used for noise reduction while preserving edges.",
+            "C": "To calculate the mean of a signal.",
+            "D": "To detect impulses in a signal."
+          },
+          "correct_answer": "B",
+          "explanation": "Median filters are very effective at removing salt-and-pepper noise while maintaining signal edges better than linear filters."
+        },
+        {
+          "question": "Which of the following is a key characteristic of the 'frequency domain' representation of a signal?",
+          "options": {
+            "A": "It shows the signal's amplitude over time.",
+            "B": "It shows the distribution of different frequencies present in the signal.",
+            "C": "It represents the signal as a series of discrete points.",
+            "D": "It only applies to analog signals."
+          },
+          "correct_answer": "B",
+          "explanation": "The frequency domain (obtained via Fourier Transform) provides insights into the periodic components that make up a signal."
+        },
+        {
+          "question": "What does `scipy.signal.periodogram` calculate?",
+          "options": {
+            "A": "The phase of a signal.",
+            "B": "The spectral density of a signal using the Discrete Fourier Transform (DFT), without averaging.",
+            "C": "The autocorrelation of a signal.",
+            "D": "The convolution of two signals."
+          },
+          "correct_answer": "B",
+          "explanation": "The periodogram is a direct spectral estimate. While simpler, it can be noisy, which is why Welch's method (averaging periodograms) is often preferred."
+        },
+        {
+          "question": "What is 'downsampling' a signal?",
+          "options": {
+            "A": "Increasing its sampling rate.",
+            "B": "Reducing its sampling rate, typically after applying an anti-aliasing filter.",
+            "C": "Applying a high-pass filter.",
+            "D": "Converting a digital signal to an analog one."
+          },
+          "correct_answer": "B",
+          "explanation": "Downsampling reduces the number of samples in a signal, often to reduce computational load or storage, but it requires careful anti-aliasing to avoid information loss."
+        },
+        {
+          "question": "Which `scipy.signal` function would you use to find the peaks in a 1-D signal?",
+          "options": {
+            "A": "`scipy.signal.convolve`",
+            "B": "`scipy.signal.find_peaks`",
+            "C": "`scipy.signal.detrend`",
+            "D": "`scipy.signal.correlate`"
+          },
+          "correct_answer": "B",
+          "explanation": "`find_peaks` identifies local maxima in a signal, with options to specify properties like prominence and width."
+        },
+        {
+          "question": "What is the purpose of `scipy.signal.detrend`?",
+          "options": {
+            "A": "To add a linear trend to a signal.",
+            "B": "To remove a linear (or constant) trend from a signal, often as a pre-processing step for spectral analysis.",
+            "C": "To smooth the signal.",
+            "D": "To convert the signal to a logarithmic scale."
+          },
+          "correct_answer": "B",
+          "explanation": "Removing a trend can improve the performance of spectral analysis methods as it ensures the signal's mean remains relatively constant."
+        },
+        {
+          "question": "Which type of filter typically has a perfectly linear phase response, which is desirable in applications where phase distortion is critical (e.g., audio processing)?",
+          "options": {
+            "A": "Analog IIR filters",
+            "B": "FIR filters with symmetric coefficients",
+            "C": "Butterworth filters",
+            "D": "Chebyshev filters"
+          },
+          "correct_answer": "B",
+          "explanation": "Linear phase ensures that all frequency components are delayed by the same amount, preventing phase distortion. FIR filters can be designed to have this property."
+        },
+        {
+          "question": "True or False: `scipy.signal` is capable of handling multi-dimensional signals, such as images, for tasks like 2D filtering or convolution.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Many functions in `scipy.signal` (and `scipy.ndimage`) can operate on N-dimensional arrays, making them suitable for image processing (which is a 2D signal)."
+        }
+      ]
+    }
+  ]
+}

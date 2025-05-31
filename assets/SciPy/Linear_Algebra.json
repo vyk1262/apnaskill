@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Linear_Algebra",
+      "questions": [
+        {
+          "question": "Which SciPy sub-package provides a comprehensive set of linear algebra routines?",
+          "options": {
+            "A": "`scipy.stats`",
+            "B": "`scipy.optimize`",
+            "C": "`scipy.linalg`",
+            "D": "`scipy.sparse`"
+          },
+          "correct_answer": "C",
+          "explanation": "`scipy.linalg` is the dedicated module for dense linear algebra in SciPy."
+        },
+        {
+          "question": "How does `scipy.linalg` typically compare to `numpy.linalg`?",
+          "options": {
+            "A": "`scipy.linalg` is a subset of `numpy.linalg` functions.",
+            "B": "`scipy.linalg` contains all the functions in `numpy.linalg` plus more advanced or specialized functions.",
+            "C": "They are completely independent and share no common functions.",
+            "D": "`numpy.linalg` is faster than `scipy.linalg` for all operations."
+          },
+          "correct_answer": "B",
+          "explanation": "`scipy.linalg` builds upon and extends `numpy.linalg`, providing more specialized routines for scientific computing needs."
+        },
+        {
+          "question": "To calculate the inverse of a square matrix `A` using `scipy.linalg`, which function would you use?",
+          "options": {
+            "A": "`scipy.linalg.transpose(A)`",
+            "B": "`scipy.linalg.inv(A)`",
+            "C": "`scipy.linalg.det(A)`",
+            "D": "`scipy.linalg.eig(A)`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `inv()` function computes the inverse of a matrix."
+        },
+        {
+          "question": "Which function in `scipy.linalg` is used to solve a system of linear equations of the form `Ax = b` for `x`?",
+          "options": {
+            "A": "`scipy.linalg.solve(A, b)`",
+            "B": "`scipy.linalg.lstsq(A, b)` (least squares)",
+            "C": "`scipy.linalg.det(A)`",
+            "D": "`scipy.linalg.matrix_power(A, -1)`"
+          },
+          "correct_answer": "A",
+          "explanation": "The `solve()` function is designed for exact solutions of square, non-singular systems of linear equations. `lstsq()` is for least squares solutions (often for overdetermined systems)."
+        },
+        {
+          "question": "What does the `scipy.linalg.det(A)` function calculate?",
+          "options": {
+            "A": "The trace of matrix A.",
+            "B": "The determinant of matrix A.",
+            "C": "The inverse of matrix A.",
+            "D": "The rank of matrix A."
+          },
+          "correct_answer": "B",
+          "explanation": "The `det()` function computes the determinant of a square matrix."
+        },
+        {
+          "question": "Which function in `scipy.linalg` is used to compute the eigenvalues and (optionally) right eigenvectors of a square matrix?",
+          "options": {
+            "A": "`scipy.linalg.svd(A)`",
+            "B": "`scipy.linalg.cholesky(A)`",
+            "C": "`scipy.linalg.eig(A)`",
+            "D": "`scipy.linalg.qr(A)`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `eig()` function returns both eigenvalues and eigenvectors."
+        },
+        {
+          "question": "What is Singular Value Decomposition (SVD) used for, as implemented by `scipy.linalg.svd()`?",
+          "options": {
+            "A": "To find the rank of a matrix.",
+            "B": "To decompose a matrix into three matrices (U, s, Vt) which can be used for dimensionality reduction, noise reduction, and solving linear least squares problems.",
+            "C": "To calculate the inverse of a non-square matrix.",
+            "D": "To perform matrix multiplication."
+          },
+          "correct_answer": "B",
+          "explanation": "SVD is a powerful factorization technique with wide applications in statistics, signal processing, and machine learning."
+        },
+        {
+          "question": "Which decomposition factorizes a square matrix `A` into a lower triangular matrix `L`, an upper triangular matrix `U`, and a permutation matrix `P` such that `PA = LU`?",
+          "options": {
+            "A": "Cholesky Decomposition",
+            "B": "QR Decomposition",
+            "C": "LU Decomposition (using `scipy.linalg.lu()`)",
+            "D": "Eigen Decomposition"
+          },
+          "correct_answer": "C",
+          "explanation": "LU decomposition is a common method for solving systems of linear equations and computing determinants."
+        },
+        {
+          "question": "What type of matrix is required for Cholesky decomposition (`scipy.linalg.cholesky()`)?",
+          "options": {
+            "A": "Any square matrix.",
+            "B": "A singular matrix.",
+            "C": "A symmetric positive-definite matrix.",
+            "D": "A rectangular matrix."
+          },
+          "correct_answer": "C",
+          "explanation": "Cholesky decomposition is a specialized factorization for symmetric positive-definite matrices, often used in Monte Carlo simulations or Kalman filters."
+        },
+        {
+          "question": "To compute the matrix norm of a NumPy array `A` using `scipy.linalg`, which function would you use?",
+          "options": {
+            "A": "`scipy.linalg.max(A)`",
+            "B": "`scipy.linalg.sum(A)`",
+            "C": "`scipy.linalg.norm(A)`",
+            "D": "`scipy.linalg.abs(A)`"
+          },
+          "correct_answer": "C",
+          "explanation": "`scipy.linalg.norm()` computes various matrix or vector norms (e.g., Frobenius norm, L2 norm, etc.)."
+        },
+        {
+          "question": "If you are working with extremely large matrices that contain mostly zero values, which SciPy sub-package would be more memory-efficient and performant for linear algebra operations?",
+          "options": {
+            "A": "`scipy.linalg` (dense linear algebra)",
+            "B": "`scipy.sparse.linalg` (sparse linear algebra)",
+            "C": "`scipy.integrate`",
+            "D": "`scipy.ndimage`"
+          },
+          "correct_answer": "B",
+          "explanation": "`scipy.sparse.linalg` contains functions specifically optimized for sparse matrices, leveraging their structure to reduce memory usage and computation time."
+        },
+        {
+          "question": "Which function would you use to compute the generalized inverse (Moore-Penrose pseudoinverse) of a matrix `A`?",
+          "options": {
+            "A": "`scipy.linalg.inv(A)`",
+            "B": "`scipy.linalg.pinv(A)`",
+            "C": "`scipy.linalg.trace(A)`",
+            "D": "`scipy.linalg.rank(A)`"
+          },
+          "correct_answer": "B",
+          "explanation": "The pseudoinverse (`pinv()`) is useful for solving linear least squares problems and for matrices that are not square or are singular."
+        },
+        {
+          "question": "What is the primary difference in use case between `scipy.linalg.solve()` and `scipy.linalg.lstsq()`?",
+          "options": {
+            "A": "`solve()` is for regression, `lstsq()` for classification.",
+            "B": "`solve()` is for square, non-singular systems to find exact solutions; `lstsq()` is for overdetermined or underdetermined systems to find least-squares approximate solutions.",
+            "C": "`solve()` is for complex numbers, `lstsq()` for real numbers.",
+            "D": "They perform the same operation but `solve()` is faster."
+          },
+          "correct_answer": "B",
+          "explanation": "This distinction is critical for choosing the correct function based on the nature of the linear system you are trying to solve."
+        },
+        {
+          "question": "To compute the trace of a square matrix `A` (sum of diagonal elements), which function from `scipy.linalg` or `numpy.trace` would be appropriate?",
+          "options": {
+            "A": "`scipy.linalg.det(A)`",
+            "B": "`scipy.linalg.inv(A)`",
+            "C": "`numpy.trace(A)` (or `scipy.linalg.trace(A)`)",
+            "D": "`scipy.linalg.rank(A)`"
+          },
+          "correct_answer": "C",
+          "explanation": "Both NumPy and SciPy provide a `trace` function. `numpy.trace` is often used directly for this basic operation."
+        },
+        {
+          "question": "Which function computes the condition number of a matrix, indicating its sensitivity to perturbations?",
+          "options": {
+            "A": "`scipy.linalg.det(A)`",
+            "B": "`scipy.linalg.cond(A)`",
+            "C": "`scipy.linalg.norm(A)`",
+            "D": "`scipy.linalg.rank(A)`"
+          },
+          "correct_answer": "B",
+          "explanation": "A high condition number indicates that a matrix is ill-conditioned, meaning small changes in the input can lead to large changes in the output of linear system solutions."
+        },
+        {
+          "question": "What is the purpose of `scipy.linalg.expm()`?",
+          "options": {
+            "A": "To calculate the exponential of each element in a matrix.",
+            "B": "To calculate the matrix exponential, $e^A = 'sum_{k=0}^{infty}' \frac{A^k}{k!}$.",
+            "C": "To export a matrix to an external file.",
+            "D": "To expand a matrix into a larger dimension."
+          },
+          "correct_answer": "B",
+          "explanation": "The matrix exponential is a fundamental operation in areas like control theory and solving systems of linear differential equations."
+        },
+        {
+          "question": "Given a matrix `A` and a vector `b`, which operation from `scipy.linalg` is equivalent to `np.dot(np.linalg.inv(A), b)` but is numerically more stable and efficient?",
+          "options": {
+            "A": "`scipy.linalg.det(A)`",
+            "B": "`scipy.linalg.eig(A)`",
+            "C": "`scipy.linalg.solve(A, b)`",
+            "D": "`scipy.linalg.svd(A)`"
+          },
+          "correct_answer": "C",
+          "explanation": "Directly computing the inverse and then multiplying can be less stable and slower than using a dedicated solver, especially for large systems."
+        },
+        {
+          "question": "Which function is used to calculate the QR decomposition of a matrix `A` (i.e., `A = QR`)?",
+          "options": {
+            "A": "`scipy.linalg.lu(A)`",
+            "B": "`scipy.linalg.cholesky(A)`",
+            "C": "`scipy.linalg.qr(A)`",
+            "D": "`scipy.linalg.schur(A)`"
+          },
+          "correct_answer": "C",
+          "explanation": "QR decomposition is widely used in numerical linear algebra, including solving least squares problems and eigenvalue computations."
+        },
+        {
+          "question": "True or False: `scipy.linalg` functions are designed to work only with 2D NumPy arrays (matrices).",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While primarily focused on matrices, many functions can handle 1D arrays (vectors) or operate on stacks of matrices (e.g., batch processing) when appropriate, leveraging NumPy's broadcasting rules."
+        },
+        {
+          "question": "What is the primary advantage of using `scipy.linalg` for linear algebra tasks in scientific computing compared to implementing algorithms from scratch?",
+          "options": {
+            "A": "It provides a graphical user interface.",
+            "B": "It offers highly optimized, numerically stable, and well-tested implementations that are critical for accuracy and performance in complex scientific computations.",
+            "C": "It removes the need for understanding linear algebra concepts.",
+            "D": "It automatically handles all data preprocessing."
+          },
+          "correct_answer": "B",
+          "explanation": "The robustness and efficiency of `scipy.linalg` (often leveraging underlying LAPACK/BLAS libraries) are paramount for scientific applications."
+        }
+      ]
+    }
+  ]
+}

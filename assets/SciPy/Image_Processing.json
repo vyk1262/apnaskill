@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Image_Processing",
+      "questions": [
+        {
+          "question": "Which SciPy sub-package is primarily used for N-dimensional image processing (e.g., filtering, morphological operations, measurements)?",
+          "options": {
+            "A": "`scipy.signal`",
+            "B": "`scipy.spatial`",
+            "C": "`scipy.ndimage`",
+            "D": "`scipy.fft`"
+          },
+          "correct_answer": "C",
+          "explanation": "`scipy.ndimage` (n-dimensional image) provides a rich set of image processing functions."
+        },
+        {
+          "question": "What is the typical data structure used to represent an image when working with `scipy.ndimage`?",
+          "options": {
+            "A": "A Python list of lists.",
+            "B": "A Pandas DataFrame.",
+            "C": "A NumPy array (representing pixel intensities).",
+            "D": "A dictionary of image properties."
+          },
+          "correct_answer": "C",
+          "explanation": "Like most of SciPy, `scipy.ndimage` operates directly on NumPy arrays, where each element corresponds to a pixel value."
+        },
+        {
+          "question": "Which `scipy.ndimage` function is used for applying a Gaussian filter to an image?",
+          "options": {
+            "A": "`scipy.ndimage.median_filter`",
+            "B": "`scipy.ndimage.gaussian_filter`",
+            "C": "`scipy.ndimage.uniform_filter`",
+            "D": "`scipy.ndimage.convolve`"
+          },
+          "correct_answer": "B",
+          "explanation": "Gaussian filters are widely used for blurring images and reducing noise while preserving edges better than simple averaging filters."
+        },
+        {
+          "question": "What does a 'morphological erosion' operation (`scipy.ndimage.binary_erosion`) typically do to binary images?",
+          "options": {
+            "A": "It expands the boundaries of foreground objects.",
+            "B": "It shrinks or 'erodes' the boundaries of foreground objects, effectively removing small objects or thinning lines.",
+            "C": "It fills holes in objects.",
+            "D": "It smooths the edges of objects."
+          },
+          "correct_answer": "B",
+          "explanation": "Erosion removes pixels from object boundaries based on a structuring element."
+        },
+        {
+          "question": "If you want to identify and label distinct connected components in a binary image, which `scipy.ndimage` function would you use?",
+          "options": {
+            "A": "`scipy.ndimage.sum`",
+            "B": "`scipy.ndimage.center_of_mass`",
+            "C": "`scipy.ndimage.label`",
+            "D": "`scipy.ndimage.binary_closing`"
+          },
+          "correct_answer": "C",
+          "explanation": "`label` assigns a unique integer label to each connected component, allowing for individual analysis of objects."
+        },
+        {
+          "question": "Which `scipy.ndimage` function is used to rotate an image by a specified angle?",
+          "options": {
+            "A": "`scipy.ndimage.shift`",
+            "B": "`scipy.ndimage.zoom`",
+            "C": "`scipy.ndimage.rotate`",
+            "D": "`scipy.ndimage.affine_transform`"
+          },
+          "correct_answer": "C",
+          "explanation": "`rotate` performs rotation, with options for interpolation and resizing the output array."
+        },
+        {
+          "question": "What does a 'morphological dilation' operation (`scipy.ndimage.binary_dilation`) typically do to binary images?",
+          "options": {
+            "A": "It shrinks the boundaries of foreground objects.",
+            "B": "It expands or 'dilates' the boundaries of foreground objects, filling small holes and connecting nearby objects.",
+            "C": "It finds the edges of objects.",
+            "D": "It smooths out noise."
+          },
+          "correct_answer": "B",
+          "explanation": "Dilation adds pixels to object boundaries, causing objects to expand based on a structuring element."
+        },
+        {
+          "question": "Which `scipy.ndimage` function can be used to calculate the center of mass (centroid) of a labeled object in an image?",
+          "options": {
+            "A": "`scipy.ndimage.label`",
+            "B": "`scipy.ndimage.sum`",
+            "C": "`scipy.ndimage.center_of_mass`",
+            "D": "`scipy.ndimage.maximum`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `center_of_mass` function returns the coordinates of the center of mass for each labeled object."
+        },
+        {
+          "question": "What is a 'structuring element' (or kernel) in the context of morphological operations in `scipy.ndimage`?",
+          "options": {
+            "A": "The input image itself.",
+            "B": "A small shape or pattern (e.g., a square, disk, line) that defines the neighborhood and the operation's effect on pixels.",
+            "C": "The output image after processing.",
+            "D": "The number of dimensions in the image."
+          },
+          "correct_answer": "B",
+          "explanation": "The structuring element dictates how the morphological operation (like erosion or dilation) interacts with the image's features."
+        },
+        {
+          "question": "If you want to apply a general 2D or N-D convolution filter with a custom kernel to an image, which `scipy.ndimage` function would you use?",
+          "options": {
+            "A": "`scipy.ndimage.gaussian_filter`",
+            "B": "`scipy.ndimage.median_filter`",
+            "C": "`scipy.ndimage.uniform_filter`",
+            "D": "`scipy.ndimage.convolve`"
+          },
+          "correct_answer": "D",
+          "explanation": "`convolve` allows you to define and apply any arbitrary convolution kernel."
+        },
+        {
+          "question": "What is the effect of applying `scipy.ndimage.binary_opening` on a binary image?",
+          "options": {
+            "A": "It removes small holes and gaps within objects.",
+            "B": "It smoothes object boundaries.",
+            "C": "It removes small objects and smooths object contours by first eroding and then dilating.",
+            "D": "It connects nearby objects."
+          },
+          "correct_answer": "C",
+          "explanation": "Opening is useful for removing small, isolated noise pixels ('salt' noise) and separating objects that are lightly connected."
+        },
+        {
+          "question": "What is the effect of applying `scipy.ndimage.binary_closing` on a binary image?",
+          "options": {
+            "A": "It removes small objects.",
+            "B": "It fills small holes and gaps within objects and connects nearby objects by first dilating and then eroding.",
+            "C": "It enhances edges.",
+            "D": "It converts the image to grayscale."
+          },
+          "correct_answer": "B",
+          "explanation": "Closing is useful for filling small holes ('pepper' noise) and bridging small gaps between features."
+        },
+        {
+          "question": "Which `scipy.ndimage` function is used for shifting (translating) an image by a certain amount?",
+          "options": {
+            "A": "`scipy.ndimage.rotate`",
+            "B": "`scipy.ndimage.zoom`",
+            "C": "`scipy.ndimage.shift`",
+            "D": "`scipy.ndimage.map_coordinates`"
+          },
+          "correct_answer": "C",
+          "explanation": "`shift` performs translation, with options for interpolation to handle non-integer shifts."
+        },
+        {
+          "question": "To resize an image by a certain zoom factor (e.g., making it twice as large), which `scipy.ndimage` function would you use?",
+          "options": {
+            "A": "`scipy.ndimage.rotate`",
+            "B": "`scipy.ndimage.zoom`",
+            "C": "`scipy.ndimage.shift`",
+            "D": "`scipy.ndimage.affine_transform`"
+          },
+          "correct_answer": "B",
+          "explanation": "`zoom` allows scaling an image by a floating-point factor, using interpolation to generate the new pixel values."
+        },
+        {
+          "question": "What is the primary role of `scipy.ndimage.affine_transform`?",
+          "options": {
+            "A": "To apply only rotations.",
+            "B": "To apply only scaling.",
+            "C": "To apply a general affine transformation (rotation, scaling, shear, translation) defined by a transformation matrix.",
+            "D": "To convert an image to a grayscale representation."
+          },
+          "correct_answer": "C",
+          "explanation": "Affine transformations are versatile for geometric manipulations of images, combining multiple linear transformations."
+        },
+        {
+          "question": "Which type of filter replaces each pixel's value with the median of the pixel values in its neighborhood, making it effective for impulse noise (salt-and-pepper noise)?",
+          "options": {
+            "A": "Gaussian filter",
+            "B": "Median filter (`scipy.ndimage.median_filter`)",
+            "C": "Uniform filter",
+            "D": "Sobel filter"
+          },
+          "correct_answer": "B",
+          "explanation": "Median filters are non-linear and are very good at removing spike-like noise without blurring edges as much as linear filters."
+        },
+        {
+          "question": "True or False: `scipy.ndimage` is a standalone library and doesn't require NumPy for its operations.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. `scipy.ndimage` heavily relies on NumPy arrays as its core data structure for images and efficiently processes them using NumPy's optimized operations."
+        },
+        {
+          "question": "For calculating the sum of pixel values within specific labeled regions of an image, which `scipy.ndimage` function could you use in conjunction with `label`?",
+          "options": {
+            "A": "`scipy.ndimage.median`",
+            "B": "`scipy.ndimage.maximum`",
+            "C": "`scipy.ndimage.sum`",
+            "D": "`scipy.ndimage.mean`"
+          },
+          "correct_answer": "C",
+          "explanation": "`scipy.ndimage.sum` can calculate the sum of values for each labeled object (or just the whole image if no labels are given)."
+        },
+        {
+          "question": "What is the purpose of the `mode` parameter in functions like `scipy.ndimage.gaussian_filter` (e.g., 'reflect', 'constant', 'nearest')?",
+          "options": {
+            "A": "To specify the color mode of the image.",
+            "B": "To define how the input array is extended beyond its boundaries when the filter kernel overlaps the edges.",
+            "C": "To choose between 1D or 2D filtering.",
+            "D": "To select the type of Gaussian function to use."
+          },
+          "correct_answer": "B",
+          "explanation": "Boundary handling is crucial for accurate filtering near image edges, and different modes prevent artifacts."
+        },
+        {
+          "question": "While `scipy.ndimage` provides many core image processing capabilities, which other Python library is often used in conjunction with or as an alternative for more advanced, general-purpose image manipulation and computer vision tasks (e.g., reading/writing diverse image formats, feature detection, object recognition)?",
+          "options": {
+            "A": "Pandas",
+            "B": "Matplotlib",
+            "C": "OpenCV (cv2) or scikit-image",
+            "D": "Numba"
+          },
+          "correct_answer": "C",
+          "explanation": "OpenCV is a comprehensive computer vision library, and scikit-image (`skimage`) offers a broad range of image processing algorithms, often building on `scipy.ndimage` internally."
+        }
+      ]
+    }
+  ]
+}
