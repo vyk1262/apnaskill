@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Time_Series_Forecasting",
+      "questions": [
+        {
+          "question": "What distinguishes time series data from regular cross-sectional data?",
+          "options": {
+            "A": "Time series data always has more features.",
+            "B": "Time series data has a natural temporal ordering, where observations are dependent on previous observations.",
+            "C": "Time series data is always numerical.",
+            "D": "Time series data is only collected in real-time."
+          },
+          "correct_answer": "B",
+          "explanation": "The sequential dependence and inherent order based on time are the defining characteristics of time series data."
+        },
+        {
+          "question": "Which of the following is a common component of a time series?",
+          "options": {
+            "A": "Feature Engineering",
+            "B": "Trend",
+            "C": "Data Normalization",
+            "D": "Hyperparameter Tuning"
+          },
+          "correct_answer": "B",
+          "explanation": "Time series data can typically be decomposed into trend (long-term increase/decrease), seasonality (repeating patterns), and residual (random fluctuations)."
+        },
+        {
+          "question": "What does 'stationarity' mean in the context of time series analysis?",
+          "options": {
+            "A": "The time series data is perfectly linear.",
+            "B": "The statistical properties (mean, variance, autocorrelation) of the time series do not change over time.",
+            "C": "The time series has a strong seasonal component.",
+            "D": "The time series has no missing values."
+          },
+          "correct_answer": "B",
+          "explanation": "Many traditional time series models (like ARIMA) assume stationarity. Non-stationary series often need to be transformed (e.g., differencing) to achieve stationarity."
+        },
+        {
+          "question": "Why is 'differencing' often applied to a time series?",
+          "options": {
+            "A": "To remove the seasonal component.",
+            "B": "To make the series stationary by removing trend or seasonality.",
+            "C": "To normalize the data distribution.",
+            "D": "To increase the variance of the data."
+          },
+          "correct_answer": "B",
+          "explanation": "Differencing involves calculating the difference between consecutive observations, which can stabilize the mean of a time series by removing changes in the level of a time series, and thus eliminating trend or seasonality."
+        },
+        {
+          "question": "Which of the following is a classic statistical model for time series forecasting?",
+          "options": {
+            "A": "Support Vector Machine (SVM)",
+            "B": "Linear Regression",
+            "C": "ARIMA (AutoRegressive Integrated Moving Average)",
+            "D": "K-Nearest Neighbors (KNN)"
+          },
+          "correct_answer": "C",
+          "explanation": "ARIMA models are a class of models that are suitable for forecasting time series data. They explicitly model the autocorrelation structure of the series."
+        },
+        {
+          "question": "What does the 'AR' component in ARIMA stand for?",
+          "options": {
+            "A": "Average Ratio",
+            "B": "AutoRegressive",
+            "C": "Adaptive Residual",
+            "D": "Accumulated Response"
+          },
+          "correct_answer": "B",
+          "explanation": "The AutoRegressive (AR) component indicates that the current value is a linear combination of past values."
+        },
+        {
+          "question": "What does the 'MA' component in ARIMA stand for?",
+          "options": {
+            "A": "Mean Average",
+            "B": "Maximum Amplitude",
+            "C": "Moving Average",
+            "D": "Model Adaptation"
+          },
+          "correct_answer": "C",
+          "explanation": "The Moving Average (MA) component indicates that the current value is a linear combination of past forecast errors (residuals)."
+        },
+        {
+          "question": "What type of plot helps in identifying the order of the 'AR' component in an ARIMA model?",
+          "options": {
+            "A": "Scatter Plot",
+            "B": "Histogram",
+            "C": "Partial Autocorrelation Function (PACF) plot",
+            "D": "Box Plot"
+          },
+          "correct_answer": "C",
+          "explanation": "The PACF plot helps determine the direct relationship between an observation and a lagged observation, controlling for the influence of intermediate observations."
+        },
+        {
+          "question": "What type of plot helps in identifying the order of the 'MA' component in an ARIMA model?",
+          "options": {
+            "A": "ROC Curve",
+            "B": "Autocorrelation Function (ACF) plot",
+            "C": "Residual Plot",
+            "D": "Q-Q Plot"
+          },
+          "correct_answer": "B",
+          "explanation": "The ACF plot helps identify the correlation between an observation and a lagged observation, including the indirect effects of intermediate observations."
+        },
+        {
+          "question": "When evaluating time series forecasts, why is it important to use 'out-of-sample' data?",
+          "options": {
+            "A": "To ensure the model is trained on all available data.",
+            "B": "To get a realistic estimate of the model's performance on future, unseen data.",
+            "C": "To identify hidden patterns within the training data.",
+            "D": "To remove outliers from the dataset."
+          },
+          "correct_answer": "B",
+          "explanation": "Out-of-sample evaluation simulates how the model would perform in a real forecasting scenario, as it makes predictions on data it has not seen."
+        },
+        {
+          "question": "Which of the following is a common evaluation metric for time series forecasting models?",
+          "options": {
+            "A": "Accuracy",
+            "B": "Precision",
+            "C": "Mean Absolute Percentage Error (MAPE)",
+            "D": "F1-Score"
+          },
+          "correct_answer": "C",
+          "explanation": "MAPE is a widely used metric for time series forecasting, expressing error as a percentage of the actual values, which can be easier to interpret."
+        },
+        {
+          "question": "What does 'Seasonality' in a time series refer to?",
+          "options": {
+            "A": "A long-term increase or decrease in the data.",
+            "B": "Random, unpredictable fluctuations in the data.",
+            "C": "A repetitive pattern or cycle in the data that occurs over a fixed period (e.g., daily, weekly, yearly).",
+            "D": "The overall average of the data."
+          },
+          "correct_answer": "C",
+          "explanation": "Seasonality is a predictable, recurring pattern within the data, such as daily cycles, weekly sales peaks, or yearly climate variations."
+        },
+        {
+          "question": "Which model is an extension of ARIMA that explicitly handles seasonal components?",
+          "options": {
+            "A": "SARIMA (Seasonal ARIMA)",
+            "B": "ARIMA-X",
+            "C": "AutoARIMA",
+            "D": "Prophet"
+          },
+          "correct_answer": "A",
+          "explanation": "SARIMA models add seasonal terms (P, D, Q, S) to the non-seasonal ARIMA parameters (p, d, q) to capture recurring patterns."
+        },
+        {
+          "question": "What is the concept of a 'rolling forecast origin' in time series evaluation?",
+          "options": {
+            "A": "Using a fixed training set and moving test set.",
+            "B": "Progressively advancing the training window and the forecast horizon, re-training the model at each step to simulate real-world forecasting.",
+            "C": "Using a rolling average to smooth the time series.",
+            "D": "Forecasting multiple time series simultaneously."
+          },
+          "correct_answer": "B",
+          "explanation": "Rolling forecast origin is a more robust evaluation method for time series, as it accounts for the evolving nature of the data and simulates how a model would be used in practice."
+        },
+        {
+          "question": "Why is 'causality' a complex issue in time series forecasting?",
+          "options": {
+            "A": "It only applies to linear models.",
+            "B": "Correlation between time series variables does not necessarily imply a causal relationship; external factors often influence both.",
+            "C": "Time series data is always random.",
+            "D": "Causality is not relevant in forecasting."
+          },
+          "correct_answer": "B",
+          "explanation": "Observing that two series move together doesn't mean one causes the other; they might both be driven by an unobserved common cause. Establishing true causality requires careful study and domain knowledge."
+        },
+        {
+          "question": "What does 'Exogenous Variables' (or 'Exog' in some models like SARIMAX) refer to in time series forecasting?",
+          "options": {
+            "A": "The dependent variable being forecasted.",
+            "B": "Variables that are part of the time series itself.",
+            "C": "External variables that are not part of the time series but can influence its behavior and are used as additional predictors.",
+            "D": "Variables that are removed during differencing."
+          },
+          "correct_answer": "C",
+          "explanation": "Exogenous variables (e.g., holidays, marketing campaigns, economic indicators) can significantly improve forecast accuracy if their future values are known or can be predicted."
+        },
+        {
+          "question": "Which Python library is widely used for implementing statistical time series models like ARIMA and SARIMA?",
+          "options": {
+            "A": "Scikit-learn",
+            "B": "Pandas",
+            "C": "Statsmodels",
+            "D": "Matplotlib"
+          },
+          "correct_answer": "C",
+          "explanation": "Statsmodels provides a comprehensive set of statistical models, including a robust implementation of ARIMA and SARIMA, with detailed statistical output."
+        },
+        {
+          "question": "What is a 'forecasting horizon'?",
+          "options": {
+            "A": "The range of historical data used for training.",
+            "B": "The period for which the model is making predictions into the future.",
+            "C": "The frequency of data collection.",
+            "D": "The confidence interval of the predictions."
+          },
+          "correct_answer": "B",
+          "explanation": "The forecasting horizon defines how far into the future the model is attempting to predict (e.g., next day, next month, next year)."
+        },
+        {
+          "question": "When building a time series model, what is the significance of the 'p' parameter in ARIMA(p,d,q)?",
+          "options": {
+            "A": "The number of moving average terms.",
+            "B": "The number of differencing steps.",
+            "C": "The number of autoregressive terms (lagged observations of the series).",
+            "D": "The period of seasonality."
+          },
+          "correct_answer": "C",
+          "explanation": "The 'p' parameter represents the order of the AR component, indicating how many past observations influence the current value."
+        },
+        {
+          "question": "When building a time series model, what is the significance of the 'd' parameter in ARIMA(p,d,q)?",
+          "options": {
+            "A": "The number of autoregressive terms.",
+            "B": "The number of non-seasonal differences required to make the time series stationary.",
+            "C": "The number of moving average terms.",
+            "D": "The period of seasonality."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'd' parameter represents the order of differencing, indicating how many times the raw observations are differenced to achieve stationarity."
+        }
+      ]
+    }
+  ]
+}

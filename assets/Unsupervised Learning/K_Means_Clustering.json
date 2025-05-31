@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "K_Means_Clustering",
+      "questions": [
+        {
+          "question": "What is the primary goal of K-Means Clustering?",
+          "options": {
+            "A": "To partition data into K distinct clusters.",
+            "B": "To encrypt data for security.",
+            "C": "To visualize data trends.",
+            "D": "To classify data into categories."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering aims to partition data into K distinct clusters based on similarity."
+        },
+        {
+          "question": "Which of the following is a key step in the K-Means algorithm?",
+          "options": {
+            "A": "Initialization of centroids.",
+            "B": "Data encryption.",
+            "C": "Data visualization.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "Initialization of centroids is a key step in the K-Means algorithm, determining the starting points for clustering."
+        },
+        {
+          "question": "What is the role of the distance metric in K-Means Clustering?",
+          "options": {
+            "A": "To measure similarity between data points.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The distance metric measures similarity between data points, guiding the assignment of points to clusters in K-Means."
+        },
+        {
+          "question": "Which method is commonly used to determine the optimal number of clusters in K-Means?",
+          "options": {
+            "A": "Elbow Method",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The Elbow Method is commonly used to determine the optimal number of clusters in K-Means, analyzing the variance explained by each cluster."
+        },
+        {
+          "question": "What is the significance of feature scaling in K-Means Clustering?",
+          "options": {
+            "A": "To ensure centroids are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures centroids are meaningful, providing accurate clustering in K-Means."
+        },
+        {
+          "question": "Which of the following is a disadvantage of K-Means Clustering?",
+          "options": {
+            "A": "Sensitive to initial centroid placement.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is sensitive to initial centroid placement, as it can affect the final clustering outcome."
+        },
+        {
+          "question": "What is the purpose of using K-Means Clustering in data analysis?",
+          "options": {
+            "A": "To group similar data points together.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is used to group similar data points together, simplifying analysis and interpretation."
+        },
+        {
+          "question": "Which of the following is a common use case for K-Means Clustering?",
+          "options": {
+            "A": "Customer segmentation.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is commonly used for customer segmentation, identifying distinct groups within a dataset."
+        },
+        {
+          "question": "What is the role of centroids in K-Means Clustering?",
+          "options": {
+            "A": "To represent the center of each cluster.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Centroids represent the center of each cluster in K-Means, guiding the assignment of data points to clusters."
+        },
+        {
+          "question": "Which of the following is a benefit of K-Means Clustering?",
+          "options": {
+            "A": "Can simplify analysis and interpretation.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering can simplify analysis and interpretation, making data insights more accessible."
+        },
+        {
+          "question": "What is the significance of the inertia in K-Means Clustering?",
+          "options": {
+            "A": "It indicates the sum of squared distances between data points and their centroids.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The inertia indicates the sum of squared distances between data points and their centroids in K-Means, guiding cluster evaluation."
+        },
+        {
+          "question": "Which of the following is a common technique used in K-Means Clustering?",
+          "options": {
+            "A": "Silhouette Analysis",
+            "B": "K-Means++",
+            "C": "Decision Tree",
+            "D": "Linear Regression"
+          },
+          "correct_answer": "A",
+          "explanation": "Silhouette Analysis is a common technique used in K-Means Clustering, evaluating the quality of clustering."
+        },
+        {
+          "question": "What is the role of centroids in K-Means Clustering?",
+          "options": {
+            "A": "To represent the center of each cluster.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Centroids represent the center of each cluster in K-Means, guiding the assignment of data points to clusters."
+        },
+        {
+          "question": "Which method is used to select the number of clusters in K-Means?",
+          "options": {
+            "A": "Silhouette Score",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Silhouette Score is used to select the number of clusters in K-Means, analyzing the separation between clusters."
+        },
+        {
+          "question": "What is the significance of feature scaling in K-Means Clustering?",
+          "options": {
+            "A": "To ensure centroids are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures centroids are meaningful, providing accurate clustering in K-Means."
+        },
+        {
+          "question": "Which of the following is a disadvantage of K-Means Clustering?",
+          "options": {
+            "A": "Sensitive to multicollinearity.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is sensitive to multicollinearity, as it can affect the clustering outcome."
+        },
+        {
+          "question": "What is the purpose of using K-Means Clustering in data analysis?",
+          "options": {
+            "A": "To group similar data points together.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is used to group similar data points together, simplifying analysis and interpretation."
+        },
+        {
+          "question": "Which of the following is a common use case for K-Means Clustering?",
+          "options": {
+            "A": "Customer segmentation.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is commonly used for customer segmentation, identifying distinct groups within a dataset."
+        },
+        {
+          "question": "What is the role of centroids in K-Means Clustering?",
+          "options": {
+            "A": "To represent the center of each cluster.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Centroids represent the center of each cluster in K-Means, guiding the assignment of data points to clusters."
+        }
+      ]
+    }
+  ]
+}

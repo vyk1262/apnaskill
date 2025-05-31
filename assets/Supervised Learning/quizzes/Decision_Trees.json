@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Decision_Trees",
+      "questions": [
+        {
+          "question": "What is the primary purpose of a decision tree in machine learning?",
+          "options": {
+            "A": "To classify data based on decision rules.",
+            "B": "To store data in a hierarchical structure.",
+            "C": "To visualize data trends.",
+            "D": "To encrypt data for security."
+          },
+          "correct_answer": "A",
+          "explanation": "Decision trees are used to classify data based on decision rules derived from the features of the data."
+        },
+        {
+          "question": "Which of the following is a common algorithm used to create decision trees?",
+          "options": {
+            "A": "ID3",
+            "B": "K-Means",
+            "C": "SVM",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "ID3 is a common algorithm used to create decision trees by selecting the best attribute to split the data."
+        },
+        {
+          "question": "What is the role of entropy in decision trees?",
+          "options": {
+            "A": "To measure the impurity of a dataset.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Entropy measures the impurity of a dataset, helping to determine the best attribute for splitting the data in decision trees."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in decision trees?",
+          "options": {
+            "A": "Pruning",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Pruning is used to prevent overfitting in decision trees by removing branches that have little importance."
+        },
+        {
+          "question": "What is the significance of the Gini index in decision trees?",
+          "options": {
+            "A": "To measure the impurity of a dataset.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The Gini index measures the impurity of a dataset, helping to determine the best attribute for splitting the data in decision trees."
+        },
+        {
+          "question": "Which of the following is a disadvantage of decision trees?",
+          "options": {
+            "A": "Prone to overfitting.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Decision trees are prone to overfitting, especially when they are deep and complex."
+        },
+        {
+          "question": "What is the purpose of using a random forest in decision trees?",
+          "options": {
+            "A": "To improve accuracy by combining multiple decision trees.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Random forests improve accuracy by combining multiple decision trees, reducing the risk of overfitting."
+        },
+        {
+          "question": "Which of the following is a common use case for decision trees?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Decision trees are commonly used for classification tasks, where data is categorized based on decision rules."
+        },
+        {
+          "question": "What is the role of information gain in decision trees?",
+          "options": {
+            "A": "To measure the reduction in impurity.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Information gain measures the reduction in impurity, helping to determine the best attribute for splitting the data in decision trees."
+        },
+        {
+          "question": "Which of the following is a benefit of decision trees?",
+          "options": {
+            "A": "Easy to interpret.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "Decision trees are easy to interpret, as they provide a clear and visual representation of decision rules."
+        },
+        {
+          "question": "What is the significance of the depth of a decision tree?",
+          "options": {
+            "A": "It affects the complexity and risk of overfitting.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The depth of a decision tree affects its complexity and risk of overfitting, with deeper trees being more prone to overfitting."
+        },
+        {
+          "question": "Which of the following is a common algorithm used to create decision trees?",
+          "options": {
+            "A": "C4.5",
+            "B": "K-Means",
+            "C": "SVM",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "C4.5 is a common algorithm used to create decision trees by selecting the best attribute to split the data."
+        },
+        {
+          "question": "What is the role of entropy in decision trees?",
+          "options": {
+            "A": "To measure the impurity of a dataset.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Entropy measures the impurity of a dataset, helping to determine the best attribute for splitting the data in decision trees."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in decision trees?",
+          "options": {
+            "A": "Pruning",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Pruning is used to prevent overfitting in decision trees by removing branches that have little importance."
+        },
+        {
+          "question": "What is the significance of the Gini index in decision trees?",
+          "options": {
+            "A": "To measure the impurity of a dataset.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The Gini index measures the impurity of a dataset, helping to determine the best attribute for splitting the data in decision trees."
+        },
+        {
+          "question": "Which of the following is a disadvantage of decision trees?",
+          "options": {
+            "A": "Prone to overfitting.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Decision trees are prone to overfitting, especially when they are deep and complex."
+        },
+        {
+          "question": "What is the purpose of using a random forest in decision trees?",
+          "options": {
+            "A": "To improve accuracy by combining multiple decision trees.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Random forests improve accuracy by combining multiple decision trees, reducing the risk of overfitting."
+        },
+        {
+          "question": "Which of the following is a common use case for decision trees?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Decision trees are commonly used for classification tasks, where data is categorized based on decision rules."
+        },
+        {
+          "question": "What is the role of information gain in decision trees?",
+          "options": {
+            "A": "To measure the reduction in impurity.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Information gain measures the reduction in impurity, helping to determine the best attribute for splitting the data in decision trees."
+        }
+      ]
+    }
+  ]
+}

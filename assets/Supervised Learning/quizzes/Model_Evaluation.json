@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Model_Evaluation",
+      "questions": [
+        {
+          "question": "What is the primary goal of model evaluation in supervised machine learning?",
+          "options": {
+            "A": "To find the best hyperparameters for a model.",
+            "B": "To assess how well a trained model generalizes to unseen data and performs on new, real-world examples.",
+            "C": "To optimize the training process and reduce computation time.",
+            "D": "To collect and preprocess the dataset for training."
+          },
+          "correct_answer": "B",
+          "explanation": "The core purpose of evaluation is to understand a model's true effectiveness beyond its training performance, particularly its ability to generalize."
+        },
+        {
+          "question": "Why is it crucial to evaluate a model on a separate test set that it has not seen during training?",
+          "options": {
+            "A": "To increase the training data size.",
+            "B": "To prevent overfitting and get an unbiased estimate of the model's generalization performance.",
+            "C": "To speed up the training process.",
+            "D": "To simplify model interpretation."
+          },
+          "correct_answer": "B",
+          "explanation": "Evaluating on training data can lead to an overly optimistic view of performance due to overfitting. A separate test set ensures an honest assessment."
+        },
+        {
+          "question": "Which of the following metrics is *most* appropriate for evaluating a **classification** model's performance when the classes are heavily imbalanced (e.g., 95% negative, 5% positive)?",
+          "options": {
+            "A": "Accuracy",
+            "B": "Mean Squared Error (MSE)",
+            "C": "F1-Score or Precision/Recall",
+            "D": "R-squared"
+          },
+          "correct_answer": "C",
+          "explanation": "Accuracy can be misleading with imbalanced datasets. F1-Score, Precision, and Recall provide a more nuanced view of performance for minority classes."
+        },
+        {
+          "question": "What does a **Confusion Matrix** provide?",
+          "options": {
+            "A": "A measure of how confused the model is during training.",
+            "B": "A table that describes the performance of a classification model on a set of test data, showing counts of true positives, true negatives, false positives, and false negatives.",
+            "C": "A graphical representation of model complexity.",
+            "D": "A list of all features used by the model."
+          },
+          "correct_answer": "B",
+          "explanation": "The confusion matrix is fundamental for understanding where a classification model makes mistakes and where it performs correctly across different classes."
+        },
+        {
+          "question": "Which metric is suitable for evaluating a **regression** model?",
+          "options": {
+            "A": "Precision",
+            "B": "Accuracy",
+            "C": "Mean Absolute Error (MAE)",
+            "D": "AUC-ROC"
+          },
+          "correct_answer": "C",
+          "explanation": "MAE measures the average magnitude of errors in a set of predictions, without considering their direction. It's robust to outliers compared to MSE."
+        },
+        {
+          "question": "What does a high **Recall** (or Sensitivity) mean for a classification model?",
+          "options": {
+            "A": "The model makes very few false positive predictions.",
+            "B": "The model correctly identifies a large proportion of all actual positive instances.",
+            "C": "The model correctly identifies a large proportion of all actual negative instances.",
+            "D": "The model is very fast."
+          },
+          "correct_answer": "B",
+          "explanation": "Recall is about completeness: out of all actual positives, how many did the model find? It's crucial in scenarios where missing positive cases is costly (e.g., disease detection)."
+        },
+        {
+          "question": "What does a high **Precision** mean for a classification model?",
+          "options": {
+            "A": "The model correctly identifies a large proportion of all actual positive instances.",
+            "B": "The model makes very few false negative predictions.",
+            "C": "When the model predicts a positive class, it is correct a large proportion of the time (i.e., few false positives).",
+            "D": "The model's predictions are very close to the true values."
+          },
+          "correct_answer": "C",
+          "explanation": "Precision is about exactness: out of all predictions the model made as positive, how many were actually positive? It's important when false positives are costly (e.g., spam detection)."
+        },
+        {
+          "question": "When might **Cross-Validation** be particularly useful during model evaluation?",
+          "options": {
+            "A": "When the dataset is extremely large.",
+            "B": "To reduce the training time of a model.",
+            "C": "To get a more robust and less biased estimate of model performance, especially with smaller datasets, by repeatedly splitting data into training and validation sets.",
+            "D": "To visualize the decision boundary."
+          },
+          "correct_answer": "C",
+          "explanation": "Cross-validation helps maximize the use of available data for both training and validation, providing a more reliable estimate of how the model will perform on unseen data by averaging results over multiple folds."
+        },
+        {
+          "question": "What does **AUC-ROC (Area Under the Receiver Operating Characteristic Curve)** measure?",
+          "options": {
+            "A": "The mean difference between predicted and actual values.",
+            "B": "The model's ability to distinguish between positive and negative classes across various classification thresholds.",
+            "C": "The percentage of correct predictions.",
+            "D": "The stability of the model over time."
+          },
+          "correct_answer": "B",
+          "explanation": "AUC-ROC is a robust metric for binary classification, particularly useful for imbalanced datasets, as it evaluates performance regardless of the chosen threshold."
+        },
+        {
+          "question": "A model has high variance. What does this typically imply about its performance?",
+          "options": {
+            "A": "It performs well on both training and test data.",
+            "B": "It is underfitting the training data, leading to poor performance on both training and test data.",
+            "C": "It is overfitting the training data, performing well on training data but poorly on unseen test data due to sensitivity to small fluctuations.",
+            "D": "It has no errors."
+          },
+          "correct_answer": "C",
+          "explanation": "High variance is characteristic of overfitting. The model has learned the training data too specifically, including its noise, and thus struggles to generalize."
+        },
+        {
+          "question": "A model has high bias. What does this typically imply about its performance?",
+          "options": {
+            "A": "It is overfitting the training data.",
+            "B": "It is underfitting the training data, making overly simplistic assumptions and performing poorly on both training and test data.",
+            "C": "It is very complex.",
+            "D": "It produces very consistent predictions."
+          },
+          "correct_answer": "B",
+          "explanation": "High bias is characteristic of underfitting. The model is too simple to capture the underlying patterns in the data, leading to systematic errors."
+        },
+        {
+          "question": "What is the **R-squared ($R^2$)** metric used for in regression analysis?",
+          "options": {
+            "A": "To measure the classification accuracy.",
+            "B": "To measure the proportion of the variance in the dependent variable that is predictable from the independent variables; indicates how well the model fits the data.",
+            "C": "To calculate the error rate in a binary classification problem.",
+            "D": "To determine the number of features in a dataset."
+          },
+          "correct_answer": "B",
+          "explanation": "R-squared provides an indication of the goodness of fit of a regression model, showing how much of the variation in the target variable can be explained by the model."
+        },
+        {
+          "question": "Which of the following is an example of a **hold-out validation** strategy?",
+          "options": {
+            "A": "K-Fold Cross-Validation",
+            "B": "Stratified K-Fold Cross-Validation",
+            "C": "Splitting the dataset once into a training set and a test set.",
+            "D": "Leave-One-Out Cross-Validation"
+          },
+          "correct_answer": "C",
+          "explanation": "Hold-out validation is the simplest form of evaluation, where a single split is made. Cross-validation methods involve multiple splits or iterations."
+        },
+        {
+          "question": "What is the **F1-Score**?",
+          "options": {
+            "A": "The average of Mean Absolute Error and Root Mean Squared Error.",
+            "B": "The harmonic mean of Precision and Recall, providing a single metric that balances both.",
+            "C": "The sum of True Positives and True Negatives.",
+            "D": "A measure of model training speed."
+          },
+          "correct_answer": "B",
+          "explanation": "The F1-Score is particularly useful when you need to balance Precision and Recall, especially with uneven class distribution."
+        },
+        {
+          "question": "When evaluating a classification model, what does a **False Positive (Type I error)** mean?",
+          "options": {
+            "A": "The model predicted negative, and it was actually negative.",
+            "B": "The model predicted positive, and it was actually positive.",
+            "C": "The model predicted positive, but it was actually negative.",
+            "D": "The model predicted negative, but it was actually positive."
+          },
+          "correct_answer": "C",
+          "explanation": "A False Positive occurs when the model incorrectly identifies a negative case as positive."
+        },
+        {
+          "question": "What does a **False Negative (Type II error)** mean in classification?",
+          "options": {
+            "A": "The model predicted positive, but it was actually negative.",
+            "B": "The model predicted negative, but it was actually positive.",
+            "C": "The model predicted positive, and it was actually positive.",
+            "D": "The model predicted negative, and it was actually negative."
+          },
+          "correct_answer": "B",
+          "explanation": "A False Negative occurs when the model incorrectly identifies a positive case as negative."
+        },
+        {
+          "question": "Which plot is commonly used to visualize the trade-off between the True Positive Rate (Sensitivity) and the False Positive Rate (1-Specificity) across various classification thresholds?",
+          "options": {
+            "A": "Scatter Plot",
+            "B": "Histogram",
+            "C": "ROC Curve",
+            "D": "Bar Chart"
+          },
+          "correct_answer": "C",
+          "explanation": "The ROC curve is a powerful tool for evaluating the performance of binary classification models, especially when dealing with imbalanced datasets and needing to understand threshold sensitivity."
+        },
+        {
+          "question": "What is the primary concern when using **Accuracy** as the sole evaluation metric for a classification model?",
+          "options": {
+            "A": "It's computationally expensive.",
+            "B": "It does not provide information about prediction speed.",
+            "C": "It can be misleading for imbalanced datasets, where a high accuracy might be achieved by simply predicting the majority class.",
+            "D": "It only works for binary classification."
+          },
+          "correct_answer": "C",
+          "explanation": "Accuracy can hide poor performance on minority classes. For instance, in a 95/5 split, a model predicting all negatives would have 95% accuracy but zero recall for the positive class."
+        },
+        {
+          "question": "When comparing two regression models, if Model A has a lower MAE and a lower RMSE than Model B, what does this generally indicate?",
+          "options": {
+            "A": "Model A is faster than Model B.",
+            "B": "Model A is less accurate than Model B.",
+            "C": "Model A has better predictive performance (lower average error) than Model B.",
+            "D": "Model A is more complex than Model B."
+          },
+          "correct_answer": "C",
+          "explanation": "Lower MAE and RMSE values signify that the model's predictions are, on average, closer to the actual values, indicating better performance."
+        },
+        {
+          "question": "What does the term 'bias-variance trade-off' refer to in model evaluation?",
+          "options": {
+            "A": "The trade-off between model training time and prediction time.",
+            "B": "The balance between a model's tendency to oversimplify (high bias, underfitting) and its tendency to be overly sensitive to training data noise (high variance, overfitting).",
+            "C": "The trade-off between using more features versus fewer features.",
+            "D": "The balance between data collection costs and model accuracy."
+          },
+          "correct_answer": "B",
+          "explanation": "It's a fundamental concept in machine learning, highlighting that reducing one type of error (bias or variance) often increases the other, and the goal is to find an optimal balance."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "K_Nearest_Neighbors",
+      "questions": [
+        {
+          "question": "What is the primary purpose of K-Nearest Neighbors (KNN) in machine learning?",
+          "options": {
+            "A": "To classify data based on proximity to neighbors.",
+            "B": "To store data in a hierarchical structure.",
+            "C": "To visualize data trends.",
+            "D": "To encrypt data for security."
+          },
+          "correct_answer": "A",
+          "explanation": "KNN classifies data based on proximity to neighbors, using distance metrics to determine class labels."
+        },
+        {
+          "question": "Which of the following is a common distance metric used in KNN?",
+          "options": {
+            "A": "Euclidean Distance",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Euclidean Distance is a common distance metric used in KNN to measure proximity between data points."
+        },
+        {
+          "question": "What is the role of the value of K in KNN?",
+          "options": {
+            "A": "To determine the number of neighbors considered for classification.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The value of K determines the number of neighbors considered for classification, influencing the decision boundary in KNN."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in KNN?",
+          "options": {
+            "A": "Choosing an optimal value of K",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Choosing an optimal value of K prevents overfitting in KNN by balancing bias and variance."
+        },
+        {
+          "question": "What is the significance of feature scaling in KNN?",
+          "options": {
+            "A": "To ensure distance metrics are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures distance metrics are meaningful, providing accurate proximity measurements in KNN."
+        },
+        {
+          "question": "Which of the following is a disadvantage of KNN?",
+          "options": {
+            "A": "Sensitive to irrelevant features.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "KNN is sensitive to irrelevant features, as they can distort distance metrics and affect classification accuracy."
+        },
+        {
+          "question": "What is the purpose of using weighted voting in KNN?",
+          "options": {
+            "A": "To give more importance to closer neighbors.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Weighted voting gives more importance to closer neighbors, improving classification accuracy in KNN."
+        },
+        {
+          "question": "Which of the following is a common use case for KNN?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "KNN is commonly used for classification tasks, where data is categorized based on proximity to neighbors."
+        },
+        {
+          "question": "What is the role of distance metrics in KNN?",
+          "options": {
+            "A": "To measure proximity between data points.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Distance metrics measure proximity between data points, influencing classification decisions in KNN."
+        },
+        {
+          "question": "Which of the following is a benefit of KNN?",
+          "options": {
+            "A": "Simple and intuitive for classification.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "KNN is simple and intuitive for classification, providing straightforward decision boundaries based on proximity."
+        },
+        {
+          "question": "What is the significance of the decision boundary in KNN?",
+          "options": {
+            "A": "It affects classification accuracy.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The decision boundary affects classification accuracy, with smoother boundaries providing better generalization in KNN."
+        },
+        {
+          "question": "Which of the following is a common distance metric used in KNN?",
+          "options": {
+            "A": "Manhattan Distance",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Manhattan Distance is a common distance metric used in KNN to measure proximity between data points."
+        },
+        {
+          "question": "What is the role of the value of K in KNN?",
+          "options": {
+            "A": "To determine the number of neighbors considered for classification.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The value of K determines the number of neighbors considered for classification, influencing the decision boundary in KNN."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in KNN?",
+          "options": {
+            "A": "Choosing an optimal value of K",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Choosing an optimal value of K prevents overfitting in KNN by balancing bias and variance."
+        },
+        {
+          "question": "What is the significance of feature scaling in KNN?",
+          "options": {
+            "A": "To ensure distance metrics are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures distance metrics are meaningful, providing accurate proximity measurements in KNN."
+        },
+        {
+          "question": "Which of the following is a disadvantage of KNN?",
+          "options": {
+            "A": "Sensitive to irrelevant features.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "KNN is sensitive to irrelevant features, as they can distort distance metrics and affect classification accuracy."
+        },
+        {
+          "question": "What is the purpose of using weighted voting in KNN?",
+          "options": {
+            "A": "To give more importance to closer neighbors.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Weighted voting gives more importance to closer neighbors, improving classification accuracy in KNN."
+        },
+        {
+          "question": "Which of the following is a common use case for KNN?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "KNN is commonly used for classification tasks, where data is categorized based on proximity to neighbors."
+        },
+        {
+          "question": "What is the role of distance metrics in KNN?",
+          "options": {
+            "A": "To measure proximity between data points.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Distance metrics measure proximity between data points, influencing classification decisions in KNN."
+        }
+      ]
+    }
+  ]
+}
