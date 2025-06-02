@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_Keras",
+      "questions": [
+        {
+          "question": "What is Keras primarily known for in the context of deep learning?",
+          "options": {
+            "A": "A low-level library for tensor manipulation.",
+            "B": "A high-level neural networks API, written in Python and capable of running on top of TensorFlow, Theano, or CNTK (historically).",
+            "C": "A specialized library for optimizing CPU performance.",
+            "D": "A data visualization tool."
+          },
+          "correct_answer": "B",
+          "explanation": "Keras is designed for fast experimentation with deep neural networks, focusing on user-friendliness and modularity."
+        },
+        {
+          "question": "Which backend deep learning framework is Keras primarily integrated with and recommended for use with since TensorFlow 2.x?",
+          "options": {
+            "A": "PyTorch",
+            "B": "Caffe",
+            "C": "TensorFlow",
+            "D": "MXNet"
+          },
+          "correct_answer": "C",
+          "explanation": "Keras is the official high-level API of TensorFlow 2.x, meaning `tf.keras` is the standard way to use Keras within TensorFlow."
+        },
+        {
+          "question": "Which of the following is NOT a core design principle of Keras?",
+          "options": {
+            "A": "User-friendliness (easy to use and understand).",
+            "B": "Modularity (composable components).",
+            "C": "Low-level performance optimization requiring manual memory management.",
+            "D": "Extensibility (easy to add new components)."
+          },
+          "correct_answer": "C",
+          "explanation": "Keras abstracts away low-level details, focusing on rapid prototyping and high-level abstractions, not manual performance optimization."
+        },
+        {
+          "question": "What is the simplest and most common way to build a Keras model for a feedforward neural network?",
+          "options": {
+            "A": "Using the `tf.keras.Model` subclassing API.",
+            "B": "Using the `tf.keras.Sequential` API.",
+            "C": "Manually defining weights and biases as `tf.Variable` objects.",
+            "D": "Using the `tf.keras.layers.Lambda` layer for all operations."
+          },
+          "correct_answer": "B",
+          "explanation": "The Sequential API allows you to build models layer-by-layer by simply adding them to a `Sequential` object."
+        },
+        {
+          "question": "In Keras, what does `model.compile()` configure?",
+          "options": {
+            "A": "The model's architecture (layers).",
+            "B": "The dataset to be used for training.",
+            "C": "The learning process of the model, including the optimizer, loss function, and metrics.",
+            "D": "How the model will be saved to disk."
+          },
+          "correct_answer": "C",
+          "explanation": "`compile()` is a crucial step that prepares the model for training by specifying how it learns and what it measures."
+        },
+        {
+          "question": "Which method is used to train a Keras model?",
+          "options": {
+            "A": "model.predict()",
+            "B": "model.evaluate()",
+            "C": "model.train()",
+            "D": "model.fit()"
+          },
+          "correct_answer": "D",
+          "explanation": "`model.fit()` trains the model for a fixed number of epochs (iterations on a dataset)."
+        },
+        {
+          "question": "What does an 'epoch' refer to in Keras training?",
+          "options": {
+            "A": "A single step of gradient descent.",
+            "B": "The number of hidden layers in the model.",
+            "C": "One complete pass through the entire training dataset.",
+            "D": "The time it takes to process one batch of data."
+          },
+          "correct_answer": "C",
+          "explanation": "After one epoch, the model has seen every training example once."
+        },
+        {
+          "question": "Which Keras module contains common layers like `Dense`, `Conv2D`, and `LSTM`?",
+          "options": {
+            "A": "tf.keras.models",
+            "B": "tf.keras.optimizers",
+            "C": "tf.keras.losses",
+            "D": "tf.keras.layers"
+          },
+          "correct_answer": "D",
+          "explanation": "The `layers` module provides the building blocks for neural networks."
+        },
+        {
+          "question": "For what purpose is `model.evaluate()` used in Keras?",
+          "options": {
+            "A": "To generate new data samples.",
+            "B": "To get predictions on new, unseen data.",
+            "C": "To calculate the loss and metrics of the model on a given dataset (typically validation or test set).",
+            "D": "To adjust the model's learning rate."
+          },
+          "correct_answer": "C",
+          "explanation": "Evaluation provides a quantitative measure of the model's performance on unseen data, which is crucial for assessing generalization."
+        },
+        {
+          "question": "Which of these is a widely used optimizer in Keras for training deep learning models?",
+          "options": {
+            "A": "Linear Regression",
+            "B": "Adam",
+            "C": "K-Means",
+            "D": "Decision Tree"
+          },
+          "correct_answer": "B",
+          "explanation": "Adam (Adaptive Moments) is an adaptive learning rate optimization algorithm that has become very popular due to its efficiency and good performance in practice."
+        },
+        {
+          "question": "What is the purpose of specifying `input_shape` for the first layer in a Keras Sequential model?",
+          "options": {
+            "A": "It automatically reshapes all subsequent layers.",
+            "B": "It informs the model about the expected shape of a single input sample (excluding the batch dimension), allowing it to automatically infer shapes for subsequent layers.",
+            "C": "It determines the output size of the entire model.",
+            "D": "It's only relevant for convolutional neural networks."
+          },
+          "correct_answer": "B",
+          "explanation": "This allows Keras to build the computational graph and allocate necessary resources without needing to explicitly define input layers for subsequent layers."
+        },
+        {
+          "question": "For a multi-class classification problem where target labels are integer indices (e.g., 0, 1, 2 for classes), and the output layer uses a Softmax activation, which loss function is appropriate in Keras?",
+          "options": {
+            "A": "Binary Crossentropy",
+            "B": "Mean Squared Error",
+            "C": "Categorical Crossentropy",
+            "D": "Sparse Categorical Crossentropy"
+          },
+          "correct_answer": "D",
+          "explanation": "Sparse Categorical Crossentropy is used when labels are integers, while Categorical Crossentropy is for one-hot encoded labels."
+        },
+        {
+          "question": "How do you obtain predictions from a trained Keras model on new input data?",
+          "options": {
+            "A": "model.fit()",
+            "B": "model.compile()",
+            "C": "model.predict()",
+            "D": "model.summary()"
+          },
+          "correct_answer": "C",
+          "explanation": "`model.predict()` generates output predictions given input samples."
+        },
+        {
+          "question": "What does `model.summary()` display in Keras?",
+          "options": {
+            "A": "A summary of the training history (loss, accuracy over epochs).",
+            "B": "A concise text summary of the model's architecture, including layer names, output shapes, and the number of parameters per layer.",
+            "C": "A list of all optimizers used in the model.",
+            "D": "The full dataset used for training."
+          },
+          "correct_answer": "B",
+          "explanation": "It's extremely useful for inspecting the model's structure and estimating its complexity."
+        },
+        {
+          "question": "Keras models are generally designed to be:",
+          "options": {
+            "A": "Complex and difficult to debug.",
+            "B": "Modular and easy to extend.",
+            "C": "Only suitable for very small datasets.",
+            "D": "Restricted to specific hardware."
+          },
+          "correct_answer": "B",
+          "explanation": "The modularity of Keras (layers, models, optimizers, losses are all separate components) makes it easy to experiment and extend."
+        },
+        {
+          "question": "What is the primary function of `tf.keras.layers.Dense`?",
+          "options": {
+            "A": "To apply a convolutional filter.",
+            "B": "To create a fully connected layer where every input neuron is connected to every output neuron.",
+            "C": "To perform pooling operations.",
+            "D": "To handle sequential data."
+          },
+          "correct_answer": "B",
+          "explanation": "Dense layers are the most fundamental building blocks of classic neural networks."
+        },
+        {
+          "question": "True or False: Keras allows you to inspect the values of tensors and variables in eager execution mode just like regular NumPy arrays or Python variables.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "This is a significant advantage of Keras's integration with TensorFlow 2.x's eager execution, simplifying debugging."
+        },
+        {
+          "question": "What is the typical output layer activation for a regression problem (predicting a continuous numerical value)?",
+          "options": {
+            "A": "Sigmoid",
+            "B": "Softmax",
+            "C": "ReLU",
+            "D": "Linear (or no explicit activation, which implies linear)"
+          },
+          "correct_answer": "D",
+          "explanation": "For regression, you want the raw output of the neurons, so a linear activation (or no activation function at all in the output layer) is used."
+        },
+        {
+          "question": "Which of the following Keras callbacks automatically saves the model weights (or full model) to a file during training?",
+          "options": {
+            "A": "EarlyStopping",
+            "B": "ReduceLROnPlateau",
+            "C": "ModelCheckpoint",
+            "D": "TensorBoard"
+          },
+          "correct_answer": "C",
+          "explanation": "ModelCheckpoint is vital for saving progress and ensuring you can restore the best performing model."
+        },
+        {
+          "question": "What is the recommended way to load a pre-trained Keras model (e.g., for transfer learning)?",
+          "options": {
+            "A": "By manually reconstructing the architecture.",
+            "B": "Using `tf.keras.models.load_model()` for saved models or `tf.keras.applications` for well-known pre-trained architectures.",
+            "C": "By copying weights from another model.",
+            "D": "By training a new model on the same data."
+          },
+          "correct_answer": "B",
+          "explanation": "Keras provides dedicated functions for loading models and a module for popular pre-trained models."
+        }
+      ]
+    }
+  ]
+}

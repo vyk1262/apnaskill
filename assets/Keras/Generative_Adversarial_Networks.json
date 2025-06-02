@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Generative_Adversarial_Networks",
+      "questions": [
+        {
+          "question": "What is the primary architectural concept behind Generative Adversarial Networks (GANs)?",
+          "options": {
+            "A": "A single neural network that classifies inputs.",
+            "B": "Two neural networks, a Generator and a Discriminator, competing in a zero-sum game.",
+            "C": "A network designed for dimensionality reduction.",
+            "D": "A system for predicting time series data."
+          },
+          "correct_answer": "B",
+          "explanation": "GANs leverage an adversarial process where the generator tries to create realistic data and the discriminator tries to identify fake data."
+        },
+        {
+          "question": "In a Keras-based GAN, what is the role of the 'Generator' model?",
+          "options": {
+            "A": "To output a probability of input being real or fake.",
+            "B": "To learn a mapping from a random noise vector to data that resembles the real training data distribution.",
+            "C": "To evaluate the performance of the overall GAN.",
+            "D": "To preprocess the real input data."
+          },
+          "correct_answer": "B",
+          "explanation": "The Generator's objective is to produce synthetic data that is indistinguishable from real data."
+        },
+        {
+          "question": "What is the primary function of the 'Discriminator' model in a Keras GAN?",
+          "options": {
+            "A": "To create new synthetic data.",
+            "B": "To learn to distinguish between real data samples and fake data samples produced by the generator.",
+            "C": "To generate the random noise input for the generator.",
+            "D": "To perform multi-class classification on real data."
+          },
+          "correct_answer": "B",
+          "explanation": "The Discriminator acts as a binary classifier, outputting a probability that a given input (real or fake) is real."
+        },
+        {
+          "question": "What is the common input to the `Generator` model in a standard GAN implemented with Keras?",
+          "options": {
+            "A": "Actual images from the training dataset.",
+            "B": "A fixed-size vector of random noise (e.g., sampled from a normal distribution).",
+            "C": "The output of the Discriminator.",
+            "D": "One-hot encoded class labels."
+          },
+          "correct_answer": "B",
+          "explanation": "The generator learns to transform this random noise into structured, realistic data."
+        },
+        {
+          "question": "Which type of loss function is typically used for the `Discriminator` model when classifying inputs as real or fake in Keras?",
+          "options": {
+            "A": "Mean Squared Error (`mse`).",
+            "B": "Categorical Crossentropy (`categorical_crossentropy`).",
+            "C": "Binary Crossentropy (`binary_crossentropy`).",
+            "D": "Kullback-Leibler Divergence (`kl_divergence`)."
+          },
+          "correct_answer": "C",
+          "explanation": "The Discriminator performs a binary classification task, hence binary crossentropy is appropriate."
+        },
+        {
+          "question": "During the training of a Keras GAN, when updating the `Generator`'s weights, how is the `Discriminator` usually handled?",
+          "options": {
+            "A": "The Discriminator is completely removed from the model.",
+            "B": "The Discriminator's weights are frozen (set to `trainable=False`) so that only the Generator's weights are updated.",
+            "C": "The Discriminator's weights are also updated based on the Generator's loss.",
+            "D": "The Discriminator is re-initialized with new random weights."
+          },
+          "correct_answer": "B",
+          "explanation": "This ensures that when training the generator, the gradients flow only back to the generator, making it try to fool the *fixed* discriminator."
+        },
+        {
+          "question": "What is 'Mode Collapse' in the context of GANs?",
+          "options": {
+            "A": "When the Discriminator perfectly distinguishes real from fake samples.",
+            "B": "When the Generator produces only a limited variety of samples, failing to capture the full diversity of the real data distribution.",
+            "C": "When the training process converges too quickly.",
+            "D": "When the Generator consistently produces random noise."
+          },
+          "correct_answer": "B",
+          "explanation": "Mode collapse is a common failure where the generator finds a few specific outputs that fool the discriminator, and then only produces those."
+        },
+        {
+          "question": "Which Keras layer is analogous to the `Conv2D` layer but used for upsampling (increasing spatial dimensions) in the Generator of a DCGAN?",
+          "options": {
+            "A": "tf.keras.layers.MaxPooling2D",
+            "B": "tf.keras.layers.Conv2DTranspose",
+            "C": "tf.keras.layers.UpSampling2D",
+            "D": "tf.keras.layers.Reshape"
+          },
+          "correct_answer": "B",
+          "explanation": "`Conv2DTranspose` (also known as deconvolution or fractional-strided convolution) performs a convolution-like operation that expands the spatial dimensions."
+        },
+        {
+          "question": "How is the training process of a GAN typically organized in Keras?",
+          "options": {
+            "A": "Both Generator and Discriminator are trained simultaneously in a single `model.fit()` call.",
+            "B": "They are trained alternately: one step for the Discriminator, then one step for the Generator.",
+            "C": "First, the Generator is fully trained, then the Discriminator.",
+            "D": "Only the Generator is trained, the Discriminator is fixed."
+          },
+          "correct_answer": "B",
+          "explanation": "Alternate training is essential for the adversarial dynamic to unfold effectively, allowing each component to improve against the other."
+        },
+        {
+          "question": "For the Generator's loss, what is its primary objective?",
+          "options": {
+            "A": "To ensure its output is as different as possible from real data.",
+            "B": "To maximize the probability that the Discriminator classifies its generated (fake) samples as 'real'.",
+            "C": "To minimize the random noise input.",
+            "D": "To classify real data correctly."
+          },
+          "correct_answer": "B",
+          "explanation": "The generator aims to fool the discriminator, making it believe the fake data is real."
+        },
+        {
+          "question": "What is a 'Conditional GAN (CGAN)' in Keras?",
+          "options": {
+            "A": "A GAN that only generates images under specific light conditions.",
+            "B": "A GAN where the generation process is guided by auxiliary information (e.g., class labels, text, or another image) provided to both the Generator and Discriminator.",
+            "C": "A GAN that needs specific GPU conditions to run.",
+            "D": "A GAN that automatically finds the best hyperparameters."
+          },
+          "correct_answer": "B",
+          "explanation": "CGANs allow for controlled generation, where the output is conditioned on some input, making them useful for tasks like image synthesis from descriptions."
+        },
+        {
+          "question": "When defining the Discriminator model in Keras, what is its final activation function typically for binary classification (real vs. fake)?",
+          "options": {
+            "A": "ReLU",
+            "B": "Softmax",
+            "C": "Linear",
+            "D": "Sigmoid"
+          },
+          "correct_answer": "D",
+          "explanation": "Sigmoid squashes the output to a probability between 0 and 1, indicating the likelihood of the input being real."
+        },
+        {
+          "question": "True or False: In a standard GAN, the Generator directly receives feedback from the real data distribution.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. The Generator only receives feedback from the Discriminator's evaluation of the generated samples, not directly from the real data itself."
+        },
+        {
+          "question": "What is the purpose of adding `tf.keras.layers.BatchNormalization` layers in a DCGAN's Generator and Discriminator?",
+          "options": {
+            "A": "To significantly increase the model's complexity.",
+            "B": "To stabilize training by normalizing the activations of previous layers, which can help prevent mode collapse and improve convergence.",
+            "C": "To reduce the number of parameters in the model.",
+            "D": "To perform image augmentation during training."
+          },
+          "correct_answer": "B",
+          "explanation": "Batch Normalization helps with gradient flow and makes training deeper GANs more stable."
+        },
+        {
+          "question": "Which Keras layer is typically used to create a model for generating images from a flattened noise vector by reshaping it into a 3D (height, width, channels) tensor?",
+          "options": {
+            "A": "tf.keras.layers.Dense",
+            "B": "tf.keras.layers.Reshape",
+            "C": "tf.keras.layers.Flatten",
+            "D": "tf.keras.layers.Concatenate"
+          },
+          "correct_answer": "B",
+          "explanation": "After a Dense layer transforms the noise vector, a Reshape layer is often used to give it spatial dimensions so `Conv2DTranspose` layers can then build up the image."
+        },
+        {
+          "question": "What is the common term for the random noise vector input to the Generator?",
+          "options": {
+            "A": "Feature vector",
+            "B": "One-hot vector",
+            "C": "Latent vector (or latent code)",
+            "D": "Ground truth vector"
+          },
+          "correct_answer": "C",
+          "explanation": "The latent space is where the generator samples its starting points for generating new data."
+        },
+        {
+          "question": "If the Discriminator's loss approaches zero very quickly during GAN training, what does this usually indicate?",
+          "options": {
+            "A": "The Generator is performing extremely well.",
+            "B": "The Discriminator has become too strong and is perfectly distinguishing real from fake, potentially leading to vanishing gradients for the Generator.",
+            "C": "The learning rate is too low for the Discriminator.",
+            "D": "The dataset is too small."
+          },
+          "correct_answer": "B",
+          "explanation": "A perfectly confident discriminator provides no meaningful gradient signal to the generator, making it difficult for the generator to learn."
+        },
+        {
+          "question": "What is the role of `tf.keras.Input` when building GANs using the Keras Functional API?",
+          "options": {
+            "A": "It defines the output of the model.",
+            "B": "It specifies the entry point(s) for the network, including shape and datatype, which is crucial for defining complex model graphs.",
+            "C": "It loads external data into the model.",
+            "D": "It's used for model compilation only."
+          },
+          "correct_answer": "B",
+          "explanation": "The Functional API builds models by chaining layers, starting from an Input layer."
+        },
+        {
+          "question": "Applications of GANs in computer vision include all of the following EXCEPT:",
+          "options": {
+            "A": "Generating realistic human faces.",
+            "B": "Image-to-image translation (e.g., converting sketches to photos).",
+            "C": "Super-resolution (enhancing image quality).",
+            "D": "Classical object detection (bounding box prediction with pre-defined classes)."
+          },
+          "correct_answer": "D",
+          "explanation": "While GANs can *generate* images, classical object detection (like Faster R-CNN or YOLO) is a discriminative task, though generative components can sometimes be used in auxiliary ways."
+        },
+        {
+          "question": "In a Keras GAN, when you compile the combined `GAN_model` (Generator + Discriminator), which optimizer is typically used?",
+          "options": {
+            "A": "Only the Discriminator's optimizer.",
+            "B": "A separate optimizer specifically for the combined `GAN_model` (which trains the Generator, with Discriminator frozen).",
+            "C": "Only the Generator's optimizer.",
+            "D": "No optimizer is needed for the combined model."
+          },
+          "correct_answer": "B",
+          "explanation": "Even though the discriminator is frozen, the combined model still needs an optimizer to update the generator's weights based on the loss that results from the discriminator's output."
+        }
+      ]
+    }
+  ]
+}
