@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "TensorFlow_Basics",
+      "questions": [
+        {
+          "question": "How do you create a constant tensor with the value 5 in TensorFlow?",
+          "options": {
+            "A": "tf.Variable(5)",
+            "B": "tf.placeholder(5)",
+            "C": "tf.constant(5)",
+            "D": "tf.int(5)"
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.constant()` is used to create immutable tensors (constants) in TensorFlow."
+        },
+        {
+          "question": "What is the `shape` of a tensor in TensorFlow?",
+          "options": {
+            "A": "Its data type (e.g., float32).",
+            "B": "The number of dimensions and the size of each dimension.",
+            "C": "Its current value.",
+            "D": "Whether it's a constant or a variable."
+          },
+          "correct_answer": "B",
+          "explanation": "The shape describes the dimensions of the tensor, for example, a 2x3 matrix has a shape of (2, 3)."
+        },
+        {
+          "question": "If `t = tf.constant([[1, 2], [3, 4]])`, what is `t.shape.rank`?",
+          "options": {
+            "A": "1",
+            "B": "2",
+            "C": "4",
+            "D": "None"
+          },
+          "correct_answer": "B",
+          "explanation": "The rank of a tensor is the number of its dimensions. A 2D array (matrix) has a rank of 2."
+        },
+        {
+          "question": "Which TensorFlow operation is used for element-wise multiplication of two tensors?",
+          "options": {
+            "A": "tf.matmul()",
+            "B": "tf.dot()",
+            "C": "tf.multiply()",
+            "D": "tf.tensordot()"
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.multiply()` performs element-wise multiplication. For matrix multiplication, `tf.matmul()` is used."
+        },
+        {
+          "question": "What is the purpose of `tf.cast()`?",
+          "options": {
+            "A": "To convert a tensor to a Python list.",
+            "B": "To change the shape of a tensor.",
+            "C": "To change the data type (`dtype`) of a tensor.",
+            "D": "To perform a mathematical operation on a tensor."
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.cast()` is used for type conversion, for example, from `int32` to `float32`."
+        },
+        {
+          "question": "In TensorFlow 2.x, what is the key advantage of 'eager execution' for basic operations?",
+          "options": {
+            "A": "It automatically parallelizes all computations.",
+            "B": "Operations are executed immediately, allowing for easier debugging with standard Python tools.",
+            "C": "It significantly reduces memory usage.",
+            "D": "It only works on GPUs."
+          },
+          "correct_answer": "B",
+          "explanation": "Eager execution makes TensorFlow operations feel and behave like regular Python code or NumPy operations, simplifying debugging."
+        },
+        {
+          "question": "How do you create a tensor filled with zeros with a shape of (2, 3) in TensorFlow?",
+          "options": {
+            "A": "tf.zero((2, 3))",
+            "B": "tf.zeros(shape=[2, 3])",
+            "C": "tf.fill_zeros((2, 3))",
+            "D": "tf.create_zeros(2, 3)"
+          },
+          "correct_answer": "B",
+          "explanation": "`tf.zeros()` is the correct function to create a tensor filled with zeros for a given shape."
+        },
+        {
+          "question": "If you have a tensor `x = tf.constant([1, 2, 3, 4, 5, 6])`, what will `tf.reshape(x, (2, 3))` produce?",
+          "options": {
+            "A": "Error, because the dimensions don't match.",
+            "B": "A tensor of shape (3, 2).",
+            "C": "A tensor of shape (2, 3) with values [[1, 2, 3], [4, 5, 6]].",
+            "D": "A tensor of shape (6, 1)."
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.reshape()` reorganizes the elements of a tensor into a new shape, as long as the total number of elements remains the same."
+        },
+        {
+          "question": "What is `tf.GradientTape` primarily used for?",
+          "options": {
+            "A": "Recording video of model training.",
+            "B": "Monitoring CPU and GPU usage.",
+            "C": "Recording operations for automatic differentiation (gradient calculation).",
+            "D": "Saving trained models to disk."
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.GradientTape` context manager records all operations that involve Tensors, allowing for automatic computation of gradients of a 'target' (usually a loss) with respect to some 'sources' (usually model variables)."
+        },
+        {
+          "question": "To perform matrix multiplication between two tensors `A` (shape (2, 3)) and `B` (shape (3, 4)), which operation should you use?",
+          "options": {
+            "A": "A * B",
+            "B": "tf.multiply(A, B)",
+            "C": "tf.matmul(A, B)",
+            "D": "A.dot(B)"
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.matmul()` is specifically for matrix multiplication. `*` and `tf.multiply()` perform element-wise multiplication."
+        },
+        {
+          "question": "If you have a tensor `data = tf.constant([10, 20, 30, 40])`, what is the result of `data[1:3]`?",
+          "options": {
+            "A": "`tf.constant([10, 20])`",
+            "B": "`tf.constant([20, 30])`",
+            "C": "`tf.constant([30, 40])`",
+            "D": "`tf.constant([20, 30, 40])`"
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow supports standard Python slicing where `[start:end]` includes `start` up to (but not including) `end`."
+        },
+        {
+          "question": "What does `tf.Variable(initial_value=0.5)` create?",
+          "options": {
+            "A": "A constant tensor with value 0.5.",
+            "B": "A mutable tensor that can be updated during training, initialized to 0.5.",
+            "C": "A placeholder for input data.",
+            "D": "An integer tensor."
+          },
+          "correct_answer": "B",
+          "explanation": "`tf.Variable` is used for trainable parameters like weights and biases in a neural network."
+        },
+        {
+          "question": "To assign a new value to a `tf.Variable` named `my_var`, which method should you use?",
+          "options": {
+            "A": "my_var = new_value",
+            "B": "my_var.assign(new_value)",
+            "C": "tf.set_value(my_var, new_value)",
+            "D": "my_var.update(new_value)"
+          },
+          "correct_answer": "B",
+          "explanation": "The `.assign()` method is used to explicitly update the value of a `tf.Variable`. Direct assignment `my_var = new_value` would create a new Python variable, not update the `tf.Variable`."
+        },
+        {
+          "question": "Which function would you use to create a tensor filled with ones, given a specific shape?",
+          "options": {
+            "A": "tf.fill_ones()",
+            "B": "tf.ones()",
+            "C": "tf.make_ones()",
+            "D": "tf.constant(1.0, shape=(...))"
+          },
+          "correct_answer": "B",
+          "explanation": "`tf.ones()` is analogous to `tf.zeros()` for creating tensors filled with ones."
+        },
+        {
+          "question": "What is the result of `tf.add(tf.constant(5), tf.constant(3))`?",
+          "options": {
+            "A": "tf.Tensor(8, shape=(), dtype=int32)",
+            "B": "8",
+            "C": "tf.Tensor(15, shape=(), dtype=int32)",
+            "D": "Error"
+          },
+          "correct_answer": "A",
+          "explanation": "In eager mode, TensorFlow operations return `tf.Tensor` objects. `tf.add` performs element-wise addition."
+        },
+        {
+          "question": "When performing operations on tensors, if one tensor has fewer dimensions but its size is compatible with the other tensor's dimensions, TensorFlow might use a mechanism called:",
+          "options": {
+            "A": "Concatenation",
+            "B": "Broadcasting",
+            "C": "Padding",
+            "D": "Slicing"
+          },
+          "correct_answer": "B",
+          "explanation": "Broadcasting allows TensorFlow to perform operations on tensors with different shapes by implicitly expanding the smaller tensor's dimensions."
+        },
+        {
+          "question": "How can you get the Python numeric value from a single-element TensorFlow tensor (e.g., after an operation)?",
+          "options": {
+            "A": "tensor.to_python()",
+            "B": "tensor.numpy()",
+            "C": "tensor.get_value()",
+            "D": "print(tensor)"
+          },
+          "correct_answer": "B",
+          "explanation": "The `.numpy()` method is commonly used to convert a TensorFlow tensor to a NumPy array, from which you can extract scalar values."
+        },
+        {
+          "question": "Which `dtype` is typically preferred for weights and activations in neural networks in TensorFlow for performance on GPUs?",
+          "options": {
+            "A": "tf.int32",
+            "B": "tf.string",
+            "C": "tf.float32",
+            "D": "tf.bool"
+          },
+          "correct_answer": "C",
+          "explanation": "Single-precision floating-point numbers (`tf.float32`) offer a good balance of precision and performance for deep learning computations, especially on GPUs."
+        },
+        {
+          "question": "What is the correct way to sum all elements of a tensor `x`?",
+          "options": {
+            "A": "x.sum()",
+            "B": "tf.sum(x)",
+            "C": "tf.reduce_sum(x)",
+            "D": "Both B and C are correct, with C being more common."
+          },
+          "correct_answer": "D",
+          "explanation": "Both `tf.sum()` and `tf.reduce_sum()` exist and achieve the same result for summing all elements. `tf.reduce_sum` is generally more versatile for summing along specific axes."
+        },
+        {
+          "question": "To save a TensorFlow model's variables (weights) and its architecture after training, which format is commonly used in TensorFlow 2.x?",
+          "options": {
+            "A": ".txt file",
+            "B": ".zip file",
+            "C": "SavedModel format",
+            "D": ".csv file"
+          },
+          "correct_answer": "C",
+          "explanation": "The SavedModel format is the recommended way to save and load TensorFlow models, allowing them to be used in various deployment scenarios (e.g., TensorFlow Lite, TensorFlow.js, TensorFlow Serving)."
+        }
+      ]
+    }
+  ]
+}

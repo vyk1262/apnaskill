@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Transfer_Learning",
+      "questions": [
+        {
+          "question": "What is the fundamental concept behind 'Transfer Learning'?",
+          "options": {
+            "A": "Training a neural network from scratch with a very large dataset.",
+            "B": "Taking knowledge (pre-trained weights and architecture) from a model trained on one task and applying it to a different, but related, task.",
+            "C": "Transferring data from one machine to another for distributed training.",
+            "D": "Converting a neural network into a simpler, more interpretable model."
+          },
+          "correct_answer": "B",
+          "explanation": "Transfer learning reuses learned features, which is highly effective when working with limited data or computational resources."
+        },
+        {
+          "question": "Which of the following is a major benefit of using Transfer Learning?",
+          "options": {
+            "A": "It guarantees 100% accuracy on new tasks.",
+            "B": "It often requires less training data and computational resources, and can lead to faster convergence and better performance on new tasks.",
+            "C": "It removes the need for any data preprocessing.",
+            "D": "It can only be used for text classification."
+          },
+          "correct_answer": "B",
+          "explanation": "By leveraging knowledge gained from a large, general dataset, the model doesn't have to learn basic features from scratch."
+        },
+        {
+          "question": "In the context of Transfer Learning for image classification, what part of a pre-trained CNN is typically reused?",
+          "options": {
+            "A": "Only the output layer.",
+            "B": "The convolutional base (the layers responsible for feature extraction).",
+            "C": "Only the optimizer.",
+            "D": "Only the training data."
+          },
+          "correct_answer": "B",
+          "explanation": "The early convolutional layers learn generic features (edges, textures, shapes) that are useful across many vision tasks."
+        },
+        {
+          "question": "What are the two main strategies for applying Transfer Learning?",
+          "options": {
+            "A": "Supervised learning and Unsupervised learning.",
+            "B": "Feature Extraction and Fine-tuning.",
+            "C": "Batch normalization and Dropout.",
+            "D": "Data augmentation and Regularization."
+          },
+          "correct_answer": "B",
+          "explanation": "These are the two primary approaches, varying in how much of the pre-trained model is re-trained."
+        },
+        {
+          "question": "When performing 'Feature Extraction' using a pre-trained model, what typically happens to the weights of the convolutional base?",
+          "options": {
+            "A": "They are randomly reinitialized.",
+            "B": "They are kept fixed (frozen) during training on the new task.",
+            "C": "They are extensively updated with a high learning rate.",
+            "D": "They are discarded entirely."
+          },
+          "correct_answer": "B",
+          "explanation": "In feature extraction, the pre-trained convolutional base acts as a fixed feature extractor, and only the newly added classification head is trained."
+        },
+        {
+          "question": "When is 'Feature Extraction' (using a frozen pre-trained base) generally preferred over 'Fine-tuning'?",
+          "options": {
+            "A": "When you have a very large dataset for the new task.",
+            "B": "When your new dataset is small and very similar to the original dataset the model was trained on (e.g., ImageNet).",
+            "C": "When you want to train the entire model from scratch.",
+            "D": "When you are dealing with text data."
+          },
+          "correct_answer": "B",
+          "explanation": "With small, similar datasets, the pre-trained features are likely still highly relevant, and fine-tuning risks overfitting."
+        },
+        {
+          "question": "What is 'Fine-tuning' in the context of Transfer Learning?",
+          "options": {
+            "A": "Only training the newly added classification head.",
+            "B": "Unfreezing some or all of the layers in the pre-trained base and retraining them along with the new classification head, usually with a very low learning rate.",
+            "C": "Manually adjusting the weights of the pre-trained model.",
+            "D": "Using a completely different optimizer."
+          },
+          "correct_answer": "B",
+          "explanation": "Fine-tuning allows the pre-trained features to adapt more specifically to the new task."
+        },
+        {
+          "question": "When performing 'Fine-tuning', why is it common to use a very low learning rate?",
+          "options": {
+            "A": "To speed up the training process.",
+            "B": "To prevent the model from overfitting.",
+            "C": "To avoid drastically altering the useful, pre-learned features in the earlier layers.",
+            "D": "Because it makes the model more accurate."
+          },
+          "correct_answer": "C",
+          "explanation": "Large learning rates could quickly destroy the beneficial pre-trained weights."
+        },
+        {
+          "question": "Which `tf.keras.applications` model is a common choice for transfer learning due to its balance of accuracy and efficiency?",
+          "options": {
+            "A": "StandardScaler",
+            "B": "MobileNetV2",
+            "C": "XGBoost",
+            "D": "LinearRegression"
+          },
+          "correct_answer": "B",
+          "explanation": "MobileNetV2 is designed for mobile and embedded vision applications, offering good performance with a relatively small model size."
+        },
+        {
+          "question": "How do you typically 'freeze' layers in a Keras model for feature extraction?",
+          "options": {
+            "A": "By setting `layer.trainable = True` for all layers.",
+            "B": "By removing the layers entirely.",
+            "C": "By setting `layer.trainable = False` for the layers you want to keep frozen.",
+            "D": "By setting the learning rate to zero."
+          },
+          "correct_answer": "C",
+          "explanation": "Setting `trainable=False` prevents the weights of that layer from being updated during training."
+        },
+        {
+          "question": "After loading a pre-trained model and adding new layers for a specific task, what is a necessary step before training the combined model?",
+          "options": {
+            "A": "Convert the model to a different programming language.",
+            "B": "Reinitialize all weights to random values.",
+            "C": "Compile the model with an optimizer, loss function, and metrics.",
+            "D": "Delete the original dataset."
+          },
+          "correct_answer": "C",
+          "explanation": "Just like any other Keras model, the combined model needs to be compiled to define its learning process."
+        },
+        {
+          "question": "What is the typical source of pre-trained weights for models used in transfer learning (e.g., for image classification)?",
+          "options": {
+            "A": "Random initialization.",
+            "B": "Weights learned from a very large, diverse dataset like ImageNet.",
+            "C": "Weights from a small, custom dataset.",
+            "D": "Weights generated by a GAN."
+          },
+          "correct_answer": "B",
+          "explanation": "ImageNet is a massive dataset of millions of images across thousands of categories, making models trained on it excellent general-purpose feature extractors."
+        },
+        {
+          "question": "When is 'Fine-tuning' generally preferred over 'Feature Extraction'?",
+          "options": {
+            "A": "When your new dataset is very large and/or significantly different from the original dataset.",
+            "B": "When you have very limited computational resources.",
+            "C": "When you want to train the model as quickly as possible.",
+            "D": "When the pre-trained model is very small."
+          },
+          "correct_answer": "A",
+          "explanation": "With large or dissimilar datasets, it's beneficial to allow the pre-trained layers to adapt more to the nuances of the new data."
+        },
+        {
+          "question": "Why is 'Data Augmentation' particularly useful when performing Transfer Learning on a small dataset?",
+          "options": {
+            "A": "It speeds up training by reducing the number of epochs.",
+            "B": "It helps to prevent overfitting by artificially increasing the diversity and size of the training data.",
+            "C": "It replaces the need for a pre-trained model.",
+            "D": "It transforms images into text."
+          },
+          "correct_answer": "B",
+          "explanation": "Since small datasets are prone to overfitting, data augmentation helps the model generalize better by exposing it to more variations of the existing data."
+        },
+        {
+          "question": "True or False: A pre-trained model used for transfer learning must have the exact same input image dimensions as your new dataset.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While many pre-trained models expect specific input sizes (e.g., 224x224), `tf.keras.applications` models often have an `include_top=False` option that lets you omit the original classification head and add your own, and you can resize your input images to match the base model's expectation."
+        },
+        {
+          "question": "Which type of layers are typically replaced or added at the end of a pre-trained CNN for a new classification task?",
+          "options": {
+            "A": "Convolutional layers.",
+            "B": "Pooling layers.",
+            "C": "Dense (fully connected) layers, possibly preceded by a Flatten layer.",
+            "D": "Embedding layers."
+          },
+          "correct_answer": "C",
+          "explanation": "After the feature extraction part (convolutional base), new dense layers are added to perform the specific classification for the new task."
+        },
+        {
+          "question": "When using `tf.keras.applications.VGG16(weights='imagenet', include_top=False)`, what does `include_top=False` signify?",
+          "options": {
+            "A": "It means the model will not train at all.",
+            "B": "It loads the VGG16 model without its final fully-connected classification layers, allowing you to add your own for a new task.",
+            "C": "It only loads the top 16 layers of the model.",
+            "D": "It disables GPU usage."
+          },
+          "correct_answer": "B",
+          "explanation": "This is crucial for transfer learning, as the original classification head is designed for ImageNet's 1000 categories, not your specific new task."
+        },
+        {
+          "question": "Compared to training a deep neural network from scratch, transfer learning generally results in:",
+          "options": {
+            "A": "Higher computational cost and longer training times.",
+            "B": "Lower computational cost, faster training, and often better generalization, especially with limited data.",
+            "C": "Always worse performance.",
+            "D": "Models that are easier to interpret."
+          },
+          "correct_answer": "B",
+          "explanation": "These are the main practical advantages of transfer learning, making deep learning more accessible and efficient."
+        },
+        {
+          "question": "What is a common pitfall to avoid when fine-tuning a pre-trained model?",
+          "options": {
+            "A": "Using too many epochs.",
+            "B": "Using too small a learning rate.",
+            "C": "Using a very high learning rate on the unfrozen layers, which can quickly destroy the useful pre-trained weights.",
+            "D": "Not compiling the model before training."
+          },
+          "correct_answer": "C",
+          "explanation": "Aggressive learning rates can destabilize the finely tuned weights of the pre-trained model."
+        },
+        {
+          "question": "Beyond computer vision, what is another common domain where transfer learning is highly effective, often using pre-trained language models?",
+          "options": {
+            "A": "Relational database design.",
+            "B": "Natural Language Processing (NLP).",
+            "C": "Traditional statistical analysis (e.g., linear regression).",
+            "D": "Operating system development."
+          },
+          "correct_answer": "B",
+          "explanation": "Pre-trained language models like BERT, GPT, and ELMo are cornerstones of modern NLP, enabling highly effective transfer learning for tasks like text classification, question answering, and named entity recognition."
+        }
+      ]
+    }
+  ]
+}

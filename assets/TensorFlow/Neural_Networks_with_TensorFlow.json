@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Neural_Networks_with_TensorFlow",
+      "questions": [
+        {
+          "question": "Which `tf.keras` API is typically used for building simple, layer-by-layer neural network models?",
+          "options": {
+            "A": "tf.keras.Model",
+            "B": "tf.keras.Sequential",
+            "C": "tf.keras.Input",
+            "D": "tf.keras.Layer"
+          },
+          "correct_answer": "B",
+          "explanation": "The `Sequential` API is the simplest way to build models in Keras by stacking layers in a linear fashion."
+        },
+        {
+          "question": "What is the role of an 'activation function' in a neural network layer?",
+          "options": {
+            "A": "To initialize the layer's weights.",
+            "B": "To add non-linearity to the model, allowing it to learn complex patterns.",
+            "C": "To prevent overfitting during training.",
+            "D": "To define the input shape of the layer."
+          },
+          "correct_answer": "B",
+          "explanation": "Without activation functions, a neural network would only be able to learn linear transformations, regardless of the number of layers."
+        },
+        {
+          "question": "Which of the following is a commonly used activation function for hidden layers in deep neural networks?",
+          "options": {
+            "A": "Sigmoid",
+            "B": "Softmax",
+            "C": "ReLU (Rectified Linear Unit)",
+            "D": "Tanh (Hyperbolic Tangent)"
+          },
+          "correct_answer": "C",
+          "explanation": "ReLU is widely popular for its computational efficiency and its ability to mitigate the vanishing gradient problem compared to Sigmoid or Tanh in deep networks."
+        },
+        {
+          "question": "For a binary classification problem (e.g., classifying an image as 'cat' or 'dog'), which activation function is typically used in the *output* layer of a neural network?",
+          "options": {
+            "A": "ReLU",
+            "B": "Softmax",
+            "C": "Sigmoid",
+            "D": "Leaky ReLU"
+          },
+          "correct_answer": "C",
+          "explanation": "Sigmoid outputs a probability between 0 and 1, which is suitable for binary classification."
+        },
+        {
+          "question": "For a multi-class classification problem where an input belongs to exactly one category (e.g., classifying handwritten digits 0-9), which activation function is typically used in the *output* layer?",
+          "options": {
+            "A": "Sigmoid",
+            "B": "ReLU",
+            "C": "Softmax",
+            "D": "Linear"
+          },
+          "correct_answer": "C",
+          "explanation": "Softmax outputs a probability distribution over multiple classes, ensuring that the sum of probabilities is 1."
+        },
+        {
+          "question": "What is the purpose of `model.compile()` in Keras?",
+          "options": {
+            "A": "To start the training process.",
+            "B": "To define the network architecture (layers).",
+            "C": "To configure the model's learning process, specifying the optimizer, loss function, and metrics.",
+            "D": "To save the trained model to disk."
+          },
+          "correct_answer": "C",
+          "explanation": "`compile()` prepares the model for training by setting up these crucial components."
+        },
+        {
+          "question": "Which loss function is appropriate for a binary classification problem when the output layer uses a Sigmoid activation?",
+          "options": {
+            "A": "Mean Squared Error (MSE)",
+            "B": "Categorical Crossentropy",
+            "C": "Sparse Categorical Crossentropy",
+            "D": "Binary Crossentropy"
+          },
+          "correct_answer": "D",
+          "explanation": "Binary Crossentropy is specifically designed for binary classification tasks, measuring the error between two probability distributions (actual vs. predicted)."
+        },
+        {
+          "question": "Which Keras layer is used to create a fully connected layer where every input neuron is connected to every output neuron?",
+          "options": {
+            "A": "tf.keras.layers.Conv2D",
+            "B": "tf.keras.layers.MaxPooling2D",
+            "C": "tf.keras.layers.Dense",
+            "D": "tf.keras.layers.Flatten"
+          },
+          "correct_answer": "C",
+          "explanation": "Dense layers are the most basic and common type of layer in neural networks, performing a linear operation followed by an activation function."
+        },
+        {
+          "question": "What does an 'epoch' represent during model training?",
+          "options": {
+            "A": "A single forward and backward pass for one batch of data.",
+            "B": "The total time taken to train the model.",
+            "C": "One complete pass through the entire training dataset.",
+            "D": "The number of layers in the neural network."
+          },
+          "correct_answer": "C",
+          "explanation": "An epoch means the model has seen every training example once."
+        },
+        {
+          "question": "What is the purpose of 'batch_size' in `model.fit()`?",
+          "options": {
+            "A": "It defines the number of epochs to train for.",
+            "B": "It specifies the number of samples processed before the model's parameters are updated during training.",
+            "C": "It sets the initial learning rate of the optimizer.",
+            "D": "It determines the size of the neural network's layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Batching allows for efficient training by processing multiple samples at once, leading to more stable gradient estimates."
+        },
+        {
+          "question": "Which of the following optimizers is a popular choice for deep learning due to its adaptive learning rates and good performance in many scenarios?",
+          "options": {
+            "A": "SGD (Stochastic Gradient Descent)",
+            "B": "Adam",
+            "C": "Adagrad",
+            "D": "RMSprop"
+          },
+          "correct_answer": "B",
+          "explanation": "Adam (Adaptive Moments) combines ideas from RMSprop and momentum, generally performing well across various tasks."
+        },
+        {
+          "question": "For a regression problem (predicting a continuous numerical value), which loss function is most commonly used?",
+          "options": {
+            "A": "Categorical Crossentropy",
+            "B": "Binary Crossentropy",
+            "C": "Mean Squared Error (MSE)",
+            "D": "Sparse Categorical Crossentropy"
+          },
+          "correct_answer": "C",
+          "explanation": "MSE measures the average squared difference between the estimated values and the actual value, suitable for continuous outputs."
+        },
+        {
+          "question": "To get predictions from a trained Keras model, which method should you use?",
+          "options": {
+            "A": "model.train()",
+            "B": "model.evaluate()",
+            "C": "model.predict()",
+            "D": "model.compile()"
+          },
+          "correct_answer": "C",
+          "explanation": "`model.predict()` generates output predictions for the input samples."
+        },
+        {
+          "question": "What does the `metrics=['accuracy']` argument in `model.compile()` do?",
+          "options": {
+            "A": "It sets the learning rate for accuracy.",
+            "B": "It specifies that the training process should track and report accuracy during training and evaluation.",
+            "C": "It ensures the model will always achieve 100% accuracy.",
+            "D": "It's a placeholder and has no effect."
+          },
+          "correct_answer": "B",
+          "explanation": "Metrics are used to monitor the training and testing steps, providing human-readable insights into the model's performance."
+        },
+        {
+          "question": "If you have integer labels (e.g., 0, 1, 2) for a multi-class classification problem and your output layer uses Softmax, which loss function should you use if you do NOT one-hot encode your labels?",
+          "options": {
+            "A": "Categorical Crossentropy",
+            "B": "Binary Crossentropy",
+            "C": "Mean Squared Error",
+            "D": "Sparse Categorical Crossentropy"
+          },
+          "correct_answer": "D",
+          "explanation": "Sparse Categorical Crossentropy is the correct choice when your labels are integers and your model's output is a probability distribution (Softmax)."
+        },
+        {
+          "question": "What is the purpose of `validation_data` in `model.fit()`?",
+          "options": {
+            "A": "It's extra training data to boost performance.",
+            "B": "It's a separate dataset used to monitor the model's performance on unseen data during training, helping to detect overfitting.",
+            "C": "It's data used for initial model setup.",
+            "D": "It's the data for final model evaluation."
+          },
+          "correct_answer": "B",
+          "explanation": "Monitoring validation loss/accuracy is crucial for hyperparameter tuning and early stopping."
+        },
+        {
+          "question": "When building a Keras Sequential model, how do you define the input shape for the very first layer?",
+          "options": {
+            "A": "Using `input_shape` argument in the first layer (e.g., `Dense(units, input_shape=(...))`).",
+            "B": "It's automatically inferred.",
+            "C": "By calling `model.set_input_shape()`.",
+            "D": "By specifying it in `model.compile()`."
+          },
+          "correct_answer": "A",
+          "explanation": "The `input_shape` argument (excluding the batch dimension) for the first layer tells the model what size of input it expects."
+        },
+        {
+          "question": "What does 'overfitting' in a neural network imply?",
+          "options": {
+            "A": "The model is too simple and cannot learn the training data well.",
+            "B": "The model has learned the training data too well, including its noise and specific patterns, and performs poorly on unseen data.",
+            "C": "The model is not getting enough training data.",
+            "D": "The model has too few layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Overfitting is a common problem where a model generalizes poorly to new, unseen examples."
+        },
+        {
+          "question": "If your network is 'underfitting', what might be a possible solution?",
+          "options": {
+            "A": "Reduce the number of layers.",
+            "B": "Use a simpler model.",
+            "C": "Increase model complexity (e.g., add more layers, more neurons), train for more epochs, or use a more powerful optimizer.",
+            "D": "Decrease the learning rate."
+          },
+          "correct_answer": "C",
+          "explanation": "Underfitting means the model is not complex enough to capture the underlying patterns in the data."
+        },
+        {
+          "question": "Which of the following is NOT a standard type of layer provided by `tf.keras.layers`?",
+          "options": {
+            "A": "Dense",
+            "B": "Conv2D",
+            "C": "MySQLDatabase",
+            "D": "MaxPooling2D"
+          },
+          "correct_answer": "C",
+          "explanation": "Keras layers are specific to neural network operations. MySQLDatabase is a database connector, not a neural network layer."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Actor_Critic_Methods",
+      "questions": [
+        {
+          "question": "What is the fundamental idea behind Actor-Critic methods in Reinforcement Learning?",
+          "options": {
+            "A": "They exclusively learn a value function and derive a policy from it.",
+            "B": "They maintain two separate neural networks: one for the policy (actor) and one for the value function (critic).",
+            "C": "They only rely on direct policy optimization without any value estimation.",
+            "D": "They require a perfect model of the environment to operate."
+          },
+          "correct_answer": "B",
+          "explanation": "Actor-Critic methods explicitly separate the policy (actor) from the value function (critic), with each having a distinct role and network."
+        },
+        {
+          "question": "In an Actor-Critic architecture, what is the primary role of the 'Actor'?",
+          "options": {
+            "A": "To estimate the state-value function $V(s)$.",
+            "B": "To estimate the action-value function $Q(s,a)$.",
+            "C": "To learn and update the policy $\\pi(a|s)$, which dictates the agent's actions.",
+            "D": "To predict the next state of the environment."
+          },
+          "correct_answer": "C",
+          "explanation": "The actor is responsible for choosing actions based on its current policy."
+        },
+        {
+          "question": "What is the primary role of the 'Critic' in an Actor-Critic architecture?",
+          "options": {
+            "A": "To choose actions directly from observations.",
+            "B": "To provide a scalar reward signal to the environment.",
+            "C": "To estimate the value function (e.g., $V(s)$ or $Q(s,a)$) and evaluate the actor's actions by providing a TD error or advantage signal.",
+            "D": "To generate new states for the agent to explore."
+          },
+          "correct_answer": "C",
+          "explanation": "The critic evaluates the actor's performance, guiding its policy updates by providing a measure of how much better or worse an action was than expected."
+        },
+        {
+          "question": "How does the Actor typically update its policy parameters in an Actor-Critic method?",
+          "options": {
+            "A": "By minimizing the Mean Squared Error of its predicted actions.",
+            "B": "By directly using the immediate reward received.",
+            "C": "Using the Policy Gradient Theorem, but replacing the Monte Carlo return with a value derived from the Critic (e.g., TD error or Advantage).",
+            "D": "By randomly perturbing its parameters until performance improves."
+          },
+          "correct_answer": "C",
+          "explanation": "The critic's value estimates provide a low-variance proxy for the true return, enabling more stable policy updates."
+        },
+        {
+          "question": "What is the 'Advantage Function', $A(s,a)$, often used in Actor-Critic methods?",
+          "options": {
+            "A": "The immediate reward $R_{t+1}$.",
+            "B": "The difference between the action-value function $Q(s,a)$ and the state-value function $V(s)$, indicating how much better an action is than the average for that state.",
+            "C": "The total cumulative reward from a state.",
+            "D": "A measure of the agent's exploration vs. exploitation."
+          },
+          "correct_answer": "B",
+          "explanation": "The advantage function helps to determine how much better a specific action is compared to the expected value of being in that state, providing a more refined signal for policy updates than raw returns."
+        },
+        {
+          "question": "What is the primary benefit of using an Actor-Critic architecture compared to pure Policy Gradient methods (like REINFORCE)?",
+          "options": {
+            "A": "It eliminates the need for exploration.",
+            "B": "It significantly reduces the variance of the policy gradient estimates, leading to more stable and faster learning.",
+            "C": "It can only work with deterministic environments.",
+            "D": "It's simpler to implement."
+          },
+          "correct_answer": "B",
+          "explanation": "The critic's value estimates (or TD errors) act as a baseline, reducing the high variance that often plagues Monte Carlo policy gradients."
+        },
+        {
+          "question": "How is the 'Critic' typically updated in an Actor-Critic method?",
+          "options": {
+            "A": "By maximizing the policy's log-probability.",
+            "B": "By minimizing the Temporal Difference (TD) error, using the difference between its current value estimate and a more accurate bootstrapped target.",
+            "C": "By sampling random actions and observing their outcomes.",
+            "D": "Only when the agent reaches a terminal state."
+          },
+          "correct_answer": "B",
+          "explanation": "The critic is updated in a similar way to value-based methods (e.g., Q-Learning or SARSA), using TD learning to make its value estimates more accurate."
+        },
+        {
+          "question": "Which type of action space can Actor-Critic methods generally handle?",
+          "options": {
+            "A": "Only discrete action spaces.",
+            "B": "Only continuous action spaces.",
+            "C": "Both discrete and continuous action spaces.",
+            "D": "Neither; they output state values."
+          },
+          "correct_answer": "C",
+          "explanation": "Actor-Critic methods are versatile. The actor can output probabilities for discrete actions or parameters for a distribution (e.g., mean and std dev for a Gaussian) for continuous actions."
+        },
+        {
+          "question": "In the context of Actor-Critic, what does the 'TD error' (Temporal Difference error) represent?",
+          "options": {
+            "A": "The difference between the actual reward and the predicted reward.",
+            "B": "The difference between the immediate reward plus discounted value of the next state, and the current state's value estimate by the critic.",
+            "C": "The sum of all past rewards.",
+            "D": "The difference between the actor's output and the critic's output."
+          },
+          "correct_answer": "B",
+          "explanation": "The TD error is typically $R_{t+1} + \\gamma V(s_{t+1}) - V(s_t)$ (for state-value critic), which is used as a learning signal for the critic and sometimes for the actor."
+        },
+        {
+          "question": "Which of the following is an example of an on-policy Actor-Critic algorithm?",
+          "options": {
+            "A": "DDPG (Deep Deterministic Policy Gradient)",
+            "B": "A2C (Advantage Actor-Critic)",
+            "C": "SAC (Soft Actor-Critic)",
+            "D": "DQN (Deep Q-Network)"
+          },
+          "correct_answer": "B",
+          "explanation": "A2C learns about the policy that is currently generating the data (on-policy). DDPG and SAC are off-policy methods."
+        },
+        {
+          "question": "Which of the following is an example of an off-policy Actor-Critic algorithm, particularly designed for continuous control?",
+          "options": {
+            "A": "REINFORCE",
+            "B": "A2C",
+            "C": "DDPG (Deep Deterministic Policy Gradient)",
+            "D": "SARSA"
+          },
+          "correct_answer": "C",
+          "explanation": "DDPG is an off-policy Actor-Critic algorithm that uses a replay buffer and target networks for stability, allowing it to learn from data generated by an older policy."
+        },
+        {
+          "question": "What is 'Asynchronous Advantage Actor-Critic' (A3C)?",
+          "options": {
+            "A": "A single-agent Actor-Critic method for discrete actions.",
+            "B": "An asynchronous Actor-Critic method that uses multiple parallel agents interacting with their own copies of the environment simultaneously to speed up training and decorrelate experiences.",
+            "C": "A model-based Actor-Critic algorithm.",
+            "D": "A method that eliminates the need for a critic."
+          },
+          "correct_answer": "B",
+          "explanation": "A3C was groundbreaking for its use of asynchronous parallel training, which helps to stabilize learning and improve sample efficiency compared to single-thread methods."
+        },
+        {
+          "question": "How does the Actor-Critic approach balance the bias-variance trade-off in RL?",
+          "options": {
+            "A": "It maximizes both bias and variance.",
+            "B": "It leverages the low bias of policy gradient methods (direct policy optimization) with the low variance provided by value function estimates (critic's baseline).",
+            "C": "It uses only high-bias estimates.",
+            "D": "It eliminates both bias and variance entirely."
+          },
+          "correct_answer": "B",
+          "explanation": "This balance is a key strength. Policy gradients can have high variance but are unbiased estimates. Value functions provide lower variance estimates that can introduce some bias."
+        },
+        {
+          "question": "In the Actor-Critic framework, if the critic estimates the state-value function $V(s)$, what would be a common form of the advantage estimate used to update the actor?",
+          "options": {
+            "A": "$R_{t+1}$",
+            "B": "$Q(s_t, a_t)$",
+            "C": "$R_{t+1} + \\gamma V(s_{t+1}) - V(s_t)$ (TD error, often used as an advantage estimate)",
+            "D": "$\\max_{a'} Q(s_{t+1}, a')$"
+          },
+          "correct_answer": "C",
+          "explanation": "The TD error, when $V(s)$ is the critic's output, provides an unbiased estimate of the advantage, guiding the actor's update."
+        },
+        {
+          "question": "True or False: Actor-Critic methods generally require an experience replay buffer for stable training, similar to DQNs.",
+          "options": {
+            "A": "True (for off-policy variants like DDPG, SAC).",
+            "B": "False (for on-policy variants like A2C, REINFORCE)."
+          },
+          "correct_answer": "A",
+          "explanation": "On-policy Actor-Critic methods (like A2C) do not use a replay buffer. However, off-policy Actor-Critic methods (like DDPG, SAC, TD3) typically do use replay buffers to leverage past experiences and break correlations."
+        },
+        {
+          "question": "What is a common challenge when implementing Actor-Critic methods?",
+          "options": {
+            "A": "They can only learn deterministic policies.",
+            "B": "They are often more complex to implement and tune compared to simpler value-based or pure policy gradient methods, due to having two interacting networks.",
+            "C": "They are only applicable to discrete state spaces.",
+            "D": "They always require a model of the environment."
+          },
+          "correct_answer": "B",
+          "explanation": "Managing the interaction and learning rates of two separate networks can be tricky."
+        },
+        {
+          "question": "The 'entropy bonus' is sometimes added to the actor's loss function in Actor-Critic methods. What is its purpose?",
+          "options": {
+            "A": "To increase the learning rate of the critic.",
+            "B": "To encourage the policy to be more stochastic and promote exploration.",
+            "C": "To penalize the agent for taking too many actions.",
+            "D": "To ensure the policy is deterministic."
+          },
+          "correct_answer": "B",
+          "explanation": "Adding an entropy term to the objective incentivizes the agent to maintain a diverse set of actions, preventing premature convergence to a sub-optimal deterministic policy."
+        },
+        {
+          "question": "In off-policy Actor-Critic methods like DDPG, why are 'target networks' (both for actor and critic) used?",
+          "options": {
+            "A": "To speed up the initial exploration phase.",
+            "B": "To provide stable targets for the Q-value and policy updates, similar to how target networks are used in DQN.",
+            "C": "To regularize the policy network.",
+            "D": "To ensure the policy converges to a deterministic output."
+          },
+          "correct_answer": "B",
+          "explanation": "Target networks help stabilize learning by providing a temporary fixed target for the Bellman update, preventing oscillations caused by a constantly changing target."
+        },
+        {
+          "question": "Compared to Monte Carlo policy gradients, Actor-Critic methods are generally considered to be:",
+          "options": {
+            "A": "More sample inefficient.",
+            "B": "Having lower variance in their updates due to bootstrapping.",
+            "C": "Unable to handle episodic tasks.",
+            "D": "Requiring less computational power."
+          },
+          "correct_answer": "B",
+          "explanation": "The bootstrapping (TD updates) of the critic significantly reduces variance compared to waiting for full episodic returns."
+        },
+        {
+          "question": "Which component of an Actor-Critic algorithm is responsible for sampling actions to interact with the environment?",
+          "options": {
+            "A": "The Critic.",
+            "B": "The Reward Function.",
+            "C": "The Actor (policy network).",
+            "D": "The Experience Replay Buffer."
+          },
+          "correct_answer": "C",
+          "explanation": "The actor directly learns and implements the agent's behavior strategy, thus choosing actions."
+        }
+      ]
+    }
+  ]
+}

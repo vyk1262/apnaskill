@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Deep_Q_Networks",
+      "questions": [
+        {
+          "question": "What was the primary motivation for developing Deep Q-Networks (DQNs)?",
+          "options": {
+            "A": "To handle continuous action spaces efficiently.",
+            "B": "To solve the exploration-exploitation dilemma directly.",
+            "C": "To overcome the limitations of tabular Q-learning in environments with large or continuous state spaces.",
+            "D": "To replace the reward function with a neural network."
+          },
+          "correct_answer": "C",
+          "explanation": "Tabular Q-learning becomes intractable when the number of states is too large; DQNs use neural networks to approximate the Q-function, enabling generalization."
+        },
+        {
+          "question": "In a DQN, what does the neural network approximate?",
+          "options": {
+            "A": "The immediate reward function.",
+            "B": "The environment's transition probabilities.",
+            "C": "The action-value function, $Q(s, a)$.",
+            "D": "The policy $pi(s)$ directly."
+          },
+          "correct_answer": "C",
+          "explanation": "The core idea of DQN is to use a deep neural network to map states to Q-values for all possible actions."
+        },
+        {
+          "question": "What is 'Experience Replay' in the context of DQN, and why is it used?",
+          "options": {
+            "A": "It allows the agent to revisit past states to earn more rewards.",
+            "B": "It stores past (s, a, r, s') transitions in a buffer and samples uniformly from it to train the network, breaking correlations and improving data efficiency.",
+            "C": "It replays the entire episode multiple times to speed up training.",
+            "D": "It's a method for visualizing the agent's learned experiences."
+          },
+          "correct_answer": "B",
+          "explanation": "Experience Replay is crucial for stabilizing DQN training by providing a more diverse and less correlated stream of training data than sequential experiences."
+        },
+        {
+          "question": "What is the purpose of a 'Target Network' in DQN?",
+          "options": {
+            "A": "To directly output the optimal action.",
+            "B": "To provide a stable target for the Q-value updates by holding its parameters fixed for several training steps, before updating it from the main network.",
+            "C": "To predict future states of the environment.",
+            "D": "To handle continuous action spaces."
+          },
+          "correct_answer": "B",
+          "explanation": "Without a target network, the target for the Q-value update would constantly change, leading to instability during training. The target network helps to decouple the target from the online Q-network."
+        },
+        {
+          "question": "The loss function typically used to train a DQN is based on which error?",
+          "options": {
+            "A": "Cross-entropy loss.",
+            "B": "Mean Absolute Error (MAE).",
+            "C": "Mean Squared Error (MSE) between the predicted Q-value and the target Q-value.",
+            "D": "Kullback-Leibler (KL) divergence."
+          },
+          "correct_answer": "C",
+          "explanation": "DQN aims to minimize the squared difference between the Q-value predicted by the network and the target Q-value (from the Bellman equation using the target network)."
+        },
+        {
+          "question": "How does the target Q-value for training the DQN network in state $s$ and action $a$ usually calculated?",
+          "options": {
+            "A": "Only the immediate reward $R_{t+1}$.",
+            "B": "$R_{t+1} + \\gamma \\max_{a'} Q_{online}(s_{t+1}, a')$.",
+            "C": "$R_{t+1} + \\gamma \\max_{a'} Q_{target}(s_{t+1}, a')$.",
+            "D": "$\\gamma \\max_{a'} Q_{target}(s_{t+1}, a')$."
+          },
+          "correct_answer": "C",
+          "explanation": "This is the core of the DQN update: the immediate reward plus the discounted maximum Q-value from the *target network* in the next state."
+        },
+        {
+          "question": "Which type of action space is a standard DQN typically limited to?",
+          "options": {
+            "A": "Continuous action spaces.",
+            "B": "Discrete action spaces.",
+            "C": "Both continuous and discrete action spaces.",
+            "D": "Only single-action spaces."
+          },
+          "correct_answer": "B",
+          "explanation": "A standard DQN outputs a Q-value for each discrete action. For continuous actions, other methods like DDPG or PPO are generally used."
+        },
+        {
+          "question": "What is the role of $\\epsilon$-greedy exploration in DQN training?",
+          "options": {
+            "A": "It's used to update the target network parameters.",
+            "B": "It ensures that the agent always chooses the action with the highest Q-value.",
+            "C": "It balances exploration (taking random actions) and exploitation (taking actions based on current Q-values) during data collection.",
+            "D": "It determines the learning rate for the neural network."
+          },
+          "correct_answer": "C",
+          "explanation": "Similar to tabular Q-learning, $\\epsilon$-greedy is vital for ensuring the agent explores the environment to discover better policies."
+        },
+        {
+          "question": "When training a DQN, how often are the parameters of the 'main' (or online) Q-network updated?",
+          "options": {
+            "A": "Only at the end of an episode.",
+            "B": "After every fixed number of steps (e.g., every 1000 steps).",
+            "C": "Continuously, based on the sampled batches from the experience replay buffer.",
+            "D": "Only when the agent receives a positive reward."
+          },
+          "correct_answer": "C",
+          "explanation": "The online Q-network is updated frequently using mini-batches sampled from the replay buffer."
+        },
+        {
+          "question": "Which challenge of Q-Learning is directly addressed by using a neural network in DQN?",
+          "options": {
+            "A": "The credit assignment problem.",
+            "B": "The exploration-exploitation dilemma.",
+            "C": "The curse of dimensionality (in terms of state space representation).",
+            "D": "The need for a reward function."
+          },
+          "correct_answer": "C",
+          "explanation": "Neural networks allow DQNs to generalize across large state spaces, mapping high-dimensional inputs (like raw pixels) to Q-values, thus overcoming the limitations of explicit Q-tables."
+        },
+        {
+          "question": "What is a key benefit of Experience Replay for DQN stability, beyond decorrelating samples?",
+          "options": {
+            "A": "It guarantees optimal policy learning.",
+            "B": "It increases the immediate reward.",
+            "C": "It allows the agent to learn from a wider variety of experiences, including older ones, preventing 'catastrophic forgetting' and improving data efficiency.",
+            "D": "It completely eliminates the need for a target network."
+          },
+          "correct_answer": "C",
+          "explanation": "By re-using past experiences, the agent can learn more robustly from its interaction history, preventing the network from forgetting how to act in previously encountered states."
+        },
+        {
+          "question": "In the context of DQN, what is 'Double DQN' (DDQN) designed to mitigate?",
+          "options": {
+            "A": "Slow training speed.",
+            "B": "The overestimation bias of Q-values inherent in standard DQN.",
+            "C": "Inability to handle continuous action spaces.",
+            "D": "Lack of exploration."
+          },
+          "correct_answer": "B",
+          "explanation": "DDQN separates the action selection from the action evaluation in the target Q-value calculation, reducing the tendency to overestimate Q-values, leading to more stable learning."
+        },
+        {
+          "question": "What is 'Prioritized Experience Replay' (PER)?",
+          "options": {
+            "A": "A method to store only the most recent experiences.",
+            "B": "A technique that samples transitions from the replay buffer based on their TD error, prioritizing 'important' or 'surprising' experiences for learning.",
+            "C": "A way to discard bad experiences from the replay buffer.",
+            "D": "A strategy for collecting more experience faster."
+          },
+          "correct_answer": "B",
+          "explanation": "PER aims to make learning more efficient by focusing on experiences that provide the most learning signal, rather than sampling uniformly."
+        },
+        {
+          "question": "Which of the following would be an appropriate input for a DQN designed to play an Atari game (e.g., Pong)?",
+          "options": {
+            "A": "The current game score.",
+            "B": "The raw pixel data from the game screen.",
+            "C": "A list of all possible actions.",
+            "D": "The immediate reward value."
+          },
+          "correct_answer": "B",
+          "explanation": "A key strength of DQN is its ability to learn directly from high-dimensional raw observations like pixels, performing its own feature extraction."
+        },
+        {
+          "question": "True or False: A standard DQN can directly learn policies for environments with continuous action spaces.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. As mentioned, standard DQN outputs a Q-value for each discrete action. For continuous actions, you'd typically use methods like DDPG, PPO, or SAC."
+        },
+        {
+          "question": "What is the main idea behind 'Dueling DQN'?",
+          "options": {
+            "A": "Using two separate Q-networks to learn.",
+            "B": "Decomposing the Q-function into a state-value function and an advantage function, allowing separate estimation of state value and action advantages.",
+            "C": "Allowing two agents to learn simultaneously.",
+            "D": "Training two DQNs against each other."
+          },
+          "correct_answer": "B",
+          "explanation": "Dueling DQN aims to improve learning efficiency, especially when many actions have similar Q-values, by explicitly modeling state values and action advantages."
+        },
+        {
+          "question": "If the target network's parameters are updated too frequently in a DQN, what might be a consequence?",
+          "options": {
+            "A": "The training will become more stable.",
+            "B": "The agent will overfit to its immediate experiences.",
+            "C": "It might lead to oscillations or instability in training, resembling standard Q-learning without a fixed target.",
+            "D": "It will cause the agent to stop exploring."
+          },
+          "correct_answer": "C",
+          "explanation": "The stability of the target network is crucial. Updating it too often undermines its purpose of providing a stable target, bringing back the issues of original Q-learning instability."
+        },
+        {
+          "question": "When training a DQN, what role does a 'deep' neural network (multiple layers) typically play in processing raw observations like pixels?",
+          "options": {
+            "A": "It compresses the observation into a single value.",
+            "B": "It extracts relevant features from the high-dimensional raw input, transforming it into a more useful representation for Q-value approximation.",
+            "C": "It directly outputs the optimal policy without any feature extraction.",
+            "D": "It only handles scalar inputs."
+          },
+          "correct_answer": "B",
+          "explanation": "Deep neural networks (especially CNNs for image inputs) are excellent at automatically learning hierarchical feature representations from raw data, which is essential for complex environments."
+        },
+        {
+          "question": "Which of the following is NOT a direct contribution of the original DeepMind DQN paper (Mnih et al., 2013/2015)?",
+          "options": {
+            "A": "Using a deep convolutional neural network for Q-function approximation.",
+            "B": "Introducing experience replay.",
+            "C": "Introducing the concept of a separate target network.",
+            "D": "Proposing the Actor-Critic architecture."
+          },
+          "correct_answer": "D",
+          "explanation": "The Actor-Critic architecture is a different class of RL algorithms, not part of the original DQN contributions."
+        },
+        {
+          "question": "After a DQN agent has been fully trained, how does it typically choose actions during deployment (i.e., when no longer exploring)?",
+          "options": {
+            "A": "Randomly selects an action.",
+            "B": "Always performs the action with the highest immediate reward.",
+            "C": "Chooses the action that yields the maximum Q-value for the current state, as predicted by the online Q-network.",
+            "D": "Consults a pre-computed policy table."
+          },
+          "correct_answer": "C",
+          "explanation": "During deployment (or evaluation), the agent switches to a purely greedy policy ($\\epsilon=0$) to maximize its performance based on the learned Q-values."
+        }
+      ]
+    }
+  ]
+}

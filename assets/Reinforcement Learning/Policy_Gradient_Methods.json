@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Policy_Gradient_Methods",
+      "questions": [
+        {
+          "question": "What is the primary difference between Policy Gradient methods and Value-Based methods (like Q-Learning or DQN)?",
+          "options": {
+            "A": "Policy Gradient methods use a Q-table, while Value-Based methods use neural networks.",
+            "B": "Policy Gradient methods directly learn a parameterized policy $\\pi_\\theta(a|s)$, while Value-Based methods learn a value function from which a policy is derived.",
+            "C": "Policy Gradient methods require a model of the environment, while Value-Based methods are model-free.",
+            "D": "Policy Gradient methods only work with continuous action spaces, while Value-Based methods only work with discrete action spaces."
+          },
+          "correct_answer": "B",
+          "explanation": "This is the fundamental distinction: policy gradients directly optimize the policy, while value-based methods optimize a value function to implicitly guide the policy."
+        },
+        {
+          "question": "What is the main objective function that Policy Gradient methods aim to maximize?",
+          "options": {
+            "A": "The immediate reward at each step.",
+            "B": "The Bellman error.",
+            "C": "The expected cumulative return (or expected reward) from the start state, or averaged over states.",
+            "D": "The number of episodes completed."
+          },
+          "correct_answer": "C",
+          "explanation": "Policy Gradient methods adjust policy parameters to increase the likelihood of actions that lead to higher long-term rewards."
+        },
+        {
+          "question": "The 'Policy Gradient Theorem' provides a mathematical basis for policy gradient methods. What does it state about the gradient of the expected return?",
+          "options": {
+            "A": "It's always zero at the optimal policy.",
+            "B": "It relates the gradient of the expected return to the gradient of the log-probability of actions taken under the policy, weighted by the return.",
+            "C": "It requires knowing the environment's transition probabilities.",
+            "D": "It proves that policy gradient methods converge faster than Q-Learning."
+          },
+          "correct_answer": "B",
+          "explanation": "The Policy Gradient Theorem allows for efficient calculation of the gradient without explicitly differentiating through the environment's dynamics."
+        },
+        {
+          "question": "Which of the following is an advantage of Policy Gradient methods over Value-Based methods?",
+          "options": {
+            "A": "Guaranteed stability and lower variance of gradients.",
+            "B": "They can directly learn policies for continuous action spaces.",
+            "C": "They are typically more sample efficient.",
+            "D": "They always find the global optimum."
+          },
+          "correct_answer": "B",
+          "explanation": "For continuous action spaces, outputting a probability distribution (e.g., mean and standard deviation of a Gaussian) is natural for policy gradients, unlike value-based methods which need to select the argmax over actions."
+        },
+        {
+          "question": "What is 'REINFORCE' (Monte Carlo Policy Gradient) algorithm?",
+          "options": {
+            "A": "A value-based method for continuous control.",
+            "B": "An on-policy policy gradient algorithm that updates the policy parameters based on the full trajectory's return after an episode completes.",
+            "C": "An off-policy policy gradient algorithm.",
+            "D": "A model-based algorithm that uses a Q-table."
+          },
+          "correct_answer": "B",
+          "explanation": "REINFORCE collects a full episode of experience before computing and applying a single gradient update, using the observed return as the weight for the log-probability of actions."
+        },
+        {
+          "question": "In the REINFORCE algorithm, what is the 'return' ($G_t$) used to weight the log-probability of an action?",
+          "options": {
+            "A": "The immediate reward $R_{t+1}$.",
+            "B": "The discounted sum of all future rewards from time step $t$ until the end of the episode.",
+            "C": "The Q-value of the current state-action pair.",
+            "D": "The state-value of the current state."
+          },
+          "correct_answer": "B",
+          "explanation": "REINFORCE uses the full Monte Carlo return $G_t$ as an estimate of the advantage for the action taken at time $t$."
+        },
+        {
+          "question": "Policy Gradient methods typically produce which type of policy?",
+          "options": {
+            "A": "Only deterministic policies.",
+            "B": "Only random policies.",
+            "C": "Stochastic policies (outputting probabilities for actions) or deterministic policies (outputting actions directly).",
+            "D": "Policies that only work for discrete actions."
+          },
+          "correct_answer": "C",
+          "explanation": "Policy gradient methods can naturally represent and learn stochastic policies, which is often desirable in complex or partially observable environments, or learn deterministic policies in some cases (e.g., DPG)."
+        },
+        {
+          "question": "What is a major challenge associated with basic REINFORCE algorithm?",
+          "options": {
+            "A": "It can only handle deterministic environments.",
+            "B": "It has high variance in its gradient estimates, leading to slow and unstable learning.",
+            "C": "It cannot handle continuous state spaces.",
+            "D": "It requires a very large replay buffer."
+          },
+          "correct_answer": "B",
+          "explanation": "The use of full episodic returns as targets can lead to noisy gradient estimates because different episodes can have very different returns, even from the same state-action pair."
+        },
+        {
+          "question": "What is the purpose of using a 'baseline' in Policy Gradient methods?",
+          "options": {
+            "A": "To change the expected value of the gradient.",
+            "B": "To reduce the variance of the gradient estimates without changing its expectation, leading to more stable learning.",
+            "C": "To ensure that all rewards are positive.",
+            "D": "To increase the learning rate."
+          },
+          "correct_answer": "B",
+          "explanation": "A common baseline is the state-value function $V(s)$. Subtracting a baseline from the return term ($G_t - b(s)$) shifts the effective values but leaves the expected gradient unchanged, improving sample efficiency."
+        },
+        {
+          "question": "If Policy Gradient methods learn a stochastic policy, how do they typically choose an action in a given state?",
+          "options": {
+            "A": "They always choose the action with the highest probability.",
+            "B": "They randomly sample an action from the probability distribution over actions output by the policy network.",
+            "C": "They calculate the average of all possible actions.",
+            "D": "They choose the action that leads to the highest immediate reward."
+          },
+          "correct_answer": "B",
+          "explanation": "Sampling from the policy's probability distribution is how stochastic policies introduce exploration and execute actions."
+        },
+        {
+          "question": "Is REINFORCE considered an 'on-policy' or 'off-policy' algorithm?",
+          "options": {
+            "A": "On-policy.",
+            "B": "Off-policy.",
+            "C": "Both, depending on the environment.",
+            "D": "Neither."
+          },
+          "correct_answer": "A",
+          "explanation": "REINFORCE is on-policy because it learns about the policy that generates the data (the same policy used for exploration)."
+        },
+        {
+          "question": "In the context of policy gradients, what does $\\nabla_\\theta \\log \\pi_\\theta(a|s)$ represent?",
+          "options": {
+            "A": "The probability of taking action `a` in state `s`.",
+            "B": "The logarithm of the policy's output.",
+            "C": "The 'score function' or the gradient of the log-probability of taking action `a` in state `s` with respect to the policy parameters $\\theta$.",
+            "D": "The learning rate."
+          },
+          "correct_answer": "C",
+          "explanation": "This term is crucial as it indicates the direction in parameter space that makes action `a` more (or less) likely."
+        },
+        {
+          "question": "Which type of environment is REINFORCE typically applied to?",
+          "options": {
+            "A": "Continuing tasks (no terminal state).",
+            "B": "Episodic tasks (with clear terminal states).",
+            "C": "Environments with continuous state spaces only.",
+            "D": "Environments with pre-defined optimal policies."
+          },
+          "correct_answer": "B",
+          "explanation": "Because REINFORCE relies on the full episodic return, it's best suited for episodic tasks where the return is well-defined at the end of each episode."
+        },
+        {
+          "question": "If a Policy Gradient method converges, what does it converge to?",
+          "options": {
+            "A": "The optimal Q-value function.",
+            "B": "A local optimum in the policy parameter space.",
+            "C": "A global optimum of the expected return (guaranteed).",
+            "D": "The immediate reward."
+          },
+          "correct_answer": "B",
+          "explanation": "Like many deep learning methods, policy gradient methods are typically guaranteed to converge only to a local optimum, not necessarily the global optimum."
+        },
+        {
+          "question": "Why might Policy Gradient methods be preferred over Value-Based methods for problems with high-dimensional observations (e.g., raw images)?",
+          "options": {
+            "A": "They don't require neural networks.",
+            "B": "They can directly map complex observations to a policy, simplifying the learning problem by not needing to estimate values for every state-action pair.",
+            "C": "They are inherently more sample efficient.",
+            "D": "They eliminate the exploration-exploitation dilemma."
+          },
+          "correct_answer": "B",
+          "explanation": "By learning a direct mapping from state to action probabilities, policy gradients avoid the 'curse of dimensionality' faced by value functions trying to estimate values for every possible state-action pair."
+        },
+        {
+          "question": "In a REINFORCE algorithm implementation, what component would be a neural network?",
+          "options": {
+            "A": "The reward function.",
+            "B": "The policy $\\pi_\\theta(a|s)$, mapping states to action probabilities.",
+            "C": "The state transition function.",
+            "D": "The discount factor."
+          },
+          "correct_answer": "B",
+          "explanation": "The neural network parameterizes the policy, allowing it to learn complex mappings from states to action distributions."
+        },
+        {
+          "question": "When is a 'deterministic policy gradient' (DPG) method typically used?",
+          "options": {
+            "A": "When the action space is discrete.",
+            "B": "When the policy needs to output a single action directly, often for continuous action spaces, rather than a probability distribution.",
+            "C": "When the environment is highly stochastic.",
+            "D": "When exploration is not needed."
+          },
+          "correct_answer": "B",
+          "explanation": "DPG methods learn a deterministic mapping from states to actions, commonly employed in algorithms like DDPG for continuous control."
+        },
+        {
+          "question": "Which of these is NOT a direct challenge or limitation of basic Policy Gradient methods (like REINFORCE)?",
+          "options": {
+            "A": "High variance of gradient estimates.",
+            "B": "Difficulty in handling continuous action spaces.",
+            "C": "Sensitivity to hyperparameters (e.g., learning rate).",
+            "D": "Need for full episodes for gradient updates."
+          },
+          "correct_answer": "B",
+          "explanation": "One of the key strengths of policy gradient methods is their ability to handle continuous action spaces, making this option incorrect as a limitation."
+        },
+        {
+          "question": "Compared to Q-Learning, Policy Gradient methods are generally considered to be:",
+          "options": {
+            "A": "More sample efficient.",
+            "B": "Less stable in their updates due to higher gradient variance.",
+            "C": "Only applicable to deterministic environments.",
+            "D": "Requiring less computational power."
+          },
+          "correct_answer": "B",
+          "explanation": "The high variance is a known issue of pure policy gradient methods, often addressed by incorporating value functions (Actor-Critic methods)."
+        },
+        {
+          "question": "What is the primary way Policy Gradient methods implicitly handle exploration?",
+          "options": {
+            "A": "By setting Q-values to zero.",
+            "B": "By learning a stochastic policy that naturally samples actions based on their probabilities, thereby exploring the environment.",
+            "C": "By using an \\epsilon-greedy strategy on Q-values.",
+            "D": "By always choosing random actions initially."
+          },
+          "correct_answer": "B",
+          "explanation": "The inherent stochasticity of the policy itself drives exploration in many policy gradient methods, though external noise (e.g., in continuous action spaces) can also be added."
+        }
+      ]
+    }
+  ]
+}

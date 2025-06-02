@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Convolutional_Neural_Networks",
+      "questions": [
+        {
+          "question": "What is the primary advantage of Convolutional Neural Networks (CNNs) over traditional fully connected (Dense) networks for image processing tasks?",
+          "options": {
+            "A": "CNNs require significantly less training data.",
+            "B": "CNNs can learn hierarchical feature representations, utilize parameter sharing, and are spatially aware, making them highly effective for image data.",
+            "C": "CNNs are always faster to train than Dense networks.",
+            "D": "CNNs eliminate the need for activation functions."
+          },
+          "correct_answer": "B",
+          "explanation": "CNNs leverage the spatial structure of images through concepts like local connectivity, parameter sharing, and pooling, which are not inherent in flat Dense networks."
+        },
+        {
+          "question": "What is the main function of a 'convolutional layer' (e.g., `tf.keras.layers.Conv2D`) in a CNN?",
+          "options": {
+            "A": "To reduce the dimensionality of the image.",
+            "B": "To apply a filter (kernel) that slides over the input image to extract local features.",
+            "C": "To flatten the image into a 1D vector.",
+            "D": "To perform classification at the end of the network."
+          },
+          "correct_answer": "B",
+          "explanation": "The core operation of a convolutional layer is applying learnable filters across the input to detect specific patterns or features."
+        },
+        {
+          "question": "In a `Conv2D` layer, what does a 'filter' (or kernel) represent?",
+          "options": {
+            "A": "The entire input image.",
+            "B": "A small matrix of learnable weights that detects specific features (e.g., edges, textures) when convolved with the input.",
+            "C": "The output of the layer.",
+            "D": "The number of neurons in the next layer."
+          },
+          "correct_answer": "B",
+          "explanation": "Each filter specializes in detecting a particular feature, and the network learns these filters during training."
+        },
+        {
+          "question": "What is the purpose of a 'pooling layer' (e.g., `MaxPooling2D` or `AveragePooling2D`) in a CNN?",
+          "options": {
+            "A": "To add more features to the image.",
+            "B": "To increase the spatial resolution of the feature maps.",
+            "C": "To reduce the spatial dimensions (downsample) of the feature maps, thereby reducing computational cost and mitigating overfitting.",
+            "D": "To combine different channels of the feature map."
+          },
+          "correct_answer": "C",
+          "explanation": "Pooling layers summarize the presence of features in regions, making the representation more compact and robust to small translations."
+        },
+        {
+          "question": "When defining a `Conv2D` layer, what does the `padding='same'` argument typically do?",
+          "options": {
+            "A": "It ensures the output feature map has a smaller spatial dimension than the input.",
+            "B": "It adds zeros around the input so that the output feature map has the same spatial dimensions as the input (for stride=1).",
+            "C": "It means no padding is applied.",
+            "D": "It randomly crops the input image."
+          },
+          "correct_answer": "B",
+          "explanation": "`padding='same'` is useful for maintaining spatial dimensions across layers, especially when building deeper networks."
+        },
+        {
+          "question": "Why is a `Flatten` layer often used in a CNN before feeding into Dense (fully connected) layers?",
+          "options": {
+            "A": "To increase the number of features.",
+            "B": "To add non-linearity to the network.",
+            "C": "To convert the multi-dimensional output of convolutional/pooling layers into a 1D vector, which can be used as input for Dense layers.",
+            "D": "To reduce memory usage."
+          },
+          "correct_answer": "C",
+          "explanation": "Dense layers expect flat inputs, so the Flatten layer reshapes the feature maps into a single long vector."
+        },
+        {
+          "question": "Which common activation function is typically used in the hidden convolutional layers of a CNN?",
+          "options": {
+            "A": "Sigmoid",
+            "B": "Softmax",
+            "C": "ReLU",
+            "D": "Linear"
+          },
+          "correct_answer": "C",
+          "explanation": "ReLU is widely used in CNNs due to its ability to prevent vanishing gradients and its computational efficiency."
+        },
+        {
+          "question": "What is 'parameter sharing' in the context of CNNs?",
+          "options": {
+            "A": "Using the same set of weights for all layers in the network.",
+            "B": "Using the same set of weights (filter) across different spatial locations in the input feature map.",
+            "C": "Sharing weights between the convolutional and dense layers.",
+            "D": "Allowing different filters in the same layer to share weights."
+          },
+          "correct_answer": "B",
+          "explanation": "Parameter sharing is a key advantage of CNNs; a single filter detects a specific feature (e.g., a vertical edge) regardless of where it appears in the image."
+        },
+        {
+          "question": "If you have an input image of shape (100, 100, 3) (height, width, channels), what does the '3' represent?",
+          "options": {
+            "A": "The number of filters.",
+            "B": "The batch size.",
+            "C": "The number of color channels (e.g., Red, Green, Blue).",
+            "D": "The stride value."
+          },
+          "correct_answer": "C",
+          "explanation": "For color images, the third dimension typically represents the color channels (RGB)."
+        },
+        {
+          "question": "Which layer type is most likely to cause an increase in the number of parameters in a typical CNN architecture?",
+          "options": {
+            "A": "MaxPooling2D",
+            "B": "Flatten",
+            "C": "Dropout",
+            "D": "Dense (fully connected) layers, especially closer to the output."
+          },
+          "correct_answer": "D",
+          "explanation": "Dense layers have connections between every input and output neuron, leading to a large number of parameters, especially when connecting a flattened feature map to a large Dense layer."
+        },
+        {
+          "question": "What is the purpose of 'Batch Normalization' layers (e.g., `tf.keras.layers.BatchNormalization`) in CNNs?",
+          "options": {
+            "A": "To permanently set all weights to zero.",
+            "B": "To normalize the outputs of a layer by recentering and rescaling, which stabilizes training and can reduce the number of training epochs.",
+            "C": "To increase the model's complexity.",
+            "D": "To add random noise to the input data."
+          },
+          "correct_answer": "B",
+          "explanation": "Batch normalization helps to address the 'internal covariate shift' problem, making training deeper networks more stable and faster."
+        },
+        {
+          "question": "In a `Conv2D` layer, what does the 'stride' parameter control?",
+          "options": {
+            "A": "The size of the filter.",
+            "B": "The number of filters.",
+            "C": "How many pixels the filter shifts over the input image at each step.",
+            "D": "The amount of padding applied."
+          },
+          "correct_answer": "C",
+          "explanation": "A stride of (1,1) moves the filter one pixel at a time, while a stride of (2,2) skips pixels, effectively downsampling the output."
+        },
+        {
+          "question": "What does a 'receptive field' refer to in a CNN?",
+          "options": {
+            "A": "The entire input image size.",
+            "B": "The size of the output feature map.",
+            "C": "The region of the input image that a particular neuron in a feature map 'sees' or is influenced by.",
+            "D": "The number of filters in a layer."
+          },
+          "correct_answer": "C",
+          "explanation": "As you go deeper into a CNN, the receptive field of neurons increases, allowing them to capture more global context."
+        },
+        {
+          "question": "If you apply a `MaxPooling2D` layer with `pool_size=(2, 2)` to a feature map of shape (64, 64, 32), what will be the output shape (assuming no padding)?",
+          "options": {
+            "A": "(62, 62, 32)",
+            "B": "(32, 32, 32)",
+            "C": "(64, 64, 16)",
+            "D": "(128, 128, 32)"
+          },
+          "correct_answer": "B",
+          "explanation": "Pooling with a (2,2) pool size halves the spatial dimensions (height and width) of the feature map."
+        },
+        {
+          "question": "Which type of problem are CNNs most famously and effectively applied to?",
+          "options": {
+            "A": "Time series prediction.",
+            "B": "Natural Language Processing (classical text analysis).",
+            "C": "Image and video recognition tasks.",
+            "D": "Tabular data analysis."
+          },
+          "correct_answer": "C",
+          "explanation": "CNNs revolutionized computer vision, becoming the backbone for tasks like image classification, object detection, and semantic segmentation."
+        },
+        {
+          "question": "What is the typical flow of layers in a simple CNN architecture for image classification?",
+          "options": {
+            "A": "Dense -> Conv2D -> Flatten -> Dense",
+            "B": "Conv2D -> MaxPooling2D -> Flatten -> Dense",
+            "C": "Flatten -> Conv2D -> MaxPooling2D -> Dense",
+            "D": "MaxPooling2D -> Dense -> Conv2D -> Flatten"
+          },
+          "correct_answer": "B",
+          "explanation": "A common pattern involves alternating convolutional and pooling layers for feature extraction, followed by a flatten layer and dense layers for classification."
+        },
+        {
+          "question": "Which of the following Keras layers is used to prevent overfitting by randomly setting a fraction of input units to 0 at each update during training?",
+          "options": {
+            "A": "BatchNormalization",
+            "B": "Activation",
+            "C": "Dropout",
+            "D": "Reshape"
+          },
+          "correct_answer": "C",
+          "explanation": "Dropout is a regularization technique that randomly 'drops out' neurons during training, forcing the network to learn more robust features."
+        },
+        {
+          "question": "What is the purpose of adding more 'filters' (channels) in successive convolutional layers?",
+          "options": {
+            "A": "To decrease the model's capacity.",
+            "B": "To allow the network to learn a greater diversity and complexity of features as it goes deeper.",
+            "C": "To reduce the input image size.",
+            "D": "To make the training process slower and less efficient."
+          },
+          "correct_answer": "B",
+          "explanation": "Each filter learns to detect a specific pattern, so increasing the number of filters allows the network to extract more patterns."
+        },
+        {
+          "question": "If you use `padding='valid'` in a `Conv2D` layer, what does it imply about the output dimensions?",
+          "options": {
+            "A": "The output dimensions will always be larger than the input.",
+            "B": "The output dimensions will be strictly smaller than the input dimensions unless the filter size is 1x1.",
+            "C": "The output dimensions will always be the same as the input.",
+            "D": "It means the padding is automatically determined."
+          },
+          "correct_answer": "B",
+          "explanation": "`valid` padding means no padding is applied, and the filter only operates where it fully overlaps with the input, resulting in a smaller output size."
+        },
+        {
+          "question": "Which term describes the property of CNNs where local features detected in one part of an image can be detected in another part due to the re-use of the same filter weights across different spatial locations?",
+          "options": {
+            "A": "Spatial Invariance",
+            "B": "Temporal Dependency",
+            "C": "Global Averaging",
+            "D": "Dimensionality Reduction"
+          },
+          "correct_answer": "A",
+          "explanation": "This property, achieved through parameter sharing and pooling, makes CNNs robust to small shifts or translations of features in an image."
+        }
+      ]
+    }
+  ]
+}
