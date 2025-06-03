@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Training_and_Optimization",
+      "questions": [
+        {
+          "question": "What are the four main components involved in a typical PyTorch training loop?",
+          "options": {
+            "A": "Input data, Output data, Model, Plotting tool.",
+            "B": "DataLoader, Model, Loss Function, Optimizer.",
+            "C": "CPU, GPU, RAM, Hard Drive.",
+            "D": "Initialization, Forward, Backward, Save."
+          },
+          "correct_answer": "B",
+          "explanation": "These four components are essential for iterating through data, making predictions, calculating errors, and updating model weights."
+        },
+        {
+          "question": "During a single training step (for one batch), what happens immediately after the 'forward pass' and before the 'backward pass'?",
+          "options": {
+            "A": "Optimizer updates model parameters.",
+            "B": "Gradients are zeroed.",
+            "C": "The loss is calculated.",
+            "D": "The model is saved."
+          },
+          "correct_answer": "C",
+          "explanation": "The forward pass computes outputs, then the loss function compares predictions to true labels to quantify the error."
+        },
+        {
+          "question": "Why is `optimizer.zero_grad()` called at the beginning of each training step (for a new batch)?",
+          "options": {
+            "A": "To reset model weights to zero.",
+            "B": "To prevent gradients from previous batches from accumulating, ensuring gradients are computed only for the current batch.",
+            "C": "To clear GPU memory.",
+            "D": "To set the learning rate to zero."
+          },
+          "correct_answer": "B",
+          "explanation": "PyTorch accumulates gradients by default. Zeroing them ensures that the gradient update for the current batch is clean."
+        },
+        {
+          "question": "What is the purpose of calling `loss.backward()` in the training loop?",
+          "options": {
+            "A": "To perform a forward pass.",
+            "B": "To calculate the loss value.",
+            "C": "To compute gradients of the loss with respect to all tensors that have `requires_grad=True`.",
+            "D": "To update model parameters using the optimizer."
+          },
+          "correct_answer": "C",
+          "explanation": "`backward()` triggers the backpropagation algorithm, populating the `.grad` attribute of tensors."
+        },
+        {
+          "question": "Which method on the `optimizer` object applies the computed gradients to update the model's parameters?",
+          "options": {
+            "A": "`optimizer.compute_gradients()`",
+            "B": "`optimizer.update_weights()`",
+            "C": "`optimizer.step()`",
+            "D": "`optimizer.apply_gradients()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`optimizer.step()` performs a single optimization step (e.g., SGD, Adam update) based on the current gradients."
+        },
+        {
+          "question": "What does an 'epoch' refer to in the context of neural network training?",
+          "options": {
+            "A": "A single forward and backward pass for one batch of data.",
+            "B": "The duration of one training session.",
+            "C": "One complete pass through the entire training dataset.",
+            "D": "The number of layers in the neural network."
+          },
+          "correct_answer": "C",
+          "explanation": "An epoch involves processing all training examples once, typically in multiple batches."
+        },
+        {
+          "question": "What is the 'batch size' in neural network training?",
+          "options": {
+            "A": "The total number of samples in the dataset.",
+            "B": "The number of input features in each sample.",
+            "C": "The number of training examples utilized in one iteration of model training.",
+            "D": "The number of hidden layers in the model."
+          },
+          "correct_answer": "C",
+          "explanation": "Batch size determines how many samples are processed at once before the model's weights are updated."
+        },
+        {
+          "question": "Which of these optimizers is known for adapting the learning rate for each parameter individually, based on the first and second moments of the gradients?",
+          "options": {
+            "A": "`torch.optim.SGD`",
+            "B": "`torch.optim.Adam`",
+            "C": "`torch.optim.Adagrad`",
+            "D": "`torch.optim.RMSprop`"
+          },
+          "correct_answer": "B",
+          "explanation": "Adam (Adaptive Moment Estimation) is a popular and often effective adaptive learning rate optimizer."
+        },
+        {
+          "question": "What is 'overfitting' in machine learning?",
+          "options": {
+            "A": "When the model is too simple to capture the underlying patterns in the data.",
+            "B": "When the model performs poorly on both training and test data.",
+            "C": "When the model learns the training data too well, capturing noise and specific details, leading to poor generalization on unseen data.",
+            "D": "When the training process is too slow."
+          },
+          "correct_answer": "C",
+          "explanation": "Overfitting results in high performance on training data but low performance on validation/test data."
+        },
+        {
+          "question": "How do you typically put a PyTorch model into evaluation mode to disable layers like Dropout and Batch Normalization updates?",
+          "options": {
+            "A": "`model.set_eval()`",
+            "B": "`model.test()`",
+            "C": "`model.eval()`",
+            "D": "`model.infer()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`model.eval()` ensures that the model behaves appropriately during inference or validation, using fixed statistics for BatchNorm and disabling Dropout."
+        },
+        {
+          "question": "What is the primary purpose of a 'learning rate scheduler' (`torch.optim.lr_scheduler`)?",
+          "options": {
+            "A": "To automatically select the best optimizer for a model.",
+            "B": "To dynamically adjust the learning rate during training, often decreasing it over time to allow for finer adjustments later on.",
+            "C": "To schedule when data loading occurs.",
+            "D": "To determine the batch size for each epoch."
+          },
+          "correct_answer": "B",
+          "explanation": "Learning rate schedules can significantly improve convergence and model performance."
+        },
+        {
+          "question": "What does `torch.save(model.state_dict(), 'model.pth')` achieve?",
+          "options": {
+            "A": "It saves the entire model architecture and parameters.",
+            "B": "It saves only the learnable parameters (weights and biases) of the model, not its architecture.",
+            "C": "It saves the training data.",
+            "D": "It saves the optimizer's state."
+          },
+          "correct_answer": "B",
+          "explanation": "Saving `state_dict()` is the recommended way to save model parameters, allowing for more flexible loading into different model architectures (if compatible)."
+        },
+        {
+          "question": "To load only the learned parameters into an existing model architecture, after saving with `model.state_dict()`, what method is used?",
+          "options": {
+            "A": "`model.load_state_dict(torch.load('model.pth'))`",
+            "B": "`model.load('model.pth')`",
+            "C": "`torch.load_model('model.pth')`",
+            "D": "`model.restore_params('model.pth')`"
+          },
+          "correct_answer": "A",
+          "explanation": "You first load the `state_dict` into a dictionary, then use `model.load_state_dict()` to populate the model's parameters."
+        },
+        {
+          "question": "When training a model on a GPU, why must both the model and the input data be explicitly moved to the GPU?",
+          "options": {
+            "A": "To reduce network latency.",
+            "B": "Because PyTorch does not automatically transfer data to the GPU.",
+            "C": "To encrypt the data during training.",
+            "D": "To enable multi-GPU training."
+          },
+          "correct_answer": "B",
+          "explanation": "PyTorch requires explicit device placement using `.to('cuda')` or `.cuda()` for both models and tensors."
+        },
+        {
+          "question": "What is the purpose of using a 'validation set' during training?",
+          "options": {
+            "A": "To train the model on additional data.",
+            "B": "To evaluate the model's performance on unseen data at various points during training, helping to detect overfitting and guide hyperparameter tuning.",
+            "C": "To select the final model for deployment.",
+            "D": "To speed up the training process."
+          },
+          "correct_answer": "B",
+          "explanation": "The validation set provides an unbiased estimate of the model's generalization ability during the development phase."
+        },
+        {
+          "question": "Which type of regularization adds a penalty proportional to the sum of the absolute values of the weights?",
+          "options": {
+            "A": "L2 regularization (Weight Decay)",
+            "B": "Dropout",
+            "C": "L1 regularization",
+            "D": "Early Stopping"
+          },
+          "correct_answer": "C",
+          "explanation": "L1 regularization encourages sparsity in weights, effectively performing feature selection."
+        },
+        {
+          "question": "What is 'Early Stopping' and its benefit in training?",
+          "options": {
+            "A": "Stopping training prematurely due to errors.",
+            "B": "A technique to stop training when the model's performance on a validation set starts to degrade, preventing overfitting.",
+            "C": "Stopping training after a fixed number of epochs.",
+            "D": "Stopping training when the loss reaches zero."
+          },
+          "correct_answer": "B",
+          "explanation": "Early stopping is a simple yet effective regularization technique that finds the optimal number of training epochs."
+        },
+        {
+          "question": "If your training loss is very low but your validation loss is much higher and increasing, what does this typically indicate?",
+          "options": {
+            "A": "Underfitting.",
+            "B": "Optimal training.",
+            "C": "Overfitting.",
+            "D": "A bug in your loss function."
+          },
+          "correct_answer": "C",
+          "explanation": "This is a classic sign of overfitting, where the model has memorized the training data but fails to generalize."
+        },
+        {
+          "question": "What is the role of `torch.nn.DataParallel` or `torch.distributed` in PyTorch training?",
+          "options": {
+            "A": "To parallelize data loading from disk.",
+            "B": "To enable training across multiple GPUs or machines.",
+            "C": "To parallelize the forward pass on a single GPU.",
+            "D": "To parallelize the loss calculation."
+          },
+          "correct_answer": "B",
+          "explanation": "These modules provide strategies for distributing computations across multiple devices/nodes to speed up training of large models or on large datasets."
+        },
+        {
+          "question": "When saving a checkpoint during training to resume later, what information should you typically save along with the `model.state_dict()`?",
+          "options": {
+            "A": "Only the model's architecture.",
+            "B": "The optimizer's `state_dict()`, current epoch number, and current loss values to resume training seamlessly.",
+            "C": "The entire training dataset.",
+            "D": "Only the learning rate."
+          },
+          "correct_answer": "B",
+          "explanation": "Saving the optimizer state and epoch allows you to pick up training exactly where you left off, which is crucial for long training runs."
+        }
+      ]
+    }
+  ]
+}

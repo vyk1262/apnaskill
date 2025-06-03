@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Topics",
+      "questions": [
+        {
+          "question": "What is the purpose of `df.cache()` or `df.persist()` in PySpark?",
+          "options": {
+            "A": "To save the DataFrame to disk permanently.",
+            "B": "To mark the DataFrame to be stored in memory (or disk) after its first computation, speeding up subsequent access.",
+            "C": "To clear the DataFrame from memory.",
+            "D": "To force immediate action execution."
+          },
+          "correct_answer": "B",
+          "explanation": "Caching/persisting prevents recomputation of the same DataFrame, which is crucial for iterative algorithms or frequently accessed data."
+        },
+        {
+          "question": "When should you use `df.persist(StorageLevel.MEMORY_AND_DISK)` instead of `df.cache()`?",
+          "options": {
+            "A": "`cache()` is always better.",
+            "B": "When you want to store the DataFrame only on disk.",
+            "C": "When the DataFrame might not fit entirely in memory, allowing overflow to disk, offering a trade-off between speed and fault tolerance.",
+            "D": "When you want to disable caching."
+          },
+          "correct_answer": "C",
+          "explanation": "`cache()` is an alias for `persist(StorageLevel.MEMORY_ONLY)`. `MEMORY_AND_DISK` provides more robustness for larger datasets."
+        },
+        {
+          "question": "What is the primary benefit of 'Broadcasting' a small variable or DataFrame in PySpark?",
+          "options": {
+            "A": "To save it to a database.",
+            "B": "To send a large variable from executors back to the driver.",
+            "C": "To efficiently share a read-only copy of a small variable with all worker nodes, reducing shuffle overhead during joins or filters.",
+            "D": "To encrypt data transmission."
+          },
+          "correct_answer": "C",
+          "explanation": "Broadcasting is a key optimization for distributing small lookup tables or configuration values to all tasks."
+        },
+        {
+          "question": "In PySpark, what is an 'Accumulator' used for?",
+          "options": {
+            "A": "To store large datasets in a distributed manner.",
+            "B": "To accumulate values (e.g., counters or sums) from worker nodes back to the driver in a fault-tolerant way.",
+            "C": "To perform joins across DataFrames.",
+            "D": "To partition data for efficient processing."
+          },
+          "correct_answer": "B",
+          "explanation": "Accumulators allow for aggregation of values across tasks, providing a safe way to update shared counters or sums."
+        },
+        {
+          "question": "What is 'Structured Streaming' in PySpark?",
+          "options": {
+            "A": "A method for loading structured data from files.",
+            "B": "A scalable and fault-tolerant stream processing engine built on the Spark SQL engine, allowing continuous queries on data streams.",
+            "C": "A way to convert unstructured data into structured data.",
+            "D": "A tool for visualizing data structures."
+          },
+          "correct_answer": "B",
+          "explanation": "Structured Streaming treats incoming data streams as continuously appending tables, enabling familiar DataFrame operations."
+        },
+        {
+          "question": "When configuring a Structured Streaming query to write to a sink, what does the 'output mode' (e.g., 'append', 'complete', 'update') specify?",
+          "options": {
+            "A": "How often the output is written.",
+            "B": "The format of the output data.",
+            "C": "What rows are written to the sink, based on the query's results (e.g., only new rows, all results, only updated rows).",
+            "D": "The number of output partitions."
+          },
+          "correct_answer": "C",
+          "explanation": "Output modes control how results are pushed to the sink. For example, 'append' writes only new rows, 'complete' writes the full result table, and 'update' writes only updated rows."
+        },
+        {
+          "question": "Which of the following is a common source for Structured Streaming in PySpark?",
+          "options": {
+            "A": "A static local file.",
+            "B": "Kafka topics, network sockets, or files continuously arriving in a directory.",
+            "C": "A database table read once.",
+            "D": "A Pandas DataFrame."
+          },
+          "correct_answer": "B",
+          "explanation": "Structured Streaming is designed for continuously arriving data, not static datasets."
+        },
+        {
+          "question": "What command is typically used to submit a PySpark application to a Spark cluster?",
+          "options": {
+            "A": "python my_app.py",
+            "B": "pyspark my_app.py",
+            "C": "spark-submit my_app.py",
+            "D": "hadoop jar my_app.py"
+          },
+          "correct_answer": "C",
+          "explanation": "`spark-submit` is the utility that launches Spark applications on the cluster."
+        },
+        {
+          "question": "How can you monitor the progress and performance of your PySpark jobs (e.g., stages, tasks, memory usage) when running on a cluster?",
+          "options": {
+            "A": "By checking the command line output only.",
+            "B": "Through the Spark UI (web interface), typically accessible at `http://<driver-node>:4040`.",
+            "C": "By inspecting system logs directly.",
+            "D": "It's not possible to monitor Spark jobs directly."
+          },
+          "correct_answer": "B",
+          "explanation": "The Spark UI is an indispensable tool for debugging and optimizing Spark applications."
+        },
+        {
+          "question": "What is 'Adaptive Query Execution (AQE)' in Spark 3.x and later, and why is it important for optimization?",
+          "options": {
+            "A": "It automatically tunes deep learning models.",
+            "B": "It's a runtime optimization feature that automatically adjusts query plans based on runtime statistics, improving performance of complex queries, especially those with shuffles.",
+            "C": "It adapts the Spark UI based on user preferences.",
+            "D": "It's a method for adaptive data ingestion."
+          },
+          "correct_answer": "B",
+          "explanation": "AQE includes optimizations like automatically handling skew joins, coalescing shuffle partitions, and converting sorts to broadcast joins."
+        },
+        {
+          "question": "When debugging a PySpark application, which method can you use on a DataFrame to see its logical and physical execution plan?",
+          "options": {
+            "A": "df.profile()",
+            "B": "df.describe()",
+            "C": "df.explain()",
+            "D": "df.trace()"
+          },
+          "correct_answer": "C",
+          "explanation": "`explain()` is crucial for understanding how Spark plans to execute your DataFrame transformations."
+        },
+        {
+          "question": "What is 'Delta Lake' in the context of PySpark and big data?",
+          "options": {
+            "A": "A specific type of data warehouse.",
+            "B": "An open-source storage layer that brings ACID transactions, scalable metadata handling, and unified batch/streaming data processing to data lakes (e.g., on Parquet files).",
+            "C": "A new deep learning framework.",
+            "D": "A visualization library for Spark."
+          },
+          "correct_answer": "B",
+          "explanation": "Delta Lake enhances data lakes with reliability and performance features typically found in data warehouses."
+        },
+        {
+          "question": "To convert a PySpark DataFrame to an RDD for lower-level or specialized operations, which method is used?",
+          "options": {
+            "A": "df.toRDD()",
+            "B": "df.to_rdd()",
+            "C": "df.asRDD()",
+            "D": "df.createRDD()"
+          },
+          "correct_answer": "A",
+          "explanation": "`toRDD()` transforms a DataFrame back to its underlying RDD representation."
+        },
+        {
+          "question": "Which configuration property primarily controls the amount of memory allocated to each Spark executor on a worker node?",
+          "options": {
+            "A": "`spark.driver.memory`",
+            "B": "`spark.executor.memory`",
+            "C": "`spark.shuffle.memoryFraction`",
+            "D": "`spark.sql.shuffle.partitions`"
+          },
+          "correct_answer": "B",
+          "explanation": "`spark.executor.memory` is critical for preventing OutOfMemory errors and optimizing performance."
+        },
+        {
+          "question": "What does increasing `spark.sql.shuffle.partitions` primarily affect?",
+          "options": {
+            "A": "The number of CPU cores used by each executor.",
+            "B": "The parallelism of shuffle operations (e.g., during joins, aggregations, or repartitioning), which can influence performance and memory usage.",
+            "C": "The memory allocated to the driver.",
+            "D": "The number of input files processed."
+          },
+          "correct_answer": "B",
+          "explanation": "More shuffle partitions mean more parallel tasks for shuffle-heavy operations, potentially reducing task size but increasing network overhead."
+        },
+        {
+          "question": "True or False: When performing a large join operation in PySpark, if one of the DataFrames is very small and can fit in memory, broadcasting it can significantly improve performance.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Broadcasting avoids the expensive shuffle phase for the larger DataFrame, leading to a faster 'broadcast join'."
+        },
+        {
+          "question": "For custom Python logic that is computationally intensive or requires external Python libraries, but doesn't necessarily need to be a UDF over columns, what advanced PySpark construct might you consider?",
+          "options": {
+            "A": "Using a simple Python `map` on a collected list.",
+            "B": "Leveraging `mapPartitions` on an RDD or `forEachPartition` on a DataFrame to run custom code on each partition's data.",
+            "C": "Rewriting the logic in Scala.",
+            "D": "Broadcasting the entire logic to each executor."
+          },
+          "correct_answer": "B",
+          "explanation": "These methods allow you to operate on an iterator of rows for each partition, providing flexibility for custom logic that might be more efficient than row-wise UDFs."
+        },
+        {
+          "question": "If you are experiencing slow shuffle operations in your PySpark job, what are common areas to investigate for optimization?",
+          "options": {
+            "A": "Increasing `spark.driver.memory`.",
+            "B": "Checking `spark.sql.shuffle.partitions`, data skewness, and ensuring sufficient executor memory/cores.",
+            "C": "Decreasing the number of input files.",
+            "D": "Using more UDFs."
+          },
+          "correct_answer": "B",
+          "explanation": "Shuffle performance is critical for many Spark jobs, and misconfigurations or data skew are common culprits."
+        },
+        {
+          "question": "Which method is used to remove a cached DataFrame from Spark's memory?",
+          "options": {
+            "A": "df.clear_cache()",
+            "B": "df.uncache()",
+            "C": "df.unpersist()",
+            "D": "df.destroy()"
+          },
+          "correct_answer": "C",
+          "explanation": "`unpersist()` explicitly removes the DataFrame from cache, freeing up resources."
+        },
+        {
+          "question": "What is the primary role of a 'checkpoint directory' in Spark Structured Streaming?",
+          "options": {
+            "A": "To store the final processed data.",
+            "B": "To store metadata about the stream's progress and state, ensuring fault tolerance and exactly-once processing guarantees.",
+            "C": "To backup the source data.",
+            "D": "To log user interactions with the stream."
+          },
+          "correct_answer": "B",
+          "explanation": "The checkpoint directory is vital for recovery from failures and maintaining consistency in streaming applications."
+        }
+      ]
+    }
+  ]
+}

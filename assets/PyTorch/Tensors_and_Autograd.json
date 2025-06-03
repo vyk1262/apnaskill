@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Tensors_and_Autograd",
+      "questions": [
+        {
+          "question": "Which of the following best describes a `torch.Tensor`?",
+          "options": {
+            "A": "A Python list for storing numerical data.",
+            "B": "A fixed-size array that can only store integers.",
+            "C": "A multi-dimensional array, similar to a NumPy array, optimized for GPU computations and automatic differentiation.",
+            "D": "A database table for storing structured data."
+          },
+          "correct_answer": "C",
+          "explanation": "Tensors are the core data structure in PyTorch, enabling complex mathematical operations, especially on GPUs, with gradient tracking."
+        },
+        {
+          "question": "How do you create a PyTorch tensor filled with zeros with a shape of (2, 3)?",
+          "options": {
+            "A": "`torch.zeros(2, 3)`",
+            "B": "`torch.empty(2, 3).fill(0)`",
+            "C": "`torch.Tensor([0,0,0,0,0,0]).reshape(2,3)`",
+            "D": "`torch.zeros_like((2, 3))`"
+          },
+          "correct_answer": "A",
+          "explanation": "`torch.zeros()` is the direct way to create a tensor filled with zeros given a shape."
+        },
+        {
+          "question": "What is the primary way to check the shape of a `torch.Tensor` named `x`?",
+          "options": {
+            "A": "`x.size()` or `x.shape`",
+            "B": "`x.dims()`",
+            "C": "`x.get_shape()`",
+            "D": "`shape(x)`"
+          },
+          "correct_answer": "A",
+          "explanation": "Both `.size()` (a method) and `.shape` (an attribute) return a `torch.Size` object, which is a tuple."
+        },
+        {
+          "question": "Which attribute of a `torch.Tensor` determines if gradients should be computed for it during the backward pass?",
+          "options": {
+            "A": "`track_grad`",
+            "B": "`needs_grad`",
+            "C": "`autograd_enabled`",
+            "D": "`requires_grad`"
+          },
+          "correct_answer": "D",
+          "explanation": "If `x.requires_grad` is `True`, PyTorch will track all operations on `x` to compute gradients."
+        },
+        {
+          "question": "If `x` is a `torch.Tensor` on the CPU, what is the most common way to move it to the default GPU (CUDA device)?",
+          "options": {
+            "A": "`x.gpu()`",
+            "B": "`x.to('cuda')`",
+            "C": "`x.send_to_gpu()`",
+            "D": "`torch.to_gpu(x)`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `.to()` method is versatile and allows moving tensors to a specific device (e.g., 'cpu', 'cuda', 'cuda:0', 'cuda:1'). `.cuda()` is also valid."
+        },
+        {
+          "question": "What does `x.grad` contain after `loss.backward()` has been called?",
+          "options": {
+            "A": "The value of `loss`.",
+            "B": "The gradients of `loss` with respect to `x`, provided `x.requires_grad` was `True`.",
+            "C": "The original value of `x`.",
+            "D": "The gradients of `x` with respect to its initial creation."
+          },
+          "correct_answer": "B",
+          "explanation": "The `.grad` attribute stores the accumulated gradients for that tensor. It will be `None` if `requires_grad` is `False` or if `backward()` hasn't been called."
+        },
+        {
+          "question": "Why is it important to call `optimizer.zero_grad()` before each training step?",
+          "options": {
+            "A": "To reset the model's weights to zero.",
+            "B": "To prevent gradients from accumulating across multiple backward passes, ensuring that each step uses gradients only from the current batch.",
+            "C": "To clear the GPU memory.",
+            "D": "To disable autograd for the next step."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, gradients accumulate. If not zeroed, gradients from previous batches would be added to current gradients, leading to incorrect updates."
+        },
+        {
+          "question": "Which of the following tensor operations performs element-wise multiplication?",
+          "options": {
+            "A": "`torch.matmul(a, b)`",
+            "B": "`a @ b`",
+            "C": "`a * b`",
+            "D": "`a.dot(b)`"
+          },
+          "correct_answer": "C",
+          "explanation": "`*` performs element-wise multiplication. `@` or `torch.matmul()` perform matrix multiplication."
+        },
+        {
+          "question": "What is the purpose of `x.view(new_shape)` or `x.reshape(new_shape)`?",
+          "options": {
+            "A": "To change the data type of the tensor.",
+            "B": "To transpose the tensor.",
+            "C": "To change the shape (dimensions) of the tensor without changing its data.",
+            "D": "To create a deep copy of the tensor."
+          },
+          "correct_answer": "C",
+          "explanation": "Both methods are used for reshaping. `view()` requires the new tensor to share the same underlying data, while `reshape()` is more flexible and may create a copy if needed."
+        },
+        {
+          "question": "What is `torch.no_grad()` used for?",
+          "options": {
+            "A": "To reset all gradients to zero.",
+            "B": "To temporarily disable gradient tracking, useful for inference or evaluation to save memory and computation.",
+            "C": "To enable gradient tracking for all tensors.",
+            "D": "To prevent a tensor from being moved to GPU."
+          },
+          "correct_answer": "B",
+          "explanation": "During inference, there's no need to compute gradients, so `torch.no_grad()` speeds up computation and reduces memory footprint."
+        },
+        {
+          "question": "If `a = torch.tensor([1, 2, 3])` and `b = torch.tensor([4, 5, 6])`, what will `a + b` result in?",
+          "options": {
+            "A": "`tensor([1, 2, 3, 4, 5, 6])`",
+            "B": "`tensor([5, 7, 9])`",
+            "C": "An error due to shape mismatch.",
+            "D": "A scalar value `21`."
+          },
+          "correct_answer": "B",
+          "explanation": "PyTorch performs element-wise addition by default when tensor shapes are compatible."
+        },
+        {
+          "question": "Which of these tensor creation functions initializes a tensor with uninitialized (random) data from memory?",
+          "options": {
+            "A": "`torch.zeros()`",
+            "B": "`torch.rand()`",
+            "C": "`torch.empty()`",
+            "D": "`torch.ones()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`torch.empty()` creates a tensor without initializing its entries, which can be slightly faster if you plan to overwrite all values immediately."
+        },
+        {
+          "question": "How do you convert a PyTorch tensor `t` to a NumPy array?",
+          "options": {
+            "A": "`t.as_numpy()`",
+            "B": "`t.numpy()`",
+            "C": "`numpy(t)`",
+            "D": "`torch.to_numpy(t)`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `.numpy()` method creates a NumPy array sharing the same underlying memory (if on CPU) as the PyTorch tensor."
+        },
+        {
+          "question": "What is an 'in-place' operation in PyTorch (e.g., `x.add_(y)` vs. `x + y`)?",
+          "options": {
+            "A": "An operation that runs on the CPU.",
+            "B": "An operation that modifies the tensor it's called on directly, without creating a new tensor.",
+            "C": "An operation that is performed inside a neural network layer.",
+            "D": "An operation that requires gradients to be tracked."
+          },
+          "correct_answer": "B",
+          "explanation": "In-place operations (denoted by a trailing underscore, e.g., `_add_`) are more memory efficient but should be used carefully when `autograd` is active, as they can break gradient flow."
+        },
+        {
+          "question": "If `y = x * 2` and `x.requires_grad = True`, what will `y.requires_grad` be?",
+          "options": {
+            "A": "False",
+            "B": "True",
+            "C": "None",
+            "D": "Depends on the data type of `x`."
+          },
+          "correct_answer": "B",
+          "explanation": "If any input to an operation has `requires_grad=True`, the output tensor will also have `requires_grad=True` (unless explicitly detached)."
+        },
+        {
+          "question": "What happens if you try to call `.backward()` on a non-scalar tensor (e.g., a tensor with more than one element)?",
+          "options": {
+            "A": "It performs element-wise gradient calculation.",
+            "B": "It requires an explicit `gradient` argument (e.g., a tensor of ones with the same shape).",
+            "C": "It automatically sums all elements before calculating gradients.",
+            "D": "It throws an error."
+          },
+          "correct_answer": "B",
+          "explanation": "For non-scalar tensors, `backward()` requires a `gradient` argument (a tensor of the same shape) that effectively represents the gradient of the original output with respect to the input."
+        },
+        {
+          "question": "What is the purpose of `x.detach()`?",
+          "options": {
+            "A": "To delete the tensor from memory.",
+            "B": "To create a new tensor that is a copy of `x` but is detached from the current computation graph, meaning `x`'s operations will not be tracked for gradient calculation.",
+            "C": "To move the tensor to a different device.",
+            "D": "To prevent the tensor from being modified."
+          },
+          "correct_answer": "B",
+          "explanation": "Detaching a tensor is useful when you want to use its value without tracking the operations that led to its creation for gradient purposes."
+        },
+        {
+          "question": "Which of the following creates a tensor with random values drawn from a standard normal distribution (mean=0, std=1)?",
+          "options": {
+            "A": "`torch.rand()`",
+            "B": "`torch.randn()`",
+            "C": "`torch.normal()`",
+            "D": "`torch.uniform()`"
+          },
+          "correct_answer": "B",
+          "explanation": "`torch.randn()` generates random numbers from a standard normal distribution, while `torch.rand()` generates from a uniform distribution [0, 1)."
+        },
+        {
+          "question": "If you have a tensor `x` and perform an operation `y = x + z`, what does `y.grad_fn` refer to?",
+          "options": {
+            "A": "The gradient of `y`.",
+            "B": "The function that created `y` (in this case, `AddBackward0`).",
+            "C": "The input tensor `x`.",
+            "D": "A random function."
+          },
+          "correct_answer": "B",
+          "explanation": "`grad_fn` points to the `Function` that created the `Tensor`, which is part of the computational graph traced by Autograd."
+        },
+        {
+          "question": "When defining custom Autograd operations, you typically need to implement a `forward` and a `backward` method. What does the `backward` method calculate?",
+          "options": {
+            "A": "The forward pass of the operation.",
+            "B": "The gradients of the output with respect to the inputs for the custom operation.",
+            "C": "The loss function.",
+            "D": "The optimizer step."
+          },
+          "correct_answer": "B",
+          "explanation": "The `backward` method is where you define how the gradients flow through your custom operation."
+        }
+      ]
+    }
+  ]
+}

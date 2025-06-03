@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Neural_Networks",
+      "questions": [
+        {
+          "question": "Which PyTorch module is the fundamental building block for creating neural network layers and models?",
+          "options": {
+            "A": "`torch.tensor`",
+            "B": "`torch.optim`",
+            "C": "`torch.nn`",
+            "D": "`torch.autograd`"
+          },
+          "correct_answer": "C",
+          "explanation": "`torch.nn` provides classes and functions for defining neural network architectures."
+        },
+        {
+          "question": "All neural network modules in PyTorch, including layers and entire models, inherit from which base class?",
+          "options": {
+            "A": "`torch.nn.Layer`",
+            "B": "`torch.nn.Network`",
+            "C": "`torch.nn.Module`",
+            "D": "`torch.nn.Component`"
+          },
+          "correct_answer": "C",
+          "explanation": "Inheriting from `nn.Module` ensures proper handling of parameters, submodules, and integration with `autograd`."
+        },
+        {
+          "question": "When defining a custom neural network class that inherits from `nn.Module`, which two methods are mandatory to implement?",
+          "options": {
+            "A": "`__init__` and `train`",
+            "B": "`__init__` and `forward`",
+            "C": "`build` and `predict`",
+            "D": "`setup` and `compute`"
+          },
+          "correct_answer": "B",
+          "explanation": "`__init__` for defining layers and `forward` for specifying the computation flow are essential."
+        },
+        {
+          "question": "Which `torch.nn` layer represents a fully connected (dense) layer?",
+          "options": {
+            "A": "`nn.Dense`",
+            "B": "`nn.FC`",
+            "C": "`nn.Linear`",
+            "D": "`nn.Perceptron`"
+          },
+          "correct_answer": "C",
+          "explanation": "`nn.Linear` applies a linear transformation: `y = xA^T + b`."
+        },
+        {
+          "question": "If you have an input tensor of shape `(batch_size, 3, 32, 32)` representing images, which `torch.nn` layer would you typically use first for feature extraction?",
+          "options": {
+            "A": "`nn.Linear`",
+            "B": "`nn.RNN`",
+            "C": "`nn.Conv2d`",
+            "D": "`nn.Transformer`"
+          },
+          "correct_answer": "C",
+          "explanation": "`nn.Conv2d` is the standard layer for processing image data, extracting spatial features."
+        },
+        {
+          "question": "Which `torch.nn` module is a common activation function that applies `max(0, x)`?",
+          "options": {
+            "A": "`nn.Sigmoid`",
+            "B": "`nn.Tanh`",
+            "C": "`nn.Softmax`",
+            "D": "`nn.ReLU`"
+          },
+          "correct_answer": "D",
+          "explanation": "ReLU (Rectified Linear Unit) is widely used for its simplicity and effectiveness in combating vanishing gradients."
+        },
+        {
+          "question": "What is the purpose of `nn.MaxPool2d` in a Convolutional Neural Network (CNN)?",
+          "options": {
+            "A": "To increase the spatial dimensions of the feature maps.",
+            "B": "To reduce the spatial dimensions (height and width) of the feature maps, and extract the maximum value in each pooling region.",
+            "C": "To apply a linear transformation to the input.",
+            "D": "To normalize the input data."
+          },
+          "correct_answer": "B",
+          "explanation": "Pooling layers help reduce computational cost, extract dominant features, and provide some translation invariance."
+        },
+        {
+          "question": "Which `torch.nn` layer is often used to prevent overfitting by randomly setting a fraction of input units to zero during training?",
+          "options": {
+            "A": "`nn.BatchNorm2d`",
+            "B": "`nn.Flatten`",
+            "C": "`nn.Dropout`",
+            "D": "`nn.ReLU`"
+          },
+          "correct_answer": "C",
+          "explanation": "Dropout regularizes the model by making neurons less dependent on specific inputs, improving generalization."
+        },
+        {
+          "question": "What does `model.parameters()` return for an `nn.Module` instance?",
+          "options": {
+            "A": "A list of all input tensors to the model.",
+            "B": "An iterator over all learnable parameters (weights and biases) of the module and its submodules.",
+            "C": "The output of the forward pass.",
+            "D": "A dictionary of all internal activations."
+          },
+          "correct_answer": "B",
+          "explanation": "This iterator is typically passed to an optimizer to update the parameters during training."
+        },
+        {
+          "question": "Which `torch.nn` container module allows you to build a neural network by passing a sequence of layers, where the input to one layer is the output of the previous?",
+          "options": {
+            "A": "`nn.Pipeline`",
+            "B": "`nn.Chain`",
+            "C": "`nn.Sequential`",
+            "D": "`nn.Stack`"
+          },
+          "correct_answer": "C",
+          "explanation": "`nn.Sequential` is convenient for building simple feed-forward networks where operations are sequential."
+        },
+        {
+          "question": "For a binary classification task, where the final output is a single logit (raw score), which `torch.nn` loss function is commonly paired with this output?",
+          "options": {
+            "A": "`nn.CrossEntropyLoss`",
+            "B": "`nn.MSELoss`",
+            "C": "`nn.BCELoss`",
+            "D": "`nn.BCEWithLogitsLoss`"
+          },
+          "correct_answer": "D",
+          "explanation": "`BCEWithLogitsLoss` is numerically stable and combines the sigmoid activation and binary cross-entropy loss, operating directly on logits."
+        },
+        {
+          "question": "If your model outputs raw scores for multi-class classification, and your targets are integer class labels (e.g., 0, 1, 2), which `torch.nn` loss function is appropriate?",
+          "options": {
+            "A": "`nn.MSELoss`",
+            "B": "`nn.NLLLoss`",
+            "C": "`nn.CrossEntropyLoss`",
+            "D": "`nn.BCELoss`"
+          },
+          "correct_answer": "C",
+          "explanation": "`nn.CrossEntropyLoss` combines `nn.LogSoftmax` and `nn.NLLLoss` in a single class, expecting raw logits as input and integer class labels as targets."
+        },
+        {
+          "question": "What is the primary benefit of using `nn.BatchNorm1d` or `nn.BatchNorm2d` layers?",
+          "options": {
+            "A": "To increase the depth of the neural network.",
+            "B": "To regularize the model and speed up training by normalizing the activations of previous layers, reducing internal covariate shift.",
+            "C": "To convert images to text.",
+            "D": "To perform non-linear transformations."
+          },
+          "correct_answer": "B",
+          "explanation": "Batch Normalization stabilizes and accelerates the training process, often allowing for higher learning rates."
+        },
+        {
+          "question": "If you are designing a custom neural network that needs to dynamically add or remove layers based on some logic, which `nn.Module` container would be more flexible than `nn.Sequential`?",
+          "options": {
+            "A": "`nn.ModuleDict` or `nn.ModuleList`",
+            "B": "`nn.Container`",
+            "C": "`nn.LayerGroup`",
+            "D": "None, `nn.Sequential` is always the best choice."
+          },
+          "correct_answer": "A",
+          "explanation": "`nn.ModuleList` stores a list of `nn.Module` objects, and `nn.ModuleDict` stores a dictionary, allowing for more programmatic control over layer creation and usage in the `forward` method."
+        },
+        {
+          "question": "For a regression task, where the model outputs a continuous value, which `torch.nn` loss function is commonly used?",
+          "options": {
+            "A": "`nn.CrossEntropyLoss`",
+            "B": "`nn.BCELoss`",
+            "C": "`nn.L1Loss` (Mean Absolute Error) or `nn.MSELoss` (Mean Squared Error)",
+            "D": "`nn.NLLLoss`"
+          },
+          "correct_answer": "C",
+          "explanation": "L1 and MSE are standard loss functions for measuring the difference between predicted and true continuous values."
+        },
+        {
+          "question": "What does `nn.Flatten()` do in a PyTorch model?",
+          "options": {
+            "A": "It flattens the model's weights.",
+            "B": "It flattens the input tensor into a 1D tensor (excluding the batch dimension), typically before passing it to a `nn.Linear` layer.",
+            "C": "It flattens the gradients.",
+            "D": "It reduces the number of layers in the network."
+          },
+          "correct_answer": "B",
+          "explanation": "After convolutional layers, features are typically flattened before being fed into fully connected layers."
+        },
+        {
+          "question": "When defining an `nn.Conv2d` layer, what do `in_channels` and `out_channels` refer to?",
+          "options": {
+            "A": "Input image width and height.",
+            "B": "Number of input feature maps and number of output feature maps (filters).",
+            "C": "Number of input and output pixels.",
+            "D": "Kernel size and stride."
+          },
+          "correct_answer": "B",
+          "explanation": "`in_channels` is the depth of the input, and `out_channels` is the number of filters (and thus the depth of the output)."
+        },
+        {
+          "question": "How do you access the learnable parameters (weights and biases) of a specific layer, e.g., `fc_layer = nn.Linear(10, 5)`?",
+          "options": {
+            "A": "`fc_layer.get_weights()`",
+            "B": "`fc_layer.weight` and `fc_layer.bias`",
+            "C": "`fc_layer.parameters()` (which returns an iterator)",
+            "D": "Both B and C."
+          },
+          "correct_answer": "D",
+          "explanation": "You can access them directly as attributes (`.weight`, `.bias`) or iterate over them using `.parameters()` for all parameters of the module."
+        },
+        {
+          "question": "Which of the following activation functions outputs values between 0 and 1, often used in the output layer of binary classification models?",
+          "options": {
+            "A": "`nn.ReLU`",
+            "B": "`nn.Tanh`",
+            "C": "`nn.Softmax`",
+            "D": "`nn.Sigmoid`"
+          },
+          "correct_answer": "D",
+          "explanation": "The Sigmoid function squashes any input to a value between 0 and 1, suitable for probability-like outputs."
+        },
+        {
+          "question": "What is the purpose of `nn.Softmax` when used in the output layer of a multi-class classification model?",
+          "options": {
+            "A": "To convert raw scores (logits) into probabilities that sum to 1.",
+            "B": "To make the output sparse.",
+            "C": "To reduce the number of output classes.",
+            "D": "To increase the magnitude of the output scores."
+          },
+          "correct_answer": "A",
+          "explanation": "Softmax ensures that the output values can be interpreted as probabilities for each class, useful for multi-class prediction where outputs must sum to 1."
+        }
+      ]
+    }
+  ]
+}

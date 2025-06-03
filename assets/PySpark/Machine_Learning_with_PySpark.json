@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Machine_Learning_with_PySpark",
+      "questions": [
+        {
+          "question": "What is the primary module in PySpark that provides a high-level API for building and deploying machine learning pipelines with DataFrames?",
+          "options": {
+            "A": "`pyspark.mllib`",
+            "B": "`pyspark.sql`",
+            "C": "`pyspark.ml`",
+            "D": "`pyspark.streaming`"
+          },
+          "correct_answer": "C",
+          "explanation": "`pyspark.ml` is the modern, DataFrame-based MLlib API, superseding the older RDD-based `pyspark.mllib`."
+        },
+        {
+          "question": "In PySpark MLlib, what is an 'Estimator'?",
+          "options": {
+            "A": "A component that transforms one DataFrame into another DataFrame.",
+            "B": "An algorithm that fits on a DataFrame to produce a 'Model' (which is a Transformer).",
+            "C": "A metric used to evaluate model performance.",
+            "D": "A utility for loading data."
+          },
+          "correct_answer": "B",
+          "explanation": "Estimators learn from data. Examples include `LogisticRegression` or `KMeans`."
+        },
+        {
+          "question": "What is a 'Transformer' in PySpark MLlib?",
+          "options": {
+            "A": "An algorithm that learns from data.",
+            "B": "A component that can transform one DataFrame into another DataFrame, without learning from data (e.g., a fitted model or a feature transformer).",
+            "C": "A method to estimate model parameters.",
+            "D": "A way to evaluate model accuracy."
+          },
+          "correct_answer": "B",
+          "explanation": "Transformers apply rules to data. Examples include `VectorAssembler`, `StringIndexerModel`, or a fitted `LogisticRegressionModel`."
+        },
+        {
+          "question": "What is the purpose of a 'Pipeline' in PySpark MLlib?",
+          "options": {
+            "A": "To create a visual representation of the ML workflow.",
+            "B": "To sequence multiple Transformers and Estimators together, creating a workflow that automates machine learning tasks.",
+            "C": "To train a model only on a single machine.",
+            "D": "To perform real-time data ingestion."
+          },
+          "correct_answer": "B",
+          "explanation": "Pipelines streamline the process of feature engineering, model training, and prediction by chaining steps."
+        },
+        {
+          "question": "Which `pyspark.ml.feature` Transformer is used to combine a given list of numerical or vector columns into a single vector column, suitable for ML algorithms?",
+          "options": {
+            "A": "`VectorAssembler`",
+            "B": "`FeatureHasher`",
+            "C": "`ColumnCombiner`",
+            "D": "`DenseVector`"
+          },
+          "correct_answer": "A",
+          "explanation": "Most PySpark ML algorithms expect a single vector column as input for features."
+        },
+        {
+          "question": "To convert a column of string labels into a column of label indices (numerical representation), which `pyspark.ml.feature` Estimator/Transformer would you use?",
+          "options": {
+            "A": "`OneHotEncoder`",
+            "B": "`LabelEncoder`",
+            "C": "`StringIndexer`",
+            "D": "`IndexToString`"
+          },
+          "correct_answer": "C",
+          "explanation": "`StringIndexer` maps string column to a column of label indices. If the input column is numeric, it is cast to a string and then indexed."
+        },
+        {
+          "question": "After using `StringIndexer` to convert categorical strings to numerical indices, what `pyspark.ml.feature` Transformer is often used next to create binary (one-hot) vectors?",
+          "options": {
+            "A": "`VectorAssembler`",
+            "B": "`Bucketizer`",
+            "C": "`OneHotEncoder`",
+            "D": "`Normalizer`"
+          },
+          "correct_answer": "C",
+          "explanation": "One-hot encoding creates a binary column for each category, preventing the model from inferring ordinal relationships between categories."
+        },
+        {
+          "question": "Which `pyspark.ml.feature` Transformer is used to scale numerical features to a specified range (e.g., [0, 1])?",
+          "options": {
+            "A": "`StandardScaler`",
+            "B": "`MinMaxScaler`",
+            "C": "`Normalizer`",
+            "D": "`QuantileDiscretizer`"
+          },
+          "correct_answer": "B",
+          "explanation": "`MinMaxScaler` transforms features by scaling each feature to a given range, typically 0 to 1."
+        },
+        {
+          "question": "For text processing, what is the initial step to break text into individual words, typically using `pyspark.ml.feature`?",
+          "options": {
+            "A": "`HashingTF`",
+            "B": "`IDF`",
+            "C": "`Word2Vec`",
+            "D": "`Tokenizer`"
+          },
+          "correct_answer": "D",
+          "explanation": "`Tokenizer` splits the input text column into an array of words."
+        },
+        {
+          "question": "Which `pyspark.ml.classification` algorithm is a good starting point for binary classification problems due to its simplicity and interpretability?",
+          "options": {
+            "A": "`RandomForestClassifier`",
+            "B": "`GradientBoostingClassifier`",
+            "C": "`LogisticRegression`",
+            "D": "`NaiveBayes`"
+          },
+          "correct_answer": "C",
+          "explanation": "Logistic Regression is a widely used and effective linear model for binary classification."
+        },
+        {
+          "question": "What is the primary output of fitting an Estimator (e.g., `LogisticRegression`) in PySpark MLlib?",
+          "options": {
+            "A": "A new DataFrame.",
+            "B": "A `Model` object (which is a Transformer).",
+            "C": "A list of feature importance scores.",
+            "D": "A summary report of the training process."
+          },
+          "correct_answer": "B",
+          "explanation": "The `fit()` method of an Estimator produces a Model (e.g., `LogisticRegressionModel`), which can then be used to `transform()` new data."
+        },
+        {
+          "question": "Which PySpark MLlib class is used to evaluate the performance of a classification model using metrics like accuracy, precision, recall, and F1-score?",
+          "options": {
+            "A": "`RegressionEvaluator`",
+            "B": "`BinaryClassificationEvaluator`",
+            "C": "`ClusteringEvaluator`",
+            "D": "`MulticlassClassificationEvaluator`"
+          },
+          "correct_answer": "D",
+          "explanation": "`MulticlassClassificationEvaluator` can compute various metrics for multiclass problems. `BinaryClassificationEvaluator` is for binary specific metrics like Area Under ROC/PR."
+        },
+        {
+          "question": "For regression models, what is a common evaluation metric in PySpark MLlib to measure the average magnitude of the errors?",
+          "options": {
+            "A": "Accuracy",
+            "B": "F1-score",
+            "C": "RMSE (Root Mean Squared Error)",
+            "D": "Silhouette Score"
+          },
+          "correct_answer": "C",
+          "explanation": "RMSE is a widely used metric for regression problems, penalizing larger errors more heavily."
+        },
+        {
+          "question": "How do you typically save a trained PySpark MLlib model (e.g., a PipelineModel) to disk?",
+          "options": {
+            "A": "`model.to_json()`",
+            "B": "`model.save('path/to/model')`",
+            "C": "`model.write.save('path/to/model')`",
+            "D": "`model.export('path/to/model')`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `save()` method is standard for persisting MLlib models and pipelines, which saves the model in a format Spark can load later."
+        },
+        {
+          "question": "Which `pyspark.ml.tuning` class is used to systematically select the best hyperparameters for a model by evaluating different combinations using cross-validation?",
+          "options": {
+            "A": "`TrainValidationSplit`",
+            "B": "`ParamGridBuilder`",
+            "C": "`CrossValidator`",
+            "D": "`Evaluator`"
+          },
+          "correct_answer": "C",
+          "explanation": "`CrossValidator` trains and evaluates multiple models with different parameter combinations across multiple folds of the data to find the best performing model."
+        },
+        {
+          "question": "What is the purpose of `ParamGridBuilder` in PySpark MLlib?",
+          "options": {
+            "A": "To build a grid of possible parameter values to be used with `CrossValidator` or `TrainValidationSplit`.",
+            "B": "To create a grid for plotting model results.",
+            "C": "To train models on a grid computing infrastructure.",
+            "D": "To optimize the underlying Spark cluster configuration."
+          },
+          "correct_answer": "A",
+          "explanation": "`ParamGridBuilder` helps in defining the search space for hyperparameter tuning."
+        },
+        {
+          "question": "In a `Pipeline`, if you have a `StringIndexer` followed by a `OneHotEncoder`, what is the typical order of operations?",
+          "options": {
+            "A": "OneHotEncoder first, then StringIndexer.",
+            "B": "StringIndexer first, then OneHotEncoder.",
+            "C": "They must be run in parallel.",
+            "D": "The order doesn't matter."
+          },
+          "correct_answer": "B",
+          "explanation": "One-hot encoding requires integer indices, so `StringIndexer` must run before `OneHotEncoder`."
+        },
+        {
+          "question": "Which of the following is an unsupervised learning algorithm available in PySpark MLlib for grouping similar data points?",
+          "options": {
+            "A": "`LogisticRegression`",
+            "B": "`DecisionTreeClassifier`",
+            "C": "`KMeans`",
+            "D": "`LinearRegression`"
+          },
+          "correct_answer": "C",
+          "explanation": "K-Means is a popular clustering algorithm for unsupervised learning."
+        },
+        {
+          "question": "When training a model in PySpark MLlib, if your input DataFrame has a column named 'features' and a column named 'label', what is their role?",
+          "options": {
+            "A": "Both are used for prediction.",
+            "B": "'features' is the independent variables (predictors), and 'label' is the dependent variable (target).",
+            "C": "'label' is for feature engineering, 'features' for evaluation.",
+            "D": "They are interchangeable names."
+          },
+          "correct_answer": "B",
+          "explanation": "This is the standard convention in MLlib: input features are typically assembled into a single vector column named 'features', and the target variable is named 'label'."
+        },
+        {
+          "question": "What is the primary advantage of using Spark MLlib over single-node ML libraries (like Scikit-learn) for large datasets?",
+          "options": {
+            "A": "MLlib has more algorithms.",
+            "B": "MLlib models are always more accurate.",
+            "C": "MLlib is designed for distributed computing, allowing it to scale to datasets that don't fit into the memory of a single machine.",
+            "D": "MLlib provides better visualization tools."
+          },
+          "correct_answer": "C",
+          "explanation": "Scalability and ability to handle 'big data' are the core strengths of Spark MLlib."
+        }
+      ]
+    }
+  ]
+}
