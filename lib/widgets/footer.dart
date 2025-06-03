@@ -32,17 +32,93 @@ class Footer extends StatelessWidget {
             spacing: 16,
             runSpacing: 16,
             children: [
-              buildCtaButton(
-                text: "Faqs",
-                onPressed: () => context.go('/faqs'),
+              Column(
+                children: [
+                  buildCtaButton(
+                    text: "Faqs",
+                    onPressed: () => context.go('/faqs'),
+                    bgColor: Colors.black,
+                  ),
+                  buildCtaButton(
+                      text: "Home",
+                      onPressed: () => context.go('/'),
+                      bgColor: Colors.black),
+                  buildCtaButton(
+                      text: "Quizzes",
+                      onPressed: () => context.go('/quizzes'),
+                      bgColor: Colors.black),
+                  buildCtaButton(
+                      text: "Mentors",
+                      onPressed: () => context.go('/mentors'),
+                      bgColor: Colors.black),
+                ],
               ),
-              buildCtaButton(text: "Home", onPressed: () => context.go('/')),
-              buildCtaButton(
-                  text: "Quizzes", onPressed: () => context.go('/quizzes')),
-              buildCtaButton(
-                  text: "Login", onPressed: () => context.go('/login')),
-              buildCtaButton(
-                  text: "Blogs", onPressed: () => context.go('/blogs'))
+              Column(
+                children: [
+                  buildCtaButton(
+                      text: "Colleges",
+                      onPressed: () => context.go('/colleges'),
+                      bgColor: Colors.black),
+                  buildCtaButton(
+                      text: "Chess",
+                      onPressed: () => context.go('/chess'),
+                      bgColor: Colors.black),
+                  buildCtaButton(
+                      text: "Series",
+                      onPressed: () => context.go('/series'),
+                      bgColor: Colors.black),
+                  buildCtaButton(
+                      text: "Fast Math",
+                      onPressed: () => context.go('/fastmath'),
+                      bgColor: Colors.black),
+                ],
+              ),
+              Column(
+                children: [
+                  buildCtaButton(
+                    text: "Colleges",
+                    onPressed: () => context.go('/colleges'),
+                    bgColor: Colors.black,
+                  ),
+                  buildCtaButton(
+                      text: "Chess",
+                      onPressed: () => context.go('/chess'),
+                      bgColor: Colors.black),
+                  buildCtaButton(
+                    text: "Series",
+                    onPressed: () => context.go('/series'),
+                    bgColor: Colors.black,
+                  ),
+                  buildCtaButton(
+                    text: "Fast Math",
+                    onPressed: () => context.go('/fastmath'),
+                    bgColor: Colors.black,
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  buildCtaButton(
+                    text: "Colleges",
+                    onPressed: () => context.go('/colleges'),
+                    bgColor: Colors.black,
+                  ),
+                  buildCtaButton(
+                      text: "Chess",
+                      onPressed: () => context.go('/chess'),
+                      bgColor: Colors.black),
+                  buildCtaButton(
+                    text: "Series",
+                    onPressed: () => context.go('/series'),
+                    bgColor: Colors.black,
+                  ),
+                  buildCtaButton(
+                    text: "Fast Math",
+                    onPressed: () => context.go('/fastmath'),
+                    bgColor: Colors.black,
+                  )
+                ],
+              ),
             ],
           ),
           const SizedBox(height: 16),

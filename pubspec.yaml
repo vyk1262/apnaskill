@@ -92,44 +92,52 @@ flutter:
     - assets/faqs.json
     - assets/explore.json
     - assets/mentors.json
-    - assets/Python Programming/
-    - assets/Python Programming/quizzes/
-    - assets/Web Development/
-    - assets/Web Development/quizzes/
-    - assets/Data Science/
-    - assets/Data Science/quizzes/
-    - assets/Machine Learning/
-    - assets/Machine Learning/quizzes/
-    - assets/Pandas/
-    - assets/Pandas/quizzes/
-    - assets/Numpy/
-    - assets/Numpy/quizzes/
-    - assets/Data Analytics/
-    - assets/Data Analytics/quizzes/
-    - assets/Prompt Engineering/
-    - assets/Prompt Engineering/quizzes/
-    - assets/Cloud Computing/
-    - assets/Cloud Computing/quizzes/
-    - assets/Docker/
-    - assets/Docker/quizzes/
-    - assets/Kubernetes/
-    - assets/Kubernetes/quizzes/
-    - assets/Artificial Intelligence/
     - assets/Artificial Intelligence/quizzes/
-    - assets/Cybersecurity/
-    - assets/Cybersecurity/quizzes/
-    - assets/DevOps/
-    - assets/DevOps/quizzes/
-    - assets/Blockchain/
     - assets/Blockchain/quizzes/
-    - assets/Internet of Things/
-    - assets/Internet of Things/quizzes/
-    - assets/Data Structures and Algorithms/
+    - assets/Chess/quizzes/
+    - assets/Cloud Computing/quizzes/
+    - assets/CSS/quizzes/
+    - assets/Cybersecurity/quizzes/
+    - assets/Data Analytics/quizzes/
+    - assets/Data Science/quizzes/
     - assets/Data Structures and Algorithms/quizzes/
-    - assets/Personality Development/
+    - assets/DevOps/quizzes/
+    - assets/Docker/quizzes/
+    - assets/Git/quizzes/
+    - assets/Git/quizzes/
+    - assets/HTML/quizzes/
+    - assets/Internet of Things/quizzes/
+    - assets/Javascript/quizzes/
+    - assets/Keras/quizzes/
+    - assets/Kubernetes/quizzes/
+    - assets/Linux/quizzes/
+    - assets/ML OPS/quizzes/
+    - assets/Machine Learning/quizzes/
+    - assets/Machine Learning/quizzes/
+    - assets/Machine Learning/quizzes/
+    - assets/Matplotlib/quizzes/
+    - assets/NodeJs/quizzes/
+    - assets/NodeJs/quizzes/
+    - assets/Numpy/quizzes/
+    - assets/Pandas/quizzes/
+    - assets/Pandas/quizzes/
     - assets/Personality Development/quizzes/
-    - assets/Software Testing/
+    - assets/Power BI/quizzes/
+    - assets/Prompt Engineering/quizzes/
+    - assets/PySpark/quizzes/
+    - assets/PyTorch/quizzes/
+    - assets/Python Programming/quizzes/
+    - assets/Python Programming/quizzes/
+    - assets/ReactJs/quizzes/
+    - assets/Reinforcement Learning/
+    - assets/SciPy/quizzes/
     - assets/Software Testing/quizzes/
+    - assets/Statistics/quizzes/
+    - assets/Sudoku/quizzes/
+    - assets/Supervised Learning/quizzes/
+    - assets/Tableau/quizzes/
+    - assets/TensorFlow/quizzes/
+    - assets/Unsupervised Learning/quizzes/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
