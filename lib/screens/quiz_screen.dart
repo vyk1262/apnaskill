@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../constants/colors.dart';
+import 'ViewResponses.dart';
 
 class QuizScreen extends StatefulWidget {
   final String internshipName;
@@ -174,12 +175,94 @@ class _QuizScreenState extends State<QuizScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Quiz Results'),
-          content: Text(
-            'Total Questions: ${quizData.length}\n'
-            'Attempted Questions: ${_userAnswers.where((answer) => answer != null).length}\n'
-            'Correct Answers: $correctAnswers\n\n'
-            'TOTAL MARKS: $correctAnswers',
+          title: const Text(
+            'Quiz Results',
+            textAlign: TextAlign.center, // Center the title
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          content: SingleChildScrollView(
+            // Use SingleChildScrollView in case content is long
+            child: Column(
+              mainAxisSize: MainAxisSize.min, // Keep column compact
+              children: [
+                ListTile(
+                  leading: Icon(Icons.playlist_add_check, color: Colors.blue),
+                  title: Text('Total Questions'),
+                  trailing: Text('${quizData.length}',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                ),
+                ListTile(
+                  leading: Icon(Icons.done_all, color: Colors.green),
+                  title: Text('Attempted Questions'),
+                  trailing: Text(
+                    '${_userAnswers.where((answer) => answer != null).length}',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(Icons.check_circle_outline, color: Colors.teal),
+                  title: Text('Correct Answers'),
+                  trailing: Text(
+                    '$correctAnswers',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.teal),
+                  ),
+                ),
+                Divider(), // A subtle divider for separation
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'TOTAL MARKS',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        '$correctAnswers',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.deepPurple, // Highlight total marks
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20), // Add some space
+                ElevatedButton.icon(
+                  // Use ElevatedButton.icon for a nicer button
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ViewResponses(
+                          quizData: quizData,
+                          userAnswers: _userAnswers,
+                          quizName: quizName,
+                        ),
+                      ),
+                    );
+                  },
+                  icon: Icon(Icons.remove_red_eye),
+                  label: Text('View Responses'),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize:
+                        Size(double.infinity, 45), // Make button full width
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    elevation: 5,
+                  ),
+                ),
+              ],
+            ),
           ),
           actions: [
             TextButton(
@@ -189,7 +272,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   showGeneralInfo = true;
                   selectedQuiz = '';
                 });
-                _loadCompletedItems(); // Reload completed items to update UI
+                _loadCompletedItems();
               },
               child: const Text('OK'),
             ),
