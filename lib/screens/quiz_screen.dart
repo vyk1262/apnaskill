@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:skill_factorial/widgets/title_case.dart';
 
 import '../constants/colors.dart';
 import 'ViewResponses.dart';
@@ -503,7 +504,7 @@ class _QuizScreenState extends State<QuizScreen> {
             final bool isSelected = selectedQuiz == topic;
             final bool isCompleted = completedQuizzes.contains(topic);
             return Container(
-              margin: const EdgeInsets.symmetric(vertical: 6),
+              margin: const EdgeInsets.symmetric(vertical: 2),
               decoration: BoxDecoration(
                 color: isSelected
                     ? Colors.white.withOpacity(0.15)
@@ -519,42 +520,28 @@ class _QuizScreenState extends State<QuizScreen> {
               child: ListTile(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
-                  vertical: 8,
+                  vertical: 4,
                 ),
-                leading: Stack(
-                  children: [
-                    Icon(
-                      Icons.assignment_outlined,
-                      color: Colors.white.withOpacity(0.9),
-                      size: 26,
-                    ),
-                    if (isCompleted)
-                      Positioned(
-                        right: -2,
-                        bottom: -2,
-                        child: Container(
-                          padding: const EdgeInsets.all(2),
-                          decoration: const BoxDecoration(
-                            color: Colors.green,
-                            shape: BoxShape.circle,
-                          ),
-                          child: const Icon(
-                            Icons.check,
-                            size: 12,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                  ],
+                leading: Icon(
+                  Icons.assignment_outlined,
+                  color: Colors.white.withOpacity(0.9),
+                  size: 26,
                 ),
                 title: Text(
-                  topic.replaceAll('-', ' ').toUpperCase(),
+                  toTitleCase(topic),
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontSize: 15,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                     letterSpacing: 0.5,
                   ),
+                ),
+                trailing: Icon(
+                  isCompleted ? Icons.check : Icons.arrow_forward,
+                  color: isCompleted
+                      ? Colors.green
+                      : Colors.white.withOpacity(0.9),
+                  size: isCompleted ? 24 : 18,
                 ),
                 onTap: () {
                   setState(() {
