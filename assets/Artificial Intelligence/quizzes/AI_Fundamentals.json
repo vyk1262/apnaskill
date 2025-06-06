@@ -11,7 +11,8 @@
             "C": "A type of computer hardware",
             "D": "A database management system"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Artificial Intelligence (AI) is the simulation of human intelligence by machines programmed to think and learn. It involves the development of computer systems that can perform tasks that typically require human intelligence, such as problem-solving, decision-making, pattern recognition, and learning from experience."
         },
         {
           "question": "Which of the following is a main branch of AI?",
@@ -21,7 +22,8 @@
             "C": "Machine Learning",
             "D": "Cloud Computing"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Machine Learning is a main branch of AI that involves the development of algorithms that allow computers to learn from data without being explicitly programmed. Other main branches include Natural Language Processing, Computer Vision, Robotics, and Expert Systems."
         },
         {
           "question": "What is the Turing Test?",
@@ -31,7 +33,8 @@
             "C": "A test for computer hardware compatibility",
             "D": "A test for network security"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The Turing Test is a test to evaluate a machine's capability to exhibit intelligent behavior equivalent to a human. Proposed by Alan Turing, it involves a human evaluator conversing with both a human and a machine, and if the evaluator cannot reliably tell which is which, the machine is said to have passed the test."
         },
         {
           "question": "What is Natural Language Processing (NLP)?",
@@ -41,7 +44,8 @@
             "C": "A type of computer memory",
             "D": "A database query language"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Natural Language Processing (NLP) is a branch of AI that focuses on enabling computers to understand, interpret, and generate human language. It includes tasks like sentiment analysis, machine translation, and speech recognition."
         },
         {
           "question": "What is the role of training data in AI?",
@@ -51,7 +55,8 @@
             "C": "To store AI program code",
             "D": "To manage system resources"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Training data is used to 'train' or 'teach' AI models. By exposing the model to a large dataset of examples, the model learns to identify patterns, relationships, and features that enable it to make predictions or decisions on new, unseen data."
         },
         {
           "question": "What is supervised learning?",
@@ -61,7 +66,8 @@
             "C": "Learning only from human supervision",
             "D": "Learning without any objectives"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Supervised learning is a type of machine learning where the model is trained on a dataset that includes input features and corresponding 'correct' output labels. The model learns to map inputs to outputs, and its performance is evaluated based on how well it predicts the labels for new data."
         },
         {
           "question": "What is unsupervised learning?",
@@ -71,7 +77,8 @@
             "C": "Learning with constant human supervision",
             "D": "Learning without any data"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Unsupervised learning is a type of machine learning where the model is given unlabeled data and must find patterns, structures, or relationships within the data on its own. Common tasks include clustering (grouping similar data points) and dimensionality reduction."
         },
         {
           "question": "What is deep learning?",
@@ -81,7 +88,8 @@
             "C": "Learning from very large databases",
             "D": "Learning that takes a long time"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Deep learning is a subset of machine learning that utilizes artificial neural networks with many layers (hence 'deep'). These deep neural networks can learn complex patterns and representations directly from raw data, especially effective for tasks like image and speech recognition."
         },
         {
           "question": "What is reinforcement learning?",
@@ -91,7 +99,8 @@
             "C": "Learning without any feedback",
             "D": "Learning from direct instructions"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Reinforcement learning is a type of machine learning where an agent learns to make decisions by performing actions in an environment and receiving rewards for desired behaviors or penalties for undesired ones. The agent's goal is to maximize cumulative reward."
         },
         {
           "question": "What is computer vision?",
@@ -101,7 +110,8 @@
             "C": "A virtual reality system",
             "D": "A type of computer graphics"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Computer vision is an interdisciplinary field of AI that deals with how computers can gain high-level understanding from digital images or videos. It involves tasks like image classification, object detection, and facial recognition."
         },
         {
           "question": "What is an expert system?",
@@ -111,7 +121,8 @@
             "C": "A high-performance computer",
             "D": "A system for training experts"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "An expert system is an AI program that emulates the decision-making ability of a human expert. It typically uses a knowledge base of facts and rules provided by human experts to solve complex problems or provide advice within a specific domain."
         },
         {
           "question": "What is the role of algorithms in AI?",
@@ -121,7 +132,8 @@
             "C": "To create user interfaces",
             "D": "To manage hardware resources"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Algorithms in AI are precise, step-by-step procedures or sets of rules used by AI models to process data, learn patterns, make predictions, and solve problems. They are the core computational logic behind AI systems."
         },
         {
           "question": "What is machine perception?",
@@ -131,7 +143,8 @@
             "C": "A mechanical sensor",
             "D": "A virtual reality system"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Machine perception refers to the ability of AI systems to interpret data from sensors (like cameras, microphones, LiDAR) in a way similar to human senses, allowing them to 'perceive' and understand their environment."
         },
         {
           "question": "What is knowledge representation in AI?",
@@ -141,7 +154,8 @@
             "C": "Creating user manuals",
             "D": "Writing computer programs"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Knowledge representation is the field of AI dedicated to representing information about the world in a form that a computer system can use to solve complex tasks. It involves encoding knowledge (facts, rules, concepts) in a structured way."
         },
         {
           "question": "What is the purpose of feature extraction in AI?",
@@ -151,7 +165,8 @@
             "C": "To extract files from archives",
             "D": "To create user interfaces"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Feature extraction is the process of transforming raw data into a set of features that are more informative and useful for an AI model. It aims to reduce the dimensionality of the data while retaining crucial information, making learning more efficient and effective."
         },
         {
           "question": "What is artificial neural network (ANN)?",
@@ -161,7 +176,8 @@
             "C": "A type of computer hardware",
             "D": "A programming language"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "An Artificial Neural Network (ANN) is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected 'neurons' (nodes) organized in layers, which process information and learn from data."
         },
         {
           "question": "What is the role of bias in AI systems?",
@@ -171,7 +187,8 @@
             "C": "To store data",
             "D": "To create user interfaces"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In neural networks, bias is an additional parameter that allows the activation function to be shifted. It helps the network to fit the data better by adjusting the output of the activation function, enabling the model to represent a wider range of patterns."
         },
         {
           "question": "What is the purpose of validation data in AI?",
@@ -181,7 +198,8 @@
             "C": "To store final results",
             "D": "To create documentation"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Validation data is a separate dataset used during the training phase to evaluate a model's performance on unseen data and to tune hyperparameters (settings that control the learning process). It helps prevent overfitting and provides an unbiased estimate of the model's generalization ability before final testing."
         },
         {
           "question": "What is overfitting in machine learning?",
@@ -191,7 +209,8 @@
             "C": "When a model is too simple",
             "D": "When a model runs too fast"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Overfitting occurs when a machine learning model learns the training data too thoroughly, including its noise and specific irregularities, leading to poor generalization performance on new, unseen data. The model performs well on training data but poorly on test data."
         },
         {
           "question": "What is the role of activation functions in neural networks?",
@@ -201,7 +220,8 @@
             "C": "To create user interfaces",
             "D": "To manage memory"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Activation functions introduce non-linearity into the output of a neuron. Without them, a neural network would only be able to learn linear relationships, limiting its ability to model complex data patterns. Common examples include ReLU, Sigmoid, and Tanh."
         }
       ]
     }

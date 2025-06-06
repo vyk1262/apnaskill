@@ -11,7 +11,8 @@
             "C": "Applying traditional machine learning algorithms to large datasets.",
             "D": "Focusing solely on unsupervised learning techniques."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Deep learning distinguishes itself from traditional machine learning by using artificial neural networks with many hidden layers (hence 'deep'). These layers allow the network to automatically learn increasingly abstract and hierarchical features or representations from raw data, without explicit feature engineering."
         },
         {
           "question": "What is an artificial neuron (perceptron) inspired by?",
@@ -21,7 +22,8 @@
             "C": "The logic gates in computer circuits.",
             "D": "The behavior of ants in a colony."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The concept of an artificial neuron, or perceptron, is a simplified mathematical model inspired by the structure and function of a biological neuron. It takes inputs, applies weights to them, sums them up, and then passes the result through an activation function to produce an output, mimicking how biological neurons fire based on input signals."
         },
         {
           "question": "What is the role of activation functions in a neural network?",
@@ -31,7 +33,8 @@
             "C": "To reduce the dimensionality of the input data.",
             "D": "To control the learning rate of the network."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Without activation functions, a neural network would simply be performing linear transformations on its inputs, regardless of the number of layers. Activation functions introduce non-linearity, which is essential for the network to learn and approximate complex, non-linear relationships and patterns present in real-world data."
         },
         {
           "question": "Which of the following is a common activation function?",
@@ -41,7 +44,8 @@
             "C": "ReLU (Rectified Linear Unit)",
             "D": "Principal Component Analysis (PCA)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "ReLU (Rectified Linear Unit) is one of the most widely used activation functions in deep learning. It outputs the input directly if it is positive, otherwise, it outputs zero. Mean Squared Error and Cross-Entropy are loss functions, and PCA is a dimensionality reduction technique, not activation functions."
         },
         {
           "question": "What is the purpose of the bias term in a neuron?",
@@ -51,7 +55,8 @@
             "C": "To control the learning rate.",
             "D": "To measure the error of the neuron."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The bias term in a neuron acts as a constant, additional input to the activation function. It allows the activation function to be shifted or translated, meaning the neuron can be activated (or produce a non-zero output) even if all inputs are zero, providing greater flexibility to the model in fitting the data."
         },
         {
           "question": "What is backpropagation?",
@@ -61,7 +66,8 @@
             "C": "A technique for preventing overfitting in deep learning models.",
             "D": "A type of activation function used in deep neural networks."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Backpropagation is the fundamental algorithm used to train artificial neural networks. It works by calculating the gradient of the loss function with respect to the network's weights, layer by layer, starting from the output layer and moving backward. This gradient information is then used by an optimization algorithm (like gradient descent) to adjust the weights and minimize the loss."
         },
         {
           "question": "What is the role of the learning rate in neural network training?",
@@ -71,7 +77,8 @@
             "C": "It defines the architecture of the neural network.",
             "D": "It measures the accuracy of the model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The learning rate is a hyperparameter that determines the step size at each iteration while moving toward a minimum of the loss function during optimization. A large learning rate can cause the model to overshoot the minimum, while a very small learning rate can make training too slow or get stuck in local minima. It directly impacts how much the weights are adjusted based on the calculated gradients."
         },
         {
           "question": "What is the difference between a feedforward neural network and a recurrent neural network (RNN)?",
@@ -81,7 +88,8 @@
             "C": "Feedforward networks are used for unsupervised learning, while RNNs are used for supervised learning.",
             "D": "There is no significant difference between them."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Feedforward neural networks process input in one direction, from input to output, without any cycles or loops. RNNs, on the other hand, have connections that allow information to flow backward or in cycles, enabling them to maintain an 'internal memory' of past inputs. This recurrent connection makes them suitable for processing sequential data where the order of inputs matters."
         },
         {
           "question": "Which type of neural network is particularly well-suited for processing sequential data like text or time series?",
@@ -91,7 +99,8 @@
             "C": "Recurrent Neural Networks (RNNs)",
             "D": "Autoencoders"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Recurrent Neural Networks (RNNs) are designed to handle sequential data. Their ability to remember past information through their internal loops makes them ideal for tasks like natural language processing (e.g., language translation, text generation) and time series analysis, where the order and context of data points are important."
         },
         {
           "question": "What are Long Short-Term Memory (LSTM) networks designed to address?",
@@ -101,7 +110,8 @@
             "C": "The computational cost of training large neural networks.",
             "D": "The issue of overfitting in image recognition tasks."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "LSTMs are a special type of RNN specifically designed to overcome the vanishing gradient problem that plagues standard RNNs when learning long-range dependencies. They achieve this through a sophisticated 'cell state' and 'gates' that control the flow of information, allowing them to selectively remember or forget information over extended sequences."
         },
         {
           "question": "Which type of neural network is commonly used for image recognition tasks?",
@@ -111,7 +121,8 @@
             "C": "Restricted Boltzmann Machines (RBMs)",
             "D": "Self-Organizing Maps (SOMs)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Convolutional Neural Networks (CNNs) are the go-to architecture for image processing tasks, including image recognition, object detection, and segmentation. Their key components, convolutional layers, are adept at identifying spatial hierarchies of features (e.g., edges, textures, parts of objects) in image data."
         },
         {
           "question": "What is a convolutional layer in a CNN?",
@@ -121,7 +132,8 @@
             "C": "A layer that reduces the dimensionality of the input.",
             "D": "A layer that introduces non-linearity."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A convolutional layer is the fundamental building block of a CNN. It applies a set of learnable filters (also called kernels) that slide across the input data (e.g., an image). Each filter detects specific local features (like edges or textures) and produces a feature map as its output."
         },
         {
           "question": "What is a pooling layer in a CNN?",
@@ -131,7 +143,8 @@
             "C": "A layer that reduces the spatial dimensions of the feature maps, making the network more robust to translations.",
             "D": "A layer that normalizes the activations."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Pooling layers, often called subsampling layers, are used in CNNs to progressively reduce the spatial size of the representation. This reduction in dimensionality decreases the number of parameters and computation in the network, and helps to make the model more invariant to small shifts or distortions in the input (translation invariance)."
         },
         {
           "question": "What is the purpose of dropout in deep learning?",
@@ -141,7 +154,8 @@
             "C": "To increase the number of layers in the network.",
             "D": "To change the activation function."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Dropout is a powerful regularization technique used to prevent overfitting in neural networks. During training, it randomly 'drops out' (sets to zero) a certain percentage of neurons in a layer. This forces the network to learn more robust features and prevents it from relying too heavily on any single neuron or specific set of connections."
         },
         {
           "question": "What is batch normalization?",
@@ -151,7 +165,8 @@
             "C": "A method for reducing the batch size during training.",
             "D": "A type of activation function."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Batch normalization is a technique that normalizes the inputs to each layer (or outputs of activation functions) by re-centering and re-scaling them during training. This helps to stabilize the training process, allows for higher learning rates, and often reduces the need for heavy regularization techniques like dropout."
         },
         {
           "question": "What are autoencoders primarily used for?",
@@ -161,7 +176,8 @@
             "C": "Dimensionality reduction and feature learning.",
             "D": "Time series forecasting."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Autoencoders are a type of unsupervised neural network that attempts to learn a compact, low-dimensional representation (encoding) of the input data. They do this by trying to reconstruct their own input. The 'bottleneck' or hidden layer in the middle captures the most important features, making them useful for dimensionality reduction, anomaly detection, and feature learning."
         },
         {
           "question": "What is a generative adversarial network (GAN)?",
@@ -171,7 +187,8 @@
             "C": "A deep learning model for time series analysis.",
             "D": "An unsupervised learning algorithm for clustering high-dimensional data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A GAN is a powerful deep learning architecture composed of two neural networks, a 'generator' and a 'discriminator', that are trained simultaneously in a zero-sum game. The generator tries to produce realistic fake data (e.g., images), while the discriminator tries to distinguish between real and fake data. This adversarial process drives both networks to improve, resulting in the generator producing highly convincing synthetic data."
         },
         {
           "question": "What is transfer learning in deep learning?",
@@ -181,7 +198,8 @@
             "C": "Transferring data between different storage devices.",
             "D": "Transferring the computation to a more powerful GPU."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Transfer learning is a technique where a model trained on a large dataset for one task (e.g., image classification on ImageNet) is repurposed or fine-tuned for a different, often smaller, related task. This leverages the pre-trained model's learned features as a starting point, significantly reducing training time and the amount of data needed for the new task."
         },
         {
           "question": "Which of the following is a popular deep learning framework?",
@@ -191,7 +209,8 @@
             "C": "TensorFlow",
             "D": "NumPy"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "TensorFlow (developed by Google) is one of the most widely used open-source deep learning frameworks. Others include PyTorch (developed by Meta), Keras (a high-level API often running on TensorFlow), and MXNet. Scikit-learn is for traditional machine learning, Pandas for data manipulation, and NumPy for numerical computing in Python."
         },
         {
           "question": "What are some of the challenges associated with training deep learning models?",
@@ -201,7 +220,8 @@
             "C": "The difficulty in interpreting the learned representations (black-box nature).",
             "D": "All of the above."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All listed options are significant challenges in deep learning. Deep models often require vast amounts of labeled data to generalize well, their training can be computationally expensive and time-consuming (requiring specialized hardware like GPUs), and their complex multi-layered structures can make it difficult to understand *why* they make certain predictions, leading to the 'black-box' problem."
         }
       ]
     }

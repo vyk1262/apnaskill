@@ -11,7 +11,8 @@
             "C": "Computer Style Sheets",
             "D": "Cascading Simple Sheets"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "CSS stands for Cascading Style Sheets, which is a stylesheet language used to describe the presentation of a document written in HTML or XML."
         },
         {
           "question": "Which HTML tag is used to link an external CSS file?",
@@ -21,7 +22,8 @@
             "C": "<link>",
             "D": "<stylesheet>"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `<link>` tag is used in the HTML document's `<head>` section to link external stylesheets. It specifies the relationship between the current document and the linked resource."
         },
         {
           "question": "How do you add inline CSS to an HTML element?",
@@ -31,17 +33,19 @@
             "C": "Using the 'style' attribute",
             "D": "Using an external stylesheet"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Inline CSS is applied directly to an HTML element using the `style` attribute. This method is useful for applying unique styles to single elements, but it is generally not recommended for large-scale styling."
         },
         {
           "question": "What is the correct syntax for a CSS comment?",
           "options": {
-            "A": "<!-- This is a comment -->",
+            "A": "",
             "B": "// This is a comment",
             "C": "/* This is a comment */",
             "D": "# This is a comment"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "CSS comments begin with `/*` and end with `*/`. They are used to add notes within the stylesheet that are ignored by the browser."
         },
         {
           "question": "Which CSS property is used to change the background color of an element?",
@@ -51,7 +55,8 @@
             "C": "color",
             "D": "background"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `background-color` property is used to set the solid background color of an HTML element. While `background` is a shorthand property, `background-color` specifically targets the color."
         },
         {
           "question": "Which CSS selector is used to select elements by their ID?",
@@ -61,7 +66,8 @@
             "C": "*",
             "D": "!"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `#` symbol is used in CSS to select an HTML element based on its unique `id` attribute. For example, `#myElement` will select the element with `id='myElement'`."
         },
         {
           "question": "What is the purpose of the 'margin' property in CSS?",
@@ -71,7 +77,8 @@
             "C": "To add a border to an element",
             "D": "To set the text color of an element"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `margin` property is used to create space around elements, outside of any defined borders. It defines the distance between the element's border and adjacent elements."
         },
         {
           "question": "What is the CSS 'box model'?",
@@ -81,7 +88,8 @@
             "C": "A model that describes the spacing around an element",
             "D": "A model that wraps elements in a 3D box"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The CSS box model is a fundamental concept that describes how elements are rendered on a page, treating each element as a rectangular box with content, padding, border, and margin layers."
         },
         {
           "question": "Which property is used to set the width of an element?",
@@ -91,7 +99,8 @@
             "C": "height",
             "D": "size"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `width` property explicitly sets the horizontal dimension of an element's content area. This property is commonly used for defining the size of images, divs, and other block-level elements."
         },
         {
           "question": "What is the purpose of the 'padding' property in CSS?",
@@ -101,7 +110,8 @@
             "C": "To change the font size",
             "D": "To align text"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `padding` property is used to generate space around an element's content, inside of any defined borders. It provides internal spacing, pushing the content away from the element's edges."
         },
         {
           "question": "Which CSS property is used to change the text color of an element?",
@@ -111,7 +121,8 @@
             "C": "text-color",
             "D": "font-color"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `color` property is used to set the foreground color of an element's text content. It is a fundamental property for styling typography."
         },
         {
           "question": "How do you select all <p> elements in a CSS file?",
@@ -121,7 +132,8 @@
             "C": "*p",
             "D": "p"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "To select all `<p>` (paragraph) elements in CSS, you simply use the element's tag name as the selector: `p { ... }`. This is known as a type selector."
         },
         {
           "question": "What is the purpose of the 'float' property in CSS?",
@@ -131,7 +143,8 @@
             "C": "To adjust text size",
             "D": "To add padding around an element"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `float` property positions an element to the left or right within its containing block, allowing text and inline elements to wrap around it. It is commonly used for creating multi-column layouts or aligning images within text."
         },
         {
           "question": "Which CSS property controls the visibility of an element?",
@@ -141,7 +154,8 @@
             "C": "opacity",
             "D": "hide"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `visibility` property controls whether an element is visible without affecting its layout. An element with `visibility: hidden;` will still occupy space on the page, unlike `display: none;` which removes it from the document flow entirely."
         },
         {
           "question": "What is the default value of the 'position' property in CSS?",
@@ -151,7 +165,8 @@
             "C": "absolute",
             "D": "fixed"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The default value of the `position` property is `static`. This means the element is positioned according to the normal flow of the document, and properties like `top`, `bottom`, `left`, and `right` have no effect."
         },
         {
           "question": "Which CSS property is used to add space between the content and border of an element?",
@@ -161,7 +176,8 @@
             "C": "border-spacing",
             "D": "content-spacing"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `padding` property creates space between the element's content and its border. This internal spacing is part of the element's overall box model."
         },
         {
           "question": "How do you center an element horizontally in CSS?",
@@ -171,7 +187,8 @@
             "C": "margin-left: auto; margin-right: auto;",
             "D": "align: center;"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "To horizontally center a block-level element, you set its `margin-left` and `margin-right` properties to `auto`. This works when the element has a defined width."
         },
         {
           "question": "Which property is used to change the font size of an element?",
@@ -181,7 +198,8 @@
             "C": "font-size",
             "D": "font-color"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `font-size` property is used to specify the size of the text within an element. It can be set using various units like pixels, ems, rems, or percentages."
         },
         {
           "question": "How do you apply a style to an element when it is hovered over?",
@@ -191,7 +209,8 @@
             "C": "using the :focus selector",
             "D": "using the :visited selector"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `:hover` pseudo-class selector is used to apply styles to an element only when the user's mouse pointer is hovering over it. This is commonly used for interactive effects."
         },
         {
           "question": "Which CSS property makes text bold?",
@@ -201,7 +220,8 @@
             "C": "text-decoration: bold",
             "D": "font: bold"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `font-weight` property is used to set how thick or thin characters in text should be displayed. Setting it to `bold` (or a numerical value like 700) makes the text appear heavier."
         }
       ]
     }

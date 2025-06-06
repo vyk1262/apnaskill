@@ -11,7 +11,8 @@
             "C": "A method for processing numerical data",
             "D": "A system for storing text documents"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Natural Language Processing (NLP) is a field of artificial intelligence that empowers computers to understand, interpret, and generate human language. It bridges the gap between human communication and computer comprehension."
         },
         {
           "question": "What is the purpose of word embeddings in NLP?",
@@ -21,7 +22,8 @@
             "C": "To encrypt text data",
             "D": "To count word frequencies"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Word embeddings convert words into numerical vectors, where words with similar meanings are located close to each other in the vector space. This allows machine learning models to understand the semantic and syntactic relationships between words."
         },
         {
           "question": "What is the role of attention mechanisms in modern NLP?",
@@ -31,7 +33,8 @@
             "C": "To speed up training time",
             "D": "To compress model size"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Attention mechanisms allow an NLP model to weigh the importance of different words in an input sequence when making a prediction or generating an output. This helps the model to 'focus' on the most relevant information, much like a human does when reading."
         },
         {
           "question": "What is BERT?",
@@ -41,7 +44,8 @@
             "C": "A programming language for NLP",
             "D": "A database management system"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "BERT stands for Bidirectional Encoder Representations from Transformers. It's a groundbreaking language model developed by Google that is pre-trained on a massive amount of text data and can understand context from both left and right sides of a word, making it highly effective for various NLP tasks."
         },
         {
           "question": "What is the purpose of named entity recognition (NER)?",
@@ -51,7 +55,8 @@
             "C": "To translate text between languages",
             "D": "To format text documents"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Named Entity Recognition (NER) is an NLP task that aims to locate and classify named entities in unstructured text into predefined categories such as person names, organizations, locations, dates, monetary values, and more. It's crucial for information extraction."
         },
         {
           "question": "What is the main challenge in natural language understanding?",
@@ -61,7 +66,8 @@
             "C": "Processing speed",
             "D": "Data encryption"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Human language is inherently complex, filled with ambiguity (words with multiple meanings), sarcasm, idioms, and context-dependent interpretations. Capturing these nuances and allowing computers to truly 'understand' rather than just process is a major challenge in NLP."
         },
         {
           "question": "What is the purpose of text summarization in NLP?",
@@ -71,7 +77,8 @@
             "C": "To translate text",
             "D": "To format documents"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Text summarization is an NLP task that aims to create a concise and coherent summary of a longer text document, retaining the most important information and meaning. It can be extractive (picking important sentences) or abstractive (generating new sentences)."
         },
         {
           "question": "What is the role of language models in NLP?",
@@ -81,7 +88,8 @@
             "C": "To format documents",
             "D": "To encrypt data"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Language models learn to predict the next word in a sequence or fill in missing words. By understanding the statistical relationships between words, they can generate coherent and grammatically correct human-like text, which is fundamental to many NLP applications like chatbots and content creation."
         },
         {
           "question": "What is the purpose of sentiment analysis?",
@@ -91,7 +99,8 @@
             "C": "To translate text",
             "D": "To format documents"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Sentiment analysis, also known as opinion mining, is an NLP technique used to determine the emotional tone or overall sentiment (positive, negative, neutral) expressed in a piece of text. It's widely used for customer feedback analysis, social media monitoring, and brand reputation management."
         },
         {
           "question": "What is the role of machine translation in NLP?",
@@ -101,7 +110,8 @@
             "C": "To format documents",
             "D": "To store text data"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Machine translation (MT) is a subfield of NLP that deals with the automatic translation of text or speech from one natural language to another. Modern MT systems often use neural networks (Neural Machine Translation) to achieve highly fluent and accurate translations."
         },
         {
           "question": "What is the purpose of text classification in NLP?",
@@ -111,7 +121,8 @@
             "C": "To translate text",
             "D": "To store text"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Text classification is the task of assigning predefined categories or labels to text documents. Common applications include spam detection, news article categorization, and assigning tags to customer support tickets based on their content."
         },
         {
           "question": "What is the role of preprocessing in NLP?",
@@ -121,7 +132,8 @@
             "C": "To encrypt data",
             "D": "To format documents"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Preprocessing is a crucial step in NLP that involves preparing raw text data for analysis. This can include tasks like tokenization (breaking text into words), stemming/lemmatization (reducing words to their root form), removing stop words, and handling punctuation or capitalization, all to improve model performance."
         },
         {
           "question": "What is the purpose of question answering systems in NLP?",
@@ -131,7 +143,8 @@
             "C": "To format text",
             "D": "To count words"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Question Answering (QA) systems are designed to automatically answer questions posed by humans in natural language. These systems can range from simple fact-based lookups to complex inference-based answers derived from large text collections."
         },
         {
           "question": "What is the role of transfer learning in NLP?",
@@ -141,7 +154,8 @@
             "C": "To format text",
             "D": "To count words"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Transfer learning in NLP involves leveraging knowledge acquired from training a model on a large, general-purpose task (e.g., language modeling on vast text corpora) and applying it to a new, often smaller and more specific, NLP task. This significantly reduces training time and data requirements for new tasks."
         },
         {
           "question": "What is the purpose of text generation in NLP?",
@@ -151,7 +165,8 @@
             "C": "To format documents",
             "D": "To count words"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Text generation is the task of producing new, coherent, and often creative text based on a given prompt, topic, or style. This is a core capability of large language models and is used for chatbots, content creation, creative writing, and more."
         },
         {
           "question": "What are the ethical considerations in NLP?",
@@ -161,7 +176,8 @@
             "C": "Only cost considerations",
             "D": "Only efficiency concerns"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Ethical considerations in NLP are paramount due to the technology's direct interaction with human language. These include issues like algorithmic bias (models perpetuating societal biases present in training data), privacy (handling sensitive personal information), potential for misuse (e.g., generating misinformation), and ensuring fairness and equitable access."
         },
         {
           "question": "What is the role of dialogue systems in NLP?",
@@ -171,7 +187,8 @@
             "C": "To format text",
             "D": "To count words"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Dialogue systems (like chatbots and virtual assistants) are NLP applications designed to enable natural, conversational interaction between humans and computers. They interpret user input, maintain context, and generate appropriate responses to facilitate a continuous exchange."
         },
         {
           "question": "What is the purpose of information extraction in NLP?",
@@ -181,7 +198,8 @@
             "C": "To format documents",
             "D": "To count words"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Information extraction (IE) is an NLP task that involves automatically identifying and extracting specific, structured pieces of information from unstructured text. This often includes tasks like Named Entity Recognition, Relationship Extraction, and Event Extraction."
         },
         {
           "question": "What is the role of evaluation metrics in NLP?",
@@ -191,7 +209,8 @@
             "C": "To format text",
             "D": "To count words"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Evaluation metrics are quantitative measures used to assess how well an NLP model performs a given task. Common metrics include accuracy, precision, recall, F1-score (for classification), BLEU (for machine translation), ROUGE (for summarization), and perplexity (for language models). They are crucial for comparing different models and tracking progress."
         },
         {
           "question": "What are the key challenges in multilingual NLP?",
@@ -201,7 +220,8 @@
             "C": "Only storage issues",
             "D": "Only processing speed"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Multilingual NLP faces significant challenges beyond simply translating words. Different languages have distinct grammatical structures (syntax), writing systems (scripts), and cultural nuances that affect meaning. Data availability and quality also vary greatly across languages, making robust cross-lingual models complex to develop."
         }
       ]
     }

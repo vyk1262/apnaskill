@@ -11,7 +11,8 @@
             "C": "Predicting disease outbreaks, personalizing treatment plans, and improving diagnostic accuracy.",
             "D": "Managing hospital staff schedules."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science leverages vast amounts of medical data (patient records, genomic data, imaging) to identify patterns that help in early detection of diseases, forecast epidemics, tailor treatments to individual patients based on their unique biological profiles (precision medicine), and enhance the accuracy of diagnostic tools."
         },
         {
           "question": "What are some applications of data science in the finance industry?",
@@ -21,7 +22,8 @@
             "C": "Fraud detection, risk assessment, algorithmic trading, and customer behavior analysis.",
             "D": "Designing bank building layouts."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In finance, data science is crucial for identifying fraudulent transactions in real-time, assessing credit risk for loans, powering high-frequency trading strategies, and understanding customer spending habits and preferences to offer personalized services and products."
         },
         {
           "question": "How is data science used in marketing and advertising?",
@@ -31,7 +33,8 @@
             "C": "Customer segmentation, targeted advertising, predicting customer churn, and optimizing marketing spend.",
             "D": "Distributing promotional materials door-to-door."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science enables marketers to divide customers into distinct groups for tailored campaigns, deliver personalized ads to specific demographics, predict which customers are likely to stop using a service (churn prediction), and allocate marketing budgets more efficiently by analyzing campaign performance."
         },
         {
           "question": "What are some applications of data science in the field of transportation?",
@@ -41,7 +44,8 @@
             "C": "Optimizing traffic flow, predicting travel times, improving logistics, and autonomous driving.",
             "D": "Managing parking lots manually."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science uses real-time traffic data, GPS information, and historical patterns to predict congestion, suggest optimal routes, manage logistics and supply chains more efficiently, and is fundamental to the development of self-driving vehicles by processing sensor data for navigation and decision-making."
         },
         {
           "question": "How is data science being used in the education sector?",
@@ -51,7 +55,8 @@
             "C": "Personalized learning paths, student performance prediction, and resource allocation optimization.",
             "D": "Organizing school events."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science helps create adaptive learning systems that customize educational content and pace for individual students, predict academic success or failure, and optimize the allocation of educational resources like teachers, classrooms, and textbooks based on student needs and performance data."
         },
         {
           "question": "In environmental science, how can data science be applied?",
@@ -61,7 +66,8 @@
             "C": "Climate modeling, predicting natural disasters, and monitoring biodiversity.",
             "D": "Designing energy-efficient buildings."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science analyzes vast datasets from sensors, satellites, and historical records to build models for climate change prediction, forecast extreme weather events (like hurricanes or earthquakes), and track species populations and ecosystem health to support conservation efforts."
         },
         {
           "question": "What are some ways data science is used in the retail industry?",
@@ -71,7 +77,8 @@
             "C": "Inventory management, personalized recommendations, demand forecasting, and customer sentiment analysis.",
             "D": "Hiring store staff."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Retailers use data science for optimizing stock levels based on sales patterns, offering product recommendations unique to each customer, predicting future demand to avoid overstocking or understocking, and analyzing customer reviews and social media to gauge public opinion about products and services."
         },
         {
           "question": "How is data science transforming the agriculture industry?",
@@ -81,7 +88,8 @@
             "C": "Precision agriculture, yield prediction, disease detection in crops, and livestock management.",
             "D": "Transporting harvested goods to market."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science in agriculture (precision agriculture) involves using sensor data, satellite imagery, and weather data to optimize irrigation, fertilization, and pest control. It also helps predict crop yields, identify plant diseases early, and improve livestock health and productivity through monitoring and predictive analytics."
         },
         {
           "question": "What role does data science play in the energy sector?",
@@ -91,7 +99,8 @@
             "C": "Predicting energy consumption, optimizing grid management, and improving renewable energy forecasting.",
             "D": "Reading electricity meters."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The energy sector uses data science to forecast demand and supply, balance the power grid for efficiency and stability, and predict the output of renewable sources like solar and wind based on weather patterns, leading to more reliable and sustainable energy systems."
         },
         {
           "question": "How is data science applied in the sports industry?",
@@ -101,7 +110,8 @@
             "C": "Player performance analysis, predicting game outcomes, and fan engagement.",
             "D": "Refereeing games."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In sports, data science analyzes athlete performance metrics (e.g., speed, strength, tactics) to optimize training and strategy, predict game results based on team and player statistics, and personalize fan experiences through tailored content and marketing."
         },
         {
           "question": "In the context of cybersecurity, how is data science utilized?",
@@ -111,7 +121,8 @@
             "C": "Threat detection, anomaly detection, and vulnerability analysis.",
             "D": "Installing antivirus software on individual machines."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science is critical in cybersecurity for identifying novel threats and malware patterns, detecting unusual network activities that might indicate a breach, and analyzing system vulnerabilities to proactively strengthen defenses against cyberattacks."
         },
         {
           "question": "What are some applications of data science in the entertainment industry?",
@@ -121,7 +132,8 @@
             "C": "Recommendation systems, content personalization, and audience analytics.",
             "D": "Designing movie posters."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The entertainment industry heavily relies on data science to power personalized content recommendations (e.g., Netflix, Spotify), tailor content based on user preferences, and analyze audience behavior and trends to inform content creation and distribution strategies."
         },
         {
           "question": "How is data science being used in human resources (HR)?",
@@ -131,7 +143,8 @@
             "C": "Talent acquisition, employee retention prediction, and performance analysis.",
             "D": "Managing office supplies."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In HR, data science helps optimize the hiring process by identifying suitable candidates, predicting which employees might leave the company (and why), and analyzing employee performance data to inform training, development, and promotion decisions, leading to a more effective workforce."
         },
         {
           "question": "What role can data science play in urban planning?",
@@ -141,7 +154,8 @@
             "C": "Optimizing public transportation, predicting urban growth, and resource allocation.",
             "D": "Sweeping city streets."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Urban planners use data science to analyze transportation patterns for route optimization, forecast population growth and its impact on infrastructure, and efficiently allocate resources like housing, public services, and emergency response units across a city."
         },
         {
           "question": "How is data science applied in the field of manufacturing?",
@@ -151,7 +165,8 @@
             "C": "Predictive maintenance, quality control, and supply chain optimization.",
             "D": "Packaging finished goods by hand."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In manufacturing, data science is applied to predict equipment failures before they occur (predictive maintenance), ensure product quality by identifying defects early in the production line, and optimize the entire supply chain for efficiency and cost reduction."
         },
         {
           "question": "What are some applications of data science in the legal field?",
@@ -161,7 +176,8 @@
             "C": "Legal research, contract analysis, and predicting case outcomes.",
             "D": "Serving legal documents in person."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science in law assists with efficiently sifting through vast legal documents for research, analyzing complex contracts for clauses and risks, and predicting the potential outcomes of legal cases based on historical data and various factors."
         },
         {
           "question": "How is data science being used in the logistics and supply chain management?",
@@ -171,7 +187,8 @@
             "C": "Route optimization, demand forecasting, and inventory management.",
             "D": "Loading and unloading goods by hand."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data science is key to optimizing delivery routes for efficiency, accurately predicting demand for goods to prevent shortages or excesses, and managing inventory levels across complex supply chains to reduce costs and improve delivery times."
         },
         {
           "question": "What role can data science play in scientific research across various disciplines?",
@@ -181,7 +198,8 @@
             "C": "Solely focusing on data collection and ignoring analysis.",
             "D": "Only being applicable to computer science research."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data science is an invaluable tool in modern scientific research. It helps scientists process and make sense of massive datasets generated from experiments, simulations, and observations, uncovering hidden patterns, validating hypotheses, and speeding up the discovery of new knowledge across fields from biology to astrophysics."
         },
         {
           "question": "How can data science contribute to improving government services?",
@@ -191,7 +209,8 @@
             "C": "Solely focusing on collecting more citizen data.",
             "D": "Automating all government functions without human oversight."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data science helps governments allocate public funds and resources more effectively, create evidence-based policies by analyzing socio-economic data, and enhance various citizen services (e.g., healthcare, public safety, urban planning) by identifying needs and improving delivery efficiency."
         },
         {
           "question": "Why is domain-specific knowledge crucial when applying data science in different fields?",
@@ -201,7 +220,8 @@
             "C": "It is only needed for communicating the results to domain experts.",
             "D": "It primarily helps in choosing the right data visualization techniques."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "While data science techniques are generic, their effective application requires deep understanding of the specific domain. Domain knowledge helps in data collection, cleaning, feature engineering, interpreting model results in context, identifying biases, and formulating relevant questions that lead to truly actionable insights and impactful solutions."
         }
       ]
     }
