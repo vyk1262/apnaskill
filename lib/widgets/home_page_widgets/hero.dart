@@ -43,12 +43,32 @@ class _HeroWidgetState extends State<HeroWidget> {
             ),
           )
         : Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(
-                flex: 1,
-                child: newMethodTwo(context),
+              SizedBox(
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: newMethodTwo(context)),
+              Card(
+                elevation: 8, // Adds a shadow to the card
+                margin: const EdgeInsets.all(20), // Adds space around the card
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                      15), // Rounds the corners of the card
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.all(20), // Adds padding inside the card
+                  child: Text(
+                    "Practicing While Learning is Much better than just learning",
+                    textAlign: TextAlign.center, // Centers the text
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueGrey[700], // Darker text color
+                    ),
+                  ),
+                ),
               ),
-              const SizedBox(height: 20),
               buildCtaButton(
                 text: 'Start Testing Your Skills',
                 onPressed: () => context.go('/login'),

@@ -7,6 +7,9 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Determine if the current device is considered 'mobile' based on screen width
+    final bool isMobile = MediaQuery.of(context).size.width < 850;
+
     final List<Map<String, dynamic>> contactData = [
       {
         'icon': Icons.email,
@@ -15,9 +18,9 @@ class ContactCard extends StatelessWidget {
       },
       // {'icon': Icons.phone, 'title': 'Phone', 'text': '+91 8778605825'},
       // {
-      //   'icon': Icons.message_rounded,
-      //   'title': 'Whatsapp',
-      //   'text': '+91 8778605825',
+      //   'icon': Icons.message_rounded,
+      //   'title': 'Whatsapp',
+      //   'text': '+91 8778605825',
       // },
       {
         'icon': Icons.location_on,
@@ -46,83 +49,119 @@ class ContactCard extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(15.0),
         ),
+        child: isMobile
+            ? _buildMobileLayout(contactData) // Use Column for mobile
+            : _buildDesktopLayout(contactData), // Use Row for desktop
+      ),
+    );
+  }
+
+  // Helper method for desktop layout (Row)
+  Widget _buildDesktopLayout(List<Map<String, dynamic>> contactData) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          child: CachedNetworkImage(
+            imageUrl: 'https://i.ibb.co/wFTXw9s9/contact.png',
+            placeholder: (context, url) =>
+                const Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) =>
+                const Center(child: Icon(Icons.error)),
+            fit: BoxFit.contain, // Use contain for desktop
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: _buildContactDetails(contactData),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Helper method for mobile layout (Column)
+  Widget _buildMobileLayout(List<Map<String, dynamic>> contactData) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20.0),
+          child: SizedBox(
+            height: 150, // Fixed height for image on mobile
+            child: CachedNetworkImage(
+              imageUrl: 'https://i.ibb.co/wFTXw9s9/contact.png',
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) =>
+                  const Center(child: Icon(Icons.error)),
+              fit: BoxFit.contain, // Use contain for mobile
+            ),
+          ),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: _buildContactDetails(contactData),
+        ),
+      ],
+    );
+  }
+
+  // Helper method to build the common contact details list
+  List<Widget> _buildContactDetails(List<Map<String, dynamic>> contactData) {
+    return contactData.map((data) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center, // Changed to start
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: CachedNetworkImage(
-                imageUrl:
-                    'https://i.ibb.co/wFTXw9s9/contact.png', // Corrected URL
-                placeholder: (context, url) =>
-                    const Center(child: CircularProgressIndicator()),
-                errorWidget: (context, url, error) =>
-                    const Center(child: Icon(Icons.error)),
-                fit: BoxFit.cover, // Ensure the image fits within the container
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Icon(
+                data['icon'] as IconData,
+                color: Colors.white,
+                size: 40.0,
               ),
             ),
+            const SizedBox(width: 12.0),
             Expanded(
-              // Added Expanded
-              child: Padding(
-                padding:
-                    const EdgeInsets.only(right: 16.0), // Added right padding
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment:
-                      CrossAxisAlignment.start, // Added this line
-                  children: contactData.map((data) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start, //added
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(8.0),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Icon(
-                              data['icon'] as IconData,
-                              color: Colors.white,
-                              size: 40.0,
-                            ),
-                          ),
-                          const SizedBox(width: 12.0),
-                          Expanded(
-                            // Use Expanded here
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  data['title'] as String,
-                                  style: const TextStyle(
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 2.0),
-                                Text(
-                                  data['text'] as String,
-                                  style: TextStyle(
-                                    fontSize: 18.0,
-                                    color: Colors.white.withOpacity(0.9),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  }).toList(),
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    data['title'] as String,
+                    style: const TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 2.0),
+                  Text(
+                    data['text'] as String,
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white.withOpacity(0.9),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
-      ),
-    );
+      );
+    }).toList();
   }
 }
