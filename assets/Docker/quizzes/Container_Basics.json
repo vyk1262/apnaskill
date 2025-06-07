@@ -1,8 +1,229 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Container_Basics",
+      "questions": [
         {
-            "topic": "Container_Basics",
-            "questions": []
+          "question": "What is the primary difference between a Docker image and a Docker container?",
+          "options": {
+            "A": "An image is a running instance, a container is a blueprint.",
+            "B": "An image is a static blueprint, a container is a running instance of that blueprint.",
+            "C": "Images are only for Linux, containers are for all OS.",
+            "D": "Containers are larger than images."
+          },
+          "correct_answer": "B",
+          "explanation": "A Docker image is a read-only template with instructions for creating a container. A Docker container is a runnable instance of an image, which includes a writable layer on top of the image."
+        },
+        {
+          "question": "How do Docker containers achieve isolation from each other and from the host system?",
+          "options": {
+            "A": "By running a full virtual machine for each container.",
+            "B": "Through hardware virtualization technology.",
+            "C": "By leveraging Linux kernel features like namespaces and cgroups.",
+            "D": "By using a separate kernel for each container."
+          },
+          "correct_answer": "C",
+          "explanation": "Docker containers utilize Linux kernel features: `namespaces` provide isolation for processes, networks, file systems, etc., and `cgroups` (control groups) manage and limit resource allocation (CPU, memory, I/O) to containers. This allows containers to share the host kernel while remaining isolated."
+        },
+        {
+          "question": "Can a Docker container directly access the host's filesystem by default?",
+          "options": {
+            "A": "Yes, always.",
+            "B": "No, it is isolated by default.",
+            "C": "Only if the host and container share the same OS.",
+            "D": "Only for read-only access."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, Docker containers run in an isolated environment and cannot directly access the host's filesystem. To share data, you need to explicitly use Docker volumes or bind mounts."
+        },
+        {
+          "question": "What happens if a Docker container's main process exits?",
+          "options": {
+            "A": "The container automatically restarts.",
+            "B": "The container is immediately removed.",
+            "C": "The container stops and its status becomes 'Exited'.",
+            "D": "The Docker image is deleted."
+          },
+          "correct_answer": "C",
+          "explanation": "When the main process running inside a Docker container exits, the container itself stops. Its status changes to 'Exited', but the container and its associated data (unless volumes were used or the container was explicitly removed) still exist on the system until manually cleaned up."
+        },
+        {
+          "question": "What is a 'port mapping' in Docker and why is it used?",
+          "options": {
+            "A": "Mapping a container's internal IP address to a hostname.",
+            "B": "Mapping a host machine's port to a container's internal port to allow external access.",
+            "C": "Mapping a container's volume to a network drive.",
+            "D": "Mapping an image to a container."
+          },
+          "correct_answer": "B",
+          "explanation": "Port mapping (or port forwarding) allows traffic from a specific port on the host machine to be directed to a specific port inside a running container. This makes services running inside the container accessible from outside the Docker host (e.g., accessing a web server running in a container via `http://localhost:8080`). This is typically done with the `-p` or `--publish` flag in `docker run`."
+        },
+        {
+          "question": "How can you execute a command inside a running Docker container?",
+          "options": {
+            "A": "`docker run -it <image_name> <command>`",
+            "B": "`docker start <container_name> <command>`",
+            "C": "`docker exec -it <container_name> <command>`",
+            "D": "`docker build <image_name> <command>`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker exec` command is used to execute a new command in a running container. The `-it` flags are commonly used to create an interactive pseudo-TTY session, allowing you to interact with the command (e.g., `docker exec -it my_web_app bash` to get a shell inside the container)."
+        },
+        {
+          "question": "What is the purpose of the `-d` flag when running a Docker container (e.g., `docker run -d`)?",
+          "options": {
+            "A": "To delete the container after it exits.",
+            "B": "To run the container in detached (background) mode.",
+            "C": "To specify the data directory for the container.",
+            "D": "To enable debugging mode for the container."
+          },
+          "correct_answer": "B",
+          "explanation": "The `-d` or `--detach` flag runs the container in detached mode, meaning it runs in the background and does not occupy your terminal. This is common for long-running services like web servers."
+        },
+        {
+          "question": "What is the significance of the `CMD` instruction in a Dockerfile?",
+          "options": {
+            "A": "It specifies commands to build the image.",
+            "B": "It defines environment variables.",
+            "C": "It provides default arguments for an executing container or an executable command.",
+            "D": "It sets the working directory."
+          },
+          "correct_answer": "C",
+          "explanation": "The `CMD` instruction defines the default command or arguments that are executed when a container is started from the image. If you specify a command when running `docker run`, it will override the `CMD` instruction. There can only be one `CMD` instruction per Dockerfile."
+        },
+        {
+          "question": "What is the significance of the `ENTRYPOINT` instruction in a Dockerfile?",
+          "options": {
+            "A": "It sets the initial network configuration.",
+            "B": "It configures permanent storage.",
+            "C": "It sets the command and parameters that will always be executed when a container starts, and can be combined with `CMD`.",
+            "D": "It defines how the image is built."
+          },
+          "correct_answer": "C",
+          "explanation": "The `ENTRYPOINT` instruction specifies the executable that will always be run when a container starts. Unlike `CMD`, the `ENTRYPOINT` command is not easily overridden by arguments to `docker run`. Arguments passed to `docker run` are appended to the `ENTRYPOINT` command, providing a way to pass dynamic parameters to the fixed entry point."
+        },
+        {
+          "question": "How can you remove a Docker container that is currently running?",
+          "options": {
+            "A": "`docker rm <container_name>` (works directly)",
+            "B": "You must first stop it using `docker stop <container_name>`, then remove it using `docker rm <container_name>`.",
+            "C": "`docker rmi <container_name>`",
+            "D": "`docker kill <container_name>` (removes it directly)"
+          },
+          "correct_answer": "B",
+          "explanation": "Docker requires a container to be stopped before it can be removed using `docker rm`. If you try to `docker rm` a running container, it will fail. You can force removal with `docker rm -f`, which will implicitly stop the container first."
+        },
+        {
+          "question": "Which command is used to stop all running Docker containers?",
+          "options": {
+            "A": "`docker stop --all`",
+            "B": "`docker stop $(docker ps -q)`",
+            "C": "`docker kill *`",
+            "D": "`docker pause --all`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker ps -q` command lists only the IDs of running containers. Wrapping it in `$(...)` allows the output (the container IDs) to be passed as arguments to `docker stop`, effectively stopping all currently running containers."
+        },
+        {
+          "question": "What is the significance of the `-it` flags in `docker run -it` or `docker exec -it`?",
+          "options": {
+            "A": "`-i` for image, `-t` for tag.",
+            "B": "`-i` for interactive, `-t` for terminal (pseudo-TTY).",
+            "C": "`-i` for isolated, `-t` for temporary.",
+            "D": "`-i` for input, `-t` for output."
+          },
+          "correct_answer": "B",
+          "explanation": "The `-i` (or `--interactive`) flag keeps stdin open even if not attached, allowing you to send input to the container. The `-t` (or `--tty`) flag allocates a pseudo-TTY, which allows for formatted output and command-line interaction, making it suitable for running interactive shell sessions inside a container."
+        },
+        {
+          "question": "Can a single Docker container run multiple applications or services?",
+          "options": {
+            "A": "Yes, it is best practice to run many services in one container.",
+            "B": "Yes, but it is generally discouraged as it violates the 'one process per container' best practice.",
+            "C": "No, Docker containers are designed to run only one application.",
+            "D": "Only if those applications are written in the same programming language."
+          },
+          "correct_answer": "B",
+          "explanation": "While technically possible to run multiple processes in a single container (e.g., using a process manager like `supervisord`), the Docker best practice is to adhere to the 'one concern per container' principle. This makes containers more modular, easier to manage, scale, and troubleshoot. For multiple interconnected services, Docker Compose or orchestration tools are preferred."
+        },
+        {
+          "question": "How are environment variables typically passed to a Docker container at runtime?",
+          "options": {
+            "A": "They are hardcoded into the Dockerfile.",
+            "B": "Using the `-e` or `--env` flag with `docker run`.",
+            "C": "They are automatically inherited from the host system.",
+            "D": "Through direct file modification inside the running container."
+          },
+          "correct_answer": "B",
+          "explanation": "Environment variables are commonly passed to containers at runtime using the `-e` or `--env` flag with the `docker run` command (e.g., `docker run -e MY_VAR=value my_image`). This allows for flexible configuration without rebuilding the image."
+        },
+        {
+          "question": "What is the purpose of the `EXPOSE` instruction in a Dockerfile?",
+          "options": {
+            "A": "To publish ports on the host machine.",
+            "B": "To declare which ports a container listens on at runtime.",
+            "C": "To create an external network.",
+            "D": "To expose sensitive data for debugging."
+          },
+          "correct_answer": "B",
+          "explanation": "The `EXPOSE` instruction informs Docker that the container listens on the specified network ports at runtime. It serves as documentation and does not actually publish the ports to the host; for that, you need to use the `-p` or `--publish` flag with `docker run`."
+        },
+        {
+          "question": "What is a 'scratch' image in Docker?",
+          "options": {
+            "A": "A damaged or corrupted Docker image.",
+            "B": "A basic Alpine Linux image.",
+            "C": "An explicitly empty image, used as a base for custom images with only the necessary binaries.",
+            "D": "An image used for development purposes only."
+          },
+          "correct_answer": "C",
+          "explanation": "The `scratch` image is the smallest possible base image, effectively empty. It's used as a starting point for building truly minimal images for statically compiled applications (like Go binaries) that do not require any operating system dependencies, resulting in very small and secure containers."
+        },
+        {
+          "question": "What is the primary benefit of small Docker images?",
+          "options": {
+            "A": "They require less CPU to run.",
+            "B": "Faster download times, reduced attack surface, and efficient resource usage.",
+            "C": "They can only run simple applications.",
+            "D": "They don't need a Dockerfile to build."
+          },
+          "correct_answer": "B",
+          "explanation": "Smaller Docker images offer several advantages: faster download and deployment times, reduced disk space consumption, a smaller 'attack surface' (fewer libraries and components means fewer potential vulnerabilities), and overall more efficient resource utilization."
+        },
+        {
+          "question": "Which of the following is NOT a core component of a Docker container's isolation?",
+          "options": {
+            "A": "Namespaces",
+            "B": "cgroups",
+            "C": "Separate kernel instances for each container",
+            "D": "Isolated file systems (Union File Systems)"
+          },
+          "correct_answer": "C",
+          "explanation": "Docker containers share the host's Linux kernel. They do not run separate kernel instances, which is a key differentiator from traditional virtual machines and contributes to their lightweight nature. Namespaces, cgroups, and isolated filesystems are indeed core to container isolation."
+        },
+        {
+          "question": "What happens if you run `docker run -it ubuntu bash` and then type `exit` in the bash shell?",
+          "options": {
+            "A": "The container continues to run in the background.",
+            "B": "The container stops and exits.",
+            "C": "The container automatically restarts.",
+            "D": "The Docker image is deleted from the system."
+          },
+          "correct_answer": "B",
+          "explanation": "When you run a container in interactive mode (`-it`) and the `bash` process (which is the main process for this container in this context) receives the `exit` command, that process terminates. Since the main process has exited, the container itself stops and its status becomes 'Exited'."
+        },
+        {
+          "question": "How can you view the logs of a running Docker container?",
+          "options": {
+            "A": "`docker inspect <container_name>`",
+            "B": "`docker logs <container_name>`",
+            "C": "`docker stat <container_name>`",
+            "D": "`docker history <image_name>`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker logs` command retrieves the standard output and standard error streams from a container. This is essential for debugging and monitoring containerized applications."
         }
-    ]
+      ]
+    }
+  ]
 }

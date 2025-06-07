@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Docker_Security",
+      "questions": [
         {
-            "topic": "Docker_Security",
-            "questions": []
+          "question": "What is one of the most critical security concerns when running Docker containers?",
+          "options": {
+            "A": "High network latency.",
+            "B": "Kernel vulnerabilities, as containers share the host's kernel.",
+            "C": "Insufficient disk space.",
+            "D": "Outdated Docker daemon software."
+          },
+          "correct_answer": "B",
+          "explanation": "A fundamental aspect of containerization is that containers share the host operating system's kernel. If there's a vulnerability in the host kernel, it can potentially affect all containers running on that host, making kernel security patches crucial."
+        },
+        {
+          "question": "Why is it a security best practice to avoid running containers as the root user inside the container?",
+          "options": {
+            "A": "It consumes more CPU resources.",
+            "B": "It prevents network communication issues.",
+            "C": "If a container's root process is compromised, the attacker gains root privileges on the host (due to kernel sharing and potential privilege escalation).",
+            "D": "It makes container logging more difficult."
+          },
+          "correct_answer": "C",
+          "explanation": "Running a container's main process as root inside the container is a significant security risk. If that process is exploited, an attacker might be able to escalate privileges and gain root access to the Docker host, compromising the entire system."
+        },
+        {
+          "question": "Which Dockerfile instruction should you use to change the user a container's process runs as?",
+          "options": {
+            "A": "`ROOT`",
+            "B": "`SUDO`",
+            "C": "`USER`",
+            "D": "`CHMOD`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `USER` instruction in a Dockerfile sets the user (by name or UID) for any subsequent `RUN`, `CMD`, or `ENTRYPOINT` instructions. It is best practice to create a non-root user and switch to it before defining the application's runtime command."
+        },
+        {
+          "question": "Why is using official Docker images from Docker Hub generally considered safer than random images?",
+          "options": {
+            "A": "They are automatically smaller in size.",
+            "B": "They are guaranteed to be bug-free.",
+            "C": "They are typically well-maintained, regularly scanned for vulnerabilities, and built following security best practices.",
+            "D": "They don't require internet access to pull."
+          },
+          "correct_answer": "C",
+          "explanation": "Official images (e.g., `ubuntu`, `nginx`, `node`) from Docker Hub are maintained by trusted organizations or vendors. They are generally updated promptly with security patches, scanned for known vulnerabilities, and built with a focus on stability and security, though users should still perform their own due diligence."
+        },
+        {
+          "question": "What is the purpose of scanning Docker images for vulnerabilities?",
+          "options": {
+            "A": "To optimize image build times.",
+            "B": "To identify known security flaws in the image's layers, libraries, and dependencies.",
+            "C": "To ensure image compatibility with all Docker versions.",
+            "D": "To verify the image's network configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "Image scanning tools analyze the contents of a Docker image against databases of known vulnerabilities (CVEs). This helps identify outdated or insecure packages, libraries, and components that could be exploited by attackers, allowing developers to remediate them before deployment."
+        },
+        {
+          "question": "What does 'reducing the attack surface' of a Docker image mean?",
+          "options": {
+            "A": "Making the image smaller in file size.",
+            "B": "Minimizing the number of open network ports.",
+            "C": "Including only the absolutely necessary components, libraries, and applications in the image, thereby limiting potential entry points for attackers.",
+            "D": "Encrypting the image content."
+          },
+          "correct_answer": "C",
+          "explanation": "A smaller attack surface means fewer opportunities for an attacker to compromise the system. This is achieved by using minimal base images (like Alpine or 'scratch'), removing unnecessary packages and tools (e.g., compilers, development headers), and only including what's essential for the application to run."
+        },
+        {
+          "question": "Why is it important to keep the Docker Daemon and client software up to date?",
+          "options": {
+            "A": "To ensure maximum compatibility with old images.",
+            "B": "To receive performance improvements and security patches that address vulnerabilities in Docker itself.",
+            "C": "To enable Docker Compose functionality.",
+            "D": "It's only necessary for production environments."
+          },
+          "correct_answer": "B",
+          "explanation": "Like any software, Docker Engine (daemon and client) can have its own vulnerabilities. Keeping it updated ensures you benefit from the latest security fixes, performance enhancements, and new features."
+        },
+        {
+          "question": "What is a 'Content Trust' in Docker?",
+          "options": {
+            "A": "A system for verifying the integrity of Docker images after they are pulled.",
+            "B": "A feature that allows users to sign and verify images, ensuring they come from a trusted publisher and haven't been tampered with.",
+            "C": "A network security feature that prevents unauthorized access.",
+            "D": "A mechanism for backing up Docker volumes."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Content Trust (DCT) allows publishers to sign images using cryptographic keys, and consumers to verify those signatures before pulling and running the images. This provides a strong guarantee of image authenticity and integrity."
+        },
+        {
+          "question": "What is the security implication of using bind mounts without proper care?",
+          "options": {
+            "A": "They increase image size.",
+            "B": "They can expose sensitive host files or directories to the container, potentially allowing a compromised container to access or modify host data.",
+            "C": "They slow down container startup.",
+            "D": "They prevent containers from communicating with each other."
+          },
+          "correct_answer": "B",
+          "explanation": "Bind mounts directly link a host path to a container path. If you bind mount a sensitive host directory (e.g., `/`) into a container, and that container is compromised, the attacker gains direct access to that host directory, circumventing container isolation for that path."
+        },
+        {
+          "question": "What is a Docker security benchmark, and why is it useful?",
+          "options": {
+            "A": "A tool to measure container network speed.",
+            "B": "A set of guidelines (e.g., CIS Docker Benchmark) for securely configuring Docker hosts and containers.",
+            "C": "A performance testing suite for Docker applications.",
+            "D": "A method to encrypt Docker image layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Security benchmarks (like the CIS Docker Benchmark) provide a comprehensive set of recommendations for securing Docker installations, including host configuration, daemon configuration, container configuration, and image build practices. Following these guidelines significantly enhances the security posture."
+        },
+        {
+          "question": "How do Linux namespaces contribute to Docker's security?",
+          "options": {
+            "A": "They manage resource allocation (CPU, memory).",
+            "B": "They provide isolation for processes, networks, mount points, user IDs, etc., preventing containers from seeing or interacting with others' resources.",
+            "C": "They ensure data persistence for containers.",
+            "D": "They encrypt data in transit."
+          },
+          "correct_answer": "B",
+          "explanation": "Namespaces are a fundamental Linux kernel feature used by Docker to isolate container resources. Each container gets its own isolated view of processes (PID namespace), network interfaces (Net namespace), mount points (MNT namespace), user IDs (User namespace), and more, providing the illusion of a separate system."
+        },
+        {
+          "question": "How do Linux cgroups (control groups) contribute to Docker's security?",
+          "options": {
+            "A": "They isolate file system access.",
+            "B": "They provide network segmentation.",
+            "C": "They control and limit resource usage (CPU, memory, I/O) for containers, preventing one container from monopolizing host resources and causing a denial of service.",
+            "D": "They enforce user permissions within the container."
+          },
+          "correct_answer": "C",
+          "explanation": "Cgroups are another vital Linux kernel feature used by Docker. They allow for the allocation, prioritization, and accounting of system resources among groups of processes. In Docker, cgroups prevent a single misbehaving or malicious container from consuming all host resources, contributing to stability and preventing certain types of denial-of-service attacks."
+        },
+        {
+          "question": "What is a 'rootless' Docker daemon?",
+          "options": {
+            "A": "A Docker daemon that runs without an internet connection.",
+            "B": "A Docker daemon that runs as a non-root user, enhancing host security by not requiring root privileges for daemon operations.",
+            "C": "A Docker daemon that can only build images, not run containers.",
+            "D": "A Docker daemon that does not use volumes."
+          },
+          "correct_answer": "B",
+          "explanation": "A rootless Docker daemon runs as a non-root user. This significantly improves host security because even if the Docker daemon or a container is compromised, the attacker does not automatically gain root privileges on the host system, limiting the potential damage."
+        },
+        {
+          "question": "What is the purpose of Docker's default seccomp profile?",
+          "options": {
+            "A": "To encrypt network traffic.",
+            "B": "To restrict the system calls (syscalls) that a container can make to the Linux kernel, limiting its capabilities and reducing the attack surface.",
+            "C": "To manage user permissions within the container.",
+            "D": "To ensure containers only access specified volumes."
+          },
+          "correct_answer": "B",
+          "explanation": "Seccomp (Secure Computing Mode) is a Linux kernel feature that allows filtering system calls. Docker applies a default seccomp profile to containers, which whitelists a safe subset of system calls, blocking dangerous ones that could be used to exploit kernel vulnerabilities or escalate privileges."
+        },
+        {
+          "question": "Why should you avoid copying sensitive information (like API keys, passwords) directly into a Docker image during the build process?",
+          "options": {
+            "A": "It makes the image too large.",
+            "B": "It exposes the sensitive information in image layers, which are discoverable and persist even if the file is later deleted in a subsequent layer.",
+            "C": "It breaks the image build process.",
+            "D": "It prevents the container from starting."
+          },
+          "correct_answer": "B",
+          "explanation": "Each instruction in a Dockerfile creates a new image layer. If you copy sensitive data in one layer and then delete it in a later layer, the sensitive data still exists in the previous layer's history and can be retrieved. Sensitive data should be passed at runtime via environment variables (carefully), Docker secrets, or mounted volumes."
+        },
+        {
+          "question": "What is `docker scan` primarily used for?",
+          "options": {
+            "A": "To check network connectivity.",
+            "B": "To scan Docker images for known vulnerabilities using Snyk integration.",
+            "C": "To find all running containers on the host.",
+            "D": "To analyze Docker Compose file syntax."
+          },
+          "correct_answer": "B",
+          "explanation": "`docker scan` is a command-line tool (integrated with Snyk) that allows you to scan Docker images for known security vulnerabilities. It helps developers identify and fix issues early in the development cycle."
+        },
+        {
+          "question": "What is the principle of 'least privilege' in the context of Docker container security?",
+          "options": {
+            "A": "Giving containers the most network access possible.",
+            "B": "Giving containers only the minimum necessary permissions, capabilities, and resources required to perform their function.",
+            "C": "Ensuring all containers run as the root user.",
+            "D": "Limiting the number of containers on a single host."
+          },
+          "correct_answer": "B",
+          "explanation": "The principle of least privilege states that a user or system should be granted only the minimum necessary rights to perform its work. For containers, this means limiting capabilities, not running as root, and carefully managing network and volume access to reduce the impact of a potential compromise."
+        },
+        {
+          "question": "What is the security benefit of using a minimal base image like Alpine Linux for Docker images?",
+          "options": {
+            "A": "It automatically encrypts the container's filesystem.",
+            "B": "It has a smaller attack surface due to fewer installed packages and libraries, reducing potential vulnerabilities.",
+            "C": "It is faster to download from Docker Hub.",
+            "D": "It allows more containers to run on the same host."
+          },
+          "correct_answer": "B",
+          "explanation": "Alpine Linux is a lightweight, security-focused distribution. By building your images on a minimal base like Alpine, you significantly reduce the number of installed packages and services, which in turn reduces the potential attack surface and the number of vulnerabilities present in your image."
+        },
+        {
+          "question": "True or False: Docker's default networking mode (bridge) provides strong isolation between containers, but containers on the same bridge can communicate by default.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. The default bridge network provides good isolation from the host and external networks (unless ports are published). However, containers attached to the same bridge network can communicate with each other by default (e.g., by IP address). User-defined bridge networks offer better name resolution and implicit isolation for services not explicitly connected."
+        },
+        {
+          "question": "Why is it important to regularly remove unused Docker images, containers, and volumes (`docker system prune`)?",
+          "options": {
+            "A": "To speed up container startup times.",
+            "B": "To free up disk space and remove potentially vulnerable or unneeded artifacts from the host, reducing overall attack surface and clutter.",
+            "C": "To improve network performance.",
+            "D": "To ensure compliance with licensing agreements."
+          },
+          "correct_answer": "B",
+          "explanation": "Regular pruning of Docker resources (images, containers, volumes, networks) helps maintain a clean and secure environment. Unused artifacts can take up significant disk space and potentially harbor old vulnerabilities or unneeded data, contributing to a larger attack surface."
         }
-    ]
+      ]
+    }
+  ]
 }

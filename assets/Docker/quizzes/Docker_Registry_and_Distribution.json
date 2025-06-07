@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Docker_Registry_and_Distribution",
+      "questions": [
         {
-            "topic": "Docker_Registry_and_Distribution",
-            "questions": []
+          "question": "What is a Docker Registry?",
+          "options": {
+            "A": "A local cache for Docker images.",
+            "B": "A service that stores and distributes Docker images.",
+            "C": "A tool for building Docker images.",
+            "D": "A database for container logs."
+          },
+          "correct_answer": "B",
+          "explanation": "A Docker Registry is a centralized repository for Docker images. It's where you can store your own images or pull public and private images from, enabling efficient distribution and sharing of containerized applications."
+        },
+        {
+          "question": "What is Docker Hub?",
+          "options": {
+            "A": "A local directory for Dockerfiles.",
+            "B": "Docker's official public cloud-based registry for storing, managing, and distributing Docker images.",
+            "C": "A network for connecting Docker containers.",
+            "D": "A tool for orchestrating containers."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Hub is the most widely used public Docker Registry. It hosts official images, community-contributed images, and provides services like automated builds and webhooks for managing images."
+        },
+        {
+          "question": "Which command is used to upload (push) a Docker image to a registry?",
+          "options": {
+            "A": "`docker upload`",
+            "B": "`docker send`",
+            "C": "`docker push`",
+            "D": "`docker distribute`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker push` command is used to upload a local Docker image to a configured registry (e.g., Docker Hub or a private registry). Before pushing, the image must be tagged with the registry's address and repository name."
+        },
+        {
+          "question": "Before pushing an image, what must you do to its tag?",
+          "options": {
+            "A": "Encrypt it.",
+            "B": "Rename it to 'latest'.",
+            "C": "Tag it with the registry host and repository name (e.g., `registry.example.com/username/image_name:tag`).",
+            "D": "Compress it."
+          },
+          "correct_answer": "C",
+          "explanation": "For Docker to know where to push an image, you must tag it with the full registry path. This typically includes the registry hostname (if not Docker Hub), your username/organization, the repository name, and optionally a version tag. Example: `docker tag myapp:latest myregistry.com/myuser/myapp:1.0`."
+        },
+        {
+          "question": "Which command is used to download (pull) a Docker image from a registry?",
+          "options": {
+            "A": "`docker get`",
+            "B": "`docker fetch`",
+            "C": "`docker pull`",
+            "D": "`docker download`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker pull` command retrieves a Docker image from a remote registry and stores it locally on your Docker host. If no tag is specified, it defaults to `latest`."
+        },
+        {
+          "question": "What is the purpose of image tagging (e.g., `myimage:1.0` vs `myimage:latest`)?",
+          "options": {
+            "A": "To specify the operating system the image runs on.",
+            "B": "To uniquely identify different versions or variants of an image within a repository.",
+            "C": "To set the image's security permissions.",
+            "D": "To define the image's network configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "Image tags allow you to differentiate between different versions, releases, or variants of the same image. `latest` is a common default, but it's best practice to use specific version tags (e.g., `v1.0.0`, `1.2.3`, `prod`) for better reproducibility in production."
+        },
+        {
+          "question": "What is a 'private Docker Registry'?",
+          "options": {
+            "A": "A registry that can only store private images.",
+            "B": "A Docker Registry hosted on a local network or private cloud, providing more control and security for internal image distribution.",
+            "C": "A registry that requires no authentication.",
+            "D": "A temporary registry for development purposes only."
+          },
+          "correct_answer": "B",
+          "explanation": "A private Docker Registry is an instance of a registry server (e.g., Docker Registry v2) that you host yourself. This provides control over image storage, security, and integration with internal CI/CD pipelines, keeping images within your network boundaries."
+        },
+        {
+          "question": "What is the purpose of Docker's 'Content Trust' (DCT)?",
+          "options": {
+            "A": "To ensure images are built without errors.",
+            "B": "To verify the integrity and authenticity of images using cryptographic signatures.",
+            "C": "To automatically optimize image size during pushing.",
+            "D": "To manage access control to private repositories."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Content Trust (DCT) allows image publishers to sign images with cryptographic keys and consumers to verify those signatures. This ensures that the image being pulled is exactly what the publisher intended and has not been tampered with or corrupted since it was signed."
+        },
+        {
+          "question": "How do you log in to a Docker Registry (e.g., Docker Hub) from your command line?",
+          "options": {
+            "A": "`docker register`",
+            "B": "`docker connect`",
+            "C": "`docker login`",
+            "D": "`docker auth`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker login` command authenticates your Docker client with a specified registry. For Docker Hub, you typically just run `docker login` and enter your username and password."
+        },
+        {
+          "question": "What is the default tag if you push an image without specifying one?",
+          "options": {
+            "A": "`default`",
+            "B": "`latest`",
+            "C": "`unnamed`",
+            "D": "`v1`"
+          },
+          "correct_answer": "B",
+          "explanation": "If you don't explicitly specify a tag when building or pushing a Docker image (e.g., `docker push myrepo/myimage`), Docker defaults to using the `latest` tag."
+        },
+        {
+          "question": "What is an 'Image Manifest' in a Docker Registry?",
+          "options": {
+            "A": "A list of all containers created from an image.",
+            "B": "A file that defines the layers of an image and metadata like architecture, operating system, and sizes.",
+            "C": "A security vulnerability report for the image.",
+            "D": "The Dockerfile used to build the image."
+          },
+          "correct_answer": "B",
+          "explanation": "An image manifest is a JSON document that describes the image layers and their order, the configuration of the image, the operating system, and architecture for which the image is intended. It's how the registry knows what to provide when an image is pulled."
+        },
+        {
+          "question": "What is a 'Registry Mirror' used for?",
+          "options": {
+            "A": "To create a backup of a registry.",
+            "B": "To improve pull performance and reliability by caching images from a central registry (like Docker Hub) locally.",
+            "C": "To synchronize images between different registries.",
+            "D": "To monitor registry health."
+          },
+          "correct_answer": "B",
+          "explanation": "A registry mirror is a local caching proxy for a remote Docker Registry. When an image is requested, the mirror first checks if it has a cached copy. If not, it pulls from the remote registry, caches it, and then serves it to the client. This speeds up pulls and reduces internet bandwidth usage, especially in large organizations."
+        },
+        {
+          "question": "Can you host your own private Docker Registry?",
+          "options": {
+            "A": "No, only Docker Inc. can host registries.",
+            "B": "Yes, using the open-source Docker Registry project.",
+            "C": "Only on specific cloud platforms.",
+            "D": "Only for non-production use."
+          },
+          "correct_answer": "B",
+          "explanation": "Yes, Docker provides an open-source project (often referred to as 'Docker Registry v2') that allows anyone to set up and host their own private registry. This is common for enterprises to manage their images securely within their infrastructure."
+        },
+        {
+          "question": "When you pull an image, what does Docker download?",
+          "options": {
+            "A": "The Dockerfile.",
+            "B": "The image layers and its manifest.",
+            "C": "A running container.",
+            "D": "The source code of the application."
+          },
+          "correct_answer": "B",
+          "explanation": "When you pull an image, Docker downloads its manifest (which describes the image) and all the individual layers that make up that image. Due to Docker's layered architecture, if you already have some base layers, only the new or changed layers will be downloaded."
+        },
+        {
+          "question": "What is the primary benefit of 'multi-architecture' Docker images?",
+          "options": {
+            "A": "They run faster on all architectures.",
+            "B": "They can run on different CPU architectures (e.g., x86, ARM) from a single manifest list, allowing for cross-platform compatibility.",
+            "C": "They are smaller in size.",
+            "D": "They eliminate the need for an image registry."
+          },
+          "correct_answer": "B",
+          "explanation": "Multi-architecture images allow you to use a single image name and tag (e.g., `myimage:latest`) to pull the correct image for the underlying CPU architecture (e.g., AMD64, ARM64) where Docker is running. This is achieved using 'manifest lists' in the registry."
+        },
+        {
+          "question": "What is a 'webhook' in the context of Docker Hub or a registry?",
+          "options": {
+            "A": "A tool to create a new Docker image.",
+            "B": "A mechanism to notify external services (e.g., CI/CD pipelines) when an image is pushed or updated in the registry.",
+            "C": "A way to debug registry issues.",
+            "D": "A method to encrypt image data."
+          },
+          "correct_answer": "B",
+          "explanation": "Webhooks are automated HTTP callbacks that a registry can send to a configured URL when a specific event occurs, such as a successful image push. This allows for automated workflows, like triggering a CI/CD pipeline to deploy the newly updated image."
+        },
+        {
+          "question": "What is the primary role of a 'daemon.json' file when configuring a Docker registry or mirror?",
+          "options": {
+            "A": "To specify Docker Compose configurations.",
+            "B": "To configure Docker daemon settings, including insecure registries, registry mirrors, and other operational parameters.",
+            "C": "To store Docker image metadata.",
+            "D": "To define network settings for containers."
+          },
+          "correct_answer": "B",
+          "explanation": "The `daemon.json` file is used to configure the Docker daemon. For registries, it's typically used to specify insecure registries (for local development or private registries without TLS) or to set up registry mirrors for caching."
+        },
+        {
+          "question": "Which command is used to remove a local Docker image?",
+          "options": {
+            "A": "`docker rm <image_name>`",
+            "B": "`docker stop <image_name>`",
+            "C": "`docker rmi <image_name>`",
+            "D": "`docker delete image <image_name>`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker rmi` (remove image) command is used to delete one or more images from the local Docker host. You cannot remove an image if there are existing containers that were created from it (unless you force removal)."
+        },
+        {
+          "question": "What happens when you run `docker pull myimage:latest` and a local image with that tag already exists?",
+          "options": {
+            "A": "Docker ignores the command, as the image is already present.",
+            "B": "Docker always downloads the image again, regardless of local copy.",
+            "C": "Docker checks if the local image is up-to-date with the registry. If it is, it does nothing; otherwise, it downloads the new version.",
+            "D": "The local image is automatically deleted."
+          },
+          "correct_answer": "C",
+          "explanation": "When `docker pull` is executed, Docker communicates with the registry to check the manifest of the specified image and tag. It compares it with the local copy. If the local copy is current, it says 'Image is up to date'. If a newer version exists in the registry, it pulls the new layers."
+        },
+        {
+          "question": "True or False: A Docker image pushed to a public registry like Docker Hub should generally not contain sensitive information or credentials.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Once an image is pushed to a public registry, its layers are publicly accessible. Any sensitive information (e.g., API keys, passwords, private SSH keys) included in the image layers during the build process can be extracted by anyone who pulls the image. Sensitive data should be passed at runtime using environment variables (carefully), Docker secrets, or mounted volumes."
         }
-    ]
+      ]
+    }
+  ]
 }

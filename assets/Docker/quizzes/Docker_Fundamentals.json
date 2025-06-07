@@ -1,8 +1,229 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Docker_Fundamentals",
+      "questions": [
         {
-            "topic": "Docker_Fundamentals",
-            "questions": []
+          "question": "What is Docker?",
+          "options": {
+            "A": "A programming language for web development.",
+            "B": "A virtual machine software.",
+            "C": "An open-source platform for developing, shipping, and running applications using containers.",
+            "D": "A database management system."
+          },
+          "correct_answer": "C",
+          "explanation": "Docker is an open-source platform that automates the deployment, scaling, and management of applications by packaging them into isolated units called containers. It's not a programming language, virtual machine, or database system."
+        },
+        {
+          "question": "What problem does Docker primarily solve for developers?",
+          "options": {
+            "A": "Ensuring code syntax is correct.",
+            "B": "Managing version control of code.",
+            "C": "The 'it works on my machine' problem by providing consistent environments.",
+            "D": "Optimizing database queries."
+          },
+          "correct_answer": "C",
+          "explanation": "Docker addresses the common issue where software works perfectly on a developer's machine but fails in production or on a colleague's machine due to environmental inconsistencies. Containers package the application and all its dependencies, ensuring it runs the same way everywhere."
+        },
+        {
+          "question": "What is a Docker image?",
+          "options": {
+            "A": "A running instance of a container.",
+            "B": "A lightweight, standalone, executable package that includes everything needed to run a piece of software.",
+            "C": "A directory on the host machine where Docker stores data.",
+            "D": "A network configuration file for Docker."
+          },
+          "correct_answer": "B",
+          "explanation": "A Docker image is a blueprint for a container. It's a static, immutable snapshot that contains the application code, runtime, libraries, environment variables, and configuration files required for the application to run. Images are built from Dockerfiles."
+        },
+        {
+          "question": "What is a Docker container?",
+          "options": {
+            "A": "A static file used to build Docker images.",
+            "B": "A virtual machine running a full operating system.",
+            "C": "A running instance of a Docker image, an isolated environment for an application.",
+            "D": "A remote repository for storing Docker images."
+          },
+          "correct_answer": "C",
+          "explanation": "A Docker container is a runnable instance of a Docker image. It's a lightweight, isolated execution environment that shares the host OS kernel but runs its own filesystem, process space, and network interfaces, providing consistent application behavior."
+        },
+        {
+          "question": "How does Docker differ from traditional Virtual Machines (VMs)?",
+          "options": {
+            "A": "Docker containers virtualize hardware, VMs virtualize the OS.",
+            "B": "VMs are lighter and faster than Docker containers.",
+            "C": "Docker containers share the host OS kernel, while VMs include a full guest OS.",
+            "D": "VMs are open-source, Docker is proprietary."
+          },
+          "correct_answer": "C",
+          "explanation": "The key difference is virtualization level. VMs virtualize the underlying hardware, requiring a full guest operating system for each VM. Docker containers virtualize at the operating system level, sharing the host OS kernel, making them much lighter, faster to start, and more efficient in resource utilization."
+        },
+        {
+          "question": "What is the Docker Daemon (dockerd)?",
+          "options": {
+            "A": "The command-line interface for Docker.",
+            "B": "A client that communicates with the Docker API.",
+            "C": "The persistent storage location for Docker data.",
+            "D": "A background service that manages Docker objects like images, containers, networks, and volumes."
+          },
+          "correct_answer": "D",
+          "explanation": "The Docker Daemon, or `dockerd`, is a persistent background process that listens for Docker API requests and manages Docker objects. It's the core component of Docker Engine that handles building, running, and distributing containers."
+        },
+        {
+          "question": "What is the Docker Client?",
+          "options": {
+            "A": "The core runtime environment for containers.",
+            "B": "The primary user interface for interacting with Docker, usually via the `docker` command.",
+            "C": "A repository for storing Docker images.",
+            "D": "A tool for orchestrating multiple Docker containers."
+          },
+          "correct_answer": "B",
+          "explanation": "The Docker Client is the primary way users interact with Docker. When you run `docker` commands (e.g., `docker run`, `docker build`), the client sends these commands to the Docker Daemon, which then executes them."
+        },
+        {
+          "question": "What is Docker Hub?",
+          "options": {
+            "A": "A local storage for Docker images.",
+            "B": "Docker's official cloud-based registry for sharing and managing Docker images.",
+            "C": "A tool for creating Docker networks.",
+            "D": "A monitoring dashboard for Docker containers."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Hub is a public cloud service provided by Docker for finding and sharing container images. It acts as a central repository where users can store their own images or pull official images provided by software vendors."
+        },
+        {
+          "question": "Which command is used to pull a Docker image from a registry?",
+          "options": {
+            "A": "`docker create`",
+            "B": "`docker run`",
+            "C": "`docker pull`",
+            "D": "`docker build`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker pull` command is used to download (pull) a Docker image from a remote registry (like Docker Hub) to your local machine, making it available for running containers."
+        },
+        {
+          "question": "Which command is used to run a Docker container from an image?",
+          "options": {
+            "A": "`docker image`",
+            "B": "`docker start`",
+            "C": "`docker exec`",
+            "D": "`docker run`"
+          },
+          "correct_answer": "D",
+          "explanation": "The `docker run` command is a composite command. If the image is not locally present, it first performs a `docker pull` to download it, then creates a new container from that image, and finally starts the container. It's the most common way to get a container up and running."
+        },
+        {
+          "question": "What is the purpose of a Dockerfile?",
+          "options": {
+            "A": "To define the network settings for containers.",
+            "B": "To orchestrate multiple Docker containers.",
+            "C": "To automate the process of building a Docker image by listing commands to assemble an image.",
+            "D": "To manage persistent data storage for containers."
+          },
+          "correct_answer": "C",
+          "explanation": "A Dockerfile is a text file that contains a set of instructions used by Docker to automatically build a Docker image. Each instruction creates a layer in the image, ensuring reproducibility and versioning of the image build process."
+        },
+        {
+          "question": "Which command is used to build a Docker image from a Dockerfile?",
+          "options": {
+            "A": "`docker create`",
+            "B": "`docker init`",
+            "C": "`docker build`",
+            "D": "`docker compose`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker build` command reads a Dockerfile and executes its instructions to create a Docker image. You typically specify the path to the Dockerfile and a tag for the resulting image."
+        },
+        {
+          "question": "What is containerization?",
+          "options": {
+            "A": "A method of virtualizing hardware resources.",
+            "B": "The process of packaging an application and its dependencies into a self-contained, isolated unit.",
+            "C": "A technique for encrypting data within applications.",
+            "D": "The process of deploying applications to physical servers."
+          },
+          "correct_answer": "B",
+          "explanation": "Containerization is the technology that packages an application and its environment (libraries, frameworks, configurations) into a single, portable unit (a container). This ensures consistency across different computing environments, from development to production."
+        },
+        {
+          "question": "Which technology does Docker leverage to provide isolation?",
+          "options": {
+            "A": "Hypervisors",
+            "B": "Full operating system virtualization",
+            "C": "Linux kernel features like namespaces and cgroups",
+            "D": "Proprietary hardware acceleration"
+          },
+          "correct_answer": "C",
+          "explanation": "Docker (and other container runtimes) uses core Linux kernel features like **namespaces** (for process, network, mount, user ID isolation) and **cgroups** (control groups, for resource allocation and limiting CPU, memory, I/O) to provide the isolation and resource management for containers."
+        },
+        {
+          "question": "What is the default networking mode for a Docker container if not specified?",
+          "options": {
+            "A": "Host",
+            "B": "None",
+            "C": "Bridge",
+            "D": "Overlay"
+          },
+          "correct_answer": "C",
+          "explanation": "By default, Docker containers use the **bridge** network mode. This creates a private internal network for containers on the same host, allowing them to communicate with each other and the host machine via a NAT (Network Address Translation) layer."
+        },
+        {
+          "question": "What is the primary benefit of Docker's layered filesystem (Union File System)?",
+          "options": {
+            "A": "Increased security by encrypting layers.",
+            "B": "Faster network communication between containers.",
+            "C": "Efficient image storage and faster image builds due to layer caching and sharing.",
+            "D": "Better CPU performance for running applications."
+          },
+          "correct_answer": "C",
+          "explanation": "Docker images are composed of multiple read-only layers. When you build an image, if a layer hasn't changed, Docker can reuse it from its cache, making builds faster. Containers add a thin, writable layer on top of these read-only image layers, enabling efficient storage and quick startup times by sharing common base layers."
+        },
+        {
+          "question": "What happens when you execute `docker stop <container_name>`?",
+          "options": {
+            "A": "The container is immediately removed from the system.",
+            "B": "The Docker image associated with the container is deleted.",
+            "C": "Docker sends a SIGTERM signal to the container's main process, allowing it to shut down gracefully, and then a SIGKILL after a timeout if it doesn't.",
+            "D": "The container's data volume is permanently erased."
+          },
+          "correct_answer": "C",
+          "explanation": "`docker stop` attempts a graceful shutdown. It first sends a `SIGTERM` signal (Software Termination Signal) to the main process inside the container, giving it a chance to clean up and exit. If the process doesn't stop within a default timeout (usually 10 seconds), Docker then sends a `SIGKILL` (Kill Signal) to forcibly terminate it."
+        },
+        {
+          "question": "Which command would you use to list all running Docker containers?",
+          "options": {
+            "A": "`docker images`",
+            "B": "`docker network ls`",
+            "C": "`docker ps`",
+            "D": "`docker volumes`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker ps` command (short for 'process status') lists all currently running Docker containers. You can add the `-a` or `--all` flag to see all containers, including those that have exited."
+        },
+        {
+          "question": "What is the Docker Engine?",
+          "options": {
+            "A": "A single application that runs on your computer.",
+            "B": "The client-server application that consists of the Docker Daemon, REST API, and Docker CLI.",
+            "C": "A tool for creating Docker Swarm clusters.",
+            "D": "A programming library for Docker development."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Engine is the core technology that builds and runs containers. It's an umbrella term encompassing the Docker Daemon (server), the REST API that programs the daemon, and the command-line interface (CLI) client that interacts with the API."
+        },
+        {
+          "question": "What is the primary purpose of `docker rm <container_id>`?",
+          "options": {
+            "A": "To stop a running container.",
+            "B": "To remove a Docker image.",
+            "C": "To remove a stopped Docker container.",
+            "D": "To remove a Docker network."
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker rm` command is used to remove one or more stopped Docker containers. You must stop a container first (e.g., with `docker stop`) before you can remove it with `docker rm`."
         }
-    ]
+      ]
+    }
+  ]
 }

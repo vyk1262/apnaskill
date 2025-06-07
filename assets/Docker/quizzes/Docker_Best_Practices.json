@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Docker_Best_Practices",
+      "questions": [
         {
-            "topic": "Docker_Best_Practices",
-            "questions": []
+          "question": "What is the 'one process per container' best practice?",
+          "options": {
+            "A": "Each container should only have one CPU core assigned.",
+            "B": "Each container should run a single, isolated application or service.",
+            "C": "Each container should only run one command at a time.",
+            "D": "Each container should only have one network interface."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'one process per container' (or 'one concern per container') best practice states that a single container should ideally encapsulate one primary concern or run one main application/service. This promotes modularity, easier scaling, independent upgrades, and clearer isolation of responsibilities."
+        },
+        {
+          "question": "Why is it recommended to use a `.dockerignore` file?",
+          "options": {
+            "A": "To specify which images should be ignored by Docker.",
+            "B": "To prevent sensitive files or unnecessary build context from being sent to the Docker daemon, improving build performance and image size.",
+            "C": "To define network exclusions for containers.",
+            "D": "To ignore specific Docker commands during execution."
+          },
+          "correct_answer": "B",
+          "explanation": "A `.dockerignore` file works similarly to `.gitignore`. It specifies files and directories that should be excluded from the build context sent to the Docker daemon. This is crucial for security (avoiding sensitive data in layers) and performance (reducing data transfer and build time)."
+        },
+        {
+          "question": "What is the primary benefit of leveraging Docker's build cache effectively?",
+          "options": {
+            "A": "It makes images smaller.",
+            "B": "It accelerates subsequent image builds by reusing unchanged layers.",
+            "C": "It improves container runtime performance.",
+            "D": "It prevents image vulnerabilities."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker builds images layer by layer. If an instruction in the Dockerfile and its context haven't changed since the last build, Docker uses the cached layer, skipping the execution of that instruction and all subsequent ones until it hits a modified layer, significantly speeding up builds."
+        },
+        {
+          "question": "When ordering instructions in a Dockerfile, where should frequently changing instructions (like `COPY . .`) typically be placed?",
+          "options": {
+            "A": "At the very beginning, right after `FROM`.",
+            "B": "Towards the end of the Dockerfile.",
+            "C": "In the middle, without a specific order.",
+            "D": "It does not matter, Docker optimizes the order automatically."
+          },
+          "correct_answer": "B",
+          "explanation": "To maximize build cache utilization, place instructions that change frequently (e.g., copying application source code) later in the Dockerfile. Instructions that are more stable (e.g., `FROM` base image, `RUN` package installations) should come earlier. This way, if only the code changes, Docker can reuse the cached layers for the base OS and dependencies."
+        },
+        {
+          "question": "Why is it a security best practice to run container processes as a non-root user?",
+          "options": {
+            "A": "It is not a security best practice, root is preferred.",
+            "B": "To reduce the risk of privilege escalation if the container is compromised.",
+            "C": "To ensure better network connectivity.",
+            "D": "To optimize container startup time."
+          },
+          "correct_answer": "B",
+          "explanation": "Running container processes as a non-root user is a critical security practice. If a malicious actor gains control of a container running as root, they might be able to exploit kernel vulnerabilities or misconfigurations to gain root access on the host system. Using a non-root user limits this potential impact."
+        },
+        {
+          "question": "What is the benefit of using multi-stage builds in Dockerfiles?",
+          "options": {
+            "A": "They allow for multiple Dockerfiles in one project.",
+            "B": "They simplify network configuration for containers.",
+            "C": "They help create smaller, more secure production images by separating build-time dependencies from runtime dependencies.",
+            "D": "They enable containers to share more resources."
+          },
+          "correct_answer": "C",
+          "explanation": "Multi-stage builds are a powerful technique that allows you to use multiple `FROM` statements in your Dockerfile. You can use an initial stage for building/compiling your application with all necessary tools, and then copy only the essential build artifacts to a much smaller, final production image, discarding all the build tools and intermediate files."
+        },
+        {
+          "question": "Which command is generally preferred for copying files into a Docker image, and why?",
+          "options": {
+            "A": "`ADD`, because it's more powerful.",
+            "B": "`COPY`, because it's simpler, more transparent, and generally clearer for local file transfers.",
+            "C": "Both are equally preferred.",
+            "D": "`RUN cp`, for direct copying."
+          },
+          "correct_answer": "B",
+          "explanation": "While `ADD` has features like URL support and automatic tar extraction, `COPY` is generally preferred for simply copying local files and directories. `COPY` is more explicit and transparent about what it does, making Dockerfiles easier to read and understand. Use `ADD` only when its specific extra features are required."
+        },
+        {
+          "question": "Why is it a good practice to combine multiple `RUN` commands into a single `RUN` instruction using `&&`?",
+          "options": {
+            "A": "To make the Dockerfile shorter.",
+            "B": "To reduce the number of layers in the final image, leading to smaller image sizes and fewer potential vulnerabilities from intermediate layers.",
+            "C": "To speed up container startup.",
+            "D": "To make it easier to debug build failures."
+          },
+          "correct_answer": "B",
+          "explanation": "Each `RUN` instruction creates a new image layer. Combining multiple commands with `&&` (and cleaning up temporary files in the same `RUN` command, e.g., `apt-get clean`) reduces the number of layers, which results in smaller image sizes and a more efficient image build process. This is especially true for package installations."
+        },
+        {
+          "question": "Should sensitive data (e.g., API keys, passwords) be directly embedded in Docker images?",
+          "options": {
+            "A": "Yes, for ease of access.",
+            "B": "No, because image layers are discoverable and sensitive data would persist in the image history.",
+            "C": "Only if the image is private.",
+            "D": "Only if encrypted inside the image."
+          },
+          "correct_answer": "B",
+          "explanation": "Never embed sensitive data directly into Docker images. Every instruction in a Dockerfile creates a layer, and even if you try to delete the sensitive file in a later layer, it still exists in the history of previous layers. Sensitive data should be passed at runtime using environment variables (with caution), Docker secrets, or mounted volumes."
+        },
+        {
+          "question": "What is the recommended approach for persisting data in Docker containers?",
+          "options": {
+            "A": "Writing directly to the container's writable layer.",
+            "B": "Using `tmpfs` mounts.",
+            "C": "Using Docker Volumes or Bind Mounts.",
+            "D": "Storing data only in environment variables."
+          },
+          "correct_answer": "C",
+          "explanation": "Docker Volumes are the preferred way to persist data, as they are managed by Docker and independent of the container's lifecycle. Bind mounts are also used for persistence, especially in development scenarios, by mapping host paths into containers."
+        },
+        {
+          "question": "What is the purpose of specifying specific image tags (e.g., `node:16-alpine`) instead of just `latest` in Dockerfiles or `docker run` commands?",
+          "options": {
+            "A": "To ensure the image is built faster.",
+            "B": "To guarantee build and deployment reproducibility by pinning to a specific, immutable version of the base image.",
+            "C": "To make the image smaller in size.",
+            "D": "To prevent network issues."
+          },
+          "correct_answer": "B",
+          "explanation": "Using specific and immutable tags (e.g., `ubuntu:22.04`, `node:16-alpine`, `nginx:1.21.0`) ensures that your builds and deployments are reproducible. The `latest` tag can change over time, potentially introducing unexpected changes or breaking your application without warning. Pinning to a specific version provides stability."
+        },
+        {
+          "question": "When defining networks in `docker-compose.yml`, what is the benefit of using user-defined bridge networks over the default bridge network?",
+          "options": {
+            "A": "They offer greater performance.",
+            "B": "They provide better isolation and automatic DNS resolution by service name.",
+            "C": "They are automatically encrypted.",
+            "D": "They use less memory."
+          },
+          "correct_answer": "B",
+          "explanation": "User-defined bridge networks offer several advantages: automatic DNS resolution (containers can find each other by service name), better isolation between applications, and the ability to connect/disconnect containers from networks at runtime."
+        },
+        {
+          "question": "Why should you use a linter for your Dockerfiles?",
+          "options": {
+            "A": "To automatically deploy the image.",
+            "B": "To check for syntax errors and enforce best practices and security rules.",
+            "C": "To compress the Dockerfile.",
+            "D": "To convert Dockerfiles to other formats."
+          },
+          "correct_answer": "B",
+          "explanation": "Dockerfile linters (like Hadolint) analyze your Dockerfile for common errors, potential security vulnerabilities, and adherence to best practices, helping you write more efficient, secure, and maintainable Dockerfiles."
+        },
+        {
+          "question": "What is a common best practice regarding `apt-get update` and `apt-get install` in a Dockerfile?",
+          "options": {
+            "A": "Run them in separate `RUN` commands.",
+            "B": "Combine them into a single `RUN` command and immediately remove the package lists (`rm -rf /var/lib/apt/lists/*`).",
+            "C": "Run `apt-get update` only if the base image is very old.",
+            "D": "It's not necessary to run `apt-get update`."
+          },
+          "correct_answer": "B",
+          "explanation": "It's best practice to run `apt-get update` and `apt-get install` in the *same* `RUN` command. This ensures that the `apt-get update` layer is always updated with the `apt-get install` command, preventing issues with outdated package lists. Crucially, immediately removing the package lists (`rm -rf /var/lib/apt/lists/*`) in the same layer prevents those lists from being cached in the image, significantly reducing image size."
+        },
+        {
+          "question": "Should you include build tools (compilers, SDKs, etc.) in your final production Docker image?",
+          "options": {
+            "A": "Yes, always, for debugging purposes.",
+            "B": "No, use multi-stage builds to exclude them, reducing image size and attack surface.",
+            "C": "Only if the application is interpreted.",
+            "D": "It depends on the network configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "For production images, it's a best practice to only include the bare minimum required to run the application. Build tools, compilers, test frameworks, and development SDKs should be excluded using multi-stage builds. This drastically reduces the image size, download times, and more importantly, the attack surface by eliminating unnecessary software components."
+        },
+        {
+          "question": "What is the purpose of using `HEALTHCHECK` in a Dockerfile?",
+          "options": {
+            "A": "To verify the Dockerfile syntax.",
+            "B": "To define a command that Docker can run to check if a containerized service is actually responsive and working correctly.",
+            "C": "To monitor the host's CPU and memory usage.",
+            "D": "To automatically restart the container if it stops."
+          },
+          "correct_answer": "B",
+          "explanation": "A `HEALTHCHECK` instruction defines a command that Docker can execute periodically to determine if a container is 'healthy' and responsive, not just running. This is vital for orchestration systems (like Swarm or Kubernetes) to properly manage application uptime and handle unresponsive services."
+        },
+        {
+          "question": "When building an image, what should you do with temporary files or caches created during a `RUN` instruction?",
+          "options": {
+            "A": "Leave them in the image for later use.",
+            "B": "Commit them to the next layer.",
+            "C": "Clean them up in the *same* `RUN` instruction to prevent them from being part of the image layer.",
+            "D": "Delete them after the container starts."
+          },
+          "correct_answer": "C",
+          "explanation": "Any files created during a `RUN` instruction become part of that layer. To keep image sizes down, it's crucial to clean up temporary files, caches, and build artifacts within the *same* `RUN` instruction that created them. This ensures they are not included in the committed layer."
+        },
+        {
+          "question": "What is the security best practice regarding the `CAP_ADD` and `CAP_DROP` flags in Docker?",
+          "options": {
+            "A": "Add as many capabilities as possible.",
+            "B": "Drop unnecessary capabilities and add only the minimum required capabilities to a container.",
+            "C": "These flags are deprecated and should not be used.",
+            "D": "They are only for network configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker containers run with a default set of Linux capabilities. The `CAP_DROP` flag removes capabilities (e.g., `NET_RAW`, `SYS_ADMIN`), and `CAP_ADD` adds specific capabilities. The best practice is to drop all unnecessary capabilities and only add back the absolute minimum required for the application to function, further limiting the container's potential impact if compromised."
+        },
+        {
+          "question": "Why should you use an orchestrator (like Docker Swarm or Kubernetes) for production Docker deployments?",
+          "options": {
+            "A": "To reduce Docker image sizes.",
+            "B": "To manage container lifecycle, scaling, load balancing, self-healing, and deployments across multiple hosts.",
+            "C": "To scan images for vulnerabilities.",
+            "D": "To simplify Dockerfile creation."
+          },
+          "correct_answer": "B",
+          "explanation": "For production environments, managing individual containers manually becomes impractical. Orchestrators provide crucial functionalities for distributed systems: automating deployment, scaling, load balancing, service discovery, self-healing (restarting failed containers), rolling updates, and overall cluster management."
+        },
+        {
+          "question": "True or False: It is generally acceptable to rely solely on the `latest` tag for production deployments.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Relying on the `latest` tag in production is a bad practice because the `latest` tag can change at any time without warning. This means your deployment might pull a new, untested version of an image, leading to unexpected behavior, breaking changes, or security vulnerabilities. Always pin to specific, immutable version tags for production environments."
         }
-    ]
+      ]
+    }
+  ]
 }
