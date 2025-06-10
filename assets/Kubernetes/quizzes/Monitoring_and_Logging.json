@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Monitoring_and_Logging",
+      "questions": [
         {
-            "topic": "Monitoring_and_Logging",
-            "questions": []
+          "question": "What is the primary goal of monitoring in a Kubernetes environment?",
+          "options": {
+            "A": "To reduce network latency.",
+            "B": "To collect metrics and data about the cluster's health, resource utilization, and application performance to ensure stability, optimize resources, and detect issues.",
+            "C": "To automatically deploy new applications.",
+            "D": "To configure persistent storage."
+          },
+          "correct_answer": "B",
+          "explanation": "Monitoring in Kubernetes involves collecting metrics (CPU, memory, network I/O, application-specific metrics) from nodes, Pods, containers, and Kubernetes components to gain insights into the cluster's operational state, performance, and potential problems."
+        },
+        {
+          "question": "What is the primary goal of logging in a Kubernetes environment?",
+          "options": {
+            "A": "To store container images.",
+            "B": "To collect and centralize application and system logs from Pods and nodes for debugging, auditing, and troubleshooting purposes.",
+            "C": "To create new Services.",
+            "D": "To manage user access."
+          },
+          "correct_answer": "B",
+          "explanation": "Logging is about capturing the output (stdout/stderr) from containers, as well as logs from Kubernetes system components. Centralizing logs allows for efficient searching, analysis, and troubleshooting of application and infrastructure issues."
+        },
+        {
+          "question": "Which open-source system is widely adopted for collecting and storing metrics in Kubernetes?",
+          "options": {
+            "A": "ELK Stack",
+            "B": "Grafana",
+            "C": "Prometheus",
+            "D": "Fluentd"
+          },
+          "correct_answer": "C",
+          "explanation": "Prometheus is a leading open-source monitoring system specifically designed for dynamic environments like Kubernetes. It collects metrics by scraping HTTP endpoints exposed by applications and Kubernetes components."
+        },
+        {
+          "question": "Which tool is commonly used for visualizing metrics collected by Prometheus?",
+          "options": {
+            "A": "Kibana",
+            "B": "Grafana",
+            "C": "Logstash",
+            "D": "Splunk"
+          },
+          "correct_answer": "B",
+          "explanation": "Grafana is a popular open-source analytics and visualization platform. It integrates seamlessly with Prometheus to create dashboards that display time-series metrics, allowing for easy monitoring and analysis."
+        },
+        {
+          "question": "What is `cAdvisor` in the context of Kubernetes monitoring?",
+          "options": {
+            "A": "A Pod security policy.",
+            "B": "A daemon that runs on each node to collect, aggregate, process, and export information about running containers, including resource usage and performance metrics.",
+            "C": "A network analysis tool.",
+            "D": "A tool for managing persistent volumes."
+          },
+          "correct_answer": "B",
+          "explanation": "cAdvisor (Container Advisor) is an open-source agent that collects detailed resource usage and performance metrics from containers and nodes. It's often integrated with Kubelet and helps expose metrics for Prometheus."
+        },
+        {
+          "question": "What is `kube-state-metrics` and what type of metrics does it provide?",
+          "options": {
+            "A": "Application-level business metrics.",
+            "B": "Metrics about the health of the underlying physical servers.",
+            "C": "Metrics about the state of Kubernetes objects (e.g., number of running Pods, desired replicas, PVC status, node status), not raw resource usage.",
+            "D": "Network latency metrics between Pods."
+          },
+          "correct_answer": "C",
+          "explanation": "`kube-state-metrics` is an agent that listens to the Kubernetes API server and generates metrics about the state of Kubernetes objects (e.g., Deployments, Pods, Nodes, PVCs, Services). These metrics provide insights into the desired vs. current state of the cluster."
+        },
+        {
+          "question": "Where are container logs stored by default within a Kubernetes Pod?",
+          "options": {
+            "A": "In a central database.",
+            "B": "On the host Node's filesystem (typically `/var/log/containers/`).",
+            "C": "In a cloud storage bucket.",
+            "D": "Inside the container image."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, container runtimes redirect `stdout` and `stderr` streams to files on the host node's filesystem (e.g., under `/var/log/containers/` for Docker/containerd). These files are then typically collected by a logging agent."
+        },
+        {
+          "question": "What is a 'sidecar logging agent' pattern for collecting application logs?",
+          "options": {
+            "A": "An agent running outside the cluster.",
+            "B": "Running a dedicated logging agent container in the same Pod as the application container, sharing a volume to tail logs from the application.",
+            "C": "An agent running directly on the host node.",
+            "D": "A service that automatically sends logs to an external system."
+          },
+          "correct_answer": "B",
+          "explanation": "In the sidecar pattern, a logging agent (e.g., Fluentd, Filebeat) runs as a separate container within the *same Pod* as the application. They share a volume, and the logging agent tails the application's log files from that shared volume, then forwards them to a centralized logging backend."
+        },
+        {
+          "question": "Which open-source tool is a common choice for a centralized logging stack in Kubernetes, often used with Elasticsearch and Kibana?",
+          "options": {
+            "A": "Prometheus",
+            "B": "Grafana",
+            "C": "Fluentd (or Fluent Bit)",
+            "D": "Zabbix"
+          },
+          "correct_answer": "C",
+          "explanation": "Fluentd (or its lightweight cousin Fluent Bit) is a popular open-source data collector that can tail logs from various sources (including container logs on Kubernetes nodes) and forward them to centralized logging backends like Elasticsearch, Splunk, or cloud logging services. It forms the 'F' in the EFK stack (Elasticsearch, Fluentd, Kibana)."
+        },
+        {
+          "question": "What is the purpose of `PromQL`?",
+          "options": {
+            "A": "A language for defining Kubernetes resources.",
+            "B": "A query language for Prometheus, used to select and aggregate time-series data for graphing and alerting.",
+            "C": "A language for defining network policies.",
+            "D": "A language for writing container images."
+          },
+          "correct_answer": "B",
+          "explanation": "PromQL (Prometheus Query Language) is a powerful and flexible query language specific to Prometheus. It allows users to select, filter, and aggregate time-series data in various ways for ad-hoc queries, graphing, and alerting rules."
+        },
+        {
+          "question": "What is the significance of 'labels' in Kubernetes monitoring and logging?",
+          "options": {
+            "A": "They define the container image.",
+            "B": "They are key-value pairs used to identify and group resources, crucial for filtering metrics and logs, and for defining monitoring and logging scopes.",
+            "C": "They specify network ports.",
+            "D": "They indicate persistent storage."
+          },
+          "correct_answer": "B",
+          "explanation": "Labels are fundamental to Kubernetes. In monitoring and logging, they are extensively used by Prometheus (for service discovery and filtering), Fluentd (for routing logs), and other tools to identify, group, and filter data based on application, environment, team, etc."
+        },
+        {
+          "question": "What is `Alertmanager` used for in the Prometheus ecosystem?",
+          "options": {
+            "A": "To create dashboards.",
+            "B": "To handle alerts sent by Prometheus, grouping, deduplicating, and routing them to appropriate notification channels (email, Slack, PagerDuty).",
+            "C": "To collect metrics.",
+            "D": "To store historical data."
+          },
+          "correct_answer": "B",
+          "explanation": "Alertmanager is a separate component in the Prometheus ecosystem that manages alerts. It receives alerts from Prometheus, groups similar alerts, de-duplicates them, and routes them to notification receivers based on configured rules."
+        },
+        {
+          "question": "Where does `kubectl logs <pod-name>` retrieve logs from?",
+          "options": {
+            "A": "Directly from the application code.",
+            "B": "From the container runtime on the Node where the Pod is running, typically from the `stdout` and `stderr` streams of the containers.",
+            "C": "From a centralized logging database.",
+            "D": "From the Kubernetes API server."
+          },
+          "correct_answer": "B",
+          "explanation": "`kubectl logs` retrieves logs from the container runtime's log file for a specific container within a Pod. This means it only shows logs from the current instance of the container and does not provide historical logs if the Pod has been restarted or rescheduled."
+        },
+        {
+          "question": "What is a `DaemonSet` commonly used for in a monitoring or logging setup?",
+          "options": {
+            "A": "To run a single instance of a monitoring tool.",
+            "B": "To deploy a Pod (e.g., a logging agent or a node exporter) on *every* (or selected) Node in the cluster, ensuring that every node collects and forwards data.",
+            "C": "To manage persistent storage for logs.",
+            "D": "To expose metrics to external systems."
+          },
+          "correct_answer": "B",
+          "explanation": "DaemonSets ensure that a copy of a Pod runs on every (or a subset of) selected nodes. This pattern is ideal for deploying node-level agents like `node_exporter` (for Prometheus), Fluentd/Fluent Bit (for log collection), or cAdvisor."
+        },
+        {
+          "question": "What is `kube-proxy`'s role in monitoring?",
+          "options": {
+            "A": "It has no direct role in monitoring; its main function is networking.",
+            "B": "It collects metrics from all Pods.",
+            "C": "It sends alerts to administrators.",
+            "D": "It visualizes cluster metrics."
+          },
+          "correct_answer": "A",
+          "explanation": "Kube-proxy's primary responsibility is to implement the Kubernetes Service abstraction by managing network rules. It does not directly participate in collecting or exporting metrics for monitoring tools. However, its healthy operation is vital for monitoring tools to reach their targets."
+        },
+        {
+          "question": "When monitoring, what does 'cardinality' refer to in the context of metrics?",
+          "options": {
+            "A": "The speed at which metrics are collected.",
+            "B": "The number of unique label combinations for a given metric, which can impact storage and performance of time-series databases.",
+            "C": "The type of metric (counter, gauge).",
+            "D": "The frequency of metric collection."
+          },
+          "correct_answer": "B",
+          "explanation": "Cardinality refers to the number of unique combinations of labels for a metric. High cardinality (e.g., including unique Pod names as labels) can lead to a massive number of time series, consuming excessive storage and impacting the performance of time-series databases like Prometheus."
+        },
+        {
+          "question": "True or False: Kubernetes automatically provides a centralized logging solution out-of-the-box.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Kubernetes itself provides mechanisms for accessing container logs (via `kubectl logs`), but it does not come with a built-in centralized logging solution. You need to deploy external components like Fluentd/Fluent Bit, Elasticsearch/Loki, and Kibana/Grafana to achieve centralized logging."
+        },
+        {
+          "question": "What is `metrics-server` used for in Kubernetes?",
+          "options": {
+            "A": "To store long-term metrics.",
+            "B": "To provide basic CPU and memory metrics to the Horizontal Pod Autoscaler (HPA) and `kubectl top` command.",
+            "C": "To expose custom application metrics.",
+            "D": "To manage historical log data."
+          },
+          "correct_answer": "B",
+          "explanation": "`metrics-server` is a cluster-wide aggregator of resource usage data. It collects CPU and memory usage metrics from Kubelets via the Summary API and serves them via the Metrics API, which is used by HPA for autoscaling and `kubectl top` for basic resource usage views."
+        },
+        {
+          "question": "What is a `Health Check` (Liveness/Readiness Probe) primarily concerned with?",
+          "options": {
+            "A": "Collecting performance metrics.",
+            "B": "Determining the operational status of individual containers and Pods for restart/traffic routing decisions.",
+            "C": "Aggregating logs.",
+            "D": "Monitoring network latency."
+          },
+          "correct_answer": "B",
+          "explanation": "Liveness and Readiness Probes are specific types of health checks defined in a Pod's specification. They are crucial for the Kubelet and Services to understand if a container is running correctly and ready to receive traffic, respectively, enabling automatic recovery and reliable traffic routing."
+        },
+        {
+          "question": "What is the primary benefit of structured logging in Kubernetes?",
+          "options": {
+            "A": "It makes logs harder to read.",
+            "B": "It allows logs to be easily parsed, filtered, and queried by machines (e.g., using JSON format), improving searchability and analysis in centralized logging systems.",
+            "C": "It reduces the amount of log data.",
+            "D": "It only applies to system logs."
+          },
+          "correct_answer": "B",
+          "explanation": "Structured logging (e.g., logging in JSON format) includes key-value pairs that provide context to log messages (e.g., `level: info`, `service: my-app`, `trace_id: xyz`). This makes logs machine-readable and significantly improves their searchability, filtering, and analysis in centralized logging platforms."
         }
-    ]
+      ]
+    }
+  ]
 }

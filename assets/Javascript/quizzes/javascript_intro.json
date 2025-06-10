@@ -1,7 +1,7 @@
 {
   "result": [
     {
-      "topic": "js_intro",
+      "topic": "javascript_intro",
       "questions": [
         {
           "question": "What does JS stand for?",
@@ -11,7 +11,8 @@
             "C": "JScript",
             "D": "Java Syntax"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "JS is the widely used abbreviation for JavaScript, a high-level, interpreted programming language."
         },
         {
           "question": "Which HTML tag is used to include JavaScript in a webpage?",
@@ -21,7 +22,8 @@
             "C": "<javascript>",
             "D": "<code>"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `<script>` tag is used to embed client-side scripts (JavaScript) within an HTML document or to link to an external script file."
         },
         {
           "question": "How do you create a variable in JavaScript?",
@@ -31,7 +33,8 @@
             "C": "let variableName;",
             "D": "const variableName;"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "While `let` and `const` are modern ways to declare variables (introduced in ES6), `var` is the traditional keyword for declaring variables in JavaScript. All three options A, C, and D are valid ways to declare variables, but the question asks 'how do you create' which can encompass `var` as the most historically common. For multiple-choice, if only one option is strictly correct for 'creating' a variable in the broadest sense of older JS, `var` is typically the answer. However, if the question implied 'modern ways', then `let` and `const` would also be strong contenders."
         },
         {
           "question": "What keyword is used to declare a block-scoped variable?",
@@ -41,7 +44,8 @@
             "C": "const",
             "D": "block"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `let` keyword declares a block-scoped local variable, meaning its scope is limited to the block (e.g., within `{}`) in which it is defined. `var` is function-scoped, and `const` is also block-scoped but for constants."
         },
         {
           "question": "Which operator is used to assign a value to a variable?",
@@ -51,7 +55,8 @@
             "C": "=",
             "D": ":="
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The single equals sign `=` is the assignment operator in JavaScript, used to assign a value to a variable. `==` and `===` are comparison operators."
         },
         {
           "question": "Which data type is NOT a primitive type in JavaScript?",
@@ -61,7 +66,8 @@
             "C": "Object",
             "D": "Boolean"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In JavaScript, primitive data types are String, Number, BigInt, Boolean, Undefined, Null, and Symbol. Objects (including arrays and functions) are non-primitive."
         },
         {
           "question": "How do you create a function in JavaScript?",
@@ -71,7 +77,8 @@
             "C": "def myFunction() {}",
             "D": "function: myFunction() {}"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The most common way to declare a named function in JavaScript is using the `function` keyword, followed by the function name, parentheses for parameters, and curly braces for the function body."
         },
         {
           "question": "What method is used to convert a JSON string into a JavaScript object?",
@@ -81,7 +88,8 @@
             "C": "JSON.object()",
             "D": "JSON.convert()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `JSON.parse()` method is used to parse a JSON string, constructing the JavaScript value or object described by the string."
         },
         {
           "question": "Which of the following is a valid array declaration?",
@@ -91,7 +99,8 @@
             "C": "var myArray = ()",
             "D": "var myArray = //;"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Arrays in JavaScript are declared using square brackets `[]` to enclose the elements (or an empty set of brackets for an empty array)."
         },
         {
           "question": "How do you access the first element of an array named 'myArray'?",
@@ -101,7 +110,8 @@
             "C": "myArray.first()",
             "D": "myArray{0}"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Array elements in JavaScript are accessed using zero-based indexing, where `[0]` refers to the first element."
         },
         {
           "question": "What does 'console.log()' do?",
@@ -111,7 +121,8 @@
             "C": "Writes to the webpage",
             "D": "Creates a new console"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`console.log()` is a widely used method for debugging in JavaScript, which outputs messages, values, or objects to the web console (developer tools)."
         },
         {
           "question": "What is the result of 5 + '5' in JavaScript?",
@@ -121,7 +132,8 @@
             "C": "Error",
             "D": "NaN"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In JavaScript, when the `+` operator is used with a number and a string, the number is converted to a string, and the operation becomes string concatenation, resulting in '55'."
         },
         {
           "question": "Which method is used to find the length of a string in JavaScript?",
@@ -131,7 +143,8 @@
             "C": "getLength()",
             "D": "length"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The `length` property (not a method) is used to determine the number of characters in a string. For arrays, `length` is also a property."
         },
         {
           "question": "What is the output of 'typeof NaN'?",
@@ -141,7 +154,8 @@
             "C": "NaN",
             "D": "object"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Despite standing for 'Not a Number', `NaN` is a special numeric value indicating an unrepresentable value. In JavaScript, `typeof NaN` returns 'number'."
         },
         {
           "question": "Which keyword is used to create a constant variable in JavaScript?",
@@ -151,7 +165,8 @@
             "C": "let",
             "D": "fixed"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `const` keyword is used to declare a constant variable, which means its value cannot be reassigned after initialization."
         },
         {
           "question": "What will the following code output: console.log(0.1 + 0.2 === 0.3)?",
@@ -161,7 +176,8 @@
             "C": "undefined",
             "D": "NaN"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Due to floating-point precision issues in JavaScript (and many other programming languages), `0.1 + 0.2` does not exactly equal `0.3`. It typically results in a value like `0.30000000000000004`, so the strict equality check (`===`) returns `false`."
         },
         {
           "question": "What does 'Array.isArray()' do?",
@@ -171,7 +187,8 @@
             "C": "Returns the length of an array",
             "D": "Sorts an array"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `Array.isArray()` method determines whether the passed value is an Array."
         },
         {
           "question": "Which of the following is NOT a loop in JavaScript?",
@@ -181,7 +198,8 @@
             "C": "do while",
             "D": "foreach"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "JavaScript has `for`, `while`, and `do...while` loops. While there's `forEach()` as a method for arrays, `foreach` itself is not a standalone loop keyword like the others."
         },
         {
           "question": "What does 'JSON' stand for?",
@@ -191,7 +209,8 @@
             "C": "JavaScript Object Node",
             "D": "JavaScript Notation"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "JSON stands for JavaScript Object Notation, a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate."
         },
         {
           "question": "How do you create an object in JavaScript?",
@@ -201,7 +220,8 @@
             "C": "Both A and B",
             "D": "object obj = {};"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Objects in JavaScript can be created using object literal notation (`{}`) which is the most common and preferred way, or by using the `new Object()` constructor."
         },
         {
           "question": "What is an object in JavaScript?",
@@ -211,7 +231,8 @@
             "C": "A function that returns a value",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "An object in JavaScript is a standalone entity, with properties and types. It's a complex data type that allows storing collections of keyed data and more complex entities. Functions and arrays are also types of objects."
         },
         {
           "question": "How do you create an object in JavaScript?",
@@ -221,7 +242,8 @@
             "C": "Both A and B",
             "D": "Using the 'create' keyword"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Objects can be created using the `new` keyword with a constructor function (e.g., `new Object()`, `new Date()`, or custom constructors) or, more commonly and concisely, using object literal notation (`{}`)."
         },
         {
           "question": "What is the purpose of 'Object.prototype'?",
@@ -231,7 +253,8 @@
             "C": "To restrict access to object properties",
             "D": "To call object methods"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Every object in JavaScript inherits properties and methods from `Object.prototype`. It's the base prototype for all objects, and properties/methods added here become available to all objects."
         },
         {
           "question": "How can you access a property of an object?",
@@ -241,7 +264,8 @@
             "C": "Using the 'access' method",
             "D": "Using 'this' keyword"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Object properties can be accessed using dot notation (e.g., `object.property`) or bracket notation (e.g., `object['property']`). Bracket notation is useful when the property name is dynamic or contains special characters."
         },
         {
           "question": "What is a method in an object?",
@@ -251,7 +275,8 @@
             "C": "A property that stores an object",
             "D": "A way to create an object"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A method is a function that is stored as a property of an object. When a function is called as a property of an object, it is referred to as a method of that object."
         },
         {
           "question": "What does the 'this' keyword refer to inside a method?",
@@ -261,7 +286,8 @@
             "C": "The object the method belongs to",
             "D": "None of the above"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In a method, `this` refers to the object on which the method was called. Its value depends on how the function is invoked."
         },
         {
           "question": "How do you set a property value of an object?",
@@ -271,7 +297,8 @@
             "C": "object.add(property, value);",
             "D": "object[property] = value;"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Properties of an object can be set (assigned a value) using either dot notation (`object.property = value;`) or bracket notation (`object['property'] = value;`). Given the options, 'A' is the most direct and common way to state it."
         },
         {
           "question": "What is a closure in JavaScript?",
@@ -281,7 +308,8 @@
             "C": "A way to protect variables from the global scope",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "A closure is a function bundled together with its lexical environment. This means that a closure gives you access to an outer function's scope from an inner function, even after the outer function has finished executing."
         },
         {
           "question": "How do you define a class in JavaScript?",
@@ -291,7 +319,8 @@
             "C": "new MyClass() {}",
             "D": "MyClass: {}"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `class` keyword (introduced in ES6) is used to define a class, which is a blueprint for creating objects (a syntactic sugar over JavaScript's prototype-based inheritance)."
         },
         {
           "question": "What is class inheritance in JavaScript?",
@@ -301,7 +330,8 @@
             "C": "Defining properties within a class",
             "D": "All of the above"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Class inheritance allows you to create new classes (subclasses) that extend existing classes (parent or base classes), inheriting their properties and methods, and allowing for specialization."
         },
         {
           "question": "What is the purpose of the 'static' keyword in a class?",
@@ -311,7 +341,8 @@
             "C": "To create private properties",
             "D": "To define a constructor"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `static` keyword defines static methods or properties that belong to the class itself, rather than to any instance of the class. They are called directly on the class."
         },
         {
           "question": "Which method is used to call a function with a specified 'this' value and arguments?",
@@ -321,7 +352,8 @@
             "C": "bind()",
             "D": "invoke()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `apply()` method calls a function with a given `this` value, and arguments provided as an array (or an array-like object). The `call()` method is similar but accepts arguments individually. The question specifies 'arguments', implying a collection, making `apply` a better fit than `call`."
         },
         {
           "question": "What is the syntax to create an object constructor?",
@@ -331,7 +363,8 @@
             "C": "class MyObject {}",
             "D": "object MyObject() {}"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Before ES6 classes, constructor functions were the primary way to create 'classes' or blueprints for objects. They are regular functions intended to be called with the `new` keyword."
         },
         {
           "question": "How can you prevent an object from being modified?",
@@ -341,7 +374,8 @@
             "C": "Using Object.seal()",
             "D": "All of the above"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`Object.freeze()` prevents new properties from being added to an object, existing properties from being removed, and existing properties or their enumerability, configurability, or writability from being changed. It also prevents the prototype from being changed. `Object.preventExtensions()` only prevents adding new properties, and `Object.seal()` prevents adding/deleting properties and marks all existing properties as non-configurable, but allows modification of existing writable properties."
         },
         {
           "question": "What will the following code output: console.log(typeof {});",
@@ -351,7 +385,8 @@
             "C": "undefined",
             "D": "null"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "An empty curly brace `{}` in JavaScript creates an empty object literal. The `typeof` operator correctly identifies it as an 'object'."
         },
         {
           "question": "What will happen if you try to access a property that does not exist in an object?",
@@ -361,7 +396,8 @@
             "C": "It will return null",
             "D": "It will return false"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "If you try to access a property that does not exist on an object, JavaScript will return `undefined` without throwing an error."
         },
         {
           "question": "How do you call a method of an object?",
@@ -371,7 +407,8 @@
             "C": "call object.method()",
             "D": "object.call.method()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Methods of an object are called using dot notation followed by the method name and parentheses (to execute the function), e.g., `object.method()`."
         }
       ]
     }

@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Deployments_and_StatefulSets",
+      "questions": [
         {
-            "topic": "Deployments_and_StatefulSets",
-            "questions": []
+          "question": "What is the primary purpose of a Kubernetes Deployment?",
+          "options": {
+            "A": "To create a single Pod.",
+            "B": "To manage and update ReplicaSets and their associated Pods, ensuring a desired number of replicas are running and enabling declarative updates.",
+            "C": "To store persistent data.",
+            "D": "To expose an application to the network."
+          },
+          "correct_answer": "B",
+          "explanation": "Deployments are a higher-level abstraction in Kubernetes used for managing stateless applications. They provide declarative updates for Pods and ReplicaSets, enabling features like rolling updates and rollbacks."
+        },
+        {
+          "question": "What core Kubernetes object does a Deployment manage under the hood?",
+          "options": {
+            "A": "Services",
+            "B": "ConfigMaps",
+            "C": "ReplicaSets",
+            "D": "Nodes"
+          },
+          "correct_answer": "C",
+          "explanation": "When you create a Deployment, it automatically creates a ReplicaSet to ensure that the specified number of Pod replicas are always running. The Deployment then manages this ReplicaSet, handling updates and scaling."
+        },
+        {
+          "question": "Which `kubectl` command would you use to create a Deployment from a YAML file?",
+          "options": {
+            "A": "`kubectl start -f deployment.yaml`",
+            "B": "`kubectl run -f deployment.yaml`",
+            "C": "`kubectl create -f deployment.yaml`",
+            "D": "`kubectl apply -f deployment.yaml`"
+          },
+          "correct_answer": "D",
+          "explanation": "`kubectl apply -f <file>` is the preferred command for creating and updating Kubernetes resources declaratively. It performs a 'server-side apply' operation, which is idempotent and tracks changes."
+        },
+        {
+          "question": "What is a 'rolling update' strategy in a Deployment, and why is it beneficial?",
+          "options": {
+            "A": "It means updating all Pods simultaneously, causing downtime.",
+            "B": "It's a strategy where new Pods are gradually rolled out and replace old ones, enabling zero-downtime updates and easy rollbacks.",
+            "C": "It's a method to roll back to a previous version.",
+            "D": "It's a strategy to scale up the number of Pods."
+          },
+          "correct_answer": "B",
+          "explanation": "Rolling updates are the default deployment strategy for Deployments. They incrementally replace Pods of the old version with Pods of the new version, ensuring continuous availability of the application during updates and allowing for quick rollbacks if issues arise."
+        },
+        {
+          "question": "Which `kubectl` command would you use to scale a Deployment up or down?",
+          "options": {
+            "A": "`kubectl resize deployment <name> --replicas=X`",
+            "B": "`kubectl scale deployment <name> --replicas=X`",
+            "C": "`kubectl update deployment <name> --replicas=X`",
+            "D": "`kubectl set replicas deployment <name> =X`"
+          },
+          "correct_answer": "B",
+          "explanation": "`kubectl scale` is used to imperatively set the number of replicas for a Deployment, ReplicaSet, or other scalable resources."
+        },
+        {
+          "question": "When would you typically choose a `Deployment` over a `StatefulSet`?",
+          "options": {
+            "A": "For applications that require stable network identities and persistent storage.",
+            "B": "For stateless applications where Pods are interchangeable and order/unique identity is not critical.",
+            "C": "For batch jobs that run to completion.",
+            "D": "When managing a single Pod only."
+          },
+          "correct_answer": "B",
+          "explanation": "Deployments are ideal for stateless applications where each replica is identical and can be replaced without affecting application state. Examples include web servers, API gateways, or stateless microservices."
+        },
+        {
+          "question": "What is the primary difference between a `Deployment` and a `StatefulSet`?",
+          "options": {
+            "A": "Deployments are for databases, StatefulSets for web servers.",
+            "B": "Deployments are for stateless applications, while StatefulSets are designed for stateful applications, providing stable, unique network identities and persistent storage for each Pod.",
+            "C": "Deployments are newer than StatefulSets.",
+            "D": "StatefulSets only run one replica."
+          },
+          "correct_answer": "B",
+          "explanation": "The key distinction is state. Deployments assume Pods are interchangeable. StatefulSets ensure stable network identities, stable persistent storage, and ordered, graceful deployment/scaling for each Pod, making them suitable for databases, message queues, and other stateful workloads."
+        },
+        {
+          "question": "What specific feature of a StatefulSet provides stable network identity for each Pod?",
+          "options": {
+            "A": "It assigns a random IP address.",
+            "B": "It uses a Headless Service to provide unique, stable DNS hostnames (e.g., `pod-0.service.namespace.svc.cluster.local`).",
+            "C": "It uses the node's hostname.",
+            "D": "It manually assigns IPs."
+          },
+          "correct_answer": "B",
+          "explanation": "StatefulSets typically use a Headless Service to control the network domain for its Pods. This allows each Pod to get a unique, predictable hostname following a pattern (e.g., `my-app-0`, `my-app-1`), which is crucial for stateful applications that need stable network identities."
+        },
+        {
+          "question": "How does a StatefulSet ensure stable persistent storage for each Pod?",
+          "options": {
+            "A": "It stores data directly on the node's root filesystem.",
+            "B": "It uses `PersistentVolumeClaims` (PVCs) for each Pod, ensuring a consistent volume for each unique Pod identity.",
+            "C": "It uses ephemeral storage only.",
+            "D": "It stores data in ConfigMaps."
+          },
+          "correct_answer": "B",
+          "explanation": "StatefulSets generate a unique PVC for each Pod (e.g., `data-my-app-0`, `data-my-app-1`), which in turn binds to a PersistentVolume. This ensures that even if a Pod is rescheduled, it gets re-attached to its specific, stable volume, preserving its state."
+        },
+        {
+          "question": "When scaling down a StatefulSet, in what order are Pods terminated?",
+          "options": {
+            "A": "Random order.",
+            "B": "From highest ordinal index to lowest (e.g., `pod-2`, then `pod-1`, then `pod-0`).",
+            "C": "From lowest ordinal index to highest.",
+            "D": "Based on CPU usage."
+          },
+          "correct_answer": "B",
+          "explanation": "StatefulSets ensure ordered scaling. When scaling down, Pods are terminated in reverse ordinal order, gracefully shutting down one by one, which is important for distributed stateful applications (e.g., quorum-based systems)."
+        },
+        {
+          "question": "When scaling up a StatefulSet, in what order are Pods created and launched?",
+          "options": {
+            "A": "Random order.",
+            "B": "From highest ordinal index to lowest.",
+            "C": "From lowest ordinal index to highest (e.g., `pod-0`, then `pod-1`, then `pod-2`).",
+            "D": "Based on memory availability."
+          },
+          "correct_answer": "C",
+          "explanation": "StatefulSets ensure ordered scaling. When scaling up, Pods are created in ascending ordinal order. Each Pod is launched only after the previous one (and its volumes) is fully running and ready, which is crucial for applications that require specific startup sequences."
+        },
+        {
+          "question": "Which strategy for Deployment updates allows for gradual rollout of a new version while keeping the old version available?",
+          "options": {
+            "A": "Recreate",
+            "B": "RollingUpdate",
+            "C": "Blue/Green",
+            "D": "Canary"
+          },
+          "correct_answer": "B",
+          "explanation": "RollingUpdate is the default and most common strategy. It ensures zero-downtime updates by incrementally replacing old Pods with new ones. Blue/Green and Canary are advanced strategies built on top of rolling updates or separate deployments."
+        },
+        {
+          "question": "What is the 'Recreate' strategy for Deployment updates?",
+          "options": {
+            "A": "It scales up new Pods while old ones are still running.",
+            "B": "It terminates all existing Pods of the old version before creating any new Pods of the new version, causing downtime.",
+            "C": "It only updates one Pod at a time.",
+            "D": "It randomly restarts Pods."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'Recreate' strategy brings down all existing Pods of the old version first, and *then* brings up the new version. This results in downtime but ensures a clean slate for the new version. It's rarely used for production web services."
+        },
+        {
+          "question": "What field in a Deployment's spec defines how many replicas of the Pod template should be running?",
+          "options": {
+            "A": "count",
+            "B": "replicas",
+            "C": "instances",
+            "D": "number"
+          },
+          "correct_answer": "B",
+          "explanation": "The `replicas` field in the `spec` section of a Deployment (or StatefulSet) YAML manifest specifies the desired number of identical Pods that should be running."
+        },
+        {
+          "question": "How do you specify the container image to use in a Deployment or StatefulSet?",
+          "options": {
+            "A": "In the `metadata` section.",
+            "B": "Within the `template.spec.containers` section, using the `image` field.",
+            "C": "Via a ConfigMap.",
+            "D": "Using a separate Dockerfile within Kubernetes."
+          },
+          "correct_answer": "B",
+          "explanation": "The `image` field is located within the `containers` array, which is nested under `template.spec`. This specifies the Docker image that the container should run."
+        },
+        {
+          "question": "What is the purpose of the `selector` field in a Deployment or StatefulSet?",
+          "options": {
+            "A": "To select which node the Pods will run on.",
+            "B": "To define a label selector that identifies the set of Pods managed by this controller.",
+            "C": "To select which image to pull from the registry.",
+            "D": "To select which network to use."
+          },
+          "correct_answer": "B",
+          "explanation": "The `selector` field (specifically `matchLabels` or `matchExpressions`) defines a set of labels that the controller uses to find and manage its associated Pods. It's crucial for the controller to know which Pods belong to it."
+        },
+        {
+          "question": "What is a 'Canary Deployment' and how can it be achieved with Deployments?",
+          "options": {
+            "A": "Deploying a new version to all users immediately.",
+            "B": "A strategy where a new version is released to a small subset of users, tested, and then gradually rolled out to more users. This can be achieved by having two Deployments (old and new version) and using a Service to split traffic between them.",
+            "C": "A deployment that only runs during off-peak hours.",
+            "D": "A deployment that automatically rolls back on failure."
+          },
+          "correct_answer": "B",
+          "explanation": "Canary deployments allow for phased rollouts, mitigating risk. You deploy a small percentage of traffic to the new version (the 'canary') and monitor its performance. If all is well, you gradually shift more traffic. This is typically done by having two Deployments (old and new) and a Service or Ingress controller splitting traffic based on labels."
+        },
+        {
+          "question": "True or False: A Pod managed by a Deployment will always have a stable, unique network identity and persistent storage, even if it's restarted or rescheduled.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Deployments manage stateless Pods. Pods under a Deployment are considered interchangeable. If a Pod is restarted or rescheduled, it might get a new IP address, and its ephemeral storage will be lost. Stable network identities and persistent storage for individual Pods are features of StatefulSets."
+        },
+        {
+          "question": "Which object ensures that the desired number of Pod replicas defined in a Deployment are always running?",
+          "options": {
+            "A": "Service",
+            "B": "Ingress",
+            "C": "ReplicaSet",
+            "D": "Namespace"
+          },
+          "correct_answer": "C",
+          "explanation": "The ReplicaSet is the Kubernetes object that maintains a stable set of running Pods at any given time. A Deployment owns and manages ReplicaSets, which in turn own and manage Pods."
+        },
+        {
+          "question": "What happens if you manually delete a Pod that is managed by a Deployment?",
+          "options": {
+            "A": "The Pod is gone permanently, and the Deployment does nothing.",
+            "B": "The Deployment's underlying ReplicaSet immediately detects the missing Pod and creates a new one to replace it, maintaining the desired replica count.",
+            "C": "The entire Deployment is deleted.",
+            "D": "The Docker daemon automatically restarts the Pod."
+          },
+          "correct_answer": "B",
+          "explanation": "If you manually delete a Pod managed by a controller like a Deployment (via its ReplicaSet), the controller will notice that the actual number of running Pods is less than the desired number and will immediately create a new Pod to reconcile the state. This is why you should scale Deployments using `kubectl scale` or by updating the YAML, rather than deleting individual Pods."
         }
-    ]
+      ]
+    }
+  ]
 }

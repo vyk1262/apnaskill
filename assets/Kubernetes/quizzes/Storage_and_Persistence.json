@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Storage_and_Persistence",
+      "questions": [
         {
-            "topic": "Storage_and_Persistence",
-            "questions": []
+          "question": "Why is persistent storage crucial for stateful applications running in Kubernetes?",
+          "options": {
+            "A": "To make Pods run faster.",
+            "B": "Because Pods are ephemeral, and their local storage is lost upon restart or rescheduling, persistent storage ensures data durability.",
+            "C": "To reduce network latency.",
+            "D": "To automatically scale application replicas."
+          },
+          "correct_answer": "B",
+          "explanation": "Pods are designed to be ephemeral and can be restarted, rescheduled, or deleted at any time. Any data written to a Pod's local filesystem is lost. Persistent storage ensures that application data survives Pod restarts and even Node failures."
+        },
+        {
+          "question": "What is a `Volume` in Kubernetes, and what is its primary use case?",
+          "options": {
+            "A": "A network configuration for Pods.",
+            "B": "A directory accessible to containers in a Pod, abstracting the underlying storage details and allowing data sharing or persistence.",
+            "C": "A measure of disk space on a Node.",
+            "D": "A type of Service for data access."
+          },
+          "correct_answer": "B",
+          "explanation": "A Kubernetes `Volume` is simply a directory that is accessible to all containers within a Pod. It outlives the individual containers within the Pod but has the same lifetime as the Pod itself. It's used for sharing data between containers in a Pod or for connecting to various types of storage."
+        },
+        {
+          "question": "What happens to data stored in a `Volume` when the Pod that uses it is deleted?",
+          "options": {
+            "A": "The data is always preserved automatically.",
+            "B": "The data is deleted along with the Pod, unless it's backed by a `PersistentVolume`.",
+            "C": "The data is automatically migrated to another Pod.",
+            "D": "The data is compressed and archived."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, the data in many Volume types (e.g., `emptyDir`, `hostPath`) is tied to the Pod's lifecycle. When the Pod is deleted, the data in these volumes is also lost. To persist data beyond the Pod's lifecycle, `PersistentVolumes` and `PersistentVolumeClaims` are used."
+        },
+        {
+          "question": "What is a `PersistentVolume` (PV) in Kubernetes?",
+          "options": {
+            "A": "A volume that is only used for temporary data.",
+            "B": "A piece of storage in the cluster that has been provisioned by an administrator or dynamically by a StorageClass, and is independent of any specific Pod's lifecycle.",
+            "C": "A volume that is specific to a single Node.",
+            "D": "A volume that only stores configuration data."
+          },
+          "correct_answer": "B",
+          "explanation": "A `PersistentVolume` (PV) is an API object that represents a piece of storage in the cluster. It is provisioned by an administrator (static provisioning) or by a StorageClass (dynamic provisioning) and has a lifecycle independent of any particular Pod."
+        },
+        {
+          "question": "What is a `PersistentVolumeClaim` (PVC) in Kubernetes?",
+          "options": {
+            "A": "A request for a specific amount of storage by a user, which consumes a `PersistentVolume`.",
+            "B": "A type of network volume.",
+            "C": "A claim on network bandwidth.",
+            "D": "A claim on CPU resources."
+          },
+          "correct_answer": "A",
+          "explanation": "A `PersistentVolumeClaim` (PVC) is a request for storage by a user. It specifies the desired size, access modes (e.g., ReadWriteOnce, ReadOnlyMany), and optionally a StorageClass. The Kubernetes control plane attempts to bind the PVC to an available PV that satisfies its requirements."
+        },
+        {
+          "question": "What is the relationship between a Pod, a PVC, and a PV?",
+          "options": {
+            "A": "A Pod directly uses a PV.",
+            "B": "A Pod requests a PVC, which then binds to an available PV.",
+            "C": "A PV creates a PVC, which then creates a Pod.",
+            "D": "A PVC creates a Pod, which then creates a PV."
+          },
+          "correct_answer": "B",
+          "explanation": "The workflow is: A user (or application) creates a `Pod` that references a `PVC`. The `PVC` then acts as a request, which the Kubernetes system matches with an available `PV` (either statically pre-provisioned or dynamically provisioned via a `StorageClass`). The `Pod` then mounts the `PVC` (which is backed by the `PV`)."
+        },
+        {
+          "question": "What is a `StorageClass` in Kubernetes, and what is its main benefit?",
+          "options": {
+            "A": "A class for categorizing storage types (e.g., fast, slow).",
+            "B": "An abstraction that describes the 'classes' of storage offered by a cluster administrator, enabling dynamic provisioning of PersistentVolumes.",
+            "C": "A way to backup persistent data.",
+            "D": "A method to encrypt storage volumes."
+          },
+          "correct_answer": "B",
+          "explanation": "A `StorageClass` defines a class of storage. It contains `provisioner` (which storage plugin to use), `parameters` (provider-specific settings), and `reclaimPolicy`. Its main benefit is enabling dynamic provisioning, where PVs are automatically created when a PVC requests storage of a specific class, eliminating manual PV creation."
+        },
+        {
+          "question": "What is 'dynamic provisioning' of PersistentVolumes, and how does it relate to StorageClasses?",
+          "options": {
+            "A": "Manually creating PVs as needed.",
+            "B": "PVs are created on-the-fly by Kubernetes when a PVC requests storage, based on the definition in a StorageClass, eliminating the need for manual PV creation.",
+            "C": "Resizing PVs without downtime.",
+            "D": "Backing up PVs automatically."
+          },
+          "correct_answer": "B",
+          "explanation": "Dynamic provisioning is the process where a PV is automatically created when a PVC is submitted, based on the rules defined in a `StorageClass`. This simplifies storage management for users and administrators by removing the need for pre-provisioning PVs."
+        },
+        {
+          "question": "What is the `reclaimPolicy` of a PersistentVolume, and what are its common values?",
+          "options": {
+            "A": "How often the PV is backed up; values are `daily`, `weekly`.",
+            "B": "What happens to the underlying storage when a PVC bound to it is deleted; common values are `Retain`, `Delete`, `Recycle` (deprecated).",
+            "C": "How much storage is reclaimed; values are `full`, `partial`.",
+            "D": "Whether the PV can be resized; values are `true`, `false`."
+          },
+          "correct_answer": "B",
+          "explanation": "The `reclaimPolicy` determines what happens to the underlying storage volume after a bound `PersistentVolumeClaim` is deleted. `Retain` means the PV and its data are preserved (for manual cleanup). `Delete` means the PV and underlying storage are automatically deleted. `Recycle` (wipes and reuses) is deprecated in favor of dynamic provisioning."
+        },
+        {
+          "question": "Which `accessModes` allows a volume to be mounted as read-write by a single Node?",
+          "options": {
+            "A": "ReadOnlyMany",
+            "B": "ReadWriteMany",
+            "C": "ReadWriteOnce",
+            "D": "ExecuteOnly"
+          },
+          "correct_answer": "C",
+          "explanation": "`ReadWriteOnce` means the volume can be mounted as read-write by a single Node. This is the most common access mode for block storage and single-Pod applications."
+        },
+        {
+          "question": "Which `accessModes` allows a volume to be mounted as read-write by multiple Nodes?",
+          "options": {
+            "A": "ReadOnlyMany",
+            "B": "ReadWriteMany",
+            "C": "ReadWriteOnce",
+            "D": "ExclusiveWrite"
+          },
+          "correct_answer": "B",
+          "explanation": "`ReadWriteMany` means the volume can be mounted as read-write by multiple Nodes simultaneously. This typically requires network file systems (NFS, CephFS) as underlying storage."
+        },
+        {
+          "question": "When would you use an `emptyDir` volume?",
+          "options": {
+            "A": "For long-term persistent data storage.",
+            "B": "For data that needs to survive Pod restarts.",
+            "C": "For temporary data that needs to be shared between containers in the same Pod, or as scratch space, and is deleted when the Pod is removed.",
+            "D": "To mount external cloud storage."
+          },
+          "correct_answer": "C",
+          "explanation": "An `emptyDir` volume is created empty when a Pod is first scheduled on a Node, and its content is deleted when the Pod is removed from the Node. It's ideal for temporary scratch space, cache directories, or data sharing between co-located containers in a Pod."
+        },
+        {
+          "question": "What is a `hostPath` volume, and what are its common use cases?",
+          "options": {
+            "A": "A network-attached storage volume.",
+            "B": "A volume that mounts a file or directory from the host Node's filesystem into a Pod. Used for host-specific data, system logs, or accessing host resources (with security implications).",
+            "C": "A volume that is automatically provisioned by a cloud provider.",
+            "D": "A volume that can only be accessed by the Control Plane."
+          },
+          "correct_answer": "B",
+          "explanation": "A `hostPath` volume mounts a file or directory from the host Node's filesystem into a Pod. It's useful for accessing logs (`/var/log`), Docker sockets (`/var/run/docker.sock`), or specific host configuration. However, it's generally discouraged for application data in multi-node clusters due to lack of portability and security risks."
+        },
+        {
+          "question": "What is `CSI` (Container Storage Interface) in Kubernetes?",
+          "options": {
+            "A": "A command-line tool for storage management.",
+            "B": "A standard for exposing arbitrary block and file storage systems to containerized workloads, enabling storage vendors to write plugins once and have them work across various orchestrators.",
+            "C": "A type of persistent volume.",
+            "D": "A storage monitoring tool."
+          },
+          "correct_answer": "B",
+          "explanation": "The Container Storage Interface (CSI) is a standard API that enables storage vendors to develop storage plugins for Kubernetes and other container orchestration systems. This makes it easier to integrate various storage solutions (cloud, on-premises, software-defined) without modifying core Kubernetes code."
+        },
+        {
+          "question": "What is the primary role of a `VolumeClaimTemplate` in a StatefulSet?",
+          "options": {
+            "A": "To create generic, shared volumes for all Pods.",
+            "B": "To dynamically provision a unique `PersistentVolumeClaim` for each Pod replica, ensuring stable, persistent storage for each Pod.",
+            "C": "To define an `emptyDir` for each Pod.",
+            "D": "To configure `hostPath` volumes automatically."
+          },
+          "correct_answer": "B",
+          "explanation": "A `StatefulSet` uses `volumeClaimTemplates` to automatically generate a unique `PersistentVolumeClaim` (and thus a `PersistentVolume`) for each replica. This ensures that each Pod maintains its specific, stable persistent storage throughout its lifecycle, even if it's rescheduled."
+        },
+        {
+          "question": "True or False: Once a `PersistentVolume` is bound to a `PersistentVolumeClaim`, it cannot be bound to another PVC simultaneously.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "True",
+          "explanation": "True. A `PersistentVolume` can only be bound to a single `PersistentVolumeClaim` at a time. This one-to-one mapping ensures that a PV's storage is dedicated to a specific PVC and its consuming Pods, preventing conflicts."
+        },
+        {
+          "question": "What happens if a Pod requests a `PersistentVolumeClaim` but no matching `PersistentVolume` (or `StorageClass` for dynamic provisioning) is available?",
+          "options": {
+            "A": "The Pod will still run but without storage.",
+            "B": "The PVC will remain in a 'Pending' state, and the Pod will not be able to start until a suitable PV is available and bound.",
+            "C": "Kubernetes will automatically create a new PV of any type.",
+            "D": "The PVC will be deleted."
+          },
+          "correct_answer": "B",
+          "explanation": "If a PVC cannot find a matching PV (either pre-provisioned or dynamically created via a `StorageClass`), it will remain in a `Pending` state. Any Pod attempting to use that PVC will also be unable to start or run, waiting for the PVC to be bound."
+        },
+        {
+          "question": "Which of the following is NOT a typical `accessMode` for a PersistentVolume?",
+          "options": {
+            "A": "ReadWriteOnce",
+            "B": "ReadWriteMany",
+            "C": "ReadOnlyMany",
+            "D": "ReadWriteExec"
+          },
+          "correct_answer": "D",
+          "explanation": "`ReadWriteOnce`, `ReadWriteMany`, and `ReadOnlyMany` are the standard access modes. `ReadWriteExec` is not a valid Kubernetes access mode for volumes."
+        },
+        {
+          "question": "What is the primary benefit of using `PersistentVolumes` and `PersistentVolumeClaims` over direct `hostPath` volumes for production applications?",
+          "options": {
+            "A": "Simpler configuration for single-node deployments.",
+            "B": "Ensures data is always stored on the Control Plane node.",
+            "C": "Provides storage portability, decoupling storage from the node, and enabling dynamic provisioning and management by the cluster.",
+            "D": "Reduces the size of container images."
+          },
+          "correct_answer": "C",
+          "explanation": "PVs and PVCs abstract away the underlying storage infrastructure. This allows applications to request storage without knowing the details of where it comes from (cloud disk, NFS, etc.). It promotes portability (a Pod can run on any node and attach its volume) and enables advanced features like dynamic provisioning, resizing, and snapshots."
+        },
+        {
+          "question": "What is the common method for migrating data stored in a `PersistentVolume` to a new cluster or different storage system?",
+          "options": {
+            "A": "Kubernetes automatically migrates all data.",
+            "B": "Using native storage system tools (e.g., cloud snapshots, rsync) or specialized backup/restore tools for Kubernetes (e.g., Velero).",
+            "C": "Rebuilding the data from scratch.",
+            "D": "Mounting the PV as read-only on the new cluster."
+          },
+          "correct_answer": "B",
+          "explanation": "Kubernetes itself does not provide built-in tools for data migration *between* clusters or different storage systems. You typically rely on the capabilities of the underlying storage provider (e.g., taking snapshots of cloud disks) or use specialized Kubernetes backup and restore solutions like Velero, which can back up PV contents along with cluster resources."
         }
-    ]
+      ]
+    }
+  ]
 }

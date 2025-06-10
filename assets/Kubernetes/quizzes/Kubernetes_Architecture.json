@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Kubernetes_Architecture",
+      "questions": [
         {
-            "topic": "Kubernetes_Architecture",
-            "questions": []
+          "question": "What is the primary purpose of Kubernetes?",
+          "options": {
+            "A": "To build Docker images.",
+            "B": "To manage and orchestrate containerized applications at scale.",
+            "C": "To provide a programming language for microservices.",
+            "D": "To store persistent data for applications."
+          },
+          "correct_answer": "B",
+          "explanation": "Kubernetes is an open-source container orchestration platform designed to automate the deployment, scaling, and management of containerized applications."
+        },
+        {
+          "question": "What are the two main types of nodes in a Kubernetes cluster?",
+          "options": {
+            "A": "Master nodes and Slave nodes.",
+            "B": "Control Plane nodes and Worker nodes.",
+            "C": "Client nodes and Server nodes.",
+            "D": "Primary nodes and Secondary nodes."
+          },
+          "correct_answer": "B",
+          "explanation": "A Kubernetes cluster consists of at least one Control Plane (formerly Master) node and one or more Worker nodes. The Control Plane manages the cluster, while Worker nodes run the actual applications."
+        },
+        {
+          "question": "Which component is the 'brain' of the Kubernetes cluster, responsible for managing its state and objects?",
+          "options": {
+            "A": "Kubelet",
+            "B": "Kube-proxy",
+            "C": "Etcd",
+            "D": "API Server"
+          },
+          "correct_answer": "D",
+          "explanation": "The API Server is the front-end for the Kubernetes control plane. It exposes the Kubernetes API, which is used by various components (both internal and external) to communicate with and manage the cluster."
+        },
+        {
+          "question": "What is the key-value store used by Kubernetes to persistently store all cluster data?",
+          "options": {
+            "A": "MySQL",
+            "B": "Redis",
+            "C": "Etcd",
+            "D": "MongoDB"
+          },
+          "correct_answer": "C",
+          "explanation": "Etcd is a distributed, consistent, and highly available key-value store that Kubernetes uses to store all cluster data, including cluster configuration, state, and metadata about all Kubernetes objects."
+        },
+        {
+          "question": "Which Control Plane component is responsible for assigning Pods to available Worker Nodes?",
+          "options": {
+            "A": "Kube-controller-manager",
+            "B": "Kube-scheduler",
+            "C": "Kube-proxy",
+            "D": "Etcd"
+          },
+          "correct_answer": "B",
+          "explanation": "The Kube-scheduler watches for newly created Pods with no assigned node and selects a node for them to run on, considering various factors like resource requirements, policies, and affinity rules."
+        },
+        {
+          "question": "Which component on the Control Plane runs controllers that manage the cluster's desired state?",
+          "options": {
+            "A": "Kube-scheduler",
+            "B": "Kube-apiserver",
+            "C": "Cloud-controller-manager",
+            "D": "Kube-controller-manager"
+          },
+          "correct_answer": "D",
+          "explanation": "The Kube-controller-manager runs various controller processes that continuously monitor the shared state of the cluster and make changes to bring the current state closer to the desired state. Examples include Node Controller, Replication Controller, Endpoints Controller, and Service Account & Token Controllers."
+        },
+        {
+          "question": "What is the agent that runs on each Worker Node and ensures containers are running in a Pod?",
+          "options": {
+            "A": "Kube-proxy",
+            "B": "Container Runtime",
+            "C": "Kubelet",
+            "D": "CRI"
+          },
+          "correct_answer": "C",
+          "explanation": "The Kubelet is an agent that runs on each Worker Node. It communicates with the API Server, takes PodSpecs (Pod definitions), and ensures that the containers described in those PodSpecs are running and healthy."
+        },
+        {
+          "question": "Which component on a Worker Node is responsible for handling network proxy for Pods, enabling service discovery?",
+          "options": {
+            "A": "Kubelet",
+            "B": "Kube-proxy",
+            "C": "Container Runtime",
+            "D": "CNI"
+          },
+          "correct_answer": "B",
+          "explanation": "Kube-proxy is a network proxy that runs on each node in the cluster. It maintains network rules on nodes, allowing network communication to your Pods from inside or outside of the cluster. It handles Service abstraction."
+        },
+        {
+          "question": "What is the purpose of the 'Container Runtime' (e.g., Docker, containerd, CRI-O) on a Worker Node?",
+          "options": {
+            "A": "To store cluster data.",
+            "B": "To run and manage containers within Pods.",
+            "C": "To schedule Pods.",
+            "D": "To provide network connectivity between nodes."
+          },
+          "correct_answer": "B",
+          "explanation": "The Container Runtime is the software responsible for running containers. Kubernetes supports various container runtimes through the Container Runtime Interface (CRI), with popular choices including containerd, CRI-O, and Docker (though Docker now uses containerd internally)."
+        },
+        {
+          "question": "What is a 'Pod' in Kubernetes?",
+          "options": {
+            "A": "A single Docker container.",
+            "B": "The smallest deployable unit in Kubernetes, typically consisting of one or more containers that share network and storage.",
+            "C": "A logical grouping of nodes.",
+            "D": "A type of persistent storage."
+          },
+          "correct_answer": "B",
+          "explanation": "A Pod is the fundamental building block of Kubernetes. It represents a single instance of a running process in your cluster, and it's where your containers (one or more) actually live. Containers within a Pod share the same network namespace and storage."
+        },
+        {
+          "question": "What is the `kubectl` command-line tool used for?",
+          "options": {
+            "A": "To install Kubernetes on servers.",
+            "B": "To interact with the Kubernetes API Server to manage cluster resources.",
+            "C": "To monitor container logs.",
+            "D": "To build Docker images."
+          },
+          "correct_answer": "B",
+          "explanation": "Kubectl is the command-line tool for running commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs."
+        },
+        {
+          "question": "Which component is optional and specifically interacts with the underlying cloud provider's APIs (e.g., AWS, GCP, Azure) to manage resources like load balancers and persistent volumes?",
+          "options": {
+            "A": "Kubelet",
+            "B": "Kube-scheduler",
+            "C": "Cloud-controller-manager",
+            "D": "Kube-proxy"
+          },
+          "correct_answer": "C",
+          "explanation": "The Cloud-controller-manager runs controllers that interact with the underlying cloud providers. This component enables Kubernetes to integrate with the cloud provider's infrastructure for tasks such as provisioning load balancers, managing cloud storage volumes, and tracking node health."
+        },
+        {
+          "question": "What is the role of a CNI (Container Network Interface) plugin in Kubernetes?",
+          "options": {
+            "A": "To provide a user interface for network management.",
+            "B": "To enable Pods to communicate with each other across nodes and provide network policies.",
+            "C": "To monitor network performance.",
+            "D": "To assign IP addresses to nodes."
+          },
+          "correct_answer": "B",
+          "explanation": "CNI plugins (like Calico, Flannel, Weave Net) are responsible for implementing the network layer for Pods, assigning IP addresses to Pods, and enabling network communication between Pods, including across different nodes, based on the CNI specification."
+        },
+        {
+          "question": "In a highly available Kubernetes cluster, how many API Servers are typically deployed?",
+          "options": {
+            "A": "Exactly one.",
+            "B": "Multiple, behind a load balancer.",
+            "C": "One per Worker Node.",
+            "D": "None, it's a virtual component."
+          },
+          "correct_answer": "B",
+          "explanation": "For high availability, multiple instances of the API Server are deployed, and a load balancer (either an external cloud load balancer or an internal one) distributes traffic among them. This ensures that if one API Server fails, the cluster remains accessible."
+        },
+        {
+          "question": "What is the `kubeconfig` file used for?",
+          "options": {
+            "A": "To store Kubernetes cluster logs.",
+            "B": "To configure kubectl to connect to different Kubernetes clusters and contexts.",
+            "C": "To define Pod specifications.",
+            "D": "To list all available Kubernetes versions."
+          },
+          "correct_answer": "B",
+          "explanation": "The `kubeconfig` file is a YAML file that contains configuration information for accessing Kubernetes clusters, including cluster details, user authentication information, and contexts (which combine a cluster and a user)."
+        },
+        {
+          "question": "True or False: A Kubernetes cluster can run without any Worker Nodes, just a Control Plane.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While the Control Plane manages the cluster, it's the Worker Nodes that actually run your containerized applications (Pods). Without Worker Nodes, there's nowhere for your applications to be scheduled and executed."
+        },
+        {
+          "question": "What is the purpose of the 'Node' object in Kubernetes architecture?",
+          "options": {
+            "A": "It represents a physical or virtual machine in the cluster where Pods can be scheduled.",
+            "B": "It is a logical grouping of Pods.",
+            "C": "It stores all cluster data.",
+            "D": "It's a network device that connects the cluster to the internet."
+          },
+          "correct_answer": "A",
+          "explanation": "A Node object represents a physical or virtual machine in the Kubernetes cluster. These are the machines where your Pods (and thus your containers) actually run. Kubelet and Container Runtime run on these nodes."
+        },
+        {
+          "question": "Which of the following is NOT a core component of the Kubernetes Control Plane?",
+          "options": {
+            "A": "Kube-apiserver",
+            "B": "Kube-scheduler",
+            "C": "Kubelet",
+            "D": "Etcd"
+          },
+          "correct_answer": "C",
+          "explanation": "Kubelet is a crucial component, but it runs on the Worker Nodes, not on the Control Plane. The core Control Plane components are Kube-apiserver, Etcd, Kube-scheduler, and Kube-controller-manager (and Cloud-controller-manager if applicable)."
+        },
+        {
+          "question": "What is the function of the `kube-proxy` component related to `Services`?",
+          "options": {
+            "A": "It stores Service definitions.",
+            "B": "It provides network proxying and load balancing for Services across Pods.",
+            "C": "It creates new Services.",
+            "D": "It monitors Service health."
+          },
+          "correct_answer": "B",
+          "explanation": "Kube-proxy is responsible for implementing the Service abstraction. It watches for Service and Endpoint objects and maintains network rules (e.g., iptables rules or IPVS) on the nodes to route traffic to the correct Pods behind a Service."
+        },
+        {
+          "question": "How do cluster administrators typically interact with the Kubernetes Control Plane?",
+          "options": {
+            "A": "Directly logging into the Etcd database.",
+            "B": "Via the Kubelet on each node.",
+            "C": "Through the Kube-apiserver using `kubectl` or other API clients.",
+            "D": "By modifying files directly on the host machine."
+          },
+          "correct_answer": "C",
+          "explanation": "All interactions with the Kubernetes cluster, whether from `kubectl`, other command-line tools, or custom applications, happen through the Kube-apiserver. It is the central management interface."
         }
-    ]
+      ]
+    }
+  ]
 }

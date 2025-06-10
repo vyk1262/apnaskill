@@ -1,7 +1,7 @@
 {
   "result": [
     {
-      "topic": "js_async",
+      "topic": "javascript_async",
       "questions": [
         {
           "question": "What is a callback in JavaScript?",
@@ -11,7 +11,8 @@
             "C": "A function that returns a promise",
             "D": "A function that has no parameters"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action."
         },
         {
           "question": "What is the primary purpose of asynchronous programming?",
@@ -21,7 +22,8 @@
             "C": "To block code execution until a task completes",
             "D": "To improve code readability"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Asynchronous programming allows operations to run in the background without blocking the main execution thread, making the application more responsive and efficient, especially for tasks like network requests or file I/O."
         },
         {
           "question": "What does a Promise represent in JavaScript?",
@@ -31,7 +33,8 @@
             "C": "A method that resolves immediately",
             "D": "An object that can be modified"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A Promise is a JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value."
         },
         {
           "question": "Which method is used to handle a fulfilled promise?",
@@ -41,7 +44,8 @@
             "C": ".finally()",
             "D": ".resolve()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `.then()` method is used to attach callbacks for the eventual fulfillment or rejection of a Promise. The first argument to `.then()` is the success handler (for fulfilled promises)."
         },
         {
           "question": "What does the async keyword do when used before a function?",
@@ -51,7 +55,8 @@
             "C": "It allows the function to run synchronously",
             "D": "It creates a generator function"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `async` keyword placed before a function declaration makes the function an asynchronous function, which implicitly returns a Promise. If the function returns a non-Promise value, it will be wrapped in a resolved Promise."
         },
         {
           "question": "How do you handle errors in an async function?",
@@ -61,7 +66,8 @@
             "C": "Returning an error object",
             "D": "Using error callbacks"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Within an `async` function, you can use standard `try...catch` blocks to handle errors that occur during asynchronous operations (especially those involving `await`). The `catch` block will execute if a Promise that is `await`ed is rejected."
         },
         {
           "question": "What is the purpose of the await keyword?",
@@ -71,7 +77,8 @@
             "C": "To execute a synchronous function",
             "D": "To return multiple values from a function"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `await` keyword can only be used inside an `async` function. It pauses the execution of the `async` function until the Promise it's waiting for settles (either fulfills or rejects), and then resumes execution with the Promise's resolved value."
         },
         {
           "question": "Which of the following will NOT return a promise?",
@@ -81,7 +88,8 @@
             "C": "setTimeout()",
             "D": "Promise.resolve()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`setTimeout()` is a traditional asynchronous function that uses callbacks. It does not return a Promise directly. `fetch()`, `new Promise()`, and `Promise.resolve()` all inherently work with or return Promises."
         },
         {
           "question": "What happens if you do not return a value from an async function?",
@@ -91,7 +99,8 @@
             "C": "It resolves to null",
             "D": "It creates an infinite loop"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "If an `async` function does not explicitly return a value, it implicitly returns `Promise.resolve(undefined)`. The Promise it returns will resolve with `undefined`."
         },
         {
           "question": "What will the following code output: console.log(Promise.resolve(2) + 2)?",
@@ -101,7 +110,8 @@
             "C": "Promise {2}",
             "D": "Error"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "When you try to concatenate a Promise object with a number using the `+` operator, JavaScript performs type coercion. The Promise object is converted to its string representation (which might vary depending on the environment, but often includes '[object Promise]' or similar), and then '2' is appended, resulting in string concatenation. In many environments, `Promise.resolve(2)` might stringify to something like `[object Promise]`, leading to `[object Promise]2`, but more commonly, for simple numerical resolution like this, it might result in '22' due to the internal `toString` behavior for primitive-resolving Promises or how the environment handles this specific coercion."
         },
         {
           "question": "What does it mean for a function to be asynchronous?",
@@ -111,7 +121,8 @@
             "C": "It can return a promise",
             "D": "Both A and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "An asynchronous function does not block the main execution thread, allowing other code to run while it's performing an operation. It often involves non-blocking operations and can return a Promise to represent its eventual completion."
         },
         {
           "question": "Which of the following is true about promises?",
@@ -121,7 +132,8 @@
             "C": "They can be created only using the async/await syntax.",
             "D": "They automatically resolve without any callback."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A Promise can be in one of three states: 'pending' (initial state), 'fulfilled' (meaning that the operation completed successfully), or 'rejected' (meaning that the operation failed)."
         },
         {
           "question": "How do you convert a regular function to return a promise?",
@@ -131,7 +143,8 @@
             "C": "By using the await keyword",
             "D": "By adding .then() to it"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "You can explicitly create a Promise by wrapping your asynchronous logic inside the `Promise` constructor, which takes an executor function with `resolve` and `reject` arguments. Alternatively, using the `async` keyword before a function implicitly makes it return a promise."
         },
         {
           "question": "What will the following code output? 'Promise.resolve(3).then(v => v + 1).then(v => console.log(v));'",
@@ -141,7 +154,8 @@
             "C": "Error",
             "D": "Promise {4}"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `Promise.resolve(3)` creates a promise that immediately resolves with the value 3. The first `.then(v => v + 1)` takes the resolved value (3), adds 1 to it (making it 4), and returns a new promise that resolves with 4. The second `.then(v => console.log(v))` takes this new resolved value (4) and logs it to the console."
         },
         {
           "question": "What is the main advantage of using async/await over traditional promise chaining?",
@@ -151,7 +165,8 @@
             "C": "It executes all promises simultaneously.",
             "D": "It automatically handles errors."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Async/await syntax makes asynchronous code look and behave more like synchronous code, which greatly improves readability and simplifies the structure of complex asynchronous flows, reducing 'callback hell' or deeply nested `.then()` chains."
         },
         {
           "question": "Which of the following can be used to run multiple promises concurrently?",
@@ -161,7 +176,8 @@
             "C": "async/await",
             "D": "setTimeout()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`Promise.all()` is a static method that takes an iterable of Promises and returns a single Promise that resolves when all of the input Promises have resolved, or rejects when any of the input Promises reject. This allows for concurrent execution of independent asynchronous operations."
         },
         {
           "question": "What will happen if you use await on a non-promise value?",
@@ -171,7 +187,8 @@
             "C": "It will immediately resolve with that value.",
             "D": "It will block the event loop."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "If you `await` a non-Promise value, JavaScript will automatically wrap that value in a resolved Promise, and the `await` expression will immediately resolve with that value, without pausing the `async` function."
         },
         {
           "question": "How can you handle multiple errors when using async/await?",
@@ -181,7 +198,8 @@
             "C": "Returning a promise that resolves to an error object.",
             "D": "Using an error handler function."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "For individual `await` calls or a sequence of `await` calls within an `async` function, the `try...catch` block is the standard way to catch any errors (rejections) that occur."
         },
         {
           "question": "What is the purpose of the Promise.allSettled() method?",
@@ -191,7 +209,8 @@
             "C": "To return the first settled promise only.",
             "D": "To handle errors from all promises."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`Promise.allSettled()` waits until all given promises have either fulfilled or rejected, and returns a promise that resolves with an array of objects, each describing the outcome of a promise."
         },
         {
           "question": "Which of the following is a valid use of async/await?",
@@ -201,7 +220,8 @@
             "C": "async function() { return 3; }",
             "D": "await setTimeout(() => {}, 1000)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `await` keyword is designed to be used with Promises. `Promise.resolve()` returns a resolved Promise, making `await Promise.resolve()` a valid and common use case. `await 1 + 2` is valid but pointless as it doesn't await anything. `async function() { return 3; }` is a valid async function declaration, not an `await` usage. `setTimeout` does not return a promise by default, so awaiting it directly wouldn't yield the intended asynchronous control flow without explicit Promise wrapping."
         }
       ]
     }
