@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Prompt_Design_Patterns",
+      "questions": [
         {
-            "topic": "Prompt_Design_Patterns",
-            "questions": []
+          "question": "What is the main purpose of using 'Prompt Design Patterns'?",
+          "options": {
+            "A": "To make prompts longer and more complex.",
+            "B": "To provide reusable, effective strategies for structuring prompts to achieve specific desired outputs from AI models.",
+            "C": "To automate the entire prompt engineering process.",
+            "D": "To replace the need for AI models."
+          },
+          "correct_answer": "B",
+          "explanation": "Prompt design patterns are standardized approaches or templates for crafting prompts that have been found to consistently yield good results for particular types of tasks, making prompt engineering more systematic and efficient."
+        },
+        {
+          "question": "Which design pattern involves providing a clear, concise instruction at the beginning of the prompt?",
+          "options": {
+            "A": "Persona Pattern",
+            "B": "Instruction First Pattern",
+            "C": "Question Answering Pattern",
+            "D": "Refinement Pattern"
+          },
+          "correct_answer": "B",
+          "explanation": "The Instruction First Pattern prioritizes clarity by placing the core instruction at the very beginning of the prompt, ensuring the AI immediately understands the primary task."
+        },
+        {
+          "question": "The 'Persona Pattern' involves instructing the AI to act as what?",
+          "options": {
+            "A": "A passive observer.",
+            "B": "A specific character, role, or expert, influencing its tone, style, and knowledge base.",
+            "C": "A database administrator.",
+            "D": "A software developer."
+          },
+          "correct_answer": "B",
+          "explanation": "The Persona Pattern guides the AI to adopt a specific role (e.g., 'Act as a senior marketing analyst', 'You are a helpful coding assistant'), which then shapes its linguistic style, knowledge access, and response content."
+        },
+        {
+          "question": "What is the benefit of using the 'Audience Persona Pattern'?",
+          "options": {
+            "A": "It helps the AI generate content for itself.",
+            "B": "It helps the AI tailor its output to a specific target audience (e.g., 'Explain this to a 5-year-old', 'Write this for a technical audience').",
+            "C": "It helps the AI understand the prompt faster.",
+            "D": "It makes the prompt shorter."
+          },
+          "correct_answer": "B",
+          "explanation": "The Audience Persona Pattern ensures the AI crafts its response in a way that is understandable, engaging, and appropriate for the specified reader or listener, affecting vocabulary, complexity, and examples used."
+        },
+        {
+          "question": "Which pattern focuses on providing explicit examples of input-output pairs to guide the AI?",
+          "options": {
+            "A": "Zero-shot Pattern",
+            "B": "Chain-of-Thought Pattern",
+            "C": "Few-shot (Example-based) Pattern",
+            "D": "Constraint Pattern"
+          },
+          "correct_answer": "C",
+          "explanation": "The Few-shot Pattern is a fundamental design pattern where the prompt includes a few complete examples (input and desired output) that demonstrate the task, helping the AI learn the specific mapping."
+        },
+        {
+          "question": "The 'Constraint Pattern' is used to define what aspects of the AI's response?",
+          "options": {
+            "A": "The speed of generation.",
+            "B": "Specific limitations or rules the output must adhere to, such as length, format, style, or disallowed content.",
+            "C": "The input data source.",
+            "D": "The AI model version to use."
+          },
+          "correct_answer": "B",
+          "explanation": "The Constraint Pattern involves explicitly telling the AI what it *must* or *must not* do in its response. This can include 'Max 100 words', 'Use bullet points', 'Do not mention X', 'Only use factual information'."
+        },
+        {
+          "question": "What is the primary goal of the 'Refinement Pattern'?",
+          "options": {
+            "A": "To generate an initial draft without any changes.",
+            "B": "To iteratively improve the AI's response by providing successive instructions or corrections based on previous outputs.",
+            "C": "To create a prompt that works perfectly on the first try.",
+            "D": "To limit the AI's ability to learn."
+          },
+          "correct_answer": "B",
+          "explanation": "The Refinement Pattern is about continuous improvement. You prompt the AI, evaluate its response, and then provide follow-up prompts to guide it to refine specific aspects of its previous output until the desired result is achieved."
+        },
+        {
+          "question": "Which pattern involves breaking down a complex task into smaller, sequential steps for the AI to follow?",
+          "options": {
+            "A": "Summarization Pattern",
+            "B": "Question Answering Pattern",
+            "C": "Step-by-Step (Chain-of-Thought) Pattern",
+            "D": "Comparative Pattern"
+          },
+          "correct_answer": "C",
+          "explanation": "The Step-by-Step, or Chain-of-Thought, Pattern explicitly instructs the AI to think through a problem sequentially, often by asking it to explain its reasoning or intermediate steps. This significantly improves performance on complex reasoning tasks."
+        },
+        {
+          "question": "The 'Question Answering Pattern' typically involves providing what two main elements?",
+          "options": {
+            "A": "Only a question.",
+            "B": "A context or document, and a specific question to answer based on that context.",
+            "C": "Only keywords.",
+            "D": "A series of random words."
+          },
+          "correct_answer": "B",
+          "explanation": "This pattern is common for retrieval-augmented generation (RAG) or summarization. You give the AI some information (the context) and then ask a question that can be answered directly from that information."
+        },
+        {
+          "question": "What is the benefit of the 'Output Format Pattern'?",
+          "options": {
+            "A": "It makes the AI's output unstructured.",
+            "B": "It guides the AI to produce its response in a specific structure, such as JSON, Markdown, lists, or tables.",
+            "C": "It limits the length of the output arbitrarily.",
+            "D": "It forces the AI to use only plain text."
+          },
+          "correct_answer": "B",
+          "explanation": "The Output Format Pattern specifies how the AI's response should be structured. This is crucial for integrating AI outputs into other systems or for readability. Examples include 'Return as JSON', 'Use Markdown bullet points', 'Present as a table'."
+        },
+        {
+          "question": "When would you use a 'Comparison Pattern' in prompt design?",
+          "options": {
+            "A": "When you want the AI to summarize a single document.",
+            "B": "When you need the AI to analyze and highlight similarities and differences between two or more items, concepts, or pieces of information.",
+            "C": "When you need the AI to generate creative fiction.",
+            "D": "When you only want a 'yes' or 'no' answer."
+          },
+          "correct_answer": "B",
+          "explanation": "The Comparison Pattern instructs the AI to perform a comparative analysis, which is useful for tasks like comparing product features, contrasting historical events, or evaluating different approaches to a problem."
+        },
+        {
+          "question": "The 'Summarization Pattern' typically requires the AI to do what with input text?",
+          "options": {
+            "A": "Expand on it extensively.",
+            "B": "Condense a longer piece of text into a shorter, concise version while retaining key information.",
+            "C": "Translate it into another language.",
+            "D": "Critique its literary style."
+          },
+          "correct_answer": "B",
+          "explanation": "The Summarization Pattern instructs the AI to extract the most important information from a given text and present it in a shorter format, often with specific length or detail constraints."
+        },
+        {
+          "question": "What is the core idea behind the 'Iterative Dialogue Pattern'?",
+          "options": {
+            "A": "To get all information in one single prompt.",
+            "B": "To engage in a back-and-forth conversation with the AI, building on previous turns to refine understanding or explore a topic in depth.",
+            "C": "To only ask 'yes' or 'no' questions.",
+            "D": "To randomly change the topic in each turn."
+          },
+          "correct_answer": "B",
+          "explanation": "The Iterative Dialogue Pattern (or conversational prompting) treats the interaction as a multi-turn conversation. Each new prompt builds on the context of the previous turns, allowing for refinement, clarification, and deeper exploration of a subject."
+        },
+        {
+          "question": "Which pattern is useful for getting the AI to act as an evaluator or critic?",
+          "options": {
+            "A": "Brainstorming Pattern",
+            "B": "Review/Critique Pattern",
+            "C": "Creative Writing Pattern",
+            "D": "Translation Pattern"
+          },
+          "correct_answer": "B",
+          "explanation": "The Review/Critique Pattern involves asking the AI to analyze a piece of content (e.g., a text, code, idea) and provide constructive feedback, identify flaws, or suggest improvements from a specific perspective."
+        },
+        {
+          "question": "The 'Brainstorming Pattern' aims to elicit what kind of output from the AI?",
+          "options": {
+            "A": "A single, definitive answer.",
+            "B": "A diverse range of ideas, concepts, or solutions for a given problem or topic, without immediate judgment.",
+            "C": "A summary of existing knowledge.",
+            "D": "A fixed list of predetermined options."
+          },
+          "correct_answer": "B",
+          "explanation": "This pattern encourages the AI to generate multiple creative and varied ideas. Prompts might include phrases like 'Generate 10 ideas for X', 'Brainstorm different ways to Y', or 'List various solutions for Z'."
+        },
+        {
+          "question": "What is the advantage of combining multiple prompt design patterns in one complex prompt?",
+          "options": {
+            "A": "It confuses the AI model.",
+            "B": "It allows for highly specific and nuanced control over the AI's response, addressing multiple requirements simultaneously.",
+            "C": "It makes the prompt easier to read.",
+            "D": "It always reduces the prompt's length."
+          },
+          "correct_answer": "B",
+          "explanation": "Sophisticated prompts often combine patterns (e.g., a Persona Pattern + Instruction First Pattern + Output Format Pattern) to achieve very precise and complex results by layering different types of guidance."
+        },
+        {
+          "question": "In the 'Transformation Pattern', what is the AI typically asked to do with input data?",
+          "options": {
+            "A": "Summarize it.",
+            "B": "Convert or reformat it from one structure or style to another (e.g., from bullet points to a paragraph, or code translation).",
+            "C": "Expand on it.",
+            "D": "Critique it."
+          },
+          "correct_answer": "B",
+          "explanation": "The Transformation Pattern instructs the AI to take input in one form and convert it into another. Examples include 'Convert this text to a formal email', 'Translate this Python code to Java', or 'Rephrase this sentence to be more concise'."
+        },
+        {
+          "question": "Which pattern is useful when you want the AI to explain a concept in simpler terms?",
+          "options": {
+            "A": "Expert Persona Pattern",
+            "B": "Simplification/Elaboration Pattern",
+            "C": "Data Extraction Pattern",
+            "D": "Creative Generation Pattern"
+          },
+          "correct_answer": "B",
+          "explanation": "The Simplification/Elaboration Pattern involves instructing the AI to either simplify a complex topic (e.g., 'Explain X to a high school student') or elaborate on a concise point (e.g., 'Expand on this idea into a full paragraph')."
+        },
+        {
+          "question": "What is the primary characteristic of the 'Delimited Output Pattern'?",
+          "options": {
+            "A": "It uses random separators.",
+            "B": "It uses specific delimiters (e.g., triple quotes, XML tags, specific characters) to clearly separate different parts of the input or output, helping the AI understand structure.",
+            "C": "It never uses any special characters.",
+            "D": "It only works with single-line outputs."
+          },
+          "correct_answer": "B",
+          "explanation": "Delimiters help the AI distinguish between instructions, context, input data, and desired output sections. For example, 'Summarize the text below:\n```text\n[YOUR TEXT HERE]\n```' uses triple backticks as a delimiter."
+        },
+        {
+          "question": "True or False: A prompt design pattern guarantees a perfect response from the AI every time.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While prompt design patterns significantly increase the likelihood of desired responses and improve consistency, they don't guarantee perfection. The AI model's capabilities, the quality of the input, and the inherent complexity of the task still play a role. Patterns are tools to improve, not absolute guarantees."
         }
-    ]
+      ]
+    }
+  ]
 }

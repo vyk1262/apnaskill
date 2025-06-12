@@ -11,7 +11,8 @@
             "C": "Numerical computing",
             "D": "Web development"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "NumPy (Numerical Python) is a fundamental library for numerical computing in Python, providing powerful N-dimensional array objects and functions for working with them efficiently."
         },
         {
           "question": "Which function in Pandas is used to read a CSV file?",
@@ -21,7 +22,8 @@
             "C": "pd.import_csv()",
             "D": "pd.open_csv()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `pd.read_csv()` function is the standard and most common way to import data from a CSV file into a Pandas DataFrame."
         },
         {
           "question": "What does the 'DataFrame' object in Pandas represent?",
@@ -31,7 +33,8 @@
             "C": "A statistical model",
             "D": "A type of plot"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A **DataFrame** is the primary data structure in Pandas. It's a two-dimensional, size-mutable, and potentially heterogeneous tabular data structure with labeled axes (rows and columns), similar to a spreadsheet or SQL table."
         },
         {
           "question": "How do you create a scatter plot using Matplotlib?",
@@ -41,7 +44,8 @@
             "C": "plt.bar()",
             "D": "plt.line()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `plt.scatter()` function (from the `matplotlib.pyplot` module, commonly imported as `plt`) is specifically designed to create scatter plots, which display individual data points."
         },
         {
           "question": "Which library is commonly used for data visualization in Python?",
@@ -51,7 +55,8 @@
             "C": "Matplotlib",
             "D": "Scikit-learn"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Matplotlib** is the most widely used and foundational library for creating static, interactive, and animated visualizations in Python."
         },
         {
           "question": "What is the purpose of Seaborn in data visualization?",
@@ -61,7 +66,8 @@
             "C": "To build web applications",
             "D": "To implement machine learning algorithms"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Seaborn is a Python data visualization library based on Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics, often simplifying the creation of complex plots."
         },
         {
           "question": "What command is used to install Flask?",
@@ -71,7 +77,8 @@
             "C": "install flask",
             "D": "pip get flask"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The correct command to install the Flask web framework using Python's package installer, `pip`, is `pip install flask` (package names are typically lowercase)."
         },
         {
           "question": "Which framework is used for building web applications in Python?",
@@ -81,7 +88,8 @@
             "C": "Seaborn",
             "D": "Matplotlib"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Django** is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It's one of the most popular choices for building robust web applications."
         },
         {
           "question": "What does the 'render_template' function do in Flask?",
@@ -91,7 +99,8 @@
             "C": "Handles a form submission",
             "D": "Connects to a database"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "In Flask, the `render_template` function is used to render HTML files (templates) and pass data to them, allowing dynamic web pages to be generated."
         },
         {
           "question": "Which library is primarily used for machine learning in Python?",
@@ -101,7 +110,8 @@
             "C": "NumPy",
             "D": "Pandas"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Scikit-learn** is a free software machine learning library for Python. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means, and more."
         },
         {
           "question": "What is the purpose of the 'fit' method in Scikit-learn?",
@@ -111,7 +121,8 @@
             "C": "To evaluate model performance",
             "D": "To import datasets"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `fit()` method in Scikit-learn is used to train a machine learning model. It learns the patterns and parameters from the input data (features and target variables)."
         },
         {
           "question": "What type of data structure does Scikit-learn typically work with?",
@@ -121,7 +132,8 @@
             "C": "HTML and XML",
             "D": "Plain text files"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Scikit-learn models typically expect input data in the form of NumPy arrays or Pandas DataFrames, as these provide efficient and structured numerical data handling."
         },
         {
           "question": "What is the purpose of automation in Python?",
@@ -131,7 +143,8 @@
             "C": "To create complex algorithms",
             "D": "To manage databases"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Python's simplicity and extensive libraries make it excellent for **automation**, allowing users to write scripts that perform repetitive tasks like file management, web scraping, and data processing automatically."
         },
         {
           "question": "Which library is commonly used for web scraping in Python?",
@@ -141,7 +154,8 @@
             "C": "Matplotlib",
             "D": "Pandas"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Beautiful Soup** is a Python library for pulling data out of HTML and XML files. It's often used for web scraping by parsing the content of web pages."
         },
         {
           "question": "What is the purpose of the 'requests' library in Python?",
@@ -151,7 +165,8 @@
             "C": "To perform data analysis",
             "D": "To create web applications"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `requests` library is a popular HTTP library for Python, used for making various types of HTTP requests (GET, POST, PUT, DELETE, etc.) to interact with web services and APIs."
         },
         {
           "question": "How can you automate file handling in Python?",
@@ -161,7 +176,8 @@
             "C": "By creating graphical user interfaces",
             "D": "By connecting to a database"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Python's built-in file I/O operations and modules like `os` and `shutil` allow you to write scripts that can automate reading from, writing to, creating, deleting, and moving files and directories."
         },
         {
           "question": "What is the purpose of a Jupyter Notebook in data analysis?",
@@ -171,7 +187,8 @@
             "C": "To perform machine learning tasks",
             "D": "To manage databases"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Jupyter Notebook provides an interactive web-based environment where you can combine live code (Python, R, Julia, etc.), equations, visualizations, and narrative text, making it ideal for exploratory data analysis and sharing findings."
         }
       ]
     }

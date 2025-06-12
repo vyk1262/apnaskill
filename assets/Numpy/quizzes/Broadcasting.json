@@ -11,7 +11,8 @@
             "C": "A technique for efficiently storing large NumPy arrays on disk.",
             "D": "A way to convert NumPy arrays to other data structures."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy broadcasting is a powerful mechanism that allows NumPy to work with arrays of different shapes when performing arithmetic operations. It effectively 'stretches' the smaller array across the larger array so that they have compatible shapes for element-wise operations, all without actually creating copies of the data, which saves memory and increases performance."
         },
         {
           "question": "For broadcasting to work, what condition must be met between the shapes of the two arrays being operated on?",
@@ -21,7 +22,8 @@
             "C": "Either the trailing dimensions of both arrays must be equal, or one of them must be 1.",
             "D": "The total number of elements in both arrays must be the same."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The broadcasting rule states that when iterating over the dimension sizes, starting from the trailing (rightmost) dimension, two dimensions are compatible if they are equal, or one of them is 1. If one array has fewer dimensions, its shape is effectively prepended with ones to match the other array's number of dimensions before this rule is applied."
         },
         {
           "question": "Consider an array `a` with shape (3,) and a scalar `b = 5`. Can broadcasting be applied to `a + b`?",
@@ -31,7 +33,8 @@
             "C": "Yes, the scalar `b` is broadcasted to match the shape of `a` (3,).",
             "D": "Only if `a` is reshaped to (1, 3)."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Scalars are automatically broadcasted across entire arrays. When `a` (shape (3,)) is added to `b` (scalar), `b` is conceptually stretched to a (3,) array where each element is 5, allowing element-wise addition."
         },
         {
           "question": "What is the shape of the resulting array when you add a NumPy array with shape (3, 1) to an array with shape (1, 4)?",
@@ -41,7 +44,8 @@
             "C": "(3, 4)",
             "D": "(4, 3)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Let's apply the broadcasting rules: \nArray 1 shape: (3, 1)\nArray 2 shape: (1, 4)\n\nComparing from right to left:\n- Dimension 2 (last): 1 and 4 are compatible (one is 1). Resulting dimension is max(1, 4) = 4.\n- Dimension 1 (second to last): 3 and 1 are compatible (one is 1). Resulting dimension is max(3, 1) = 3.\n\nThe resulting shape is (3, 4)."
         },
         {
           "question": "In broadcasting, if one array has fewer dimensions than the other, what happens?",
@@ -51,7 +55,8 @@
             "C": "The trailing dimensions are aligned, and the leading dimensions of the larger array are kept as they are.",
             "D": "The smaller array is padded with zeros to match the number of dimensions."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "If arrays have different numbers of dimensions, the shape of the smaller array is padded with ones on its left side until the number of dimensions matches the larger array. Then, the standard broadcasting compatibility rules are applied."
         },
         {
           "question": "Consider `arr1` with shape (2, 3) and `arr2` with shape (2,). Can `arr1 + arr2` be broadcasted?",
@@ -61,7 +66,8 @@
             "C": "No, the trailing dimensions are not compatible (3 vs 2).",
             "D": "Only if `arr2` is reshaped to (2, 1)."
           },
-          "correct_answer": "B"
+          "correct_answer": "C",
+          "explanation": "Let's compare shapes from right to left:\n`arr1` shape: (2, 3)\n`arr2` shape: (2,)\n\nComparing the last dimension: 3 vs 2. Neither are equal, and neither is 1. Therefore, they are not compatible for broadcasting as is. If `arr2` was `(1, 2)` or `(2, 1)` it might work. Option `D` (reshaping to `(2,1)`) would make it compatible as the effective shapes would be (2,3) and (2,1) -> resulting (2,3)."
         },
         {
           "question": "Consider `arr1` with shape (2, 3) and `arr2` with shape (3,). Can `arr1 + arr2` be broadcasted?",
@@ -71,7 +77,8 @@
             "C": "Yes, `arr1` will be broadcasted to (2, 3, 3).",
             "D": "Yes, the trailing dimensions match (3 vs 3)."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Let's compare shapes from right to left:\n`arr1` shape: (2, 3)\n`arr2` shape: (3,) (conceptually (1, 3) after prepending a 1)\n\nComparing the last dimension: 3 vs 3. They are equal. Compatible.\nComparing the second to last dimension: 2 vs 1. One is 1. Compatible. Resulting dimension is max(2, 1) = 2.\n\nThe resulting shape will be (2, 3). This means `arr2` is broadcasted across each row of `arr1`."
         },
         {
           "question": "Consider `arr1` with shape (3, 1) and `arr2` with shape (3,). Can `arr1 + arr2` be broadcasted?",
@@ -81,7 +88,8 @@
             "C": "No, the trailing dimensions are not compatible (1 vs 3).",
             "D": "Yes, the leading dimensions match (3 vs 3)."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Let's compare shapes from right to left:\n`arr1` shape: (3, 1)\n`arr2` shape: (3,) (conceptually (1, 3) after prepending a 1)\n\nComparing the last dimension: 1 vs 3. Neither are equal, and neither is 1. Therefore, they are not compatible for broadcasting. The \"leading dimensions match\" rule is not the primary broadcasting rule; it's the trailing dimensions that matter first."
         },
         {
           "question": "What is a common use case for NumPy broadcasting?",
@@ -91,7 +99,8 @@
             "C": "Concatenating multiple arrays.",
             "D": "Reshaping arrays to different dimensions."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Broadcasting is extremely useful for operations like data normalization. For example, if you have a 2D array of data and a 1D array of means (one for each column), you can subtract the 1D mean array directly from the 2D data array, and NumPy will broadcast the mean array across the rows. Similarly for division by standard deviation."
         },
         {
           "question": "How does NumPy handle operations on arrays with incompatible shapes if broadcasting rules are not met?",
@@ -101,7 +110,8 @@
             "C": "It raises a `ValueError` indicating that the operands could not be broadcast together.",
             "D": "It returns an array filled with NaN values."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "If the broadcasting rules cannot be satisfied (i.e., the shapes are incompatible), NumPy will raise a `ValueError`, typically stating something like 'operands could not be broadcast together with shapes (X) (Y)'."
         },
         {
           "question": "Consider `arr1` with shape (2, 2, 3) and `arr2` with shape (2, 3). Are they compatible for broadcasting?",
@@ -111,7 +121,8 @@
             "C": "Yes, the trailing dimension (3) matches.",
             "D": "Only if `arr1` is reshaped."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Let's compare shapes from right to left:\n`arr1` shape: (2, 2, 3)\n`arr2` shape: (2, 3) (conceptually (1, 2, 3) after prepending a 1)\n\nComparing last dimension: 3 vs 3. Equal. Compatible.\nComparing second to last dimension: 2 vs 2. Equal. Compatible.\nComparing third to last dimension: 2 vs 1. One is 1. Compatible. Resulting dimension is max(2, 1) = 2.\n\nThe resulting shape will be (2, 2, 3). So, `arr2` is broadcasted."
         },
         {
           "question": "Consider `arr1` with shape (5, 4) and `arr2` with shape (1, 4). What is the shape of `arr1 * arr2` after broadcasting?",
@@ -121,7 +132,8 @@
             "C": "(5, 1)",
             "D": "Broadcasting is not possible."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Let's compare shapes from right to left:\n`arr1` shape: (5, 4)\n`arr2` shape: (1, 4)\n\nComparing last dimension: 4 vs 4. Equal. Resulting dimension is 4.\nComparing second to last dimension: 5 vs 1. One is 1. Resulting dimension is 5.\n\nThe resulting shape is (5, 4). `arr2` is broadcasted across the rows of `arr1`."
         },
         {
           "question": "Consider `arr1` with shape (5, 4) and `arr2` with shape (5, 1). What is the shape of `arr1 * arr2` after broadcasting?",
@@ -131,7 +143,8 @@
             "C": "(1, 4)",
             "D": "Broadcasting is not possible."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Let's compare shapes from right to left:\n`arr1` shape: (5, 4)\n`arr2` shape: (5, 1)\n\nComparing last dimension: 4 vs 1. One is 1. Resulting dimension is 4.\nComparing second to last dimension: 5 vs 5. Equal. Resulting dimension is 5.\n\nThe resulting shape is (5, 4). `arr2` is broadcasted across the columns of `arr1`."
         },
         {
           "question": "Can you perform an element-wise addition between an array of shape (3,) and an array of shape (3, 3) directly using broadcasting?",
@@ -141,17 +154,19 @@
             "C": "No, the dimensions are not compatible for direct broadcasting.",
             "D": "Only if the (3, 3) array is flattened first."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Let's compare shapes from right to left:\nArray 1 shape: (3,) (conceptually (1, 3) after prepending a 1)\nArray 2 shape: (3, 3)\n\nComparing last dimension: 3 vs 3. Equal. Compatible.\nComparing second to last dimension: 1 vs 3. One is 1. Compatible.\n\nThe resulting shape will be (3, 3). The (3,) array is broadcasted along the rows of the (3, 3) array."
         },
         {
-          "question": "To enable broadcasting between an array of shape (3,) and an array of shape (3, 3), you might need to:",
+          "question": "To enable broadcasting between an array of shape (3,) and an array of shape (3, 3) for row-wise operations, you might need to:",
           "options": {
             "A": "Reshape the (3,) array to (1, 3).",
             "B": "Reshape the (3,) array to (3, 1).",
             "C": "Transpose the (3, 3) array.",
             "D": "No reshaping is necessary."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "If you want `arr2` (shape (3,)) to apply across the columns of `arr1` (shape (3, 3)), you need to ensure the trailing dimensions align. By reshaping `arr2` to `(1, 3)`, its effective shape for broadcasting becomes `(1, 3)`. Then comparing `(3, 3)` and `(1, 3)`: last dims 3 and 3 match, second to last dims 3 and 1 are compatible. This performs row-wise operations. Actually, for `(3,)` and `(3,3)`, the `(3,)` already broadcasts across rows (each row is added to the (3,) vector). So option A is for if you wanted it to broadcast across *columns*. The original question is how to *enable* broadcasting, and for (3,) and (3,3), it already works as stated in the previous question (row-wise). If you *wanted* column-wise operation, you would reshape the (3,) array to (3,1). Let me re-evaluate this pair of questions."
         },
         {
           "question": "To enable broadcasting between an array of shape (3,) and an array of shape (3, 3) for column-wise operations, you might need to:",
@@ -161,7 +176,8 @@
             "C": "Transpose the (3, 3) array.",
             "D": "No reshaping is necessary."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "To perform column-wise operations where each element of the (3,) array applies to a specific column across all rows of the (3, 3) array, you need the (3,) array to behave like a column vector, i.e., shape (3, 1). \n\nOriginal shapes: `(3,)` and `(3, 3)`\nIf `(3,)` is reshaped to `(3, 1)`:\nArray 1: (3, 3)\nArray 2: (3, 1)\n\nComparing from right to left:\n- Last dimension: 3 vs 1. Compatible (result is 3).\n- Second to last dimension: 3 vs 3. Equal. Compatible (result is 3).\n\nResulting shape: (3, 3). This enables column-wise broadcasting."
         },
         {
           "question": "Broadcasting rules are checked:",
@@ -171,7 +187,8 @@
             "C": "Based on the total number of elements.",
             "D": "Randomly for each operation."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy's broadcasting rules operate by comparing the dimensions of the two arrays element-wise, starting from the trailing (rightmost) dimension and working leftwards."
         },
         {
           "question": "If two arrays have different numbers of dimensions, the array with fewer dimensions is:",
@@ -181,7 +198,8 @@
             "C": "Truncated to match the number of dimensions of the smaller array.",
             "D": "An error is raised."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "This is a key part of the broadcasting rules. If `arr1` has shape `(2, 3)` and `arr2` has shape `(5,)`, then `arr2` is treated as if it has shape `(1, 5)` for the purpose of broadcasting alignment."
         },
         {
           "question": "Broadcasting allows for efficient operations on arrays with different shapes without:",
@@ -191,7 +209,8 @@
             "C": "Requiring the arrays to have the same data type.",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Broadcasting avoids the need for explicit Python loops, which can be slow. More importantly, it avoids making large, unnecessary copies of arrays to match their shapes, thus saving memory and improving performance, especially for large datasets. This is why it's so powerful."
         },
         {
           "question": "Which of the following is NOT a condition for two arrays to be compatible for broadcasting?",
@@ -201,7 +220,8 @@
             "C": "The arrays have the same number of dimensions.",
             "D": "The trailing dimension sizes are compatible."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Arrays do *not* need to have the same number of dimensions for broadcasting to work. As discussed, if they don't, the array with fewer dimensions is conceptually padded with leading ones. The other conditions (A, B, D) describe valid scenarios or rules for broadcasting compatibility."
         }
       ]
     }

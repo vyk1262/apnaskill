@@ -11,7 +11,8 @@
             "C": "Learning through trial and error by interacting with an environment and receiving rewards or penalties.",
             "D": "Learning to classify data into predefined categories based on labeled examples."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Reinforcement Learning (RL) is a paradigm where an **agent learns to make decisions** by performing actions in an **environment**. It receives **feedback in the form of rewards or penalties**, which it uses to learn an optimal strategy to maximize cumulative reward over time."
         },
         {
           "question": "What are the key components of a reinforcement learning framework?",
@@ -21,7 +22,8 @@
             "C": "Agent, environment, state, action, reward, and policy.",
             "D": "Generator and discriminator."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The fundamental components of an RL system are the **Agent** (the learner), the **Environment** (what the agent interacts with), **State** (the agent's observation of the environment), **Action** (the agent's decision), **Reward** (feedback from the environment), and **Policy** (the strategy the agent follows)."
         },
         {
           "question": "What is the role of the 'agent' in reinforcement learning?",
@@ -31,7 +33,8 @@
             "C": "The learner that makes decisions and takes actions in the environment.",
             "D": "The signal that indicates the desirability of an action."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The **agent** is the intelligent entity in the RL framework. It's the part that observes the environment, makes decisions (chooses actions), and learns from the feedback (rewards) it receives."
         },
         {
           "question": "What is the 'environment' in reinforcement learning?",
@@ -41,7 +44,8 @@
             "C": "The external system with which the agent interacts.",
             "D": "The function that maps states to actions."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The **environment** is everything outside the agent. It receives actions from the agent, changes its state accordingly, and sends new observations and rewards back to the agent."
         },
         {
           "question": "What is a 'state' in reinforcement learning?",
@@ -51,7 +55,8 @@
             "C": "The reward received after taking an action.",
             "D": "The overall goal of the agent."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **state** is a complete or partial description of the current situation of the environment at a given moment. It provides the agent with the necessary information to decide on its next action."
         },
         {
           "question": "What is an 'action' in reinforcement learning?",
@@ -61,7 +66,8 @@
             "C": "The numerical feedback from the environment.",
             "D": "The strategy used by the agent to choose actions."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "An **action** is a choice or decision made by the agent at a specific state. When the agent takes an action, the environment transitions to a new state and provides a reward."
         },
         {
           "question": "What is a 'reward' in reinforcement learning?",
@@ -71,7 +77,8 @@
             "C": "The sequence of states and actions taken by the agent.",
             "D": "The function that determines the optimal action in each state."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **reward** is a crucial feedback mechanism. It's a numerical value (positive for good actions, negative for bad) that the environment sends to the agent, guiding its learning towards desired behaviors."
         },
         {
           "question": "What is a 'policy' in reinforcement learning?",
@@ -81,7 +88,8 @@
             "C": "The total reward accumulated by the agent over time.",
             "D": "The process of updating the agent's knowledge."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **policy** defines the agent's behavior. It's a strategy that specifies which action to take in any given state, either deterministically (always the same action) or stochastically (a probability distribution over actions)."
         },
         {
           "question": "What is the difference between 'episodic' and 'continuing' tasks in reinforcement learning?",
@@ -91,7 +99,8 @@
             "C": "Episodic tasks are simpler than continuing tasks.",
             "D": "There is no fundamental difference between them."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Episodic tasks** are those that have a clear beginning and end (a terminal state), like playing a game or finishing a maze. **Continuing tasks** have no natural ending; the interaction continues indefinitely, such as controlling a robot or managing a power plant."
         },
         {
           "question": "What is the goal of the agent in reinforcement learning?",
@@ -101,7 +110,8 @@
             "C": "To always take random actions to explore the environment.",
             "D": "To reach a specific target state as quickly as possible, regardless of the rewards."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The ultimate goal of a reinforcement learning agent is to learn an optimal **policy** that allows it to choose actions in each state such that the **total expected cumulative reward** over the long run is maximized."
         },
         {
           "question": "What is the exploration-exploitation dilemma in reinforcement learning?",
@@ -111,7 +121,8 @@
             "C": "The difficulty of defining a suitable reward function.",
             "D": "The problem of dealing with large state spaces."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **exploration-exploitation dilemma** is a core challenge in RL. The agent must decide whether to **explore** (try new actions to discover more about the environment and potentially find better rewards) or **exploit** (choose actions that have historically yielded the best rewards). A good balance is essential for effective learning."
         },
         {
           "question": "What is a 'value function' in reinforcement learning?",
@@ -121,7 +132,8 @@
             "C": "The policy that the agent follows.",
             "D": "The immediate reward received after an action."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **value function** provides an estimate of how good a particular state or state-action pair is in terms of the total expected future reward. It's a way for the agent to assess the long-term desirability of being in a state or taking an action from a state."
         },
         {
           "question": "What is the difference between 'model-based' and 'model-free' reinforcement learning?",
@@ -131,7 +143,8 @@
             "C": "Model-based RL is only applicable to discrete state and action spaces.",
             "D": "There is no significant difference between them."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Model-based RL** algorithms learn or are given a model of the environment (how states transition and rewards are received) and use it for planning. **Model-free RL** algorithms learn directly from trials and errors, without building an explicit model of the environment dynamics."
         },
         {
           "question": "Which of the following is a model-free reinforcement learning algorithm?",
@@ -141,7 +154,8 @@
             "C": "Q-learning",
             "D": "Dynamic Programming"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Q-learning** is a classic example of a **model-free** reinforcement learning algorithm. It learns the optimal action-value function directly from interactions with the environment, without needing an explicit model of the environment's dynamics. Value Iteration, Policy Iteration, and Dynamic Programming are typically model-based methods."
         },
         {
           "question": "What is 'Q-learning'?",
@@ -151,7 +165,8 @@
             "C": "A model-based reinforcement learning algorithm that uses dynamic programming.",
             "D": "A reinforcement learning technique used only for continuous action spaces."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Q-learning** is a popular **value-based, model-free** RL algorithm. It learns a Q-function, which estimates the expected future rewards for taking a specific action in a given state. The agent then selects actions that maximize this Q-value."
         },
         {
           "question": "What are 'Deep Q-Networks' (DQNs)?",
@@ -161,7 +176,8 @@
             "C": "Model-based reinforcement learning algorithms that use deep learning for environment modeling.",
             "D": "Deep learning architectures used for supervised learning tasks in robotics."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Deep Q-Networks (DQNs)** extend Q-learning by using **deep neural networks** to approximate the Q-value function. This allows DQNs to handle complex, high-dimensional state spaces (like raw pixel data from video games) where traditional Q-tables are infeasible."
         },
         {
           "question": "What are 'policy gradient' methods in reinforcement learning?",
@@ -171,7 +187,8 @@
             "C": "Reinforcement learning methods that are only applicable to continuous action spaces.",
             "D": "Reinforcement learning methods that do not involve exploration."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Policy gradient** methods directly learn a parameterized policy that maps states to actions. Instead of learning a value function and then deriving a policy, they directly optimize the policy by estimating the gradient of the expected cumulative reward with respect to the policy's parameters."
         },
         {
           "question": "Which of the following is a policy gradient algorithm?",
@@ -181,7 +198,8 @@
             "C": "REINFORCE",
             "D": "Value Iteration"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**REINFORCE** is a foundational **policy gradient algorithm**. Q-learning and SARSA are value-based methods, and Value Iteration is a dynamic programming (model-based) method."
         },
         {
           "question": "What are some challenges in applying reinforcement learning in real-world scenarios?",
@@ -191,7 +209,8 @@
             "C": "Handling large or continuous state and action spaces.",
             "D": "All of the above."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All listed options are significant challenges in real-world RL. **Reward shaping** (designing effective reward functions) is crucial, **exploration can be time-consuming or risky**, and dealing with **high-dimensional or continuous state/action spaces** requires advanced techniques (like deep reinforcement learning)."
         },
         {
           "question": "In what types of applications has reinforcement learning shown significant success?",
@@ -201,7 +220,8 @@
             "C": "Game playing (e.g., Go, Atari), robotics control, and autonomous driving.",
             "D": "Clustering high-dimensional data without any prior knowledge."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Reinforcement learning has achieved remarkable success in domains where an agent needs to learn optimal sequential decision-making through trial and error, such as mastering complex **games** (AlphaGo, Atari), enabling **robotics control**, and developing capabilities for **autonomous driving**."
         }
       ]
     }

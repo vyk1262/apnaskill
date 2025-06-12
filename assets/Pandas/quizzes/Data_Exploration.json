@@ -11,7 +11,8 @@
             "C": ".head()",
             "D": ".shape"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `.info()` method is excellent for a quick overview of your DataFrame's structure, including column data types (dtypes), the count of non-null entries for each column, and memory consumption. This helps in identifying missing values or incorrect data types early on."
         },
         {
           "question": "How can you display the first 5 rows of a Pandas DataFrame named `df`?",
@@ -21,7 +22,8 @@
             "C": "df.show(5)",
             "D": "df.top(5)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `.head()` method is a fundamental Pandas function to quickly inspect the beginning of a DataFrame. By default, it returns the first 5 rows, but you can specify a different number (e.g., `df.head(10)`)."
         },
         {
           "question": "How can you display the last 10 rows of a Pandas DataFrame named `df`?",
@@ -31,7 +33,8 @@
             "C": "df.bottom(10)",
             "D": "df.end(10)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Similar to `.head()`, the `.tail()` method is used to view the last rows of a DataFrame. You can pass an integer argument to specify how many rows you want to see (e.g., `df.tail(10)`)."
         },
         {
           "question": "Which Pandas attribute returns the number of rows and columns of a DataFrame?",
@@ -41,7 +44,8 @@
             "C": ".shape",
             "D": ".len()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `.shape` attribute returns a tuple representing the dimensionality of the DataFrame, where the first element is the number of rows and the second is the number of columns. For example, `(100, 5)` means 100 rows and 5 columns."
         },
         {
           "question": "How can you get a list of all the column names in a Pandas DataFrame `df`?",
@@ -51,7 +55,8 @@
             "C": "df.columns.tolist()",
             "D": "df.get_columns()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `.columns` attribute of a DataFrame returns an Index object containing the column labels. To convert this Index object into a standard Python list, you can use the `.tolist()` method."
         },
         {
           "question": "Which Pandas method calculates descriptive statistics of the numerical columns in a DataFrame, such as count, mean, standard deviation, min, and max?",
@@ -61,7 +66,8 @@
             "C": ".statistics()",
             "D": ".analyze()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `.describe()` method generates descriptive statistics that summarize the central tendency, dispersion, and shape of a dataset's distribution, excluding `NaN` values. It typically works on numerical columns by default, but can be extended to categorical columns using `include='all'`."
         },
         {
           "question": "How can you get the data type of each column in a Pandas DataFrame `df`?",
@@ -71,7 +77,8 @@
             "C": "df.column_types",
             "D": "df.get_dtype()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `.dtypes` attribute returns a Series with the data type of each column in the DataFrame. This is crucial for understanding how Pandas interprets your data and for identifying potential issues (e.g., numbers stored as strings)."
         },
         {
           "question": "Which Pandas method returns the number of unique values in each column of a DataFrame?",
@@ -81,7 +88,8 @@
             "C": ".value_counts().nunique()",
             "D": ".count_unique()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `.nunique()` method is used to count the number of distinct unique values in a Series or for each column in a DataFrame. It excludes NaN values by default."
         },
         {
           "question": "How can you get the unique values of a specific column named 'Category' in a DataFrame `df`?",
@@ -91,7 +99,8 @@
             "C": "df.Category.distinct()",
             "D": "df['Category'].distinct()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "To get unique values from a specific column (which is a Pandas Series), you access the column as a Series (e.g., `df['Category']`) and then apply the `.unique()` method to it. This returns a NumPy array of the unique values."
         },
         {
           "question": "Which Pandas method returns the frequency count of each unique value in a Series?",
@@ -101,7 +110,8 @@
             "C": ".value_counts()",
             "D": ".unique().count()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `.value_counts()` method returns a Series containing counts of unique values. The resulting object will be in descending order so that the first element is the most frequently occurring element. This is very useful for categorical data exploration."
         },
         {
           "question": "How can you check for missing values (NaN) in a Pandas DataFrame `df`?",
@@ -111,7 +121,8 @@
             "C": "df.hasna()",
             "D": "df.checkna()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`df.isnull()` returns a boolean DataFrame indicating where `NaN` values are present. This is the primary method to identify missing data points."
         },
         {
           "question": "Which Pandas method returns a DataFrame of the same shape as the original, with boolean values indicating whether each value is NaN?",
@@ -121,7 +132,8 @@
             "C": ".isnull().sum()",
             "D": ".fillna(0)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`.isna()` is an alias for `.isnull()`. Both methods produce a boolean DataFrame of the exact same dimensions as the original, with `True` where values are missing and `False` elsewhere."
         },
         {
           "question": "How can you get the number of missing values in each column of a DataFrame `df`?",
@@ -131,7 +143,8 @@
             "C": "df.missing().sum()",
             "D": "df.na_count()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Applying `.sum()` to the boolean DataFrame returned by `df.isnull()` will sum the `True` values (which are treated as 1) for each column, thus giving the count of missing values per column."
         },
         {
           "question": "Which Pandas method can be used to get a random sample of rows from a DataFrame?",
@@ -141,7 +154,8 @@
             "C": ".choice()",
             "D": ".draw()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `.sample()` method is used to generate a random sample of rows or columns from a DataFrame. You can specify the number of samples (`n`) or the fraction of samples (`frac`)."
         },
         {
           "question": "How can you get a 10% random sample of rows from a DataFrame `df`?",
@@ -151,7 +165,8 @@
             "C": "df.sample(percent=10)",
             "D": "df.sample(size=0.1)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "To get a sample based on a fraction of the DataFrame's size, use the `frac` argument with a float value between 0 and 1. `frac=0.1` means 10% of the rows."
         },
         {
           "question": "Which Pandas attribute provides access to the underlying NumPy array representing the data in a DataFrame?",
@@ -161,7 +176,8 @@
             "C": ".array",
             "D": ".to_numpy()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `.values` attribute returns the data of the DataFrame as a NumPy array. This is useful when you need to perform operations directly on the array or integrate with other libraries that expect NumPy arrays."
         },
         {
           "question": "How can you transpose a Pandas DataFrame `df` (swap rows and columns)?",
@@ -171,7 +187,8 @@
             "C": "df.T",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `df.transpose()` and the shorthand `df.T` achieve the same result: swapping the rows and columns of the DataFrame. This is useful for reshaping data for certain analyses or presentations."
         },
         {
           "question": "Which Pandas method can be used to get information about the index of a DataFrame?",
@@ -181,7 +198,8 @@
             "C": ".get_index()",
             "D": ".describe_index()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `.index` attribute of a DataFrame (and Series) returns the Index object, which provides information about the row labels, including its type, number of entries, and values."
         },
         {
           "question": "How can you sort the index of a Pandas DataFrame `df`?",
@@ -191,7 +209,8 @@
             "C": "df.sortby_index()",
             "D": "df.order_index()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `.sort_index()` method is used to sort a DataFrame or Series by its index labels. You can specify `axis=1` to sort by column labels (the column index)."
         },
         {
           "question": "What is the purpose of the `.value_counts(normalize=True)` method on a Pandas Series?",
@@ -201,7 +220,8 @@
             "C": "It returns the unique values sorted alphabetically.",
             "D": "It returns the number of non-null values."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "When `normalize=True` is passed to `.value_counts()`, instead of returning the raw counts, it returns the relative frequencies of the unique values, expressed as a proportion (percentage) of the total non-null values."
         }
       ]
     }

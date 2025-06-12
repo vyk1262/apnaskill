@@ -11,7 +11,8 @@
             "C": "flatten()",
             "D": "ravel()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`reshape()` returns a new array with the specified shape, or a view of the original array if possible, without changing the data or the original array's shape. `resize()` changes the array in-place and can add/remove elements. `flatten()` and `ravel()` convert to 1D."
         },
         {
           "question": "What is the difference between `reshape()` and `resize()` methods in NumPy?",
@@ -21,7 +22,8 @@
             "C": "`reshape()` can only change the number of dimensions, while `resize()` can only change the size of existing dimensions.",
             "D": "There is no significant difference between them."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`reshape()` creates a new view of the array (if compatible) or a copy with the new shape, but it does not change the total number of elements. `resize()` changes the array *in-place* and *can* change the total number of elements, filling new spaces with zeros if expanded, or truncating if shrunk."
         },
         {
           "question": "How can you convert a multi-dimensional NumPy array into a flattened 1D array?",
@@ -31,7 +33,8 @@
             "C": "array.flatten() or array.ravel()",
             "D": "array.squeeze()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Both `flatten()` and `ravel()` are used to convert a multi-dimensional array into a 1D (flattened) array. `array.shape = (-1,)` also flattens, but it modifies the array in-place, while `flatten()` and `ravel()` return new arrays/views. `array.reshape(1, -1)` would make it a 2D array with 1 row, not a 1D array. `squeeze()` removes single-dimensional entries."
         },
         {
           "question": "What is the difference between `flatten()` and `ravel()` in NumPy?",
@@ -41,7 +44,8 @@
             "C": "`flatten()` works only on 2D arrays, while `ravel()` works on any dimensional array.",
             "D": "There is no significant difference in their functionality."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`ravel()` returns a view on the original array whenever possible (i.e., if the memory layout is contiguous), otherwise it returns a copy. `flatten()` always returns a copy of the array data, making it independent of the original array."
         },
         {
           "question": "Which NumPy method is used to swap the dimensions of an array?",
@@ -51,7 +55,8 @@
             "C": "moveaxis()",
             "D": "rollaxis()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`transpose()` (or its shorthand `arr.T` for 2D arrays) is the most common method to swap or permute the axes of an array. `swapaxes()`, `moveaxis()`, and `rollaxis()` are also used for axis manipulation but `transpose()` is the general term for swapping dimensions."
         },
         {
           "question": "What does `numpy.transpose(arr, axes=(1, 0))` do to a 2D array `arr`?",
@@ -61,7 +66,8 @@
             "C": "It flattens the array.",
             "D": "It changes the data type of the array."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "For a 2D array, `numpy.transpose(arr, axes=(1, 0))` or simply `arr.T` swaps the first axis (rows) with the second axis (columns), effectively transposing the matrix."
         },
         {
           "question": "Which NumPy function is used to join a sequence of arrays along an existing axis?",
@@ -71,7 +77,8 @@
             "C": "hstack()",
             "D": "vstack()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`numpy.concatenate()` is the general function to join (or concatenate) a sequence of arrays along an *existing* axis. `hstack()` and `vstack()` are specialized cases of `concatenate()` for horizontal and vertical stacking, respectively. `stack()` joins arrays along a *new* axis."
         },
         {
           "question": "What is the difference between `numpy.concatenate()` and `numpy.stack()`?",
@@ -81,7 +88,8 @@
             "C": "There is no difference; they perform the same operation.",
             "D": "`concatenate()` can only join 1D arrays, while `stack()` can join multi-dimensional arrays."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.concatenate()` is used to join arrays along one of their existing axes. For example, joining two 2D arrays along axis 0 stacks them row-wise. `numpy.stack()` takes a sequence of arrays and joins them along a *new* axis, increasing the dimension of the resulting array. For instance, stacking two 1D arrays of shape (N,) along a new axis would result in a 2D array of shape (2, N) or (N, 2)."
         },
         {
           "question": "Which NumPy function is used to stack arrays in sequence horizontally (column-wise)?",
@@ -91,7 +99,8 @@
             "C": "numpy.hstack()",
             "D": "numpy.dstack()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.hstack()` stacks arrays column-wise, which is equivalent to concatenating along the second axis (`axis=1`) for 2D arrays. `vstack()` stacks row-wise, and `dstack()` stacks along the third axis."
         },
         {
           "question": "Which NumPy function is used to stack arrays in sequence vertically (row-wise)?",
@@ -101,7 +110,8 @@
             "C": "numpy.vstack()",
             "D": "numpy.dstack()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.vstack()` stacks arrays row-wise, which is equivalent to concatenating along the first axis (`axis=0`) for 2D arrays. `hstack()` stacks column-wise, and `dstack()` stacks along the third axis."
         },
         {
           "question": "Which NumPy function is used to split an array into multiple sub-arrays?",
@@ -111,7 +121,8 @@
             "C": "numpy.split()",
             "D": "numpy.chunk()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.split()` is the general function to divide an array into multiple sub-arrays along a specified axis. `numpy.hsplit()` and `numpy.vsplit()` are specialized functions for horizontal and vertical splitting."
         },
         {
           "question": "What does `numpy.split(arr, 3)` do to a 1D array `arr`?",
@@ -121,7 +132,8 @@
             "C": "It splits the array after the 3rd index.",
             "D": "It creates 3 copies of the original array."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "When the second argument to `numpy.split()` is an integer, it indicates the number of equally sized sub-arrays to create. This will only work if the array can be divided evenly into that many parts. Otherwise, a `ValueError` will be raised."
         },
         {
           "question": "Which NumPy functions can be used to split an array horizontally?",
@@ -131,7 +143,8 @@
             "C": "numpy.dsplit()",
             "D": "numpy.array_split()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.hsplit()` is used to split an array horizontally (column-wise). It's equivalent to `numpy.split(arr, ..., axis=1)`. `vsplit()` splits vertically (row-wise), and `dsplit()` splits along the third axis."
         },
         {
           "question": "Which NumPy functions can be used to split an array vertically?",
@@ -141,7 +154,8 @@
             "C": "numpy.vsplit()",
             "D": "numpy.dsplit()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.vsplit()` is used to split an array vertically (row-wise). It's equivalent to `numpy.split(arr, ..., axis=0)`. `hsplit()` splits horizontally (column-wise), and `dsplit()` splits along the third axis."
         },
         {
           "question": "Which NumPy function can add values to the end of an array?",
@@ -151,7 +165,8 @@
             "C": "numpy.concatenate()",
             "D": "numpy.pad()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.append()` is specifically designed to append values to the end of an array. It always returns a new array. `numpy.insert()` allows inserting at a specific index. `numpy.concatenate()` can also be used to append by joining the original array with the new values. `numpy.pad()` adds padding around the array."
         },
         {
           "question": "What is the difference between `numpy.append()` and `numpy.insert()`?",
@@ -161,7 +176,8 @@
             "C": "`append()` modifies the array in-place, while `insert()` returns a new array.",
             "D": "They perform the same operation but with different names."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.append()` adds elements to the end of an array, requiring no index. `numpy.insert()` allows you to specify the index (or indices) where you want to insert the new elements within the array. Both functions return a new array; they do not modify the original array in-place."
         },
         {
           "question": "Which NumPy function can insert values along a given axis before the given indices?",
@@ -171,7 +187,8 @@
             "C": "numpy.insert()",
             "D": "numpy.pad()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.insert(arr, obj, values, axis=None)` inserts `values` into `arr` before `obj` along the given `axis`. `obj` can be a single index or a sequence of indices."
         },
         {
           "question": "Which NumPy function can remove subarrays along a given axis?",
@@ -181,7 +198,8 @@
             "C": "numpy.trim()",
             "D": "numpy.cut()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`numpy.delete()` is used to return a new array with subarrays along an axis deleted. It takes the array, the indices to delete, and optionally the axis along which to delete. It does not modify the original array."
         },
         {
           "question": "What does `numpy.squeeze(arr)` do?",
@@ -191,7 +209,8 @@
             "C": "It reshapes the array to be 1D.",
             "D": "It swaps the dimensions of the array."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.squeeze()` removes axes of length one from the shape of an array. For example, an array of shape `(1, 5, 1)` would become `(5,)` after squeezing. It does not flatten to 1D unless all non-single dimensions are also 1, nor does it add dimensions or swap them."
         },
         {
           "question": "Which NumPy function can add a dimension of size one to an array?",
@@ -201,7 +220,8 @@
             "C": "numpy.reshape()",
             "D": "numpy.resize()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.expand_dims()` is specifically designed to insert a new axis (dimension) of size one at a specified position in the array's shape. This is often used for broadcasting purposes. `squeeze()` removes single dimensions, `reshape()` changes the overall shape, and `resize()` changes the array size in-place."
         }
       ]
     }

@@ -11,7 +11,8 @@
             "C": "numpy.sin()",
             "D": "numpy.arcsin()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.sin()` function is a universal function (ufunc) in NumPy that computes the trigonometric sine for each element in the input array. It operates element-wise."
         },
         {
           "question": "What does the NumPy function `numpy.exp()` do?",
@@ -21,7 +22,8 @@
             "C": "Calculates the square root of each element.",
             "D": "Calculates the power of each element to a specified base."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `numpy.exp()` function calculates the exponential of all elements in the input array. Specifically, it computes $e^x$ for each element $x$ in the array, where $e$ is Euler's number (approximately 2.71828)."
         },
         {
           "question": "Which NumPy function calculates the natural logarithm (base e) of each element in an array?",
@@ -31,7 +33,8 @@
             "C": "numpy.log()",
             "D": "numpy.exp()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.log()` function computes the natural logarithm (logarithm to base $e$) of each element in the input array. For other bases, `numpy.log10()` (base 10) and `numpy.log2()` (base 2) are available."
         },
         {
           "question": "What is the purpose of `numpy.sqrt()`?",
@@ -41,7 +44,8 @@
             "C": "Calculates the square root of each element.",
             "D": "Calculates the logarithm base 2 of each element."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.sqrt()` function computes the non-negative square root of each element in the input array. For example, `np.sqrt([4, 9, 16])` would return `[2., 3., 4.]`."
         },
         {
           "question": "Which NumPy function calculates the absolute value of each element in an array?",
@@ -51,7 +55,8 @@
             "C": "numpy.absolute()",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "NumPy provides several functions for calculating the absolute value: `numpy.abs()`, `numpy.fabs()`, and `numpy.absolute()`. All of these perform the same element-wise absolute value calculation. `numpy.abs()` is typically the most commonly used."
         },
         {
           "question": "What does `numpy.floor()` do to each element of a NumPy array?",
@@ -61,7 +66,8 @@
             "C": "Rounds each element down to the nearest integer.",
             "D": "Truncates the decimal part of each element."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.floor()` function computes the floor of each element, which means it rounds each element **down** to the nearest integer. For example, `np.floor(3.7)` is `3.0`, and `np.floor(-3.2)` is `-4.0`."
         },
         {
           "question": "Which NumPy function rounds each element of an array to the nearest integer?",
@@ -71,7 +77,8 @@
             "C": "numpy.round()",
             "D": "numpy.trunc()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.round()` function (or `np.around()`) rounds each element to the nearest integer. By default, for values exactly halfway between two integers (e.g., 2.5), it rounds to the nearest even integer (e.g., 2.5 rounds to 2, 3.5 rounds to 4)."
         },
         {
           "question": "What is the purpose of `numpy.ceil()`?",
@@ -81,7 +88,8 @@
             "C": "Rounds each element down to the nearest integer.",
             "D": "Truncates the decimal part of each element."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.ceil()` function computes the ceiling of each element, which means it rounds each element **up** to the nearest integer. For example, `np.ceil(3.2)` is `4.0`, and `np.ceil(-3.7)` is `-3.0`."
         },
         {
           "question": "Which NumPy function truncates the decimal part of each element in an array?",
@@ -91,7 +99,8 @@
             "C": "numpy.ceil()",
             "D": "numpy.trunc()"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The `numpy.trunc()` function returns the truncated value of the input, which means it removes the fractional part of each element, effectively rounding towards zero. For example, `np.trunc(3.7)` is `3.0`, and `np.trunc(-3.7)` is `-3.0`."
         },
         {
           "question": "What does `numpy.power(arr, exponent)` calculate?",
@@ -101,7 +110,8 @@
             "C": "The `exponent`-th root of each element in `arr`.",
             "D": "The sum of each element in `arr` raised to the power of `exponent`."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.power()` function calculates the element-wise power. It raises each element in the `arr` (base) to the power of `exponent`. The `exponent` can be a single scalar or an array of the same shape as `arr`."
         },
         {
           "question": "Which NumPy function calculates the tangent of each element in an array?",
@@ -111,7 +121,8 @@
             "C": "numpy.tan()",
             "D": "numpy.arctan()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Similar to `numpy.sin()` and `numpy.cos()`, `numpy.tan()` is a ufunc that computes the trigonometric tangent for each element in the input array."
         },
         {
           "question": "What is the purpose of `numpy.arctan()`?",
@@ -121,7 +132,8 @@
             "C": "Calculates the tangent of each element.",
             "D": "Calculates the angle whose sine is the given number."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.arctan()` function computes the inverse tangent (arc tangent) of each element in the array. It returns the angle whose tangent is the given value, typically in radians within the range $[-\frac{pi}{2}, \frac{pi}{2}]$."
         },
         {
           "question": "Which NumPy function calculates the dot product of two arrays?",
@@ -131,7 +143,8 @@
             "C": "numpy.dot()",
             "D": "numpy.matmul()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.dot()` function performs the dot product of two arrays. For 1-D arrays, it is the inner product. For 2-D arrays, it is matrix multiplication. For higher dimensions, it is a sum product over the last axis of `a` and the second-to-last of `b`."
         },
         {
           "question": "What does `numpy.cross(a, b)` calculate?",
@@ -141,7 +154,8 @@
             "C": "The cross product of arrays `a` and `b`.",
             "D": "The outer product of arrays `a` and `b`."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.cross()` function calculates the **cross product** of two (3-dimensional) vectors. For N-dimensional arrays, it calculates the cross product along the specified axis."
         },
         {
           "question": "Which NumPy function performs matrix multiplication of two arrays?",
@@ -151,7 +165,8 @@
             "C": "numpy.cross()",
             "D": "numpy.inner()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "While `numpy.dot()` can perform matrix multiplication for 2D arrays, the dedicated operator `@` (since Python 3.5) and `numpy.matmul()` are now the preferred ways for matrix multiplication. However, `numpy.dot()` still correctly performs matrix multiplication for 2D arrays."
         },
         {
           "question": "What does `numpy.linalg.norm(arr)` calculate by default?",
@@ -161,7 +176,8 @@
             "C": "The L2 norm (Euclidean norm) of the array.",
             "D": "The maximum absolute value of the elements in `arr`."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "By default, `numpy.linalg.norm(arr)` calculates the **L2 norm** (Euclidean norm) of the array. This is the square root of the sum of the absolute squares of the elements. It can also calculate other norms (e.g., L1 norm, Frobenius norm) by specifying the `ord` parameter."
         },
         {
           "question": "Which NumPy function calculates the exponential of all elements in the input array?",
@@ -171,7 +187,8 @@
             "C": "numpy.exp()",
             "D": "numpy.sqrt()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "As explained previously, `numpy.exp()` is used to calculate the exponential ($e^x$) of each element in the array."
         },
         {
           "question": "What does `numpy.log10()` calculate?",
@@ -181,7 +198,8 @@
             "C": "The logarithm base 10 of each element.",
             "D": "The exponential of each element with base 10."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.log10()` function computes the logarithm to **base 10** of each element in the input array. This is distinct from `numpy.log()` (natural logarithm) and `numpy.log2()` (logarithm base 2)."
         },
         {
           "question": "Which NumPy function calculates the element-wise remainder of division?",
@@ -191,7 +209,8 @@
             "C": "numpy.mod() or numpy.remainder()",
             "D": "numpy.divmod()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Both `numpy.mod()` and `numpy.remainder()` calculate the element-wise remainder of the division. For example, `np.mod(7, 3)` would return `1`."
         },
         {
           "question": "What does `numpy.arctan2(y, x)` calculate?",
@@ -201,7 +220,8 @@
             "C": "The element-wise tangent of `y/x`.",
             "D": "The element-wise hypotenuse of `(x, y)`."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`numpy.arctan2(y, x)` calculates the element-wise arc tangent of $y/x$, but it takes into account the signs of both `y` and `x` to determine the correct quadrant of the angle. This results in an angle in the full range of $[-pi, pi]$ (or $[-180^circ, 180^circ]$), unlike `arctan(y/x)` which is limited to $[-\frac{pi}{2}, \frac{pi}{2}]$."
         }
       ]
     }

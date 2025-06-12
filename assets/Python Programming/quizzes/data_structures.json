@@ -11,7 +11,8 @@
             "C": "List",
             "D": "Set"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A list is a mutable data structure in Python, meaning its elements can be changed after it's created. Tuples and strings are immutable, and while sets are mutable in size, their elements must be immutable."
         },
         {
           "question": "How do you create a tuple in Python?",
@@ -21,7 +22,8 @@
             "C": "my_tuple = {}",
             "D": "my_tuple = <>"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Tuples in Python are created by enclosing elements in parentheses `()`, or even without any parentheses for a single element (though `(element,)` is preferred for single-element tuples to distinguish from an expression)."
         },
         {
           "question": "What will be the output of the following code?\n\nmy_list = [1, 2, 3]\nmy_list.append(4)\nprint(my_list)",
@@ -31,7 +33,8 @@
             "C": "[4, 1, 2, 3]",
             "D": "[1, 2, 3, 4, 4]"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `append()` method adds a new element to the end of a list. Therefore, `4` is added to `my_list`."
         },
         {
           "question": "Which method would you use to remove an item from a set?",
@@ -41,7 +44,8 @@
             "C": "discard()",
             "D": "pop()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `remove()` method is used to remove a specified element from a set. If the element is not found, it raises a `KeyError`. The `discard()` method also removes an element but does not raise an error if the element is not present."
         },
         {
           "question": "What will the following code print?\n\nmy_dict = {'a': 1, 'b': 2}\nprint(my_dict['c'])",
@@ -51,7 +55,8 @@
             "C": "0",
             "D": "2"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Attempting to access a dictionary key that does not exist using square bracket notation (`my_dict['c']`) will raise a `KeyError`."
         },
         {
           "question": "Which of the following is the correct way to define a dictionary?",
@@ -61,7 +66,8 @@
             "C": "my_dict = {}",
             "D": "my_dict = <>"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Dictionaries in Python are created by enclosing key-value pairs in curly braces `{}`."
         },
         {
           "question": "What is the output of the following code?\n\nmy_set = {1, 2, 3}\nmy_set.add(2)\nprint(my_set)",
@@ -71,7 +77,8 @@
             "C": "{1, 3}",
             "D": "Error"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Sets only store unique elements. When `2` is added to a set that already contains `2`, no change occurs, and the set remains `{1, 2, 3}`."
         },
         {
           "question": "How do you access the first element of a list named 'my_list'?",
@@ -81,7 +88,8 @@
             "C": "my_list.first()",
             "D": "my_list(1)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In Python, list indexing is zero-based, meaning the first element is at index `0`."
         },
         {
           "question": "Which of the following operations can be performed on a string in Python?",
@@ -91,7 +99,8 @@
             "C": "String formatting",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Strings in Python support concatenation (joining strings with `+`), slicing (extracting substrings using `[start:end]`), and various formatting methods (like f-strings or `.format()`)."
         },
         {
           "question": "What will the following code output?\n\nmy_str = 'hello'\nprint(my_str.upper())",
@@ -101,7 +110,8 @@
             "C": "'Hello'",
             "D": "'hELLO'"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `upper()` string method returns a new string with all characters converted to uppercase."
         },
         {
           "question": "Which method is used to find the length of a list in Python?",
@@ -111,7 +121,8 @@
             "C": "length()",
             "D": "len()"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The built-in `len()` function is used to return the number of items (length) of an object, such as a list, tuple, string, or dictionary."
         },
         {
           "question": "How can you remove a specific key from a dictionary?",
@@ -121,7 +132,8 @@
             "C": "pop(key)",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `del dict[key]` and `dict.pop(key)` can be used to remove a specific key-value pair from a dictionary. `pop()` also returns the value associated with the removed key."
         },
         {
           "question": "What is the output of the following code?\n\nmy_list = [1, 2, 3]\nmy_list.insert(1, 5)\nprint(my_list)",
@@ -131,7 +143,8 @@
             "C": "[1, 2, 5, 3]",
             "D": "[1, 2, 3, 5]"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `insert()` method adds an element at a specified index. `my_list.insert(1, 5)` inserts `5` at index `1`, shifting existing elements to the right."
         },
         {
           "question": "Which of the following is an immutable data structure?",
@@ -141,7 +154,8 @@
             "C": "Dictionary",
             "D": "Set"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Tuples are immutable, meaning once created, their elements cannot be changed, added, or removed. Lists, dictionaries, and sets are mutable."
         },
         {
           "question": "How do you convert a list to a set in Python?",
@@ -151,7 +165,8 @@
             "C": "my_list.to_set()",
             "D": "convert(my_list, set)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The built-in `set()` constructor can be used to convert an iterable (like a list) into a set. This will remove duplicate elements from the original list."
         },
         {
           "question": "What will the following code print?\n\nmy_tuple = (1, 2, 3)\nprint(my_tuple[1])",
@@ -161,7 +176,8 @@
             "C": "3",
             "D": "Error"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Tuples, like lists, are zero-indexed. `my_tuple[1]` accesses the element at index 1, which is `2`."
         },
         {
           "question": "Which string method would you use to replace a substring with another substring?",
@@ -171,7 +187,8 @@
             "C": "modify()",
             "D": "substitute()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `replace()` string method returns a new string with all occurrences of a specified substring replaced by another specified substring."
         },
         {
           "question": "How can you check if a key exists in a dictionary?",
@@ -181,7 +198,8 @@
             "C": "key.exists(dict)",
             "D": "key in dict.keys()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `in` operator is the most Pythonic and efficient way to check for the presence of a key in a dictionary. `key in dict.keys()` also works but is less efficient as it creates a view object of all keys first."
         }
       ]
     }

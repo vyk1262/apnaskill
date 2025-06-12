@@ -11,7 +11,8 @@
             "C": "if x > y:",
             "D": "if x > y then"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Python's `if` statement requires a condition followed by a colon (`:`) to denote the start of the indented code block. Parentheses around the condition are optional but not required."
         },
         {
           "question": "Which of the following is a valid else statement?",
@@ -21,7 +22,8 @@
             "C": "else then:",
             "D": "else (x > y):"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `else` statement in Python follows an `if` or `elif` block and must be followed by a colon (`:`) to indicate the start of its code block. It does not take a condition."
         },
         {
           "question": "What does the elif statement do?",
@@ -31,7 +33,8 @@
             "C": "Ends the if statement",
             "D": "Always executes if the if statement is false"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`elif` (short for 'else if') allows you to check multiple conditions sequentially. If the `if` condition is false, Python checks the `elif` condition(s) in order."
         },
         {
           "question": "Which keyword is used to exit a loop in Python?",
@@ -41,7 +44,8 @@
             "C": "stop",
             "D": "end"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `break` statement is used to terminate the current loop (either `for` or `while`) entirely and transfer control to the statement immediately following the loop."
         },
         {
           "question": "What is the output of the following code: print(5 > 3 and 3 > 2)?",
@@ -51,7 +55,8 @@
             "C": "None",
             "D": "Error"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`5 > 3` evaluates to `True`, and `3 > 2` evaluates to `True`. Since both conditions are `True`, the `and` operator returns `True`."
         },
         {
           "question": "Which of the following will execute the loop at least once?",
@@ -61,7 +66,8 @@
             "C": "do-while loop",
             "D": "None of the above"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A `do-while` loop (found in languages like C++, Java, JavaScript, but not directly in Python) guarantees that the loop body will execute at least once before the condition is evaluated. Python's `for` and `while` loops check the condition at the beginning, so they might not execute at all if the condition is initially false or the iterable is empty."
         },
         {
           "question": "What is the correct way to create a for loop in Python?",
@@ -71,7 +77,8 @@
             "C": "for i: range(5)",
             "D": "for i in 5:"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Python's `for` loop iterates over items of any sequence (such as a list, tuple, dictionary, set, or string) or other iterable objects. `range(5)` generates a sequence of numbers from 0 to 4."
         },
         {
           "question": "What will be the output of the following code: for i in range(3): print(i)?",
@@ -81,7 +88,8 @@
             "C": "1, 2, 3",
             "D": "1, 2"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`range(3)` generates numbers 0, 1, and 2. The loop will print each of these numbers on a new line."
         },
         {
           "question": "Which statement can be used to skip the current iteration of a loop?",
@@ -91,17 +99,19 @@
             "C": "skip",
             "D": "break"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `continue` statement causes the loop to skip the rest of the current iteration and immediately proceed to the next iteration."
         },
         {
-          "question": "What will be the output of the following code?\n\nfor i in range(5):\n    if i == 3:\n        break\n    print(i)",
+          "question": "What will be the output of the following code:\n\nfor i in range(5):\n    if i == 3:\n        break\n    print(i)",
           "options": {
             "A": "0, 1, 2, 3",
             "B": "0, 1, 2",
             "C": "0, 1, 2, 3, 4",
             "D": "1, 2, 3"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The loop starts printing `i`. When `i` becomes `3`, the `break` statement is executed, which immediately terminates the loop. So, `3` and `4` are not printed."
         },
         {
           "question": "What will happen if you use a condition that is always false in a while loop?",
@@ -111,7 +121,8 @@
             "C": "The loop will not execute",
             "D": "It will throw an error"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A `while` loop checks its condition at the beginning of each iteration. If the condition is initially false, the loop body will never be executed."
         },
         {
           "question": "What will be the output of the following code?\n\nfor i in range(2):\n    for j in range(2):\n        print(i, j)",
@@ -121,7 +132,8 @@
             "C": "0 1\n1 0\n1 1",
             "D": "0 0\n1 1"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "This is a nested loop. The outer loop iterates `i` from 0 to 1. For each `i`, the inner loop iterates `j` from 0 to 1, printing `i` and `j`."
         },
         {
           "question": "What is the output of the following code?\n\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1",
@@ -131,7 +143,8 @@
             "C": "1, 2, 3, 4, 5",
             "D": "0"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `while` loop prints `count` and increments it as long as `count` is less than 5. It will print 0, then 1, then 2, then 3, then 4. When `count` becomes 5, the condition `count < 5` becomes false, and the loop terminates."
         },
         {
           "question": "How can you define a loop that runs exactly 10 times?",
@@ -141,7 +154,8 @@
             "C": "do while count < 10:",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `for i in range(10):` (which iterates 10 times from 0 to 9) and a `while` loop like `count = 0; while count < 10: count += 1` (where `count` starts at 0 and increments) are common ways to achieve a loop that runs exactly 10 times in Python."
         },
         {
           "question": "Which of the following statements is used to terminate the loop immediately?",
@@ -151,7 +165,8 @@
             "C": "continue",
             "D": "break"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The `break` statement immediately terminates the current loop and resumes execution at the statement immediately following the loop."
         },
         {
           "question": "What is the output of the following code?\n\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)",
@@ -161,7 +176,8 @@
             "C": "2, 3, 4",
             "D": "0, 1, 2"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `continue` statement skips the rest of the current iteration when `i` is `2`. So, `0` and `1` are printed, `2` is skipped, and then `3` and `4` are printed."
         },
         {
           "question": "How do you create an infinite loop?",
@@ -171,7 +187,8 @@
             "C": "while 1:",
             "D": "Both A and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `while True:` and `while 1:` create infinite loops because `True` is a boolean literal that is always true, and in Python, any non-zero number (like `1`) evaluates to `True` in a boolean context."
         },
         {
           "question": "Which of the following is not a loop control statement?",
@@ -181,7 +198,8 @@
             "C": "return",
             "D": "pass"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`break` and `continue` are specifically used to control the flow within loops. `pass` is a null operation. `return` is used to exit a function and return a value, not primarily to control loop flow."
         }
       ]
     }

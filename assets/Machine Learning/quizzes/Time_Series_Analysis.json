@@ -11,7 +11,8 @@
             "C": "Data represents cross-sectional snapshots at a single point in time.",
             "D": "Data consists of categorical variables only."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The defining characteristic of **time series data** is that observations are collected over time, and their **order is crucial** because past values often influence future ones. This temporal dependency differentiates it from other data types."
         },
         {
           "question": "What are the main components often decomposed in time series analysis?",
@@ -21,7 +22,8 @@
             "C": "Mean, variance, and autocorrelation.",
             "D": "Frequency, amplitude, and phase."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Time series data is frequently decomposed into three underlying components: **Trend** (the long-term direction), **Seasonality** (repeating patterns over fixed periods), and **Residuals** (the irregular or random part remaining after removing trend and seasonality)."
         },
         {
           "question": "What is the 'trend' component in a time series?",
@@ -31,7 +33,8 @@
             "C": "Repetitive patterns occurring at fixed intervals.",
             "D": "Random, irregular variations in the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **trend** component describes the general direction or overall movement of the time series over a long period. It can be an upward trend (growth), a downward trend (decline), or a relatively flat trend."
         },
         {
           "question": "What is 'seasonality' in a time series?",
@@ -41,7 +44,8 @@
             "C": "Sudden, unexpected events in the data.",
             "D": "The average value of the time series."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Seasonality** refers to patterns that repeat over a fixed period, like daily cycles, weekly cycles, or annual cycles. For example, retail sales often exhibit seasonality, peaking during holidays."
         },
         {
           "question": "What are 'residuals' (or 'noise') in time series decomposition?",
@@ -51,7 +55,8 @@
             "C": "The repetitive seasonal fluctuations.",
             "D": "The irregular or random fluctuations remaining after the trend and seasonality have been removed."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "**Residuals** (also known as the irregular component or noise) are the unpredictable, random variations in the time series that are left over after the systematic components of trend and seasonality have been accounted for or removed."
         },
         {
           "question": "What is autocorrelation in time series analysis?",
@@ -61,7 +66,8 @@
             "C": "The trend component of the time series.",
             "D": "The seasonal component of the time series."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Autocorrelation** measures the correlation between a time series's values at different points in time. Specifically, it's the correlation between an observation and another observation at a previous time step (a 'lagged' version of itself)."
         },
         {
           "question": "What does the Autocorrelation Function (ACF) plot show?",
@@ -71,7 +77,8 @@
             "C": "The distribution of the time series data.",
             "D": "The frequency components of the time series."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "An **Autocorrelation Function (ACF) plot** displays the autocorrelation coefficients for a time series at various lags. It helps in identifying the presence of seasonality and the order of a Moving Average (MA) component in models."
         },
         {
           "question": "What is the Partial Autocorrelation Function (PACF) plot?",
@@ -81,7 +88,8 @@
             "C": "The moving average of the autocorrelation function.",
             "D": "A smoothed version of the ACF plot."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **Partial Autocorrelation Function (PACF) plot** shows the correlation between an observation and an earlier observation, with the linear dependence of the intermediate observations already removed. It's useful for identifying the order of an Autoregressive (AR) component in models."
         },
         {
           "question": "What is a stationary time series?",
@@ -91,7 +99,8 @@
             "C": "A time series whose statistical properties (mean, variance, autocorrelation) do not change over time.",
             "D": "A time series with no fluctuations."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A **stationary time series** is one whose statistical properties, such as mean, variance, and autocorrelation structure, remain constant over time. This means there's no trend, and the seasonal component is also constant."
         },
         {
           "question": "Why is stationarity often important in time series modeling?",
@@ -101,7 +110,8 @@
             "C": "Stationary time series always have better forecasting accuracy.",
             "D": "Stationarity is only relevant for visualization."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Many traditional time series models (like ARIMA)** are based on the assumption that the data is stationary. If the data is non-stationary, these models can produce unreliable forecasts and statistical inferences. Therefore, transforming non-stationary data to stationary data is often a crucial preprocessing step."
         },
         {
           "question": "What are some common methods for making a non-stationary time series stationary?",
@@ -111,7 +121,8 @@
             "C": "Scaling, encoding.",
             "D": "Clustering, dimensionality reduction."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Common techniques to achieve stationarity include: **Differencing** (calculating the difference between consecutive observations to remove trend and seasonality), **detrending** (removing the trend component), and **deseasonalizing** (removing the seasonal component)."
         },
         {
           "question": "What is the Autoregressive (AR) model?",
@@ -121,7 +132,8 @@
             "C": "A model that forecasts based on weighted moving averages of past observations.",
             "D": "A model that incorporates the seasonal component of the time series."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "An **Autoregressive (AR) model** predicts future values based on a linear combination of its **own past values**. It assumes that the current value in the time series is a linear function of previous values plus a random error term."
         },
         {
           "question": "What is the Moving Average (MA) model?",
@@ -131,7 +143,8 @@
             "C": "A model that forecasts using a weighted average of past observations.",
             "D": "A model that accounts for the trend in the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **Moving Average (MA) model** forecasts future values based on a linear combination of **past error terms** (the differences between actual and predicted values). It smooths out short-term fluctuations to reveal underlying trends or cycles."
         },
         {
           "question": "What is the Autoregressive Integrated Moving Average (ARIMA) model?",
@@ -141,7 +154,8 @@
             "C": "A model that only considers seasonal patterns.",
             "D": "A model that is only used for stationary data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **ARIMA model** is a powerful and widely used time series forecasting model. It combines the **AR** (Autoregressive) component, the **I** (Integrated) component (which involves differencing to make the series stationary), and the **MA** (Moving Average) component."
         },
         {
           "question": "What do the p, d, and q parameters represent in an ARIMA(p, d, q) model?",
@@ -151,7 +165,8 @@
             "C": "p: order of autoregression, d: degree of differencing, q: order of moving average.",
             "D": "p: period of seasonality, d: trend order, q: noise order."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In an ARIMA(p, d, q) model: **p** is the order of the **Autoregressive (AR)** part, **d** is the degree of **differencing (I)** needed to make the series stationary, and **q** is the order of the **Moving Average (MA)** part."
         },
         {
           "question": "What is the Seasonal Autoregressive Integrated Moving Average (SARIMA) model?",
@@ -161,7 +176,8 @@
             "C": "A simple moving average model for seasonal data.",
             "D": "An autoregressive model applied only to the seasonal part of the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**SARIMA** (Seasonal ARIMA) is an extension of the ARIMA model that adds an explicit set of terms to handle the **seasonal component** of a time series. It includes seasonal AR, seasonal differencing, and seasonal MA terms."
         },
         {
           "question": "What are some common evaluation metrics for time series forecasting?",
@@ -171,7 +187,8 @@
             "C": "R-squared, adjusted R-squared.",
             "D": "Silhouette score, Davies-Bouldin index."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "For **time series forecasting**, which typically involves predicting continuous numerical values, metrics like **Mean Squared Error (MSE)**, **Root Mean Squared Error (RMSE)**, and **Mean Absolute Error (MAE)** are commonly used to quantify the difference between predicted and actual values. The other options are for classification, regression explanation, or clustering."
         },
         {
           "question": "What is the train-test split approach typically adapted for time series data?",
@@ -181,7 +198,8 @@
             "C": "Using cross-validation folds that are shuffled.",
             "D": "Training on the most recent data and testing on earlier data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Unlike typical machine learning tasks where random splitting is common, for **time series data**, it's crucial to maintain the **temporal order**. Therefore, the **train-test split is done chronologically**, with earlier data used for training and later data for testing, simulating real-world forecasting scenarios."
         },
         {
           "question": "What are some applications of time series analysis?",
@@ -191,7 +209,8 @@
             "C": "Forecasting stock prices, weather patterns, sales figures, and energy consumption.",
             "D": "Clustering customer data based on demographics."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Time series analysis** is extensively applied in domains where data is collected sequentially over time. This includes predicting future values in finance (stock prices), meteorology (weather patterns), business (sales forecasting), and utilities (energy consumption)."
         },
         {
           "question": "What are some challenges specific to time series analysis and forecasting?",
@@ -201,7 +220,8 @@
             "C": "The lack of large datasets.",
             "D": "The difficulty in interpreting model parameters."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Key challenges in time series analysis include addressing **non-stationarity** (where statistical properties change over time), modeling **seasonality** (fixed repeating patterns), accounting for **irregular patterns** (outliers, structural breaks), and critically, dealing with the **temporal dependence** where the order of observations matters."
         }
       ]
     }

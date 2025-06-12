@@ -11,7 +11,8 @@
             "C": "To reduce the size of the dataset.",
             "D": "To visualize the relationships between variables."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Feature engineering** is the art and science of creating new input features or transforming existing ones from raw data to improve the predictive power and performance of machine learning models. It involves using domain knowledge and data exploration to extract more meaningful information."
         },
         {
           "question": "What are some common techniques for handling missing numerical data during feature engineering?",
@@ -21,7 +22,8 @@
             "C": "Imputation with the mean, median, or mode, or using more sophisticated imputation methods.",
             "D": "Converting numerical features to categorical."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "For missing numerical data, common techniques include **imputation** where missing values are replaced. Simple methods are replacing with the **mean**, **median**, or **mode** of the existing data in that feature. More sophisticated methods can involve using predictive models (e.g., K-nearest neighbors imputation) or statistical techniques."
         },
         {
           "question": "What are some common techniques for handling missing categorical data during feature engineering?",
@@ -31,7 +33,8 @@
             "C": "Converting categorical features to numerical.",
             "D": "Ignoring the missing values."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Handling missing categorical data often involves: **deleting rows** (if missing values are few); **imputing with the mode** (most frequent category); or, a robust method, **creating a new 'missing' category** to explicitly indicate the absence of information, allowing the model to learn from this absence."
         },
         {
           "question": "What is feature scaling and why is it often important?",
@@ -41,7 +44,8 @@
             "C": "The process of creating new features; important for improving model accuracy.",
             "D": "The process of encoding categorical features; important for all machine learning algorithms."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Feature scaling** transforms numerical features so they have a similar scale. This is crucial for algorithms that are sensitive to the magnitude of features, such as **gradient-based optimization methods** (e.g., neural networks, logistic regression) or **distance-based algorithms** (e.g., K-Nearest Neighbors, Support Vector Machines), preventing features with larger values from dominating the learning process."
         },
         {
           "question": "What are common feature scaling techniques for numerical data?",
@@ -51,7 +55,8 @@
             "C": "Standardization (Z-score scaling), Min-Max scaling.",
             "D": "Polynomial features, interaction features."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The two most common feature scaling techniques for numerical data are **Standardization (Z-score scaling)**, which transforms data to have a mean of 0 and a standard deviation of 1, and **Min-Max scaling**, which scales data to a fixed range, usually between 0 and 1."
         },
         {
           "question": "What is feature encoding and why is it necessary for many machine learning algorithms?",
@@ -61,7 +66,8 @@
             "C": "The process of converting categorical features into a numerical format that algorithms can process.",
             "D": "The process of selecting the most important features; necessary for model interpretability."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Feature encoding** is the process of converting categorical data (e.g., 'Red', 'Green', 'Blue') into a numerical format that machine learning algorithms can understand and process. Most ML algorithms are designed to work with numerical inputs, making encoding a necessary preprocessing step for categorical features."
         },
         {
           "question": "What are common techniques for encoding categorical features?",
@@ -71,7 +77,8 @@
             "C": "One-hot encoding, label encoding, ordinal encoding.",
             "D": "Polynomial features, interaction features."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Common techniques for encoding categorical features include **One-Hot Encoding** (creating new binary columns for each category), **Label Encoding** (assigning a unique integer to each category), and **Ordinal Encoding** (assigning integers based on the inherent order of categories)."
         },
         {
           "question": "What is the purpose of creating polynomial features?",
@@ -81,7 +88,8 @@
             "C": "To scale the features to a common range.",
             "D": "To encode categorical features numerically."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Polynomial features** are created by raising existing features to a power (e.g., <span class=\"math-inline\">X^2</span>, <span class=\"math-inline\">X^3</span>) or by combining them multiplicatively. Their purpose is to enable linear models (like linear regression) to **capture non-linear relationships** in the data, making the model more flexible."
         },
         {
           "question": "What are interaction features?",
@@ -91,7 +99,8 @@
             "C": "Features that are used to handle missing values.",
             "D": "Features that are created by applying polynomial transformations."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Interaction features** are new features derived by combining two or more existing features, typically through multiplication or division. They are created when the effect of one feature on the target variable is dependent on another feature, allowing the model to capture complex relationships that single features cannot."
         },
         {
           "question": "What is feature selection?",
@@ -101,7 +110,8 @@
             "C": "The process of scaling features to a similar range.",
             "D": "The process of encoding categorical features numerically."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Feature selection** is the process of choosing a subset of the most relevant features from the original dataset. The goal is to reduce the dimensionality by discarding redundant, irrelevant, or noisy features, thereby improving model performance and interpretability."
         },
         {
           "question": "Why is feature selection important?",
@@ -111,7 +121,8 @@
             "C": "It is only important for very large datasets.",
             "D": "It is primarily used for data visualization."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Feature selection is important because it can **improve model performance** by removing noise and irrelevant features, **reduce overfitting** (especially in high-dimensional data), **simplify the model** (making it easier to interpret), and **speed up training** by reducing the number of input variables."
         },
         {
           "question": "What are the main categories of feature selection methods?",
@@ -121,7 +132,8 @@
             "C": "Polynomial transformation, interaction features, and binning.",
             "D": "Univariate selection, multivariate selection."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The main categories of feature selection methods are: **Filter methods** (relying on statistical properties independent of the model), **Wrapper methods** (using a specific model to evaluate feature subsets), and **Embedded methods** (where feature selection is built into the model's training algorithm)."
         },
         {
           "question": "What are filter methods for feature selection?",
@@ -131,7 +143,8 @@
             "C": "Methods where feature selection is integrated into the model training process.",
             "D": "Methods that iteratively add or remove features based on model performance."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Filter methods** for feature selection assess the relevance of features based on their inherent characteristics (e.g., correlation with the target variable, statistical tests like chi-squared) *independent* of any specific machine learning model. They act as a preprocessing step."
         },
         {
           "question": "What are wrapper methods for feature selection?",
@@ -141,7 +154,8 @@
             "C": "Methods where feature selection is a byproduct of the model training.",
             "D": "Methods that rank features based on their individual importance."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Wrapper methods** for feature selection directly use a specific machine learning model to evaluate the performance of different subsets of features. They iteratively select or deselect features based on how well the model performs with that subset (e.g., using cross-validation). These methods are often computationally intensive."
         },
         {
           "question": "What are embedded methods for feature selection?",
@@ -151,7 +165,8 @@
             "C": "Methods where feature selection is performed as part of the model training process itself (e.g., L1 regularization in linear models, feature importance in tree-based models).",
             "D": "Methods that use statistical tests to rank features."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Embedded methods** perform feature selection as an integral part of the model training algorithm. Examples include **L1 regularization (Lasso)**, which can shrink less important feature coefficients to zero, effectively performing selection, and **tree-based models** (like Random Forests or Gradient Boosting) which inherently provide feature importance scores during training."
         },
         {
           "question": "Which of the following is an example of a filter method for feature selection?",
@@ -161,7 +176,8 @@
             "C": "Chi-squared test for categorical features",
             "D": "Random Forest feature importance"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The **Chi-squared test** is a statistical test used to determine if there's a significant relationship between two categorical variables. In feature selection, it's used as a **filter method** to assess the independence of categorical features with respect to the target variable, ranking or selecting features based on their chi-squared scores."
         },
         {
           "question": "Which of the following is an example of a wrapper method for feature selection?",
@@ -171,7 +187,8 @@
             "C": "Recursive Feature Elimination (RFE)",
             "D": "Principal Component Analysis (PCA)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Recursive Feature Elimination (RFE)** is a **wrapper method**. It works by recursively training the model with progressively smaller sets of features, eliminating the least important features at each iteration based on the model's performance until the desired number of features is reached."
         },
         {
           "question": "Which of the following is an example of an embedded method for feature selection?",
@@ -181,7 +198,8 @@
             "C": "Lasso (L1 regularization)",
             "D": "Sequential Forward Selection"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Lasso (L1 regularization)** is an **embedded method** for feature selection. When applied to linear models, L1 regularization adds a penalty equal to the absolute value of the magnitude of coefficients. This penalty can shrink some feature coefficients exactly to zero, effectively performing feature selection by excluding those features from the model."
         },
         {
           "question": "What is the role of domain knowledge in feature engineering and selection?",
@@ -191,7 +209,8 @@
             "C": "It is only useful for interpreting the final model.",
             "D": "It primarily helps in choosing the right machine learning algorithm."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Domain knowledge** is invaluable in both feature engineering and selection. It provides insights into the problem, allowing data scientists to: **guide the creation of meaningful new features** that reflect real-world relationships; **identify potentially irrelevant or redundant features** that might otherwise seem important statistically; and understand the underlying data generation process."
         },
         {
           "question": "What are some considerations to keep in mind when performing feature engineering and selection?",
@@ -201,7 +220,8 @@
             "C": "Always create as many features as possible and then select the best ones.",
             "D": "Feature engineering and selection should always be done independently of the chosen machine learning model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "When performing feature engineering and selection, it's crucial to: think about the **interpretability** of the new features (do they still make sense?); consider the **computational cost** of creating and processing a potentially larger feature set; and be extremely cautious of **data leakage**, where information from the test set inadvertently influences the feature engineering or selection process, leading to overly optimistic performance estimates."
         }
       ]
     }

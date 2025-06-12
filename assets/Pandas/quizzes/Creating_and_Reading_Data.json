@@ -11,7 +11,8 @@
             "C": "pd.dict_to_frame()",
             "D": "pd.create_dataframe()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "While you can often pass a dictionary directly to `pd.DataFrame()`, `pd.DataFrame.from_dict()` is specifically designed for creating DataFrames from dictionaries and offers more control, especially for dictionary-of-dictionaries or dictionaries-of-Series inputs. However, the most common way to create a DataFrame from a dictionary where keys are column names and values are lists is simply `pd.DataFrame(your_dict)`."
         },
         {
           "question": "If you have a Python dictionary where keys represent column names and values are lists of column data, how would you create a Pandas DataFrame?",
@@ -21,7 +22,8 @@
             "C": "pd.DataFrame([['col1', 'col2'], [1, 3], [2, 4]])",
             "D": "pd.DataFrame((('col1', [1, 2]), ('col2', [3, 4])))"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "This is the most common and direct way to create a DataFrame from a dictionary. Pandas interprets the keys as column names and the lists as the data for those columns. Option B is for a list of dictionaries (where each dict is a row). Options C and D represent other data structures."
         },
         {
           "question": "How can you create a Pandas DataFrame from a list of Python dictionaries?",
@@ -31,7 +33,8 @@
             "C": "pd.DataFrame([['col1', 'col2'], [1, 3], [2, 4]])",
             "D": "pd.DataFrame((('col1', [1, 2]), ('col2', [3, 4])))"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "When you have a list of dictionaries, Pandas interprets each dictionary as a row in the DataFrame, with the dictionary keys becoming column names. Option B creates a DataFrame from a dictionary of lists (column-wise). Options C and D are for lists of lists or tuples."
         },
         {
           "question": "Which Pandas function is used to read data from a CSV file?",
@@ -41,7 +44,8 @@
             "C": "pd.load_csv()",
             "D": "pd.open_csv()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`pd.read_csv()` is the standard and most widely used function in Pandas for importing data from a Comma Separated Values (CSV) file."
         },
         {
           "question": "What is the default delimiter used by `pd.read_csv()`?",
@@ -51,7 +55,8 @@
             "C": "\t",
             "D": " "
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "As the name implies ('CSV' for Comma Separated Values), `pd.read_csv()` assumes that commas are used to separate values within the file by default."
         },
         {
           "question": "How can you specify a different delimiter when reading a CSV file with Pandas?",
@@ -61,7 +66,8 @@
             "C": "using the `separator` argument",
             "D": "all of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Pandas provides flexibility. You can use either the `sep` or `delimiter` argument in `pd.read_csv()` to specify the character used to separate values. Although `separator` is not a direct argument for `pd.read_csv()`, in general programming contexts, 'separator' is used interchangeably with 'delimiter' or 'sep'. However, strictly speaking, `sep` and `delimiter` are the arguments for `pd.read_csv()`."
         },
         {
           "question": "Which argument in `pd.read_csv()` allows you to specify which row(s) should be used as the column names?",
@@ -71,7 +77,8 @@
             "C": "names",
             "D": "col_names"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `header` argument in `pd.read_csv()` takes an integer (or list of integers) representing the row number(s) to use as column names. By default, `header=0` (the first row) is assumed to be the header."
         },
         {
           "question": "How can you read a CSV file that does not have a header row using Pandas?",
@@ -81,7 +88,8 @@
             "C": "pd.read_csv('file.csv', has_header=False)",
             "D": "pd.read_csv('file.csv', header=-1)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Setting `header=None` tells Pandas that the CSV file does not contain a header row. Pandas will then automatically assign integer column names (0, 1, 2, ...)."
         },
         {
           "question": "What argument in `pd.read_csv()` can be used to provide a list of names for the columns when the file doesn't have a header?",
@@ -91,7 +99,8 @@
             "C": "names",
             "D": "labels"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "When a CSV file lacks a header, you can use the `names` argument in conjunction with `header=None` to supply a list of strings that will serve as the column names for your DataFrame."
         },
         {
           "question": "Which Pandas function is used to read data from an Excel file?",
@@ -101,7 +110,8 @@
             "C": "pd.load_excel()",
             "D": "pd.open_excel()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`pd.read_excel()` is the dedicated Pandas function for reading data from Excel files (.xls, .xlsx)."
         },
         {
           "question": "How can you specify which sheet to read from an Excel file using `pd.read_excel()`?",
@@ -111,7 +121,8 @@
             "C": "using the `active_sheet` argument",
             "D": "both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The `sheet_name` argument (or simply `sheet` in older Pandas versions) in `pd.read_excel()` allows you to specify which sheet to read by its name (string) or its zero-based index (integer). If not specified, it defaults to the first sheet."
         },
         {
           "question": "Which Pandas function is used to read data from a SQL database?",
@@ -121,7 +132,8 @@
             "C": "pd.load_sql()",
             "D": "pd.database_query()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`pd.read_sql()` is the primary Pandas function for executing SQL queries or reading tables from a SQL database into a DataFrame."
         },
         {
           "question": "What information do you typically need to provide to `pd.read_sql()` to connect to a database?",
@@ -131,7 +143,8 @@
             "C": "The database file path.",
             "D": "Only the table name."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`pd.read_sql()` requires both the SQL query (or table name) and a valid `con` argument, which can be an SQLAlchemy connection string or a database connection object (e.g., from `sqlite3.connect()`)."
         },
         {
           "question": "How can you read data directly from a JSON string into a Pandas DataFrame?",
@@ -141,7 +154,8 @@
             "C": "pd.read_json()",
             "D": "pd.json_to_df()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`pd.read_json()` is versatile. It can read from a file path, URL, or directly from a JSON string. For a JSON string, you pass the string as the first argument."
         },
         {
           "question": "Which Pandas function can be used to create a DataFrame from a NumPy array?",
@@ -151,7 +165,8 @@
             "C": "pd.from_array()",
             "D": "pd.convert_to_df(array)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "You can directly pass a NumPy array to the `pd.DataFrame()` constructor. Pandas will interpret the array as the data for the DataFrame."
         },
         {
           "question": "When creating a DataFrame from a NumPy array, how can you specify the column names?",
@@ -161,7 +176,8 @@
             "C": "by assigning to the `.columns` attribute after creation",
             "D": "both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "You can specify column names either at the time of DataFrame creation using the `columns` argument (e.g., `pd.DataFrame(array, columns=['A', 'B'])`) or by assigning a list of names to the `.columns` attribute of the DataFrame after it has been created (e.g., `df = pd.DataFrame(array); df.columns = ['A', 'B']`)."
         },
         {
           "question": "Which Pandas function can be used to read data from a clipboard?",
@@ -171,7 +187,8 @@
             "C": "pd.copy_to_df()",
             "D": "pd.paste_df()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`pd.read_clipboard()` is a convenient function that attempts to read the content of the system clipboard and parse it into a DataFrame, often used for quickly importing data copied from spreadsheets or tables."
         },
         {
           "question": "What is the purpose of the `index_col` argument in `pd.read_csv()`?",
@@ -181,7 +198,8 @@
             "C": "To indicate that the first column should be treated as the index by default.",
             "D": "To specify the data type of the index column."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `index_col` argument allows you to instruct `pd.read_csv()` to use a specific column (identified by its name or zero-based integer position) from the CSV file as the DataFrame's row index, instead of creating a default integer index."
         },
         {
           "question": "How can you handle missing values (e.g., 'NaN') that might be represented by different strings in a CSV file when reading it with Pandas?",
@@ -191,7 +209,8 @@
             "C": "Pandas automatically handles common missing value representations",
             "D": "both A and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Pandas `pd.read_csv()` is quite smart and automatically recognizes common missing value representations (like 'NaN', 'null', '', '#N/A'). Additionally, for custom or less common missing value strings, you can use the `na_values` argument, providing a list of strings that should be interpreted as NaN."
         },
         {
           "question": "Which Pandas function is versatile and can read data from various file formats (including CSV, delimited files, fixed-width files) with more options than `pd.read_csv()`?",
@@ -201,7 +220,8 @@
             "C": "pd.read_generic()",
             "D": "pd.read_delimited()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "While `pd.read_csv()` is for comma-separated files specifically, `pd.read_table()` is a more general function that can read delimited files. It defaults to a tab (`\\t`) delimiter, but you can explicitly specify any delimiter using the `sep` argument. `pd.read_fwf()` is for fixed-width files, not general delimited files."
         }
       ]
     }

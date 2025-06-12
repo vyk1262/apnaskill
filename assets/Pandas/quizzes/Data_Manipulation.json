@@ -11,7 +11,8 @@
             "C": "df['Product']",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `df.Product` (dot notation) and `df['Product']` (bracket notation) are valid ways to select a single column. The bracket notation is generally preferred as it works for column names with spaces or special characters and for selecting multiple columns."
         },
         {
           "question": "How do you select multiple columns, 'Name' and 'Price', from a Pandas DataFrame `df`?",
@@ -21,7 +22,8 @@
             "C": "df.column(['Name', 'Price'])",
             "D": "df.get(['Name', 'Price'])"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "To select multiple columns, you pass a list of column names inside the square brackets. This returns a new DataFrame containing only the specified columns."
         },
         {
           "question": "How can you select rows in a DataFrame `df` where the 'Price' column is greater than 100?",
@@ -31,7 +33,8 @@
             "C": "df.filter(df['Price'] > 100)",
             "D": "df.query('Price > 100')"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "This is standard boolean indexing in Pandas. `df['Price'] > 100` creates a boolean Series (True for rows where Price is greater than 100, False otherwise). When this boolean Series is passed to `df[]`, it filters the DataFrame, keeping only the rows where the boolean is True."
         },
         {
           "question": "What is the purpose of the `.loc[]` accessor in Pandas?",
@@ -41,7 +44,8 @@
             "C": "To select only rows based on a condition.",
             "D": "To select only columns by label."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`.loc[]` is primarily label-based, meaning you use the actual row and column names (labels) to select data. It also supports boolean arrays for row selection."
         },
         {
           "question": "How would you select the row with index label 'A' and column 'Name' using `.loc[]` on a DataFrame `df`?",
@@ -51,7 +55,8 @@
             "C": "df.loc['A', 'Name']",
             "D": "df.loc[0, 0]"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The syntax for `.loc[]` is `df.loc[row_label(s), column_label(s)]`. So, `df.loc['A', 'Name']` correctly selects the intersection of the row labeled 'A' and the column labeled 'Name'."
         },
         {
           "question": "What is the purpose of the `.iloc[]` accessor in Pandas?",
@@ -61,7 +66,8 @@
             "C": "To select rows based on a boolean condition.",
             "D": "To select columns based on a list of labels."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`.iloc[]` is integer-location based indexing, meaning you use the 0-based integer position to select rows and columns, similar to standard Python list indexing."
         },
         {
           "question": "How would you select the element at the 2nd row and 3rd column using `.iloc[]` on a DataFrame `df`?",
@@ -71,7 +77,8 @@
             "C": "df.iloc[[1], [2]]",
             "D": "df.iloc('2', '3')"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Since `iloc` uses 0-based indexing, the 2nd row is at index 1, and the 3rd column is at index 2. Therefore, `df.iloc[1, 2]` correctly selects the element at that position."
         },
         {
           "question": "How can you add a new column named 'Tax' to a DataFrame `df` with a constant value of 0.1?",
@@ -81,7 +88,8 @@
             "C": "df.insert_column('Tax', [0.1] * len(df))",
             "D": "df.append_column('Tax', 0.1)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Assigning a scalar value to a new column name using bracket notation (`df['NewColumn'] = value`) automatically broadcasts that value to all rows in the new column."
         },
         {
           "question": "How can you create a new column 'TotalPrice' in a DataFrame `df` by multiplying the 'Price' and 'Quantity' columns?",
@@ -91,7 +99,8 @@
             "C": "df.assign(TotalPrice = df['Price'] * df['Quantity'])",
             "D": "all of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All three are valid. \n- A is the most common and direct way to perform element-wise operations between existing columns and assign the result to a new column. \n- C uses the `.assign()` method, which is good for chaining operations and creating new columns without modifying the original DataFrame in place. Option B is conceptually correct but not a standard Pandas method name. Python allows dynamic attributes, making option A and C typical approaches."
         },
         {
           "question": "How can you remove a column named 'OldColumn' from a DataFrame `df`?",
@@ -101,7 +110,8 @@
             "C": "df.remove('OldColumn')",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `df.drop('OldColumn', axis=1)` (or `axis='columns'`) and `del df['OldColumn']` are common ways to remove a column. `drop()` is more flexible as it can remove multiple columns or rows and can return a new DataFrame without modifying the original (default `inplace=False`). `del` modifies in place and is generally faster for single column deletion."
         },
         {
           "question": "What is the purpose of the `inplace=True` argument in Pandas methods like `drop()`?",
@@ -111,7 +121,8 @@
             "C": "It specifies that the changes should be saved to the file from which the DataFrame was loaded.",
             "D": "It indicates that the operation should be performed on a temporary copy of the DataFrame."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`inplace=True` tells Pandas to modify the DataFrame directly and return `None`. If `inplace=False` (the default), the method returns a new DataFrame with the changes, leaving the original DataFrame untouched."
         },
         {
           "question": "How can you rename a column named 'OldName' to 'NewName' in a DataFrame `df`?",
@@ -121,7 +132,8 @@
             "C": "df.rename(columns={'OldName': 'NewName'}, inplace=True)",
             "D": "all of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All three are valid ways to rename columns. \n- C using `df.rename()` with the `columns` argument is the most standard and readable. \n- B modifies the `df.columns` attribute directly using a map function, which is also effective. A is not a standard Pandas method."
         },
         {
           "question": "How can you sort a DataFrame `df` by the values in a column named 'Value' in ascending order?",
@@ -131,7 +143,8 @@
             "C": "df.order_by('Value')",
             "D": "df.sorted_by('Value')"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `df.sort_values()` method is used to sort a DataFrame by the values of one or more columns. The `by` argument specifies the column(s) to sort by. `ascending=True` is the default behavior."
         },
         {
           "question": "How can you sort a DataFrame `df` by the values in the 'Price' column in descending order?",
@@ -141,7 +154,8 @@
             "C": "df.order_by('Price', desc=True)",
             "D": "df.sort_values(by=['Price'], order='desc')"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "To sort in descending order, you set the `ascending` parameter to `False` in the `sort_values()` method."
         },
         {
           "question": "How can you apply a function to each element of a Pandas Series named `s`?",
@@ -151,7 +165,8 @@
             "C": "s.transform(function)",
             "D": "s.foreach(function)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `.apply()` method on a Series is used to apply a function to each element of the Series. The `map()` method can also be used for similar element-wise application, especially when mapping values from a dictionary or Series."
         },
         {
           "question": "How can you apply a function to each row or column of a Pandas DataFrame `df`?",
@@ -161,7 +176,8 @@
             "C": "df.transform(function, axis='rows') or df.transform(function, axis='cols')",
             "D": "df.foreach(function, rowwise=True or False)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `.apply()` method is used to apply a function along an axis of the DataFrame. `axis=0` (or `'index'`) applies the function to each column, and `axis=1` (or `'columns'`) applies the function to each row."
         },
         {
           "question": "What is the purpose of the `.fillna()` method in Pandas?",
@@ -171,7 +187,8 @@
             "C": "To check for the presence of missing values.",
             "D": "To count the number of missing values in each column."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`.fillna()` is central to handling missing data. It allows you to substitute `NaN` values with a constant, the mean/median/mode of a column, or propagate non-missing values forward/backward."
         },
         {
           "question": "How can you replace all missing values in a DataFrame `df` with 0?",
@@ -181,7 +198,8 @@
             "C": "df.fill_missing(0)",
             "D": "df.na_fill(0)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Passing a scalar value directly to `.fillna()` will replace all `NaN` occurrences in the DataFrame with that value."
         },
         {
           "question": "What is the purpose of the `.astype()` method in Pandas?",
@@ -191,7 +209,8 @@
             "C": "To format the display of the data.",
             "D": "To check the current data type of a column."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`.astype()` is used for explicit type conversion. For example, converting a column from `object` (string) to `int` or `float`, or from `float` to `int` (if there are no NaNs). This is crucial for numerical operations or memory optimization."
         },
         {
           "question": "How can you convert the data type of the 'Price' column in a DataFrame `df` to integer?",
@@ -201,7 +220,8 @@
             "C": "df['Price'].convert_type(int)",
             "D": "df['Price'].as_integer()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "To change the data type of a Series (a column), you apply the `.astype()` method to that Series and pass the desired data type (e.g., `int`, `float`, `str`, `datetime64[ns]`). If the column contains `NaN` values, converting to `int` directly will raise an error, and you might need `Int64Dtype()` or fill NaNs first."
         }
       ]
     }

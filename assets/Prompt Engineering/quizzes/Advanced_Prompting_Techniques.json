@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Advanced_Prompting_Techniques",
+      "questions": [
         {
-            "topic": "Advanced_Prompting_Techniques",
-            "questions": []
+          "question": "What is 'Self-Reflection' or 'Self-Correction' in advanced prompting?",
+          "options": {
+            "A": "Asking the AI to summarize its previous response.",
+            "B": "Instructing the AI to evaluate its own output, identify potential errors or shortcomings, and then refine its response based on that internal critique.",
+            "C": "A technique for training AI models faster.",
+            "D": "A method to generate random responses."
+          },
+          "correct_answer": "B",
+          "explanation": "Self-reflection allows the AI to act as its own critic, improving its output quality by finding and fixing its mistakes. It often involves a multi-step prompt where the AI first generates a response, then analyzes it against criteria, and finally revises it."
+        },
+        {
+          "question": "How does 'Tree-of-Thought (ToT)' prompting differ from 'Chain-of-Thought (CoT)' prompting?",
+          "options": {
+            "A": "ToT is simpler than CoT.",
+            "B": "CoT is linear, following a single path of reasoning, while ToT explores multiple reasoning paths and potentially backtracks, forming a tree-like structure of thoughts.",
+            "C": "ToT uses fewer tokens than CoT.",
+            "D": "ToT is only for creative tasks."
+          },
+          "correct_answer": "B",
+          "explanation": "ToT is a more sophisticated search-based reasoning approach. Instead of just one sequence of thoughts, it considers multiple branches, evaluating them to find the best path, making it suitable for more complex problem-solving that requires exploration of alternatives."
+        },
+        {
+          "question": "What is 'Iterative Prompting' or 'Multi-Turn Conversation'?",
+          "options": {
+            "A": "A single, very long prompt.",
+            "B": "Engaging in a back-and-forth dialogue with the AI, where each subsequent prompt builds upon the context and responses of previous turns to refine the output or explore a topic in depth.",
+            "C": "Prompting the AI only once.",
+            "D": "A method for generating random text."
+          },
+          "correct_answer": "B",
+          "explanation": "Iterative prompting leverages the AI's conversational memory. It allows for refinement and clarification, guiding the AI incrementally towards the desired result, much like a human conversation."
+        },
+        {
+          "question": "Describe the 'Generated Knowledge' technique.",
+          "options": {
+            "A": "The AI is given all necessary knowledge upfront.",
+            "B": "The AI first generates relevant knowledge or facts related to a query, and then uses that self-generated knowledge as context to answer the original query, improving accuracy.",
+            "C": "The AI guesses the answer without any knowledge.",
+            "D": "The AI asks the user for more knowledge."
+          },
+          "correct_answer": "B",
+          "explanation": "This technique addresses situations where the AI might lack specific domain knowledge. By prompting it to first generate relevant facts, it creates its own context, which can then be used to answer the main question more accurately."
+        },
+        {
+          "question": "What is 'Role Play' or 'Persona Prompting' at an advanced level?",
+          "options": {
+            "A": "Just telling the AI to 'be helpful'.",
+            "B": "Assigning the AI a highly specific and detailed persona (e.g., 'You are a seasoned legal expert specializing in patent law') to influence its knowledge access, tone, and reasoning approach, often combined with constraints.",
+            "C": "Asking the user to pretend to be someone else.",
+            "D": "A random assignment of character."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced persona prompting goes beyond simple roles. It imbues the AI with deep expertise and specific characteristics, allowing it to leverage its underlying knowledge more effectively within that defined domain."
+        },
+        {
+          "question": "How can 'Tool Use' or 'Function Calling' enhance AI capabilities?",
+          "options": {
+            "A": "It allows the AI to physically manipulate tools.",
+            "B": "It enables the AI to identify when it needs external information or computation (e.g., searching the web, calling a calculator, accessing a database) and format its response to trigger these external tools, then integrate their results.",
+            "C": "It replaces the need for AI altogether.",
+            "D": "It's a way for the AI to ignore instructions."
+          },
+          "correct_answer": "B",
+          "explanation": "This technique moves AI beyond just text generation, allowing it to act as an intelligent orchestrator that can leverage external functionalities, significantly extending its practical utility and reducing hallucinations by grounding responses in real-time data."
+        },
+        {
+          "question": "What is 'Retrieval-Augmented Generation (RAG)'?",
+          "options": {
+            "A": "Training an AI model from scratch every time.",
+            "B": "A technique where relevant information is retrieved from an external knowledge base (e.g., a document database) and provided as context to the AI model before it generates a response, enhancing accuracy and reducing hallucinations.",
+            "C": "Generating text randomly.",
+            "D": "A method to compress AI models."
+          },
+          "correct_answer": "B",
+          "explanation": "RAG addresses the limitation of AI models having a fixed knowledge cutoff. By dynamically retrieving up-to-date or domain-specific information and injecting it into the prompt, RAG ensures the AI's responses are grounded in accurate and current data."
+        },
+        {
+          "question": "What is 'Instruction Tuning' as an advanced technique?",
+          "options": {
+            "A": "Fine-tuning a model on a dataset of instruction-following examples to improve its ability to understand and execute diverse prompts.",
+            "B": "Manually writing every instruction in a prompt.",
+            "C": "A method to simplify prompts.",
+            "D": "Training an AI to ignore instructions."
+          },
+          "correct_answer": "A",
+          "explanation": "While this involves model training, it's an advanced *prompting-related* technique because it directly enhances the model's capacity to follow instructions effectively, making all subsequent prompting more robust."
+        },
+        {
+          "question": "How does 'Hypothetical Scenario' prompting work?",
+          "options": {
+            "A": "The AI is asked to recall a real event.",
+            "B": "The AI is presented with a hypothetical situation or problem and asked to reason through it, predict outcomes, or suggest solutions based on its knowledge.",
+            "C": "The AI creates a new model.",
+            "D": "The AI generates a random story."
+          },
+          "correct_answer": "B",
+          "explanation": "This technique probes the AI's reasoning, planning, and predictive capabilities by asking it to engage with 'what if' scenarios, often requiring it to apply principles or knowledge in a novel context."
+        },
+        {
+          "question": "What is 'Constitutional AI' and its relevance to prompting?",
+          "options": {
+            "A": "AI that follows human laws.",
+            "B": "An approach where AI models are trained (or prompted) to adhere to a set of guiding principles or a 'constitution' for safe and ethical behavior, often using self-correction based on these principles.",
+            "C": "AI that writes legal documents.",
+            "D": "AI that designs constitutions."
+          },
+          "correct_answer": "B",
+          "explanation": "Constitutional AI is an advanced technique for aligning AI behavior with human values, often leveraging complex self-reflection and reinforcement learning guided by explicit ethical principles provided as prompts."
+        },
+        {
+          "question": "When would you use 'Active Learning' in conjunction with prompt engineering?",
+          "options": {
+            "A": "To randomly select data for training.",
+            "B": "When you need to efficiently collect more high-quality examples for fine-tuning by having the AI identify ambiguous or uncertain cases for human annotation, thus improving future prompt performance.",
+            "C": "To make the AI more aggressive.",
+            "D": "To simply prompt the AI with new data."
+          },
+          "correct_answer": "B",
+          "explanation": "Active learning helps in scenarios where labeling data is expensive. The AI helps identify the most informative examples to be labeled, which then contributes to better model performance or more effective few-shot examples."
+        },
+        {
+          "question": "What is 'Fine-tuning with Prompt-based Datasets'?",
+          "options": {
+            "A": "Training a model with random data.",
+            "B": "Adjusting the weights of an existing AI model using a dataset specifically crafted from successful prompts and their desired outputs, enhancing its ability to follow similar instructions in the future.",
+            "C": "Creating a new prompt for every task.",
+            "D": "Ignoring the model's original training."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a more advanced technique than in-context learning. It permanently imbues the model with the ability to handle specific types of prompts or tasks more effectively by physically altering its parameters through further training."
+        },
+        {
+          "question": "Explain 'Progressive Prompting' or 'Step-by-Step Refinement'.",
+          "options": {
+            "A": "Giving all instructions at once.",
+            "B": "Breaking down a complex prompt into multiple, simpler sub-prompts, guiding the AI through each step sequentially to build up to a complex answer.",
+            "C": "Making the AI guess the next step.",
+            "D": "Ignoring the output of previous steps."
+          },
+          "correct_answer": "B",
+          "explanation": "Similar to Chain-of-Thought, but often more explicit and user-controlled. You ask the AI to perform a small part of the task, then use that output to inform the next prompt, iteratively building the solution."
+        },
+        {
+          "question": "What is 'Domain Adaptation' in prompting?",
+          "options": {
+            "A": "Making the AI forget its domain.",
+            "B": "Tailoring prompts or using specific techniques (like RAG with domain-specific knowledge) to make a general-purpose AI perform exceptionally well within a particular industry or niche, understanding its jargon and context.",
+            "C": "Changing the AI's underlying code.",
+            "D": "Adapting the user's domain to the AI."
+          },
+          "correct_answer": "B",
+          "explanation": "Domain adaptation in prompting is about bridging the gap between a general AI model and specialized knowledge or tasks, often achieved through careful context injection and fine-tuned examples."
+        },
+        {
+          "question": "How can 'Analogy-based Prompting' work?",
+          "options": {
+            "A": "The AI is asked to find differences.",
+            "B": "The AI is presented with a known concept or problem and asked to apply similar reasoning or principles to a new, analogous problem.",
+            "C": "The AI generates random analogies.",
+            "D": "The AI translates concepts."
+          },
+          "correct_answer": "B",
+          "explanation": "This technique leverages the AI's ability to identify patterns and generalize. If you show it how to solve Problem A and state Problem B is analogous, it can often apply the same logic."
+        },
+        {
+          "question": "What is 'Automated Prompt Generation'?",
+          "options": {
+            "A": "Manually writing all prompts.",
+            "B": "Using algorithms or another AI model to automatically generate or optimize prompts based on desired outcomes or performance metrics.",
+            "C": "A method to delete prompts automatically.",
+            "D": "Generating prompts randomly without any goal."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a meta-prompting technique. Instead of hand-crafting prompts, another system (often an AI) is used to find the most effective prompt phrasing or structure for a given task, streamlining the prompt engineering process."
+        },
+        {
+          "question": "In advanced prompting, what is the role of 'external API calls'?",
+          "options": {
+            "A": "To make the AI self-contained.",
+            "B": "To allow the AI to interact with external systems, databases, or services (e.g., search engines, calculation APIs, translation services) to retrieve or process information beyond its internal knowledge.",
+            "C": "To prevent the AI from accessing external data.",
+            "D": "To only retrieve static information."
+          },
+          "correct_answer": "B",
+          "explanation": "Similar to Tool Use, external API calls enable the AI to access real-time data, perform calculations, or trigger actions in the real world, vastly expanding its utility."
+        },
+        {
+          "question": "What is 'Prompt Optimization' beyond simple iteration?",
+          "options": {
+            "A": "Only changing the prompt's length.",
+            "B": "Systematically using techniques like A/B testing, genetic algorithms, or reinforcement learning to find the most effective prompt configurations for specific tasks and metrics.",
+            "C": "Optimizing the user's computer hardware.",
+            "D": "Making the AI faster by reducing its intelligence."
+          },
+          "correct_answer": "B",
+          "explanation": "Prompt optimization moves beyond manual trial-and-error to more systematic, data-driven approaches, often leveraging computational methods to discover optimal prompt structures or wording."
+        },
+        {
+          "question": "True or False: Advanced prompting techniques primarily benefit smaller, less capable AI models.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While smaller models might see some benefits, advanced techniques often shine most brightly with larger, more capable models because these models have the underlying reasoning capabilities and vast knowledge bases to fully leverage the nuanced instructions provided by advanced prompts."
+        },
+        {
+          "question": "What is the concept of 'Ensembling' prompts?",
+          "options": {
+            "A": "Using only one prompt for all tasks.",
+            "B": "Running multiple different prompts (or slightly varied versions of the same prompt) for a single query and then combining or aggregating their responses to derive a more robust or accurate final answer.",
+            "C": "Making prompts longer by combining them.",
+            "D": "Randomly choosing a prompt from a list."
+          },
+          "correct_answer": "B",
+          "explanation": "Ensembling leverages diversity. By getting multiple 'opinions' from the AI (or even different AIs) via varied prompts, and then combining them, it can improve the overall accuracy and reliability of the final output, similar to ensemble methods in machine learning."
         }
-    ]
+      ]
+    }
+  ]
 }

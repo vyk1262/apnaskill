@@ -11,7 +11,8 @@
             "C": "data[1, 1]",
             "D": "data{0, 0}"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "NumPy arrays are 0-indexed, meaning the first element is at index 0. For a 2D array, you access elements using `array[row_index][column_index]` or, more commonly and efficiently in NumPy, `array[row_index, column_index]`."
         },
         {
           "question": "What does negative indexing in NumPy arrays allow you to do?",
@@ -21,7 +22,8 @@
             "C": "Create a reversed copy of the array.",
             "D": "Skip elements during slicing."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Negative indices in NumPy (and Python lists) count from the end of the array. For example, `-1` refers to the last element, `-2` to the second-to-last, and so on."
         },
         {
           "question": "For a 1D NumPy array `arr = [10, 20, 30, 40, 50]`, what is the result of `arr[-2]`?",
@@ -31,7 +33,8 @@
             "C": "50",
             "D": "IndexError"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Negative indexing counts from the end. `arr[-1]` is 50, and `arr[-2]` is 40."
         },
         {
           "question": "Given a 2D NumPy array `matrix`, how would you extract the entire first row?",
@@ -41,7 +44,8 @@
             "C": "matrix[0, :]",
             "D": "matrix(0)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "For a 2D array, `matrix[0]` directly selects the first row. `matrix[0, :]` also achieves this, explicitly stating that all columns are selected from the first row. `matrix[:, 0]` would select the first column."
         },
         {
           "question": "Given a 2D NumPy array `matrix`, how would you extract the entire first column?",
@@ -51,7 +55,8 @@
             "C": "matrix[0, :]",
             "D": "matrix(:, 1)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "To extract an entire column, you use the slice `:` to indicate all rows, and then specify the column index. So, `matrix[:, 0]` selects all rows (represented by `:`) and the first column (represented by `0`)."
         },
         {
           "question": "For a 1D NumPy array `arr = [2, 4, 6, 8, 10]`, what is the result of `arr[1:4]`?",
@@ -61,7 +66,8 @@
             "C": "[4, 6, 8, 10]",
             "D": "[2, 4, 6, 8]"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Slicing in Python (and NumPy) is `[start:stop]`, where `start` is inclusive and `stop` is exclusive. So, `arr[1:4]` includes elements at index 1, 2, and 3: which are 4, 6, and 8 respectively."
         },
         {
           "question": "What does the step value in array slicing (e.g., `arr[start:stop:step]`) control?",
@@ -71,7 +77,8 @@
             "C": "The increment between indices in the slice.",
             "D": "The number of elements to include in the slice."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `step` value determines how many elements to jump over between each selected element in the slice. A step of 2 means every other element, -1 means reverse, etc."
         },
         {
           "question": "For a 1D NumPy array `arr = [1, 2, 3, 4, 5]`, what is the result of `arr[::2]`?",
@@ -81,7 +88,8 @@
             "C": "[1, 3, 5]",
             "D": "[5, 3, 1]"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`arr[::2]` means start from the beginning (default `start`), go to the end (default `stop`), and take every second element. So, it selects elements at indices 0, 2, and 4: which are 1, 3, and 5."
         },
         {
           "question": "How can you reverse a 1D NumPy array `arr` using slicing?",
@@ -91,7 +99,8 @@
             "C": "arr.slice(None, None, -1)",
             "D": "numpy.flip(arr)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The slice `[::-1]` is a common and concise way to reverse an array in Python and NumPy. It means start at the end, go to the beginning, with a step of -1 (moving backwards). `numpy.flip(arr)` also reverses the array but is a dedicated function."
         },
         {
           "question": "What is boolean indexing used for in NumPy arrays?",
@@ -101,7 +110,8 @@
             "C": "Converting array elements to boolean type.",
             "D": "Checking if an array is empty."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Boolean indexing (also known as boolean masking) involves using a boolean array of the same shape as the original array to select elements. Where the boolean array has `True`, the corresponding element from the original array is selected; where it's `False`, it's not."
         },
         {
           "question": "Given `arr = np.array([1, 2, 3, 4, 5])` and `mask = np.array([True, False, True, False, True])`, what is the result of `arr[mask]`?",
@@ -111,7 +121,8 @@
             "C": "[2, 4]",
             "D": "[1, 2, 3, 4, 5]"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "When using boolean indexing, only the elements in `arr` that correspond to `True` values in `mask` are selected. So, elements at index 0, 2, and 4 (which are 1, 3, and 5) are returned."
         },
         {
           "question": "What is fancy indexing in NumPy?",
@@ -121,7 +132,8 @@
             "C": "Indexing with integer arrays to select elements at specific indices.",
             "D": "Indexing multi-dimensional arrays."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Fancy indexing allows you to select non-contiguous or non-sequential elements from an array using an array (or list) of integer indices. The resulting array will have the shape of the index array."
         },
         {
           "question": "Given `arr = np.array([10, 20, 30, 40, 50])` and `indices = np.array([0, 3, 1])`, what is the result of `arr[indices]`?",
@@ -131,7 +143,8 @@
             "C": "[0, 3, 1]",
             "D": "[50, 40, 30]"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Fancy indexing uses the values in the `indices` array as the actual indices to retrieve elements from `arr`. So, `arr[0]` is 10, `arr[3]` is 40, and `arr[1]` is 20, resulting in `[10, 40, 20]`."
         },
         {
           "question": "Can fancy indexing be used to modify array elements?",
@@ -141,7 +154,8 @@
             "C": "Only for 1D arrays.",
             "D": "Only for boolean indexing."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Yes, fancy indexing can be used on the left-hand side of an assignment to modify specific elements. For example, `arr[[0, 3, 1]] = [100, 400, 200]` would update the elements at those indices."
         },
         {
           "question": "Given a 2D array `data`, how would you select the elements at the intersections of rows [0, 2] and columns [1, 3] using fancy indexing?",
@@ -151,7 +165,8 @@
             "C": "data[0:3:2, 1:4:2]",
             "D": "data[np.ix_([0, 2], [1, 3])]"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "When using multiple integer arrays for fancy indexing, the arrays are paired up (e.g., `(0,1)` and `(2,3)`). This selects `data[0,1]` and `data[2,3]`. If you want a grid selection (all combinations), you would use `np.ix_`, as shown in option D."
         },
         {
           "question": "What is the difference between `arr[1:3]` and `arr[[1, 2]]` for a 1D array `arr`?",
@@ -161,7 +176,8 @@
             "C": "`arr[1:3]` uses boolean indexing, while `arr[[1, 2]]` uses integer indexing.",
             "D": "`arr[1:3]` includes the element at index 3, while `arr[[1, 2]]` does not."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Slicing (`arr[1:3]`) returns a *view* into the original array's data; changes to the slice will affect the original array. Fancy indexing (`arr[[1, 2]]`) always returns a *copy* of the data; changes to the copied array will not affect the original."
         },
         {
           "question": "How can you select all elements in a 2D array `matrix` where the second column is greater than 5?",
@@ -171,7 +187,8 @@
             "C": "matrix[matrix[1, :] > 5]",
             "D": "matrix(where(matrix[:, 1] > 5))"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "First, `matrix[:, 1]` extracts the entire second column. Then, `matrix[:, 1] > 5` creates a boolean array (mask) where `True` indicates values greater than 5 in that column. Finally, `matrix[mask]` uses this boolean mask to select the *rows* from `matrix` where the condition is True in the second column."
         },
         {
           "question": "What happens if you try to index a NumPy array with an index that is out of bounds?",
@@ -181,7 +198,8 @@
             "C": "It raises an IndexError.",
             "D": "It returns 0."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Attempting to access an element using an index that is outside the valid range of indices for that dimension will result in an `IndexError`."
         },
         {
           "question": "Can you use a list of boolean values for indexing a NumPy array?",
@@ -191,7 +209,8 @@
             "C": "Only for 1D arrays.",
             "D": "Only if the list has the same length as the array."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy is flexible and will automatically convert a Python list of boolean values into a NumPy boolean array when used for indexing, provided the list's length matches the dimension being indexed."
         },
         {
           "question": "Given a 3D array `tensor`, how would you access the element at the first 'layer', second row, and third column?",
@@ -201,7 +220,8 @@
             "C": "tensor(0, 1, 2)",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `tensor[0, 1, 2]` (using comma separation, which is the idiomatic NumPy way) and `tensor[0][1][2]` (using successive bracket notation, common in Python for nested lists) correctly access the element at the specified 0-indexed positions: first layer (index 0), second row (index 1), and third column (index 2)."
         }
       ]
     }

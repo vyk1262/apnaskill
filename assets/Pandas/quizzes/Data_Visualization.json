@@ -11,7 +11,8 @@
             "C": "Plotly",
             "D": "Bokeh"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Matplotlib is the foundational plotting library in Python. Pandas' built-in plotting functions (`.plot()`) are directly built on top of Matplotlib, making it the most common and integrated choice for basic visualizations."
         },
         {
           "question": "How can you create a basic line plot of a Pandas Series `s` using Matplotlib?",
@@ -21,7 +22,8 @@
             "C": "s.matplotlib.plot()",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both methods are valid. `plt.plot(s)` uses Matplotlib directly, treating the Series as y-values and its index as x-values. `s.plot(kind='line')` leverages Pandas' built-in plotting functionality, which is a convenient wrapper around Matplotlib."
         },
         {
           "question": "How can you create a bar plot of a Pandas Series `s` showing the counts of unique values?",
@@ -31,7 +33,8 @@
             "C": "plt.bar(s.index, s.values)",
             "D": "s.value_counts().plot(kind='bar')"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "To show the counts of unique values, you first need to calculate those counts using `s.value_counts()`. This returns a new Series where the index contains the unique values and the values are their counts. Then, calling `.plot(kind='bar')` on this resulting Series will create the desired bar plot."
         },
         {
           "question": "Which type of plot is suitable for visualizing the distribution of a single numerical variable?",
@@ -41,7 +44,8 @@
             "C": "Histogram",
             "D": "Bar plot"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A histogram displays the distribution of a numerical variable by dividing the range of values into bins and showing how many observations fall into each bin. This effectively illustrates the shape, center, and spread of the data."
         },
         {
           "question": "How can you create a histogram of a column 'Age' in a Pandas DataFrame `df`?",
@@ -51,7 +55,8 @@
             "C": "df['Age'].plot(kind='hist')",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both methods are effective. `plt.hist(df['Age'])` directly uses Matplotlib's histogram function. `df['Age'].plot(kind='hist')` uses Pandas' convenient plotting interface, which internally calls Matplotlib's histogram."
         },
         {
           "question": "Which type of plot is useful for visualizing the relationship between two numerical variables?",
@@ -61,7 +66,8 @@
             "C": "Scatter plot",
             "D": "Histogram"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A scatter plot displays individual data points on a two-dimensional graph, where each axis represents a numerical variable. This allows you to visually identify patterns, correlations, or clusters between the two variables."
         },
         {
           "question": "How can you create a scatter plot of 'Price' vs 'Quantity' from a Pandas DataFrame `df`?",
@@ -71,7 +77,8 @@
             "C": "df.scatter('Price', 'Quantity')",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both options effectively create a scatter plot. Option A uses Matplotlib's direct `scatter` function, requiring you to pass the x and y data. Option B uses Pandas' `.plot()` method, which is a more integrated way to generate plots directly from a DataFrame by specifying the `x`, `y`, and `kind` arguments."
         },
         {
           "question": "Which type of plot is suitable for showing the proportion of different categories in a dataset?",
@@ -81,7 +88,8 @@
             "C": "Pie chart",
             "D": "Violin plot"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A pie chart represents the proportion of each category as a slice of a circular 'pie'. The size of each slice is proportional to the percentage of the whole that it represents."
         },
         {
           "question": "How can you create a pie chart of the value counts in a Pandas Series `s`?",
@@ -91,7 +99,8 @@
             "C": "s.value_counts().plot(kind='pie')",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All these methods can be used to create a pie chart from value counts. \n- A uses direct Matplotlib. \n- B would work if `s` itself already contained the counts (i.e., was the result of `value_counts()`). \n- C is the most common and robust way to create a pie chart from a categorical Series, by first getting the counts and then plotting them."
         },
         {
           "question": "Which type of plot is used to display the distribution of a numerical variable across different categories?",
@@ -101,7 +110,8 @@
             "C": "Box plot",
             "D": "Histogram"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A box plot (or box-and-whisker plot) visually represents the distribution of numerical data through their quartiles, showing central tendency, spread, and potential outliers. When grouped by categories, it effectively compares distributions across those categories."
         },
         {
           "question": "How can you create a box plot of the 'Price' column for each 'Category' in a DataFrame `df`?",
@@ -111,7 +121,8 @@
             "C": "sns.boxplot(x='Category', y='Price', data=df)",
             "D": "Both A and C (assuming Seaborn is imported as sns)"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `df.boxplot()` (Pandas' built-in method) and `sns.boxplot()` (Seaborn's method) are excellent for this purpose. Seaborn generally produces more aesthetically pleasing plots and offers more flexibility in statistical plots."
         },
         {
           "question": "Which library provides more advanced and aesthetically pleasing statistical visualizations built on top of Matplotlib?",
@@ -121,7 +132,8 @@
             "C": "Seaborn",
             "D": "Pandas"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Seaborn is a Python data visualization library based on Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. It simplifies many complex Matplotlib plots and makes them more beautiful by default."
         },
         {
           "question": "How can you create a violin plot using Seaborn to visualize the distribution of 'Price' by 'Category'?",
@@ -131,7 +143,8 @@
             "C": "df.plot(x='Category', y='Price', kind='violin')",
             "D": "plt.violin(df['Price'], labels=df['Category'])"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Seaborn's `violinplot()` function is specifically designed for this type of visualization. It combines a box plot with a kernel density estimate to show the distribution shape, enabling comparison across categories."
         },
         {
           "question": "What is the purpose of adding labels and titles to your plots?",
@@ -141,7 +154,8 @@
             "C": "To reduce the file size of the image.",
             "D": "To speed up the plotting process."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Labels (for axes) and titles are crucial for effective communication. They inform the viewer about what the plot represents, what variables are being shown, and what the overall message or focus of the visualization is, making it understandable without external explanation."
         },
         {
           "question": "How can you add a title to a Matplotlib plot?",
@@ -151,7 +165,8 @@
             "C": "plot.title('My Plot Title')",
             "D": "axes.title('My Plot Title')"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In Matplotlib's pyplot interface (commonly imported as `plt`), the `plt.title()` function is used to set the title of the current plot."
         },
         {
           "question": "How can you add a label to the x-axis of a Matplotlib plot?",
@@ -161,7 +176,8 @@
             "C": "plot.xlabel('X-axis Label')",
             "D": "axes.xlabel('X-axis Label')"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `plt.xlabel()` function in Matplotlib's pyplot module is used to set the label for the x-axis."
         },
         {
           "question": "What is the purpose of a legend in a plot?",
@@ -171,7 +187,8 @@
             "C": "To save the plot as an image file.",
             "D": "To add annotations to specific data points."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A legend serves as a key to interpret the different colors, markers, or line styles used in a plot, particularly when multiple data series or categories are displayed on the same graph."
         },
         {
           "question": "How can you add a legend to a Matplotlib plot?",
@@ -181,7 +198,8 @@
             "C": "plot.legend()",
             "D": "axes.legend()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `plt.legend()` function displays the legend. For the legend to show meaningful labels, you typically need to provide `label` arguments to the plotting functions (e.g., `plt.plot(x, y, label='My Data')`)."
         },
         {
           "question": "Which library is known for creating interactive plots that can be zoomed and panned in a web browser?",
@@ -191,7 +209,8 @@
             "C": "Plotly",
             "D": "Statsmodels"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Plotly is renowned for its interactive plotting capabilities, allowing users to zoom, pan, hover over data points for details, and export plots as HTML or images. These plots are ideal for web-based dashboards and interactive reports."
         },
         {
           "question": "What is a pair plot (using Seaborn), and when is it useful?",
@@ -201,7 +220,8 @@
             "C": "A plot showing the trend of a variable over time.",
             "D": "A plot showing the proportion of different categories."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A pair plot (or scatterplot matrix) creates a grid of plots, where each numerical variable is plotted against every other numerical variable as a scatter plot, and the diagonal often shows the distribution of each individual variable (e.g., as a histogram or KDE plot). It's incredibly useful for quick exploratory data analysis to understand relationships between multiple variables in a dataset."
         }
       ]
     }

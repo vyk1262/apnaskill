@@ -11,7 +11,8 @@
             "C": "A type of data structure",
             "D": "A programming language"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "In Python, a module is essentially a file (`.py`) containing Python definitions and statements, including functions, classes, and variables, that can be imported and used in other Python programs."
         },
         {
           "question": "How do you import a module in Python?",
@@ -21,7 +22,8 @@
             "C": "load module_name",
             "D": "include module_name"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `import` statement is used to bring a module's contents into the current namespace, making its functions and variables accessible."
         },
         {
           "question": "Which of the following is a standard library module in Python?",
@@ -31,7 +33,8 @@
             "C": "requests",
             "D": "pandas"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `math` module is part of Python's standard library and provides mathematical functions. `numpy`, `requests`, and `pandas` are popular third-party libraries that need to be installed separately."
         },
         {
           "question": "What is the purpose of the __init__.py file in a package?",
@@ -41,7 +44,8 @@
             "C": "To define functions",
             "D": "To import other modules"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `__init__.py` file (which can be empty) indicates to Python that the directory it resides in should be treated as a package, allowing its modules to be imported."
         },
         {
           "question": "How do you import a specific function from a module?",
@@ -51,7 +55,8 @@
             "C": "load function_name from module_name",
             "D": "include function_name from module_name"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `from...import` statement allows you to import specific attributes (like functions, classes, or variables) directly from a module into the current namespace, so you can use them without the module prefix."
         },
         {
           "question": "What will happen if you import the same module multiple times in Python?",
@@ -61,7 +66,8 @@
             "C": "It will slow down the program",
             "D": "It will overwrite the module"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Python's import system is designed to load modules only once to prevent redundant execution and potential issues. Subsequent `import` statements for an already loaded module will simply return the existing module object."
         },
         {
           "question": "Which command is used to list all functions in a module?",
@@ -71,7 +77,8 @@
             "C": "functions()",
             "D": "help()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The built-in `dir()` function, when passed a module name, returns a list of all valid attributes for that object, including functions, classes, variables, and imported modules."
         },
         {
           "question": "How do you create a module in Python?",
@@ -81,7 +88,8 @@
             "C": "By using the import keyword",
             "D": "By using the def keyword"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Any Python file (`.py` extension) that contains executable code (functions, classes, variables, etc.) can be considered a module and can be imported into other Python programs."
         },
         {
           "question": "What is the difference between a module and a package?",
@@ -91,7 +99,8 @@
             "C": "There is no difference",
             "D": "Modules can only contain functions"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A module is a single Python file (`.py`). A package is a directory containing multiple Python modules and an `__init__.py` file, allowing for a hierarchical organization of related modules."
         },
         {
           "question": "Which of the following is used to generate random numbers in Python?",
@@ -101,7 +110,8 @@
             "C": "os",
             "D": "sys"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `random` module is part of Python's standard library and provides functions for generating pseudo-random numbers."
         },
         {
           "question": "How do you create a package in Python?",
@@ -111,7 +121,8 @@
             "C": "By using the import statement",
             "D": "By using the def keyword"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "To create a Python package, you simply create a directory and place an (even empty) `__init__.py` file inside it. This tells Python that the directory should be treated as a package."
         },
         {
           "question": "What does the os module provide?",
@@ -121,7 +132,8 @@
             "C": "File handling functions",
             "D": "Network functions"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `os` module provides a way of using operating system dependent functionality, such as reading or writing to the file system, managing processes, and getting environment variables."
         },
         {
           "question": "What will the following code output?\n\nimport math\nprint(math.sqrt(16))",
@@ -131,7 +143,8 @@
             "C": "Error",
             "D": "4"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `math.sqrt()` function calculates the square root of its argument. The square root of 16 is 4, and `sqrt()` returns a float, so the output is `4.0`."
         },
         {
           "question": "Which statement imports all functions from a module?",
@@ -141,7 +154,8 @@
             "C": "load module_name functions",
             "D": "include all from module_name"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `from...import *` statement imports all public names (functions, classes, variables) from a module directly into the current namespace. While convenient, it's generally discouraged in production code as it can lead to name conflicts."
         },
         {
           "question": "How can you handle errors that occur when importing a module?",
@@ -151,7 +165,8 @@
             "C": "Using a loop",
             "D": "Using a function"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "You can use a `try...except ImportError` block to catch errors that occur if a module cannot be found or loaded (e.g., if it's not installed or there's a syntax error within it)."
         },
         {
           "question": "What does the sys module provide access to?",
@@ -161,7 +176,8 @@
             "C": "Random number generation",
             "D": "File handling"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `sys` module provides access to system-specific parameters and functions, such as command-line arguments, Python interpreter version, and the exit function (`sys.exit()`)."
         },
         {
           "question": "Which of the following functions can be used to get the current working directory?",
@@ -171,7 +187,8 @@
             "C": "os.current_directory()",
             "D": "os.dir()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `os.getcwd()` function (from the `os` module) stands for 'get current working directory' and returns a string representing the current working directory."
         },
         {
           "question": "What is the purpose of the math module?",
@@ -181,7 +198,8 @@
             "C": "To manage system commands",
             "D": "To create GUIs"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `math` module provides access to common mathematical functions and constants, such as `sqrt`, `pi`, `sin`, `cos`, etc."
         }
       ]
     }

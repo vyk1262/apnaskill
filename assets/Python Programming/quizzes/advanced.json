@@ -11,7 +11,8 @@
             "C": "A built-in function",
             "D": "A programming language"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Regular expressions (regex or regexp) are powerful tools used for matching patterns in strings. They consist of a sequence of characters that specify a search pattern, primarily used for 'find and replace' operations."
         },
         {
           "question": "Which module is used in Python for working with regular expressions?",
@@ -21,7 +22,8 @@
             "C": "regexp",
             "D": "pattern"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Python's built-in `re` module provides operations for working with regular expressions, including functions for searching, splitting, and replacing strings based on patterns."
         },
         {
           "question": "What does the re.search() function do?",
@@ -31,7 +33,8 @@
             "C": "Splits a string into a list",
             "D": "Matches a string to a pattern"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `re.search()` function scans through a string looking for the first location where the regular expression pattern produces a match. It returns a match object if successful, and `None` otherwise."
         },
         {
           "question": "Which character is used to denote the start of a string in a regex pattern?",
@@ -41,7 +44,8 @@
             "C": "*",
             "D": "."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "In regular expressions, the `^` (caret) character is an anchor that asserts the position at the start of the string or the start of a line (depending on the mode)."
         },
         {
           "question": "What does the re.sub() function do?",
@@ -51,7 +55,8 @@
             "C": "Splits a string into a list",
             "D": "Matches a string to a pattern"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `re.sub()` function is used to replace all occurrences of a given pattern in a string with a specified replacement string."
         },
         {
           "question": "What is functional programming?",
@@ -61,7 +66,8 @@
             "C": "A type of data structure",
             "D": "A way to handle errors"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Functional programming is a programming paradigm where programs are constructed by applying and composing functions. It treats computation as the evaluation of mathematical functions and avoids changing state and mutable data."
         },
         {
           "question": "Which of the following is a feature of functional programming?",
@@ -71,7 +77,8 @@
             "C": "Side effects",
             "D": "Global variables"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "First-class functions are a key feature of functional programming, meaning functions can be treated like any other variable: they can be passed as arguments, returned from other functions, and assigned to variables. Mutable state, side effects, and global variables are generally avoided or minimized in functional programming."
         },
         {
           "question": "What is a generator in Python?",
@@ -81,7 +88,8 @@
             "C": "A type of data structure",
             "D": "A built-in function"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Generators are functions that return an iterator, but instead of returning values all at once, they yield values one by one, allowing for memory-efficient iteration over potentially very large sequences."
         },
         {
           "question": "How do you create a generator function?",
@@ -91,7 +99,8 @@
             "C": "By using the def statement",
             "D": "By using the lambda statement"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A function becomes a generator function when it uses the `yield` keyword instead of `return` to produce a sequence of results. Each `yield` statement pauses execution and returns a value, resuming from where it left off on the next call."
         },
         {
           "question": "What does the next() function do with a generator?",
@@ -101,7 +110,8 @@
             "C": "Creates a new generator",
             "D": "Stops the generator"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `next()` built-in function (or `.__next__()` method) is used to retrieve the next item from an iterator or generator. When called on a generator, it resumes the generator's execution until the next `yield` statement is encountered."
         },
         {
           "question": "What is an iterator in Python?",
@@ -111,7 +121,8 @@
             "C": "A type of data structure",
             "D": "A programming language"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "An iterator in Python is an object that represents a stream of data. It implements two methods: `__iter__()`, which returns the iterator object itself, and `__next__()`, which returns the next item from the stream or raises `StopIteration` when there are no more items."
         },
         {
           "question": "Which method is used to create an iterator from an iterable?",
@@ -121,7 +132,8 @@
             "C": "iter()",
             "D": "next()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The built-in `iter()` function is used to obtain an iterator from an iterable object (like a list, tuple, string, etc.). For example, `iter([1, 2, 3])` would return an iterator for the list."
         },
         {
           "question": "What is a decorator in Python?",
@@ -131,7 +143,8 @@
             "C": "A built-in function",
             "D": "A data structure"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure. Decorators are typically callable objects that wrap another function or method."
         },
         {
           "question": "How do you apply a decorator to a function?",
@@ -141,7 +154,8 @@
             "C": "decorator_name before the function call",
             "D": "decorator_name() before the function call"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Decorators are applied using the `@` symbol followed by the decorator function's name placed immediately above the `def` statement of the function it's decorating."
         },
         {
           "question": "What does the @staticmethod decorator do?",
@@ -151,7 +165,8 @@
             "C": "Defines a method that requires an instance",
             "D": "Defines a class variable"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `@staticmethod` decorator is used to define a static method within a class. Static methods do not receive an implicit first argument (like `self` for instance methods or `cls` for class methods) and cannot access or modify instance or class state. They behave like regular functions but are logically grouped within a class."
         },
         {
           "question": "What does the functools.wraps() decorator do?",
@@ -161,7 +176,8 @@
             "C": "Logs function calls",
             "D": "Handles exceptions"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "When you use a decorator, it typically replaces the original function. `functools.wraps()` is a decorator itself that, when applied to a wrapper function, copies the name, docstring, and other metadata from the original function to the wrapper, making introspection easier."
         },
         {
           "question": "What is a common use case for decorators?",
@@ -171,7 +187,8 @@
             "C": "Creating data structures",
             "D": "Defining variables"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Decorators are highly versatile. Common use cases include logging function calls, timing function execution, enforcing authentication/authorization, caching results, and validating input parameters, all without altering the core logic of the decorated function."
         }
       ]
     }

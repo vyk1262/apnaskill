@@ -11,7 +11,8 @@
             "C": "The first array is modified in-place by adding the second array.",
             "D": "It results in an error if the shapes are the same."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "When you use the `+` operator on two NumPy arrays of the same shape, it performs an element-wise addition, and the result is a new array containing the sum of corresponding elements from the input arrays. The original arrays are not modified."
         },
         {
           "question": "How do you perform element-wise multiplication of two NumPy arrays `arr1` and `arr2`?",
@@ -21,7 +22,8 @@
             "C": "numpy.multiply(arr1, arr2)",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `arr1 * arr2` (using the multiplication operator) and `numpy.multiply(arr1, arr2)` perform element-wise multiplication of NumPy arrays. `numpy.dot()` is for dot product (matrix multiplication), not element-wise multiplication."
         },
         {
           "question": "What is the result of dividing a NumPy array by a scalar value?",
@@ -31,7 +33,8 @@
             "C": "The scalar is appended to the end of the array.",
             "D": "The array is unchanged."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy uses broadcasting for scalar operations. When you divide a NumPy array by a scalar, the scalar is effectively 'stretched' to match the shape of the array, and each element in the array is divided by that scalar value, resulting in a new array."
         },
         {
           "question": "Which of the following performs element-wise exponentiation of a NumPy array `arr` with a scalar `n`?",
@@ -41,7 +44,8 @@
             "C": "numpy.exp(arr * numpy.log(n))",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All these methods achieve element-wise exponentiation. `arr ** n` is the most common and Pythonic way. `numpy.power(arr, n)` is the dedicated NumPy universal function (ufunc). `numpy.exp(arr * numpy.log(n))` relies on the mathematical identity $x^y = e^{y ln x}$, which is a valid but less direct way to compute powers."
         },
         {
           "question": "How do you check if two NumPy arrays `arr1` and `arr2` have element-wise equality?",
@@ -51,7 +55,8 @@
             "C": "arr1.equals(arr2)",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both the `==` operator and `numpy.equal()` perform element-wise comparison for equality between two NumPy arrays, returning a boolean array of the same shape where `True` indicates equality and `False` indicates inequality at that position."
         },
         {
           "question": "What is the result of comparing two NumPy arrays of the same shape using the `>` operator?",
@@ -61,7 +66,8 @@
             "C": "The first array is modified in-place.",
             "D": "It returns the indices where the condition is True."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Relational operators (`>`, `<`, `>=`, `<=`, `==`, `!=`) when applied to NumPy arrays perform element-wise comparisons and return a new boolean array of the same shape. Each element in the output array is `True` if the condition is met for the corresponding elements, and `False` otherwise."
         },
         {
           "question": "Which NumPy function performs element-wise logical AND between two boolean arrays?",
@@ -71,7 +77,8 @@
             "C": "numpy.logical_and()",
             "D": "numpy.logical_xor()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.logical_and()` performs an element-wise logical AND operation. Similarly, `numpy.logical_or()` for OR, `numpy.logical_not()` for NOT, and `numpy.logical_xor()` for XOR."
         },
         {
           "question": "What does the `~` operator do when applied to a boolean NumPy array?",
@@ -81,7 +88,8 @@
             "C": "It performs element-wise logical NOT.",
             "D": "It performs element-wise logical XOR."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `~` (tilde) operator in NumPy performs an element-wise logical NOT operation on boolean arrays. It inverts the boolean values (True becomes False, False becomes True)."
         },
         {
           "question": "How can you check if at least one element in a boolean NumPy array is True?",
@@ -91,7 +99,8 @@
             "C": "numpy.sum(arr) > 0",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `numpy.any(arr)` and `numpy.sum(arr) > 0` effectively check if at least one element in a boolean array is True. `numpy.any()` is designed specifically for this purpose and is generally preferred for clarity and efficiency. `numpy.sum()` works because `True` is treated as 1 and `False` as 0 in numerical contexts."
         },
         {
           "question": "How can you check if all elements in a boolean NumPy array are True?",
@@ -101,7 +110,8 @@
             "C": "numpy.prod(arr) == 1",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `numpy.all(arr)` and `numpy.prod(arr) == 1` check if all elements in a boolean array are True. `numpy.all()` is the dedicated and idiomatic function. `numpy.prod()` works because if all elements are `True` (which are treated as 1), their product will be 1. If any are `False` (0), the product will be 0."
         },
         {
           "question": "What happens when you perform arithmetic operations on NumPy arrays with different shapes?",
@@ -111,7 +121,8 @@
             "C": "The smaller array is padded with zeros to match the shape of the larger array.",
             "D": "The operation is performed only on the overlapping elements."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy has a powerful feature called broadcasting that allows it to perform operations on arrays of different shapes, provided those shapes are compatible according to broadcasting rules. It does not pad with zeros or only operate on overlapping elements unless the shapes are specifically designed to be that way through broadcasting."
         },
         {
           "question": "According to NumPy's broadcasting rules, two arrays are compatible for an operation if:",
@@ -121,7 +132,8 @@
             "C": "The trailing dimension sizes for both arrays match, or one of them is 1.",
             "D": "Both A and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The core broadcasting rule states that when iterating over the dimension sizes, starting from the trailing (rightmost) dimension, two dimensions are compatible if they are equal, or one of them is 1. If arrays have different numbers of dimensions, the shape of the smaller array is padded with ones on its left side to match the larger array's number of dimensions, after which the right-to-left comparison begins. Therefore, having the exact same shape is a valid (and simplest) case of compatibility, and the trailing dimension rule is the general rule."
         },
         {
           "question": "Consider an array `a` with shape (3, 1) and an array `b` with shape (1, 4). What will be the shape of `a + b` after broadcasting?",
@@ -131,7 +143,8 @@
             "C": "(3, 4)",
             "D": "(4, 3)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Applying broadcasting rules from right to left: \n- Last dimension: 1 and 4. One is 1, so compatible. Resulting dimension is max(1, 4) = 4.\n- First dimension: 3 and 1. One is 1, so compatible. Resulting dimension is max(3, 1) = 3.\nThe final broadcasted shape is (3, 4)."
         },
         {
           "question": "How can you add a constant value to all elements of a NumPy array?",
@@ -141,7 +154,8 @@
             "C": "numpy.add(array, constant)",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `array + constant` (using the operator) and `numpy.add(array, constant)` (using the universal function) will add the constant value to each element of the NumPy array due to broadcasting. The operator is syntactic sugar for the ufunc."
         },
         {
           "question": "Which NumPy function calculates the sum of all elements in an array?",
@@ -151,7 +165,8 @@
             "C": "array.sum()",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `numpy.sum(array)` and the array method `array.sum()` calculate the sum of all elements in a NumPy array. These are equivalent for this purpose."
         },
         {
           "question": "How can you calculate the sum of elements along a specific axis of a NumPy array?",
@@ -161,7 +176,8 @@
             "C": "numpy.sum(array, dimension=0)",
             "D": "sum(array[axis])"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "To sum along a specific axis, you use the `axis` argument. `array.sum(axis=0)` sums along columns (reducing rows), and `array.sum(axis=1)` sums along rows (reducing columns). `numpy.sum(array, axis=None)` (or just `numpy.sum(array)`) sums all elements without regard to axes."
         },
         {
           "question": "Which NumPy function finds the maximum value in an array?",
@@ -171,7 +187,8 @@
             "C": "numpy.maximum(array)",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `numpy.max(array)` and the array method `array.max()` return the maximum value in an array. `numpy.maximum()` is an element-wise maximum comparison between two arrays, not a reduction operation to find the single maximum value."
         },
         {
           "question": "How do you find the index of the maximum value in a 1D NumPy array?",
@@ -181,7 +198,8 @@
             "C": "numpy.where(array == numpy.max(array))[0][0]",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All listed methods can find the index of the maximum value in a 1D array. `numpy.argmax()` and `array.argmax()` are the most direct and idiomatic ways to get the index of the maximum element. `numpy.where(array == numpy.max(array))` returns a tuple of arrays, one for each dimension, containing the indices where the condition is True. For a 1D array, `[0][0]` gets the first index."
         },
         {
           "question": "Which NumPy function calculates the dot product of two arrays?",
@@ -191,7 +209,8 @@
             "C": "numpy.dot()",
             "D": "numpy.matmul()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.dot()` is the classic function for calculating the dot product of two arrays. For 2-D arrays, it is matrix multiplication. For 1-D arrays, it is the inner product. `numpy.matmul()` (and the `@` operator) was introduced later and is specifically for matrix multiplication, with slightly different broadcasting rules for higher-dimensional arrays compared to `dot()`."
         },
         {
           "question": "What is the difference between `numpy.dot()` and the `@` operator for matrix multiplication in NumPy?",
@@ -201,7 +220,8 @@
             "C": "`numpy.dot()` only works for 1D arrays, while `@` works for higher dimensions.",
             "D": "There is no difference; they are aliases of each other."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `@` operator (introduced in Python 3.5 and NumPy 1.10.0) is a dedicated infix operator for matrix multiplication. While `numpy.dot()` can perform matrix multiplication, `numpy.matmul()` and the `@` operator are specifically designed for it and handle broadcasting slightly differently, especially with higher-dimensional arrays. The `@` operator is generally preferred for clarity and consistency when performing matrix products."
         }
       ]
     }

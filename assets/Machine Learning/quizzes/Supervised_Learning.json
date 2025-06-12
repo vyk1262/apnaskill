@@ -11,7 +11,8 @@
             "C": "Learning a mapping from input features to output targets based on labeled examples.",
             "D": "Discovering hidden patterns in data without any guidance."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Supervised learning algorithms rely on **labeled data**, meaning each input example is paired with its correct output. The model learns a function that maps inputs to outputs by analyzing these known input-output pairs."
         },
         {
           "question": "What are the two main types of supervised learning problems?",
@@ -21,7 +22,8 @@
             "C": "Association rule mining and anomaly detection.",
             "D": "Generative and discriminative modeling."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The two primary categories of supervised learning problems are **Classification** (predicting a discrete category) and **Regression** (predicting a continuous numerical value)."
         },
         {
           "question": "In a classification problem, what type of output is the model trying to predict?",
@@ -31,7 +33,8 @@
             "C": "A probability distribution over possible outcomes.",
             "D": "A sequence of values."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **classification** model predicts a **discrete category or class label**. For example, classifying an email as 'spam' or 'not spam', or an image as 'cat', 'dog', or 'bird'."
         },
         {
           "question": "Which of the following algorithms is commonly used for classification?",
@@ -41,7 +44,8 @@
             "C": "Support Vector Machines (SVM)",
             "D": "Principal Component Analysis (PCA)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Support Vector Machines (SVMs)** are powerful and versatile supervised learning models primarily used for classification tasks. Linear Regression is for regression, K-Means is for clustering (unsupervised), and PCA is for dimensionality reduction (unsupervised)."
         },
         {
           "question": "In a regression problem, what type of output is the model trying to predict?",
@@ -51,7 +55,8 @@
             "C": "A binary outcome (0 or 1).",
             "D": "A set of clusters."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **regression** model aims to predict a **continuous numerical value**. Examples include predicting house prices, stock values, or temperature."
         },
         {
           "question": "Which of the following algorithms is commonly used for regression?",
@@ -61,7 +66,8 @@
             "C": "K-Nearest Neighbors (KNN)",
             "D": "Linear Regression"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "**Linear Regression** is a fundamental supervised learning algorithm specifically designed for **regression** problems, modeling a linear relationship between input features and a continuous output. Logistic Regression is for classification, and Decision Trees and KNN can be used for both but Linear Regression is most strongly associated with the regression task among the choices."
         },
         {
           "question": "What is the role of a 'decision boundary' in a classification model?",
@@ -71,7 +77,8 @@
             "C": "To visualize the distribution of the data.",
             "D": "To reduce the dimensionality of the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In classification, a **decision boundary** is a hypersurface that separates the different classes in the feature space. The model learns this boundary to classify new, unseen data points into one of the predefined categories."
         },
         {
           "question": "What is the 'hypothesis space' in supervised learning?",
@@ -81,7 +88,8 @@
             "C": "The set of all possible functions or models that the learning algorithm can learn.",
             "D": "The space where the data points are plotted."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The **hypothesis space** refers to the collection of all possible functions or models that a learning algorithm is capable of selecting from to best fit the training data and make predictions."
         },
         {
           "question": "What is the purpose of a 'loss function' in supervised learning?",
@@ -91,7 +99,8 @@
             "C": "To select the best features for the model.",
             "D": "To prevent overfitting."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "During training, a **loss function** (or cost function) measures how well the model's predictions align with the actual target values. The goal of the learning algorithm is to minimize this loss, thereby improving the model's accuracy."
         },
         {
           "question": "Which of the following is a common loss function used in linear regression?",
@@ -101,7 +110,8 @@
             "C": "Hinge Loss",
             "D": "Gini Impurity"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Mean Squared Error (MSE)** is a widely used loss function for **linear regression**. It calculates the average of the squared differences between predicted and actual values. Cross-Entropy Loss and Hinge Loss are typically for classification, and Gini Impurity is used in decision trees."
         },
         {
           "question": "Which of the following is a common loss function used in binary classification?",
@@ -111,7 +121,8 @@
             "C": "Binary Cross-Entropy Loss (Log Loss)",
             "D": "R-squared"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Binary Cross-Entropy Loss** (also known as Log Loss) is the standard loss function for **binary classification** problems, particularly when the model outputs probabilities between 0 and 1. MAE, MSE, and R-squared are typically used for regression."
         },
         {
           "question": "What is the role of an 'optimizer' in training a supervised learning model?",
@@ -121,7 +132,8 @@
             "C": "To preprocess the input data.",
             "D": "To evaluate the model's performance."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "An **optimizer** is an algorithm or function that adjusts the **parameters** (like weights and biases) of a machine learning model during training. Its primary goal is to **minimize the loss function**, thereby making the model's predictions more accurate over time."
         },
         {
           "question": "What is 'regularization' and why is it used in supervised learning?",
@@ -131,7 +143,8 @@
             "C": "A method for handling missing values in the data.",
             "D": "A way to visualize the model's decision boundaries."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Regularization** is a crucial technique used in supervised learning to **prevent overfitting**. It adds a penalty to the loss function that discourages the model from assigning excessive importance to specific features or becoming too complex, promoting better generalization to unseen data."
         },
         {
           "question": "What are L1 and L2 regularization?",
@@ -141,7 +154,8 @@
             "C": "Methods for adding a penalty term to the loss function based on the absolute magnitude (L1) or the squared magnitude (L2) of the model's weights.",
             "D": "Algorithms for clustering high-dimensional data."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**L1 regularization (Lasso)** adds a penalty proportional to the absolute value of the weights, which can lead to sparse models and effectively perform feature selection. **L2 regularization (Ridge)** adds a penalty proportional to the square of the magnitude of the weights, which helps to prevent large weights and stabilize the model."
         },
         {
           "question": "What is 'cross-validation' and why is it important in supervised learning?",
@@ -151,7 +165,8 @@
             "C": "A way to reduce the dimensionality of the data.",
             "D": "A technique for visualizing the model's predictions."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Cross-validation** is a robust technique for assessing a model's **generalization performance**. It involves repeatedly splitting the dataset into training and validation sets, training the model on some folds, and testing on others. This provides a more reliable estimate of how the model will perform on unseen data than a single train-test split."
         },
         {
           "question": "What are some common evaluation metrics for classification models?",
@@ -161,7 +176,8 @@
             "C": "Silhouette score, Davies-Bouldin index.",
             "D": "Explained variance ratio."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Common evaluation metrics for **classification** models include **Accuracy**, **Precision**, **Recall**, **F1-score**, and **Area Under the Receiver Operating Characteristic Curve (AUC)**. These metrics provide different insights into the model's ability to correctly classify instances."
         },
         {
           "question": "What are some common evaluation metrics for regression models?",
@@ -171,7 +187,8 @@
             "C": "Entropy, Gini index.",
             "D": "Number of clusters, inertia."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Common evaluation metrics for **regression** models include **Mean Squared Error (MSE)**, **Mean Absolute Error (MAE)**, and **R-squared**. These metrics quantify the difference between predicted and actual continuous values."
         },
         {
           "question": "What is the difference between a linear and a non-linear supervised learning model?",
@@ -181,7 +198,8 @@
             "C": "Non-linear models are always more accurate than linear models.",
             "D": "Linear models are used for classification, while non-linear models are for regression."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Linear models** (e.g., Linear Regression, Logistic Regression) assume and learn a straight-line or hyperplane relationship between inputs and outputs. **Non-linear models** (e.g., Decision Trees, Neural Networks) can capture more intricate, curved, or complex relationships in the data, making them suitable for more complex problems."
         },
         {
           "question": "What is the role of feature importance in some supervised learning models (e.g., decision trees, random forests)?",
@@ -191,7 +209,8 @@
             "C": "To encode categorical features into numerical form.",
             "D": "To reduce the dimensionality of the feature space."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Feature importance** measures how much each input feature contributes to the model's predictions. In models like decision trees and random forests, it helps in understanding which features are most influential and can aid in feature selection or model interpretation."
         },
         {
           "question": "What is the goal of 'hyperparameter tuning' in supervised learning?",
@@ -201,7 +220,8 @@
             "C": "To select the best algorithm for the given task.",
             "D": "To interpret the learned model parameters."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Hyperparameter tuning** is the process of finding the best set of hyperparameters for a machine learning model. Since hyperparameters are set before training, tuning involves experimenting with different values to optimize the model's performance on a validation set."
         }
       ]
     }

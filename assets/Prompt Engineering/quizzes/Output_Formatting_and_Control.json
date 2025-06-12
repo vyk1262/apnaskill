@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Output_Formatting_and_Control",
+      "questions": [
         {
-            "topic": "Output_Formatting_and_Control",
-            "questions": []
+          "question": "What is the primary reason for explicitly controlling the AI's output format?",
+          "options": {
+            "A": "To make the AI respond faster.",
+            "B": "To ensure the AI's response is structured, consistent, and easily parsable by humans or other systems, making it useful for integration or specific presentation needs.",
+            "C": "To reduce the AI's memory usage.",
+            "D": "To force the AI to generate longer responses."
+          },
+          "correct_answer": "B",
+          "explanation": "Controlling the output format is crucial for utility. Without it, responses might be unstructured, making them difficult to process programmatically or to extract specific information from."
+        },
+        {
+          "question": "Which instruction would you use to get an AI to return data in a structured, machine-readable format?",
+          "options": {
+            "A": "''Write a poem.''",
+            "B": "''Provide the answer in JSON format, with keys 'name' and 'age'.''",
+            "C": "''Summarize this text.''",
+            "D": "''Explain this concept in simple terms.''"
+          },
+          "correct_answer": "B",
+          "explanation": "Explicitly asking for JSON, XML, or YAML, and even providing the schema, is a common and effective way to control structured outputs for programmatic use."
+        },
+        {
+          "question": "How can you control the 'length' of an AI's response?",
+          "options": {
+            "A": "By setting a timer for the AI.",
+            "B": "By specifying word counts (e.g., 'max 100 words'), sentence counts (e.g., 'in 3 sentences'), or paragraph counts.",
+            "C": "By using a very long prompt.",
+            "D": "By asking the AI to decide its own length."
+          },
+          "correct_answer": "B",
+          "explanation": "Direct numerical constraints on length are highly effective. Models are generally good at adhering to these if the requested length is reasonable for the content."
+        },
+        {
+          "question": "To get a response in a list format, what kind of instruction would you use?",
+          "options": {
+            "A": "''Write a full essay.''",
+            "B": "''Provide your answer as a numbered list'' or ''Use bullet points for each item.''",
+            "C": "''Give me a single paragraph.''",
+            "D": "''Generate a table.''"
+          },
+          "correct_answer": "B",
+          "explanation": "Explicitly asking for 'numbered list' or 'bullet points' directs the AI to use appropriate markdown or plain text formatting for listing items."
+        },
+        {
+          "question": "What is the benefit of specifying the 'tone' of the AI's output (e.g., formal, casual, empathetic)?",
+          "options": {
+            "A": "It makes the AI's response longer.",
+            "B": "It ensures the output aligns with the intended audience or context, improving communication and user experience.",
+            "C": "It significantly reduces token usage.",
+            "D": "It forces the AI to use only simple words."
+          },
+          "correct_answer": "B",
+          "explanation": "Tone control is critical for communication. A professional report requires a formal tone, while a friendly chatbot needs a casual and empathetic one."
+        },
+        {
+          "question": "How can 'delimited output' (e.g., using `'''` or `<tag>`) help in controlling the AI's response?",
+          "options": {
+            "A": "It tells the AI to ignore content inside the delimiters.",
+            "B": "It clearly separates distinct sections of the output or input, making it easier for the AI to understand structure and adhere to specific formatting for each section.",
+            "C": "It is purely for aesthetic purposes.",
+            "D": "It only works for numerical data."
+          },
+          "correct_answer": "B",
+          "explanation": "Delimiters like triple quotes or XML tags provide clear boundaries for the AI, indicating where a specific block of text begins and ends, which is particularly useful when processing or generating multiple structured elements."
+        },
+        {
+          "question": "To ensure the AI's output is 'consistent' across multiple queries for the same type of task, what output control method is useful?",
+          "options": {
+            "A": "Varying the prompt frequently.",
+            "B": "Using clear, repeatable formatting instructions and possibly few-shot examples that demonstrate the desired consistency.",
+            "C": "Asking the AI to be creative.",
+            "D": "Allowing the AI to choose its own format."
+          },
+          "correct_answer": "B",
+          "explanation": "Consistency is achieved by precise instructions and demonstrating the desired pattern through examples. This helps the AI learn and replicate the format reliably."
+        },
+        {
+          "question": "What is the purpose of instructing the AI to provide a 'confidence score' or 'certainty level' with its answer?",
+          "options": {
+            "A": "It makes the AI more articulate.",
+            "B": "It allows the user to gauge the AI's reliability and determine if further verification is needed for critical information.",
+            "C": "It's a way to make the response longer.",
+            "D": "It has no practical application."
+          },
+          "correct_answer": "B",
+          "explanation": "For sensitive or factual queries, knowing the AI's confidence can be valuable for decision-making and risk assessment. E.g., 'Answer the question, then state your confidence level on a scale of 1-5'."
+        },
+        {
+          "question": "How can you instruct the AI to generate output that is 'extractive' rather than 'abstractive' when summarizing?",
+          "options": {
+            "A": "''Write a creative summary.''",
+            "B": "''Summarize the following text using only sentences directly from the original text.''",
+            "C": "''Rephrase the text completely.''",
+            "D": "''Make the summary as long as possible.''"
+          },
+          "correct_answer": "B",
+          "explanation": "Explicitly instructing the AI to use original sentences forces an extractive summary, which can be important for factual accuracy or to avoid potential hallucinations from abstractive summarization."
+        },
+        {
+          "question": "What is 'schema enforcement' in output control?",
+          "options": {
+            "A": "Allowing the AI to generate any format.",
+            "B": "Instructing the AI to strictly adhere to a predefined data structure (e.g., a specific JSON schema, XML structure) for its output.",
+            "C": "Ensuring the AI's response is grammatically correct.",
+            "D": "Limiting the AI's vocabulary."
+          },
+          "correct_answer": "B",
+          "explanation": "Schema enforcement ensures that the AI's output can be reliably parsed and used by downstream applications, making integration seamless."
+        },
+        {
+          "question": "When would you instruct the AI to use a 'specific language' (e.g., 'Respond in French') in its output?",
+          "options": {
+            "A": "Only if the prompt is in that language.",
+            "B": "When the desired output needs to be in a language different from the input, or to ensure consistency in a multilingual application.",
+            "C": "To make the AI's response more creative.",
+            "D": "To increase the AI's processing speed."
+          },
+          "correct_answer": "B",
+          "explanation": "Language control is essential for global applications or when direct translation is required. It's a fundamental output control."
+        },
+        {
+          "question": "How can you control the 'level of detail' in an AI's response?",
+          "options": {
+            "A": "By always asking simple questions.",
+            "B": "By specifying the target audience (e.g., 'Explain this to a 5-year-old', 'Provide an in-depth analysis for experts') or directly requesting a summary/elaboration.",
+            "C": "By making the prompt very short.",
+            "D": "By using many examples."
+          },
+          "correct_answer": "B",
+          "explanation": "Direct instructions about the target audience or the required level of detail (e.g., 'Briefly explain', 'Provide a comprehensive overview') guide the AI to adjust the complexity and depth of its response."
+        },
+        {
+          "question": "What is the effect of telling the AI to 'Avoid jargon' or 'Use simple language'?",
+          "options": {
+            "A": "It makes the response more technical.",
+            "B": "It controls the complexity of the vocabulary, making the output accessible to a broader audience.",
+            "C": "It has no effect on language.",
+            "D": "It forces the AI to be sarcastic."
+          },
+          "correct_answer": "B",
+          "explanation": "These instructions are key for ensuring readability and comprehension for non-expert audiences, which is a critical aspect of output control."
+        },
+        {
+          "question": "To obtain a list of steps for a process, what output format instruction would be most appropriate?",
+          "options": {
+            "A": "''Write a single paragraph.''",
+            "B": "''Provide the steps as a numbered list.''",
+            "C": "''Generate a poem.''",
+            "D": "''Create a table with random data.''"
+          },
+          "correct_answer": "B",
+          "explanation": "Numbered lists are ideal for conveying sequential steps, making the information clear and easy to follow."
+        },
+        {
+          "question": "What is the purpose of instructing the AI to use 'Markdown formatting'?",
+          "options": {
+            "A": "To make the text unreadable.",
+            "B": "To ensure the output is well-structured with headings, bullet points, bold text, etc., for improved readability and integration into platforms that support Markdown.",
+            "C": "To prevent the AI from generating text.",
+            "D": "To increase the file size of the output."
+          },
+          "correct_answer": "B",
+          "explanation": "Markdown is widely used for formatted text. Instructing the AI to use it enables rich-text responses that are easy to consume and render."
+        },
+        {
+          "question": "How can you instruct the AI to generate a 'table' as its output?",
+          "options": {
+            "A": "''Write a summary.''",
+            "B": "''Present the data in a table format with columns for [X, Y, Z].''",
+            "C": "''Provide a bulleted list.''",
+            "D": "''Generate a JSON object.''"
+          },
+          "correct_answer": "B",
+          "explanation": "Explicitly requesting a table and defining its columns helps the AI structure tabular data accurately, often using Markdown table syntax."
+        },
+        {
+          "question": "When controlling output, what is the 'no-op' instruction?",
+          "options": {
+            "A": "An instruction that always makes the AI respond.",
+            "B": "An instruction telling the AI to respond with a specific phrase or nothing at all if certain conditions are not met, preventing unwanted generation.",
+            "C": "An instruction to perform an operation.",
+            "D": "An instruction that causes an error."
+          },
+          "correct_answer": "B",
+          "explanation": "No-op (no operation) is useful for conditional responses. E.g., 'If the user asks about X, respond 'I cannot discuss X', otherwise answer normally.'"
+        },
+        {
+          "question": "What is 'repetition penalty' in the context of controlling AI output generation?",
+          "options": {
+            "A": "A prompt instruction that tells the AI to repeat itself.",
+            "B": "A model parameter (not directly a prompt instruction) that discourages the AI from generating repetitive phrases or words, promoting more diverse and natural language.",
+            "C": "A method to increase repetition in output.",
+            "D": "A way to make the AI generate only one word."
+          },
+          "correct_answer": "B",
+          "explanation": "While not part of the prompt itself, 'repetition penalty' is a common decoding parameter used at the API level to prevent the AI from getting stuck in loops or generating redundant text, thereby controlling the *quality* of the output."
+        },
+        {
+          "question": "True or False: If you don't specify an output format, the AI will always choose the most appropriate one for your task.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While AIs are often good at inferring intent, they might default to a general conversational style or a plain text format. Explicit instructions are usually necessary to guarantee a specific and usable output format, especially for structured data."
+        },
+        {
+          "question": "How can you control the 'level of creativity' or 'randomness' in an AI's output?",
+          "options": {
+            "A": "By explicitly telling it to be creative or factual, and using parameters like 'temperature' or 'top_p' (if available at the API level).",
+            "B": "By only providing very rigid instructions.",
+            "C": "By making the prompt extremely short.",
+            "D": "By always asking the same question."
+          },
+          "correct_answer": "A",
+          "explanation": "Prompt instructions like 'Be creative' or 'Stick strictly to facts' guide the AI. Additionally, API parameters like 'temperature' (higher for more creativity, lower for more determinism) or 'top_p' directly control the randomness of token generation."
         }
-    ]
+      ]
+    }
+  ]
 }
