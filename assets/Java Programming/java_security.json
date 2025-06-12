@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_security",
+      "questions": [
+        {
+          "question": "What is one of the primary concerns addressed by Java's security model?",
+          "options": {
+            "A": "Ensuring lightning-fast execution speed for all applications.",
+            "B": "Preventing unauthorized access to system resources and protecting against malicious code.",
+            "C": "Simplifying database interactions for developers.",
+            "D": "Automatically managing memory allocation and deallocation."
+          },
+          "correct_answer": "B",
+          "explanation": "Java's security model (historically the 'sandbox' model) is primarily designed to **prevent unauthorized access to system resources** (like files, network connections, system properties) and to protect systems from potentially malicious code, especially when running code from untrusted sources (e.g., applets)."
+        },
+        {
+          "question": "The traditional Java 'Sandbox Security Model' primarily aims to:",
+          "options": {
+            "A": "Isolate applications from each other.",
+            "B": "Restrict the actions of untrusted code to a safe environment.",
+            "C": "Encrypt all data transmitted over a network.",
+            "D": "Provide secure communication between JVMs."
+          },
+          "correct_answer": "B",
+          "explanation": "The Java 'Sandbox Security Model' aims to execute untrusted code in a **restricted environment (the 'sandbox')** with limited permissions. This ensures that the code cannot perform malicious operations like deleting files, accessing network resources, or modifying system properties without explicit permission."
+        },
+        {
+          "question": "Which of the following is a common web application vulnerability where malicious code is injected into input fields to manipulate database queries?",
+          "options": {
+            "A": "Cross-Site Scripting (XSS)",
+            "B": "Denial of Service (DoS)",
+            "C": "SQL Injection",
+            "D": "Buffer Overflow"
+          },
+          "correct_answer": "C",
+          "explanation": "**SQL Injection** is a code injection technique where malicious SQL statements are inserted into an entry field for execution (e.g., to dump database contents to the attacker). It's prevented in Java by using `PreparedStatement` with parameterized queries instead of raw `Statement`."
+        },
+        {
+          "question": "What is the most effective way to prevent SQL Injection in Java JDBC applications?",
+          "options": {
+            "A": "Using `Statement` objects and concatenating strings carefully.",
+            "B": "Implementing a custom SQL parser to validate input.",
+            "C": "Using `PreparedStatement` with parameterized queries.",
+            "D": "Encrypting the entire database."
+          },
+          "correct_answer": "C",
+          "explanation": "The most robust defense against SQL Injection in JDBC is to use **`PreparedStatement` with parameterized queries**. This separates the SQL command from the data, ensuring that user input is treated as literal data, not as executable SQL code."
+        },
+        {
+          "question": "Which type of web vulnerability involves injecting malicious client-side scripts into web pages viewed by other users?",
+          "options": {
+            "A": "SQL Injection",
+            "B": "Cross-Site Request Forgery (CSRF)",
+            "C": "Cross-Site Scripting (XSS)",
+            "D": "Directory Traversal"
+          },
+          "correct_answer": "C",
+          "explanation": "**Cross-Site Scripting (XSS)** is a web security vulnerability where attackers inject malicious client-side scripts (usually JavaScript) into web pages viewed by other users. This is typically prevented by proper input validation and output encoding of user-supplied data before it's displayed on a web page."
+        },
+        {
+          "question": "What is the main difference between 'Authentication' and 'Authorization'?",
+          "options": {
+            "A": "Authentication checks if a user is allowed to do something; Authorization verifies who the user is.",
+            "B": "Authentication verifies who the user is; Authorization checks what the user is allowed to do.",
+            "C": "Authentication is for public systems; Authorization is for private systems.",
+            "D": "They are synonymous terms."
+          },
+          "correct_answer": "B",
+          "explanation": "**Authentication** is the process of verifying the identity of a user (proving 'who you are'). **Authorization** is the process of determining what an authenticated user is permitted to do or access ('what you are allowed to do')."
+        },
+        {
+          "question": "In cryptography, what is 'Hashing' primarily used for?",
+          "options": {
+            "A": "To encrypt data for secure communication.",
+            "B": "To create unique, fixed-size fingerprints of data for integrity checking or password storage.",
+            "C": "To compress large files for storage.",
+            "D": "To digitally sign documents."
+          },
+          "correct_answer": "B",
+          "explanation": "**Hashing** is a one-way cryptographic function that takes an input (e.g., a password, a file) and produces a fixed-size string of characters, called a hash value or digest. It's primarily used for **integrity checking** (detecting tampering) and **securely storing passwords** (by storing the hash, not the password itself)."
+        },
+        {
+          "question": "When hashing passwords, what is the purpose of adding a 'Salt'?",
+          "options": {
+            "A": "To make the hash shorter.",
+            "B": "To make the hashing process faster.",
+            "C": "To prevent 'rainbow table' attacks and ensure identical passwords have different hashes.",
+            "D": "To encrypt the hash value."
+          },
+          "correct_answer": "C",
+          "explanation": "A **salt** is a random, unique string of data added to a password before it's hashed. Its purpose is to **prevent rainbow table attacks** (pre-computed hash tables) and to ensure that two users with the same password will have different stored hashes, making them harder to guess or crack in bulk."
+        },
+        {
+          "question": "What is the main difference between Symmetric and Asymmetric encryption?",
+          "options": {
+            "A": "Symmetric uses one key; Asymmetric uses two (public and private).",
+            "B": "Symmetric is for small data; Asymmetric is for large data.",
+            "C": "Symmetric is less secure; Asymmetric is more secure.",
+            "D": "Symmetric is for signing; Asymmetric is for encryption."
+          },
+          "correct_answer": "A",
+          "explanation": "**Symmetric encryption** uses a single, shared secret key for both encryption and decryption. **Asymmetric encryption** (also known as public-key cryptography) uses a pair of mathematically related keys: a public key for encryption and a private key for decryption (or vice-versa for digital signatures)."
+        },
+        {
+          "question": "What is the purpose of a 'Digital Signature'?",
+          "options": {
+            "A": "To encrypt a document so only the sender can read it.",
+            "B": "To prove the integrity and authenticity (origin) of a digital message or document.",
+            "C": "To hide a message within another message.",
+            "D": "To compress data before transmission."
+          },
+          "correct_answer": "B",
+          "explanation": "A **Digital Signature** uses asymmetric cryptography to ensure the **authenticity** (who sent it) and **integrity** (has it been tampered with) of a digital message or document. It does not encrypt the entire message, but rather a hash of the message, signed with the sender's private key."
+        },
+        {
+          "question": "What does SSL/TLS primarily provide for network communication?",
+          "options": {
+            "A": "Faster data transfer speeds.",
+            "B": "Encryption, authentication, and data integrity.",
+            "C": "Guaranteed delivery of packets.",
+            "D": "Load balancing across servers."
+          },
+          "correct_answer": "B",
+          "explanation": "**SSL (Secure Sockets Layer)** and its successor **TLS (Transport Layer Security)** are cryptographic protocols designed to provide communication security over a computer network. They ensure **encryption** (confidentiality), **authentication** (verifying identity), and **data integrity** (detecting tampering) for data exchanged between a client and server."
+        },
+        {
+          "question": "Which Java access modifier is generally considered the safest default for class members to support encapsulation and limit direct access?",
+          "options": {
+            "A": "public",
+            "B": "protected",
+            "C": "private",
+            "D": "default (package-private)"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`private`** access modifier offers the highest level of encapsulation, limiting visibility of fields and methods strictly to within the declaring class. This aligns with the principle of information hiding and is generally the safest default, forcing interaction via controlled public methods (getters/setters)."
+        },
+        {
+          "question": "Why is input validation crucial for application security?",
+          "options": {
+            "A": "To make the application run faster.",
+            "B": "To ensure user input is always in English.",
+            "C": "To protect against malicious input that could lead to vulnerabilities like injection attacks or buffer overflows.",
+            "D": "To automatically correct spelling errors in user input."
+          },
+          "correct_answer": "C",
+          "explanation": "**Input validation** is a fundamental security practice. It ensures that data received from external sources (like user input, network requests) conforms to expected formats and ranges. This prevents malicious input from exploiting vulnerabilities such as SQL injection, XSS, or buffer overflows by ensuring only valid data is processed."
+        },
+        {
+          "question": "What is the 'Principle of Least Privilege' in security?",
+          "options": {
+            "A": "Giving all users minimal access to the system.",
+            "B": "Granting only the minimum necessary access rights to a user or process required to perform its function.",
+            "C": "Limiting the number of concurrent users on a system.",
+            "D": "Allowing public access to all non-sensitive data."
+          },
+          "correct_answer": "B",
+          "explanation": "The **Principle of Least Privilege (PoLP)** dictates that a user, program, or process should be given only the minimum set of permissions or access rights necessary to perform its legitimate functions. This minimizes the potential damage if a system component or user account is compromised."
+        },
+        {
+          "question": "When storing sensitive data like API keys or database credentials in a Java application, what is a recommended practice?",
+          "options": {
+            "A": "Hardcoding them directly in the source code.",
+            "B": "Storing them in plain text files in the application's deployment directory.",
+            "C": "Using environment variables, configuration services, or secure vaults, and encrypting them if stored in files.",
+            "D": "Committing them to version control (e.g., Git) for easy access."
+          },
+          "correct_answer": "C",
+          "explanation": "Hardcoding (A), plain text files (B), and committing to version control (D) are all highly insecure practices. Recommended practices include using **environment variables**, dedicated **configuration management services**, or **secure vaults** (like HashiCorp Vault), and always **encrypting** sensitive data if it must be stored in files."
+        },
+        {
+          "question": "What is the purpose of a 'Vulnerability' in cybersecurity?",
+          "options": {
+            "A": "A tool used to scan for malicious code.",
+            "B": "A weakness in a system that can be exploited by a threat actor.",
+            "C": "A type of attack that encrypts data.",
+            "D": "A program designed to remove malware."
+          },
+          "correct_answer": "B",
+          "explanation": "A **Vulnerability** is a weakness or flaw in a system, application, or process that can be exploited by a threat actor (attacker) to gain unauthorized access, cause damage, or disrupt operations. Examples include unpatched software, weak passwords, or insecure code."
+        },
+        {
+          "question": "Which standard Java exception is typically thrown when a security violation is detected by the Java Security Manager?",
+          "options": {
+            "A": "IOException",
+            "B": "IllegalArgumentException",
+            "C": "SecurityException",
+            "D": "UnsupportedOperationException"
+          },
+          "correct_answer": "C",
+          "explanation": "A **`java.lang.SecurityException`** is thrown by the Java Security Manager (if active) to indicate a security violation. This happens when code attempts to perform an action that is not permitted by the currently active security policy."
+        },
+        {
+          "question": "What does a 'Penetration Test' (Pen Test) typically involve?",
+          "options": {
+            "A": "Writing unit tests for application code.",
+            "B": "Simulating a cyberattack on a system to identify vulnerabilities.",
+            "C": "Automated scanning of code for syntax errors.",
+            "D": "Monitoring network traffic for performance issues."
+          },
+          "correct_answer": "B",
+          "explanation": "A **Penetration Test** (or 'pen test') is a simulated cyberattack against a computer system, network, or web application to check for exploitable vulnerabilities. The goal is to find security weaknesses before malicious attackers do."
+        },
+        {
+          "question": "Why should logging user input directly without sanitization or neutralization be avoided?",
+          "options": {
+            "A": "It consumes too much disk space.",
+            "B": "It makes logs harder to read.",
+            "C": "It can lead to log injection, allowing attackers to forge log entries or inject malicious content into log viewing tools.",
+            "D": "It slows down the logging process."
+          },
+          "correct_answer": "C",
+          "explanation": "Logging unsanitized user input directly can lead to **log injection vulnerabilities**. An attacker might insert malicious characters (like newlines or control characters) into input, which then get written to the log, potentially confusing log parsers, forging log entries, or even injecting scripts into log viewing interfaces."
+        },
+        {
+          "question": "Which type of attack involves an attacker tricking a victim into performing an action (e.g., submitting a form, changing a password) on a trusted website where they are already authenticated?",
+          "options": {
+            "A": "Denial of Service (DoS)",
+            "B": "SQL Injection",
+            "C": "Cross-Site Request Forgery (CSRF)",
+            "D": "Brute Force Attack"
+          },
+          "correct_answer": "C",
+          "explanation": "**Cross-Site Request Forgery (CSRF)** is an attack that forces an end user to execute unwanted actions on a web application in which they're currently authenticated. CSRF protection often involves using anti-CSRF tokens or checking `Referer` headers in web requests."
+        }
+      ]
+    }
+  ]
+}
