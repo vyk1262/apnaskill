@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_collections",
+      "questions": [
+        {
+          "question": "What is the primary purpose of the Java Collections Framework?",
+          "options": {
+            "A": "To provide classes for network communication.",
+            "B": "To offer a unified architecture for representing and manipulating collections of objects.",
+            "C": "To manage database connections.",
+            "D": "To handle exceptions in Java programs."
+          },
+          "correct_answer": "B",
+          "explanation": "The **Java Collections Framework (JCF)** provides a set of interfaces and classes that represent common data structures (like lists, sets, maps) to store, retrieve, and manipulate groups of objects. It offers a standardized way to work with collections."
+        },
+        {
+          "question": "Which interface is at the root of the Collection hierarchy in the Java Collections Framework?",
+          "options": {
+            "A": "List",
+            "B": "Set",
+            "C": "Collection",
+            "D": "Map"
+          },
+          "correct_answer": "C",
+          "explanation": "The `java.util.Collection` interface is the **root interface** of the collection hierarchy. It defines the common behavior for all types of collections. `List` and `Set` extend `Collection`, while `Map` is a separate hierarchy."
+        },
+        {
+          "question": "Which of the following `List` implementations is generally better for frequent element insertions and deletions in the middle of the list?",
+          "options": {
+            "A": "ArrayList",
+            "B": "Vector",
+            "C": "LinkedList",
+            "D": "Stack"
+          },
+          "correct_answer": "C",
+          "explanation": "**`LinkedList`** stores elements as nodes with references to the previous and next nodes. This makes adding or removing elements from the middle very efficient (constant time, O(1), after finding the position). `ArrayList` (option A) uses a dynamic array, so insertions/deletions in the middle require shifting elements, which can be slow (O(n))."
+        },
+        {
+          "question": "Which interface from the Java Collections Framework guarantees that it contains no duplicate elements?",
+          "options": {
+            "A": "List",
+            "B": "Queue",
+            "C": "Set",
+            "D": "Map"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`Set`** interface represents a collection of unique elements. It does not allow duplicate entries. If you try to add a duplicate element to a Set, the operation will typically return `false` or the element will simply not be added, without throwing an exception."
+        },
+        {
+          "question": "Which of these `Map` implementations maintains the insertion order of elements?",
+          "options": {
+            "A": "HashMap",
+            "B": "TreeMap",
+            "C": "LinkedHashMap",
+            "D": "HashTable"
+          },
+          "correct_answer": "C",
+          "explanation": "**`LinkedHashMap`** maintains a doubly-linked list running through all of its entries, preserving the order of insertion. `HashMap` (option A) does not guarantee any order, and `TreeMap` (option B) sorts elements by natural order of keys or by a `Comparator`."
+        },
+        {
+          "question": "What happens if you try to add a duplicate element to a `HashSet`?",
+          "options": {
+            "A": "It throws an `IllegalArgumentException`.",
+            "B": "The element is added, but the set's size remains unchanged.",
+            "C": "The old element is replaced by the new duplicate element.",
+            "D": "The element is not added, and the `add()` method returns `false`."
+          },
+          "correct_answer": "D",
+          "explanation": "A `HashSet` does not allow duplicate elements. If you attempt to add an element that is already present in the set (as determined by `hashCode()` and `equals()`), the `add()` method will return `false`, and the set's contents will remain unchanged."
+        },
+        {
+          "question": "Which of the following is typically used for iterating over elements in a collection in a forward-only direction?",
+          "options": {
+            "A": "Enhanced for loop (for-each)",
+            "B": "Iterator",
+            "C": "ListIterator",
+            "D": "All of the above"
+          },
+          "correct_answer": "B",
+          "explanation": "The **`Iterator`** interface provides a standard way to traverse elements in a collection sequentially in a forward direction, allowing removal of elements during iteration. The enhanced for loop (option A) internally uses an `Iterator`. `ListIterator` (option C) provides bi-directional traversal for `List`s."
+        },
+        {
+          "question": "When might you use a `Vector` instead of an `ArrayList`?",
+          "options": {
+            "A": "When thread safety is not a concern.",
+            "B": "When you need a more performant, unsynchronized list.",
+            "C": "When explicit thread synchronization is required.",
+            "D": "Vector should never be used."
+          },
+          "correct_answer": "C",
+          "explanation": "`Vector` is a legacy class that is synchronized (thread-safe), meaning its methods are thread-safe by default. `ArrayList` is not synchronized. If you specifically need a thread-safe dynamic array and don't want to use `Collections.synchronizedList()` or concurrent collections, `Vector` might be chosen, although generally modern concurrent collections (`CopyOnWriteArrayList`) or external synchronization are preferred."
+        },
+        {
+          "question": "What is the primary characteristic of a `Queue` in Java Collections?",
+          "options": {
+            "A": "Elements are stored in sorted order.",
+            "B": "Elements are retrieved using a Last-In, First-Out (LIFO) mechanism.",
+            "C": "Elements are retrieved using a First-In, First-Out (FIFO) mechanism.",
+            "D": "Elements cannot be duplicated."
+          },
+          "correct_answer": "C",
+          "explanation": "A **`Queue`** is designed for holding elements prior to processing, typically in a **First-In, First-Out (FIFO)** order. Elements are added at the 'rear' (tail) and removed from the 'front' (head)."
+        },
+        {
+          "question": "Which interface should a class implement to allow its objects to be sorted naturally (e.g., alphabetically for Strings, numerically for numbers) within collections like `TreeSet` or `TreeMap` keys?",
+          "options": {
+            "A": "Serializable",
+            "B": "Cloneable",
+            "C": "Comparator",
+            "D": "Comparable"
+          },
+          "correct_answer": "D",
+          "explanation": "The **`Comparable`** interface (`java.lang.Comparable`) defines a natural ordering for objects of a class. A class implements `Comparable` to define its own default sorting logic (via the `compareTo()` method), allowing instances to be sorted naturally in collections like `TreeSet` or used with `Collections.sort()`."
+        },
+        {
+          "question": "When would you typically use a `TreeMap` instead of a `HashMap`?",
+          "options": {
+            "A": "When thread safety is a primary concern.",
+            "B": "When you need to iterate over the keys in their natural sorted order.",
+            "C": "When performance for basic operations (put, get) is paramount.",
+            "D": "When keys must be stored in insertion order."
+          },
+          "correct_answer": "B",
+          "explanation": "**`TreeMap`** stores its entries in a sorted order based on the natural ordering of its keys or by a `Comparator` provided at creation time. Use `TreeMap` when you need sorted map entries. `HashMap` (option C) generally offers better performance for basic operations but without any guaranteed order."
+        },
+        {
+          "question": "What is the result of applying `Collections.sort()` to an `ArrayList` of custom objects if the objects do not implement `Comparable` and no `Comparator` is provided?",
+          "options": {
+            "A": "The list will be sorted based on insertion order.",
+            "B": "The list will be sorted based on hash codes.",
+            "C": "A `ClassCastException` will be thrown at runtime.",
+            "D": "The list will remain unsorted."
+          },
+          "correct_answer": "C",
+          "explanation": "`Collections.sort()` requires that the elements in the `List` either implement the `Comparable` interface (for natural ordering) or that a `Comparator` object is provided. If neither is true for custom objects, a **`ClassCastException`** will be thrown at runtime because Java doesn't know how to compare the objects."
+        },
+        {
+          "question": "Which `Map` implementation is synchronized (thread-safe) by default?",
+          "options": {
+            "A": "HashMap",
+            "B": "TreeMap",
+            "C": "HashTable",
+            "D": "ConcurrentHashMap"
+          },
+          "correct_answer": "C",
+          "explanation": "`HashTable` is a legacy class that is synchronized by default, meaning its methods are thread-safe. `HashMap` and `TreeMap` are not synchronized. `ConcurrentHashMap` (option D) is a modern, highly efficient thread-safe alternative introduced in `java.util.concurrent`."
+        },
+        {
+          "question": "What is the purpose of the `hashCode()` and `equals()` methods in the context of collections like `HashSet` and `HashMap`?",
+          "options": {
+            "A": "They are used for sorting elements.",
+            "B": "They are used to determine if two objects are considered equal and to calculate a hash value for efficient storage and retrieval.",
+            "C": "They are used for serializing objects.",
+            "D": "They are only used in multithreaded environments."
+          },
+          "correct_answer": "B",
+          "explanation": "For hash-based collections (`HashSet`, `HashMap`), `hashCode()` is used to compute a hash value that determines where an object is stored. `equals()` is then used to determine if two objects are logically the same within a hash bucket, crucial for preventing duplicates in `Set`s and managing keys in `Map`s."
+        },
+        {
+          "question": "Which class provides static utility methods for operations on collections, such as sorting, searching, and synchronizing?",
+          "options": {
+            "A": "CollectionUtils",
+            "B": "Arrays",
+            "C": "Collections",
+            "D": "ListUtils"
+          },
+          "correct_answer": "C",
+          "explanation": "The `java.util.Collections` class provides various static utility methods that operate on or return collections. This includes methods for sorting (`sort()`), searching (`binarySearch()`), synchronizing collections (`synchronizedList()`), and more. It's distinct from the `Collection` interface."
+        },
+        {
+          "question": "What is `ConcurrentModificationException`?",
+          "options": {
+            "A": "An error that occurs when a collection is modified while it is being iterated over by an iterator in a way that is not explicitly permitted.",
+            "B": "An exception thrown when trying to access a collection from multiple threads without synchronization.",
+            "C": "An error indicating that a collection has reached its maximum capacity.",
+            "D": "An exception thrown when trying to add a null element to a collection."
+          },
+          "correct_answer": "A",
+          "explanation": "`ConcurrentModificationException` is a runtime exception that primarily occurs when a collection is structurally modified (e.g., adding or removing elements) by one thread or method, while another thread or method is iterating over it using a fail-fast iterator. It's a safety mechanism to prevent inconsistent behavior."
+        },
+        {
+          "question": "Which interface represents a double-ended queue, supporting element insertion and removal from both ends?",
+          "options": {
+            "A": "Queue",
+            "B": "Stack",
+            "C": "Deque",
+            "D": "List"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`Deque`** (Double-Ended Queue) interface extends `Queue` and allows elements to be inserted and removed from both ends of the queue. `ArrayDeque` and `LinkedList` are common implementations of `Deque`."
+        },
+        {
+          "question": "What is the approximate time complexity for `get(index)` operation in an `ArrayList`?",
+          "options": {
+            "A": "O(log n)",
+            "B": "O(n)",
+            "C": "O(1)",
+            "D": "O(n log n)"
+          },
+          "correct_answer": "C",
+          "explanation": "An `ArrayList` is implemented using a dynamic array. Accessing an element by its index (`get(index)`) directly translates to accessing an element at a specific memory location in the underlying array, which is a **constant time operation (O(1))**."
+        },
+        {
+          "question": "Which of the following classes implements the `Set` interface and maintains its elements in a sorted order (either natural or custom)?",
+          "options": {
+            "A": "HashSet",
+            "B": "LinkedHashSet",
+            "C": "TreeSet",
+            "D": "ArrayList"
+          },
+          "correct_answer": "C",
+          "explanation": "**`TreeSet`** stores its elements in a sorted order, based on the natural ordering of the elements or by a `Comparator` provided at the time of set creation. `HashSet` (option A) provides no guaranteed order, and `LinkedHashSet` (option B) maintains insertion order."
+        },
+        {
+          "question": "What is the primary difference between `Iterable` and `Iterator` interfaces in Java Collections?",
+          "options": {
+            "A": "`Iterable` defines how to iterate; `Iterator` performs the iteration.",
+            "B": "`Iterable` is for Lists; `Iterator` is for Sets.",
+            "C": "`Iterable` is a concrete class; `Iterator` is an abstract class.",
+            "D": "There is no significant difference, they are interchangeable."
+          },
+          "correct_answer": "A",
+          "explanation": "The **`Iterable`** interface (implemented by all collections) signifies that an object can be iterated over (it has an `iterator()` method that returns an `Iterator`). The **`Iterator`** interface actually performs the iteration by providing methods like `hasNext()` to check if there are more elements and `next()` to get the next element."
+        }
+      ]
+    }
+  ]
+}

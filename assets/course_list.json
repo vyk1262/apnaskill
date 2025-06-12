@@ -11,6 +11,18 @@
     "intro",
     "modules"
   ],
+  "Java Programming": [
+    "java_intro",
+    "java_oops",
+    "java_collections",
+    "java_exceptions",
+    "java_streams",
+    "java_multithreading",
+    "java_advanced",
+    "java_applications",
+    "java_security",
+    "java_deployment"
+  ],
   "Linux": [
     "linux_intro",
     "linux_commands",

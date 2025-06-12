@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_intro",
+      "questions": [
+        {
+          "question": "Which of the following is responsible for converting Java bytecode into machine code during runtime?",
+          "options": {
+            "A": "JDK",
+            "B": "JRE",
+            "C": "JVM",
+            "D": "JIT Compiler"
+          },
+          "correct_answer": "C",
+          "explanation": "The **JVM (Java Virtual Machine)** is the runtime environment that executes Java bytecode. It interprets the bytecode and converts it into machine-specific instructions. The **JIT (Just-In-Time) compiler** (option D) is a component within the JVM that optimizes this conversion for better performance by compiling frequently executed bytecode into native code."
+        },
+        {
+          "question": "What does 'Write Once, Run Anywhere' (WORA) mean in the context of Java?",
+          "options": {
+            "A": "Java code can be written on any operating system.",
+            "B": "Java code can be compiled once and run on any platform that has a JVM.",
+            "C": "Java applications require no compilation.",
+            "D": "Java programs are only compatible with Windows operating systems."
+          },
+          "correct_answer": "B",
+          "explanation": "WORA means that Java source code is compiled into platform-independent **bytecode** (.class files). This bytecode can then be executed on any device or operating system that has a compatible **JVM (Java Virtual Machine)** installed, without needing to recompile the code for each specific platform."
+        },
+        {
+          "question": "What is the correct file extension for a compiled Java class file?",
+          "options": {
+            "A": ".java",
+            "B": ".txt",
+            "C": ".jar",
+            "D": ".class"
+          },
+          "correct_answer": "D",
+          "explanation": "Java source code files have a `.java` extension. When these files are compiled by the Java compiler (`javac`), they are translated into **bytecode** files, which have a `.class` extension. These `.class` files are then executed by the JVM."
+        },
+        {
+          "question": "Which command is used to compile a Java source code file?",
+          "options": {
+            "A": "java",
+            "B": "javac",
+            "C": "javadoc",
+            "D": "javarun"
+          },
+          "correct_answer": "B",
+          "explanation": "The `javac` command is the **Java compiler**. You use it to compile your `.java` source code files into `.class` bytecode files. For example, `javac MyProgram.java`."
+        },
+        {
+          "question": "What is the command to run a compiled Java class file named `MyProgram.class`?",
+          "options": {
+            "A": "run MyProgram.class",
+            "B": "java MyProgram.class",
+            "C": "java MyProgram",
+            "D": "execute MyProgram"
+          },
+          "correct_answer": "C",
+          "explanation": "To run a compiled Java class, you use the `java` command followed by the **class name (without the `.class` extension)**. For example, `java MyProgram` will execute the `main` method within `MyProgram.class`."
+        },
+        {
+          "question": "Which of the following is the correct signature for the `main` method in Java?",
+          "options": {
+            "A": "public static void main()",
+            "B": "public void main(String[] args)",
+            "C": "public static void main(String[] args)",
+            "D": "void main(String args[])"
+          },
+          "correct_answer": "C",
+          "explanation": "The `main` method is the entry point for any standalone Java application. Its exact signature is `public static void main(String[] args)`. `public` makes it accessible, `static` allows it to be called without an object, `void` means it returns no value, and `String[] args` allows command-line arguments."
+        },
+        {
+          "question": "Which of these is NOT a primitive data type in Java?",
+          "options": {
+            "A": "int",
+            "B": "String",
+            "C": "boolean",
+            "D": "double"
+          },
+          "correct_answer": "B",
+          "explanation": "**String** is a class in Java (part of `java.lang` package), not a primitive data type. Primitive data types include `byte`, `short`, `int`, `long`, `float`, `double`, `char`, and `boolean`."
+        },
+        {
+          "question": "What is the default value of an `int` variable in Java if it's declared but not initialized within a class (as an instance variable)?",
+          "options": {
+            "A": "null",
+            "B": "0",
+            "C": "undefined",
+            "D": "It causes a compilation error"
+          },
+          "correct_answer": "B",
+          "explanation": "Instance variables (non-static fields of a class) and static variables are automatically initialized to default values if not explicitly assigned. For numeric primitive types like `int`, the default value is **0**. Local variables (inside a method) must be explicitly initialized."
+        },
+        {
+          "question": "Which operator is used for the modulo (remainder) operation in Java?",
+          "options": {
+            "A": "/",
+            "B": "%",
+            "C": "*",
+            "D": "div"
+          },
+          "correct_answer": "B",
+          "explanation": "The **% (modulo)** operator returns the remainder of a division. For example, `10 % 3` evaluates to `1`."
+        },
+        {
+          "question": "What will be the result of the expression `5 + 2 * 3` in Java?",
+          "options": {
+            "A": "21",
+            "B": "11",
+            "C": "13",
+            "D": "17"
+          },
+          "correct_answer": "B",
+          "explanation": "Java follows standard operator precedence (PEMDAS/BODMAS). Multiplication (`*`) is performed before addition (`+`). So, `2 * 3` is `6`, then `5 + 6` equals `11`."
+        },
+        {
+          "question": "Which type of comment in Java is typically used for generating documentation?",
+          "options": {
+            "A": "// single-line comment",
+            "B": "/* multi-line comment */",
+            "C": "/** Javadoc comment */",
+            "D": "-- line comment"
+          },
+          "correct_answer": "C",
+          "explanation": "Java uses `/** ... */` for **Javadoc comments**. These comments are specially formatted and can be processed by the `javadoc` tool to generate API documentation in HTML format. Single-line comments use `//`, and multi-line comments use `/* */`."
+        },
+        {
+          "question": "Which control flow statement is used for decision-making based on multiple possible values of a single variable?",
+          "options": {
+            "A": "if-else",
+            "B": "for loop",
+            "C": "switch",
+            "D": "while loop"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`switch`** statement is designed for handling multiple execution paths based on the value of a single variable or expression. It provides a more structured and often more readable alternative to a long `if-else if` chain for certain scenarios."
+        },
+        {
+          "question": "What is the primary difference between a `while` loop and a `do-while` loop?",
+          "options": {
+            "A": "A `while` loop executes at least once, a `do-while` loop may not.",
+            "B": "A `do-while` loop executes its body at least once, a `while` loop may not.",
+            "C": "A `while` loop is for definite iterations, `do-while` for indefinite.",
+            "D": "There is no functional difference."
+          },
+          "correct_answer": "B",
+          "explanation": "The crucial difference is when the condition is checked. A **`while` loop** checks its condition at the beginning and might not execute its body at all if the condition is initially `false`. A **`do-while` loop** executes its body at least once before checking the condition at the end of the loop, so it guarantees at least one iteration."
+        },
+        {
+          "question": "Which keyword is used to exit a loop prematurely in Java?",
+          "options": {
+            "A": "exit",
+            "B": "stop",
+            "C": "break",
+            "D": "return"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`break`** keyword is used to terminate the current loop (or `switch` statement) immediately. Control flows to the statement immediately following the loop or switch."
+        },
+        {
+          "question": "Which keyword is used to skip the current iteration of a loop and move to the next iteration?",
+          "options": {
+            "A": "skip",
+            "B": "continue",
+            "C": "next",
+            "D": "pass"
+          },
+          "correct_answer": "B",
+          "explanation": "The **`continue`** keyword is used inside loops. When `continue` is encountered, it skips the rest of the current iteration of the loop and proceeds to the next iteration (evaluating the loop's condition)."
+        },
+        {
+          "question": "Which type of variable is declared using the `static` keyword inside a class but outside any method?",
+          "options": {
+            "A": "Instance variable",
+            "B": "Local variable",
+            "C": "Class variable",
+            "D": "Parameter variable"
+          },
+          "correct_answer": "C",
+          "explanation": "A variable declared with the `static` keyword within a class but outside any method is known as a **class variable** (or static variable). These variables belong to the class itself, not to any specific instance, and are shared by all objects of that class."
+        },
+        {
+          "question": "What is the process of converting a larger data type to a smaller data type in Java called?",
+          "options": {
+            "A": "Widening conversion",
+            "B": "Automatic conversion",
+            "C": "Narrowing conversion",
+            "D": "Upcasting"
+          },
+          "correct_answer": "C",
+          "explanation": "**Narrowing conversion** (or explicit type casting) is the process of converting a data type to a smaller data type (e.g., `double` to `int`). This often requires an explicit cast `(targetType) value` because it might lead to data loss. Widening conversion (option A) is converting smaller to larger, which is automatic."
+        },
+        {
+          "question": "Which data type should you use to store a single character in Java?",
+          "options": {
+            "A": "String",
+            "B": "char",
+            "C": "byte",
+            "D": "int"
+          },
+          "correct_answer": "B",
+          "explanation": "The **`char`** primitive data type in Java is specifically designed to store a single 16-bit Unicode character. `String` (option A) is used for sequences of characters."
+        },
+        {
+          "question": "What is method overloading in Java?",
+          "options": {
+            "A": "Defining a method in a subclass with the same signature as a method in its superclass.",
+            "B": "Defining multiple methods in the same class with the same name but different parameters.",
+            "C": "Defining multiple methods in different classes with the same name.",
+            "D": "Changing the return type of a method without changing its name."
+          },
+          "correct_answer": "B",
+          "explanation": "**Method overloading** occurs when a class has multiple methods with the same name but they differ in their **parameter lists** (number of parameters, type of parameters, or order of parameters). This allows a single method name to perform different actions based on the arguments provided."
+        },
+        {
+          "question": "How do you declare a constant variable in Java?",
+          "options": {
+            "A": "const int MY_CONSTANT = 10;",
+            "B": "final int MY_CONSTANT = 10;",
+            "C": "static final int MY_CONSTANT = 10;",
+            "D": "const static int MY_CONSTANT = 10;"
+          },
+          "correct_answer": "C",
+          "explanation": "In Java, constants (variables whose values cannot be changed once assigned) are typically declared using the **`final`** keyword. To make them accessible without creating an object and to indicate they belong to the class, they are often also declared as **`static`**. Conventionally, constant names are in `UPPER_SNAKE_CASE`."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_multithreading",
+      "questions": [
+        {
+          "question": "What is the primary difference between a 'Process' and a 'Thread'?",
+          "options": {
+            "A": "A Process is lightweight, while a Thread is heavyweight.",
+            "B": "Processes share memory, while Threads have separate memory spaces.",
+            "C": "A Process is an independent execution unit with its own memory space, while a Thread is a lightweight sub-unit of a Process that shares its memory space.",
+            "D": "Threads can run on multiple CPUs simultaneously, but Processes cannot."
+          },
+          "correct_answer": "C",
+          "explanation": "A **Process** is an independent program execution with its own dedicated memory space, resources, and often runs in isolation. A **Thread** is a smaller, lightweight unit of execution within a process that shares the process's memory space and resources, making inter-thread communication more efficient."
+        },
+        {
+          "question": "What is one of the main benefits of using multithreading in Java?",
+          "options": {
+            "A": "It guarantees faster program execution on all systems.",
+            "B": "It simplifies code debugging.",
+            "C": "It improves application responsiveness and resource utilization by allowing parallel execution of tasks.",
+            "D": "It eliminates the need for garbage collection."
+          },
+          "correct_answer": "C",
+          "explanation": "Multithreading allows different parts of a program to run concurrently. This can significantly **improve application responsiveness** (e.g., UI remains active while a background task runs) and **better utilize CPU resources** by allowing tasks to be processed in parallel, especially on multi-core processors."
+        },
+        {
+          "question": "Which of the following are the two primary ways to create a thread in Java?",
+          "options": {
+            "A": "Implementing the `Serializable` interface or extending the `Object` class.",
+            "B": "Implementing the `Runnable` interface or extending the `Thread` class.",
+            "C": "Using the `ExecutorService` or the `ForkJoinPool`.",
+            "D": "Implementing the `Callable` interface or extending the `Runnable` class."
+          },
+          "correct_answer": "B",
+          "explanation": "The two fundamental ways to create a thread in Java are by **implementing the `Runnable` interface** (and passing an instance to a `Thread` constructor) or by **extending the `Thread` class** itself and overriding its `run()` method."
+        },
+        {
+          "question": "What is the key difference between calling a thread's `start()` method and its `run()` method directly?",
+          "options": {
+            "A": "`start()` runs the thread in the current call stack, while `run()` creates a new call stack.",
+            "B": "`start()` creates and begins execution of a new thread, while `run()` simply executes the method body in the current thread's call stack.",
+            "C": "`start()` is used for `Runnable`, `run()` is used for `Thread` subclasses.",
+            "D": "There is no functional difference; both begin thread execution."
+          },
+          "correct_answer": "B",
+          "explanation": "Calling `thread.start()` instructs the JVM to **create a new thread of execution** and then call the `run()` method within that new thread. Calling `thread.run()` directly, however, just executes the `run()` method as a **regular method call within the current thread**, without creating a new thread."
+        },
+        {
+          "question": "What is 'Thread Synchronization' in Java?",
+          "options": {
+            "A": "The process of starting multiple threads simultaneously.",
+            "B": "A mechanism to control access to shared resources by multiple threads, preventing data inconsistency.",
+            "C": "The technique of making threads sleep for a specific duration.",
+            "D": "The process of terminating threads when they are no longer needed."
+          },
+          "correct_answer": "B",
+          "explanation": "Thread **Synchronization** is the process of coordinating the execution of multiple threads to ensure that they don't interfere with each other when accessing shared resources (like variables, files, or database connections). It's crucial for maintaining data consistency and integrity."
+        },
+        {
+          "question": "Which keyword is used to achieve synchronization in Java by creating a lock for an object or class?",
+          "options": {
+            "A": "lock",
+            "B": "concurrent",
+            "C": "volatile",
+            "D": "synchronized"
+          },
+          "correct_answer": "D",
+          "explanation": "The **`synchronized`** keyword in Java is used to create a monitor lock for an object. When applied to a method or a block of code, it ensures that only one thread can execute that synchronized code segment at a time for a given object (or class, for static synchronized methods)."
+        },
+        {
+          "question": "What is a 'Race Condition' in multithreading?",
+          "options": {
+            "A": "When multiple threads compete for CPU time.",
+            "B": "When the outcome of a program depends on the unpredictable order of execution of multiple threads accessing shared resources.",
+            "C": "When threads try to access different resources simultaneously.",
+            "D": "When one thread runs much faster than others."
+          },
+          "correct_answer": "B",
+          "explanation": "A **Race Condition** occurs when multiple threads try to access and modify shared data concurrently, and the final outcome depends on the non-deterministic timing of their execution. This can lead to incorrect or inconsistent results."
+        },
+        {
+          "question": "What is a 'Deadlock' in multithreading?",
+          "options": {
+            "A": "When a thread enters an infinite loop.",
+            "B": "When two or more threads are permanently blocked, waiting for each other to release the resources that they need.",
+            "C": "When a thread terminates unexpectedly.",
+            "D": "When threads refuse to share resources."
+          },
+          "correct_answer": "B",
+          "explanation": "A **Deadlock** is a specific scenario where two or more threads are stuck indefinitely, each waiting for a resource that the other thread holds, leading to a standstill in program execution."
+        },
+        {
+          "question": "The `wait()`, `notify()`, and `notifyAll()` methods can only be called from within a `synchronized` context. Why?",
+          "options": {
+            "A": "To ensure that these methods are only used by the main thread.",
+            "B": "Because they involve the monitor lock of an object, which must be held by the current thread.",
+            "C": "To prevent `NullPointerException`s.",
+            "D": "It's a compiler requirement, not a runtime one."
+          },
+          "correct_answer": "B",
+          "explanation": "The `wait()`, `notify()`, and `notifyAll()` methods are methods of the `Object` class (not `Thread`). They are used for inter-thread communication. They must be called on the object whose monitor lock the current thread holds (i.e., from within a `synchronized` block or method on that object) because they release and reacquire that specific lock."
+        },
+        {
+          "question": "What does the `Thread.sleep(long milliseconds)` method do?",
+          "options": {
+            "A": "Puts the thread into a waiting state until notified.",
+            "B": "Causes the currently executing thread to pause for the specified number of milliseconds.",
+            "C": "Terminates the thread after a delay.",
+            "D": "Makes the thread yield its CPU time to other threads immediately."
+          },
+          "correct_answer": "B",
+          "explanation": "`Thread.sleep(milliseconds)` causes the **currently executing thread** to temporarily cease execution for at least the specified number of milliseconds. It does not release any locks that the thread might be holding."
+        },
+        {
+          "question": "What is the purpose of the `join()` method of a `Thread` object?",
+          "options": {
+            "A": "To merge two threads into one.",
+            "B": "To start a new thread and wait for it to complete.",
+            "C": "To wait for a thread to die (complete its execution).",
+            "D": "To allow a thread to access another thread's private data."
+          },
+          "correct_answer": "C",
+          "explanation": "The `thread.join()` method causes the current thread (the one calling `join()`) to **pause its execution until the thread on which `join()` was called (the `thread` object) completes its execution** (dies). This ensures that a thread's operations are completed before another thread proceeds."
+        },
+        {
+          "question": "Which keyword ensures that changes to a variable are always visible to other threads, preventing caching issues?",
+          "options": {
+            "A": "static",
+            "B": "final",
+            "C": "transient",
+            "D": "volatile"
+          },
+          "correct_answer": "D",
+          "explanation": "The **`volatile`** keyword guarantees that reads from and writes to a `volatile` variable are atomic and that all threads will see the most recent write. It prevents caching of the variable's value in a thread's local memory and forces reads/writes directly to main memory."
+        },
+        {
+          "question": "What is an `ExecutorService` in Java?",
+          "options": {
+            "A": "A specialized type of thread that performs only I/O operations.",
+            "B": "A framework for managing and executing threads in a pool, decoupling task submission from thread management.",
+            "C": "A utility for debugging multithreaded applications.",
+            "D": "A replacement for the `Thread` class."
+          },
+          "correct_answer": "B",
+          "explanation": "The `ExecutorService` (part of `java.util.concurrent`) provides a high-level API for managing threads. It maintains a **pool of threads** and handles the execution of submitted tasks (either `Runnable` or `Callable`), making it easier to manage concurrency without directly dealing with `Thread` objects."
+        },
+        {
+          "question": "What is the main difference between `Runnable` and `Callable` interfaces?",
+          "options": {
+            "A": "`Runnable` can throw exceptions, `Callable` cannot.",
+            "B": "`Runnable` has a `run()` method that returns a value; `Callable` has a `call()` method that returns `void`.",
+            "C": "`Runnable`'s `run()` method returns `void` and cannot throw checked exceptions; `Callable`'s `call()` method can return a value and throw checked exceptions.",
+            "D": "There is no difference; they are interchangeable."
+          },
+          "correct_answer": "C",
+          "explanation": "The `Runnable` interface's `run()` method returns `void` and cannot throw checked exceptions. The `Callable` interface's `call()` method returns a result (of generic type `V`) and is capable of throwing checked exceptions, making it more flexible for tasks that need to return a value or signal errors."
+        },
+        {
+          "question": "What is a 'Thread Pool'?",
+          "options": {
+            "A": "A pool of resources shared by all threads in a process.",
+            "B": "A collection of pre-initialized threads that can be reused to execute tasks, avoiding the overhead of creating new threads for each task.",
+            "C": "A method to synchronize access to shared variables.",
+            "D": "A queue where threads wait for execution."
+          },
+          "correct_answer": "B",
+          "explanation": "A **Thread Pool** is a collection of worker threads that are created and kept alive to perform multiple tasks. Instead of creating a new thread for each task, tasks are submitted to the pool, and an available thread from the pool executes it. This reduces overhead and manages resources efficiently."
+        },
+        {
+          "question": "Which of these is a typical state in the lifecycle of a Java thread?",
+          "options": {
+            "A": "Sleeping",
+            "B": "Finished",
+            "C": "New",
+            "D": "Paused"
+          },
+          "correct_answer": "C",
+          "explanation": "Common thread states in Java include: `NEW`, `RUNNABLE` (ready to run or running), `BLOCKED`, `WAITING`, `TIMED_WAITING`, and `TERMINATED`. 'New' is the state of a thread that has been created but not yet started via `start()`."
+        },
+        {
+          "question": "What is 'daemon thread' in Java?",
+          "options": {
+            "A": "A thread that runs indefinitely and never terminates.",
+            "B": "A user-defined thread that runs in the foreground.",
+            "C": "A low-priority thread that runs in the background and is terminated automatically by the JVM if only daemon threads remain.",
+            "D": "A thread used for graphical user interfaces only."
+          },
+          "correct_answer": "C",
+          "explanation": "A **daemon thread** is a low-priority background thread that the JVM does not wait for to complete its execution before exiting. If the only threads remaining are daemon threads, the JVM will shut down. Examples include the garbage collector."
+        },
+        {
+          "question": "Which mechanism offers more fine-grained control over locking than the `synchronized` keyword?",
+          "options": {
+            "A": "`volatile` keyword",
+            "B": "`ReentrantLock` class (from `java.util.concurrent.locks`)",
+            "C": "`Thread.sleep()` method",
+            "D": "The `wait()` and `notify()` methods"
+          },
+          "correct_answer": "B",
+          "explanation": "The **`ReentrantLock` class** (and other classes in the `java.util.concurrent.locks` package) provides more sophisticated and fine-grained control over locking than the intrinsic locking mechanism provided by the `synchronized` keyword. It offers features like try-locking, timed locking, and interruptible locking."
+        },
+        {
+          "question": "If a thread `t1` calls `t2.interrupt()`, what is the immediate effect on `t2`?",
+          "options": {
+            "A": "`t2` immediately terminates.",
+            "B": "A `RuntimeException` is thrown in `t2`.",
+            "C": "The interrupted status flag of `t2` is set to `true`.",
+            "D": "Nothing, unless `t2` is sleeping or waiting."
+          },
+          "correct_answer": "C",
+          "explanation": "Calling `t2.interrupt()` primarily **sets the interrupted status flag of thread `t2` to `true`**. If `t2` is currently in a blocking state (like `sleep()`, `wait()`, `join()`, or I/O operations), it will throw an `InterruptedException` and clear its interrupted status. Otherwise, it simply sets the flag, and `t2`'s code must periodically check `Thread.currentThread().isInterrupted()` to respond to the interrupt."
+        },
+        {
+          "question": "Which class is commonly used to manage a fixed number of threads in a pool?",
+          "options": {
+            "A": "ThreadManager",
+            "B": "ThreadPoolExecutor",
+            "C": "FixedThreadScheduler",
+            "D": "ThreadFactory"
+          },
+          "correct_answer": "B",
+          "explanation": "The `java.util.concurrent.ThreadPoolExecutor` class is the core implementation for thread pools in Java. The `Executors` utility class provides convenient factory methods (e.g., `Executors.newFixedThreadPool(int nThreads)`) that return configured `ThreadPoolExecutor` instances."
+        }
+      ]
+    }
+  ]
+}

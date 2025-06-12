@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_advanced",
+      "questions": [
+        {
+          "question": "Which abstract class is the superclass of all classes representing an output stream of bytes in Java I/O?",
+          "options": {
+            "A": "Reader",
+            "B": "Writer",
+            "C": "InputStream",
+            "D": "OutputStream"
+          },
+          "correct_answer": "D",
+          "explanation": "The `java.io.OutputStream` abstract class is the superclass of all byte output streams. It defines the basic methods for writing byte data. `InputStream` (option C) is for byte input."
+        },
+        {
+          "question": "Which abstract class is the superclass of all classes representing an input stream of characters in Java I/O?",
+          "options": {
+            "A": "Reader",
+            "B": "Writer",
+            "C": "InputStream",
+            "D": "OutputStream"
+          },
+          "correct_answer": "A",
+          "explanation": "The `java.io.Reader` abstract class is the superclass of all character input streams. It provides methods for reading character data. `Writer` (option B) is for character output."
+        },
+        {
+          "question": "What is the primary difference between Byte Streams and Character Streams in Java I/O?",
+          "options": {
+            "A": "Byte streams work with files, character streams work with network sockets.",
+            "B": "Byte streams handle raw binary data; Character streams handle character data (text) considering character encodings.",
+            "C": "Byte streams are for input; Character streams are for output.",
+            "D": "Byte streams are buffered; Character streams are not."
+          },
+          "correct_answer": "B",
+          "explanation": "**Byte streams** (`InputStream`/`OutputStream` and their subclasses) operate on raw 8-bit bytes and are suitable for binary data (images, audio). **Character streams** (`Reader`/`Writer` and their subclasses) operate on 16-bit Unicode characters and are designed for handling text data, properly managing character encodings."
+        },
+        {
+          "question": "What is 'Serialization' in Java?",
+          "options": {
+            "A": "The process of converting an object into a sequence of bytes for storage or transmission.",
+            "B": "The process of securing data before sending it over a network.",
+            "C": "The process of converting bytecode into machine code.",
+            "D": "The process of encrypting data for secure communication."
+          },
+          "correct_answer": "A",
+          "explanation": "Object **Serialization** is the process of converting an object's state into a byte stream. This byte stream can then be stored in a file or transmitted across a network. Deserialization is the reverse process of converting the byte stream back into a live Java object."
+        },
+        {
+          "question": "Which interface must a class implement to be eligible for Java's default serialization mechanism?",
+          "options": {
+            "A": "Cloneable",
+            "B": "Comparable",
+            "C": "AutoCloseable",
+            "D": "Serializable"
+          },
+          "correct_answer": "D",
+          "explanation": "For an object to be serializable using Java's default serialization mechanism, its class must implement the marker interface **`java.io.Serializable`**. This interface has no methods, serving only to mark a class as capable of being serialized."
+        },
+        {
+          "question": "What is the main benefit of using 'Generics' in Java (introduced in Java 5)?",
+          "options": {
+            "A": "To allow classes to extend multiple parent classes.",
+            "B": "To ensure type safety at compile time and eliminate the need for most type casting.",
+            "C": "To automatically generate getter and setter methods.",
+            "D": "To perform asynchronous operations more easily."
+          },
+          "correct_answer": "B",
+          "explanation": "Generics provide **type safety** by allowing classes, interfaces, and methods to operate on objects of various types while ensuring that the correct type is used at compile time. This prevents `ClassCastException`s at runtime and eliminates the need for explicit type casting for collection elements."
+        },
+        {
+          "question": "What is 'Type Erasure' in the context of Java Generics?",
+          "options": {
+            "A": "The process by which all generic type information is removed during compilation, replaced with raw types.",
+            "B": "A feature that allows generic types to be determined at runtime.",
+            "C": "The ability to define multiple type parameters for a single generic class.",
+            "D": "A mechanism for securing generic classes against unauthorized access."
+          },
+          "correct_answer": "A",
+          "explanation": "**Type Erasure** is how generics are implemented in Java. The compiler removes all generic type information (like `<String>` in `List<String>`) during compilation, replacing it with their bounds (e.g., `Object` or a specific class). This ensures backward compatibility with older Java versions that didn't support generics."
+        },
+        {
+          "question": "Which of the following wildcards in Generics allows a method to accept a `List` of any type that is a supertype of `Number`?",
+          "options": {
+            "A": "`List<? extends Number>`",
+            "B": "`List<? super Number>`",
+            "C": "`List<?>`",
+            "D": "`List<Number>`"
+          },
+          "correct_answer": "B",
+          "explanation": "The **`? super T` (lower-bounded wildcard)** specifies that the type argument can be `T` or any supertype of `T`. So, `List<? super Number>` means a list of `Number` or a list of `Object`, etc. This is typically used for producer-consumer principle where you are primarily adding to the list (consuming items of type `T` or its subtypes)."
+        },
+        {
+          "question": "What is an 'Annotation' in Java?",
+          "options": {
+            "A": "A type of comment that is ignored by the compiler.",
+            "B": "A form of metadata that can be added to source code elements (classes, methods, fields) and processed at compile-time or runtime.",
+            "C": "A replacement for XML configuration files.",
+            "D": "A way to define new keywords in Java."
+          },
+          "correct_answer": "B",
+          "explanation": "An **Annotation** is a form of metadata that provides information about the program but does not directly affect its execution. They can be used by the compiler (e.g., `@Override`), build tools, or at runtime (e.g., by frameworks like Spring or JUnit) via Reflection."
+        },
+        {
+          "question": "What is the purpose of the `@Override` annotation?",
+          "options": {
+            "A": "To mark a method as deprecated.",
+            "B": "To indicate that a method must be implemented by a subclass.",
+            "C": "To inform the compiler that the annotated method is intended to override a method in a superclass or interface.",
+            "D": "To prevent a method from being overridden."
+          },
+          "correct_answer": "C",
+          "explanation": "The `@Override` annotation is a compiler hint. It tells the compiler that the annotated method is intended to override a method in a superclass or implement a method from an interface. If it doesn't actually override/implement one, the compiler will generate an error, preventing subtle bugs."
+        },
+        {
+          "question": "What is the Java Reflection API?",
+          "options": {
+            "A": "A tool for debugging Java applications by reflecting variable values.",
+            "B": "An API that allows a Java program to examine or modify the runtime behavior of classes, methods, and fields at runtime.",
+            "C": "An API for creating mirrored copies of objects.",
+            "D": "A framework for building graphical user interfaces."
+          },
+          "correct_answer": "B",
+          "explanation": "The **Java Reflection API** (`java.lang.reflect` package) allows a program to inspect and manipulate classes, interfaces, fields, and methods at runtime, even those that are not publicly accessible. This dynamic capability is used by many frameworks (e.g., dependency injection, ORMs, testing frameworks)."
+        },
+        {
+          "question": "Which of the following is NOT a typical use case for Java Reflection?",
+          "options": {
+            "A": "Developing an IDE or debugger.",
+            "B": "Implementing a framework that needs to dynamically create objects or invoke methods.",
+            "C": "Analyzing the structure of a class at runtime.",
+            "D": "Optimizing primitive array access for performance-critical applications."
+          },
+          "correct_answer": "D",
+          "explanation": "Reflection adds overhead and is generally slower than direct access, so it is **not** used for performance-critical operations like optimizing primitive array access. Its strength lies in dynamic inspection and manipulation, which is useful for frameworks, tools, and introspection, but not for raw performance."
+        },
+        {
+          "question": "What does JDBC stand for?",
+          "options": {
+            "A": "Java Database Connector",
+            "B": "Java Development Build Component",
+            "C": "Java Data Binding Classes",
+            "D": "Java Database Connectivity"
+          },
+          "correct_answer": "D",
+          "explanation": "**JDBC** stands for **Java Database Connectivity**. It is a Java API that provides a standard way for Java applications to connect to and interact with various relational databases."
+        },
+        {
+          "question": "What is the very first step in connecting to a database using JDBC?",
+          "options": {
+            "A": "Creating a Statement object.",
+            "B": "Loading the appropriate JDBC driver.",
+            "C": "Executing an SQL query.",
+            "D": "Defining a database schema."
+          },
+          "correct_answer": "B",
+          "explanation": "The first step in establishing a database connection with JDBC is to **load the appropriate JDBC driver** for your specific database. This is typically done using `Class.forName(\"com.mysql.cj.jdbc.Driver\");` or similar, depending on the driver."
+        },
+        {
+          "question": "Which JDBC interface represents a session with a specific database and is used to create `Statement` objects?",
+          "options": {
+            "A": "Driver",
+            "B": "Statement",
+            "C": "Connection",
+            "D": "ResultSet"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`Connection`** interface represents a connection to a specific database. All communication with the database is done through this connection object, including creating `Statement` objects and managing transactions."
+        },
+        {
+          "question": "Which JDBC interface is used for executing static SQL statements and returning their results?",
+          "options": {
+            "A": "Connection",
+            "B": "PreparedStatement",
+            "C": "ResultSet",
+            "D": "Statement"
+          },
+          "correct_answer": "D",
+          "explanation": "The **`Statement`** interface is used to execute static SQL queries without parameters. It is typically used when the SQL query is known at compile time and does not contain user input that needs sanitization."
+        },
+        {
+          "question": "What is the main advantage of using `PreparedStatement` over `Statement` in JDBC?",
+          "options": {
+            "A": "`PreparedStatement` executes faster for a single query.",
+            "B": "`PreparedStatement` is used for DDL operations, `Statement` for DML.",
+            "C": "`PreparedStatement` prevents SQL injection attacks and offers better performance for repeated queries with different parameters.",
+            "D": "`PreparedStatement` can only execute SELECT queries."
+          },
+          "correct_answer": "C",
+          "explanation": "`PreparedStatement` is pre-compiled by the database, making it more efficient for repeated execution with different parameters. Crucially, it also provides protection against **SQL injection attacks** by treating parameter values as data rather than executable code."
+        },
+        {
+          "question": "Which JDBC interface holds the data retrieved from a database query, allowing iteration over rows?",
+          "options": {
+            "A": "Connection",
+            "B": "Statement",
+            "C": "ResultSet",
+            "D": "DatabaseMetaData"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`ResultSet`** interface represents the tabular data returned by a SQL query. It acts as an iterator, allowing you to move through the rows and retrieve data from each column using appropriate `get*()` methods (e.g., `getString()`, `getInt()`)."
+        },
+        {
+          "question": "What is the purpose of `java.io.BufferedReader` and `java.io.BufferedWriter`?",
+          "options": {
+            "A": "To handle binary data more efficiently.",
+            "B": "To provide high-level character streams that read/write characters more efficiently by buffering them.",
+            "C": "To read/write objects directly to/from files.",
+            "D": "To convert byte streams to character streams."
+          },
+          "correct_answer": "B",
+          "explanation": "`BufferedReader` and `BufferedWriter` are **wrapper (decorator) classes** that add buffering capabilities to existing character streams (`Reader`/`Writer`). Buffering improves I/O performance by reading/writing larger chunks of data at once, rather than single characters."
+        },
+        {
+          "question": "In JDBC, which method of the `Statement` or `PreparedStatement` interface is used to execute a SQL `SELECT` query?",
+          "options": {
+            "A": "executeUpdate()",
+            "B": "execute()",
+            "C": "executeQuery()",
+            "D": "executeBatch()"
+          },
+          "correct_answer": "C",
+          "explanation": "The `executeQuery()` method is specifically used for executing SQL `SELECT` statements. It returns a `ResultSet` object containing the data retrieved from the database. `executeUpdate()` is for DML (INSERT, UPDATE, DELETE) and DDL operations. `execute()` is for general purpose execution, and `executeBatch()` for batch operations."
+        }
+      ]
+    }
+  ]
+}

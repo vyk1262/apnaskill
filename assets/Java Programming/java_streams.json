@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_streams",
+      "questions": [
+        {
+          "question": "What is a Java Stream (introduced in Java 8)?",
+          "options": {
+            "A": "A new type of collection that stores data.",
+            "B": "A sequence of elements supporting sequential and parallel aggregate operations.",
+            "C": "A method to read input from the console.",
+            "D": "A way to handle exceptions in a functional style."
+          },
+          "correct_answer": "B",
+          "explanation": "A Java Stream is not a data structure itself, but rather a sequence of elements from a source (like a collection or an array) that supports various aggregate operations (like filtering, mapping, reducing) either sequentially or in parallel. It focuses on 'what' to do with data, not 'how' to do it."
+        },
+        {
+          "question": "What is the key difference between a Java `Stream` and a `Collection`?",
+          "options": {
+            "A": "Streams are mutable, while Collections are immutable.",
+            "B": "Streams are used for storing data, while Collections are for processing data.",
+            "C": "Collections store data; Streams process data. Streams are lazy and don't store elements.",
+            "D": "Collections support parallel operations; Streams only support sequential operations."
+          },
+          "correct_answer": "C",
+          "explanation": "A `Collection` is a data structure that stores elements. A `Stream` is a conceptual pipeline that processes elements from a source. Streams are **lazy** (operations are executed only when a terminal operation is present) and **do not store data** themselves, unlike collections."
+        },
+        {
+          "question": "Are Java Streams reusable after a terminal operation has been performed on them?",
+          "options": {
+            "A": "Yes, they can be reused multiple times.",
+            "B": "No, a stream can be consumed only once.",
+            "C": "Only if the stream is created from an immutable source.",
+            "D": "Only if using parallel streams."
+          },
+          "correct_answer": "B",
+          "explanation": "No, a Java Stream can be **consumed only once**. Once a terminal operation is performed, the stream is considered 'closed' or 'consumed', and attempting to perform further operations on it will result in an `IllegalStateException`."
+        },
+        {
+          "question": "Which of the following is an **intermediate** operation in Java Streams?",
+          "options": {
+            "A": "forEach()",
+            "B": "collect()",
+            "C": "filter()",
+            "D": "reduce()"
+          },
+          "correct_answer": "C",
+          "explanation": "**Intermediate operations** are lazy; they don't produce a result immediately but rather transform the stream into another stream. `filter()`, `map()`, `sorted()`, `distinct()`, `limit()`, and `skip()` are examples. `forEach()`, `collect()`, and `reduce()` are **terminal operations**."
+        },
+        {
+          "question": "Which of the following is a **terminal** operation in Java Streams?",
+          "options": {
+            "A": "map()",
+            "B": "filter()",
+            "C": "peek()",
+            "D": "count()"
+          },
+          "correct_answer": "D",
+          "explanation": "**Terminal operations** trigger the processing of the stream and produce a result (e.g., a single value, a collection, or a side effect). `count()`, `collect()`, `forEach()`, `reduce()`, `min()`, `max()`, `anyMatch()`, `allMatch()`, `noneMatch()` are examples. `map()`, `filter()`, and `peek()` are intermediate operations."
+        },
+        {
+          "question": "How do you create a Stream from a `List` called `myList`?",
+          "options": {
+            "A": "Stream.of(myList);",
+            "B": "myList.toStream();",
+            "C": "myList.stream();",
+            "D": "new Stream(myList);"
+          },
+          "correct_answer": "C",
+          "explanation": "Collections (including `List`, `Set`, `Queue`) have a default method `stream()` which returns a sequential stream of their elements. So, `myList.stream()` is the correct way."
+        },
+        {
+          "question": "What is the purpose of the `filter()` operation in streams?",
+          "options": {
+            "A": "To transform each element into another form.",
+            "B": "To remove duplicate elements from the stream.",
+            "C": "To select elements that match a given `Predicate`.",
+            "D": "To sort the elements in the stream."
+          },
+          "correct_answer": "C",
+          "explanation": "The `filter()` intermediate operation is used to select elements from a stream that satisfy a specific condition. It takes a `Predicate` (a functional interface representing a boolean-valued function) as an argument, and only elements for which the predicate returns `true` are passed to the next stage of the stream."
+        },
+        {
+          "question": "What is the purpose of the `map()` operation in streams?",
+          "options": {
+            "A": "To reduce the stream to a single value.",
+            "B": "To apply a function to each element, transforming it into a new element of possibly a different type.",
+            "C": "To group elements into a `Map`.",
+            "D": "To perform an action for each element without changing the stream."
+          },
+          "correct_answer": "B",
+          "explanation": "The `map()` intermediate operation is used for **transformation**. It applies a function (a `Function` functional interface) to each element in the stream, producing a new stream where each element is the result of that function. The type of the elements can change (e.g., `Stream<String>` to `Stream<Integer>`)."
+        },
+        {
+          "question": "When would you use `flatMap()` instead of `map()`?",
+          "options": {
+            "A": "When you need to reduce a stream to a single value.",
+            "B": "When you have a stream of streams and want to flatten it into a single stream.",
+            "C": "When you want to convert a stream to a `Map`.",
+            "D": "When you need to perform an action for each element as a side effect."
+          },
+          "correct_answer": "B",
+          "explanation": "`flatMap()` is used when the mapping function produces a stream for each element, and you want to **flatten** these individual streams into a single, merged stream. For example, if you have a `Stream<List<String>>` and want `Stream<String>`, `flatMap()` is the choice."
+        },
+        {
+          "question": "Which terminal operation is used to perform a given action for each element of a stream?",
+          "options": {
+            "A": "map()",
+            "B": "filter()",
+            "C": "forEach()",
+            "D": "collect()"
+          },
+          "correct_answer": "C",
+          "explanation": "The `forEach()` terminal operation performs an action (a `Consumer` functional interface) for each element in the stream. It does not return a new stream or a value, but rather produces a side effect (e.g., printing elements)."
+        },
+        {
+          "question": "What is the primary purpose of the `collect()` operation?",
+          "options": {
+            "A": "To trigger the stream processing and return a single value.",
+            "B": "To transform the stream into a new collection (e.g., List, Set, Map).",
+            "C": "To sort the elements in the stream.",
+            "D": "To count the number of elements in the stream."
+          },
+          "correct_answer": "B",
+          "explanation": "The `collect()` terminal operation performs a mutable reduction on the elements of the stream. It gathers the results into a new data structure, most commonly a `List`, `Set`, or `Map`, using helper methods from the `Collectors` class (e.g., `Collectors.toList()`, `Collectors.toSet()`)."
+        },
+        {
+          "question": "The `Optional` class (introduced in Java 8) is primarily used to:",
+          "options": {
+            "A": "Make a variable immutable.",
+            "B": "Handle null values gracefully and avoid `NullPointerException`s.",
+            "C": "Perform optional intermediate operations on streams.",
+            "D": "Define optional method parameters."
+          },
+          "correct_answer": "B",
+          "explanation": "The `java.util.Optional` class is a container object that may or may not contain a non-null value. It's designed to provide a clear way to indicate the possible absence of a value, helping to prevent `NullPointerException`s and making code more readable by explicitly handling potential null returns."
+        },
+        {
+          "question": "Which stream operation is used to ensure that only unique elements are processed?",
+          "options": {
+            "A": "unique()",
+            "B": "distinct()",
+            "C": "filter(e -> unique)",
+            "D": "reduce()"
+          },
+          "correct_answer": "B",
+          "explanation": "The `distinct()` intermediate operation returns a stream consisting of the distinct elements of the original stream (based on the `equals()` method). This is commonly used to remove duplicate elements from a stream."
+        },
+        {
+          "question": "How can you sort elements in a stream in natural order?",
+          "options": {
+            "A": "Using `stream.sort()`",
+            "B": "Using `stream.sorted()`",
+            "C": "Using `stream.order()`",
+            "D": "Streams cannot be sorted directly, you need to collect first."
+          },
+          "correct_answer": "B",
+          "explanation": "The `sorted()` intermediate operation returns a stream sorted according to the natural order of its elements. If a custom sort order is needed, you can pass a `Comparator` to `sorted(Comparator comparator)`."
+        },
+        {
+          "question": "What is the purpose of the `reduce()` operation in streams?",
+          "options": {
+            "A": "To filter elements based on a condition.",
+            "B": "To apply a transformation to each element.",
+            "C": "To combine elements into a single result using a binary operator.",
+            "D": "To count the number of elements."
+          },
+          "correct_answer": "C",
+          "explanation": "The `reduce()` terminal operation performs a reduction on the elements of the stream, applying a binary operator repeatedly until a single value is produced. It's useful for operations like sum, product, min, max, or concatenating strings."
+        },
+        {
+          "question": "Which method would you use to check if *any* element in a stream matches a given `Predicate`?",
+          "options": {
+            "A": "allMatch()",
+            "B": "noneMatch()",
+            "C": "anyMatch()",
+            "D": "findAny()"
+          },
+          "correct_answer": "C",
+          "explanation": "The `anyMatch()` terminal operation returns `true` if at least one element in the stream matches the given `Predicate`, and `false` otherwise. It's a short-circuiting operation, meaning it may not process all elements."
+        },
+        {
+          "question": "What is the difference between `findFirst()` and `findAny()` terminal operations?",
+          "options": {
+            "A": "`findFirst()` returns an element from a sequential stream, `findAny()` is for parallel streams only.",
+            "B": "`findFirst()` guarantees to return the first element in encounter order; `findAny()` returns any element, especially useful in parallel streams for performance.",
+            "C": "`findAny()` is always faster than `findFirst()`.",
+            "D": "There is no difference, they are interchangeable."
+          },
+          "correct_answer": "B",
+          "explanation": "`findFirst()` always returns an `Optional` containing the first element in the stream's encounter order (if one exists). `findAny()` returns an `Optional` containing *any* element from the stream. For sequential streams, they often behave the same, but for parallel streams, `findAny()` is typically faster as it doesn't need to respect encounter order."
+        },
+        {
+          "question": "Which of these code snippets correctly creates a stream from an array of `String`s named `names`?",
+          "options": {
+            "A": "Stream<String> stream = new Stream<String>(names);",
+            "B": "Stream<String> stream = names.toStream();",
+            "C": "Stream<String> stream = Arrays.stream(names);",
+            "D": "Stream<String> stream = names.createStream();"
+          },
+          "correct_answer": "C",
+          "explanation": "The `java.util.Arrays` class provides a static utility method `stream()` that can be used to create a stream from an array. For example, `Arrays.stream(names)`."
+        },
+        {
+          "question": "What will be the output of the following code?\n```java\nList<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);\nlong count = numbers.stream()\n                    .filter(n -> n % 2 == 0)\n                    .count();\nSystem.out.println(count);\n```",
+          "options": {
+            "A": "5",
+            "B": "3",
+            "C": "2",
+            "D": "Error"
+          },
+          "correct_answer": "C",
+          "explanation": "The stream starts with [1, 2, 3, 4, 5]. The `filter(n -> n % 2 == 0)` operation keeps only even numbers, resulting in a stream of [2, 4]. The `count()` terminal operation then counts the elements in this filtered stream, which is 2."
+        },
+        {
+          "question": "What is the purpose of the `peek()` operation in streams?",
+          "options": {
+            "A": "To terminate the stream prematurely.",
+            "B": "To perform a side effect on each element as elements are consumed from the stream, primarily for debugging.",
+            "C": "To inspect the first element of the stream without consuming it.",
+            "D": "To filter elements based on a complex condition."
+          },
+          "correct_answer": "B",
+          "explanation": "The `peek()` intermediate operation is primarily used for **debugging**. It allows you to perform an action (a `Consumer`) on each element as it flows through the stream pipeline, without modifying the elements themselves or affecting the stream's final result. It's often used to print intermediate values."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_deployment",
+      "questions": [
+        {
+          "question": "What is the primary purpose of the `javac` command in Java?",
+          "options": {
+            "A": "To execute compiled Java code.",
+            "B": "To compile Java source code (`.java` files) into bytecode (`.class` files).",
+            "C": "To create Java Archive (JAR) files.",
+            "D": "To manage Java dependencies."
+          },
+          "correct_answer": "B",
+          "explanation": "The `javac` command (Java compiler) is used to **compile Java source code** files (with a `.java` extension) into Java bytecode files (with a `.class` extension). These bytecode files are then executed by the Java Virtual Machine (JVM)."
+        },
+        {
+          "question": "What is the primary purpose of the `java` command?",
+          "options": {
+            "A": "To compile Java source code.",
+            "B": "To create executable JAR files.",
+            "C": "To run compiled Java applications (bytecode).",
+            "D": "To inspect Java class files."
+          },
+          "correct_answer": "C",
+          "explanation": "The `java` command is the Java application launcher. It starts a Java Virtual Machine (JVM) and loads the specified compiled Java class file (bytecode) to execute the application."
+        },
+        {
+          "question": "Which of the following commands would you use to compile a Java source file named `MyClass.java`?",
+          "options": {
+            "A": "`java MyClass.java`",
+            "B": "`javac MyClass.class`",
+            "C": "`javac MyClass.java`",
+            "D": "`run MyClass.java`"
+          },
+          "correct_answer": "C",
+          "explanation": "To compile a Java source file, you use the `javac` command followed by the name of the source file. So, `javac MyClass.java` will produce `MyClass.class`."
+        },
+        {
+          "question": "After compiling `MyClass.java` to `MyClass.class`, which command would you use to run the application if `MyClass` contains the `main` method?",
+          "options": {
+            "A": "`java MyClass.class`",
+            "B": "`run MyClass`",
+            "C": "`java MyClass`",
+            "D": "`execute MyClass.java`"
+          },
+          "correct_answer": "C",
+          "explanation": "To run a compiled Java application, you use the `java` command followed by the fully qualified class name (without the `.class` extension) that contains the `main` method. So, `java MyClass` is correct."
+        },
+        {
+          "question": "What is a JAR file and what is its primary purpose in Java deployment?",
+          "options": {
+            "A": "A text file containing program logs.",
+            "B": "A compressed archive format for distributing and packaging Java classes and resources.",
+            "C": "A configuration file for web applications.",
+            "D": "A temporary file created during compilation."
+          },
+          "correct_answer": "B",
+          "explanation": "A **JAR (Java Archive)** file is a standard file format for packaging and distributing Java class files, associated metadata, and resources (like images, audio, or configuration files) into a single, portable compressed file. It's built on the ZIP format."
+        },
+        {
+          "question": "Which file inside a JAR archive typically contains metadata about the archive, including the `Main-Class` for executable JARs?",
+          "options": {
+            "A": "application.xml",
+            "B": "pom.xml",
+            "C": "META-INF/MANIFEST.MF",
+            "D": "config.properties"
+          },
+          "correct_answer": "C",
+          "explanation": "The `META-INF/MANIFEST.MF` file, located inside a JAR archive, is the manifest file. It contains important metadata about the JAR, such as version information, creator details, and crucially, the `Main-Class` entry if the JAR is executable."
+        },
+        {
+          "question": "To make a JAR file executable, which attribute must be specified in its `MANIFEST.MF` file?",
+          "options": {
+            "A": "Classpath",
+            "B": "Executable-Jar",
+            "C": "Start-Class",
+            "D": "Main-Class"
+          },
+          "correct_answer": "D",
+          "explanation": "For a JAR file to be directly executable using `java -jar YourApp.jar`, its `META-INF/MANIFEST.MF` file must contain a **`Main-Class`** attribute. This attribute specifies the fully qualified name of the class that contains the `public static void main(String[] args)` method."
+        },
+        {
+          "question": "What does JRE stand for?",
+          "options": {
+            "A": "Java Resource Environment",
+            "B": "Java Runtime Engine",
+            "C": "Java Runtime Environment",
+            "D": "Java Remote Execution"
+          },
+          "correct_answer": "C",
+          "explanation": "**JRE** stands for **Java Runtime Environment**. It is a software package that contains the Java Virtual Machine (JVM), Java class libraries, and other components required to run Java applications. It does not include development tools like `javac`."
+        },
+        {
+          "question": "What does JDK stand for?",
+          "options": {
+            "A": "Java Deployment Kit",
+            "B": "Java Development Kit",
+            "C": "Java Debugging Kit",
+            "D": "Java Documentation Kit"
+          },
+          "correct_answer": "B",
+          "explanation": "**JDK** stands for **Java Development Kit**. It is a superset of the JRE and includes all the components of the JRE plus development tools such as the Java compiler (`javac`), debugger, and other utilities necessary for building and developing Java applications."
+        },
+        {
+          "question": "What is the primary difference between JRE and JDK?",
+          "options": {
+            "A": "JRE is for development, JDK is for running applications.",
+            "B": "JRE includes the compiler, JDK does not.",
+            "C": "JRE is for running Java applications; JDK is for developing and running Java applications.",
+            "D": "JRE runs on Linux, JDK runs on Windows."
+          },
+          "correct_answer": "C",
+          "explanation": "The **JRE (Java Runtime Environment)** provides the minimum environment to **run** Java applications. The **JDK (Java Development Kit)** is a complete development kit that includes the JRE along with tools needed to **develop** Java applications (like the compiler, debugger, etc.)."
+        },
+        {
+          "question": "What is the role of the 'Classpath' in Java?",
+          "options": {
+            "A": "It specifies the network path for Java applications.",
+            "B": "It's an environment variable or command-line option that tells the JVM or compiler where to look for user-defined classes and packages.",
+            "C": "It defines the execution order of Java methods.",
+            "D": "It's the directory where all Java source files must be located."
+          },
+          "correct_answer": "B",
+          "explanation": "The **Classpath** is a parameter (either an environment variable `CLASSPATH` or a command-line option `-cp` or `-classpath`) that tells the Java Virtual Machine (JVM) and the Java compiler where to find user-defined classes and packages that your application relies upon."
+        },
+        {
+          "question": "Which `jar` command option is used to create a new JAR file?",
+          "options": {
+            "A": "`jar -xf`",
+            "B": "`jar -tf`",
+            "C": "`jar -cf`",
+            "D": "`jar -uvf`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `jar` command with the **`-c` (create)** and **`-f` (specify file name)** options is used to create a new JAR archive. For example, `jar -cf myapp.jar MyClass.class`."
+        },
+        {
+          "question": "What does JVM stand for?",
+          "options": {
+            "A": "Java Virtual Machine",
+            "B": "Java Verification Module",
+            "C": "Java Version Manager",
+            "D": "Java Volatile Memory"
+          },
+          "correct_answer": "A",
+          "explanation": "**JVM** stands for **Java Virtual Machine**. It's an abstract machine that provides a runtime environment in which Java bytecode can be executed. It's the component that makes Java 'write once, run anywhere'."
+        },
+        {
+          "question": "How is a WAR file typically deployed to a web server/servlet container (e.g., Tomcat)?",
+          "options": {
+            "A": "By running it directly with the `java -jar` command.",
+            "B": "By placing the WAR file into the container's designated deployment directory (e.g., Tomcat's `webapps` folder).",
+            "C": "By compiling it using `javac`.",
+            "D": "By uploading it to a cloud storage service."
+          },
+          "correct_answer": "B",
+          "explanation": "WAR files are specifically designed for deployment to **servlet containers** (like Apache Tomcat, Jetty) or full-fledged application servers. The most common deployment method is to simply **copy the `.war` file into the server's designated web applications deployment directory** (e.g., `webapps` for Tomcat). The server then automatically unpacks and deploys it."
+        },
+        {
+          "question": "What is `jlink` (introduced in Java 9) primarily used for?",
+          "options": {
+            "A": "To create graphical user interfaces.",
+            "B": "To link Java applications with native C++ libraries.",
+            "C": "To create custom runtime images containing only the necessary modules for an application.",
+            "D": "To optimize the performance of the JVM during runtime."
+          },
+          "correct_answer": "C",
+          "explanation": "`jlink` is a tool introduced in Java 9 as part of the Java Platform Module System (JPMS). Its main purpose is to **create custom runtime images** that contain only the Java modules (and their transitive dependencies) required by a specific application. This results in smaller, self-contained, and more efficient deployments."
+        },
+        {
+          "question": "What is the purpose of the 'Just-In-Time (JIT) Compiler' within the JVM?",
+          "options": {
+            "A": "To compile Java source code before runtime.",
+            "B": "To translate Java bytecode into native machine code at runtime for performance optimization.",
+            "C": "To convert Java code into C++ code.",
+            "D": "To perform garbage collection."
+          },
+          "correct_answer": "B",
+          "explanation": "The **Just-In-Time (JIT) compiler** is a component of the JVM that optimizes performance by **compiling frequently executed Java bytecode into native machine code at runtime**. This allows the compiled code to run directly on the operating system's processor, significantly speeding up execution compared to interpreting bytecode."
+        },
+        {
+          "question": "How can you specify a custom classpath when running a Java application from the command line?",
+          "options": {
+            "A": "`java -jar myapp.jar -cp /path/to/libs`",
+            "B": "`java -classpath /path/to/libs MyMainClass`",
+            "C": "`java -Dclasspath=/path/to/libs MyMainClass`",
+            "D": "The classpath is always automatically detected."
+          },
+          "correct_answer": "B",
+          "explanation": "You can specify a custom classpath using the **`-classpath`** or **`-cp`** option with the `java` command. For example, `java -classpath /path/to/my/lib.jar:/another/path MyMainClass` (paths are separated by colons on Unix/macOS, semicolons on Windows)."
+        },
+        {
+          "question": "When deploying a web application, what is the role of the `WEB-INF` directory within a WAR file?",
+          "options": {
+            "A": "It contains static web resources like HTML and CSS.",
+            "B": "It stores user uploaded files.",
+            "C": "It is a protected directory containing `web.xml`, compiled classes, and libraries, not directly accessible by clients.",
+            "D": "It's used for database configurations only."
+          },
+          "correct_answer": "C",
+          "explanation": "The `WEB-INF` directory within a WAR file is a **protected directory**. It contains critical deployment descriptors (`web.xml`), compiled servlet classes (`WEB-INF/classes`), and application-specific JAR libraries (`WEB-INF/lib`). Content within `WEB-INF` cannot be directly accessed by web clients; it's managed by the servlet container."
+        },
+        {
+          "question": "You have a `MyUtils.jar` file and your `MainApp.java` needs to use classes from it. How would you compile `MainApp.java` if `MyUtils.jar` is in the current directory?",
+          "options": {
+            "A": "`javac MyMainApp.java`",
+            "B": "`javac -classpath MyUtils.jar MyMainApp.java`",
+            "C": "`java -jar MyUtils.jar MyMainApp.java`",
+            "D": "`javac MyMainApp.java MyUtils.jar`"
+          },
+          "correct_answer": "B",
+          "explanation": "When compiling, if your source file depends on classes in external JARs, you need to include those JARs in the compiler's classpath. The command is `javac -classpath MyUtils.jar MyMainApp.java` (or `javac -cp MyUtils.jar MyMainApp.java`)."
+        },
+        {
+          "question": "What is the purpose of the `jar -tvf YourApp.jar` command?",
+          "options": {
+            "A": "To create a new JAR file with verbose output.",
+            "B": "To extract (unzip) the contents of `YourApp.jar`.",
+            "C": "To update files within `YourApp.jar`.",
+            "D": "To list the table of contents (files) of `YourApp.jar` verbosely."
+          },
+          "correct_answer": "D",
+          "explanation": "The `jar` command with options **`-t` (table of contents)**, **`-v` (verbose)**, and **`-f` (file)** is used to **list the contents of a JAR file** and provide detailed information about each entry (like file size, date, etc.)."
+        }
+      ]
+    }
+  ]
+}

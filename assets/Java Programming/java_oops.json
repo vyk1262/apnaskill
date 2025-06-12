@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_oops",
+      "questions": [
+        {
+          "question": "Which of the following best describes a 'class' in Java?",
+          "options": {
+            "A": "An instance of an object.",
+            "B": "A blueprint or template for creating objects.",
+            "C": "A collection of data.",
+            "D": "A method that performs an action."
+          },
+          "correct_answer": "B",
+          "explanation": "In Java OOP, a **class** serves as a blueprint or template. It defines the structure (attributes/fields) and behavior (methods) that all objects created from this class will have. Objects are instances of a class."
+        },
+        {
+          "question": "How do you create an object (instance) of a class named `MyClass` in Java?",
+          "options": {
+            "A": "MyClass myObject;",
+            "B": "myObject = new MyClass();",
+            "C": "MyClass myObject = new MyClass();",
+            "D": "object myObject = MyClass.create();"
+          },
+          "correct_answer": "C",
+          "explanation": "To create an object in Java, you first declare a variable of the class type, then use the `new` keyword followed by the class constructor. Option C `MyClass myObject = new MyClass();` combines declaration and initialization."
+        },
+        {
+          "question": "What is the purpose of a constructor in Java?",
+          "options": {
+            "A": "To destroy an object when it's no longer needed.",
+            "B": "To create a new class.",
+            "C": "To initialize the state of an object when it's created.",
+            "D": "To define methods for a class."
+          },
+          "correct_answer": "C",
+          "explanation": "A constructor is a special method that is automatically called when a new object of a class is created (instantiated). Its primary purpose is to **initialize the object's attributes (state)** and perform any setup needed for the new object."
+        },
+        {
+          "question": "Which keyword is used to refer to the current object within a method or constructor in Java?",
+          "options": {
+            "A": "current",
+            "B": "self",
+            "C": "this",
+            "D": "me"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`this`** keyword in Java refers to the current instance of the class. It's commonly used to distinguish between instance variables and local variables with the same name, or to call other constructors from within a constructor."
+        },
+        {
+          "question": "What is Encapsulation in OOP?",
+          "options": {
+            "A": "The ability of an object to take on many forms.",
+            "B": "Hiding the implementation details of a class and exposing only necessary functionality.",
+            "C": "Creating new classes from existing ones.",
+            "D": "The process of optimizing code for faster execution."
+          },
+          "correct_answer": "B",
+          "explanation": "**Encapsulation** is the bundling of data (attributes) and methods that operate on that data into a single unit (a class). It also involves restricting direct access to some of an object's components, meaning internal details are hidden, and interaction occurs via well-defined interfaces (methods)."
+        },
+        {
+          "question": "Which access modifier provides visibility only within the same class?",
+          "options": {
+            "A": "public",
+            "B": "protected",
+            "C": "private",
+            "D": "default"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`private`** access modifier is the most restrictive. Members (fields or methods) declared `private` are only accessible from within the same class where they are declared. This is a key mechanism for encapsulation."
+        },
+        {
+          "question": "What is Inheritance in OOP?",
+          "options": {
+            "A": "When a class contains an object of another class.",
+            "B": "When a class can take on multiple forms.",
+            "C": "When a new class (subclass) acquires properties and behaviors from an existing class (superclass).",
+            "D": "When data and methods are bundled together into a single unit."
+          },
+          "correct_answer": "C",
+          "explanation": "**Inheritance** is a mechanism where a new class (subclass or child class) derives attributes and methods from an existing class (superclass or parent class). It promotes code reusability and establishes an 'is-a' relationship (e.g., a 'Car' IS-A 'Vehicle')."
+        },
+        {
+          "question": "Which keyword is used to establish an inheritance relationship in Java?",
+          "options": {
+            "A": "inherits",
+            "B": "implements",
+            "C": "extends",
+            "D": "derives"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`extends`** keyword is used in Java to indicate that a class is inheriting from another class. For example, `class Dog extends Animal {}`."
+        },
+        {
+          "question": "What is the primary purpose of the `super` keyword in Java?",
+          "options": {
+            "A": "To call a static method of the parent class.",
+            "B": "To invoke a constructor of the parent class or access members of the parent class.",
+            "C": "To create a new instance of the current class.",
+            "D": "To declare an abstract method."
+          },
+          "correct_answer": "B",
+          "explanation": "The **`super`** keyword is used in a subclass to refer to the immediate parent class. It can be used to call the parent class's constructor (`super()`) or to access members (fields or methods) that are defined in the parent class but might be hidden or overridden in the subclass."
+        },
+        {
+          "question": "What is Method Overriding?",
+          "options": {
+            "A": "Defining multiple methods with the same name but different parameters in the same class.",
+            "B": "Defining a method in a subclass that has the exact same signature (name, parameters, return type) as a method in its superclass.",
+            "C": "Declaring a method private to prevent subclasses from accessing it.",
+            "D": "Using the `final` keyword to prevent a method from being modified."
+          },
+          "correct_answer": "B",
+          "explanation": "**Method Overriding** occurs when a subclass provides its own specific implementation for a method that is already defined in its superclass. The method in the subclass must have the same name, return type, and parameter list as the method in the superclass."
+        },
+        {
+          "question": "Which of the following statements about Method Overloading and Method Overriding is TRUE?",
+          "options": {
+            "A": "Overloading is compile-time polymorphism; Overriding is runtime polymorphism.",
+            "B": "Overloading changes method signature; Overriding changes return type only.",
+            "C": "Overloading occurs between parent and child classes; Overriding occurs within the same class.",
+            "D": "Both are examples of compile-time polymorphism."
+          },
+          "correct_answer": "A",
+          "explanation": "**Method Overloading** (same method name, different parameters) is resolved at compile time, making it **compile-time polymorphism**. **Method Overriding** (same method signature in parent and child) is resolved at runtime based on the actual object type, making it **runtime polymorphism**."
+        },
+        {
+          "question": "What does Polymorphism mean in OOP?",
+          "options": {
+            "A": "The ability to define multiple classes in one file.",
+            "B": "The ability of an object to hide its internal state.",
+            "C": "The ability of an object to take on many forms or have multiple behaviors based on the context.",
+            "D": "The ability to inherit from multiple parent classes simultaneously."
+          },
+          "correct_answer": "C",
+          "explanation": "**Polymorphism** means 'many forms'. In OOP, it refers to the ability of an object to be treated as an instance of its own class, its superclass, or an implemented interface. This allows a single interface to represent various underlying data types or behaviors (e.g., a `Vehicle` reference can refer to a `Car` or a `Bike`, and their `drive()` method might behave differently)."
+        },
+        {
+          "question": "Which of these concepts represents an 'is-a' relationship?",
+          "options": {
+            "A": "Encapsulation",
+            "B": "Polymorphism",
+            "C": "Inheritance",
+            "D": "Association"
+          },
+          "correct_answer": "C",
+          "explanation": "**Inheritance** models an 'is-a' relationship. For example, a `Dog` 'is-a' `Animal`. This means `Dog` inherits properties and behaviors from `Animal`."
+        },
+        {
+          "question": "Which of the following cannot be instantiated (you cannot create objects of its type)?",
+          "options": {
+            "A": "Concrete Class",
+            "B": "Abstract Class",
+            "C": "Subclass",
+            "D": "Outer Class"
+          },
+          "correct_answer": "B",
+          "explanation": "An **Abstract Class** cannot be instantiated directly. It serves as a blueprint for other classes, often containing abstract methods that must be implemented by its concrete subclasses. A `Concrete Class` (option A) can be instantiated."
+        },
+        {
+          "question": "What is the primary difference between an `abstract class` and an `interface` in Java (prior to Java 8/9 features)?",
+          "options": {
+            "A": "An abstract class can have concrete methods, an interface only abstract methods.",
+            "B": "An abstract class can implement multiple interfaces, an interface can extend multiple abstract classes.",
+            "C": "An abstract class can have non-final variables, an interface only final and static variables.",
+            "D": "All of the above."
+          },
+          "correct_answer": "D",
+          "explanation": "Prior to Java 8 (which introduced default and static methods in interfaces), the distinctions were very clear: an abstract class could have a mix of abstract and concrete methods, could have non-final variables, and constructors. An interface could only have public, static, final fields and public, abstract methods. An abstract class supports single inheritance, while an interface supports multiple inheritance of type (via implementation). Option D covers multiple key differences."
+        },
+        {
+          "question": "Which keyword is used to prevent a class from being subclassed (inherited)?",
+          "options": {
+            "A": "static",
+            "B": "abstract",
+            "C": "final",
+            "D": "private"
+          },
+          "correct_answer": "C",
+          "explanation": "The **`final`** keyword can be applied to a class to prevent other classes from inheriting from it. For example, `public final class MyClass {}`. It can also prevent method overriding (if applied to a method) and prevent variable reassignment (if applied to a variable)."
+        },
+        {
+          "question": "What is the relationship called when one class contains an object of another class as a member (e.g., a `Car` class has an `Engine` object)?",
+          "options": {
+            "A": "Inheritance",
+            "B": "Polymorphism",
+            "C": "Aggregation (or Composition)",
+            "D": "Abstraction"
+          },
+          "correct_answer": "C",
+          "explanation": "This describes a 'has-a' relationship, which is modeled by **Aggregation** or **Composition**. In this relationship, one class contains an object of another class. It's often referred to as 'object association' or 'containment' and is a form of code reuse different from inheritance."
+        },
+        {
+          "question": "What is an 'instance variable' in Java?",
+          "options": {
+            "A": "A variable declared inside a method.",
+            "B": "A variable declared with the `static` keyword.",
+            "C": "A variable belonging to an object (instance) of a class, defined without `static` keyword inside the class.",
+            "D": "A variable accessible throughout the entire program."
+          },
+          "correct_answer": "C",
+          "explanation": "An **instance variable** (or non-static field) is a variable declared within a class but outside any method, constructor, or block, and *without* the `static` keyword. Each object (instance) of the class will have its own copy of these variables, storing its unique state."
+        },
+        {
+          "question": "Which of the following is NOT a benefit of OOP?",
+          "options": {
+            "A": "Code Reusability",
+            "B": "Improved Modularity",
+            "C": "Reduced Maintenance",
+            "D": "Guaranteed Faster Execution Speed"
+          },
+          "correct_answer": "D",
+          "explanation": "While OOP can lead to more organized, maintainable, and reusable code, it does not **guarantee** faster execution speed. Sometimes, the overhead of object creation and method calls can even make OOP code slightly slower than purely procedural code, though this is often negligible with modern JVMs. The other options are well-known benefits."
+        },
+        {
+          "question": "What happens if a subclass method has the same name as a superclass method but a different parameter list?",
+          "options": {
+            "A": "It causes a compilation error.",
+            "B": "It is considered method overriding.",
+            "C": "It is considered method overloading.",
+            "D": "The superclass method is hidden and cannot be called."
+          },
+          "correct_answer": "C",
+          "explanation": "If a method in a subclass has the same name as a method in its superclass but a **different parameter list**, it's considered **method overloading**, not overriding. Both methods (from parent and child) will coexist, and the Java compiler will decide which one to call based on the arguments provided at the call site."
+        }
+      ]
+    }
+  ]
+}

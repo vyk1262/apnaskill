@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "java_exceptions",
+      "questions": [
+        {
+          "question": "What is an 'Exception' in Java?",
+          "options": {
+            "A": "A special type of method.",
+            "B": "An event that disrupts the normal flow of a program's instructions.",
+            "C": "A syntax error detected by the compiler.",
+            "D": "A keyword used to declare a variable."
+          },
+          "correct_answer": "B",
+          "explanation": "An **Exception** in Java is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions. When an exception occurs, the program terminates abnormally if not handled."
+        },
+        {
+          "question": "What is the primary difference between an 'Error' and an 'Exception' in Java?",
+          "options": {
+            "A": "Errors are always checked, while Exceptions are unchecked.",
+            "B": "Errors are recoverable, while Exceptions are not.",
+            "C": "Errors indicate serious problems that applications should not try to catch, while Exceptions are conditions that an application might want to catch.",
+            "D": "Errors are runtime issues, while Exceptions are compile-time issues."
+          },
+          "correct_answer": "C",
+          "explanation": "**Errors** (subclasses of `java.lang.Error`) represent serious problems that are typically unrecoverable and indicate something gravely wrong with the JVM or system (e.g., `OutOfMemoryError`). **Exceptions** (subclasses of `java.lang.Exception`) represent conditions that an application might reasonably want to catch and handle (e.g., `IOException`, `NullPointerException`)."
+        },
+        {
+          "question": "Which of the following is a 'Checked Exception' in Java?",
+          "options": {
+            "A": "NullPointerException",
+            "B": "ArrayIndexOutOfBoundsException",
+            "C": "IOException",
+            "D": "ArithmeticException"
+          },
+          "correct_answer": "C",
+          "explanation": "**Checked Exceptions** are exceptions that the Java compiler forces you to handle (either by catching them in a `try-catch` block or declaring them with `throws` in the method signature). `IOException` is a common example. `NullPointerException`, `ArrayIndexOutOfBoundsException`, and `ArithmeticException` are **Unchecked Exceptions** (subclasses of `RuntimeException`)."
+        },
+        {
+          "question": "Which keyword is used to explicitly throw an exception from a method or block of code?",
+          "options": {
+            "A": "throws",
+            "B": "throw",
+            "C": "catch",
+            "D": "finally"
+          },
+          "correct_answer": "B",
+          "explanation": "The **`throw`** keyword is used to explicitly create and throw a single exception object from within a method or block of code. For example, `throw new IllegalArgumentException(\"Invalid input\");`."
+        },
+        {
+          "question": "What is the purpose of the `try` block in exception handling?",
+          "options": {
+            "A": "To declare which exceptions a method might throw.",
+            "B": "To define the code that will handle an exception.",
+            "C": "To enclose the code segment that might throw an exception.",
+            "D": "To ensure certain code runs regardless of an exception."
+          },
+          "correct_answer": "C",
+          "explanation": "The **`try` block** encloses the segment of code that is expected to potentially throw one or more exceptions. If an exception occurs within the `try` block, control immediately transfers to a matching `catch` block."
+        },
+        {
+          "question": "When is the code inside a `finally` block executed?",
+          "options": {
+            "A": "Only if an exception occurs in the `try` block.",
+            "B": "Only if no exception occurs in the `try` block.",
+            "C": "Only if a `catch` block handles an exception.",
+            "D": "Always, regardless of whether an exception occurs or is handled."
+          },
+          "correct_answer": "D",
+          "explanation": "The **`finally` block** is always executed, regardless of whether an exception occurs in the `try` block or if a `catch` block handles it. It's typically used for cleanup operations like closing files or database connections."
+        },
+        {
+          "question": "What happens if a method is declared with `throws IOException` but doesn't throw it?",
+          "options": {
+            "A": "It causes a compilation error.",
+            "B": "It causes a runtime error.",
+            "C": "The program will crash.",
+            "D": "Nothing, it's perfectly valid."
+          },
+          "correct_answer": "D",
+          "explanation": "It is perfectly valid to declare a method with `throws SomeException` even if the method, in its current implementation, does not throw that exception. The `throws` clause is a declaration of potential exceptions, not a guarantee that they will be thrown."
+        },
+        {
+          "question": "Can a `try` block exist without a `catch` block in Java?",
+          "options": {
+            "A": "No, a `try` must always be followed by at least one `catch`.",
+            "B": "Yes, if it is followed by a `finally` block.",
+            "C": "Yes, if it is followed by an `else` block.",
+            "D": "Yes, but only if it handles an `Error`."
+          },
+          "correct_answer": "B",
+          "explanation": "A `try` block can indeed exist without a `catch` block, but it **must be followed by a `finally` block**. In this case, if an exception occurs in the `try` block, the `finally` block will execute, and then the exception will propagate up the call stack."
+        },
+        {
+          "question": "Which class is the superclass of all errors and exceptions in Java?",
+          "options": {
+            "A": "Object",
+            "B": "Exception",
+            "C": "Throwable",
+            "D": "Error"
+          },
+          "correct_answer": "C",
+          "explanation": "The `java.lang.Throwable` class is the **root of the exception and error hierarchy** in Java. Both `java.lang.Error` and `java.lang.Exception` are direct subclasses of `Throwable`."
+        },
+        {
+          "question": "What is the purpose of the `printStackTrace()` method?",
+          "options": {
+            "A": "To print system information to the console.",
+            "B": "To display the name of the exception.",
+            "C": "To print the stack trace from where the exception occurred, helping in debugging.",
+            "D": "To get a localized description of the exception."
+          },
+          "correct_answer": "C",
+          "explanation": "The `printStackTrace()` method (available on `Throwable` objects) is commonly used to **print the stack trace** of an exception to the standard error stream. This output shows the sequence of method calls that led to the exception, which is invaluable for debugging."
+        },
+        {
+          "question": "Which of the following is an 'Unchecked Exception'?",
+          "options": {
+            "A": "FileNotFoundException",
+            "B": "SQLException",
+            "C": "ClassNotFoundException",
+            "D": "NullPointerException"
+          },
+          "correct_answer": "D",
+          "explanation": "**Unchecked Exceptions** (subclasses of `RuntimeException`) do not need to be explicitly handled by the programmer. `NullPointerException` is a very common unchecked exception, indicating an attempt to use a null reference. The other options are checked exceptions."
+        },
+        {
+          "question": "Can you have multiple `catch` blocks for a single `try` block?",
+          "options": {
+            "A": "No, only one `catch` block is allowed per `try` block.",
+            "B": "Yes, but only if the exceptions are related by inheritance.",
+            "C": "Yes, you can have multiple `catch` blocks to handle different types of exceptions.",
+            "D": "Only if using Java 8 or later."
+          },
+          "correct_answer": "C",
+          "explanation": "Yes, a `try` block can be followed by **multiple `catch` blocks**. Each `catch` block is designed to handle a specific type of exception. When an exception occurs, the JVM looks for the first `catch` block whose exception type matches or is a superclass of the thrown exception. More specific exception catches should come before more general ones."
+        },
+        {
+          "question": "If both a `catch` block and a `finally` block are present, and an exception is caught, in what order do they execute?",
+          "options": {
+            "A": "try -> finally -> catch",
+            "B": "try -> catch -> finally",
+            "C": "finally -> try -> catch",
+            "D": "catch -> try -> finally"
+          },
+          "correct_answer": "B",
+          "explanation": "If an exception occurs and is caught, the execution flow is: first the code in the **`try` block** up to the point of exception, then the matching **`catch` block**, and finally the **`finally` block**. If no exception occurs, it's `try -> finally`."
+        },
+        {
+          "question": "What is the primary benefit of using `try-with-resources` (introduced in Java 7)?",
+          "options": {
+            "A": "It eliminates the need for `catch` blocks.",
+            "B": "It automatically closes resources (like files, streams, connections) that implement `AutoCloseable`.",
+            "C": "It makes all exceptions unchecked.",
+            "D": "It allows a `try` block to run without a `catch` or `finally`."
+          },
+          "correct_answer": "B",
+          "explanation": "The `try-with-resources` statement automatically ensures that any resource that implements the `java.lang.AutoCloseable` interface is closed at the end of the `try` block, regardless of whether the `try` block completes normally or abruptly (due to an exception). This helps prevent resource leaks."
+        },
+        {
+          "question": "Which class would you extend to create a custom 'checked' exception?",
+          "options": {
+            "A": "Error",
+            "B": "RuntimeException",
+            "C": "Exception",
+            "D": "Throwable"
+          },
+          "correct_answer": "C",
+          "explanation": "To create a custom **checked exception**, you should extend the `java.lang.Exception` class (or one of its checked subclasses, excluding `RuntimeException`). This forces the calling code to handle the exception."
+        },
+        {
+          "question": "Which class would you extend to create a custom 'unchecked' exception?",
+          "options": {
+            "A": "Error",
+            "B": "RuntimeException",
+            "C": "Exception",
+            "D": "Throwable"
+          },
+          "correct_answer": "B",
+          "explanation": "To create a custom **unchecked exception**, you should extend the `java.lang.RuntimeException` class (or one of its subclasses). This means the compiler will not force callers to handle it, similar to built-in unchecked exceptions like `NullPointerException`."
+        },
+        {
+          "question": "What will be the output of the following Java code snippet?\n\n```java\ntry {\n    int result = 10 / 0;\n    System.out.println(\"Result: \" + result);\n} catch (ArithmeticException e) {\n    System.out.println(\"Caught an arithmetic exception.\");\n} finally {\n    System.out.println(\"Finally block executed.\");\n}\n```",
+          "options": {
+            "A": "Result: 0\nFinally block executed.",
+            "B": "Caught an arithmetic exception.\nFinally block executed.",
+            "C": "Result: Exception\nFinally block executed.",
+            "D": "Compilation Error."
+          },
+          "correct_answer": "B",
+          "explanation": "The division by zero (`10 / 0`) will throw an `ArithmeticException`. The program will then jump to the `catch (ArithmeticException e)` block, print 'Caught an arithmetic exception.', and finally, the `finally` block will execute, printing 'Finally block executed.'."
+        },
+        {
+          "question": "What is the purpose of the `getMessage()` method of an exception object?",
+          "options": {
+            "A": "To get the name of the class that threw the exception.",
+            "B": "To retrieve a short description or detail message string of this throwable.",
+            "C": "To print the full stack trace to the console.",
+            "D": "To determine if the exception is checked or unchecked."
+          },
+          "correct_answer": "B",
+          "explanation": "The `getMessage()` method (inherited from `Throwable`) returns a short description or detail message string associated with the exception. This message often provides specific information about why the exception occurred."
+        },
+        {
+          "question": "Which of the following is a good practice for handling exceptions?",
+          "options": {
+            "A": "Catching the most generic exception type, `Throwable`, in every `catch` block.",
+            "B": "Ignoring exceptions by leaving `catch` blocks empty.",
+            "C": "Catching specific exceptions first, then more general ones if necessary.",
+            "D": "Relying solely on `throws` declarations and never using `try-catch`."
+          },
+          "correct_answer": "C",
+          "explanation": "It's best practice to **catch specific exceptions first**, and then more general exceptions later. This allows you to provide precise handling logic for different error scenarios. Catching `Throwable` or `Exception` generically too early can hide specific issues and make debugging harder. Empty `catch` blocks (option B) are also considered bad practice as they suppress errors."
+        },
+        {
+          "question": "Consider the following code: `int[] numbers = {1, 2, 3}; System.out.println(numbers[3]);` What type of exception will this code throw at runtime?",
+          "options": {
+            "A": "NullPointerException",
+            "B": "IllegalArgumentException",
+            "C": "ArrayIndexOutOfBoundsException",
+            "D": "IOException"
+          },
+          "correct_answer": "C",
+          "explanation": "Arrays in Java are 0-indexed, meaning the valid indices for an array of size 3 are 0, 1, and 2. Attempting to access an element at index 3 (which is beyond the array's bounds) will result in an **`ArrayIndexOutOfBoundsException`**, which is an unchecked (runtime) exception."
+        }
+      ]
+    }
+  ]
+}
