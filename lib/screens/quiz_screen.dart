@@ -651,7 +651,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                           horizontal: 16, vertical: 12),
                                       decoration: BoxDecoration(
                                         color: isSelected
-                                            ? Colors.white.withOpacity(0.3)
+                                            ? Colors.black.withOpacity(0.5)
                                             : Colors.white.withOpacity(0.1),
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(
