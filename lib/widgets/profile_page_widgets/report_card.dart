@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_factorial/constants/colors.dart';
 
 class ReportCardWidget extends StatelessWidget {
   final List<dynamic>? internshipsList;
@@ -10,6 +11,8 @@ class ReportCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = MediaQuery.of(context).size.width < 850;
+
     if (internshipsList == null || internshipsList!.isEmpty) {
       return Card(
         elevation: 2,
@@ -20,8 +23,7 @@ class ReportCardWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.center, // Center the icon and title
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.school, color: Theme.of(context).primaryColor),
                   const SizedBox(width: 8),
@@ -50,12 +52,10 @@ class ReportCardWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment:
-              CrossAxisAlignment.center, // Center contents of the card
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
-              mainAxisAlignment:
-                  MainAxisAlignment.center, // Center the icon and title
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(Icons.school, color: Theme.of(context).primaryColor),
                 const SizedBox(width: 8),
@@ -75,7 +75,7 @@ class ReportCardWidget extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 16),
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                      color: Colors.grey[50],
+                      color: AppColors.secondaryColor.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: Colors.grey[300]!)),
                   child: Column(
@@ -83,7 +83,7 @@ class ReportCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         internship['internshipName'] ?? 'N/A',
-                        textAlign: TextAlign.center, // Center internship name
+                        textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium
@@ -99,46 +99,59 @@ class ReportCardWidget extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(height: 4),
-                        // Improved alignment for quiz marks
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
                             (internship['quizMarks'] as List).length,
                             (quizIndex) {
                               final quiz = internship['quizMarks'][quizIndex];
-                              return Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 4),
+
+                              return Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: isMobile ? 6 : 10,
+                                  vertical: isMobile ? 2 : 4,
+                                ),
+                                margin: const EdgeInsets.symmetric(vertical: 2),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(12)),
                                 child: Row(
+                                  // This Row now centers its contents as a unit and takes minimal space
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Text(
-                                      quiz['quizName']
-                                          .toString()
-                                          .replaceAll('_', ' '),
-                                      style: TextStyle(color: Colors.grey[700]),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    const SizedBox(
-                                        width:
-                                            8), // Spacing between text and score box
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 10, vertical: 4),
-                                      decoration: BoxDecoration(
-                                          color: Theme.of(context)
-                                              .primaryColor
-                                              .withOpacity(0.1),
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-                                      child: Text(
-                                        'Score: ${quiz['marks']}',
-                                        style: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            fontWeight: FontWeight.w500),
+                                    // CONDITIONAL WIDGET HERE:
+                                    if (isMobile)
+                                      Expanded(
+                                        // On mobile, allow text to expand and truncate
+                                        child: Text(
+                                          quiz['quizName']
+                                              .toString()
+                                              .replaceAll('_', ' '),
+                                          style: TextStyle(
+                                              color: Colors.grey[700]),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 2,
+                                        ),
+                                      )
+                                    else
+                                      Text(
+                                        // On laptop, text takes natural width
+                                        quiz['quizName']
+                                            .toString()
+                                            .replaceAll('_', ' '),
+                                        style:
+                                            TextStyle(color: Colors.grey[700]),
+                                        overflow: TextOverflow
+                                            .ellipsis, // Still truncate if name is very long
+                                        maxLines: 1,
                                       ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      'Score: ${quiz['marks']}/${quiz['total_questions']}',
+                                      style: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ],
                                 ),
