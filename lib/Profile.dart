@@ -3,7 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/custom_app_bar.dart';
-import 'package:intl/intl.dart'; // For date formatting
+import 'package:intl/intl.dart';
+
+import 'widgets/profile_page_widgets/form_widget.dart';
+import 'widgets/profile_page_widgets/report_card.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -26,18 +29,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
   double _calculateProfileCompletion() {
     if (userData == null) return 0.0;
 
-    // Define fields to track for completion, excluding system or internal fields
-    final trackableFields = ['email', 'name', 'dateOfBirth', 'gender'];
+    final trackableFields = [
+      'email',
+      'name',
+      'mobileNumber',
+      'dateOfBirth',
+      'gender'
+    ];
     int completedFields = 0;
     int totalFields = trackableFields.length;
 
-    for (String field in trackableFields) {
-      if (field == 'name') {
-        if (userData![field]?.isNotEmpty ?? false) completedFields++;
-      } else if (userData![field] != null) {
-        completedFields++;
-      }
-    }
+    if (userData!['email']?.isNotEmpty ?? false)
+      completedFields++; // Email usually always present
+    if (_nameController.text.isNotEmpty) completedFields++;
+    if (_mobileNumberController.text.isNotEmpty) completedFields++;
+    if (_selectedDate != null) completedFields++;
+    if (_selectedGender != null && _selectedGender!.isNotEmpty)
+      completedFields++;
 
     return (completedFields / totalFields) * 100;
   }
@@ -77,7 +85,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               if (userData!['dateOfBirth'] != null &&
                   userData!['dateOfBirth'].isNotEmpty) {
                 try {
-                  // Assuming dateOfBirth is stored as a String in 'yyyy-MM-dd' format or as a Timestamp
                   if (userData!['dateOfBirth'] is Timestamp) {
                     _selectedDate =
                         (userData!['dateOfBirth'] as Timestamp).toDate();
@@ -91,12 +98,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 }
               }
               _selectedGender = userData!['gender'];
+              // Ensure _selectedGender is one of the options or null
               if (_selectedGender != null &&
                   !genderOptions.contains(_selectedGender)) {
-                // If the stored gender is not in predefined options, add it or handle as needed
-                // For simplicity, we'll just allow it if it's a custom value already stored.
-                // Or, reset to null if you want to force selection from options:
-                // _selectedGender = null;
+                // If a custom value was stored that isn't in options, you might want to:
+                // 1. Add it to options temporarily: genderOptions.add(_selectedGender!);
+                // 2. Set to null to force user selection: _selectedGender = null;
+                // For now, we'll keep it as is if it's already stored.
               }
             }
             _isLoading = false;
@@ -105,22 +113,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
           setState(() {
             _isLoading = false;
           });
-          // Handle case where user document doesn't exist
           print('User document does not exist.');
+          // Optionally, initialize userData with default values for a new user
+          userData = {
+            'email': user.email ?? 'N/A',
+            'name': '',
+            'mobileNumber': '',
+            'dateOfBirth': null,
+            'gender': null,
+            'internshipsList': [],
+          };
         }
       } catch (e) {
         setState(() {
           _isLoading = false;
         });
         print('Error fetching user data: $e');
-        // Handle error fetching data
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error fetching profile data: $e')),
+        );
       }
     } else {
       setState(() {
         _isLoading = false;
       });
-      // Handle case where user is null (should not happen if screen is protected)
       print('No user logged in.');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('User not logged in.')),
+      );
     }
   }
 
@@ -138,6 +158,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
+  void _onGenderChanged(String? newValue) {
+    setState(() {
+      _selectedGender = newValue;
+    });
+  }
+
   Future<void> _saveUserData() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
@@ -149,8 +175,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Map<String, dynamic> updatedData = {
             'name': _nameController.text,
             'mobileNumber': _mobileNumberController.text,
-            'email': userData![
-                'email'], // Email is not editable, but good to keep it consistent
+            'email': userData!['email'],
             'dateOfBirth': _selectedDate != null
                 ? DateFormat('yyyy-MM-dd').format(_selectedDate!)
                 : null,
@@ -160,10 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           await FirebaseFirestore.instance
               .collection('users')
               .doc(user.uid)
-              .set(
-                  updatedData,
-                  SetOptions(
-                      merge: true)); // Use set with merge to update or create
+              .set(updatedData, SetOptions(merge: true));
 
           setState(() {
             userData!['name'] = _nameController.text;
@@ -205,6 +227,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: CustomAppBar(),
       backgroundColor: Colors.grey[100], // Light gray background
       body: Center(
+        // Center the entire body content
         child: _isLoading
             ? const CircularProgressIndicator()
             : userData != null
@@ -230,276 +253,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ],
                           ),
                           padding: const EdgeInsets.all(24.0),
-                          child: Form(
-                            key: _formKey,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  'My Profile',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headlineSmall
-                                      ?.copyWith(fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
-                                ),
-                                // Profile completion percentage
-                                Container(
-                                  margin:
-                                      const EdgeInsets.symmetric(vertical: 8.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            'Profile Completion',
-                                            style: TextStyle(
-                                                color: Colors.grey[700],
-                                                fontSize: 14),
-                                          ),
-                                          Text(
-                                            '${_calculateProfileCompletion()}%',
-                                            style: TextStyle(
-                                                color: AppColors.primaryColor,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(height: 8),
-                                      LinearProgressIndicator(
-                                        value:
-                                            _calculateProfileCompletion() / 100,
-                                        backgroundColor: Colors.grey[200],
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                                Theme.of(context).primaryColor),
-                                        minHeight: 8,
-                                        borderRadius: BorderRadius.circular(4),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(height: 24),
-
-                                // Email (Non-editable)
-                                Card(
-                                  elevation: 2,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Email',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleSmall
-                                                ?.copyWith(
-                                                    color: Colors.grey[700])),
-                                        const SizedBox(height: 4),
-                                        Text(userData!['email'] ?? 'N/A',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleMedium),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-
-                                // Name
-                                TextFormField(
-                                  controller: _nameController,
-                                  style: TextStyle(color: Colors.black87),
-                                  decoration: InputDecoration(
-                                    labelText: 'Name',
-                                    labelStyle:
-                                        TextStyle(color: Colors.grey[700]),
-                                    border: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide:
-                                          BorderSide(color: Colors.grey[300]!),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide: BorderSide(
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                    ),
-                                    filled: true,
-                                    fillColor: Colors.grey[50],
-                                    prefixIcon: Icon(Icons.person_outline,
-                                        color: Colors.grey[600]),
-                                  ),
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'Please enter your name';
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                const SizedBox(height: 16),
-                                TextFormField(
-                                  controller: _mobileNumberController,
-                                  style: TextStyle(color: Colors.black87),
-                                  decoration: InputDecoration(
-                                    labelText: 'Mobile Number',
-                                    labelStyle:
-                                        TextStyle(color: Colors.grey[700]),
-                                    border: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide:
-                                          BorderSide(color: Colors.grey[300]!),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide: BorderSide(
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                    ),
-                                    filled: true,
-                                    fillColor: Colors.grey[50],
-                                    prefixIcon: Icon(Icons.person_outline,
-                                        color: Colors.grey[600]),
-                                  ),
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'Please enter your Mobile Number';
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                const SizedBox(height: 16),
-
-                                // Date of Birth
-                                InkWell(
-                                  onTap: () => _selectDate(context),
-                                  child: InputDecorator(
-                                    decoration: InputDecoration(
-                                      labelText: 'Date of Birth',
-                                      labelStyle:
-                                          TextStyle(color: Colors.grey[700]),
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(12),
-                                        borderSide: BorderSide(
-                                            color: Colors.grey[300]!),
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.grey[50],
-                                      prefixIcon: Icon(
-                                          Icons.calendar_today_outlined,
-                                          color: Colors.grey[600]),
-                                    ),
-                                    child: Text(
-                                      _selectedDate != null
-                                          ? DateFormat('dd MMMM yyyy')
-                                              .format(_selectedDate!)
-                                          : 'Select your date of birth',
-                                      style: TextStyle(
-                                        color: _selectedDate == null
-                                            ? Colors.grey[600]
-                                            : Theme.of(context)
-                                                .textTheme
-                                                .bodyLarge
-                                                ?.color,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-
-                                // Gender
-                                DropdownButtonFormField<String>(
-                                  value: _selectedGender,
-                                  style: TextStyle(color: Colors.black87),
-                                  decoration: InputDecoration(
-                                    labelText: 'Gender',
-                                    labelStyle:
-                                        TextStyle(color: Colors.grey[700]),
-                                    border: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide:
-                                          BorderSide(color: Colors.grey[300]!),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                      borderSide: BorderSide(
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                    ),
-                                    filled: true,
-                                    fillColor: Colors.grey[50],
-                                    prefixIcon: Icon(Icons.wc_outlined,
-                                        color: Colors.grey[600]),
-                                  ),
-                                  items: genderOptions.map((String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      _selectedGender = newValue;
-                                    });
-                                  },
-                                  // validator: (value) => value == null ? 'Please select your gender' : null, // Optional validation
-                                ),
-                                const SizedBox(height: 32),
-
-                                // Course Report Section
-
-                                const SizedBox(height: 32),
-
-                                // Save Button
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 16.0),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                    backgroundColor:
-                                        Theme.of(context).primaryColor,
-                                    foregroundColor: Colors.white,
-                                  ),
-                                  onPressed: _isLoading ? null : _saveUserData,
-                                  child: _isLoading
-                                      ? const SizedBox(
-                                          height: 20,
-                                          width: 20,
-                                          child: CircularProgressIndicator(
-                                              strokeWidth: 2,
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                      Colors.white)))
-                                      : const Text('Save Changes',
-                                          style: TextStyle(fontSize: 16)),
-                                ),
-                              ],
-                            ),
+                          child: FormWidget(
+                            formKey: _formKey,
+                            nameController: _nameController,
+                            mobileNumberController: _mobileNumberController,
+                            selectedDate: _selectedDate,
+                            selectedGender: _selectedGender,
+                            genderOptions: genderOptions,
+                            onSelectDate: _selectDate,
+                            onGenderChanged: _onGenderChanged,
+                            onSave: _saveUserData,
+                            isLoading: _isLoading,
+                            profileCompletionPercentage:
+                                _calculateProfileCompletion(),
+                            userEmail: userData!['email'],
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Container(
                           padding: const EdgeInsets.all(16.0),
                           decoration: BoxDecoration(
@@ -510,147 +280,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 1.0,
                             ),
                           ),
-                          child: Card(
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(Icons.school,
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                      const SizedBox(width: 8),
-                                      Text('Course Report',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .titleLarge
-                                              ?.copyWith(
-                                                  fontWeight: FontWeight.bold)),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 16),
-                                  if (userData!['internshipsList'] != null)
-                                    ...List.generate(
-                                      (userData!['internshipsList'] as List)
-                                          .length,
-                                      (index) {
-                                        final internship =
-                                            userData!['internshipsList'][index];
-                                        return Container(
-                                          margin:
-                                              const EdgeInsets.only(bottom: 16),
-                                          padding: const EdgeInsets.all(12),
-                                          decoration: BoxDecoration(
-                                              color: Colors.grey[50],
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              border: Border.all(
-                                                  color: Colors.grey[300]!)),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                internship['internshipName'] ??
-                                                    'N/A',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .titleMedium
-                                                    ?.copyWith(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: Theme.of(context)
-                                                            .primaryColor),
-                                              ),
-                                              if (internship['quizMarks'] !=
-                                                  null) ...[
-                                                const SizedBox(height: 8),
-                                                Text(
-                                                  'Quiz Results:',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                ),
-                                                const SizedBox(height: 4),
-                                                ...List.generate(
-                                                  (internship['quizMarks']
-                                                          as List)
-                                                      .length,
-                                                  (quizIndex) {
-                                                    final quiz =
-                                                        internship['quizMarks']
-                                                            [quizIndex];
-                                                    return Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              left: 8, top: 4),
-                                                      child: Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Expanded(
-                                                            child: Text(
-                                                              quiz['quizName']
-                                                                  .toString()
-                                                                  .replaceAll(
-                                                                      '_', ' '),
-                                                              style: TextStyle(
-                                                                  color: Colors
-                                                                          .grey[
-                                                                      700]),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .symmetric(
-                                                                    horizontal:
-                                                                        8,
-                                                                    vertical:
-                                                                        2),
-                                                            decoration: BoxDecoration(
-                                                                color: Theme.of(
-                                                                        context)
-                                                                    .primaryColor
-                                                                    .withOpacity(
-                                                                        0.1),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12)),
-                                                            child: Text(
-                                                              'Score: ${quiz['marks']}',
-                                                              style: TextStyle(
-                                                                  color: Theme.of(
-                                                                          context)
-                                                                      .primaryColor,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ],
-                                            ],
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                ],
-                              ),
-                            ),
+                          child: ReportCardWidget(
+                            internshipsList: userData!['internshipsList'],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   )
@@ -671,6 +304,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: const Text(
                       'User data not found. Please try again later.',
                       style: TextStyle(color: Colors.black87),
+                      textAlign: TextAlign.center, // Center the text
                     ),
                   ),
       ),
