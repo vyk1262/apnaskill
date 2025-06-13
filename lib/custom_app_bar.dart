@@ -83,18 +83,20 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ],
                   ),
                 ),
+                isMobile ? SizedBox.shrink() : Spacer(),
                 if (user != null) ...[
-                  isMobile ? SizedBox.shrink() : Spacer(),
                   isMobile
                       ? SizedBox.shrink()
                       : IconButton(
                           onPressed: () {
-                            context.go(
-                                '/profile'); // Navigate to profile screen route
+                            context.go('/profile');
                           },
-                          icon: Icon(Icons.account_box, color: Colors.white)),
+                          icon: Icon(
+                            Icons.account_box,
+                            color: Colors.white,
+                          ),
+                        ),
                 ],
-                Spacer(),
                 isMobile
                     ? SizedBox.shrink()
                     : Row(
