@@ -18,7 +18,37 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(60);
 }
 
-class _CustomAppBarState extends State<CustomAppBar> {
+class _CustomAppBarState extends State<CustomAppBar>
+    with SingleTickerProviderStateMixin {
+  // Animation controller for the drawer
+  late AnimationController _animationController;
+  late Animation<Offset> _slideAnimation;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300), // Quick animation
+    );
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(-1.0, 0.0), // Starts off-screen to the left
+      end: Offset.zero, // Slides into view
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeOut,
+    ));
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(parent: _animationController, curve: Curves.easeIn));
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
@@ -33,19 +63,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                isMobile
-                    ? IconButton(
-                        icon: const Icon(
-                          Icons.menu,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                        onPressed: () {
-                          _openCustomDrawer(context);
-                        },
-                      )
-                    : SizedBox.shrink(),
-                isMobile ? SizedBox.shrink() : SizedBox(width: 80),
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
@@ -83,22 +100,22 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ],
                   ),
                 ),
-                isMobile ? SizedBox.shrink() : Spacer(),
+                const Spacer(),
                 if (user != null) ...[
                   isMobile
-                      ? SizedBox.shrink()
+                      ? const SizedBox.shrink()
                       : IconButton(
                           onPressed: () {
                             context.go('/profile');
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.account_box,
                             color: Colors.white,
                           ),
                         ),
                 ],
                 isMobile
-                    ? SizedBox.shrink()
+                    ? const SizedBox.shrink()
                     : Row(
                         children: [
                           _buildNavButton(context,
@@ -113,8 +130,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               label: 'Blogs', screenName: 'blogs'),
                           if (user == null)
                             ElevatedButton.icon(
-                              icon: Icon(Icons.login, color: Colors.black),
-                              label: Text(
+                              icon:
+                                  const Icon(Icons.login, color: Colors.black),
+                              label: const Text(
                                 "Login",
                                 style: TextStyle(
                                   color: Colors.black,
@@ -127,14 +145,15 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 16.0, vertical: 8.0),
                               ),
                             ),
                           if (user != null)
                             ElevatedButton.icon(
-                              icon: Icon(Icons.logout, color: Colors.black),
-                              label: Text("Logout",
+                              icon:
+                                  const Icon(Icons.logout, color: Colors.black),
+                              label: const Text("Logout",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 16,
@@ -146,12 +165,24 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 16.0, vertical: 8.0),
                               ),
                             ),
                         ],
                       ),
+                isMobile
+                    ? IconButton(
+                        icon: const Icon(
+                          Icons.menu,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        onPressed: () {
+                          _openCustomDrawer(context);
+                        },
+                      )
+                    : const SizedBox.shrink(),
               ],
             ),
           ],
@@ -162,76 +193,96 @@ class _CustomAppBarState extends State<CustomAppBar> {
 
   void _openCustomDrawer(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
+    _animationController.forward(); // Start the animation
+
     Navigator.of(context).push(
       PageRouteBuilder(
         opaque: false,
-        pageBuilder: (_, __, ___) => Scaffold(
-          backgroundColor: Colors.transparent,
-          body: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: Container(
-              color: Colors.black87,
-              child: Center(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        onPressed: () => Navigator.pop(context),
-                        icon: Icon(
-                          Icons.cancel,
-                          size: 34,
-                          color: Colors.white,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      if (user != null) ...[
-                        IconButton(
-                            onPressed: () {
-                              Navigator.pop(context); // Close drawer first
-                              context.go(
-                                  '/profile'); // Navigate to profile screen route
-                            },
-                            icon: Icon(Icons.account_box, color: Colors.white)),
-                      ],
-                      SizedBox(height: 10),
-                      _buildDrawerButton(context,
-                          label: 'Home', screenName: '/'),
-                      SizedBox(height: 10),
-                      // _buildDrawerButton(context,
-                      //     label: 'Mentors', screenName: 'mentors'),
-                      // SizedBox(height: 10),
-                      _buildDrawerButton(context,
-                          label: 'Quizzes', screenName: 'quizzes'),
-                      SizedBox(height: 10),
-                      _buildDrawerButton(context,
-                          label: "Explore", screenName: 'explore'),
-                      SizedBox(height: 10),
-                      if (user == null)
-                        _buildDrawerButton(context,
-                            label: 'Login →', screenName: 'login'),
-                      if (user != null)
-                        ElevatedButton.icon(
-                          icon: Icon(Icons.logout),
-                          label: Text("Logout"),
-                          onPressed: () async {
-                            await FirebaseAuth.instance.signOut();
-                            context.go('/');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 16.0, vertical: 8.0),
+        pageBuilder: (_, animation, secondaryAnimation) {
+          // Use the internal animation object of PageRouteBuilder for a cohesive transition
+          return FadeTransition(
+            opacity: animation,
+            child: SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(-1.0, 0.0),
+                end: Offset.zero,
+              ).animate(CurvedAnimation(
+                parent: animation,
+                curve: Curves.easeOutCubic, // A slightly more dynamic curve
+              )),
+              child: Scaffold(
+                backgroundColor: Colors.transparent, // Important for overlay
+                body: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    color:
+                        Colors.black.withOpacity(0.85), // Slightly less opaque
+                    width: MediaQuery.of(context).size.width *
+                        0.7, // Take up 70% of screen width
+                    height: double.infinity,
+                    alignment: Alignment.topLeft, // Align content to top-left
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment:
+                            CrossAxisAlignment.start, // Align text to left
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: IconButton(
+                              onPressed: () => Navigator.pop(context),
+                              icon: const Icon(
+                                Icons.close, // Use a more standard close icon
+                                size: 30,
+                                color: Colors.white70, // Slightly desaturated
+                              ),
+                            ),
                           ),
-                        ),
-                      SizedBox(height: 10),
-                    ],
+                          const SizedBox(height: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 20.0), // Padding for content
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (user != null) ...[
+                                  _buildDrawerProfileButton(context, user),
+                                  const SizedBox(height: 20),
+                                ],
+                                _buildDrawerButton(context,
+                                    label: 'Home', screenName: '/'),
+                                const SizedBox(height: 15),
+                                _buildDrawerButton(context,
+                                    label: 'Quizzes', screenName: 'quizzes'),
+                                const SizedBox(height: 15),
+                                _buildDrawerButton(context,
+                                    label: "Blogs", screenName: 'blogs'),
+                                const SizedBox(height: 15),
+                                // _buildDrawerButton(context,
+                                //     label: "Explore", screenName: 'explore'),
+                                // const SizedBox(height: 15),
+                                if (user == null)
+                                  _buildDrawerAuthButton(context,
+                                      label: 'Login',
+                                      screenName: 'login',
+                                      isLogin: true),
+                                if (user != null)
+                                  _buildDrawerAuthButton(context,
+                                      label: 'Logout',
+                                      screenName: '/',
+                                      isLogin: false),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 300),
       ),
     );
   }
@@ -244,7 +295,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         onPressed: () => context.go('/$screenName'),
         child: Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.normal,
             fontSize: 20,
@@ -261,12 +312,79 @@ class _CustomAppBarState extends State<CustomAppBar> {
         Navigator.pop(context); // Close the drawer
         context.go('/$screenName');
       },
+      style: TextButton.styleFrom(
+        foregroundColor: Colors.white, // Text color when pressed
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+        alignment: Alignment.centerLeft, // Align text to left within button
+      ),
       child: Text(
         label,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
-          fontSize: 24,
+          fontSize: 22, // Slightly smaller font size
+          fontWeight: FontWeight.w600, // Semi-bold for better readability
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDrawerProfileButton(BuildContext context, User user) {
+    return TextButton(
+      onPressed: () {
+        Navigator.pop(context);
+        context.go('/profile');
+      },
+      child: Column(
+        children: [
+          const Icon(
+            Icons.account_circle,
+            color: Colors.white,
+            size: 50, // Make the icon much bigger
+          ),
+          const SizedBox(height: 8),
+          Text(
+            user.email ?? "", // Show email if available, else ""
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+      style: TextButton.styleFrom(
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+      ),
+    );
+  }
+
+  Widget _buildDrawerAuthButton(BuildContext context,
+      {required String label,
+      required String screenName,
+      required bool isLogin}) {
+    return ElevatedButton.icon(
+      icon: Icon(isLogin ? Icons.login : Icons.logout, color: Colors.black),
+      label: Text(
+        label,
+        style: const TextStyle(
+          color: Colors.black,
+          fontSize: 18, // Slightly larger font for auth buttons
           fontWeight: FontWeight.bold,
+        ),
+      ),
+      onPressed: () async {
+        Navigator.pop(context); // Close the drawer
+        if (!isLogin) {
+          await FirebaseAuth.instance.signOut();
+        }
+        context.go('/$screenName');
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8), // Slightly rounded corners
         ),
       ),
     );
