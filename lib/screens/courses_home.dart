@@ -205,6 +205,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                 // Prevent clicks when faded out
                 ignoring: _isSearching,
                 child: FloatingActionButton.extended(
+                  heroTag: 'search_fab', // Unique hero tag for the search FAB
                   backgroundColor: Colors.white, // Changed for consistency
                   onPressed: () {
                     setState(() {
@@ -234,6 +235,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                 // Prevent clicks when faded out
                 ignoring: _isSearching,
                 child: FloatingActionButton.extended(
+                  heroTag: 'toggle_courses_fab', // Unique hero tag for this FAB
                   backgroundColor:
                       Colors.white, // Use a distinct color for this button
                   onPressed: () {
