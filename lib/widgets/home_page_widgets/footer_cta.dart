@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skill_factorial/constants/colors.dart';
 import 'cta_button.dart';
 
 class FooterCTA extends StatelessWidget {
@@ -9,19 +10,9 @@ class FooterCTA extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.blue.shade800,
-            Colors.blue.shade500,
-            Colors.blue.shade200,
-            Colors.white,
-          ],
-        ),
+        gradient: AppColors.gradientPrimaryMain,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 48.0),

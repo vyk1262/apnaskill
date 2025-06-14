@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:cached_network_image/cached_network_image.dart'; // Import the package
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:skill_factorial/constants/colors.dart'; // Import the package
 
 class ContactCard extends StatelessWidget {
   const ContactCard({super.key});
@@ -39,14 +40,7 @@ class ContactCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              const Color(0xFF10B981),
-              const Color(0xFF8B5CF6).withOpacity(0.8)
-            ],
-          ),
+          gradient: AppColors.gradientPrimary,
           borderRadius: BorderRadius.circular(15.0),
         ),
         child: isMobile

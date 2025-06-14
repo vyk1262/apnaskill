@@ -67,12 +67,20 @@ class _CustomAppBarState extends State<CustomAppBar>
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
                     onTap: () => context.go('/'),
-                    child: const CachedNetworkImageWidget(
-                      imageUrl: 'https://i.ibb.co/xtLkhZLb/logo.png',
+                    // child: const CachedNetworkImageWidget(
+                    //   imageUrl: 'https://i.ibb.co/xtLkhZLb/logo.png',
+                    //   width: 30,
+                    //   height: 30,
+                    //   fit: BoxFit.cover,
+                    //   errorWidget: Icon(Icons.broken_image),
+                    // ),
+                    child: Image.asset(
+                      'assets/student_home/logo.png',
                       width: 30,
                       height: 30,
                       fit: BoxFit.cover,
-                      errorWidget: Icon(Icons.broken_image),
+                      errorBuilder: (context, error, stackTrace) =>
+                          const Icon(Icons.broken_image),
                     ),
                   ),
                 ),

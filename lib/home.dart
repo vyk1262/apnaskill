@@ -7,7 +7,6 @@ import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/grid_dot_paint.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/hero.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/main_hero.dart';
 import 'package:skill_factorial/widgets/home_page_widgets/why.dart';
 
@@ -46,15 +45,13 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     const MainHero(),
                     const SizedBox(height: 20),
-                    const HeroWidget(),
-                    const SizedBox(height: 20),
                     FeatureSectionRow.buildFeatureList(),
                     const SizedBox(height: 20),
                     FeatureGrid(),
                     const SizedBox(height: 20),
-                    FeatureModernColumn.buildFeatureGrid(),
-                    const SizedBox(height: 20),
                     WhyChooseUs(),
+                    const SizedBox(height: 20),
+                    FeatureModernColumn.buildFeatureGrid(),
                     const SizedBox(height: 20),
                     const ContactCard(),
                     const SizedBox(height: 20),

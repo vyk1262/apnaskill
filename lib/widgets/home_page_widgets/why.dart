@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:skill_factorial/constants/colors.dart';
 
 class WhyChooseUs extends StatelessWidget {
   const WhyChooseUs({super.key});
@@ -11,14 +12,7 @@ class WhyChooseUs extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        gradient: LinearGradient(
-          colors: [
-            Theme.of(context).primaryColor.withOpacity(0.8),
-            Theme.of(context).primaryColor,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+        gradient: AppColors.gradientPrimary,
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).primaryColor.withOpacity(0.3),
