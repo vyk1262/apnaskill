@@ -11,18 +11,73 @@
     "intro",
     "modules"
   ],
-  "Web Development": [
-    "html_intro",
-    "html_forms",
-    "html_media",
-    "html_apis",
-    "css_intro",
-    "css_responsive",
-    "css_advanced",
-    "js_intro",
-    "js_bom",
-    "js_async",
-    "js_apis"
+  "Java Programming": [
+    "java_intro",
+    "java_oops",
+    "java_collections",
+    "java_exceptions",
+    "java_streams",
+    "java_multithreading",
+    "java_advanced",
+    "java_applications",
+    "java_security",
+    "java_deployment"
+  ],
+  "Linux": [
+    "linux_intro",
+    "linux_commands",
+    "linux_bash",
+    "linux_permissions",
+    "linux_security",
+    "linux_scripts",
+    "linux_advanced",
+    "linux_troubleshooting",
+    "linux_deployment",
+    "linux_optimization",
+    "linux_accessibility"
+  ],
+  "HTML": ["html_intro", "html_forms", "html_media", "html_apis"],
+  "CSS": ["css_intro", "css_responsive", "css_advanced"],
+  "JavaScript": ["js_intro", "js_bom", "js_async", "js_apis"],
+  "ReactJs": [
+    "react_intro",
+    "react_components",
+    "react_state_management",
+    "react_routing",
+    "react_apis",
+    "react_advanced",
+    "react_hooks",
+    "react_optimization",
+    "react_deployment",
+    "react_security",
+    "react_accessibility"
+  ],
+  "NodeJs": [
+    "node_intro",
+    "node_apis",
+    "node_express",
+    "node_mongodb",
+    "node_security",
+    "node_deployment",
+    "node_advanced",
+    "node_cloud",
+    "node_testing",
+    "node_performance",
+    "node_architecture"
+  ],
+  "Git": [
+    "git_intro",
+    "git_commands",
+    "git_repositories",
+    "git_branches",
+    "git_merging",
+    "git_collaboration",
+    "git_undoing_changes",
+    "git_rebasing",
+    "git_advanced",
+    "git_security",
+    "git_deployment",
+    "git_optimization"
   ],
   "Data Science": [
     "Data_Science_Fundamentals",
@@ -36,6 +91,18 @@
     "Data_Visualization",
     "Ethics_and_Data_Privacy",
     "Domain_Specific_Applications"
+  ],
+  "Statistics": [
+    "Introduction_to_Statistics",
+    "Descriptive_Statistics",
+    "Inferential_Statistics",
+    "Probability_and_Random_Variables",
+    "Hypothesis_Testing",
+    "Regression_Analysis",
+    "Time_Series_Analysis",
+    "Multivariate_Analysis",
+    "Statistical_Methods",
+    "Data_Analysis_and_Interpretation"
   ],
   "Machine Learning": [
     "Machine_Learning_Fundamentals",
@@ -52,6 +119,45 @@
     "Ethical_Considerations_in_ML",
     "Deployment_and_Productionization",
     "Advanced_Topics_in_ML"
+  ],
+  "Supervised Learning": [
+    "Linear_Regression",
+    "Logistic_Regression",
+    "Decision_Trees",
+    "Random_Forests",
+    "Support_Vector_Machines",
+    "K_Nearest_Neighbors",
+    "Time_Series_Forecasting",
+    "Model_Evaluation"
+  ],
+  "Unsupervised Learning": [
+    "Clustering",
+    "K_Means_Clustering",
+    "Association_Rules",
+    "Dimensionality_Reduction",
+    "Pricipal_Component_Analysis",
+    "Linear_Discriminant_Analysis"
+  ],
+  "Reinforcement Learning": [
+    "Introduction_to_Reinforcement_Learning",
+    "Markov_Decision_Process",
+    "Q-Learning",
+    "Deep_Q_Networks",
+    "Policy_Gradient_Methods",
+    "Actor_Critic_Methods",
+    "Reinforcement_Learning_Algorithms"
+  ],
+  "ML OPS": [
+    "Model_Evaluation_and_Selection",
+    "Feature_Engineering_and_Selection",
+    "Dimensionality_Reduction",
+    "Model_Deployment",
+    "Model_Monitoring",
+    "Model_Explainability",
+    "Model_Interpretability",
+    "Model_Validation",
+    "Model_Interpretability",
+    "Model_Deployment"
   ],
   "Numpy": [
     "Introduction_to_NumPy",
@@ -75,6 +181,67 @@
     "Data_Cleaning",
     "Data_Visualization"
   ],
+  "SciPy": [
+    "Introduction_to_SciPy",
+    "Linear_Algebra",
+    "Statistics",
+    "Integration_and_Optimization",
+    "Interpolation",
+    "Signal_Processing",
+    "Spatial_Data_Analysis",
+    "Image_Processing",
+    "Machine_Learning_with_SciPy",
+    "Advanced_Topics"
+  ],
+  "Matplotlib": [
+    "Introduction_to_Matplotlib",
+    "Creating_Plots",
+    "Customizing_Plots",
+    "Plotting_Data",
+    "Advanced_Plotting",
+    "Subplots_and_Figures",
+    "Animations_and_Interactivity",
+    "3D_Plotting",
+    "Advanced_Topics"
+  ],
+  "PySpark": [
+    "Introduction_to_PySpark",
+    "Data_Ingestion_and_Loading",
+    "Data_Transformation",
+    "Data_Analysis",
+    "Machine_Learning_with_PySpark",
+    "Deep_Learning_with_PySpark",
+    "Graph_Analytics_with_PySpark",
+    "Advanced_Topics"
+  ],
+  "TensorFlow": [
+    "Introduction_to_TensorFlow",
+    "TensorFlow_Basics",
+    "Neural_Networks_with_TensorFlow",
+    "Convolutional_Neural_Networks",
+    "Recurrent_Neural_Networks",
+    "Generative_Adversarial_Networks",
+    "Transfer_Learning",
+    "Advanced_Topics"
+  ],
+  "PyTorch": [
+    "Introduction_to_PyTorch",
+    "Tensors_and_Autograd",
+    "Neural_Networks",
+    "Training_and_Optimization",
+    "Transfer_Learning",
+    "PyTorch_for_Deep_Learning",
+    "Advanced_Topics"
+  ],
+  "Keras": [
+    "Introduction_to_Keras",
+    "Neural_Networks_with_Keras",
+    "Convolutional_Neural_Networks",
+    "Recurrent_Neural_Networks",
+    "Generative_Adversarial_Networks",
+    "Transfer_Learning",
+    "Advanced_Keras_Topics"
+  ],
   "Data Analytics": [
     "Data_Analytics_Lifecycle",
     "Data_Warehousing_and_ETL",
@@ -84,6 +251,24 @@
     "Statistical_Foundations_for_Analytics",
     "Predictive_Modeling_Techniques",
     "Big_Data_Management_and_Analytics"
+  ],
+  "Power BI": [
+    "Introduction_to_Power_BI",
+    "Data_Modeling_and_Design",
+    "Data_Transformations_and_Cleaning",
+    "Data_Visualization",
+    "Reporting_and_Dashboarding",
+    "Data_Integration_and_Connections",
+    "Advanced_Power_BI_Topics"
+  ],
+  "Tableau": [
+    "Introduction_to_Tableau",
+    "Data_Visualization_Basics",
+    "Data_Exploration",
+    "Data_Modeling",
+    "Interactive_Visualizations",
+    "Dashboard_Creation",
+    "Advanced_Tableau_Topics"
   ],
   "Prompt Engineering": [
     "Fundamentals_of_Prompt_Engineering",

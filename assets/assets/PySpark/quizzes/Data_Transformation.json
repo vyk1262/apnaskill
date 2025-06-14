@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Data_Transformation",
+      "questions": [
+        {
+          "question": "Which DataFrame method is used to select specific columns from a PySpark DataFrame?",
+          "options": {
+            "A": "df.filter()",
+            "B": "df.select()",
+            "C": "df.columns()",
+            "D": "df.agg()"
+          },
+          "correct_answer": "B",
+          "explanation": "`select()` allows you to choose one or more columns by name or expression."
+        },
+        {
+          "question": "To filter rows in a PySpark DataFrame based on a condition (e.g., 'age' > 30), which method should you use?",
+          "options": {
+            "A": "df.where()",
+            "B": "df.sort()",
+            "C": "df.groupBy()",
+            "D": "df.withColumn()"
+          },
+          "correct_answer": "A",
+          "explanation": "`where()` and `filter()` are aliases and serve the purpose of subsetting rows based on a boolean expression."
+        },
+        {
+          "question": "Which function from `pyspark.sql.functions` is commonly used to create a new column in a DataFrame, often involving conditional logic?",
+          "options": {
+            "A": "avg()",
+            "B": "sum()",
+            "C": "when()",
+            "D": "collect_list()"
+          },
+          "correct_answer": "C",
+          "explanation": "`when()` is powerful for implementing if-then-else logic to derive new column values."
+        },
+        {
+          "question": "To add a new column to a DataFrame, or replace an existing one, based on an expression, which DataFrame method is used?",
+          "options": {
+            "A": "df.addColumn()",
+            "B": "df.newColumn()",
+            "C": "df.withColumn()",
+            "D": "df.createColumn()"
+          },
+          "correct_answer": "C",
+          "explanation": "`withColumn()` is the standard method for column manipulation in DataFrames."
+        },
+        {
+          "question": "Which of the following is the correct way to drop a column named 'old_column' from a DataFrame `df`?",
+          "options": {
+            "A": "df.drop('old_column')",
+            "B": "df.removeColumn('old_column')",
+            "C": "df.delete('old_column')",
+            "D": "df.select('*').except('old_column')"
+          },
+          "correct_answer": "A",
+          "explanation": "`drop()` is used to remove one or more columns by name."
+        },
+        {
+          "question": "To count the number of unique values in a column, which transformation sequence would be most appropriate?",
+          "options": {
+            "A": "df.select('col_name').count()",
+            "B": "df.groupBy('col_name').count()",
+            "C": "df.select('col_name').distinct().count()",
+            "D": "df.orderBy('col_name').count()"
+          },
+          "correct_answer": "C",
+          "explanation": "`distinct()` first gets unique rows (or values for a single column selection), and then `count()` tallies them."
+        },
+        {
+          "question": "Which method is used to sort a DataFrame by one or more columns?",
+          "options": {
+            "A": "df.orderBy()",
+            "B": "df.arrange()",
+            "C": "df.order()",
+            "D": "df.sort_by()"
+          },
+          "correct_answer": "A",
+          "explanation": "`orderBy()` (and `sort()` which is an alias) sorts the DataFrame by specified columns in ascending or descending order."
+        },
+        {
+          "question": "To perform aggregate operations (like sum, average, count) on groups of rows, which two DataFrame methods are typically used together?",
+          "options": {
+            "A": "select() and filter()",
+            "B": "withColumn() and drop()",
+            "C": "groupBy() and agg()",
+            "D": "union() and join()"
+          },
+          "correct_answer": "C",
+          "explanation": "`groupBy()` organizes rows into groups based on common values in specified columns, and `agg()` then applies aggregate functions to each group."
+        },
+        {
+          "question": "What is the primary purpose of a 'User-Defined Function' (UDF) in PySpark?",
+          "options": {
+            "A": "To define new SQL syntax.",
+            "B": "To allow custom Python logic to be executed on a column-by-column basis within Spark's DataFrame operations.",
+            "C": "To create new Spark sessions.",
+            "D": "To optimize Spark's internal query plan."
+          },
+          "correct_answer": "B",
+          "explanation": "UDFs bridge the gap between Spark's DataFrame API and custom Python logic, allowing users to define their own transformations."
+        },
+        {
+          "question": "Before using a Python function as a UDF in PySpark, what must you do?",
+          "options": {
+            "A": "Convert it to Scala.",
+            "B": "Install it as a PySpark package.",
+            "C": "Register it with `spark.udf.register()` or decorate it with `@udf`.",
+            "D": "Convert it to an RDD first."
+          },
+          "correct_answer": "C",
+          "explanation": "Registration informs Spark about the function and its return type, allowing it to execute the function across the cluster."
+        },
+        {
+          "question": "When performing a `join` operation between two DataFrames `df1` and `df2`, which type of join keeps all rows from `df1` and matching rows from `df2`, filling with nulls where no match is found in `df2`?",
+          "options": {
+            "A": "inner",
+            "B": "outer",
+            "C": "left_outer",
+            "D": "right_outer"
+          },
+          "correct_answer": "C",
+          "explanation": "This is the definition of a left outer join."
+        },
+        {
+          "question": "To rename a single column 'old_name' to 'new_name' in a PySpark DataFrame `df`, which method is most direct?",
+          "options": {
+            "A": "df.renameColumn('old_name', 'new_name')",
+            "B": "df.withColumnRenamed('old_name', 'new_name')",
+            "C": "df.select(col('old_name').alias('new_name'))",
+            "D": "df.alterColumn('old_name', 'new_name')"
+          },
+          "correct_answer": "B",
+          "explanation": "`withColumnRenamed()` is a specific and clear method for renaming columns."
+        },
+        {
+          "question": "Which `pyspark.sql.functions` function is used to explicitly reference a column by its name, especially useful when column names conflict with built-in functions or are passed as variables?",
+          "options": {
+            "A": "lit()",
+            "B": "column()",
+            "C": "col()",
+            "D": "name()"
+          },
+          "correct_answer": "C",
+          "explanation": "`col()` ensures that the string is interpreted as a column reference and not a literal or a function name."
+        },
+        {
+          "question": "To fill all null values in a DataFrame with a specific value (e.g., 0), which DataFrame method would you use?",
+          "options": {
+            "A": "df.replace_null(0)",
+            "B": "df.fillna(0)",
+            "C": "df.clean_nulls(0)",
+            "D": "df.na.fill(0)"
+          },
+          "correct_answer": "D",
+          "explanation": "The `na` attribute of a DataFrame provides methods for handling missing data, and `fill()` is used to replace nulls."
+        },
+        {
+          "question": "If you want to remove rows that contain any null values from a DataFrame, which method is appropriate?",
+          "options": {
+            "A": "df.dropna()",
+            "B": "df.removeNulls()",
+            "C": "df.filter_nulls()",
+            "D": "df.na.drop()"
+          },
+          "correct_answer": "D",
+          "explanation": "The `na` attribute provides `drop()` for removing rows with nulls."
+        },
+        {
+          "question": "What does `df.union(df2)` do in PySpark?",
+          "options": {
+            "A": "Performs a join operation between `df` and `df2`.",
+            "B": "Combines rows from `df` and `df2` into a new DataFrame, assuming they have the same number of columns and compatible types, based on position.",
+            "C": "Intersects rows from `df` and `df2`.",
+            "D": "Removes duplicate rows from `df`."
+          },
+          "correct_answer": "B",
+          "explanation": "`union()` stacks DataFrames vertically. It requires the same number of columns in the same order."
+        },
+        {
+          "question": "For a `union` operation that combines two DataFrames with potentially different column orders but same column names, which method is safer to use?",
+          "options": {
+            "A": "df.union(df2)",
+            "B": "df.unionAll(df2)",
+            "C": "df.unionByName(df2)",
+            "D": "df.concat(df2)"
+          },
+          "correct_answer": "C",
+          "explanation": "`unionByName()` combines rows based on column names, filling nulls for columns present in one DataFrame but not the other."
+        },
+        {
+          "question": "What is the primary function of `df.cast(StringType())`?",
+          "options": {
+            "A": "To convert a column to a list.",
+            "B": "To change the data type of a column to a string.",
+            "C": "To create a copy of the DataFrame.",
+            "D": "To sort the DataFrame by string values."
+          },
+          "correct_answer": "B",
+          "explanation": "`cast()` is used for explicit type conversion of columns."
+        },
+        {
+          "question": "Which `pyspark.sql.functions` function can be used to convert a column to a literal value (i.e., a constant)?",
+          "options": {
+            "A": "col()",
+            "B": "lit()",
+            "C": "const()",
+            "D": "value()"
+          },
+          "correct_answer": "B",
+          "explanation": "`lit()` is useful for adding constant values as columns or for comparisons."
+        },
+        {
+          "question": "Which method is used to remove duplicate rows based on all columns in a DataFrame?",
+          "options": {
+            "A": "df.unique()",
+            "B": "df.distinct()",
+            "C": "df.dropDuplicates()",
+            "D": "df.removeDuplicates()"
+          },
+          "correct_answer": "B",
+          "explanation": "`distinct()` returns a new DataFrame containing only the unique rows. `dropDuplicates()` can also achieve this and optionally specify columns to consider for uniqueness."
+        }
+      ]
+    }
+  ]
+}

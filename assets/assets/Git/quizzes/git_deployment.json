@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "git_deployment",
+      "questions": [
+        {
+          "question": "What is the role of Git in a typical Continuous Integration/Continuous Deployment (CI/CD) pipeline?",
+          "options": {
+            "A": "Git only stores configuration files for the pipeline.",
+            "B": "Git is the source of truth for the application's code; changes committed to Git trigger the pipeline to build, test, and potentially deploy.",
+            "C": "Git is used to encrypt deployment credentials.",
+            "D": "Git monitors server health during deployment."
+          },
+          "correct_answer": "B",
+          "explanation": "Git serves as the central version control system, and updates to specific branches or tags are the common triggers for automated CI/CD workflows."
+        },
+        {
+          "question": "Which of the following is a common method to deploy an application to a server using Git, though often discouraged for production environments?",
+          "options": {
+            "A": "`git push --deploy`",
+            "B": "Logging into the server and running `git pull origin main` in the deployment directory.",
+            "C": "Using `git archive` to create a tarball.",
+            "D": "Manually copying files via FTP."
+          },
+          "correct_answer": "B",
+          "explanation": "While simple, `git pull` on a live server has drawbacks like leaving the `.git` directory, potential for uncommitted changes, and no rollback mechanism. It's often used for quick dev/staging updates but not ideal for production."
+        },
+        {
+          "question": "Why is deploying by simply running `git pull` on a production server often considered a bad practice?",
+          "options": {
+            "A": "It's too fast.",
+            "B": "It leaves the `.git` directory exposed, has no built-in rollback for failed deployments, and can be affected by untracked files or local changes on the server.",
+            "C": "It consumes too much network bandwidth.",
+            "D": "It requires manual merge conflict resolution on the server."
+          },
+          "correct_answer": "B",
+          "explanation": "Dedicated deployment tools and CI/CD pipelines provide more robust and controlled deployment processes."
+        },
+        {
+          "question": "What is `git archive` primarily used for in a deployment context?",
+          "options": {
+            "A": "To compress the entire Git history for backup.",
+            "B": "To create a clean snapshot (tar or zip archive) of a specific commit, branch, or tag's files, suitable for deployment without the `.git` history.",
+            "C": "To archive old, unused branches.",
+            "D": "To archive merge conflicts."
+          },
+          "correct_answer": "B",
+          "explanation": "`git archive` creates a deployable package that only contains the project files, without the version control metadata."
+        },
+        {
+          "question": "In a robust CI/CD pipeline, how are environment-specific configurations (e.g., database credentials for production vs. staging) typically handled to avoid committing them to Git?",
+          "options": {
+            "A": "Hardcoding them directly into the source code.",
+            "B": "Including them in the `.gitignore` file and using environment variables or a secure secret management system during deployment.",
+            "C": "Encrypting them within Git using GPG.",
+            "D": "Storing them in a public repository for easy access."
+          },
+          "correct_answer": "B",
+          "explanation": "Sensitive configurations should *never* be committed to Git. Environment variables or specialized secret management tools are the standard for injecting them at deployment time."
+        },
+        {
+          "question": "What is a 'bare repository' (initialized with `git init --bare`) particularly useful for in deployment scenarios?",
+          "options": {
+            "A": "As a lightweight working directory on a server.",
+            "B": "As a central, remote repository that acts as a push target for developers and can have post-receive hooks to trigger deployments.",
+            "C": "For storing only binary files.",
+            "D": "To create a repository without any history."
+          },
+          "correct_answer": "B",
+          "explanation": "A bare repo doesn't have a working directory, making it safe to push to and ideal for server-side operations, including hooks for automated deployments."
+        },
+        {
+          "question": "Which Git concept is most commonly used to mark stable versions of an application that are ready for or have been deployed?",
+          "options": {
+            "A": "Branches (e.g., `feature/v1.0`)",
+            "B": "Tags (e.g., `v1.0.0`)",
+            "C": "Commit messages with 'DEPLOY' in them.",
+            "D": "Stashes"
+          },
+          "correct_answer": "B",
+          "explanation": "Git tags serve as permanent, immutable pointers to specific commits, ideal for marking release versions and facilitating precise deployments or rollbacks."
+        },
+        {
+          "question": "What are 'webhooks' commonly used for in Git-driven deployments?",
+          "options": {
+            "A": "To create pull requests automatically.",
+            "B": "To notify external services (like CI/CD pipelines) when specific Git events occur (e.g., a push to `main`), triggering automated builds and deployments.",
+            "C": "To backup Git repositories to cloud storage.",
+            "D": "To resolve merge conflicts."
+          },
+          "correct_answer": "B",
+          "explanation": "Webhooks are a fundamental part of automated CI/CD, enabling continuous integration and deployment by reacting to Git events."
+        },
+        {
+          "question": "If your deployment strategy involves specific branches (e.g., `main` for production, `develop` for staging), which Git command would a CI/CD pipeline typically use to check out the correct code for a given environment?",
+          "options": {
+            "A": "`git commit`",
+            "B": "`git clone <repo_url> -b <branch_name>`",
+            "C": "`git merge`",
+            "D": "`git rebase`"
+          },
+          "correct_answer": "B",
+          "explanation": "Cloning a specific branch ensures that the CI/CD system gets exactly the code intended for that deployment environment."
+        },
+        {
+          "question": "What is a 'deploy key' in the context of Git deployment?",
+          "options": {
+            "A": "A cryptographic key used to encrypt the entire repository.",
+            "B": "An SSH key that is granted read or read/write access to a *single* Git repository, often used for automated systems like CI/CD.",
+            "C": "A key to unlock a locked Git repository.",
+            "D": "A master password for all Git operations."
+          },
+          "correct_answer": "B",
+          "explanation": "Deploy keys adhere to the principle of least privilege, providing specific access to only what's needed for deployment, without granting access to a user's entire account."
+        },
+        {
+          "question": "In a CI/CD pipeline, after a successful build and test, which Git command is typically used to push a newly created build artifact (e.g., a Docker image tag) to a container registry?",
+          "options": {
+            "A": "`git push`",
+            "B": "`docker push` (or similar registry-specific command, often triggered by CI/CD tool)",
+            "C": "`git deploy`",
+            "D": "`git artifact`"
+          },
+          "correct_answer": "B",
+          "explanation": "While Git initiates the process, the actual pushing of artifacts to registries is done by external tools (Docker, Helm, etc.) that the CI/CD pipeline orchestrates."
+        },
+        {
+          "question": "Which of the following is a key advantage of using a CI/CD pipeline for deployment compared to manual `git pull` on a server?",
+          "options": {
+            "A": "Slower deployments.",
+            "B": "Manual intervention required at every step.",
+            "C": "Automation, consistency, reduced human error, integrated testing, and clear rollback mechanisms.",
+            "D": "Higher server costs."
+          },
+          "correct_answer": "C",
+          "explanation": "CI/CD streamlines the entire software delivery process, making it more reliable and efficient."
+        },
+        {
+          "question": "If your application has assets (e.g., compiled CSS/JS) that are generated during the build process, how should Git interact with these files in the context of deployment?",
+          "options": {
+            "A": "Commit the generated assets to Git.",
+            "B": "Exclude them from Git using `.gitignore` and generate them as part of the CI/CD build step before deployment.",
+            "C": "Manually copy them to the server.",
+            "D": "Use Git LFS to track them."
+          },
+          "correct_answer": "B",
+          "explanation": "Generated files should not be committed to source control. The build pipeline should be responsible for creating and packaging them for deployment."
+        },
+        {
+          "question": "What is 'blue/green deployment' and how does Git fit into its strategy?",
+          "options": {
+            "A": "Deploying code in only blue or green colors.",
+            "B": "Deploying the new version to a 'green' environment while the 'blue' (old) environment remains live; Git ensures the correct version of code is checked out for each environment.",
+            "C": "Deploying two different applications simultaneously.",
+            "D": "A strategy that uses only blue and green branches in Git."
+          },
+          "correct_answer": "B",
+          "explanation": "Blue/green deployments minimize downtime and risk by having two identical production environments. Git ensures that the correct code version is deployed to each."
+        },
+        {
+          "question": "True or False: A `post-receive` Git hook on a bare repository can be used to automatically deploy code to a web server after a successful push.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. This is a common pattern for simple Git-driven deployments. The `post-receive` hook script can check out the latest code to a web server's document root or trigger a build process."
+        },
+        {
+          "question": "If a deployment fails, what Git command is often used to quickly revert the production environment back to a previous known good state, typically by deploying a previous working tag or commit?",
+          "options": {
+            "A": "`git reset --hard HEAD`",
+            "B": "`git revert <latest_deploy_commit>`",
+            "C": "Redeploying a specific previous stable tag or commit (often orchestrated by CI/CD or deployment script).",
+            "D": "`git clean -fd`"
+          },
+          "correct_answer": "C",
+          "explanation": "True rollbacks typically involve deploying a known good version of the entire application, which is usually tagged in Git."
+        },
+        {
+          "question": "What is the purpose of a 'release branch' in some deployment strategies (e.g., Git Flow)?",
+          "options": {
+            "A": "To develop experimental features.",
+            "B": "To prepare a new release, allowing for final bug fixes and release-specific configurations to be made in isolation before merging to `main` and being tagged.",
+            "C": "To store old, archived releases.",
+            "D": "To track deployment metrics."
+          },
+          "correct_answer": "B",
+          "explanation": "Release branches provide a dedicated space for hardening a release candidate, ensuring stability before production deployment."
+        },
+        {
+          "question": "When deploying, why is it crucial that the production server's working directory matches the exact state of a specific Git commit?",
+          "options": {
+            "A": "To maximize disk space.",
+            "B": "To ensure reproducibility, prevent unexpected behavior from local changes, and allow for precise rollbacks.",
+            "C": "To speed up server boot time.",
+            "D": "To make `git status` output cleaner."
+          },
+          "correct_answer": "B",
+          "explanation": "Consistency and reproducibility are paramount in production environments. Any deviation can lead to hard-to-diagnose bugs."
+        },
+        {
+          "question": "Consider a deployment strategy where a developer deploys a feature branch to a testing server. After testing, they merge it into `main` and a CI/CD system then deploys `main` to production. Which Git command does the developer likely use *before* the final merge into `main`?",
+          "options": {
+            "A": "`git reset --hard`",
+            "B": "`git merge feature`",
+            "C": "`git rebase main` (on their feature branch to keep history clean) or `git pull main` before merging.",
+            "D": "`git cherry-pick`"
+          },
+          "correct_answer": "C",
+          "explanation": "Keeping feature branches synchronized with `main` via rebase or pull before the final merge minimizes conflicts and ensures the feature is built on the latest stable code."
+        },
+        {
+          "question": "What is the primary benefit of using a Git-based deployment approach over manually copying files?",
+          "options": {
+            "A": "It's faster for small changes.",
+            "B": "Version control, easier rollbacks, clear audit trails, and support for automated CI/CD pipelines.",
+            "C": "It removes the need for servers.",
+            "D": "It automatically encrypts all deployed code."
+          },
+          "correct_answer": "B",
+          "explanation": "Git provides a robust, trackable, and repeatable foundation for reliable deployments, which manual copying lacks entirely."
+        }
+      ]
+    }
+  ]
+}

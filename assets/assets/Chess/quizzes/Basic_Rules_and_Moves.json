@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Basic_Rules_and_Moves",
+      "questions": [
+        {
+          "question": "Which player makes the first move in a game of chess?",
+          "options": {
+            "A": "The player with the black pieces.",
+            "B": "The player with the white pieces.",
+            "C": "The player who wins a coin toss.",
+            "D": "The more experienced player."
+          },
+          "correct_answer": "B",
+          "explanation": "White always has the first move in chess."
+        },
+        {
+          "question": "If a king is under attack, it is said to be in...",
+          "options": {
+            "A": "Danger",
+            "B": "Threatened",
+            "C": "Check",
+            "D": "Capture"
+          },
+          "correct_answer": "C",
+          "explanation": "When a king is in check, the player whose king is attacked must make a move to remove the threat."
+        },
+        {
+          "question": "What happens if a king is in check and there is no legal move to escape?",
+          "options": {
+            "A": "The game continues.",
+            "B": "It's a draw.",
+            "C": "The king is captured.",
+            "D": "It's checkmate, and the game ends."
+          },
+          "correct_answer": "D",
+          "explanation": "Checkmate signifies the end of the game, and the player whose king is checkmated loses."
+        },
+        {
+          "question": "Can a player move their king into a position where it would be in check?",
+          "options": {
+            "A": "Yes, but only if no other move is possible.",
+            "B": "Yes, it's a common tactic.",
+            "C": "No, a king can never move into check.",
+            "D": "Only in certain game variations."
+          },
+          "correct_answer": "C",
+          "explanation": "A fundamental rule of chess is that a player cannot make a move that places their own king in check."
+        },
+        {
+          "question": "What is 'en passant'?",
+          "options": {
+            "A": "A special move involving the king and queen.",
+            "B": "A special pawn capture that can occur immediately after an opponent's pawn moves two squares forward from its starting position.",
+            "C": "A type of checkmate.",
+            "D": "A way to promote a pawn on its starting rank."
+          },
+          "correct_answer": "B",
+          "explanation": "En passant is a unique pawn capture that must be executed on the very next move after the opponent's pawn's double-step."
+        },
+        {
+          "question": "Can a player move a piece through one of their own pieces?",
+          "options": {
+            "A": "Yes, all pieces can jump over friendly pieces.",
+            "B": "Only the knight can jump over other pieces.",
+            "C": "No, except for the knight, pieces cannot move through their own pieces.",
+            "D": "It depends on the piece and the situation."
+          },
+          "correct_answer": "C",
+          "explanation": "Rooks, bishops, and queens are blocked by their own pieces. Pawns can't move through them, and the king can't move onto a square occupied by a friendly piece."
+        },
+        {
+          "question": "Can a player move a piece through an opponent's piece?",
+          "options": {
+            "A": "Yes, if it leads to a capture.",
+            "B": "Only the knight can jump over opponent's pieces.",
+            "C": "No, except for the knight, pieces cannot move through opponent's pieces.",
+            "D": "It depends on the piece and the situation."
+          },
+          "correct_answer": "C",
+          "explanation": "Pieces (except the knight) stop on the square occupied by the captured opponent's piece."
+        },
+        {
+          "question": "If a player touches one of their pieces during their turn, what is the general rule?",
+          "options": {
+            "A": "They can move any piece they want.",
+            "B": "They must move the touched piece if it has a legal move.",
+            "C": "They can adjust the piece on its square.",
+            "D": "They lose their turn."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'touch-move' rule generally requires a player to move a piece they have touched, provided it has a legal move."
+        },
+        {
+          "question": "What happens if a player touches an opponent's piece during their turn?",
+          "options": {
+            "A": "They must capture that piece if it is a legal move.",
+            "B": "They can choose to move any of their own pieces.",
+            "C": "They are warned by the arbiter.",
+            "D": "The game is paused."
+          },
+          "correct_answer": "A",
+          "explanation": "Similar to the 'touch-move' rule, if a player touches an opponent's piece, they are generally required to capture it if a legal capture is possible."
+        },
+        {
+          "question": "How many squares can a knight move in a single turn?",
+          "options": {
+            "A": "One",
+            "B": "Two",
+            "C": "Three",
+            "D": "It varies depending on the board position."
+          },
+          "correct_answer": "C",
+          "explanation": "A knight always moves exactly two squares in one direction (horizontally or vertically) and then one square perpendicularly, totaling three squares of movement."
+        },
+        {
+          "question": "Can a king capture an opponent's piece?",
+          "options": {
+            "A": "No, the king is too important to capture.",
+            "B": "Yes, the king can capture any adjacent opponent's piece.",
+            "C": "Only if the opponent's piece is not defended.",
+            "D": "Only in the endgame."
+          },
+          "correct_answer": "B",
+          "explanation": "The king can move one square in any direction and can capture any opponent's piece on an adjacent square, as long as moving to that square doesn't put the king in check."
+        },
+        {
+          "question": "Can two pawns occupy the same square?",
+          "options": {
+            "A": "Yes, if one pawn has been promoted.",
+            "B": "Yes, under special circumstances.",
+            "C": "No, only one piece can occupy a square at a time.",
+            "D": "Only in certain game variations."
+          },
+          "correct_answer": "C",
+          "explanation": "Each square on the chessboard can only be occupied by one piece at any given time."
+        },
+        {
+          "question": "What is a 'draw' in chess?",
+          "options": {
+            "A": "When one player captures all of the opponent's pieces.",
+            "B": "When both players have made the same number of moves.",
+            "C": "A result where neither player wins.",
+            "D": "When the game reaches a certain time limit."
+          },
+          "correct_answer": "C",
+          "explanation": "A draw can occur in several situations where neither player achieves checkmate."
+        },
+        {
+          "question": "Which of the following is NOT a way a game of chess can end in a draw?",
+          "options": {
+            "A": "Stalemate",
+            "B": "Checkmate",
+            "C": "Mutual agreement",
+            "D": "Threefold repetition"
+          },
+          "correct_answer": "B",
+          "explanation": "Checkmate results in a win for one player, not a draw."
+        },
+        {
+          "question": "What is 'stalemate'?",
+          "options": {
+            "A": "When a player's king is in check but has no legal moves.",
+            "B": "When a player's king is not in check, but the player has no legal moves.",
+            "C": "When both players have only their kings remaining.",
+            "D": "When a player runs out of time."
+          },
+          "correct_answer": "B",
+          "explanation": "Stalemate is a situation where the player whose turn it is has no legal moves and their king is not in check, resulting in a draw."
+        },
+        {
+          "question": "What is 'threefold repetition'?",
+          "options": {
+            "A": "When the same piece has moved three times in a row.",
+            "B": "When the same position occurs on the board three times with the same player to move and the same possible en passant captures and castling rights.",
+            "C": "When three pawns reach the opposite side of the board.",
+            "D": "When three pieces are captured in a single turn."
+          },
+          "correct_answer": "B",
+          "explanation": "Threefold repetition is a rule that allows a player to claim a draw if the exact same board position occurs three times during the game."
+        },
+        {
+          "question": "What is the 'fifty-move rule'?",
+          "options": {
+            "A": "The game ends after 50 moves.",
+            "B": "A draw can be claimed if 50 consecutive moves have been made by each player without a pawn move or a capture.",
+            "C": "A player has 50 minutes on their clock.",
+            "D": "Pawns can move up to 50 squares on their first move."
+          },
+          "correct_answer": "B",
+          "explanation": "The fifty-move rule is another way a draw can be claimed in chess under specific conditions of inactivity regarding pawn moves and captures."
+        },
+        {
+          "question": "Can a pawn move backward?",
+          "options": {
+            "A": "Yes, after it has been promoted.",
+            "B": "Yes, under special circumstances.",
+            "C": "No, pawns can only move forward (except for captures).",
+            "D": "Only in certain game variations."
+          },
+          "correct_answer": "C",
+          "explanation": "Pawns have a unique movement pattern and can only move forward, except when capturing diagonally."
+        },
+        {
+          "question": "When castling kingside, how many squares does the king move?",
+          "options": {
+            "A": "One square towards the rook.",
+            "B": "Two squares towards the rook.",
+            "C": "Three squares towards the rook.",
+            "D": "The king does not move when castling kingside."
+          },
+          "correct_answer": "B",
+          "explanation": "In kingside castling, the king moves two squares towards the h-file rook, and the rook then jumps over the king to the f-file."
+        },
+        {
+          "question": "When castling queenside, how many squares does the king move?",
+          "options": {
+            "A": "One square towards the rook.",
+            "B": "Two squares towards the rook.",
+            "C": "Three squares towards the rook.",
+            "D": "The king does not move when castling queenside."
+          },
+          "correct_answer": "B",
+          "explanation": "In queenside castling, the king moves two squares towards the a-file rook, and the rook then jumps over the king to the d-file."
+        }
+      ]
+    }
+  ]
+}

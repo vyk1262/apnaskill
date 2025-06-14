@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "linux_advanced",
+      "questions": [
+        {
+          "question": "What is the primary purpose of advanced Linux features?",
+          "options": {
+            "A": "To simplify user interfaces.",
+            "B": "To enhance system performance and security.",
+            "C": "To provide basic functionality.",
+            "D": "To reduce system complexity."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced Linux features are designed to enhance system performance and security, providing robust solutions for complex tasks."
+        },
+        {
+          "question": "Which command is used to manage system services in Linux?",
+          "options": {
+            "A": "service",
+            "B": "systemctl",
+            "C": "init",
+            "D": "manage"
+          },
+          "correct_answer": "B",
+          "explanation": "The 'systemctl' command is used to manage system services in Linux, allowing administrators to start, stop, and configure services."
+        },
+        {
+          "question": "What is the function of the 'cron' service in Linux?",
+          "options": {
+            "A": "To manage user accounts.",
+            "B": "To schedule recurring tasks.",
+            "C": "To monitor system performance.",
+            "D": "To configure network settings."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'cron' service in Linux is used to schedule recurring tasks, automating routine maintenance and administrative tasks."
+        },
+        {
+          "question": "Which tool in Linux provides advanced file searching capabilities?",
+          "options": {
+            "A": "find",
+            "B": "locate",
+            "C": "search",
+            "D": "grep"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'find' command in Linux provides advanced file searching capabilities, allowing users to locate files based on various criteria."
+        },
+        {
+          "question": "How can you enable advanced logging in Linux?",
+          "options": {
+            "A": "Through the terminal.",
+            "B": "Using the syslog service.",
+            "C": "By editing configuration files.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced logging in Linux can be enabled using the syslog service, providing detailed logs for system events and activities."
+        },
+        {
+          "question": "What is the purpose of the 'iptables' command in Linux?",
+          "options": {
+            "A": "To configure firewall rules.",
+            "B": "To manage user permissions.",
+            "C": "To monitor network traffic.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'iptables' command in Linux is used to configure firewall rules, controlling the flow of network traffic to and from the system."
+        },
+        {
+          "question": "Which Linux feature assists with system resource management?",
+          "options": {
+            "A": "Resource allocation.",
+            "B": "Resource monitoring.",
+            "C": "Resource optimization.",
+            "D": "Resource management."
+          },
+          "correct_answer": "D",
+          "explanation": "Resource management features in Linux help administrators allocate, monitor, and optimize system resources for efficient operation."
+        },
+        {
+          "question": "What is the role of 'SELinux' in Linux?",
+          "options": {
+            "A": "To enhance system security.",
+            "B": "To manage user accounts.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "'SELinux' (Security-Enhanced Linux) is a security feature that provides access control policies to enhance system security."
+        },
+        {
+          "question": "How can you enable advanced networking features in Linux?",
+          "options": {
+            "A": "By installing a networking package.",
+            "B": "Through the network manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced networking features in Linux can be enabled through the network manager, providing tools for configuring and managing network connections."
+        },
+        {
+          "question": "Which feature in Linux helps with system performance tuning?",
+          "options": {
+            "A": "Performance monitoring.",
+            "B": "Performance tuning.",
+            "C": "Performance optimization.",
+            "D": "Performance management."
+          },
+          "correct_answer": "C",
+          "explanation": "Performance optimization features in Linux help administrators tune system performance, ensuring efficient operation and resource utilization."
+        },
+        {
+          "question": "What is the purpose of 'LVM' in Linux?",
+          "options": {
+            "A": "To manage logical volumes.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "'LVM' (Logical Volume Manager) in Linux is used to manage logical volumes, providing flexible disk space management."
+        },
+        {
+          "question": "How can you enable advanced security features in Linux?",
+          "options": {
+            "A": "By installing a security package.",
+            "B": "Through the security manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced security features in Linux can be enabled through the security manager, providing tools for configuring and managing security settings."
+        },
+        {
+          "question": "Which Linux feature assists with system backup and recovery?",
+          "options": {
+            "A": "Backup management.",
+            "B": "Backup and recovery.",
+            "C": "Backup optimization.",
+            "D": "Backup monitoring."
+          },
+          "correct_answer": "B",
+          "explanation": "Backup and recovery features in Linux help administrators manage system backups and recover data in case of failures."
+        },
+        {
+          "question": "What is the function of 'RAID' in Linux?",
+          "options": {
+            "A": "To enhance system security.",
+            "B": "To manage disk redundancy.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "B",
+          "explanation": "'RAID' (Redundant Array of Independent Disks) in Linux is used to manage disk redundancy, providing data protection and performance improvements."
+        },
+        {
+          "question": "How can you enable advanced storage features in Linux?",
+          "options": {
+            "A": "By installing a storage package.",
+            "B": "Through the storage manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced storage features in Linux can be enabled through the storage manager, providing tools for configuring and managing storage devices."
+        },
+        {
+          "question": "Which feature in Linux helps with system virtualization?",
+          "options": {
+            "A": "Virtualization management.",
+            "B": "Virtualization optimization.",
+            "C": "Virtualization monitoring.",
+            "D": "Virtualization configuration."
+          },
+          "correct_answer": "A",
+          "explanation": "Virtualization management features in Linux help administrators configure and manage virtual machines, providing flexible computing environments."
+        },
+        {
+          "question": "What is the purpose of 'KVM' in Linux?",
+          "options": {
+            "A": "To manage virtual machines.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "'KVM' (Kernel-based Virtual Machine) in Linux is used to manage virtual machines, providing a full virtualization solution."
+        },
+        {
+          "question": "How can you enable advanced file system features in Linux?",
+          "options": {
+            "A": "By installing a file system package.",
+            "B": "Through the file system manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced file system features in Linux can be enabled through the file system manager, providing tools for configuring and managing file systems."
+        },
+        {
+          "question": "Which Linux feature assists with system monitoring and alerting?",
+          "options": {
+            "A": "Monitoring and alerting.",
+            "B": "Monitoring optimization.",
+            "C": "Monitoring configuration.",
+            "D": "Monitoring management."
+          },
+          "correct_answer": "A",
+          "explanation": "Monitoring and alerting features in Linux help administrators monitor system performance and receive alerts for potential issues."
+        }
+      ]
+    }
+  ]
+}

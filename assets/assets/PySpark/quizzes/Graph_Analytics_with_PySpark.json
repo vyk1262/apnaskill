@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Graph_Analytics_with_PySpark",
+      "questions": [
+        {
+          "question": "Which open-source library provides DataFrame-based graph processing capabilities for Apache Spark and its PySpark API?",
+          "options": {
+            "A": "NetworkX",
+            "B": "GraphX",
+            "C": "GraphFrames",
+            "D": "PyGraph"
+          },
+          "correct_answer": "C",
+          "explanation": "GraphFrames is the primary library for graph analytics directly on Spark DataFrames, offering a Python API."
+        },
+        {
+          "question": "What are the two essential components (represented as PySpark DataFrames) required to create a `GraphFrame`?",
+          "options": {
+            "A": "Nodes and Connections",
+            "B": "Points and Lines",
+            "C": "Vertices and Edges",
+            "D": "Sources and Destinations"
+          },
+          "correct_answer": "C",
+          "explanation": "A GraphFrame is composed of a vertices DataFrame and an edges DataFrame."
+        },
+        {
+          "question": "When creating a `GraphFrame`, what is the mandatory column name in the 'vertices' DataFrame?",
+          "options": {
+            "A": "name",
+            "B": "node_id",
+            "C": "label",
+            "D": "id"
+          },
+          "correct_answer": "D",
+          "explanation": "The 'id' column uniquely identifies each vertex in the graph."
+        },
+        {
+          "question": "What are the two mandatory column names in the 'edges' DataFrame when creating a `GraphFrame`?",
+          "options": {
+            "A": "start, end",
+            "B": "from, to",
+            "C": "src, dst",
+            "D": "origin, target"
+          },
+          "correct_answer": "C",
+          "explanation": "'src' represents the source vertex ID, and 'dst' represents the destination vertex ID for each edge."
+        },
+        {
+          "question": "Which GraphFrames method can be used to count the in-degree, out-degree, or total degree of each vertex in a graph?",
+          "options": {
+            "A": "g.countDegrees()",
+            "B": "g.degrees()",
+            "C": "g.getDegree()",
+            "D": "g.nodeDegree()"
+          },
+          "correct_answer": "B",
+          "explanation": "`degrees()` returns a DataFrame with 'id' and 'degree' columns (or 'inDegree', 'outDegree' if specified)."
+        },
+        {
+          "question": "What is 'PageRank' typically used for in graph analytics?",
+          "options": {
+            "A": "To find the shortest path between two nodes.",
+            "B": "To detect communities within a graph.",
+            "C": "To measure the importance or influence of nodes within a network.",
+            "D": "To count the number of triangles in a graph."
+          },
+          "correct_answer": "C",
+          "explanation": "PageRank algorithm assigns a numerical weighting to each element of a hyperlinked set of documents, such as the World Wide Web, with the purpose of 'ranking' them."
+        },
+        {
+          "question": "Which GraphFrames algorithm is used to identify groups of nodes that are highly interconnected?",
+          "options": {
+            "A": "Shortest Paths",
+            "B": "Connected Components",
+            "C": "Triangle Count",
+            "D": "Breadth-First Search"
+          },
+          "correct_answer": "B",
+          "explanation": "Connected Components (Strongly or Weakly) identify disjoint subgraphs where nodes are reachable from each other."
+        },
+        {
+          "question": "What does 'Motif Finding' (using `g.find()`) allow you to do in GraphFrames?",
+          "options": {
+            "A": "Calculate the shortest path between two nodes.",
+            "B": "Find patterns of relationships in the graph based on a structural query.",
+            "C": "Identify the most central nodes.",
+            "D": "Count the number of edges."
+          },
+          "correct_answer": "B",
+          "explanation": "Motif finding allows you to search for specific structural patterns (e.g., 'A'-'B' and 'B'-'C') in the graph."
+        },
+        {
+          "question": "To perform a Breadth-First Search (BFS) starting from a specific vertex in GraphFrames, which method would you use?",
+          "options": {
+            "A": "g.dfs()",
+            "B": "g.bfs()",
+            "C": "g.traverse()",
+            "D": "g.findPath()"
+          },
+          "correct_answer": "B",
+          "explanation": "`bfs()` is used for finding paths or reachability within a specified depth."
+        },
+        {
+          "question": "The `Label Propagation Algorithm (LPA)` in GraphFrames is primarily used for what purpose?",
+          "options": {
+            "A": "Node classification.",
+            "B": "Community detection (finding groups of nodes with similar characteristics or dense connections).",
+            "C": "Link prediction.",
+            "D": "Graph embedding."
+          },
+          "correct_answer": "B",
+          "explanation": "LPA works by propagating labels through the network until a consensus is reached within communities."
+        },
+        {
+          "question": "True or False: GraphFrames seamlessly integrates with PySpark's DataFrame API, allowing you to use SQL queries and MLlib transformations on the vertices and edges DataFrames.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. This integration is a major advantage of GraphFrames, enabling a unified approach to data and graph processing."
+        },
+        {
+          "question": "What is 'Triangle Count' in graph analytics designed to find?",
+          "options": {
+            "A": "The number of triangles formed by three nodes connected to each other.",
+            "B": "The number of edges in a graph.",
+            "C": "The shortest path between three nodes.",
+            "D": "The number of nodes with degree three."
+          },
+          "correct_answer": "A",
+          "explanation": "Triangle count measures the clustering coefficient or 'cliquishness' of a network."
+        },
+        {
+          "question": "When performing graph algorithms like PageRank in GraphFrames, what is typically returned as output?",
+          "options": {
+            "A": "A new GraphFrame with additional properties (e.g., PageRank score) appended to the vertices DataFrame.",
+            "B": "A single numerical value representing the graph's overall rank.",
+            "C": "A list of all edges in the graph.",
+            "D": "A visualization of the graph."
+          },
+          "correct_answer": "A",
+          "explanation": "Graph algorithms enrich the graph's properties, usually by adding new columns to the vertices DataFrame."
+        },
+        {
+          "question": "Which of the following is NOT a direct method for creating a `GraphFrame` object?",
+          "options": {
+            "A": "`GraphFrame(vertices, edges)`",
+            "B": "`GraphFrame.from_json_files(vertices_path, edges_path)`",
+            "C": "`spark.read.graphFrame(vertices_df, edges_df)`",
+            "D": "All are incorrect; it's `GraphFrame(vertices, edges)`."
+          },
+          "correct_answer": "C",
+          "explanation": "You instantiate a GraphFrame object directly using its constructor, passing the vertices and edges DataFrames."
+        },
+        {
+          "question": "If you want to find all paths of a certain length from a starting node to an ending node, which GraphFrames functionality would you primarily use?",
+          "options": {
+            "A": "`g.shortestPaths()`",
+            "B": "`g.bfs()` with `maxPathLength`",
+            "C": "`g.filterEdges()`",
+            "D": "`g.triangleCount()`"
+          },
+          "correct_answer": "B",
+          "explanation": "BFS can explore paths up to a specified maximum length."
+        },
+        {
+          "question": "What is the key difference between 'Weakly Connected Components' and 'Strongly Connected Components' in GraphFrames?",
+          "options": {
+            "A": "Weakly connected components consider edge direction, while strongly connected components do not.",
+            "B": "Strongly connected components require a path between any two vertices in both directions, while weakly connected components require a path only ignoring direction.",
+            "C": "Weakly connected components only apply to undirected graphs.",
+            "D": "Strongly connected components are always smaller than weakly connected components."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'strong' implies reachability in both directions considering edge direction, whereas 'weak' ignores direction."
+        },
+        {
+          "question": "Can GraphFrames be used to analyze large-scale graphs that do not fit into the memory of a single machine?",
+          "options": {
+            "A": "No, it's limited to in-memory graphs only.",
+            "B": "Yes, by leveraging Spark's distributed processing capabilities.",
+            "C": "Only if the graph has less than 1000 nodes.",
+            "D": "Only with specialized hardware like GPUs."
+          },
+          "correct_answer": "B",
+          "explanation": "This is the core advantage of using Spark and GraphFrames for graph analytics: scalability."
+        },
+        {
+          "question": "To perform custom graph processing logic not directly available as a built-in algorithm in GraphFrames, what approach might you take?",
+          "options": {
+            "A": "It's not possible to extend GraphFrames.",
+            "B": "Convert the graph to a Pandas DataFrame and use NetworkX.",
+            "C": "Convert the vertices and edges DataFrames to RDDs and use lower-level RDD operations or Scala/Java UDFs if performance is critical.",
+            "D": "Use `g.filter_edges()` exclusively."
+          },
+          "correct_answer": "C",
+          "explanation": "For highly custom or iterative graph algorithms, dropping down to RDDs or using Scala/Java UDFs for performance might be necessary if the GraphFrames API doesn't suffice."
+        },
+        {
+          "question": "Which of the following describes a typical use case for Graph Analytics using PySpark?",
+          "options": {
+            "A": "Predicting stock prices based on time-series data.",
+            "B": "Analyzing social networks for community detection or influence scoring.",
+            "C": "Image classification using convolutional neural networks.",
+            "D": "Processing financial transactions for tabular reporting."
+          },
+          "correct_answer": "B",
+          "explanation": "Graph analytics is inherently suited for understanding relationships in network data."
+        },
+        {
+          "question": "When defining an edge in GraphFrames, what does a 'weight' attribute typically represent?",
+          "options": {
+            "A": "The physical size of the connection.",
+            "B": "The strength, cost, or distance of the relationship between two vertices.",
+            "C": "The age of the edge.",
+            "D": "The number of times the edge has been traversed."
+          },
+          "correct_answer": "B",
+          "explanation": "Weights are common in graphs to quantify the relationship, e.g., friendship strength, travel time, or cost."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Dashboard_Creation",
+      "questions": [
+        {
+          "question": "What is a dashboard in Tableau?",
+          "options": {
+            "A": "A collection of visualizations displayed together.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard in Tableau is a collection of visualizations displayed together, providing a comprehensive view of data insights."
+        },
+        {
+          "question": "What is the purpose of a dashboard filter in Tableau?",
+          "options": {
+            "A": "To limit the data displayed across multiple visualizations.",
+            "B": "To store data values.",
+            "C": "To perform data calculations.",
+            "D": "To create visualizations."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard filters in Tableau limit the data displayed across multiple visualizations, allowing users to focus on specific data insights."
+        },
+        {
+          "question": "What is a story point in Tableau?",
+          "options": {
+            "A": "A specific view or visualization within a story.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A story point in Tableau is a specific view or visualization within a story, providing insights into data trends."
+        },
+        {
+          "question": "What is the purpose of a dashboard action in Tableau?",
+          "options": {
+            "A": "To create interactivity between visualizations.",
+            "B": "To store data values.",
+            "C": "To perform data calculations.",
+            "D": "To create visualizations."
+          },
+          "correct_answer": "A",
+          "explanation": "Dashboard actions in Tableau create interactivity between visualizations, enhancing user engagement with data insights."
+        },
+        {
+          "question": "What is a floating object in Tableau dashboards?",
+          "options": {
+            "A": "An object that can be freely positioned on the dashboard.",
+            "B": "An object that is fixed in place.",
+            "C": "An object that stores data values.",
+            "D": "An object used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "A floating object in Tableau dashboards can be freely positioned, allowing for customized dashboard layouts."
+        },
+        {
+          "question": "What is a tiled object in Tableau dashboards?",
+          "options": {
+            "A": "An object that is placed within a grid layout.",
+            "B": "An object that can be freely positioned.",
+            "C": "An object that stores data values.",
+            "D": "An object used for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "A tiled object in Tableau dashboards is placed within a grid layout, ensuring consistent alignment of dashboard elements."
+        },
+        {
+          "question": "What is a dashboard layout in Tableau?",
+          "options": {
+            "A": "The arrangement of visualizations and objects on a dashboard.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard layout in Tableau is the arrangement of visualizations and objects, providing a structured view of data insights."
+        },
+        {
+          "question": "What is a dashboard theme in Tableau?",
+          "options": {
+            "A": "A set of visual styles applied to a dashboard.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard theme in Tableau is a set of visual styles applied to a dashboard, enhancing its visual appeal."
+        },
+        {
+          "question": "What is a dashboard container in Tableau?",
+          "options": {
+            "A": "A layout element that groups objects together.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard container in Tableau is a layout element that groups objects together, allowing for organized dashboard design."
+        },
+        {
+          "question": "What is a dashboard title in Tableau?",
+          "options": {
+            "A": "A text element that describes the dashboard's purpose.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard title in Tableau is a text element that describes the dashboard's purpose, providing context to data insights."
+        },
+        {
+          "question": "What is a dashboard legend in Tableau?",
+          "options": {
+            "A": "A visual guide that explains the symbols and colors used in visualizations.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard legend in Tableau is a visual guide that explains the symbols and colors used in visualizations, aiding data interpretation."
+        },
+        {
+          "question": "What is a dashboard tooltip in Tableau?",
+          "options": {
+            "A": "A pop-up box that provides additional information about a data point.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard tooltip in Tableau is a pop-up box that provides additional information about a data point, enhancing data analysis."
+        },
+        {
+          "question": "What is a dashboard filter action in Tableau?",
+          "options": {
+            "A": "An action that filters data across multiple visualizations.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard filter action in Tableau filters data across multiple visualizations, allowing for focused data analysis."
+        },
+        {
+          "question": "What is a dashboard highlight action in Tableau?",
+          "options": {
+            "A": "An action that highlights specific data points across visualizations.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard highlight action in Tableau highlights specific data points across visualizations, drawing attention to key insights."
+        },
+        {
+          "question": "What is a dashboard URL action in Tableau?",
+          "options": {
+            "A": "An action that opens a web page when a data point is clicked.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard URL action in Tableau opens a web page when a data point is clicked, providing additional context to data insights."
+        },
+        {
+          "question": "What is a dashboard parameter action in Tableau?",
+          "options": {
+            "A": "An action that changes parameter values based on user interaction.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard parameter action in Tableau changes parameter values based on user interaction, allowing for dynamic data analysis."
+        },
+        {
+          "question": "What is a dashboard sheet selector in Tableau?",
+          "options": {
+            "A": "A control that allows users to switch between different sheets.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard sheet selector in Tableau is a control that allows users to switch between different sheets, enhancing data exploration."
+        },
+        {
+          "question": "What is a dashboard navigation button in Tableau?",
+          "options": {
+            "A": "A button that navigates users to different dashboards or sheets.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard navigation button in Tableau navigates users to different dashboards or sheets, facilitating seamless data exploration."
+        },
+        {
+          "question": "What is a dashboard export option in Tableau?",
+          "options": {
+            "A": "An option that allows users to export dashboard data and visualizations.",
+            "B": "A single chart.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A dashboard export option in Tableau allows users to export dashboard data and visualizations, enabling data sharing and reporting."
+        }
+      ]
+    }
+  ]
+}

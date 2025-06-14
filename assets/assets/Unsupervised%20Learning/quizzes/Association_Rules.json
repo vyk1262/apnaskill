@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Association_Rules",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Association Rules in data mining?",
+          "options": {
+            "A": "To discover interesting relations between variables in large databases.",
+            "B": "To classify data into categories.",
+            "C": "To encrypt data for security.",
+            "D": "To visualize data trends."
+          },
+          "correct_answer": "A",
+          "explanation": "Association Rules are used to discover interesting relations between variables in large databases, often used in market basket analysis."
+        },
+        {
+          "question": "Which of the following is a common metric used in Association Rules?",
+          "options": {
+            "A": "Support",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Support is a common metric used in Association Rules, indicating the frequency of an itemset in the database."
+        },
+        {
+          "question": "What is the role of confidence in Association Rules?",
+          "options": {
+            "A": "To measure the reliability of the inference made by a rule.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Confidence measures the reliability of the inference made by a rule, indicating the likelihood of the consequent given the antecedent."
+        },
+        {
+          "question": "Which method is used to generate Association Rules?",
+          "options": {
+            "A": "Apriori Algorithm",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The Apriori Algorithm is commonly used to generate Association Rules, identifying frequent itemsets and deriving rules from them."
+        },
+        {
+          "question": "What is the significance of lift in Association Rules?",
+          "options": {
+            "A": "To measure the strength of a rule over random occurrence.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Lift measures the strength of a rule over random occurrence, indicating how much more likely the consequent is given the antecedent."
+        },
+        {
+          "question": "Which of the following is a disadvantage of Association Rules?",
+          "options": {
+            "A": "Can generate a large number of rules.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Association Rules can generate a large number of rules, making it challenging to identify the most interesting and useful ones."
+        },
+        {
+          "question": "What is the purpose of using pruning in Association Rules?",
+          "options": {
+            "A": "To reduce the number of rules generated.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Pruning reduces the number of rules generated in Association Rules, focusing on the most interesting and useful ones."
+        },
+        {
+          "question": "Which of the following is a common use case for Association Rules?",
+          "options": {
+            "A": "Market basket analysis.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Association Rules are commonly used for market basket analysis, identifying products frequently purchased together."
+        },
+        {
+          "question": "What is the role of antecedent in Association Rules?",
+          "options": {
+            "A": "To represent the condition in a rule.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The antecedent represents the condition in a rule, indicating the items that must be present for the rule to apply."
+        },
+        {
+          "question": "Which of the following is a benefit of Association Rules?",
+          "options": {
+            "A": "Can uncover hidden patterns in data.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "Association Rules can uncover hidden patterns in data, providing insights into relationships between variables."
+        },
+        {
+          "question": "What is the significance of the consequent in Association Rules?",
+          "options": {
+            "A": "It represents the outcome in a rule.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The consequent represents the outcome in a rule, indicating the items that are likely to be present given the antecedent."
+        },
+        {
+          "question": "Which of the following is a common metric used in Association Rules?",
+          "options": {
+            "A": "Conviction",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Conviction is a common metric used in Association Rules, indicating the strength of implication of a rule."
+        },
+        {
+          "question": "What is the role of confidence in Association Rules?",
+          "options": {
+            "A": "To measure the reliability of the inference made by a rule.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Confidence measures the reliability of the inference made by a rule, indicating the likelihood of the consequent given the antecedent."
+        },
+        {
+          "question": "Which method is used to generate Association Rules?",
+          "options": {
+            "A": "FP-Growth Algorithm",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The FP-Growth Algorithm is used to generate Association Rules, identifying frequent itemsets and deriving rules from them."
+        },
+        {
+          "question": "What is the significance of lift in Association Rules?",
+          "options": {
+            "A": "To measure the strength of a rule over random occurrence.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Lift measures the strength of a rule over random occurrence, indicating how much more likely the consequent is given the antecedent."
+        },
+        {
+          "question": "Which of the following is a disadvantage of Association Rules?",
+          "options": {
+            "A": "Can generate a large number of rules.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Association Rules can generate a large number of rules, making it challenging to identify the most interesting and useful ones."
+        },
+        {
+          "question": "What is the purpose of using pruning in Association Rules?",
+          "options": {
+            "A": "To reduce the number of rules generated.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Pruning reduces the number of rules generated in Association Rules, focusing on the most interesting and useful ones."
+        },
+        {
+          "question": "Which of the following is a common use case for Association Rules?",
+          "options": {
+            "A": "Market basket analysis.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Association Rules are commonly used for market basket analysis, identifying products frequently purchased together."
+        },
+        {
+          "question": "What is the role of antecedent in Association Rules?",
+          "options": {
+            "A": "To represent the condition in a rule.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The antecedent represents the condition in a rule, indicating the items that must be present for the rule to apply."
+        }
+      ]
+    }
+  ]
+}

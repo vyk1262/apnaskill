@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Services_and_Networking",
+      "questions": [
         {
-            "topic": "Services_and_Networking",
-            "questions": []
+          "question": "What is the primary purpose of a Kubernetes Service?",
+          "options": {
+            "A": "To create and manage Pods.",
+            "B": "To define a logical set of Pods and a policy by which to access them, providing a stable network endpoint for a set of fluctuating Pods.",
+            "C": "To store persistent application data.",
+            "D": "To configure network policies for the entire cluster."
+          },
+          "correct_answer": "B",
+          "explanation": "A Kubernetes Service is an abstraction that defines a logical set of Pods and a policy to access them. It enables loose coupling between dependent Pods and provides a stable IP address and DNS name, even if the underlying Pods change or get rescheduled."
+        },
+        {
+          "question": "How does a Service identify the Pods it routes traffic to?",
+          "options": {
+            "A": "By Pod IP addresses directly.",
+            "B": "By matching labels on the Pods to the `selector` defined in the Service.",
+            "C": "By the Pod's creation timestamp.",
+            "D": "By the container image name."
+          },
+          "correct_answer": "B",
+          "explanation": "Services use label selectors to find the set of Pods they target. Any Pod that has all the labels specified in the Service's `selector` field will be included in the Service's endpoint list."
+        },
+        {
+          "question": "What are the four main types of Kubernetes Services?",
+          "options": {
+            "A": "Internal, External, Public, Private",
+            "B": "TCP, UDP, HTTP, HTTPS",
+            "C": "ClusterIP, NodePort, LoadBalancer, ExternalName",
+            "D": "Static, Dynamic, Persistent, Ephemeral"
+          },
+          "correct_answer": "C",
+          "explanation": "The four main types of Services are: ClusterIP (internal to the cluster), NodePort (exposes on a specific port on each node), LoadBalancer (integrates with cloud provider load balancers), and ExternalName (maps a Service to a DNS name)."
+        },
+        {
+          "question": "Which Service type provides a stable internal IP address for access only from within the cluster?",
+          "options": {
+            "A": "NodePort",
+            "B": "LoadBalancer",
+            "C": "ClusterIP",
+            "D": "ExternalName"
+          },
+          "correct_answer": "C",
+          "explanation": "ClusterIP is the default Service type. It allocates an IP address from a cluster-internal range, making the Service reachable only from within the cluster. It's suitable for backend services that don't need external access."
+        },
+        {
+          "question": "Which Service type exposes a Service on a static port on each Node's IP address, allowing external access through any Node's IP?",
+          "options": {
+            "A": "ClusterIP",
+            "B": "NodePort",
+            "C": "LoadBalancer",
+            "D": "ExternalName"
+          },
+          "correct_answer": "B",
+          "explanation": "NodePort exposes the Service on a static port on every Node's IP address. This means you can access the Service from outside the cluster by hitting `NodeIP:NodePort`. It's a simple way to expose services but might not be suitable for production due to port management."
+        },
+        {
+          "question": "Which Service type typically provisions an external cloud load balancer (e.g., AWS ELB, GCP Load Balancer) to expose the Service?",
+          "options": {
+            "A": "ClusterIP",
+            "B": "NodePort",
+            "C": "LoadBalancer",
+            "D": "ExternalName"
+          },
+          "correct_answer": "C",
+          "explanation": "The LoadBalancer Service type integrates with cloud provider's load balancer services. When a LoadBalancer Service is created, the cloud provider automatically provisions an external load balancer that directs traffic to the Service's Pods."
+        },
+        {
+          "question": "What is a 'Headless Service', and why is it used?",
+          "options": {
+            "A": "A Service without any Pods.",
+            "B": "A Service with no ClusterIP. It's used when you want direct access to Pods or for StatefulSets to provide unique, stable DNS entries for each Pod.",
+            "C": "A Service that routes traffic to external websites.",
+            "D": "A Service for internal testing only."
+          },
+          "correct_answer": "B",
+          "explanation": "A Headless Service is defined by setting `clusterIP: None`. Instead of load-balancing, it returns the IP addresses of the Pods it selects directly. This is commonly used with StatefulSets to provide unique, stable DNS hostnames for each Pod, enabling direct communication between them."
+        },
+        {
+          "question": "What is an 'Ingress' in Kubernetes, and what problem does it solve that Services alone don't?",
+          "options": {
+            "A": "It's a type of persistent storage.",
+            "B": "It provides HTTP/HTTPS routing from outside the cluster to Services within the cluster, allowing for features like host-based routing, path-based routing, and SSL termination.",
+            "C": "It manages container resources.",
+            "D": "It's a monitoring tool for network traffic."
+          },
+          "correct_answer": "B",
+          "explanation": "While LoadBalancer Services expose applications, Ingress provides more advanced routing capabilities for HTTP/HTTPS traffic. It acts as a layer 7 load balancer, enabling routing based on hostname (e.g., `app1.example.com` to Service A, `app2.example.com` to Service B) or URL path (e.g., `/api` to Service C, `/web` to Service D), and SSL termination."
+        },
+        {
+          "question": "What component is required for an Ingress resource to actually function?",
+          "options": {
+            "A": "A NodePort Service.",
+            "B": "An Ingress Controller (e.g., Nginx Ingress Controller, Traefik).",
+            "C": "A direct connection to the internet.",
+            "D": "A dedicated database."
+          },
+          "correct_answer": "B",
+          "explanation": "An Ingress resource *defines* the routing rules. To make these rules active, you need an Ingress Controller running in your cluster. The Ingress Controller listens to the Kubernetes API for Ingress resources and configures an underlying load balancer (like Nginx, HAProxy, or a cloud LB) accordingly."
+        },
+        {
+          "question": "What is the Cluster Network Interface (CNI) primarily responsible for in Kubernetes?",
+          "options": {
+            "A": "Managing external DNS records.",
+            "B": "Providing Pod IP addresses and enabling communication between Pods across different nodes.",
+            "C": "Configuring load balancers.",
+            "D": "Securing network traffic with SSL."
+          },
+          "correct_answer": "B",
+          "explanation": "CNI is a specification for configuring network interfaces for Linux containers. CNI plugins (e.g., Calico, Flannel, Weave Net) handle the actual network plumbing for Pods, assigning IP addresses, and ensuring that Pods can communicate with each other, regardless of which node they reside on."
+        },
+        {
+          "question": "What is a 'Network Policy' in Kubernetes, and why is it used?",
+          "options": {
+            "A": "To configure IP addresses for Services.",
+            "B": "To define rules for how Pods are allowed to communicate with each other and with external endpoints, enhancing cluster security.",
+            "C": "To create new network interfaces.",
+            "D": "To monitor network traffic volume."
+          },
+          "correct_answer": "B",
+          "explanation": "Network Policies provide a way to enforce network isolation and security rules at the Pod level. They allow you to specify which Pods can communicate with which other Pods (or external entities), based on labels, namespaces, and IP ranges, implementing a 'least privilege' network access model."
+        },
+        {
+          "question": "Which component on each node is responsible for implementing the Service abstraction (e.g., updating iptables rules for load balancing)?",
+          "options": {
+            "A": "Kubelet",
+            "B": "Etcd",
+            "C": "Kube-proxy",
+            "D": "API Server"
+          },
+          "correct_answer": "C",
+          "explanation": "Kube-proxy is a network proxy that runs on each node in the cluster. It watches for Service and Endpoint objects and maintains network rules (usually iptables or IPVS) on the node to ensure that traffic directed to a Service's ClusterIP or NodePort is correctly routed to the appropriate Pods."
+        },
+        {
+          "question": "What is the purpose of `targetPort` in a Service definition?",
+          "options": {
+            "A": "The port on the node to expose.",
+            "B": "The port on the Service's IP.",
+            "C": "The port that the container within the Pod is listening on.",
+            "D": "The port for external access."
+          },
+          "correct_answer": "C",
+          "explanation": "`targetPort` refers to the port that the containerized application inside the Pod is actually listening on. The Service then directs traffic from its `port` to the Pod's `targetPort`."
+        },
+        {
+          "question": "What is the purpose of the `port` field in a Service definition?",
+          "options": {
+            "A": "The port on the node to expose.",
+            "B": "The port exposed by the Service's ClusterIP, which other services within the cluster can use to access it.",
+            "C": "The port that the container within the Pod is listening on.",
+            "D": "The port for external load balancers only."
+          },
+          "correct_answer": "B",
+          "explanation": "The `port` field in a Service defines the port on the Service's ClusterIP (or other Service type's IP). This is the port that other Pods or external clients will use to access the Service."
+        },
+        {
+          "question": "How do Pods typically discover and communicate with other Services within the same Kubernetes cluster?",
+          "options": {
+            "A": "By manually looking up Pod IP addresses.",
+            "B": "Using DNS (e.g., `service-name.namespace.svc.cluster.local`) or environment variables automatically injected by Kubernetes.",
+            "C": "Through direct file system access.",
+            "D": "Via a central database lookup."
+          },
+          "correct_answer": "B",
+          "explanation": "Kubernetes automatically configures DNS within the cluster. Pods can resolve Service names to their ClusterIPs (or Pod IPs for Headless Services). Kubernetes also injects environment variables for Services (e.g., `MY_SERVICE_SERVICE_HOST`, `MY_SERVICE_SERVICE_PORT`) into Pods."
+        },
+        {
+          "question": "What is a 'NodePort' (the actual numerical port, not the Service type) in the context of a NodePort Service?",
+          "options": {
+            "A": "The port inside the container.",
+            "B": "A static port on the Node's IP address that external traffic can connect to, which then forwards to the Service's `ClusterIP` and ultimately to the Pods.",
+            "C": "The port of the Kubernetes API server.",
+            "D": "A random port assigned by Docker."
+          },
+          "correct_answer": "B",
+          "explanation": "When you use a NodePort Service, Kubernetes allocates a port from a pre-defined range (default 30000-32767) on each Node. Any traffic hitting `NodeIP:NodePort` will be routed to the Service and then to the target Pods."
+        },
+        {
+          "question": "Can an `Ingress` directly route traffic to a Pod?",
+          "options": {
+            "A": "Yes, always.",
+            "B": "No, an Ingress always routes traffic to a Kubernetes `Service`.",
+            "C": "Only if the Pod has a public IP.",
+            "D": "Only if the Pod is on the same node as the Ingress Controller."
+          },
+          "correct_answer": "B",
+          "explanation": "Ingress resources define rules that route HTTP/HTTPS traffic to Services. They do not directly route to Pods. The Service then takes care of load balancing traffic among its healthy Pods."
+        },
+        {
+          "question": "What is the purpose of `externalTrafficPolicy: Local` on a NodePort or LoadBalancer Service?",
+          "options": {
+            "A": "To force traffic to stay within the same namespace.",
+            "B": "To ensure that source IP is preserved and traffic is only routed to Pods on the same node as the incoming connection, avoiding extra network hops and preserving client IP.",
+            "C": "To prevent any external traffic.",
+            "D": "To send all traffic to a specific Pod."
+          },
+          "correct_answer": "B",
+          "explanation": "`externalTrafficPolicy: Local` tells Kube-proxy (for NodePort/LoadBalancer) to only route traffic to Pods on the *same node* where the incoming connection landed. This preserves the client's source IP address and avoids an extra network hop, which can be beneficial for certain applications or for logging client IPs."
+        },
+        {
+          "question": "What is the role of `CoreDNS` (or Kube-DNS) in Kubernetes networking?",
+          "options": {
+            "A": "To manage container runtimes.",
+            "B": "To provide DNS-based service discovery for Pods and Services within the cluster.",
+            "C": "To handle external DNS resolution.",
+            "D": "To configure network policies."
+          },
+          "correct_answer": "B",
+          "explanation": "CoreDNS (or previously Kube-DNS) is the default DNS server in Kubernetes. It allows Pods to discover Services by their names (e.g., `my-service`, `my-service.my-namespace`) within the cluster, making it easy for applications to communicate without needing to know specific IP addresses."
+        },
+        {
+          "question": "True or False: A Pod can only have one network interface.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While a Pod typically gets a single network interface (often `eth0`) that it shares with its containers, advanced CNI plugins and concepts like Multus CNI allow Pods to have multiple network interfaces, connecting them to different networks or providing specialized network capabilities."
         }
-    ]
+      ]
+    }
+  ]
 }

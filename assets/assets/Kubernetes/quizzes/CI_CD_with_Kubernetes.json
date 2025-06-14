@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "CI_CD_with_Kubernetes",
+      "questions": [
         {
-            "topic": "CI_CD_with_Kubernetes",
-            "questions": []
+          "question": "What does CI/CD stand for in the context of software development?",
+          "options": {
+            "A": "Code Integration / Code Delivery",
+            "B": "Continuous Integration / Continuous Delivery (or Deployment)",
+            "C": "Client Interface / Cloud Development",
+            "D": "Component Installation / Container Destruction"
+          },
+          "correct_answer": "B",
+          "explanation": "CI/CD stands for Continuous Integration, Continuous Delivery, and/or Continuous Deployment. It's a set of practices that enable rapid, reliable, and automated software releases."
+        },
+        {
+          "question": "What is the primary goal of 'Continuous Integration' (CI) in a Kubernetes CI/CD pipeline?",
+          "options": {
+            "A": "To deploy applications to production automatically.",
+            "B": "To frequently merge code changes into a central repository, followed by automated builds and tests, to quickly detect and address integration issues.",
+            "C": "To manually test applications before deployment.",
+            "D": "To configure Kubernetes networking."
+          },
+          "correct_answer": "B",
+          "explanation": "Continuous Integration focuses on frequently integrating code changes from multiple developers into a shared repository, building the software, and running automated tests to catch integration problems early."
+        },
+        {
+          "question": "What is the primary goal of 'Continuous Delivery' (CD) in a Kubernetes CI/CD pipeline?",
+          "options": {
+            "A": "To manually release software updates.",
+            "B": "To ensure that software can be released to production at any time, with every change built, tested, and potentially pushed to a release-ready state in a staging environment.",
+            "C": "To monitor application performance in production.",
+            "D": "To manage Kubernetes cluster upgrades."
+          },
+          "correct_answer": "B",
+          "explanation": "Continuous Delivery means that code changes are automatically built, tested, and prepared for a release to production. It ensures that your application is always in a deployable state, but the actual deployment to production is a manual step."
+        },
+        {
+          "question": "What is the primary goal of 'Continuous Deployment' (CD) in a Kubernetes CI/CD pipeline?",
+          "options": {
+            "A": "To require manual approval for every deployment.",
+            "B": "To automatically deploy every code change that passes all automated tests directly to production, without human intervention.",
+            "C": "To only deploy during off-peak hours.",
+            "D": "To perform security audits on deployments."
+          },
+          "correct_answer": "B",
+          "explanation": "Continuous Deployment extends Continuous Delivery by automating the final step: deployment to production. Every change that successfully passes the automated pipeline is automatically released to end-users without manual approval, provided no critical issues are found."
+        },
+        {
+          "question": "Why are container images a fundamental artifact in Kubernetes CI/CD?",
+          "options": {
+            "A": "They only store configuration data.",
+            "B": "They provide a consistent, immutable, and portable package for applications and their dependencies, simplifying deployment across different environments.",
+            "C": "They are only used for logging.",
+            "D": "They define networking rules."
+          },
+          "correct_answer": "B",
+          "explanation": "Container images (like Docker images) encapsulate the application, its runtime, libraries, and dependencies. This immutability ensures that what runs in development is exactly what runs in testing and production, making deployments predictable and reliable."
+        },
+        {
+          "question": "What role does a 'container registry' (e.g., Docker Hub, GCR, ECR) play in Kubernetes CI/CD?",
+          "options": {
+            "A": "It's where source code is stored.",
+            "B": "It's a centralized repository for storing and managing container images, from which Kubernetes pulls images to run Pods.",
+            "C": "It manages Kubernetes cluster configurations.",
+            "D": "It runs automated tests."
+          },
+          "correct_answer": "B",
+          "explanation": "A container registry acts as the source of truth for container images. After the CI process builds an image, it's pushed to a registry. Kubernetes then pulls these images from the registry when creating Pods."
+        },
+        {
+          "question": "What is 'GitOps' in the context of Kubernetes CI/CD?",
+          "options": {
+            "A": "A method for managing Git repositories.",
+            "B": "An operational framework where the Git repository is the single source of truth for declarative infrastructure and applications, and an automated agent ensures the cluster state matches the Git state.",
+            "C": "A tool for performing Git merges.",
+            "D": "A way to backup Kubernetes configurations."
+          },
+          "correct_answer": "B",
+          "explanation": "GitOps is a paradigm that leverages Git as the central source of truth for defining desired state. Changes to the cluster are made by committing to Git, and automated tools (e.g., Flux, Argo CD) synchronize the cluster to that desired state."
+        },
+        {
+          "question": "What is the primary benefit of using a 'declarative' approach (like Kubernetes YAML files) in CI/CD?",
+          "options": {
+            "A": "It requires more manual steps.",
+            "B": "It allows you to describe the desired state of your applications and infrastructure, making deployments idempotent, version-controllable, and easier to understand and audit.",
+            "C": "It speeds up container image builds.",
+            "D": "It encrypts all configuration data."
+          },
+          "correct_answer": "B",
+          "explanation": "Declarative configuration (YAML) means you specify *what* you want the state to be, not *how* to get there. This makes deployments repeatable, allows changes to be tracked in version control, and simplifies rollbacks and audits."
+        },
+        {
+          "question": "What is 'Helm' used for in Kubernetes CI/CD?",
+          "options": {
+            "A": "To monitor Pods.",
+            "B": "A package manager for Kubernetes applications, allowing you to define, install, and upgrade even complex applications using 'Charts'.",
+            "C": "A tool for creating container images.",
+            "D": "A system for managing network policies."
+          },
+          "correct_answer": "B",
+          "explanation": "Helm helps package and manage Kubernetes applications. A Helm 'Chart' is a collection of files that describe a related set of Kubernetes resources. Helm simplifies the deployment of complex applications, manages releases, and allows for versioning and easy upgrades/rollbacks."
+        },
+        {
+          "question": "In a typical Kubernetes CI/CD pipeline, what is the sequence of events after a code commit?",
+          "options": {
+            "A": "Deploy to production -> Build image -> Run tests.",
+            "B": "Build image -> Run tests -> Deploy to development/staging -> Deploy to production.",
+            "C": "Run tests -> Build image -> Deploy directly to production.",
+            "D": "Deploy to staging -> Build image -> Run tests."
+          },
+          "correct_answer": "B",
+          "explanation": "A common CI/CD flow involves: 1. Code commit. 2. CI system triggers a build. 3. Container image is built. 4. Automated tests (unit, integration, sometimes end-to-end) are run against the image. 5. If tests pass, the image is pushed to a registry. 6. CD system triggers a deployment to a lower environment (dev/staging). 7. After further validation/manual approval, deploy to production."
+        },
+        {
+          "question": "What is the purpose of 'Immutable Infrastructure' in Kubernetes CI/CD?",
+          "options": {
+            "A": "To prevent any changes to the running cluster.",
+            "B": "To replace existing infrastructure components (like Pods/Nodes) with new ones for every change or update, rather than modifying them in place, ensuring consistency and predictability.",
+            "C": "To never update the operating system.",
+            "D": "To use only virtual machines."
+          },
+          "correct_answer": "B",
+          "explanation": "Immutable infrastructure means that once a component (like a Pod or a container image) is deployed, it's never modified. Any change or update results in replacing the old component with a new, updated one. This reduces configuration drift and makes deployments more reliable."
+        },
+        {
+          "question": "What is a 'Blue/Green Deployment' strategy and how can it be implemented with Kubernetes?",
+          "options": {
+            "A": "Deploying a new version to a small group of users first.",
+            "B": "Running two identical production environments ('Blue' for the old version, 'Green' for the new). Traffic is switched instantly from Blue to Green once the new version is validated, minimizing downtime and enabling instant rollback.",
+            "C": "Updating Pods one by one.",
+            "D": "Deploying only during specific times."
+          },
+          "correct_answer": "B",
+          "explanation": "Blue/Green involves two full environments. In Kubernetes, you'd have two Deployments (Blue and Green) and use a Service to direct traffic. Once Green is ready, the Service selector is updated to point to the Green Deployment. If issues arise, it's a quick switch back to Blue."
+        },
+        {
+          "question": "What is a 'Canary Deployment' strategy and how can it be implemented with Kubernetes?",
+          "options": {
+            "A": "Switching all traffic to a new version at once.",
+            "B": "Gradually rolling out a new version to a small subset of users (the 'canary') while the majority still uses the old version. Traffic can then be incrementally shifted to the new version, allowing for real-world testing and easy rollback.",
+            "C": "Recreating all Pods simultaneously.",
+            "D": "Deploying to development environments only."
+          },
+          "correct_answer": "B",
+          "explanation": "Canary deployments involve directing a small portion of traffic to a new version. In Kubernetes, this can be achieved using two Deployments (old and new) and configuring a Service or Ingress controller to split traffic based on rules (e.g., weight, headers, user segments)."
+        },
+        {
+          "question": "What is the role of `kubectl apply` in a CI/CD pipeline for Kubernetes?",
+          "options": {
+            "A": "It builds container images.",
+            "B": "It applies configuration changes (e.g., Deployments, Services) described in YAML files to the Kubernetes cluster, creating or updating resources declaratively.",
+            "C": "It runs automated tests.",
+            "D": "It monitors cluster health."
+          },
+          "correct_answer": "B",
+          "explanation": "`kubectl apply` is the workhorse for continuous deployment. It intelligently updates Kubernetes resources based on the provided YAML manifests, performing operations like rolling updates for Deployments, or creating new resources if they don't exist."
+        },
+        {
+          "question": "What is a common challenge when setting up CI/CD for stateful applications in Kubernetes?",
+          "options": {
+            "A": "Building container images.",
+            "B": "Managing persistent data during updates and ensuring data integrity and consistency, especially during rollbacks or schema changes.",
+            "C": "Configuring network access.",
+            "D": "Running unit tests."
+          },
+          "correct_answer": "B",
+          "explanation": "Stateful applications (like databases) introduce complexity because their data persists. CI/CD for these applications must consider data migration, schema evolution, consistent backups, and safe rollbacks without data loss, which is significantly harder than for stateless apps."
+        },
+        {
+          "question": "What is the purpose of 'tags' for container images in a CI/CD pipeline?",
+          "options": {
+            "A": "To add metadata to the image.",
+            "B": "To uniquely identify different versions or builds of an image, allowing for specific deployments and reliable rollbacks (e.g., `app:v1.2.3`, `app:commit-abc123`).",
+            "C": "To encrypt the image content.",
+            "D": "To determine the image's operating system."
+          },
+          "correct_answer": "B",
+          "explanation": "Tags are crucial for version control of images. Each new build should ideally have a unique, immutable tag (e.g., based on Git commit hash or version number). This ensures that a specific deployment always uses the exact same image, enabling reliable rollbacks."
+        },
+        {
+          "question": "Which of the following is NOT a typical component of a Kubernetes CI/CD pipeline?",
+          "options": {
+            "A": "Source Code Management (Git)",
+            "B": "CI Server (Jenkins, GitLab CI, GitHub Actions)",
+            "C": "Container Runtime Interface (CRI)",
+            "D": "Container Registry (Docker Hub, Artifactory)"
+          },
+          "correct_answer": "C",
+          "explanation": "The Container Runtime Interface (CRI) is an API that enables the Kubelet to use a container runtime. It's a foundational part of Kubernetes, but not a component *within* the CI/CD pipeline itself, which focuses on building, testing, and deploying."
+        },
+        {
+          "question": "What is 'Argo CD' or 'Flux CD' in the context of Kubernetes CI/CD?",
+          "options": {
+            "A": "Container runtimes.",
+            "B": "GitOps-based Continuous Delivery tools that automate application deployment to Kubernetes by continuously synchronizing the cluster state with a Git repository.",
+            "C": "Load balancers for Kubernetes.",
+            "D": "Monitoring tools for CI/CD pipelines."
+          },
+          "correct_answer": "B",
+          "explanation": "Argo CD and Flux CD are popular open-source tools that implement the GitOps philosophy for Kubernetes. They pull desired state (YAML/Helm charts) from Git and apply it to the cluster, ensuring that the cluster always matches the committed state and providing reconciliation capabilities."
+        },
+        {
+          "question": "How can 'Kubernetes Secrets' be securely managed and integrated into a CI/CD pipeline?",
+          "options": {
+            "A": "Storing them directly in plain text in Git.",
+            "B": "Using external Secret Management Systems (e.g., Vault, AWS Secrets Manager, Azure Key Vault, GCP Secret Manager) and injecting them into Pods at runtime, or using tools like Sealed Secrets for GitOps.",
+            "C": "Hardcoding them into container images.",
+            "D": "Passing them as command-line arguments."
+          },
+          "correct_answer": "B",
+          "explanation": "Secrets should never be stored in plain text in Git. Best practices involve using external Secret Management Systems that integrate with Kubernetes (e.g., via CSI Secrets Store Driver) or using tools like Sealed Secrets that encrypt Secrets in Git so they can only be decrypted by the controller in the cluster."
+        },
+        {
+          "question": "True or False: A robust CI/CD pipeline for Kubernetes reduces the risk of human error during deployments.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. By automating the build, test, and deployment processes, CI/CD pipelines significantly reduce manual intervention, which in turn minimizes the chances of human error, leading to more consistent and reliable deployments."
         }
-    ]
+      ]
+    }
+  ]
 }

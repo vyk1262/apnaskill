@@ -1,8 +1,229 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Docker_Compose",
+      "questions": [
         {
-            "topic": "Docker_Compose",
-            "questions": []
+          "question": "What is the primary purpose of Docker Compose?",
+          "options": {
+            "A": "To build individual Docker images.",
+            "B": "To define and run multi-container Docker applications.",
+            "C": "To manage Docker Swarm clusters.",
+            "D": "To monitor Docker container performance."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to define your application's services, networks, and volumes in a single YAML file, and then spin up the entire application stack with a single command."
+        },
+        {
+          "question": "What file format does Docker Compose primarily use for defining services?",
+          "options": {
+            "A": "JSON",
+            "B": "XML",
+            "C": "YAML",
+            "D": "TOML"
+          },
+          "correct_answer": "C",
+          "explanation": "Docker Compose uses YAML (YAML Ain't Markup Language) files, typically named `docker-compose.yml` (or `compose.yaml`), to configure your application's services."
+        },
+        {
+          "question": "What is the default filename for a Docker Compose configuration file?",
+          "options": {
+            "A": "compose.json",
+            "B": "docker-app.yml",
+            "C": "docker-compose.yml",
+            "D": "app.yaml"
+          },
+          "correct_answer": "C",
+          "explanation": "The default filename for a Docker Compose configuration file is `docker-compose.yml` (or `compose.yaml` in newer versions). Docker Compose automatically looks for this file in the current directory."
+        },
+        {
+          "question": "Which command is used to build, create, and start all services defined in a `docker-compose.yml` file?",
+          "options": {
+            "A": "`docker start`",
+            "B": "`docker compose up`",
+            "C": "`docker run all`",
+            "D": "`docker build compose`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker compose up` command reads the `docker-compose.yml` file. It builds any necessary images (if they don't exist), creates the specified services, networks, and volumes, and then starts all the containers defined in the file."
+        },
+        {
+          "question": "How do services within a Docker Compose application typically communicate with each other by default?",
+          "options": {
+            "A": "Via the host's IP address and published ports.",
+            "B": "Through shared memory segments.",
+            "C": "By using their service names as hostnames within the default network created by Compose.",
+            "D": "They cannot communicate unless manually linked."
+          },
+          "correct_answer": "C",
+          "explanation": "Docker Compose automatically creates a default network for your application (e.g., `myproject_default`). Services on this network can discover and communicate with each other using their service names as hostnames (e.g., a 'web' service can reach a 'database' service by referring to it as `database`)."
+        },
+        {
+          "question": "Which section in a `docker-compose.yml` file defines the individual application components?",
+          "options": {
+            "A": "networks:",
+            "B": "volumes:",
+            "C": "services:",
+            "D": "build:"
+          },
+          "correct_answer": "C",
+          "explanation": "The `services:` section is where you define each individual component or application service that makes up your multi-container application. Each service typically corresponds to a single container (or multiple identical containers for scaling)."
+        },
+        {
+          "question": "What is the purpose of the `build` key under a service definition in `docker-compose.yml`?",
+          "options": {
+            "A": "To specify a pre-built Docker image to use.",
+            "B": "To define the path to the Dockerfile that Docker Compose should use to build the image for this service.",
+            "C": "To specify the command to run when the container starts.",
+            "D": "To configure the network for the service."
+          },
+          "correct_answer": "B",
+          "explanation": "The `build` key is used when you want Docker Compose to build an image from a Dockerfile for a specific service. You provide the path to the build context (which contains the Dockerfile) to this key."
+        },
+        {
+          "question": "What is the purpose of the `image` key under a service definition in `docker-compose.yml`?",
+          "options": {
+            "A": "To specify the Dockerfile to build from.",
+            "B": "To specify the name of an already existing Docker image (local or remote) to use for the service.",
+            "C": "To define the name of the container when it runs.",
+            "D": "To tag the image after it's built."
+          },
+          "correct_answer": "B",
+          "explanation": "The `image` key is used when you want to use a pre-built Docker image for your service, rather than building one from a Dockerfile. You provide the image name and optionally a tag (e.g., `nginx:latest`)."
+        },
+        {
+          "question": "Which command is used to stop and remove all services, networks, and volumes defined in a `docker-compose.yml` file?",
+          "options": {
+            "A": "`docker compose stop`",
+            "B": "`docker compose down`",
+            "C": "`docker compose rm`",
+            "D": "`docker compose clean`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker compose down` command stops and removes the containers, networks, and by default, the default volumes associated with the Docker Compose application defined in the `docker-compose.yml` file. Use `--volumes` flag to remove named volumes as well."
+        },
+        {
+          "question": "How do you specify port mappings for a service in `docker-compose.yml`?",
+          "options": {
+            "A": "In the `networks:` section.",
+            "B": "Using the `ports:` keyword under the service definition.",
+            "C": "Using the `expose:` keyword under the service definition.",
+            "D": "Via environment variables."
+          },
+          "correct_answer": "B",
+          "explanation": "The `ports:` keyword is used to publish container ports to the host. For example: `ports: - '8080:80'` maps host port 8080 to container port 80."
+        },
+        {
+          "question": "What is the difference between `ports:` and `expose:` in `docker-compose.yml`?",
+          "options": {
+            "A": "`ports:` exposes to the host, `expose:` declares container's internal listening ports.",
+            "B": "`expose:` exposes to the host, `ports:` declares container's internal listening ports.",
+            "C": "They both do the same thing.",
+            "D": "`ports:` is for TCP, `expose:` is for UDP."
+          },
+          "correct_answer": "A",
+          "explanation": "The `ports:` keyword (equivalent to `docker run -p`) publishes ports from the container to the host machine. The `expose:` keyword (equivalent to Dockerfile's `EXPOSE`) declares which ports a container listens on but *does not* publish them to the host; it's more for internal network communication documentation."
+        },
+        {
+          "question": "How do you define persistent named volumes for use with Docker Compose services?",
+          "options": {
+            "A": "Directly in the `services:` section using the `volumes:` key with host paths.",
+            "B": "In a separate `volumes:` top-level section of the `docker-compose.yml` file.",
+            "C": "Volumes are created automatically by Docker Compose and don't need explicit definition.",
+            "D": "Only by using bind mounts."
+          },
+          "correct_answer": "B",
+          "explanation": "Named volumes are defined in the top-level `volumes:` section of `docker-compose.yml`. Once defined, they can be referenced and mounted by individual services using the `volumes:` key under each service."
+        },
+        {
+          "question": "Which command allows you to view the logs of all services in a Docker Compose application?",
+          "options": {
+            "A": "`docker compose show-logs`",
+            "B": "`docker compose logs`",
+            "C": "`docker logs all`",
+            "D": "`docker compose inspect`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker compose logs` command fetches and displays the consolidated logs from all services in your application defined in the `docker-compose.yml` file. You can also specify a service name to see logs from just that service."
+        },
+        {
+          "question": "How do you run a specific service defined in `docker-compose.yml` in detached mode?",
+          "options": {
+            "A": "`docker compose run -d <service_name>`",
+            "B": "`docker compose start <service_name>`",
+            "C": "`docker compose up -d <service_name>` (not quite, see explanation)",
+            "D": "`docker run -d <service_name>`"
+          },
+          "correct_answer": "A",
+          "explanation": "The `docker compose run` command runs a one-off command against a service. Using `-d` runs it in detached mode. If you want to start *all* services in detached mode, you'd use `docker compose up -d`. If you want to run a specific service that's part of the stack in detached mode, `docker compose up -d <service_name>` will start that service and its dependencies in detached mode."
+        },
+        {
+          "question": "What is the purpose of the `environment:` key under a service definition?",
+          "options": {
+            "A": "To define the operating system for the service.",
+            "B": "To set environment variables for the service's container.",
+            "C": "To specify the network environment.",
+            "D": "To configure logging drivers."
+          },
+          "correct_answer": "B",
+          "explanation": "The `environment:` key allows you to define environment variables that will be set inside the container for that specific service. This is commonly used for database connection strings, API keys, or application settings."
+        },
+        {
+          "question": "Which command is used to view the status of all services (containers) managed by Docker Compose?",
+          "options": {
+            "A": "`docker compose status`",
+            "B": "`docker compose ps`",
+            "C": "`docker ps -a`",
+            "D": "`docker compose info`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker compose ps` command lists the containers for the services defined in your `docker-compose.yml` file, showing their state, ports, and command."
+        },
+        {
+          "question": "Can Docker Compose manage services across multiple host machines?",
+          "options": {
+            "A": "Yes, natively out-of-the-box.",
+            "B": "No, it's designed for single-host multi-container applications.",
+            "C": "Only if used with Docker Swarm or Kubernetes.",
+            "D": "Only if using overlay networks."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Compose is primarily designed for local, single-host multi-container applications. For multi-host deployments and orchestration, you would typically use tools like Docker Swarm (which can deploy Compose files in stack mode) or Kubernetes."
+        },
+        {
+          "question": "What is the `depends_on` keyword used for in `docker-compose.yml`?",
+          "options": {
+            "A": "To specify image dependencies for building.",
+            "B": "To ensure a service starts after another service has started, but *does not* wait for that service to be 'ready'.",
+            "C": "To define network dependencies.",
+            "D": "To specify volume dependencies."
+          },
+          "correct_answer": "B",
+          "explanation": "The `depends_on` keyword expresses dependency between services. It ensures that services are started in dependency order. However, it *only* ensures that the dependent container has started, not that the application *inside* that container is fully ready (e.g., a database fully initialized). For readiness, health checks or entrypoint scripts are often combined with `depends_on`."
+        },
+        {
+          "question": "What is the purpose of the `restart:` policy in a service definition in `docker-compose.yml`?",
+          "options": {
+            "A": "To restart the host machine if the container fails.",
+            "B": "To define how the container should restart if it exits or Docker daemon restarts.",
+            "C": "To automatically rebuild the image if the Dockerfile changes.",
+            "D": "To restart the application inside the container without restarting the container itself."
+          },
+          "correct_answer": "B",
+          "explanation": "The `restart:` policy (e.g., `always`, `on-failure`, `unless-stopped`) controls the container's restart behavior. It instructs Docker Compose (and Docker) on whether to restart the container if it exits or if the Docker daemon restarts, helping to ensure application availability."
+        },
+        {
+          "question": "Which command would you use to remove just the containers, but keep networks and volumes, for a Compose application?",
+          "options": {
+            "A": "`docker compose stop` (stops but doesn't remove)",
+            "B": "`docker compose rm` (removes stopped containers)",
+            "C": "`docker compose down --volumes` (removes volumes too)",
+            "D": "You cannot remove containers without also removing networks and volumes."
+          },
+          "correct_answer": "B",
+          "explanation": "After stopping the services with `docker compose stop`, you can use `docker compose rm` to remove the stopped containers. This command does not remove networks or volumes by default. `docker compose down` will remove networks and optionally volumes."
         }
-    ]
+      ]
+    }
+  ]
 }

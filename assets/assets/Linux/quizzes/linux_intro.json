@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "linux_intro",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Linux?",
+          "options": {
+            "A": "To provide a graphical user interface.",
+            "B": "To serve as an open-source operating system.",
+            "C": "To manage network connections.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "B",
+          "explanation": "Linux is an open-source operating system that provides a platform for running applications and managing hardware resources."
+        },
+        {
+          "question": "Which command is used to display the current directory in Linux?",
+          "options": {
+            "A": "pwd",
+            "B": "dir",
+            "C": "ls",
+            "D": "cd"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'pwd' command in Linux is used to display the current directory, showing the full path of the working directory."
+        },
+        {
+          "question": "What is the function of the 'ls' command in Linux?",
+          "options": {
+            "A": "To list files and directories.",
+            "B": "To delete files.",
+            "C": "To move files.",
+            "D": "To rename files."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'ls' command in Linux is used to list files and directories, displaying their names and attributes."
+        },
+        {
+          "question": "Which tool in Linux provides text editing capabilities?",
+          "options": {
+            "A": "nano",
+            "B": "edit",
+            "C": "text",
+            "D": "write"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'nano' tool in Linux provides text editing capabilities, allowing users to create and modify text files."
+        },
+        {
+          "question": "How can you view the contents of a file in Linux?",
+          "options": {
+            "A": "Using the 'cat' command.",
+            "B": "Through the 'view' command.",
+            "C": "By editing the file.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'cat' command in Linux is used to view the contents of a file, displaying its text in the terminal."
+        },
+        {
+          "question": "What is the purpose of the 'rm' command in Linux?",
+          "options": {
+            "A": "To remove files or directories.",
+            "B": "To manage user permissions.",
+            "C": "To monitor system performance.",
+            "D": "To configure network settings."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'rm' command in Linux is used to remove files or directories, deleting them from the file system."
+        },
+        {
+          "question": "Which Linux feature assists with file searching?",
+          "options": {
+            "A": "Search management.",
+            "B": "Search optimization.",
+            "C": "Search configuration.",
+            "D": "Search execution."
+          },
+          "correct_answer": "D",
+          "explanation": "File searching features in Linux help users locate files based on various criteria, providing tools for efficient file management."
+        },
+        {
+          "question": "What is the role of 'chmod' in Linux?",
+          "options": {
+            "A": "To change file permissions.",
+            "B": "To manage user accounts.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'chmod' command in Linux is used to change file permissions, controlling access to files and directories."
+        },
+        {
+          "question": "How can you enable command completion in Linux?",
+          "options": {
+            "A": "By editing the configuration file.",
+            "B": "Through the terminal settings.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Command completion in Linux can be enabled through the terminal settings, allowing users to quickly complete commands and file names."
+        },
+        {
+          "question": "Which feature in Linux helps with command chaining?",
+          "options": {
+            "A": "Chaining management.",
+            "B": "Chaining optimization.",
+            "C": "Chaining configuration.",
+            "D": "Chaining execution."
+          },
+          "correct_answer": "D",
+          "explanation": "Command chaining in Linux allows users to execute multiple commands in sequence, using operators to control the flow of execution."
+        },
+        {
+          "question": "What is the purpose of 'tar' in Linux?",
+          "options": {
+            "A": "To create and manage archives.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'tar' command in Linux is used to create and manage archives, bundling multiple files into a single archive file."
+        },
+        {
+          "question": "How can you enable advanced file management features in Linux?",
+          "options": {
+            "A": "By installing a file management package.",
+            "B": "Through the file manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced file management features in Linux can be enabled through the file manager, providing tools for organizing and managing files."
+        },
+        {
+          "question": "Which Linux feature assists with process management?",
+          "options": {
+            "A": "Process management.",
+            "B": "Process optimization.",
+            "C": "Process configuration.",
+            "D": "Process execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Process management features in Linux help users manage running processes, providing tools for monitoring and controlling system resources."
+        },
+        {
+          "question": "What is the function of 'ps' in Linux?",
+          "options": {
+            "A": "To display running processes.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'ps' command in Linux is used to display running processes, showing information about active processes on the system."
+        },
+        {
+          "question": "How can you enable advanced networking features in Linux?",
+          "options": {
+            "A": "By installing a networking package.",
+            "B": "Through the network manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced networking features in Linux can be enabled through the network manager, providing tools for configuring and managing network connections."
+        },
+        {
+          "question": "Which feature in Linux helps with system monitoring?",
+          "options": {
+            "A": "Monitoring management.",
+            "B": "Monitoring optimization.",
+            "C": "Monitoring configuration.",
+            "D": "Monitoring execution."
+          },
+          "correct_answer": "A",
+          "explanation": "System monitoring features in Linux help users monitor system performance, providing tools for tracking resource usage and identifying potential issues."
+        },
+        {
+          "question": "What is the purpose of 'top' in Linux?",
+          "options": {
+            "A": "To display system resource usage.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'top' command in Linux is used to display system resource usage, showing information about CPU, memory, and process activity."
+        },
+        {
+          "question": "How can you enable advanced security features in Linux?",
+          "options": {
+            "A": "By installing a security package.",
+            "B": "Through the security manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced security features in Linux can be enabled through the security manager, providing tools for configuring and managing security settings."
+        },
+        {
+          "question": "Which Linux feature assists with system backup and recovery?",
+          "options": {
+            "A": "Backup management.",
+            "B": "Backup and recovery.",
+            "C": "Backup optimization.",
+            "D": "Backup monitoring."
+          },
+          "correct_answer": "B",
+          "explanation": "Backup and recovery features in Linux help users manage system backups and recover data in case of failures."
+        }
+      ]
+    }
+  ]
+}

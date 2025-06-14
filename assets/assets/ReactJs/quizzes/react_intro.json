@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_intro",
+      "questions": [
+        {
+          "question": "What is React primarily used for?",
+          "options": {
+            "A": "Backend API development.",
+            "B": "Building user interfaces (UIs).",
+            "C": "Database management.",
+            "D": "Server-side rendering only."
+          },
+          "correct_answer": "B",
+          "explanation": "React is a JavaScript library for building interactive and dynamic user interfaces."
+        },
+        {
+          "question": "Who developed React?",
+          "options": {
+            "A": "Google",
+            "B": "Microsoft",
+            "C": "Facebook (now Meta)",
+            "D": "Apple"
+          },
+          "correct_answer": "C",
+          "explanation": "React was developed by Jordan Walke at Facebook and was open-sourced in 2013."
+        },
+        {
+          "question": "Which programming language is React built upon?",
+          "options": {
+            "A": "Python",
+            "B": "Java",
+            "C": "JavaScript",
+            "D": "TypeScript (exclusively)"
+          },
+          "correct_answer": "C",
+          "explanation": "React is a JavaScript library, and its core concepts are based on JavaScript."
+        },
+        {
+          "question": "What is the key concept that distinguishes React's approach to UI development?",
+          "options": {
+            "A": "Direct manipulation of the DOM.",
+            "B": "Using a Virtual DOM.",
+            "C": "Server-side scripting.",
+            "D": "Reliance on jQuery for UI updates."
+          },
+          "correct_answer": "B",
+          "explanation": "React uses a Virtual DOM to optimize updates to the real DOM, improving performance."
+        },
+        {
+          "question": "What is JSX in React?",
+          "options": {
+            "A": "A JavaScript framework.",
+            "B": "A syntax extension for JavaScript that looks like HTML.",
+            "C": "A type of database.",
+            "D": "A CSS preprocessor."
+          },
+          "correct_answer": "B",
+          "explanation": "JSX allows developers to write UI components using a syntax that closely resembles HTML within JavaScript code."
+        },
+        {
+          "question": "Is JSX mandatory for writing React applications?",
+          "options": {
+            "A": "Yes, it's strictly required.",
+            "B": "No, but it's highly recommended for readability and conciseness.",
+            "C": "Only for large applications.",
+            "D": "Only when using class components."
+          },
+          "correct_answer": "B",
+          "explanation": "While not strictly mandatory, JSX makes writing React components much easier and more intuitive. You can write React without JSX using `React.createElement`."
+        },
+        {
+          "question": "What is a 'component' in React?",
+          "options": {
+            "A": "A single HTML file.",
+            "B": "An independent, reusable piece of UI.",
+            "C": "A database table.",
+            "D": "A CSS stylesheet."
+          },
+          "correct_answer": "B",
+          "explanation": "React applications are built from encapsulated components that manage their own state and render UI."
+        },
+        {
+          "question": "What is the primary benefit of using a component-based architecture in React?",
+          "options": {
+            "A": "It makes applications slower.",
+            "B": "It promotes reusability, maintainability, and modularity.",
+            "C": "It eliminates the need for JavaScript.",
+            "D": "It's only useful for small projects."
+          },
+          "correct_answer": "B",
+          "explanation": "Components allow developers to break down complex UIs into smaller, manageable, and reusable pieces."
+        },
+        {
+          "question": "What is 'props' in React?",
+          "options": {
+            "A": "Internal data managed by a component.",
+            "B": "A method to update the DOM directly.",
+            "C": "Properties or arguments passed from a parent component to a child component.",
+            "D": "A lifecycle method."
+          },
+          "correct_answer": "C",
+          "explanation": "Props (short for properties) are how data is passed down from parents to children in React component hierarchy."
+        },
+        {
+          "question": "Can child components directly modify the props they receive from a parent?",
+          "options": {
+            "A": "Yes, always.",
+            "B": "No, props are read-only.",
+            "C": "Only if the prop is a function.",
+            "D": "Only if using class components."
+          },
+          "correct_answer": "B",
+          "explanation": "Props are immutable, meaning they cannot be changed by the child component that receives them. This ensures a predictable data flow."
+        },
+        {
+          "question": "What is 'state' in React?",
+          "options": {
+            "A": "External data fetched from an API.",
+            "B": "A mechanism for managing data that belongs to a specific component and can change over time.",
+            "C": "A global variable accessible by all components.",
+            "D": "A styling property."
+          },
+          "correct_answer": "B",
+          "explanation": "State allows components to manage their own internal data that can change and trigger re-renders."
+        },
+        {
+          "question": "When should you use 'state' versus 'props'?",
+          "options": {
+            "A": "Use state for data that never changes, and props for data that changes frequently.",
+            "B": "Use state for data that a component owns and manages internally, and props for data passed from a parent component.",
+            "C": "They are interchangeable.",
+            "D": "Use state for styling, and props for logic."
+          },
+          "correct_answer": "B",
+          "explanation": "State is for a component's internal, mutable data, while props are for external, immutable data passed from parents."
+        },
+        {
+          "question": "What is the purpose of `ReactDOM.render()`?",
+          "options": {
+            "A": "To fetch data from a server.",
+            "B": "To create a new React component.",
+            "C": "To render a React element into the DOM in the provided container.",
+            "D": "To define component styles."
+          },
+          "correct_answer": "C",
+          "explanation": "`ReactDOM.render()` is the entry point for mounting a React application to the DOM."
+        },
+        {
+          "question": "What is a 'single-page application' (SPA) in the context of React?",
+          "options": {
+            "A": "An application with only one HTML page.",
+            "B": "An application that loads a single HTML page and dynamically updates content as the user interacts, without full page reloads.",
+            "C": "An application that relies entirely on server-side rendering.",
+            "D": "An application that has no JavaScript."
+          },
+          "correct_answer": "B",
+          "explanation": "SPAs provide a more fluid user experience by avoiding full page refreshes."
+        },
+        {
+          "question": "What is the primary advantage of using a Virtual DOM?",
+          "options": {
+            "A": "It allows direct manipulation of the actual DOM, which is faster.",
+            "B": "It enables React to re-render the entire page on every change.",
+            "C": "It minimizes direct manipulation of the real DOM by calculating the most efficient updates.",
+            "D": "It's only for debugging purposes."
+          },
+          "correct_answer": "C",
+          "explanation": "The Virtual DOM allows React to efficiently update only the necessary parts of the real DOM, leading to better performance."
+        },
+        {
+          "question": "Which of the following is NOT a fundamental concept in React?",
+          "options": {
+            "A": "Components",
+            "B": "State",
+            "C": "Props",
+            "D": "Direct DOM manipulation (as a primary method)"
+          },
+          "correct_answer": "D",
+          "explanation": "React abstracts away direct DOM manipulation, using the Virtual DOM instead."
+        },
+        {
+          "question": "What command is commonly used to create a new React application?",
+          "options": {
+            "A": "`npm install react-app`",
+            "B": "`create-react-app my-app`",
+            "C": "`react init my-app`",
+            "D": "`npm start react`"
+          },
+          "correct_answer": "B",
+          "explanation": "`create-react-app` is a popular toolchain for setting up a new React single-page application."
+        },
+        {
+          "question": "What is the typical entry point file for a React application created with `create-react-app`?",
+          "options": {
+            "A": "`index.html`",
+            "B": "`App.css`",
+            "C": "`index.js`",
+            "D": "`package.json`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `index.js` file typically contains the `ReactDOM.render()` call that mounts the main `App` component."
+        },
+        {
+          "question": "Which of the following describes a functional component in React?",
+          "options": {
+            "A": "A JavaScript class that extends `React.Component`.",
+            "B": "A JavaScript function that returns JSX.",
+            "C": "A component that can only manage state.",
+            "D": "A component that cannot receive props."
+          },
+          "correct_answer": "B",
+          "explanation": "Functional components are simpler, often used for presentational purposes, and with the introduction of Hooks, they can also manage state and side effects."
+        },
+        {
+          "question": "What is the main advantage of using functional components with Hooks over class components for state management?",
+          "options": {
+            "A": "Functional components cannot manage state.",
+            "B": "Hooks allow using state and other React features in functional components without writing a class, leading to more concise and readable code.",
+            "C": "Class components are always faster.",
+            "D": "Hooks only work with props."
+          },
+          "correct_answer": "B",
+          "explanation": "Hooks like `useState` and `useEffect` enable functional components to have stateful logic and lifecycle features previously exclusive to class components, often resulting in cleaner code."
+        }
+      ]
+    }
+  ]
+}

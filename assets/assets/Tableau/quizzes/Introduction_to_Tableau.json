@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_Tableau",
+      "questions": [
+        {
+          "question": "What is Tableau primarily used for?",
+          "options": {
+            "A": "Data visualization and business intelligence.",
+            "B": "Data storage.",
+            "C": "Data entry.",
+            "D": "Data deletion."
+          },
+          "correct_answer": "A",
+          "explanation": "Tableau is primarily used for data visualization and business intelligence, allowing users to create interactive and shareable dashboards."
+        },
+        {
+          "question": "What is a Tableau dashboard?",
+          "options": {
+            "A": "A collection of views from multiple worksheets.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A Tableau dashboard is a collection of views from multiple worksheets, allowing for comprehensive data analysis."
+        },
+        {
+          "question": "What is a worksheet in Tableau?",
+          "options": {
+            "A": "A single view containing a chart or graph.",
+            "B": "A data storage unit.",
+            "C": "A collection of dashboards.",
+            "D": "A data entry form."
+          },
+          "correct_answer": "A",
+          "explanation": "A worksheet in Tableau is a single view containing a chart or graph, which can be combined into dashboards."
+        },
+        {
+          "question": "What is a story in Tableau?",
+          "options": {
+            "A": "A sequence of visualizations that work together to convey information.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A story in Tableau is a sequence of visualizations that work together to convey information, providing a narrative flow."
+        },
+        {
+          "question": "What is a calculated field in Tableau?",
+          "options": {
+            "A": "A new field created using a formula to modify existing data.",
+            "B": "A data storage unit.",
+            "C": "A data entry form.",
+            "D": "A single chart."
+          },
+          "correct_answer": "A",
+          "explanation": "A calculated field in Tableau is a new field created using a formula to modify existing data, allowing for custom calculations."
+        },
+        {
+          "question": "What is a filter in Tableau?",
+          "options": {
+            "A": "A tool to limit the data displayed in a view.",
+            "B": "A data storage unit.",
+            "C": "A data entry form.",
+            "D": "A single chart."
+          },
+          "correct_answer": "A",
+          "explanation": "A filter in Tableau is a tool to limit the data displayed in a view, allowing for focused analysis."
+        },
+        {
+          "question": "What is a parameter in Tableau?",
+          "options": {
+            "A": "A dynamic value that can replace a constant value in calculations.",
+            "B": "A data storage unit.",
+            "C": "A data entry form.",
+            "D": "A single chart."
+          },
+          "correct_answer": "A",
+          "explanation": "A parameter in Tableau is a dynamic value that can replace a constant value in calculations, enabling interactive analysis."
+        },
+        {
+          "question": "What is a dimension in Tableau?",
+          "options": {
+            "A": "A categorical variable used to slice and dice data.",
+            "B": "A numerical measure.",
+            "C": "A data storage unit.",
+            "D": "A data entry form."
+          },
+          "correct_answer": "A",
+          "explanation": "A dimension in Tableau is a categorical variable used to slice and dice data, such as names or dates."
+        },
+        {
+          "question": "What is a measure in Tableau?",
+          "options": {
+            "A": "A numerical value that can be aggregated.",
+            "B": "A categorical variable.",
+            "C": "A data storage unit.",
+            "D": "A data entry form."
+          },
+          "correct_answer": "A",
+          "explanation": "A measure in Tableau is a numerical value that can be aggregated, such as sales or profit."
+        },
+        {
+          "question": "What is a hierarchy in Tableau?",
+          "options": {
+            "A": "A structured group of dimensions that allows for drill-down analysis.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A hierarchy in Tableau is a structured group of dimensions that allows for drill-down analysis, such as country, state, and city."
+        },
+        {
+          "question": "What is a blend in Tableau?",
+          "options": {
+            "A": "A method to combine data from different sources.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A blend in Tableau is a method to combine data from different sources, allowing for comprehensive analysis."
+        },
+        {
+          "question": "What is a join in Tableau?",
+          "options": {
+            "A": "A method to combine tables based on a common field.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A join in Tableau is a method to combine tables based on a common field, enabling integrated data analysis."
+        },
+        {
+          "question": "What is a union in Tableau?",
+          "options": {
+            "A": "A method to append rows from one table to another.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A union in Tableau is a method to append rows from one table to another, facilitating data consolidation."
+        },
+        {
+          "question": "What is a calculated join in Tableau?",
+          "options": {
+            "A": "A join that uses a calculated field to combine tables.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A calculated join in Tableau is a join that uses a calculated field to combine tables, allowing for custom data integration."
+        },
+        {
+          "question": "What is a data source in Tableau?",
+          "options": {
+            "A": "A connection to a database or file that provides data for analysis.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A data source in Tableau is a connection to a database or file that provides data for analysis, enabling data visualization."
+        },
+        {
+          "question": "What is a live connection in Tableau?",
+          "options": {
+            "A": "A connection that retrieves data in real-time from the source.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A live connection in Tableau is a connection that retrieves data in real-time from the source, ensuring up-to-date analysis."
+        },
+        {
+          "question": "What is an extract in Tableau?",
+          "options": {
+            "A": "A snapshot of data stored locally for faster performance.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "An extract in Tableau is a snapshot of data stored locally for faster performance, allowing for efficient data analysis."
+        },
+        {
+          "question": "What is a workbook in Tableau?",
+          "options": {
+            "A": "A file containing sheets, dashboards, and stories.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A workbook in Tableau is a file containing sheets, dashboards, and stories, providing a comprehensive view of data analysis."
+        },
+        {
+          "question": "What is a packaged workbook in Tableau?",
+          "options": {
+            "A": "A workbook that includes data and visualizations for sharing.",
+            "B": "A single chart.",
+            "C": "A data entry form.",
+            "D": "A data storage unit."
+          },
+          "correct_answer": "A",
+          "explanation": "A packaged workbook in Tableau is a workbook that includes data and visualizations for sharing, enabling collaboration."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_apis",
+      "questions": [
+        {
+          "question": "Which core Node.js module is used to create an HTTP server?",
+          "options": {
+            "A": "`fs`",
+            "B": "`path`",
+            "C": "`http`",
+            "D": "`url`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `http` module provides classes and functions for creating HTTP servers and clients in Node.js."
+        },
+        {
+          "question": "In an HTTP server created with the `http` module, what do the `req` (request) and `res` (response) objects represent in the `createServer` callback function?",
+          "options": {
+            "A": "`req` is the server object, `res` is the client object.",
+            "B": "`req` is the incoming message from the client, `res` is the outgoing response to the client.",
+            "C": "`req` is the database query, `res` is the database result.",
+            "D": "`req` is the server's port, `res` is the server's IP address."
+          },
+          "correct_answer": "B",
+          "explanation": "The `req` object encapsulates all information about the incoming HTTP request, and the `res` object is used to send the HTTP response back to the client."
+        },
+        {
+          "question": "Which `http` module method is used to send the HTTP response body and signal that the response is complete?",
+          "options": {
+            "A": "`res.send()`",
+            "B": "`res.write()`",
+            "C": "`res.end()`",
+            "D": "`res.finish()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`res.end()` is used to terminate the response. It can optionally take data to send as the last part of the response body."
+        },
+        {
+          "question": "Which core Node.js module is primarily used for interacting with the file system?",
+          "options": {
+            "A": "`os`",
+            "B": "`buffer`",
+            "C": "`fs`",
+            "D": "`stream`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `fs` (File System) module provides methods for working with files and directories, such as reading, writing, and deleting."
+        },
+        {
+          "question": "Which `fs` module method is used to read the entire content of a file asynchronously?",
+          "options": {
+            "A": "`fs.readFileSync()`",
+            "B": "`fs.writeFile()`",
+            "C": "`fs.readFile()`",
+            "D": "`fs.unlinkSync()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`fs.readFile()` is the asynchronous method for reading a file, taking a callback function that executes once the read operation is complete."
+        },
+        {
+          "question": "What is the purpose of the `url` core module in Node.js?",
+          "options": {
+            "A": "To make HTTP requests to external URLs.",
+            "B": "To parse and format URL strings.",
+            "C": "To redirect HTTP requests.",
+            "D": "To validate URL syntax."
+          },
+          "correct_answer": "B",
+          "explanation": "The `url` module provides utilities for URL resolution and parsing, allowing you to extract components like protocol, hostname, path, and query parameters."
+        },
+        {
+          "question": "Which `url` module function can parse a URL string into a URL object?",
+          "options": {
+            "A": "`url.format()`",
+            "B": "`url.resolve()`",
+            "C": "`url.parse()`",
+            "D": "`url.searchParams()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`url.parse()` takes a URL string and returns an object with properties like `protocol`, `host`, `pathname`, and `query`."
+        },
+        {
+          "question": "Which core Node.js module provides utilities for handling path segments (e.g., joining or resolving paths)?",
+          "options": {
+            "A": "`fs`",
+            "B": "`url`",
+            "C": "`path`",
+            "D": "`os`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `path` module provides utilities for working with file and directory paths, abstracting away operating system differences in path separators."
+        },
+        {
+          "question": "Which `path` module method is used to join multiple path segments into a single path, correctly handling platform-specific separators?",
+          "options": {
+            "A": "`path.split()`",
+            "B": "`path.resolve()`",
+            "C": "`path.join()`",
+            "D": "`path.basename()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`path.join()` concatenates all given path segments together, normalizing the resulting path and handling relative paths correctly."
+        },
+        {
+          "question": "What is the primary function of the `events` core module?",
+          "options": {
+            "A": "To handle date and time events.",
+            "B": "To implement the observer pattern (event emitter/listener).",
+            "C": "To manage HTTP request events.",
+            "D": "To log system events."
+          },
+          "correct_answer": "B",
+          "explanation": "The `events` module allows you to create and manage custom events and listeners, which is central to Node.js's event-driven architecture. The `EventEmitter` class is the foundation for this."
+        },
+        {
+          "question": "What does `EventEmitter.on()` do?",
+          "options": {
+            "A": "Emits an event.",
+            "B": "Removes an event listener.",
+            "C": "Registers a callback function to be executed when a named event is emitted.",
+            "D": "Checks if an event has listeners."
+          },
+          "correct_answer": "C",
+          "explanation": "`EventEmitter.on()` (or `addListener()`) attaches an event listener to a specific named event."
+        },
+        {
+          "question": "Which core Node.js module provides access to operating system-related utility methods and properties?",
+          "options": {
+            "A": "`system`",
+            "B": "`process`",
+            "C": "`os`",
+            "D": "`env`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `os` module provides information about the operating system, such as CPU architecture, free memory, network interfaces, and host name."
+        },
+        {
+          "question": "What are 'Streams' in Node.js primarily used for?",
+          "options": {
+            "A": "To create new threads for parallel processing.",
+            "B": "To handle large amounts of data efficiently, by processing it in chunks rather than loading it all into memory at once.",
+            "C": "To manage the Node.js event loop.",
+            "D": "To establish real-time WebSocket connections."
+          },
+          "correct_answer": "B",
+          "explanation": "Streams are powerful for handling large files or network data. They are instances of `EventEmitter` and can be readable, writable, duplex, or transform."
+        },
+        {
+          "question": "Which type of stream is used for reading data from a source?",
+          "options": {
+            "A": "Writable Stream",
+            "B": "Readable Stream",
+            "C": "Duplex Stream",
+            "D": "Transform Stream"
+          },
+          "correct_answer": "B",
+          "explanation": "Readable streams allow you to read data from a source, such as a file (`fs.createReadStream`) or an HTTP request (`http.IncomingMessage`)."
+        },
+        {
+          "question": "What is the purpose of the `pipe()` method when working with Node.js streams?",
+          "options": {
+            "A": "To create a new stream.",
+            "B": "To explicitly close a stream.",
+            "C": "To connect a readable stream to a writable stream, automatically handling data flow and backpressure.",
+            "D": "To convert a stream into a buffer."
+          },
+          "correct_answer": "C",
+          "explanation": "The `pipe()` method is a convenient way to transfer data between streams, efficiently managing the flow and preventing buffers from overflowing (backpressure)."
+        },
+        {
+          "question": "Which core module provides utilities for working with binary data, particularly when handling network protocols or file operations?",
+          "options": {
+            "A": "`string_decoder`",
+            "B": "`buffer`",
+            "C": "`crypto`",
+            "D": "`zlib`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `Buffer` class is a global object in Node.js used to handle raw binary data directly, essential for interacting with I/O operations."
+        },
+        {
+          "question": "What is the function of `process.argv` in Node.js?",
+          "options": {
+            "A": "It returns the current working directory.",
+            "B": "It contains the command-line arguments passed when the Node.js process was launched.",
+            "C": "It provides information about the Node.js version.",
+            "D": "It lists all environment variables."
+          },
+          "correct_answer": "B",
+          "explanation": "`process.argv` is an array containing the command-line arguments. The first element is `node`, and the second is the script file path."
+        },
+        {
+          "question": "Which core Node.js module is typically used for parsing URL query strings?",
+          "options": {
+            "A": "`url` (specifically `URLSearchParams` or `url.parse().query`)",
+            "B": "`http`",
+            "C": "`path`",
+            "D": "`querystring`"
+          },
+          "correct_answer": "A",
+          "explanation": "While `querystring` module exists, the modern and recommended way to parse query strings from URLs is using `URLSearchParams` object returned by `new URL()` or directly from `url.parse().query` from the `url` module."
+        },
+        {
+          "question": "What is the primary role of the `util` core module?",
+          "options": {
+            "A": "To provide cryptographic functionalities.",
+            "B": "To offer debugging utilities and other miscellaneous helpers.",
+            "C": "To manage asynchronous operations.",
+            "D": "To interact with databases."
+          },
+          "correct_answer": "B",
+          "explanation": "The `util` module contains utility functions, such as `util.promisify` (for converting callback-based functions to Promises), `util.inspect` (for debugging), and `util.inherits` (for old-style inheritance)."
+        },
+        {
+          "question": "When building a web API using Node.js, which `http` module method would you typically use to set an HTTP status code (e.g., 200, 404, 500) for the response?",
+          "options": {
+            "A": "`res.write()`",
+            "B": "`res.end()`",
+            "C": "`res.setHeader()`",
+            "D": "`res.writeHead()`"
+          },
+          "correct_answer": "D",
+          "explanation": "`res.writeHead()` sends a response header to the request. It takes the status code as the first argument and an optional object of headers as the second."
+        }
+      ]
+    }
+  ]
+}

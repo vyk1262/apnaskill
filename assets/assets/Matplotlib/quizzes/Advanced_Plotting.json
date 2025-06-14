@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Plotting",
+      "questions": [
+        {
+          "question": "What is advanced plotting in Matplotlib used for?",
+          "options": {
+            "A": "To create complex and customized visualizations.",
+            "B": "To create simple plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "Advanced plotting in Matplotlib is used to create complex and customized visualizations, allowing for detailed data representation."
+        },
+        {
+          "question": "Which function is used for creating advanced line plots in Matplotlib?",
+          "options": {
+            "A": "plot()",
+            "B": "scatter()",
+            "C": "bar()",
+            "D": "hist()"
+          },
+          "correct_answer": "A",
+          "explanation": "The plot() function is used for creating advanced line plots in Matplotlib, providing flexibility in line customization."
+        },
+        {
+          "question": "What is the purpose of the fill_between() method in Matplotlib?",
+          "options": {
+            "A": "To fill the area between two curves.",
+            "B": "To create bar plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The fill_between() method in Matplotlib is used to fill the area between two curves, enhancing the visual representation of data."
+        },
+        {
+          "question": "What is the function of the errorbar() method in Matplotlib?",
+          "options": {
+            "A": "To add error bars to plots.",
+            "B": "To create scatter plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The errorbar() method in Matplotlib is used to add error bars to plots, providing a visual representation of data variability."
+        },
+        {
+          "question": "What is the purpose of the step() method in Matplotlib?",
+          "options": {
+            "A": "To create step plots.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The step() method in Matplotlib is used to create step plots, providing a visual representation of data changes at discrete intervals."
+        },
+        {
+          "question": "What is the function of the stackplot() method in Matplotlib?",
+          "options": {
+            "A": "To create stacked area plots.",
+            "B": "To create bar plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The stackplot() method in Matplotlib is used to create stacked area plots, allowing for visualization of cumulative data contributions."
+        },
+        {
+          "question": "What is the purpose of the hexbin() method in Matplotlib?",
+          "options": {
+            "A": "To create hexagonal binning plots.",
+            "B": "To create scatter plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The hexbin() method in Matplotlib is used to create hexagonal binning plots, providing a visual representation of data density."
+        },
+        {
+          "question": "What is the function of the violinplot() method in Matplotlib?",
+          "options": {
+            "A": "To create violin plots.",
+            "B": "To create box plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The violinplot() method in Matplotlib is used to create violin plots, providing a visual representation of data distribution and density."
+        },
+        {
+          "question": "What is the purpose of the quiver() method in Matplotlib?",
+          "options": {
+            "A": "To create vector field plots.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The quiver() method in Matplotlib is used to create vector field plots, providing a visual representation of vector data."
+        },
+        {
+          "question": "What is the function of the streamplot() method in Matplotlib?",
+          "options": {
+            "A": "To create stream plots.",
+            "B": "To create scatter plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The streamplot() method in Matplotlib is used to create stream plots, providing a visual representation of flow lines in vector fields."
+        },
+        {
+          "question": "What is the purpose of the hist2d() method in Matplotlib?",
+          "options": {
+            "A": "To create 2D histogram plots.",
+            "B": "To create 3D histogram plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The hist2d() method in Matplotlib is used to create 2D histogram plots, providing a visual representation of data distribution in two dimensions."
+        },
+        {
+          "question": "What is the function of the tricontour() method in Matplotlib?",
+          "options": {
+            "A": "To create triangular contour plots.",
+            "B": "To create rectangular contour plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The tricontour() method in Matplotlib is used to create triangular contour plots, providing a visual representation of contour lines with triangular elements."
+        },
+        {
+          "question": "What is the purpose of the tricontourf() method in Matplotlib?",
+          "options": {
+            "A": "To create filled triangular contour plots.",
+            "B": "To create filled rectangular contour plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The tricontourf() method in Matplotlib is used to create filled triangular contour plots, providing a visual representation of filled contour areas with triangular elements."
+        },
+        {
+          "question": "What is the function of the tripcolor() method in Matplotlib?",
+          "options": {
+            "A": "To create pseudocolor plots of unstructured triangular grids.",
+            "B": "To create pseudocolor plots of structured grids.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The tripcolor() method in Matplotlib is used to create pseudocolor plots of unstructured triangular grids, providing a visual representation of data on irregular grids."
+        },
+        {
+          "question": "What is the purpose of the triplot() method in Matplotlib?",
+          "options": {
+            "A": "To create plots of triangular grids.",
+            "B": "To create plots of rectangular grids.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The triplot() method in Matplotlib is used to create plots of triangular grids, providing a visual representation of data on triangular meshes."
+        },
+        {
+          "question": "What is the function of the hexbin() method in Matplotlib?",
+          "options": {
+            "A": "To create hexagonal binning plots.",
+            "B": "To create scatter plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The hexbin() method in Matplotlib is used to create hexagonal binning plots, providing a visual representation of data density."
+        },
+        {
+          "question": "What is the purpose of the imshow() method in Matplotlib?",
+          "options": {
+            "A": "To display images.",
+            "B": "To create plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The imshow() method in Matplotlib is used to display images, providing a visual representation of image data."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Recurrent_Neural_Networks",
+      "questions": [
+        {
+          "question": "What kind of data are Recurrent Neural Networks (RNNs) primarily designed to process?",
+          "options": {
+            "A": "Static image data.",
+            "B": "Tabular data with independent features.",
+            "C": "Sequential data, where the order and dependencies between elements are important (e.g., text, time series, audio).",
+            "D": "Unstructured numerical data."
+          },
+          "correct_answer": "C",
+          "explanation": "RNNs have internal memory that allows them to process sequences by considering previous inputs in the sequence."
+        },
+        {
+          "question": "What is the main challenge faced by simple (vanilla) RNNs when dealing with very long sequences?",
+          "options": {
+            "A": "They become computationally too slow.",
+            "B": "The problem of vanishing or exploding gradients, which hinders learning long-term dependencies.",
+            "C": "They require an extremely large batch size.",
+            "D": "They can only process fixed-length sequences."
+          },
+          "correct_answer": "B",
+          "explanation": "Due to repeated multiplication of gradients through many time steps, gradients can either disappear or grow uncontrollably, making learning difficult."
+        },
+        {
+          "question": "Which Keras layer is designed to overcome the vanishing gradient problem in RNNs and effectively capture long-term dependencies?",
+          "options": {
+            "A": "tf.keras.layers.Dense",
+            "B": "tf.keras.layers.Conv1D",
+            "C": "tf.keras.layers.LSTM (Long Short-Term Memory)",
+            "D": "tf.keras.layers.Flatten"
+          },
+          "correct_answer": "C",
+          "explanation": "LSTMs use complex gating mechanisms (input, forget, output gates) and a cell state to regulate information flow and maintain long-term memory."
+        },
+        {
+          "question": "Which of these Keras layers is a simpler, more computationally efficient alternative to LSTM that also addresses the vanishing gradient problem?",
+          "options": {
+            "A": "tf.keras.layers.SimpleRNN",
+            "B": "tf.keras.layers.GRU (Gated Recurrent Unit)",
+            "C": "tf.keras.layers.TimeDistributed",
+            "D": "tf.keras.layers.Embedding"
+          },
+          "correct_answer": "B",
+          "explanation": "GRUs combine the functionality of the forget and input gates into a single update gate and merge the cell state with the hidden state, reducing complexity."
+        },
+        {
+          "question": "What is the typical input shape for an RNN layer (e.g., `LSTM`, `GRU`) in Keras?",
+          "options": {
+            "A": "(batch_size, features)",
+            "B": "(batch_size, timesteps, features)",
+            "C": "(batch_size, height, width, channels)",
+            "D": "(timesteps, features)"
+          },
+          "correct_answer": "B",
+          "explanation": "RNNs expect sequences, where `timesteps` is the length of the sequence and `features` is the dimensionality of each element in the sequence."
+        },
+        {
+          "question": "When stacking multiple RNN layers (e.g., `LSTM` on top of `LSTM`) in Keras, what argument must be set to `True` for all intermediate RNN layers?",
+          "options": {
+            "A": "activation",
+            "B": "units",
+            "C": "return_sequences",
+            "D": "input_shape"
+          },
+          "correct_answer": "C",
+          "explanation": "If an RNN layer is followed by another RNN layer, it needs to output a sequence for the next layer to process, not just a single final hidden state."
+        },
+        {
+          "question": "For a sequence-to-one task (e.g., sentiment analysis of a sentence, outputting a single sentiment score), what should `return_sequences` be set to for the *last* RNN layer in Keras?",
+          "options": {
+            "A": "True",
+            "B": "False",
+            "C": "It doesn't matter.",
+            "D": "Depends on the optimizer."
+          },
+          "correct_answer": "B",
+          "explanation": "By default (`return_sequences=False`), the RNN layer returns only the last hidden state for the entire sequence, which is suitable for feeding into a subsequent Dense layer for final classification or regression."
+        },
+        {
+          "question": "Which Keras layer is commonly used to convert integer-encoded words into dense vector representations (embeddings) before feeding them into an RNN for NLP tasks?",
+          "options": {
+            "A": "tf.keras.layers.Dense",
+            "B": "tf.keras.layers.Flatten",
+            "C": "tf.keras.layers.Embedding",
+            "D": "tf.keras.layers.BatchNormalization"
+          },
+          "correct_answer": "C",
+          "explanation": "Embedding layers learn a dense, low-dimensional representation for each unique integer (e.g., word ID), capturing semantic relationships."
+        },
+        {
+          "question": "What is the purpose of `tf.keras.layers.Bidirectional`?",
+          "options": {
+            "A": "To process two different input sequences simultaneously.",
+            "B": "To apply an RNN layer twice, once on the input sequence from left-to-right and once from right-to-left, effectively capturing context from both past and future.",
+            "C": "To train the RNN in two directions (forward and backward passes).",
+            "D": "To handle two output classes in a classification problem."
+          },
+          "correct_answer": "B",
+          "explanation": "Bidirectional RNNs are very powerful for tasks where future context is as important as past context, like machine translation or named entity recognition."
+        },
+        {
+          "question": "How are variable-length input sequences typically handled in Keras RNNs to ensure they all have the same length for batch processing?",
+          "options": {
+            "A": "By resizing all sequences to the longest sequence.",
+            "B": "By padding shorter sequences and/or truncating longer sequences to a fixed maximum length (e.g., using `tf.keras.preprocessing.sequence.pad_sequences`).",
+            "C": "By training each sequence individually.",
+            "D": "RNNs can natively handle variable lengths without any preprocessing."
+          },
+          "correct_answer": "B",
+          "explanation": "Padding (often with zeros) ensures that all sequences in a batch have the same dimensions, which is required for efficient tensor operations."
+        },
+        {
+          "question": "What is the function of `tf.keras.layers.TimeDistributed`?",
+          "options": {
+            "A": "To distribute the training across multiple GPUs.",
+            "B": "To apply a given layer independently to every timestep of a sequence input.",
+            "C": "To measure the time taken for each training step.",
+            "D": "To ensure that all input sequences have the same length."
+          },
+          "correct_answer": "B",
+          "explanation": "For example, wrapping a `Dense` layer with `TimeDistributed` allows you to apply the same Dense transformation to the output of an RNN at each timestep, common in sequence-to-sequence or sequence labeling tasks."
+        },
+        {
+          "question": "What does the 'units' argument in `tf.keras.layers.LSTM(units=128)` define?",
+          "options": {
+            "A": "The number of input features.",
+            "B": "The number of timesteps in the sequence.",
+            "C": "The dimensionality of the output space of the LSTM layer (i.e., the number of hidden units/cells).",
+            "D": "The batch size for training."
+          },
+          "correct_answer": "C",
+          "explanation": "This parameter determines the size of the hidden state and cell state vectors maintained by the LSTM unit."
+        },
+        {
+          "question": "For a sequence generation task (e.g., generating text character by character), which of the following is most likely used in the *output* layer of an RNN, especially if predicting the next character from a vocabulary?",
+          "options": {
+            "A": "Sigmoid",
+            "B": "ReLU",
+            "C": "Linear",
+            "D": "Softmax"
+          },
+          "correct_answer": "D",
+          "explanation": "Softmax converts the raw outputs into a probability distribution over the entire vocabulary, indicating the likelihood of each character being the next one."
+        },
+        {
+          "question": "When loading pre-trained word embeddings (e.g., Word2Vec, GloVe) into a Keras model, where would they typically be placed?",
+          "options": {
+            "A": "As the weights of a `tf.keras.layers.Dense` layer.",
+            "B": "As the initial weights for a `tf.keras.layers.Embedding` layer.",
+            "C": "Directly as input to an LSTM layer.",
+            "D": "In the optimizer configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "Pre-trained embeddings provide a rich semantic representation for words, and the Embedding layer is designed to hold and use these weights."
+        },
+        {
+          "question": "True or False: A simple `tf.keras.layers.SimpleRNN` layer is generally recommended for handling very long sequences due to its strong memory retention.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. SimpleRNNs suffer severely from vanishing/exploding gradients over long sequences, which is why LSTMs and GRUs were developed."
+        },
+        {
+          "question": "Which type of problem in Natural Language Processing (NLP) is a classic application for RNNs?",
+          "options": {
+            "A": "Image recognition for static images.",
+            "B": "Sentiment analysis of movie reviews.",
+            "C": "Clustering tabular data.",
+            "D": "Generating tabular reports from databases."
+          },
+          "correct_answer": "B",
+          "explanation": "Sentiment analysis involves understanding the meaning of a sequence of words, a task well-suited for RNNs."
+        },
+        {
+          "question": "What is the main advantage of using `tf.keras.layers.GRU` over `tf.keras.layers.LSTM` in some applications?",
+          "options": {
+            "A": "GRUs always achieve higher accuracy.",
+            "B": "GRUs have more complex internal mechanisms, leading to better performance.",
+            "C": "GRUs are computationally less expensive and have fewer parameters than LSTMs, while often achieving comparable performance.",
+            "D": "GRUs only work with short sequences."
+          },
+          "correct_answer": "C",
+          "explanation": "The reduced complexity of GRUs can be beneficial in terms of training speed and model size."
+        },
+        {
+          "question": "When designing an RNN model in Keras, if you need to apply dropout specifically to the recurrent connections (internal state), which argument would you use in `LSTM` or `GRU` layers?",
+          "options": {
+            "A": "rate",
+            "B": "dropout",
+            "C": "recurrent_dropout",
+            "D": "activity_regularizer"
+          },
+          "correct_answer": "C",
+          "explanation": "`recurrent_dropout` applies dropout to the recurrent state passed between timesteps, helping to regularize RNNs more effectively."
+        },
+        {
+          "question": "What is the purpose of `tf.keras.layers.Masking` when used with padded sequences?",
+          "options": {
+            "A": "To hide parts of the sequence from the user.",
+            "B": "To ensure that padding values (e.g., zeros) in padded sequences are ignored by subsequent layers, preventing them from influencing the model's learning.",
+            "C": "To randomly mask out elements for data augmentation.",
+            "D": "To encrypt the sequence data."
+          },
+          "correct_answer": "B",
+          "explanation": "Masking allows the model to correctly process variable-length sequences without being confused by the padding tokens."
+        },
+        {
+          "question": "Which of the following describes a 'Sequence-to-Sequence' architecture often built with Keras RNNs?",
+          "options": {
+            "A": "A model that takes a single input and produces a single output.",
+            "B": "A model consisting of an 'encoder' RNN that processes an input sequence into a context vector, and a 'decoder' RNN that generates an output sequence from that context vector.",
+            "C": "A model that only processes fixed-length sequences.",
+            "D": "A model that classifies sequences into one of two categories."
+          },
+          "correct_answer": "B",
+          "explanation": "Sequence-to-Sequence models are fundamental for tasks like machine translation, text summarization, and chatbots."
+        }
+      ]
+    }
+  ]
+}

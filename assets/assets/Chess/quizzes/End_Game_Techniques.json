@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "End_Game_Techniques",
+      "questions": [
+        {
+          "question": "What is often the primary goal in the endgame?",
+          "options": {
+            "A": "To develop your remaining pieces.",
+            "B": "To checkmate the opponent's king with your queen.",
+            "C": "To promote a pawn.",
+            "D": "To control the center of the board."
+          },
+          "correct_answer": "C",
+          "explanation": "With fewer pieces on the board, the potential to promote a pawn becomes a major winning factor."
+        },
+        {
+          "question": "Why does the king become a more active piece in the endgame?",
+          "options": {
+            "A": "It can no longer be checkmated.",
+            "B": "There are fewer pieces to attack it, and it can help support pawns and attack enemy pieces.",
+            "C": "It can move any number of squares.",
+            "D": "It gains the ability to capture rooks and queens."
+          },
+          "correct_answer": "B",
+          "explanation": "In the endgame, the king can safely advance and play a crucial role in both offense and defense."
+        },
+        {
+          "question": "What is the concept of 'opposition' in king and pawn endgames?",
+          "options": {
+            "A": "When kings are on the same rank, file, or diagonal, separated by one empty square, preventing the opponent's king from advancing.",
+            "B": "When kings are attacking each other.",
+            "C": "When kings are far apart on the board.",
+            "D": "When a king is protecting a passed pawn."
+          },
+          "correct_answer": "A",
+          "explanation": "Gaining the opposition is often key to advancing your king and supporting your pawns."
+        },
+        {
+          "question": "What is a 'passed pawn' and why is it dangerous in the endgame?",
+          "options": {
+            "A": "A pawn that has moved past the halfway point of the board.",
+            "B": "A pawn that has no opposing pawns on its file or on the adjacent files in front of it, making it a potential candidate for promotion.",
+            "C": "A pawn that is protected by the king.",
+            "D": "A pawn that has captured an opponent's piece."
+          },
+          "correct_answer": "B",
+          "explanation": "Passed pawns can force the opponent to use valuable pieces to block them, potentially leading to a material advantage or promotion."
+        },
+        {
+          "question": "What is the 'rule of the square' in king and pawn endgames?",
+          "options": {
+            "A": "A rule about where the king should be placed to defend a pawn.",
+            "B": "A method to determine if the defending king can catch an advancing passed pawn without king support.",
+            "C": "A rule about how many squares a pawn can move in the endgame.",
+            "D": "A guideline for castling in the endgame."
+          },
+          "correct_answer": "B",
+          "explanation": "The rule of the square helps determine if the king can intercept a passed pawn before it reaches the promotion square."
+        },
+        {
+          "question": "What is the primary strategy when you have a material advantage in the endgame?",
+          "options": {
+            "A": "To launch a quick attack on the opponent's king.",
+            "B": "To exchange pieces to simplify the position and bring your advantage to bear.",
+            "C": "To avoid any exchanges.",
+            "D": "To move your king to the center immediately."
+          },
+          "correct_answer": "B",
+          "explanation": "Simplifying the position reduces the opponent's chances for counterplay and makes your material advantage more decisive."
+        },
+        {
+          "question": "What is the 'Lucena position'?",
+          "options": {
+            "A": "A winning endgame for the defender with a rook and pawn against a rook.",
+            "B": "A winning endgame for the attacker with a rook and pawn against a rook, where the pawn is on the seventh rank and the defending king is cut off.",
+            "C": "A drawn endgame with rook and pawn against a rook.",
+            "D": "A common opening trap."
+          },
+          "correct_answer": "B",
+          "explanation": "The Lucena position is a classic example of how to win with a rook and pawn against a rook when the pawn is close to promotion."
+        },
+        {
+          "question": "What is the 'Philidor position'?",
+          "options": {
+            "A": "A winning endgame for the attacker with a rook and pawn against a rook.",
+            "B": "A drawn endgame with a rook against a rook and pawn where the defending king is in front of the pawn on the third rank (relative to the pawn's advance).",
+            "C": "A winning endgame for the defender with a rook against a rook and pawn.",
+            "D": "A common middle game tactic."
+          },
+          "correct_answer": "B",
+          "explanation": "The Philidor position illustrates a defensive setup that can hold a draw in a rook and pawn versus rook endgame."
+        },
+        {
+          "question": "In a king and pawn versus king endgame, when is the position a draw?",
+          "options": {
+            "A": "When the pawn reaches the fifth rank.",
+            "B": "When the defending king can capture the pawn before it reaches the promotion square and the attacking king cannot support it.",
+            "C": "When the attacking king is far away from the pawn.",
+            "D": "When the pawn is on the edge of the board."
+          },
+          "correct_answer": "B",
+          "explanation": "Without the support of its king, a lone pawn can be stopped by the opposing king."
+        },
+        {
+          "question": "What is the importance of 'active rooks' in the endgame?",
+          "options": {
+            "A": "Rooks are less important than pawns in the endgame.",
+            "B": "Active rooks control open files and ranks, attack weak pawns, and can support the advance of your own pawns.",
+            "C": "Rooks should always stay on the back rank for defense.",
+            "D": "Rooks can move diagonally in the endgame."
+          },
+          "correct_answer": "B",
+          "explanation": "Well-positioned rooks can be a powerful attacking and defensive asset in the endgame."
+        },
+        {
+          "question": "What is the goal when you have a queen against a lone king?",
+          "options": {
+            "A": "To capture the king immediately.",
+            "B": "To force the king to the edge of the board and deliver checkmate.",
+            "C": "To promote your king.",
+            "D": "To exchange the queen for the king."
+          },
+          "correct_answer": "B",
+          "explanation": "Checkmating with a queen against a lone king requires a specific technique to corner the king."
+        },
+        {
+          "question": "What is the goal when you have two rooks against a lone king?",
+          "options": {
+            "A": "To force stalemate.",
+            "B": "To checkmate the king by systematically restricting its movement.",
+            "C": "To promote your rooks.",
+            "D": "To capture the king with both rooks simultaneously."
+          },
+          "correct_answer": "B",
+          "explanation": "Two rooks can deliver checkmate against a lone king relatively easily by coordinating their movements to cut off the king's escape."
+        },
+        {
+          "question": "What is the goal when you have a rook against a lone king?",
+          "options": {
+            "A": "It's always a draw.",
+            "B": "To force the king to the edge of the board and deliver checkmate with the help of your own king.",
+            "C": "To promote the rook to a queen.",
+            "D": "To capture the king."
+          },
+          "correct_answer": "B",
+          "explanation": "A lone rook cannot force checkmate without the support of its king."
+        },
+        {
+          "question": "What is the importance of knowing basic checkmating patterns in the endgame?",
+          "options": {
+            "A": "They are only useful in the opening.",
+            "B": "They provide efficient ways to finish the game when you have a decisive material advantage.",
+            "C": "They help you avoid checkmate.",
+            "D": "They are only relevant in time trouble."
+          },
+          "correct_answer": "B",
+          "explanation": "Recognizing and applying basic checkmating patterns is essential for converting winning endgames."
+        },
+        {
+          "question": "What is the concept of 'triangulation' in king and pawn endgames?",
+          "options": {
+            "A": "Moving your king in a three-move sequence to gain the opposition when it wouldn't be possible otherwise.",
+            "B": "Moving three pawns forward at the same time.",
+            "C": "Attacking three of the opponent's pieces simultaneously with the king.",
+            "D": "Castling in the endgame."
+          },
+          "correct_answer": "A",
+          "explanation": "Triangulation is a clever maneuver used to force the opponent's king to move first when the opposition is crucial."
+        },
+        {
+          "question": "What is the strategic importance of controlling the promotion square of your passed pawn?",
+          "options": {
+            "A": "It prevents the pawn from being captured.",
+            "B": "It makes it easier for the pawn to promote without being contested by the opponent's king.",
+            "C": "It allows your king to move to a safer square.",
+            "D": "It forces a draw."
+          },
+          "correct_answer": "B",
+          "explanation": "Controlling the promotion square with your king or another piece significantly increases the chances of successful promotion."
+        },
+        {
+          "question": "In a bishop versus knight endgame, what factor often determines the outcome?",
+          "options": {
+            "A": "The number of pawns on the board.",
+            "B": "The activity of the kings and the pawn structure; bishops are generally better in open positions with pawns on both sides of the board, while knights are better in closed positions with central pawn masses.",
+            "C": "The color of the squares the bishop controls.",
+            "D": "Whether the knight has reached an outpost."
+          },
+          "correct_answer": "B",
+          "explanation": "The relative strength of a bishop versus a knight in the endgame is highly dependent on the specific characteristics of the position."
+        },
+        {
+          "question": "What is the 'drawback' of having a bishop on the 'wrong color' in a king and bishop versus king and pawn endgame?",
+          "options": {
+            "A": "The bishop cannot attack the pawn.",
+            "B": "The bishop cannot control the promotion square of the pawn if the pawn reaches a square of the opposite color to the bishop.",
+            "C": "The bishop is more vulnerable to attack.",
+            "D": "The king cannot support the bishop."
+          },
+          "correct_answer": "B",
+          "explanation": "A bishop on the wrong color cannot prevent a pawn on a square of the opposite color from promoting if the defending king can reach the promotion square."
+        },
+        {
+          "question": "What is the strategic importance of 'shouldering' in king and pawn endgames?",
+          "options": {
+            "A": "Attacking the opponent's king directly.",
+            "B": "Using your king to push the opponent's king aside to clear a path for your pawn.",
+            "C": "Protecting your pawns with your pieces.",
+            "D": "Moving your king to the edge of the board."
+          },
+          "correct_answer": "B",
+          "explanation": "Shouldering involves using your king to force the opposing king to move, often to gain space or advance your pawn."
+        },
+        {
+          "question": "Why is accurate calculation particularly important in the endgame?",
+          "options": {
+            "A": "There are fewer pieces, so variations are shorter.",
+            "B": "Small mistakes can have significant consequences as there are fewer pieces to compensate for errors, and pawn promotion can quickly change the outcome.",
+            "C": "The time limit is usually shorter in the endgame.",
+            "D": "Tactical motifs are more common in the endgame."
+          },
+          "correct_answer": "B",
+          "explanation": "With fewer pieces, every move is critical, and even minor miscalculations can lead to lost opportunities or defeat."
+        }
+      ]
+    }
+  ]
+}

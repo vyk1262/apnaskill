@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "git_undoing_changes",
+      "questions": [
+        {
+          "question": "Which Git command is used to unstage changes (remove them from the staging area) while keeping the modifications in your working directory?",
+          "options": {
+            "A": "`git commit --amend`",
+            "B": "`git reset HEAD <file>` or `git restore --staged <file>`",
+            "C": "`git clean -f`",
+            "D": "`git revert <commit-hash>`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git reset HEAD <file>` is the traditional way, while `git restore --staged <file>` is the newer, more intuitive command for unstaging."
+        },
+        {
+          "question": "You've made some changes, committed them locally, but now realize the last commit message has a typo. How can you easily fix the commit message without creating a new commit?",
+          "options": {
+            "A": "`git reset --soft HEAD~1`",
+            "B": "`git commit --fix-message`",
+            "C": "`git commit --amend`",
+            "D": "`git rebase -i HEAD~1`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git commit --amend` allows you to modify the most recent commit, including its message, without creating a new commit in the history."
+        },
+        {
+          "question": "What is the primary difference between `git reset` and `git revert`?",
+          "options": {
+            "A": "`git reset` affects remote history, `git revert` does not.",
+            "B": "`git reset` creates a new commit that undoes changes; `git revert` moves the branch pointer and can discard history.",
+            "C": "`git reset` rewrites history by moving the branch pointer and potentially discarding commits; `git revert` creates a new commit that undoes the changes of a previous commit, preserving history.",
+            "D": "They are interchangeable commands for undoing."
+          },
+          "correct_answer": "C",
+          "explanation": "`git reset` should be used with caution, especially on shared branches, as it rewrites history. `git revert` is safer for shared history because it adds a new commit."
+        },
+        {
+          "question": "Which type of `git reset` operation discards changes from both the staging area and the working directory, effectively taking you back to a clean state of a previous commit?",
+          "options": {
+            "A": "`git reset --soft`",
+            "B": "`git reset --mixed` (default)",
+            "C": "`git reset --hard`",
+            "D": "`git reset --keep`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git reset --hard` is powerful and dangerous as it can lead to data loss if uncommitted changes are not backed up. Use with extreme caution."
+        },
+        {
+          "question": "You accidentally added a sensitive file and committed it. What is the safest way to undo that specific commit and create a new commit that reverses its changes, especially if it has already been pushed to a shared remote?",
+          "options": {
+            "A": "`git reset --hard <commit-hash>`",
+            "B": "`git revert <commit-hash>`",
+            "C": "`git clean -f`",
+            "D": "`git rm <file>`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git revert` is ideal for undoing commits that have already been shared, as it maintains a linear history and doesn't rewrite shared history, preventing problems for collaborators."
+        },
+        {
+          "question": "What does `git reflog` display?",
+          "options": {
+            "A": "A log of all changes made to the Git configuration.",
+            "B": "A log of all actions performed on your local repository, showing where your `HEAD` has been, allowing you to recover lost commits.",
+            "C": "A list of all remote repositories.",
+            "D": "A detailed log of network activity."
+          },
+          "correct_answer": "B",
+          "explanation": "The reflog is your safety net! It tracks every time your `HEAD` changed, making it possible to find commits that might seem 'lost' after a reset or rebase."
+        },
+        {
+          "question": "You have untracked files in your working directory that you want to remove completely. Which command helps you clean up your working directory?",
+          "options": {
+            "A": "`git reset --hard`",
+            "B": "`git revert`",
+            "C": "`git clean -f`",
+            "D": "`git rm`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git clean -f` (force) removes untracked files. Use `git clean -n` (dry run) first to see what it will do before executing with `-f`."
+        },
+        {
+          "question": "Which `git reset` option removes changes from the staging area but keeps them in the working directory?",
+          "options": {
+            "A": "`git reset --hard`",
+            "B": "`git reset --mixed` (default for `git reset`)",
+            "C": "`git reset --soft`",
+            "D": "`git reset --keep`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git reset --mixed HEAD` is the default behavior if you just run `git reset`. It unstages files but leaves the modifications in your working directory."
+        },
+        {
+          "question": "You made a commit, but immediately realized you forgot to include a file or made a small correction to the code. How can you update the *last* commit with the new changes?",
+          "options": {
+            "A": "Make a new commit with the correction.",
+            "B": "Use `git revert HEAD`.",
+            "C": "Add the changes to the staging area and then use `git commit --amend`.",
+            "D": "Delete the last commit and re-commit everything."
+          },
+          "correct_answer": "C",
+          "explanation": "`git commit --amend` replaces the old commit with a new one, incorporating the staged changes and the (possibly new) commit message. This effectively rewrites that single commit's history."
+        },
+        {
+          "question": "What is the danger of using `git reset --hard` on a branch that has already been pushed to a remote and shared with collaborators?",
+          "options": {
+            "A": "It only affects your local history, so no danger.",
+            "B": "It will delete the remote repository.",
+            "C": "It rewrites shared history, potentially causing divergence and requiring collaborators to force pull, leading to lost work or complex merges for them.",
+            "D": "It will automatically merge all conflicts."
+          },
+          "correct_answer": "C",
+          "explanation": "Rewriting shared history is generally a bad practice and should be avoided unless you know exactly what you're doing and have coordinated with all team members."
+        },
+        {
+          "question": "You're in the middle of a `git rebase -i` operation. You realize you've made a mistake and want to stop the rebase and return to the state before it started. What command should you use?",
+          "options": {
+            "A": "`git rebase --continue`",
+            "B": "`git rebase --skip`",
+            "C": "`git rebase --abort`",
+            "D": "`git reset --hard origin/main`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git rebase --abort` is specifically for stopping a rebase operation and returning to the state before the rebase commenced."
+        },
+        {
+          "question": "Which `git reset` option moves the branch pointer, but keeps both the staging area and working directory unchanged?",
+          "options": {
+            "A": "`git reset --hard`",
+            "B": "`git reset --mixed`",
+            "C": "`git reset --soft`",
+            "D": "`git reset --merge`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git reset --soft` is useful if you want to undo a commit but keep its changes staged, perhaps to combine it with other changes or amend the previous commit."
+        },
+        {
+          "question": "What is `git restore <file>` typically used for?",
+          "options": {
+            "A": "To restore a deleted file from history.",
+            "B": "To discard unstaged changes in the working directory for a specific file, reverting it to its last committed or staged state.",
+            "C": "To restore the entire repository to a previous state.",
+            "D": "To restore a deleted branch."
+          },
+          "correct_answer": "B",
+          "explanation": "`git restore` is a newer, more explicit command (compared to `git checkout <file>`) for restoring files in the working directory or staging area."
+        },
+        {
+          "question": "If you just ran `git add .` and then realize you staged a file (`sensitive.txt`) by mistake, how do you unstage *only* `sensitive.txt`?",
+          "options": {
+            "A": "`git unadd sensitive.txt`",
+            "B": "`git reset HEAD sensitive.txt`",
+            "C": "`git remove sensitive.txt`",
+            "D": "`git checkout sensitive.txt`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git reset HEAD <file>` or `git restore --staged <file>` are the commands to unstage specific files."
+        },
+        {
+          "question": "You want to combine the last 3 commits on your current branch into a single commit for a cleaner history before pushing. Which command is typically used for this?",
+          "options": {
+            "A": "`git merge --squash`",
+            "B": "`git commit --amend`",
+            "C": "`git rebase -i HEAD~3`",
+            "D": "`git squash --all`"
+          },
+          "correct_answer": "C",
+          "explanation": "Interactive rebase (`git rebase -i`) is the primary tool for rewriting history, including squashing multiple commits into one."
+        },
+        {
+          "question": "What does `git clean -n` do?",
+          "options": {
+            "A": "Removes all staged files.",
+            "B": "Shows you which untracked files and directories would be removed by `git clean -f` without actually removing them (a dry run).",
+            "C": "Cleans the Git cache.",
+            "D": "Removes only ignored files."
+          },
+          "correct_answer": "B",
+          "explanation": "Always use `git clean -n` (or `--dry-run`) before `git clean -f` to avoid accidentally deleting important files."
+        },
+        {
+          "question": "If you accidentally committed directly to the `main` branch, and you want to move those commits to a new branch, what sequence of commands would you consider (assuming no push to remote yet)?",
+          "options": {
+            "A": "`git branch new-feature; git reset --hard origin/main`",
+            "B": "`git checkout -b new-feature; git reset --hard HEAD~<num_commits>`",
+            "C": "`git branch new-feature; git reset --hard HEAD~<num_commits>; git checkout new-feature`",
+            "D": "`git revert HEAD; git branch new-feature`"
+          },
+          "correct_answer": "C",
+          "explanation": "This sequence creates the new branch at the current `HEAD` (which holds the unwanted commits), then `hard resets` `main` back to its state before those commits, and finally switches to the `new-feature` branch."
+        },
+        {
+          "question": "You want to undo a local commit that was never pushed, without keeping any of its changes. Which command is the most direct way?",
+          "options": {
+            "A": "`git revert HEAD`",
+            "B": "`git reset --soft HEAD~1`",
+            "C": "`git reset --hard HEAD~1`",
+            "D": "`git stash`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git reset --hard HEAD~1` will move your `HEAD` and current branch pointer back one commit and discard any changes in your working directory and staging area from that commit."
+        },
+        {
+          "question": "Which of the following is NOT a good practice when rewriting Git history (e.g., with `git reset --hard` or `git rebase -i`)?",
+          "options": {
+            "A": "Rewriting history on private, unpushed branches.",
+            "B": "Using `git reflog` to recover from mistakes during history rewriting.",
+            "C": "Rewriting history on branches that have already been pushed to a shared remote and are used by collaborators.",
+            "D": "Squashing multiple commits into one to create a cleaner history for a feature before merging."
+          },
+          "correct_answer": "C",
+          "explanation": "This is the cardinal rule of Git history rewriting: never rewrite history on shared branches unless you know exactly what you're doing and have coordinated with your team, as it can cause significant problems for others."
+        },
+        {
+          "question": "After using `git commit --amend` to fix a typo in the last commit message, what happens to the original commit?",
+          "options": {
+            "A": "It remains in history, but marked as invalid.",
+            "B": "It is entirely replaced by a new commit with a new SHA-1 hash, effectively rewriting that part of history.",
+            "C": "It is automatically deleted from the reflog.",
+            "D": "It is pushed to a backup remote."
+          },
+          "correct_answer": "B",
+          "explanation": "While `git commit --amend` seems like it's just 'amending' the old commit, it actually creates a *new* commit object with the updated content/message, and the old commit is then garbage-collected if no longer referenced."
+        }
+      ]
+    }
+  ]
+}

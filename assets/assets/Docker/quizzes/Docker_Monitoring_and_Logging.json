@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Docker_Monitoring_and_Logging",
+      "questions": [
         {
-            "topic": "Docker_Monitoring_and_Logging",
-            "questions": []
+          "question": "What is the primary command to view the real-time resource usage (CPU, memory, network I/O, block I/O) of running Docker containers?",
+          "options": {
+            "A": "`docker ps`",
+            "B": "`docker logs`",
+            "C": "`docker stats`",
+            "D": "`docker top`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker stats` command provides a live stream of resource usage statistics for all running containers, including CPU, memory, network I/O, and block I/O. It's a quick way to get an overview of your container's performance."
+        },
+        {
+          "question": "Where does Docker typically send container logs by default if no logging driver is specified?",
+          "options": {
+            "A": "To a file inside the container.",
+            "B": "To the Docker daemon's logs (usually viewable with `journalctl -u docker.service`).",
+            "C": "To standard output (stdout) and standard error (stderr) of the container's main process.",
+            "D": "To a remote logging server."
+          },
+          "correct_answer": "C",
+          "explanation": "By default, Docker captures logs written to `stdout` and `stderr` by the container's main process. These logs can then be retrieved using the `docker logs` command."
+        },
+        {
+          "question": "Which command is used to retrieve logs from a specific Docker container?",
+          "options": {
+            "A": "`docker get-logs <container_name>`",
+            "B": "`docker log <container_name>`",
+            "C": "`docker tail <container_name>`",
+            "D": "`docker logs <container_name>`"
+          },
+          "correct_answer": "D",
+          "explanation": "The `docker logs` command fetches and displays the logs of a container. You can specify flags like `-f` (follow), `--tail` (show last N lines), and `--since` (show logs since a timestamp)."
+        },
+        {
+          "question": "What is a 'logging driver' in Docker, and why is it important in production?",
+          "options": {
+            "A": "A tool to create log files inside the container.",
+            "B": "A mechanism to send container logs to external logging systems (e.g., syslog, Splunk, Fluentd, AWS CloudWatch) for centralized collection and analysis.",
+            "C": "A driver for managing log file permissions.",
+            "D": "A way to encrypt log data."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker's logging drivers allow you to redirect container logs from their default `stdout`/`stderr` to various external systems. In production, this is crucial for centralized log aggregation, long-term storage, advanced analytics, alerting, and compliance across a fleet of containers."
+        },
+        {
+          "question": "Which `docker run` flag is used to specify a logging driver for a container?",
+          "options": {
+            "A": "`--log-output`",
+            "B": "`--driver-log`",
+            "C": "`--log-driver`",
+            "D": "`--logging`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `--log-driver` flag is used with `docker run` (or in `docker-compose.yml`) to specify which logging driver a container should use (e.g., `--log-driver syslog`, `--log-driver json-file`)."
+        },
+        {
+          "question": "What is the primary benefit of using a centralized logging system like the ELK Stack (Elasticsearch, Logstash, Kibana) or Splunk for Docker logs?",
+          "options": {
+            "A": "To reduce the disk space used by containers.",
+            "B": "To provide a single point of truth for log data, enabling easy searching, filtering, visualization, and alerting across all applications and infrastructure.",
+            "C": "To automatically delete old log files.",
+            "D": "To compress log data before sending it."
+          },
+          "correct_answer": "B",
+          "explanation": "In a distributed environment with many containers, manually checking logs on each host is impossible. Centralized logging solutions aggregate logs from all sources into one searchable location, making it easy to diagnose issues, monitor application behavior, and gain operational insights."
+        },
+        {
+          "question": "What are 'metrics' in the context of Docker monitoring?",
+          "options": {
+            "A": "Error messages from container processes.",
+            "B": "Quantifiable data points (e.g., CPU utilization, memory usage, network throughput, requests per second) that describe the performance and health of containers and the host.",
+            "C": "Security vulnerabilities found in images.",
+            "D": "The size of Docker images."
+          },
+          "correct_answer": "B",
+          "explanation": "Metrics are numerical measurements collected over time that provide insights into system behavior. For Docker, this includes resource consumption, network activity, application-specific performance indicators (e.g., response times, error rates), and more."
+        },
+        {
+          "question": "What is Prometheus commonly used for in a Docker monitoring setup?",
+          "options": {
+            "A": "For managing Docker volumes.",
+            "B": "As a time-series database and alerting system for collecting and storing metrics from Docker containers and hosts.",
+            "C": "For building Docker images.",
+            "D": "For encrypting Docker network traffic."
+          },
+          "correct_answer": "B",
+          "explanation": "Prometheus is a popular open-source monitoring system that scrapes metrics from configured targets (like Docker hosts or containerized applications), stores them as time-series data, and provides powerful querying and alerting capabilities."
+        },
+        {
+          "question": "What is Grafana commonly used for in conjunction with Prometheus for Docker monitoring?",
+          "options": {
+            "A": "For collecting raw log data.",
+            "B": "For visualizing metrics collected by Prometheus, creating dashboards and graphs to represent system health and performance trends.",
+            "C": "For orchestrating Docker containers.",
+            "D": "For automating Docker deployments."
+          },
+          "correct_answer": "B",
+          "explanation": "Grafana is a powerful open-source analytics and visualization platform. It integrates seamlessly with Prometheus (and many other data sources) to create interactive and informative dashboards, allowing users to visualize trends, identify anomalies, and monitor their Docker environment effectively."
+        },
+        {
+          "question": "What is the difference between `docker stats` and using external monitoring tools like Prometheus?",
+          "options": {
+            "A": "`docker stats` is for production, Prometheus for development.",
+            "B": "`docker stats` provides real-time, local, granular container metrics, while Prometheus offers centralized, historical, and aggregated metrics across a cluster for long-term analysis and alerting.",
+            "C": "There is no difference, they provide the same functionality.",
+            "D": "`docker stats` only shows memory, Prometheus only shows CPU."
+          },
+          "correct_answer": "B",
+          "explanation": "`docker stats` is excellent for immediate, per-container resource insights on a single host. However, for a production environment with many containers and hosts, you need a system like Prometheus that can collect, store, query, and alert on metrics from the entire infrastructure over time."
+        },
+        {
+          "question": "What is a 'sidecar container' pattern often used for in Docker logging/monitoring?",
+          "options": {
+            "A": "A container that runs alongside the main application container to handle tasks like log collection or metrics scraping.",
+            "B": "A container that provides a database service.",
+            "C": "A container used for security scanning.",
+            "D": "A container that only runs once and then exits."
+          },
+          "correct_answer": "A",
+          "explanation": "The sidecar pattern involves deploying a secondary container alongside your main application container within the same pod (in Kubernetes) or closely managed by the orchestrator. This sidecar handles supporting tasks like log shipping, metrics collection, or network proxies, keeping the main application container focused on its core logic."
+        },
+        {
+          "question": "What is `cAdvisor` (Container Advisor) primarily used for in Docker monitoring?",
+          "options": {
+            "A": "Managing Docker images.",
+            "B": "Collecting and exporting performance metrics from running containers and the host, often used as a source for Prometheus.",
+            "C": "Securing Docker daemon.",
+            "D": "Creating Docker networks."
+          },
+          "correct_answer": "B",
+          "explanation": "cAdvisor is an open-source agent that collects and exports container performance and resource usage information. It provides a simple UI but is more commonly used to expose metrics endpoints (e.g., `/metrics` for Prometheus) for monitoring tools to scrape data from."
+        },
+        {
+          "question": "What is the role of `fluentd` or `logspout` in a Docker logging architecture?",
+          "options": {
+            "A": "They are Docker orchestration tools.",
+            "B": "They are log shippers/forwarders that collect logs from Docker containers and send them to a centralized logging system.",
+            "C": "They are Docker image build tools.",
+            "D": "They are used for container networking."
+          },
+          "correct_answer": "B",
+          "explanation": "Fluentd and Logspout are examples of log shipping agents. They run on the Docker host, collect log streams from all containers on that host (often by reading Docker's JSON-file logs or directly from stdout/stderr), and then forward them to a centralized logging system like Elasticsearch, Splunk, or Kafka."
+        },
+        {
+          "question": "What is the security implication of exposing `docker.sock` to a container for monitoring purposes?",
+          "options": {
+            "A": "It makes the container run faster.",
+            "B": "It grants the container full root access to the Docker daemon, effectively root access to the host machine if compromised.",
+            "C": "It enables direct network communication between containers.",
+            "D": "It provides a read-only view of container logs."
+          },
+          "correct_answer": "B",
+          "explanation": "Mounting `/var/run/docker.sock` (the Docker daemon socket) into a container gives that container the ability to execute *any* Docker command on the host, essentially granting it root privileges on the host system. This is a significant security risk and should be avoided or severely restricted in production."
+        },
+        {
+          "question": "When monitoring Docker, what is the difference between host-level metrics and container-level metrics?",
+          "options": {
+            "A": "Host-level is about network, container-level is about disk.",
+            "B": "Host-level metrics describe the overall server performance, while container-level metrics focus on individual container resource consumption and application performance.",
+            "C": "Host-level metrics are always more accurate.",
+            "D": "Container-level metrics are only available for running containers."
+          },
+          "correct_answer": "B",
+          "explanation": "Host-level metrics (e.g., total CPU/memory usage of the server) give you a broad picture, but container-level metrics are crucial for understanding which specific application or service is consuming resources, and for debugging issues within a single application."
+        },
+        {
+          "question": "What kind of information can you get from `docker inspect <container_name>` that is relevant for monitoring/debugging?",
+          "options": {
+            "A": "Only the container's IP address.",
+            "B": "Detailed low-level information in JSON format, including container state, network settings, mounted volumes, restart count, exit code, and health check status.",
+            "C": "Real-time CPU and memory usage.",
+            "D": "The Dockerfile used to build the image."
+          },
+          "correct_answer": "B",
+          "explanation": "`docker inspect` provides a comprehensive dump of a container's configuration and current state. This static information (unlike `docker stats`'s dynamic data) is invaluable for debugging, understanding why a container might have exited, its full network configuration, and how volumes are mounted."
+        },
+        {
+          "question": "Why is it important to standardize log formats (e.g., JSON logs) for containerized applications?",
+          "options": {
+            "A": "To make logs easier to read by humans.",
+            "B": "To ensure efficient parsing and analysis by centralized logging systems.",
+            "C": "To reduce the file size of logs.",
+            "D": "To prevent logs from being exposed."
+          },
+          "correct_answer": "B",
+          "explanation": "Standardizing log formats (like JSON) makes it much easier for automated logging systems to parse, index, and analyze the log data. This allows for advanced querying, filtering, and visualization in tools like Kibana or Grafana, making troubleshooting and monitoring more effective."
+        },
+        {
+          "question": "What is the purpose of `docker system df`?",
+          "options": {
+            "A": "To check network disk speed.",
+            "B": "To show Docker disk usage, including image layers, container writable layers, and volumes, helping to monitor storage consumption.",
+            "C": "To compare two Docker images.",
+            "D": "To list all running Docker containers."
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker system df` command (similar to the Linux `df` command) provides a summary of disk space usage by Docker objects (images, containers, local volumes). It helps identify where disk space is being consumed and if pruning is needed."
+        },
+        {
+          "question": "True or False: Docker's built-in `json-file` logging driver is suitable for high-volume production logging without external aggregation.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While `json-file` is the default and useful for basic local debugging, it's not suitable for high-volume production logging on its own. It writes logs to local files, which can grow very large, fill up disk space, and are difficult to aggregate and search across multiple containers and hosts. A centralized logging system is essential for production."
+        },
+        {
+          "question": "What is a common practice for limiting log file size when using the `json-file` logging driver?",
+          "options": {
+            "A": "Deleting logs manually every day.",
+            "B": "Configuring `max-size` and `max-file` options for the logging driver.",
+            "C": "Using a different file format.",
+            "D": "Disabling logging completely."
+          },
+          "correct_answer": "B",
+          "explanation": "If you are using the `json-file` driver (even in development), it's crucial to configure its options. `max-size` limits the size of each log file, and `max-file` limits the number of log files, ensuring that container logs don't consume excessive disk space. Example: `--log-opt max-size=10m --log-opt max-file=3`."
         }
-    ]
+      ]
+    }
+  ]
 }

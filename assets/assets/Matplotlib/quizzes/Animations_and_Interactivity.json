@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Animations_and_Interactivity",
+      "questions": [
+        {
+          "question": "What is the primary focus of animations in Matplotlib?",
+          "options": {
+            "A": "Creating dynamic visualizations.",
+            "B": "Storing data.",
+            "C": "Performing data analysis.",
+            "D": "Creating static plots."
+          },
+          "correct_answer": "A",
+          "explanation": "Animations in Matplotlib are primarily focused on creating dynamic visualizations, allowing for interactive and engaging data presentations."
+        },
+        {
+          "question": "Which class in Matplotlib is used for creating animations?",
+          "options": {
+            "A": "FuncAnimation",
+            "B": "Plot",
+            "C": "Scatter",
+            "D": "Bar"
+          },
+          "correct_answer": "A",
+          "explanation": "The FuncAnimation class in Matplotlib is used for creating animations, providing a framework for dynamic visualizations."
+        },
+        {
+          "question": "What is the purpose of the blit parameter in Matplotlib animations?",
+          "options": {
+            "A": "To optimize animations by only redrawing parts that have changed.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The blit parameter in Matplotlib animations is used to optimize animations by only redrawing parts that have changed, improving performance."
+        },
+        {
+          "question": "What is the function of the pause() method in Matplotlib?",
+          "options": {
+            "A": "To pause the execution of a script for a specified time.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The pause() method in Matplotlib is used to pause the execution of a script for a specified time, allowing for timed animations."
+        },
+        {
+          "question": "What is the purpose of the save() method in Matplotlib animations?",
+          "options": {
+            "A": "To save animations to a file.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The save() method in Matplotlib animations is used to save animations to a file, enabling sharing and reuse of dynamic visualizations."
+        },
+        {
+          "question": "What is the function of the PillowWriter class in Matplotlib?",
+          "options": {
+            "A": "To write animations using the Pillow library.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The PillowWriter class in Matplotlib is used to write animations using the Pillow library, providing a format for saving animated visualizations."
+        },
+        {
+          "question": "What is the purpose of the FFMpegWriter class in Matplotlib?",
+          "options": {
+            "A": "To write animations using the FFmpeg library.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The FFMpegWriter class in Matplotlib is used to write animations using the FFmpeg library, providing a format for saving animated visualizations."
+        },
+        {
+          "question": "What is the function of the ImageMagickWriter class in Matplotlib?",
+          "options": {
+            "A": "To write animations using the ImageMagick library.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The ImageMagickWriter class in Matplotlib is used to write animations using the ImageMagick library, providing a format for saving animated visualizations."
+        },
+        {
+          "question": "What is the purpose of the HTMLWriter class in Matplotlib?",
+          "options": {
+            "A": "To write animations in HTML format.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The HTMLWriter class in Matplotlib is used to write animations in HTML format, enabling web-based sharing of dynamic visualizations."
+        },
+        {
+          "question": "What is the function of the set_interval() method in Matplotlib animations?",
+          "options": {
+            "A": "To set the interval between frames in an animation.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The set_interval() method in Matplotlib animations is used to set the interval between frames in an animation, controlling the speed of the animation."
+        },
+        {
+          "question": "What is the purpose of the repeat parameter in Matplotlib animations?",
+          "options": {
+            "A": "To specify whether an animation should repeat.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The repeat parameter in Matplotlib animations is used to specify whether an animation should repeat, allowing for continuous playback."
+        },
+        {
+          "question": "What is the function of the repeat_delay parameter in Matplotlib animations?",
+          "options": {
+            "A": "To set the delay between repeats of an animation.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The repeat_delay parameter in Matplotlib animations is used to set the delay between repeats of an animation, controlling the pause between loops."
+        },
+        {
+          "question": "What is the primary focus of interactivity in Matplotlib?",
+          "options": {
+            "A": "Enhancing user engagement with plots.",
+            "B": "Storing data.",
+            "C": "Performing data analysis.",
+            "D": "Creating static plots."
+          },
+          "correct_answer": "A",
+          "explanation": "Interactivity in Matplotlib is primarily focused on enhancing user engagement with plots, allowing for interactive exploration of data."
+        },
+        {
+          "question": "Which function in Matplotlib is used to connect events to callback functions?",
+          "options": {
+            "A": "mpl_connect",
+            "B": "plot",
+            "C": "scatter",
+            "D": "bar"
+          },
+          "correct_answer": "A",
+          "explanation": "The mpl_connect function in Matplotlib is used to connect events to callback functions, enabling interactive responses to user actions."
+        },
+        {
+          "question": "What is the purpose of the mpl_disconnect function in Matplotlib?",
+          "options": {
+            "A": "To disconnect events from callback functions.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The mpl_disconnect function in Matplotlib is used to disconnect events from callback functions, stopping interactive responses to user actions."
+        },
+        {
+          "question": "What is the function of the pick_event in Matplotlib?",
+          "options": {
+            "A": "To detect when an artist is selected by the user.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The pick_event in Matplotlib is used to detect when an artist is selected by the user, enabling interactive selection of plot elements."
+        },
+        {
+          "question": "What is the purpose of the key_press_event in Matplotlib?",
+          "options": {
+            "A": "To detect when a key is pressed by the user.",
+            "B": "To create static plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The key_press_event in Matplotlib is used to detect when a key is pressed by the user, enabling interactive keyboard input handling."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Support_Vector_Machines",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Support Vector Machines (SVM) in machine learning?",
+          "options": {
+            "A": "To classify data by finding the optimal hyperplane.",
+            "B": "To store data in a hierarchical structure.",
+            "C": "To visualize data trends.",
+            "D": "To encrypt data for security."
+          },
+          "correct_answer": "A",
+          "explanation": "SVMs classify data by finding the optimal hyperplane that separates different classes."
+        },
+        {
+          "question": "Which of the following is a common kernel used in SVM?",
+          "options": {
+            "A": "Linear Kernel",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Linear Kernel is a common kernel used in SVM to classify linearly separable data."
+        },
+        {
+          "question": "What is the role of the kernel trick in SVM?",
+          "options": {
+            "A": "To transform data into higher dimensions.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The kernel trick transforms data into higher dimensions, allowing SVM to classify non-linearly separable data."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in SVM?",
+          "options": {
+            "A": "Regularization",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Regularization prevents overfitting in SVM by controlling the complexity of the model."
+        },
+        {
+          "question": "What is the significance of the margin in SVM?",
+          "options": {
+            "A": "To determine the optimal hyperplane.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The margin determines the optimal hyperplane, maximizing the distance between different classes in SVM."
+        },
+        {
+          "question": "Which of the following is a disadvantage of SVM?",
+          "options": {
+            "A": "Complex to interpret.",
+            "B": "Prone to overfitting.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "SVMs are complex to interpret, especially when using non-linear kernels."
+        },
+        {
+          "question": "What is the purpose of using soft margin in SVM?",
+          "options": {
+            "A": "To allow misclassification of some data points.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Soft margin allows misclassification of some data points, providing flexibility in SVM classification."
+        },
+        {
+          "question": "Which of the following is a common use case for SVM?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "SVMs are commonly used for classification tasks, where data is categorized based on the optimal hyperplane."
+        },
+        {
+          "question": "What is the role of support vectors in SVM?",
+          "options": {
+            "A": "To define the optimal hyperplane.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Support vectors define the optimal hyperplane, influencing the classification decision in SVM."
+        },
+        {
+          "question": "Which of the following is a benefit of SVM?",
+          "options": {
+            "A": "Effective in high-dimensional spaces.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "SVMs are effective in high-dimensional spaces, providing accurate classification in complex datasets."
+        },
+        {
+          "question": "What is the significance of the C parameter in SVM?",
+          "options": {
+            "A": "It controls the trade-off between margin size and misclassification.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The C parameter controls the trade-off between margin size and misclassification, influencing the flexibility of SVM."
+        },
+        {
+          "question": "Which of the following is a common kernel used in SVM?",
+          "options": {
+            "A": "Polynomial Kernel",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Polynomial Kernel is a common kernel used in SVM to classify non-linearly separable data."
+        },
+        {
+          "question": "What is the role of the kernel trick in SVM?",
+          "options": {
+            "A": "To transform data into higher dimensions.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The kernel trick transforms data into higher dimensions, allowing SVM to classify non-linearly separable data."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in SVM?",
+          "options": {
+            "A": "Regularization",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Regularization prevents overfitting in SVM by controlling the complexity of the model."
+        },
+        {
+          "question": "What is the significance of the margin in SVM?",
+          "options": {
+            "A": "To determine the optimal hyperplane.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The margin determines the optimal hyperplane, maximizing the distance between different classes in SVM."
+        },
+        {
+          "question": "Which of the following is a disadvantage of SVM?",
+          "options": {
+            "A": "Complex to interpret.",
+            "B": "Prone to overfitting.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "SVMs are complex to interpret, especially when using non-linear kernels."
+        },
+        {
+          "question": "What is the purpose of using soft margin in SVM?",
+          "options": {
+            "A": "To allow misclassification of some data points.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Soft margin allows misclassification of some data points, providing flexibility in SVM classification."
+        },
+        {
+          "question": "Which of the following is a common use case for SVM?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "SVMs are commonly used for classification tasks, where data is categorized based on the optimal hyperplane."
+        },
+        {
+          "question": "What is the role of support vectors in SVM?",
+          "options": {
+            "A": "To define the optimal hyperplane.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Support vectors define the optimal hyperplane, influencing the classification decision in SVM."
+        }
+      ]
+    }
+  ]
+}

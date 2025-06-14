@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Chess_Fundamentals",
+      "questions": [
+        {
+          "question": "What is the objective of a game of chess?",
+          "options": {
+            "A": "To capture the most pieces.",
+            "B": "To checkmate the opponent's king.",
+            "C": "To force a draw.",
+            "D": "To control the center of the board."
+          },
+          "correct_answer": "B",
+          "explanation": "Checkmate occurs when the king is under immediate attack (in check) and there is no legal move to escape."
+        },
+        {
+          "question": "How many squares are there on a standard chessboard?",
+          "options": {
+            "A": "49",
+            "B": "64",
+            "C": "81",
+            "D": "100"
+          },
+          "correct_answer": "B",
+          "explanation": "A chessboard is an 8x8 grid, resulting in 64 squares."
+        },
+        {
+          "question": "What are the colors of the squares on a standard chessboard?",
+          "options": {
+            "A": "Red and black",
+            "B": "Blue and green",
+            "C": "Light and dark (e.g., white and black, or tan and brown)",
+            "D": "Yellow and purple"
+          },
+          "correct_answer": "C",
+          "explanation": "The board consists of alternating light and dark squares."
+        },
+        {
+          "question": "How many ranks are there on a chessboard?",
+          "options": {
+            "A": "6",
+            "B": "8",
+            "C": "10",
+            "D": "12"
+          },
+          "correct_answer": "B",
+          "explanation": "Ranks are the horizontal rows on the chessboard, numbered 1 through 8."
+        },
+        {
+          "question": "How many files are there on a chessboard?",
+          "options": {
+            "A": "6",
+            "B": "8",
+            "C": "10",
+            "D": "12"
+          },
+          "correct_answer": "B",
+          "explanation": "Files are the vertical columns on the chessboard, labeled a through h."
+        },
+        {
+          "question": "Which piece can move any number of unoccupied squares horizontally or vertically?",
+          "options": {
+            "A": "Bishop",
+            "B": "Knight",
+            "C": "Rook",
+            "D": "Queen"
+          },
+          "correct_answer": "C",
+          "explanation": "The rook moves along ranks and files."
+        },
+        {
+          "question": "Which piece can move any number of unoccupied squares diagonally?",
+          "options": {
+            "A": "Rook",
+            "B": "Knight",
+            "C": "Bishop",
+            "D": "Queen"
+          },
+          "correct_answer": "C",
+          "explanation": "The bishop stays on squares of the same color and moves diagonally."
+        },
+        {
+          "question": "Which piece can move one square in any direction (horizontally, vertically, or diagonally)?",
+          "options": {
+            "A": "Pawn",
+            "B": "Knight",
+            "C": "King",
+            "D": "Queen"
+          },
+          "correct_answer": "C",
+          "explanation": "The king is the most important piece but has limited mobility."
+        },
+        {
+          "question": "Which piece moves in an 'L' shape: two squares in one direction (horizontal or vertical) and then one square perpendicularly?",
+          "options": {
+            "A": "Bishop",
+            "B": "Rook",
+            "C": "Knight",
+            "D": "Pawn"
+          },
+          "correct_answer": "C",
+          "explanation": "The knight is the only piece that can jump over other pieces."
+        },
+        {
+          "question": "Which piece combines the movement of a rook and a bishop?",
+          "options": {
+            "A": "King",
+            "B": "Knight",
+            "C": "Pawn",
+            "D": "Queen"
+          },
+          "correct_answer": "D",
+          "explanation": "The queen is the most powerful piece due to its versatile movement."
+        },
+        {
+          "question": "How does a pawn typically move?",
+          "options": {
+            "A": "One or two squares forward on its first move, then one square forward.",
+            "B": "One square forward only.",
+            "C": "Diagonally forward one square.",
+            "D": "Any number of squares forward."
+          },
+          "correct_answer": "A",
+          "explanation": "Pawns have a special initial move of one or two squares forward and then move one square forward."
+        },
+        {
+          "question": "How does a pawn capture an opponent's piece?",
+          "options": {
+            "A": "By moving one square forward.",
+            "B": "By moving diagonally forward one square.",
+            "C": "By moving horizontally one square.",
+            "D": "By jumping over the piece."
+          },
+          "correct_answer": "B",
+          "explanation": "Pawns capture pieces on the diagonally adjacent square in front of them."
+        },
+        {
+          "question": "What is 'castling' in chess?",
+          "options": {
+            "A": "A special move involving the king and a pawn.",
+            "B": "A special move involving the king and a knight.",
+            "C": "A special move involving the king and a rook.",
+            "D": "A special move involving the king and a bishop."
+          },
+          "correct_answer": "C",
+          "explanation": "Castling is a protective maneuver involving the king and one of the rooks."
+        },
+        {
+          "question": "Under what condition can a pawn be promoted to another piece?",
+          "options": {
+            "A": "After capturing an opponent's king.",
+            "B": "When it reaches the opposite side of the board.",
+            "C": "After moving five squares forward.",
+            "D": "When the player chooses to do so."
+          },
+          "correct_answer": "B",
+          "explanation": "Pawn promotion is a significant event that can change the course of a game."
+        },
+        {
+          "question": "Which of the following is NOT a piece in chess?",
+          "options": {
+            "A": "Cannon",
+            "B": "Rook",
+            "C": "Bishop",
+            "D": "Knight"
+          },
+          "correct_answer": "A",
+          "explanation": "The cannon is a piece in some variations of chess, but not standard Western chess."
+        },
+        {
+          "question": "How many knights does each player start with?",
+          "options": {
+            "A": "One",
+            "B": "Two",
+            "C": "Three",
+            "D": "Four"
+          },
+          "correct_answer": "B",
+          "explanation": "Each player begins the game with two knights."
+        },
+        {
+          "question": "How many rooks does each player start with?",
+          "options": {
+            "A": "One",
+            "B": "Two",
+            "C": "Three",
+            "D": "Four"
+          },
+          "correct_answer": "B",
+          "explanation": "Each player begins the game with two rooks, positioned on the corners."
+        },
+        {
+          "question": "How many bishops does each player start with?",
+          "options": {
+            "A": "One",
+            "B": "Two",
+            "C": "Three",
+            "D": "Four"
+          },
+          "correct_answer": "B",
+          "explanation": "Each player starts with two bishops, one on a light square and one on a dark square."
+        },
+        {
+          "question": "How many queens does each player start with?",
+          "options": {
+            "A": "One",
+            "B": "Two",
+            "C": "None",
+            "D": "It depends on pawn promotion."
+          },
+          "correct_answer": "A",
+          "explanation": "Each player begins the game with one queen."
+        },
+        {
+          "question": "How many kings does each player start with?",
+          "options": {
+            "A": "One",
+            "B": "Two",
+            "C": "None",
+            "D": "It depends on the game variant."
+          },
+          "correct_answer": "A",
+          "explanation": "Each player has one king, which is the most important piece."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Topics",
+      "questions": [
+        {
+          "question": "When is it necessary to implement a custom `torch.autograd.Function` with its own `forward` and `backward` methods?",
+          "options": {
+            "A": "For all standard PyTorch layers like `nn.Linear`.",
+            "B": "When you need to define an operation that PyTorch's `Autograd` cannot automatically differentiate or when you want to provide a more efficient custom backward pass.",
+            "C": "Only for operations that run on the CPU.",
+            "D": "Never; PyTorch handles all differentiation automatically."
+          },
+          "correct_answer": "B",
+          "explanation": "Custom `Autograd.Function` is used for non-standard operations or for performance optimization of the backward pass."
+        },
+        {
+          "question": "What is the primary benefit of using Automatic Mixed Precision (AMP) with `torch.cuda.amp`?",
+          "options": {
+            "A": "To allow models to train on both CPU and GPU simultaneously.",
+            "B": "To automatically switch between different optimizers during training.",
+            "C": "To accelerate training and reduce GPU memory consumption by performing operations in float16 where possible, while maintaining float32 stability.",
+            "D": "To mix different deep learning frameworks in one model."
+          },
+          "correct_answer": "C",
+          "explanation": "AMP intelligently uses lower precision (float16) for certain operations to speed up computations and reduce memory, especially on Tensor Cores."
+        },
+        {
+          "question": "What is the main difference between `torch.nn.DataParallel` (DP) and `torch.nn.parallel.DistributedDataParallel` (DDP) for multi-GPU training?",
+          "options": {
+            "A": "DP is for CPU-only training, DDP is for GPU training.",
+            "B": "DP is for a single machine with multiple GPUs, DDP is for multiple machines with multiple GPUs.",
+            "C": "DP uses single-process, multi-thread, copying data to each GPU, leading to potential GIL issues and uneven load. DDP uses multi-process, ensuring true parallelism and better scalability.",
+            "D": "DP is deprecated, DDP is the only modern approach."
+          },
+          "correct_answer": "C",
+          "explanation": "DDP is generally preferred for its superior performance, scalability, and efficiency due to its multi-process nature and all-reduce gradient synchronization."
+        },
+        {
+          "question": "Which of the following is a key feature of `torchscript`?",
+          "options": {
+            "A": "Enables training models with arbitrary Python objects.",
+            "B": "Allows exporting PyTorch models to other frameworks like TensorFlow.",
+            "C": "Compiles PyTorch models into a static graph representation that can be optimized and deployed without a Python dependency, improving inference performance.",
+            "D": "Automates hyperparameter tuning."
+          },
+          "correct_answer": "C",
+          "explanation": "TorchScript (via `torch.jit.script` or `torch.jit.trace`) facilitates deployment of PyTorch models in production C++ environments, mobile devices, etc."
+        },
+        {
+          "question": "What is the purpose of `torch.nn.Module.register_forward_hook`?",
+          "options": {
+            "A": "To register a function that is called before the `backward` pass.",
+            "B": "To register a function that will be executed after the `forward` pass of a module, allowing inspection or modification of inputs/outputs.",
+            "C": "To register a function that controls model saving.",
+            "D": "To register a function that optimizes the learning rate."
+          },
+          "correct_answer": "B",
+          "explanation": "Hooks are powerful tools for debugging, visualizing activations, or modifying behavior dynamically without changing the module's core logic."
+        },
+        {
+          "question": "When debugging memory issues (e.g., 'CUDA out of memory') in PyTorch, which tool can help you identify where memory is being consumed?",
+          "options": {
+            "A": "`torch.autograd.set_detect_anomaly(True)`",
+            "B": "`torch.cuda.empty_cache()`",
+            "C": "`torch.cuda.memory_summary()` or `torch.cuda.max_memory_allocated()`",
+            "D": "`torch.profiler.profile`"
+          },
+          "correct_answer": "C",
+          "explanation": "These functions provide insights into GPU memory usage, helping pinpoint memory leaks or excessive allocations."
+        },
+        {
+          "question": "What is ONNX (Open Neural Network Exchange) used for in PyTorch?",
+          "options": {
+            "A": "To train models on multiple GPUs simultaneously.",
+            "B": "To define new neural network layers.",
+            "C": "As an open standard for representing machine learning models, allowing interoperability between different deep learning frameworks (e.g., export from PyTorch, import into TensorFlow or ONNX Runtime).",
+            "D": "To automatically convert models to CPU-only execution."
+          },
+          "correct_answer": "C",
+          "explanation": "ONNX provides a common format for sharing models, facilitating deployment across various inference engines and platforms."
+        },
+        {
+          "question": "To profile the execution time of PyTorch operations and identify performance bottlenecks, which module is most suitable?",
+          "options": {
+            "A": "`torch.debug`",
+            "B": "`torch.profiler`",
+            "C": "`torch.time`",
+            "D": "`torch.monitor`"
+          },
+          "correct_answer": "B",
+          "explanation": "`torch.profiler` (or the older `torch.autograd.profiler`) provides detailed timing and memory usage information for operations, including GPU kernels."
+        },
+        {
+          "question": "What does 'Quantization' generally involve in deep learning models?",
+          "options": {
+            "A": "Adding more layers to the model.",
+            "B": "Reducing the precision of model weights and activations (e.g., from float32 to int8) to decrease model size, memory usage, and improve inference speed.",
+            "C": "Quantifying the uncertainty in model predictions.",
+            "D": "Dividing the training data into quantities."
+          },
+          "correct_answer": "B",
+          "explanation": "Quantization is a common optimization technique for deploying models on resource-constrained devices."
+        },
+        {
+          "question": "Which `torch.distributed` function is used to initialize the distributed environment (e.g., define backend, rank, world size)?",
+          "options": {
+            "A": "`torch.distributed.setup()`",
+            "B": "`torch.distributed.init_process_group()`",
+            "C": "`torch.distributed.start_cluster()`",
+            "D": "`torch.distributed.connect_nodes()`"
+          },
+          "correct_answer": "B",
+          "explanation": "`init_process_group` is the entry point for setting up the communication backend for distributed training."
+        },
+        {
+          "question": "When using DDP (`DistributedDataParallel`), what is the primary mechanism for synchronizing gradients across processes?",
+          "options": {
+            "A": "Centralized server.",
+            "B": "All-reduce operation.",
+            "C": "Parameter server.",
+            "D": "Broadcast operation."
+          },
+          "correct_answer": "B",
+          "explanation": "DDP uses an efficient all-reduce algorithm to sum gradients from all processes and then broadcast the averaged gradients back to each process."
+        },
+        {
+          "question": "What is 'Torch Hub' (`torch.hub`)?",
+          "options": {
+            "A": "A physical device for running PyTorch models.",
+            "B": "A repository of pre-trained models and re-usable code snippets that can be easily loaded into PyTorch applications.",
+            "C": "A tool for debugging distributed training.",
+            "D": "A forum for PyTorch developers."
+          },
+          "correct_answer": "B",
+          "explanation": "Torch Hub simplifies the process of using state-of-the-art models developed by the community."
+        },
+        {
+          "question": "When should you prefer `nn.ModuleDict` over `nn.Sequential` for building a network?",
+          "options": {
+            "A": "When the layers are very simple.",
+            "B": "When you need to define a collection of modules that you can access by keys (like a dictionary), allowing for non-sequential forward passes or shared layers.",
+            "C": "When you only have a single layer.",
+            "D": "Never, `nn.Sequential` is always more flexible."
+          },
+          "correct_answer": "B",
+          "explanation": "`ModuleDict` is ideal when you need to select specific layers based on conditions or build complex branching architectures."
+        },
+        {
+          "question": "What is the purpose of `torch.autograd.set_detect_anomaly(True)`?",
+          "options": {
+            "A": "To automatically fix errors in your code.",
+            "B": "To detect and report anomalies in the data distribution.",
+            "C": "To enable anomaly detection in the Autograd engine, which can help pinpoint the operation causing NaNs or Infs during backward passes.",
+            "D": "To detect abnormal GPU temperatures."
+          },
+          "correct_answer": "C",
+          "explanation": "This debugging tool is invaluable for tracing the source of numerical instability during training."
+        },
+        {
+          "question": "When exporting a PyTorch model to ONNX, what is the significance of providing dummy input data to `torch.onnx.export()`?",
+          "options": {
+            "A": "It's optional; any input will do.",
+            "B": "The dummy input is used to trace the computational graph of the model, as PyTorch constructs the graph dynamically.",
+            "C": "It is used to train the ONNX model.",
+            "D": "It determines the output format of the ONNX model."
+          },
+          "correct_answer": "B",
+          "explanation": "The shape and data type of the dummy input define the input signature of the exported ONNX model."
+        },
+        {
+          "question": "For custom loss functions that are not available in `torch.nn`, how would you typically implement them in PyTorch?",
+          "options": {
+            "A": "You cannot implement custom loss functions.",
+            "B": "As a standard Python function that takes predictions and targets and returns a scalar loss, or by inheriting from `torch.nn.Module`.",
+            "C": "Only as a `torch.autograd.Function`.",
+            "D": "By modifying the PyTorch source code."
+          },
+          "correct_answer": "B",
+          "explanation": "Simple losses can be functions, while more complex ones that maintain state or have learnable parameters should be `nn.Module` subclasses."
+        },
+        {
+          "question": "What is the main benefit of using a 'gradient checkpointing' (or 'activation checkpointing') technique for training very deep models?",
+          "options": {
+            "A": "It speeds up the forward pass.",
+            "B": "It reduces GPU memory usage by recomputing some intermediate activations during the backward pass instead of storing them during the forward pass.",
+            "C": "It eliminates the need for an optimizer.",
+            "D": "It ensures faster data loading."
+          },
+          "correct_answer": "B",
+          "explanation": "Gradient checkpointing is a memory-saving technique crucial for training models that are too large to fit in GPU memory otherwise."
+        },
+        {
+          "question": "What does 'eager execution' in PyTorch imply for debugging?",
+          "options": {
+            "A": "It makes debugging much harder due to the static graph.",
+            "B": "It allows you to use standard Python debugging tools (like `pdb`) directly, as operations are executed imperatively.",
+            "C": "It means you can only debug compiled models.",
+            "D": "Debugging is done exclusively through the Spark UI."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'define-by-run' nature of PyTorch makes it very intuitive to debug using familiar Python debugging techniques."
+        },
+        {
+          "question": "In distributed training with DDP, what does the 'rank' of a process refer to?",
+          "options": {
+            "A": "The overall performance of the process.",
+            "B": "The unique identifier of a process within the distributed training group.",
+            "C": "The number of GPUs assigned to that process.",
+            "D": "The priority level of the process."
+          },
+          "correct_answer": "B",
+          "explanation": "Each process participating in distributed training has a unique rank, typically from 0 to `world_size - 1`."
+        },
+        {
+          "question": "Which type of PyTorch operation is typically performed using `torch.bincount()` for discrete data analysis?",
+          "options": {
+            "A": "Matrix multiplication.",
+            "B": "Counting occurrences of non-negative integers in a tensor.",
+            "C": "Image filtering.",
+            "D": "Text tokenization."
+          },
+          "correct_answer": "B",
+          "explanation": "`torch.bincount()` is efficient for counting frequencies of elements in an integer tensor, similar to histogramming."
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,8 @@
             "c": "To read or write to a file",
             "d": "All of the above"
           },
-          "correct_answer": "d"
+          "correct_answer": "d",
+          "explanation": "The `open()` function is versatile and serves multiple purposes: it can create a new file (in write or append modes), open an existing file (in read, write, or append modes), and facilitate reading data from or writing data to a file depending on the specified mode."
         },
         {
           "question": "What is the file mode 'r+' used for?",
@@ -22,7 +23,8 @@
             "c": "Append mode",
             "d": "Read and write mode"
           },
-          "correct_answer": "d"
+          "correct_answer": "d",
+          "explanation": "The `'r+'` mode opens a file for both reading and writing. The file pointer is initially placed at the beginning of the file. If the file does not exist, a `FileNotFoundError` will be raised."
         },
         {
           "question": "How do you close a file in Python?",
@@ -32,7 +34,8 @@
             "c": "Automatically closed when the script ends",
             "d": "None of the above"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "It is essential to explicitly close a file using the `file_object.close()` method after completing operations to release system resources and ensure all buffered data is written. While Python might eventually close it, relying on automatic closure is not recommended for robustness. Using a `with` statement (context manager) is the most Pythonic and safest way as it ensures the file is closed automatically."
         },
         {
           "question": "What is the difference between 'read()' and 'readline()' methods?",
@@ -42,7 +45,8 @@
             "c": "Both read the entire file",
             "d": "Both read a single line"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "The `read()` method reads the entire content of the file into a single string. If an argument is provided (e.g., `read(n)`), it reads up to 'n' bytes/characters. The `readline()` method, on the other hand, reads only a single line from the file at a time, including the newline character."
         },
         {
           "question": "How do you write to a file in Python?",
@@ -52,7 +56,8 @@
             "c": "Both of the above",
             "d": "None of the above"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "To write data to a file in Python, you primarily use the `write()` method of a file object. This method writes a string (or bytes in binary mode) to the file. While `print()` can be redirected to a file, `write()` is the direct method for file output."
         },
         {
           "question": "What is the purpose of the 'with open() as f:' syntax?",
@@ -62,7 +67,8 @@
             "c": "To write to a file in append mode",
             "d": "To create a new file"
           },
-          "correct_answer": "b"
+          "correct_answer": "b",
+          "explanation": "The `with open() as f:` syntax is a context manager. Its primary purpose is to ensure that the file is automatically closed when the block of code inside the `with` statement is exited, regardless of whether the block finishes normally or due to an exception. This prevents resource leaks and simplifies file handling."
         },
         {
           "question": "What is the file mode 'w+' used for?",
@@ -72,7 +78,8 @@
             "c": "Read and write mode, overwriting existing content",
             "d": "Read and write mode, appending to existing content"
           },
-          "correct_answer": "c"
+          "correct_answer": "c",
+          "explanation": "The `'w+'` mode opens a file for both writing and reading. If the file already exists, its content is truncated (emptied) when opened in this mode. If the file does not exist, a new empty file is created. The file pointer is placed at the beginning."
         },
         {
           "question": "How do you check if a file exists in Python?",
@@ -82,7 +89,8 @@
             "c": "Using the 'open()' function and catching exceptions",
             "d": "All of the above"
           },
-          "correct_answer": "d"
+          "correct_answer": "d",
+          "explanation": "All three options are valid ways to check for file existence: `os.path.isfile()` checks specifically if the path is a regular file, `os.path.exists()` checks if the path (file or directory) exists, and attempting to `open()` a file in read mode and catching a `FileNotFoundError` is a common pattern for 'EAFP' (Easier to Ask for Forgiveness than Permission) programming."
         },
         {
           "question": "What is the purpose of the 'seek()' method?",
@@ -92,7 +100,8 @@
             "c": "To write to a specific position in a file",
             "d": "To close a file"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "The `seek()` method is used to change the current position of the file pointer (the location where the next read or write operation will occur) within the file. The position is measured in bytes from the beginning of the file, allowing random access."
         },
         {
           "question": "What is the file mode 'a+' used for?",
@@ -102,7 +111,8 @@
             "c": "Read and write mode, overwriting existing content",
             "d": "Read and write mode, appending to existing content"
           },
-          "correct_answer": "d"
+          "correct_answer": "d",
+          "explanation": "The `'a+'` mode opens a file for both appending and reading. If the file exists, the file pointer is initially placed at the end of the file for writing (new data is appended). If the file does not exist, a new file is created, and writing starts from the beginning. You can also read from anywhere in the file after moving the pointer with `seek()`."
         },
         {
           "question": "What is the purpose of the 'tell()' method?",
@@ -112,7 +122,8 @@
             "c": "To get the current position of the file pointer",
             "d": "To close a file"
           },
-          "correct_answer": "c"
+          "correct_answer": "c",
+          "explanation": "The `tell()` method returns the current position of the file pointer (the offset in bytes from the beginning of the file) within the file. This can be useful for bookmarking positions or navigating through binary files."
         },
         {
           "question": "What is the purpose of the 'os.remove()' function?",
@@ -122,7 +133,8 @@
             "c": "To delete a file",
             "d": "To rename a file"
           },
-          "correct_answer": "c"
+          "correct_answer": "c",
+          "explanation": "The `os.remove()` function (or `os.unlink()`) from the `os` module is used to delete a file specified by its path."
         },
         {
           "question": "What is the purpose of the 'os.rename()' function?",
@@ -132,7 +144,8 @@
             "c": "To delete a file",
             "d": "To rename a file"
           },
-          "correct_answer": "d"
+          "correct_answer": "d",
+          "explanation": "The `os.rename()` function from the `os` module is used to change the name of a file or directory from an old path to a new path."
         },
         {
           "question": "What is the purpose of the 'os.path.exists()' function?",
@@ -142,7 +155,8 @@
             "c": "To delete a file",
             "d": "To rename a file"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "The `os.path.exists()` function (part of the `os.path` submodule) is used to check if a given path refers to an existing file or directory. It returns `True` if the path exists, and `False` otherwise."
         },
         {
           "question": "What is the purpose of the 'os.path.isdir()' function?",
@@ -152,7 +166,8 @@
             "c": "To create a new directory",
             "d": "To delete a directory"
           },
-          "correct_answer": "b"
+          "correct_answer": "b",
+          "explanation": "The `os.path.isdir()` function is used to determine if a given path corresponds to an existing directory. It returns `True` for directories and `False` for files or non-existent paths."
         },
         {
           "question": "What is the purpose of the 'os.mkdir()' function?",
@@ -162,7 +177,8 @@
             "c": "To delete a file",
             "d": "To delete a directory"
           },
-          "correct_answer": "b"
+          "correct_answer": "b",
+          "explanation": "The `os.mkdir()` function is used to create a new directory (folder) at the specified path. It will raise an `OSError` if the directory already exists or if the parent directory in the path does not exist."
         },
         {
           "question": "What is the purpose of the 'os.rmdir()' function?",
@@ -172,7 +188,8 @@
             "c": "To delete a file",
             "d": "To delete a directory"
           },
-          "correct_answer": "d"
+          "correct_answer": "d",
+          "explanation": "The `os.rmdir()` function is used to remove (delete) an empty directory. It will raise an `OSError` if the directory is not empty or if it does not exist."
         },
         {
           "question": "What is the purpose of the 'os.listdir()' function?",
@@ -182,7 +199,8 @@
             "c": "To delete a file",
             "d": "To rename a file"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "The `os.listdir()` function returns a list containing the names of the entries (files and subdirectories) in the directory given by the path. It does not include '.' or '..'."
         },
         {
           "question": "What is the purpose of the 'os.walk()' function?",
@@ -192,7 +210,8 @@
             "c": "To delete a file",
             "d": "To rename a file"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "The `os.walk()` function generates the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at `top`, it yields a 3-tuple: `(dirpath, dirnames, filenames)`, allowing you to process files and subdirectories systematically."
         },
         {
           "question": "What happens if you try to open a non-existing file in 'r' mode?",
@@ -202,7 +221,8 @@
             "c": "It opens the file in write mode",
             "d": "It does nothing"
           },
-          "correct_answer": "b"
+          "correct_answer": "b",
+          "explanation": "When attempting to open a file in read-only mode (`'r'`), if the file does not exist at the specified path, Python will raise a `FileNotFoundError`. It will not create the file in this mode."
         },
         {
           "question": "What does the 'wb' mode do?",
@@ -212,7 +232,8 @@
             "c": "Opens a file for reading in binary mode",
             "d": "Opens a file for reading and writing"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "The `'wb'` mode opens a file for writing in binary mode. In binary mode, data is handled as raw bytes rather than text characters, which is essential for working with non-text files like images, audio, or compiled data."
         },
         {
           "question": "What does the 'try...except' block do?",
@@ -222,7 +243,8 @@
             "c": "Automatically retries the code",
             "d": "Exits the program on error"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "The `try...except` block is Python's primary mechanism for error handling. Code that might raise an exception is placed within the `try` block, and if an exception occurs, the execution jumps to the corresponding `except` block, allowing you to gracefully handle the error without crashing the program."
         },
         {
           "question": "What is the purpose of 'finally' in try...except...finally?",
@@ -232,7 +254,8 @@
             "c": "To execute code only if no error occurs",
             "d": "To ignore all errors"
           },
-          "correct_answer": "b"
+          "correct_answer": "b",
+          "explanation": "The `finally` block in a `try...except...finally` statement contains code that is guaranteed to be executed, regardless of whether an exception occurred in the `try` block or was handled by an `except` block. It is typically used for cleanup operations, such as closing files or releasing resources."
         },
         {
           "question": "How do you create a custom exception?",
@@ -242,7 +265,8 @@
             "c": "Using the 'error' statement",
             "d": "Using the 'try' statement"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "To define a custom exception, you create a new class that inherits from Python's built-in `Exception` class (or a subclass of `Exception`). To then trigger this custom exception when a specific error condition is met, you use the `raise` statement followed by an instance of your custom exception class."
         },
         {
           "question": "What does 'as' do in an 'except' block?",
@@ -252,7 +276,8 @@
             "c": "Raises the exception again",
             "d": "Suppresses the exception"
           },
-          "correct_answer": "a"
+          "correct_answer": "a",
+          "explanation": "In an `except ExceptionType as variable_name:` block, the `as` keyword is used to assign the caught exception object to a specified variable (`variable_name`). This allows you to access properties and methods of the exception object within the `except` block, such as its error message or arguments."
         }
       ]
     }

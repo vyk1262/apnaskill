@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Configuration_and_Security",
+      "questions": [
         {
-            "topic": "Configuration_and_Security",
-            "questions": []
+          "question": "What is a `ConfigMap` in Kubernetes, and what is its primary purpose?",
+          "options": {
+            "A": "To store sensitive data like passwords.",
+            "B": "To store non-sensitive configuration data as key-value pairs or file content, decoupling configuration from application images.",
+            "C": "To define network policies.",
+            "D": "To manage persistent storage."
+          },
+          "correct_answer": "B",
+          "explanation": "A `ConfigMap` is an API object used to store non-confidential data in key-value pairs. It allows you to decouple configuration artifacts from image content to keep containerized applications portable."
+        },
+        {
+          "question": "How can data from a `ConfigMap` be consumed by a Pod?",
+          "options": {
+            "A": "Only by manually copying the data into the Pod.",
+            "B": "As environment variables, command-line arguments, or as files mounted into a volume.",
+            "C": "Only directly from the Kubernetes API server.",
+            "D": "Only by the Control Plane components."
+          },
+          "correct_answer": "B",
+          "explanation": "ConfigMaps can be consumed by Pods in several ways: populating environment variables, setting command-line arguments, or mounting them as files inside the container's filesystem."
+        },
+        {
+          "question": "What is a `Secret` in Kubernetes, and what is its primary purpose?",
+          "options": {
+            "A": "To store non-sensitive configuration data.",
+            "B": "To store sensitive data, such as passwords, OAuth tokens, and SSH keys, securely.",
+            "C": "To define application routing rules.",
+            "D": "To manage user accounts for the cluster."
+          },
+          "correct_answer": "B",
+          "explanation": "A `Secret` is an object that stores sensitive data, like passwords, OAuth tokens, and ssh keys. It is designed to minimize the risk of accidental exposure compared to storing data in plain text in Pod definitions or ConfigMaps."
+        },
+        {
+          "question": "How is data typically stored within a `Secret` object?",
+          "options": {
+            "A": "As plain text strings.",
+            "B": "Base64 encoded strings (which is not encryption, but encoding).",
+            "C": "AES-256 encrypted by default at rest.",
+            "D": "As direct file paths to encrypted files."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, Secret values are stored as Base64 encoded strings. It's crucial to understand that Base64 encoding is *not* encryption; it's merely encoding. For true encryption at rest, additional measures like etcd encryption or external KMS integration are required."
+        },
+        {
+          "question": "What is `RBAC` (Role-Based Access Control) in Kubernetes, and why is it essential?",
+          "options": {
+            "A": "A system for managing network routing.",
+            "B": "A mechanism for regulating access to Kubernetes resources based on the roles of individual users and service accounts, enforcing the principle of least privilege.",
+            "C": "A method for backing up cluster data.",
+            "D": "A tool for monitoring cluster performance."
+          },
+          "correct_answer": "B",
+          "explanation": "RBAC is a security mechanism that allows administrators to define who can access what resources within the Kubernetes cluster. It maps users or service accounts to roles, which define permissible actions (verbs) on specific resource types (nouns) within given namespaces, enforcing granular access control."
+        },
+        {
+          "question": "What is the difference between a `Role` and a `ClusterRole` in RBAC?",
+          "options": {
+            "A": "`Role` is for users, `ClusterRole` is for applications.",
+            "B": "`Role` grants permissions within a specific Namespace, while `ClusterRole` grants permissions across the entire cluster.",
+            "C": "`Role` is for read-only access, `ClusterRole` for write access.",
+            "D": "`Role` applies to Pods, `ClusterRole` applies to Nodes."
+          },
+          "correct_answer": "B",
+          "explanation": "A `Role` defines permissions for resources *within a specific namespace*. A `ClusterRole` defines permissions for resources that are cluster-scoped (e.g., Nodes, PersistentVolumes) or for namespaced resources across *all* namespaces."
+        },
+        {
+          "question": "What is a `ServiceAccount` in Kubernetes, and when is it used?",
+          "options": {
+            "A": "A user account for cluster administrators.",
+            "B": "An identity for processes that run in Pods, providing a way for applications to authenticate to the Kubernetes API.",
+            "C": "A type of external database account.",
+            "D": "A billing account for cloud resources."
+          },
+          "correct_answer": "B",
+          "explanation": "A `ServiceAccount` provides an identity for processes that run in Pods. When a Pod is created, if no service account is specified, it uses the `default` service account in its namespace. The `ServiceAccount` is used by the application inside the Pod to make API calls to the Kubernetes API server."
+        },
+        {
+          "question": "How do you associate a `ServiceAccount` with a Pod?",
+          "options": {
+            "A": "It's automatically associated by default.",
+            "B": "By specifying the `serviceAccountName` field in the Pod's `spec`.",
+            "C": "By mounting a `ConfigMap`.",
+            "D": "Through a NetworkPolicy."
+          },
+          "correct_answer": "B",
+          "explanation": "You can explicitly assign a `ServiceAccount` to a Pod by including the `serviceAccountName` field in the Pod's `spec`. If not specified, the Pod uses the `default` `ServiceAccount` in its namespace."
+        },
+        {
+          "question": "What is an `Admission Controller` in Kubernetes security, and how does it function?",
+          "options": {
+            "A": "It's a network firewall for Pods.",
+            "B": "It intercepts requests to the Kubernetes API server after authentication and authorization but before persistence, allowing for validation or modification of objects.",
+            "C": "It manages user logins to the cluster.",
+            "D": "It encrypts all data stored in etcd."
+          },
+          "correct_answer": "B",
+          "explanation": "Admission Controllers are plugins that enforce policies on requests to the Kubernetes API server. They can mutate (modify) requests, validate requests, or reject them entirely if they violate defined policies. This is a powerful mechanism for enforcing security, governance, and resource management."
+        },
+        {
+          "question": "What is `Pod Security Admission` (PSA) in Kubernetes?",
+          "options": {
+            "A": "A tool to scan container images for vulnerabilities.",
+            "B": "A built-in admission controller that enforces Pod Security Standards (PSS) by allowing or disallowing Pod creation based on predefined security profiles (Privileged, Baseline, Restricted).",
+            "C": "A method to encrypt Pod network traffic.",
+            "D": "A system for managing secrets."
+          },
+          "correct_answer": "B",
+          "explanation": "Pod Security Admission is a recent feature (replacing Pod Security Policies, PSPs) that enforces Pod Security Standards. It defines three security levels (Privileged, Baseline, Restricted) and allows cluster administrators to apply these standards at the namespace level, governing the capabilities and privileges of Pods allowed in that namespace."
+        },
+        {
+          "question": "What is the principle of 'least privilege' in the context of Kubernetes security?",
+          "options": {
+            "A": "Giving all users full administrative access.",
+            "B": "Granting only the necessary permissions and capabilities to users, service accounts, and applications to perform their intended functions, and nothing more.",
+            "C": "Limiting the number of Pods in a cluster.",
+            "D": "Using the smallest possible container images."
+          },
+          "correct_answer": "B",
+          "explanation": "The principle of least privilege is a fundamental security concept: entities (users, processes, systems) should only be granted the minimum set of permissions required to perform their legitimate functions. In Kubernetes, this applies to RBAC, Pod security contexts, and network policies."
+        },
+        {
+          "question": "What is a `NetworkPolicy` used for in Kubernetes security?",
+          "options": {
+            "A": "To configure IP addresses for Pods.",
+            "B": "To define rules for network traffic flow between Pods and other network endpoints, allowing or denying connections based on labels, namespaces, and IP blocks.",
+            "C": "To create new network interfaces for Nodes.",
+            "D": "To monitor network performance only."
+          },
+          "correct_answer": "B",
+          "explanation": "Network Policies enable granular control over network communication. They allow you to define ingress (incoming) and egress (outgoing) rules for Pods, specifying which Pods can communicate with which other Pods or external services, enhancing segmentation and security within the cluster."
+        },
+        {
+          "question": "How can you specify security settings for individual containers or Pods, such as running as a non-root user or dropping capabilities?",
+          "options": {
+            "A": "Only via command-line arguments to `kubectl run`.",
+            "B": "Using the `securityContext` field in the Pod or container definition.",
+            "C": "Through a dedicated network policy.",
+            "D": "By modifying the Kubelet configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "The `securityContext` field within a Pod or container definition allows you to specify privileged settings, user/group IDs to run as, Linux capabilities to add/drop, SELinux options, and seccomp profiles, providing fine-grained control over container runtime security."
+        },
+        {
+          "question": "What is the purpose of `imagePullSecrets` in a Pod definition?",
+          "options": {
+            "A": "To specify the Docker image name.",
+            "B": "To provide credentials for pulling private container images from a registry.",
+            "C": "To encrypt the container image before pulling.",
+            "D": "To verify the integrity of the pulled image."
+          },
+          "correct_answer": "B",
+          "explanation": "`imagePullSecrets` are references to `Secret` objects that contain credentials (e.g., username/password, auth tokens) required to pull images from private container registries (like Docker Hub private repos, ECR, GCR)."
+        },
+        {
+          "question": "What is the purpose of the `readOnlyRootFilesystem` setting in a `securityContext`?",
+          "options": {
+            "A": "To make the container's root filesystem writable.",
+            "B": "To force the container's root filesystem to be read-only, preventing applications from writing to system directories and enhancing security.",
+            "C": "To mount an external volume as read-only.",
+            "D": "To ensure log files are not written."
+          },
+          "correct_answer": "B",
+          "explanation": "Setting `readOnlyRootFilesystem: true` within a container's `securityContext` prevents the application from writing to any location on the root filesystem. This improves security by limiting the impact of potential vulnerabilities."
+        },
+        {
+          "question": "What is the primary benefit of using `ConfigMaps` and `Secrets` over baking configuration directly into container images?",
+          "options": {
+            "A": "Makes images larger.",
+            "B": "Enhances portability, security (for secrets), and simplifies updates as you can change config/secrets without rebuilding and redeploying images.",
+            "C": "Reduces network traffic.",
+            "D": "Speeds up Pod startup time."
+          },
+          "correct_answer": "B",
+          "explanation": "Decoupling configuration via ConfigMaps and Secrets makes container images more generic and reusable. It improves security by not embedding sensitive data in images and allows for configuration changes without requiring new image builds and full application redeployments, simplifying CI/CD."
+        },
+        {
+          "question": "What is `PodDisruptionBudget` (PDB) primarily used for in cluster operations?",
+          "options": {
+            "A": "To limit the total number of Pods in a cluster.",
+            "B": "To specify the minimum number or percentage of Pods of a given application that must be running during voluntary disruptions (e.g., node drain, cluster upgrade), ensuring application availability.",
+            "C": "To allocate CPU and memory resources to Pods.",
+            "D": "To monitor Pod resource usage."
+          },
+          "correct_answer": "B",
+          "explanation": "A PDB ensures that Kubernetes will not voluntarily evict too many Pods from an application at once, which could lead to downtime. It sets a minimum threshold of available Pods that must be maintained during operations like node drains or cluster upgrades."
+        },
+        {
+          "question": "What is the purpose of `imagePullPolicy: Always` in a Pod definition?",
+          "options": {
+            "A": "To pull the image only if it's not present locally.",
+            "B": "To always attempt to pull the image from the registry before starting the container, even if a local copy exists.",
+            "C": "To never pull the image, assuming it's always local.",
+            "D": "To pull the image only once after the Pod is created."
+          },
+          "correct_answer": "B",
+          "explanation": "`imagePullPolicy: Always` ensures that the latest version of the image is always used, even if a cached version exists on the node. This is useful during development or if you're frequently updating an image without changing its tag (e.g., `latest`). For production, it's generally better to use immutable tags."
+        },
+        {
+          "question": "What is a `securityContext` at the Pod level versus at the container level?",
+          "options": {
+            "A": "They are identical.",
+            "B": "Pod-level `securityContext` applies to all containers in the Pod and any Init Containers, while container-level `securityContext` applies only to that specific container.",
+            "C": "Pod-level is for networking, container-level is for storage.",
+            "D": "Pod-level is for Linux, container-level is for Windows."
+          },
+          "correct_answer": "B",
+          "explanation": "A `securityContext` can be defined at both the Pod and container level. Settings at the Pod level apply to all containers (including Init Containers) within that Pod. Container-level settings override Pod-level settings for that specific container if there's a conflict."
+        },
+        {
+          "question": "True or False: Deleting a `ConfigMap` or `Secret` will automatically cause Pods that consume them to crash or restart.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. If a `ConfigMap` or `Secret` that is mounted as a volume is deleted, the files mounted in the Pod will become empty, which could lead to application errors, but the Pod itself may not immediately crash or restart. If they are consumed as environment variables, the Pod needs to be recreated for the change to take effect. It's important to manage the lifecycle of consuming Pods when updating or deleting ConfigMaps/Secrets."
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -11,7 +11,8 @@
             "C": "To create static models based on fixed rules.",
             "D": "To visualize large datasets."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Machine learning aims to build systems that can learn from data, identify patterns, and make decisions or predictions with minimal human intervention. Instead of being explicitly told how to perform a task, the machine 'learns' the rules or relationships from the data itself."
         },
         {
           "question": "Which of the following is a type of supervised learning?",
@@ -21,7 +22,8 @@
             "C": "Regression",
             "D": "Reinforcement Learning"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Supervised learning involves training a model on a dataset that includes 'labeled' examples, meaning each input has a corresponding correct output. Regression is a supervised learning task where the goal is to predict a continuous numerical value (e.g., house prices, temperature)."
         },
         {
           "question": "In supervised learning, what is the role of labeled data?",
@@ -31,7 +33,8 @@
             "C": "It provides the correct output targets for the input features, allowing the model to learn the mapping between them.",
             "D": "It is used for unsupervised learning tasks."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Labeled data is the cornerstone of supervised learning. It provides the 'ground truth' or correct answers that the model uses to learn the relationship between input features and desired outputs. The model tries to minimize the error between its predictions and these known correct outputs."
         },
         {
           "question": "Which of the following is a common algorithm for classification tasks?",
@@ -41,7 +44,8 @@
             "C": "Support Vector Machines (SVM)",
             "D": "Principal Component Analysis (PCA)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Support Vector Machines (SVMs) are powerful supervised learning algorithms used for classification. They work by finding an optimal hyperplane that best separates data points into different classes, maximizing the margin between the classes."
         },
         {
           "question": "Which of the following is a common algorithm for regression tasks?",
@@ -51,7 +55,8 @@
             "C": "Apriori Algorithm",
             "D": "Linear Regression"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Linear Regression is a fundamental supervised learning algorithm used for predicting continuous output values. It models the relationship between a dependent variable and one or more independent variables by fitting a linear equation to the observed data."
         },
         {
           "question": "What is unsupervised learning?",
@@ -61,7 +66,8 @@
             "C": "Learning through trial and error with a reward system.",
             "D": "Learning to classify data into predefined categories."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Unsupervised learning deals with unlabeled data, meaning there are no predefined output targets. The goal is to discover hidden patterns, structures, or relationships within the data itself, such as grouping similar data points (clustering) or reducing dimensionality."
         },
         {
           "question": "Which of the following is a common unsupervised learning algorithm?",
@@ -71,7 +77,8 @@
             "C": "K-Nearest Neighbors (KNN)",
             "D": "K-Means Clustering"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "K-Means Clustering is a popular unsupervised learning algorithm used for grouping data points into 'k' clusters based on their similarity. It aims to partition 'n' observations into 'k' clusters in which each observation belongs to the cluster with the nearest mean (cluster center)."
         },
         {
           "question": "What is reinforcement learning?",
@@ -81,7 +88,8 @@
             "C": "Learning through interactions with an environment by receiving rewards or penalties for actions.",
             "D": "Learning to classify data based on similarity."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Reinforcement learning involves an agent learning to make decisions by interacting with an environment. The agent performs actions, receives feedback in the form of rewards or penalties, and learns a policy that maximizes the cumulative reward over time. This is often used in robotics, game playing, and autonomous systems."
         },
         {
           "question": "What is the purpose of splitting a dataset into training and testing sets?",
@@ -91,7 +99,8 @@
             "C": "To evaluate the performance of the trained model on unseen data.",
             "D": "To visualize the data more effectively."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Splitting data into training and testing sets is crucial to assess a model's generalization ability. The model learns from the training data, and its performance is then evaluated on the unseen testing data to ensure it can make accurate predictions on new, real-world examples, rather than just memorizing the training data."
         },
         {
           "question": "What is overfitting in machine learning?",
@@ -101,7 +110,8 @@
             "C": "When a model generalizes well to unseen data.",
             "D": "When the training data is insufficient."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Overfitting occurs when a model is too complex and learns not only the underlying patterns in the training data but also the random noise or specific characteristics of that particular dataset. This leads to excellent performance on the training data but poor performance when presented with new, unseen data."
         },
         {
           "question": "Which of the following techniques can help to reduce overfitting?",
@@ -111,7 +121,8 @@
             "C": "Regularization",
             "D": "Using more features."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Regularization techniques (like L1 or L2 regularization) add a penalty to the loss function based on the complexity of the model. This discourages the model from becoming too complex and fitting the noise in the training data, thereby improving its ability to generalize to unseen data."
         },
         {
           "question": "What is the purpose of a confusion matrix in classification?",
@@ -121,7 +132,8 @@
             "C": "To identify clusters in the data.",
             "D": "To reduce the dimensionality of the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A confusion matrix is a table used to describe the performance of a classification model. It breaks down predictions into four categories: True Positives (correctly predicted positive), True Negatives (correctly predicted negative), False Positives (incorrectly predicted positive), and False Negatives (incorrectly predicted negative). This detailed view allows for calculation of various metrics like precision, recall, and F1-score."
         },
         {
           "question": "What is precision in the context of classification?",
@@ -131,7 +143,8 @@
             "C": "The overall accuracy of the model.",
             "D": "The ability of the model to find all the positive instances."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Precision (also called Positive Predictive Value) answers the question: 'Of all the instances that the model predicted as positive, how many were actually positive?' It is calculated as True Positives / (True Positives + False Positives). High precision means fewer false positives."
         },
         {
           "question": "What is recall (sensitivity) in the context of classification?",
@@ -141,7 +154,8 @@
             "C": "The proportion of actual positives that were correctly identified.",
             "D": "The proportion of actual negatives that were correctly identified."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Recall (also called Sensitivity or True Positive Rate) answers the question: 'Of all the actual positive instances, how many did the model correctly identify?' It is calculated as True Positives / (True Positives + False Negatives). High recall means fewer false negatives."
         },
         {
           "question": "What is the F1-score?",
@@ -151,7 +165,8 @@
             "C": "The harmonic mean of precision and recall.",
             "D": "Another name for accuracy."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The F1-score is the harmonic mean of precision and recall. It is a good metric to use when you need to balance both precision and recall, especially in cases where there is an uneven class distribution."
         },
         {
           "question": "What is the role of features in a machine learning model?",
@@ -161,7 +176,8 @@
             "C": "They are the parameters that the model learns during training.",
             "D": "They are used only for evaluating the model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Features are the individual measurable properties or characteristics of the phenomenon being observed. In machine learning, these input variables are what the model uses to learn patterns and make predictions. Effective feature selection and engineering are critical for model performance."
         },
         {
           "question": "What is feature scaling and why is it often important?",
@@ -171,7 +187,8 @@
             "C": "It is the process of creating new features; it is important for improving model accuracy.",
             "D": "It is the process of encoding categorical features into numerical form; it is important for all machine learning algorithms."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Feature scaling (e.g., standardization or normalization) transforms numerical features to a common range or distribution. This is essential for many algorithms (like K-Nearest Neighbors, Support Vector Machines, neural networks, and gradient descent-based algorithms) because they are sensitive to the magnitude of feature values. Without scaling, features with larger ranges might disproportionately influence the model."
         },
         {
           "question": "What is the bias-variance tradeoff?",
@@ -181,7 +198,8 @@
             "C": "The tradeoff between underfitting (high bias) and overfitting (high variance).",
             "D": "The tradeoff between precision and recall."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The bias-variance tradeoff is a central concept in machine learning. High bias refers to a model that is too simple (underfitting) and cannot capture the underlying patterns in the data. High variance refers to a model that is too complex (overfitting) and learns the noise in the training data. The goal is to find a balance between these two to achieve optimal generalization performance."
         },
         {
           "question": "What is the purpose of hyperparameter tuning?",
@@ -191,7 +209,8 @@
             "C": "To select the optimal values for the parameters that are set before training the model.",
             "D": "To evaluate the performance of the model on the testing set."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Hyperparameters are configuration settings that are external to the model and whose values cannot be estimated from the data. They are set *before* the training process (e.g., learning rate in neural networks, number of clusters in K-Means). Hyperparameter tuning involves finding the best combination of these values to optimize model performance."
         },
         {
           "question": "Which of the following is a common technique for hyperparameter tuning?",
@@ -201,7 +220,8 @@
             "C": "Grid search",
             "D": "K-Nearest Neighbors (KNN)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Grid search is a widely used hyperparameter tuning technique. It exhaustively searches through a manually specified subset of the hyperparameter space. For each combination of hyperparameters, the model is trained and evaluated (often using cross-validation), and the combination that yields the best performance is selected."
         }
       ]
     }

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Markov_Decision_Process",
+      "questions": [
+        {
+          "question": "Which mathematical framework formally describes the problem of Reinforcement Learning?",
+          "options": {
+            "A": "Linear Regression Model (LRM).",
+            "B": "Support Vector Machine (SVM).",
+            "C": "Markov Decision Process (MDP).",
+            "D": "Hidden Markov Model (HMM)."
+          },
+          "correct_answer": "C",
+          "explanation": "The MDP framework provides the mathematical foundation for most RL problems, defining sequential decision-making in stochastic environments."
+        },
+        {
+          "question": "What is the core characteristic of the 'Markov Property' in an MDP?",
+          "options": {
+            "A": "The future depends only on the past, not the present.",
+            "B": "The future depends only on the present state, not on the sequence of events that preceded it.",
+            "C": "All states have equal probability.",
+            "D": "The agent always takes the same action in a given state."
+          },
+          "correct_answer": "B",
+          "explanation": "The Markov Property simplifies modeling by ensuring that the current state encapsulates all necessary information for predicting future states and rewards."
+        },
+        {
+          "question": "Which of the following is NOT one of the five key components of a standard Markov Decision Process (MDP)?",
+          "options": {
+            "A": "States (S)",
+            "B": "Actions (A)",
+            "C": "Transition Probabilities (P)",
+            "D": "Learning Rate ($alpha$)"
+          },
+          "correct_answer": "D",
+          "explanation": "The five components of an MDP are S (States), A (Actions), P (Transition Probabilities), R (Reward Function), and $gamma$ (Discount Factor). The learning rate is an algorithm-specific parameter, not a fundamental component of the MDP definition itself."
+        },
+        {
+          "question": "In an MDP, what does $P(s' | s, a)$ represent?",
+          "options": {
+            "A": "The probability of taking action `a` in state `s`.",
+            "B": "The immediate reward received for taking action `a` in state `s`.",
+            "C": "The probability of transitioning to state `s'` given that the agent took action `a` in state `s`.",
+            "D": "The optimal policy for state `s`."
+          },
+          "correct_answer": "C",
+          "explanation": "This notation describes the dynamics of the environment – how actions influence state transitions."
+        },
+        {
+          "question": "What does $R(s, a, s')$ (or often simplified as $R(s,a)$ or $R(s')$) define in an MDP?",
+          "options": {
+            "A": "The cumulative reward from state `s`.",
+            "B": "The expected long-term return.",
+            "C": "The reward function, specifying the immediate reward received after transitioning from state `s` to state `s'` by taking action `a`.",
+            "D": "The risk associated with action `a` in state `s`."
+          },
+          "correct_answer": "C",
+          "explanation": "The reward function dictates the numerical feedback the agent receives for its actions and state transitions."
+        },
+        {
+          "question": "The discount factor, denoted by $gamma$ (gamma), in an MDP typically takes values within which range?",
+          "options": {
+            "A": "$[0, infty)$",
+            "B": "$[-1, 1]$",
+            "C": "$[0, 1]$",
+            "D": "$(0, 1]$"
+          },
+          "correct_answer": "D",
+          "explanation": "A discount factor $gamma in (0, 1]$ is used to balance immediate vs. future rewards. A value of 1 means no discount (future rewards are as valuable as immediate ones), while a value close to 0 means future rewards are heavily discounted."
+        },
+        {
+          "question": "What is a 'policy' $pi$ in the context of an MDP?",
+          "options": {
+            "A": "A value indicating the 'goodness' of a state.",
+            "B": "A function or mapping from states to probabilities of selecting each possible action.",
+            "C": "The sequence of rewards received.",
+            "D": "The set of all possible actions."
+          },
+          "correct_answer": "B",
+          "explanation": "The policy defines the agent's behavior strategy: what actions it will take in different states."
+        },
+        {
+          "question": "The 'state-value function' for a policy $pi$, denoted $V^pi(s)$, estimates what?",
+          "options": {
+            "A": "The immediate reward received in state `s`.",
+            "B": "The expected long-term return starting from state `s` and following policy $pi$ thereafter.",
+            "C": "The probability of reaching state `s`.",
+            "D": "The number of actions available in state `s`."
+          },
+          "correct_answer": "B",
+          "explanation": "$V^pi(s)$ quantifies how good it is to be in state `s` if the agent follows policy $pi$."
+        },
+        {
+          "question": "The 'action-value function' for a policy $pi$, denoted $Q^pi(s, a)$, estimates what?",
+          "options": {
+            "A": "The probability of taking action `a` in state `s`.",
+            "B": "The immediate reward for taking action `a` in state `s`.",
+            "C": "The expected long-term return starting from state `s`, taking action `a`, and then following policy $pi$ thereafter.",
+            "D": "The cost of taking action `a` in state `s`."
+          },
+          "correct_answer": "C",
+          "explanation": "$Q^pi(s, a)$ quantifies how good it is to take action `a` in state `s` if the agent follows policy $pi$ afterward."
+        },
+        {
+          "question": "The 'Bellman Expectation Equation' describes the relationship between the value of a state and the values of its successor states under a given policy. What is its core principle?",
+          "options": {
+            "A": "The value of a state is equal to the immediate reward plus the discounted value of the next state.",
+            "B": "The value of a state is the expected sum of all future rewards.",
+            "C": "The value of a state can be expressed in terms of the value of its successor states and the immediate rewards based on the current policy.",
+            "D": "The value of a state is simply the maximum immediate reward."
+          },
+          "correct_answer": "C",
+          "explanation": "The Bellman Expectation Equation is a recursive definition that forms the basis for policy evaluation."
+        },
+        {
+          "question": "What is the primary goal of the 'Bellman Optimality Equation'?",
+          "options": {
+            "A": "To evaluate a given policy.",
+            "B": "To find the optimal policy and its corresponding optimal value functions ($V^*$ and $Q^*$).",
+            "C": "To calculate immediate rewards.",
+            "D": "To determine the transition probabilities."
+          },
+          "correct_answer": "B",
+          "explanation": "The Bellman Optimality Equation states that the optimal value of a state or state-action pair is the maximum achievable expected return from that state or pair."
+        },
+        {
+          "question": "An MDP is considered 'finite' if...",
+          "options": {
+            "A": "It has a finite number of episodes.",
+            "B": "It has a finite number of states, actions, and rewards.",
+            "C": "It has a finite discount factor.",
+            "D": "Its transitions are deterministic."
+          },
+          "correct_answer": "B",
+          "explanation": "A finite MDP simplifies analysis and allows for tabular solution methods."
+        },
+        {
+          "question": "If an agent has full access to the current state of the environment (e.g., knows all relevant variables without hidden information), the MDP is considered:",
+          "options": {
+            "A": "Partially Observable.",
+            "B": "Fully Observable.",
+            "C": "Stochastic.",
+            "D": "Deterministic."
+          },
+          "correct_answer": "B",
+          "explanation": "Most basic MDPs assume full observability. When the agent cannot fully observe the state, it becomes a Partially Observable Markov Decision Process (POMDP)."
+        },
+        {
+          "question": "Which of the following is true if an MDP has 'deterministic' transitions?",
+          "options": {
+            "A": "Taking an action in a state always leads to the same next state with probability 1.",
+            "B": "The rewards are always the same.",
+            "C": "The agent's policy is always random.",
+            "D": "The environment is always changing."
+          },
+          "correct_answer": "A",
+          "explanation": "Deterministic MDPs are a special case where $P(s' | s, a)$ is 1 for exactly one $s'$ and 0 for all others."
+        },
+        {
+          "question": "What is the purpose of 'Value Iteration' and 'Policy Iteration' in the context of MDPs?",
+          "options": {
+            "A": "To estimate the immediate rewards.",
+            "B": "To find the optimal policy and optimal value functions for a given MDP (when the model is known).",
+            "C": "To simulate agent-environment interactions.",
+            "D": "To define the MDP's components."
+          },
+          "correct_answer": "B",
+          "explanation": "Value Iteration and Policy Iteration are dynamic programming methods for solving MDPs when the environment's dynamics (transition probabilities and rewards) are fully known."
+        },
+        {
+          "question": "The concept of 'expected return' in an MDP refers to:",
+          "options": {
+            "A": "The average reward from the last action.",
+            "B": "The total sum of discounted future rewards, averaged over all possible stochastic outcomes.",
+            "C": "The most likely reward to be received.",
+            "D": "The highest possible reward in the environment."
+          },
+          "correct_answer": "B",
+          "explanation": "Because MDPs can be stochastic, we work with expected values when defining value functions and returns."
+        },
+        {
+          "question": "If the discount factor $gamma = 0$, what does this imply for the agent's reward seeking behavior?",
+          "options": {
+            "A": "The agent considers all future rewards equally important.",
+            "B": "The agent is only interested in the immediate reward and ignores all future rewards.",
+            "C": "The agent never receives any rewards.",
+            "D": "The agent will explore more."
+          },
+          "correct_answer": "B",
+          "explanation": "When $gamma = 0$, the sum of discounted future rewards collapses to just the immediate reward, making the agent myopic."
+        },
+        {
+          "question": "In an MDP, what is the significance of a 'terminal state'?",
+          "options": {
+            "A": "It's a state where the agent receives a large penalty.",
+            "B": "It's a state from which the episode ends, and no further actions or rewards are possible.",
+            "C": "It's a state with no available actions.",
+            "D": "It's the starting state of an episode."
+          },
+          "correct_answer": "B",
+          "explanation": "Terminal states mark the end of an episode in episodic tasks, and their value is typically zero as no further rewards can be obtained."
+        },
+        {
+          "question": "Which of these real-world scenarios is naturally modeled as an MDP?",
+          "options": {
+            "A": "Predicting house prices based on features.",
+            "B": "Classifying emails as spam or not spam.",
+            "C": "A robot learning to navigate a maze to reach a goal, where its actions affect its position and it receives rewards for reaching the goal.",
+            "D": "Clustering customer data into segments."
+          },
+          "correct_answer": "C",
+          "explanation": "The robot in a maze involves sequential decision-making, states (positions), actions (movements), transitions (changes in position), and rewards (for reaching the goal), fitting the MDP framework."
+        },
+        {
+          "question": "Why is the Markov Property important for solving MDPs?",
+          "options": {
+            "A": "It ensures that the environment is deterministic.",
+            "B": "It guarantees that an optimal policy exists.",
+            "C": "It significantly simplifies the problem by allowing us to define the state as sufficient for decision-making, without needing to remember the entire history.",
+            "D": "It means the agent always knows the reward in advance."
+          },
+          "correct_answer": "C",
+          "explanation": "The Markov Property allows us to define value functions and policies that depend only on the current state, greatly reducing complexity and making algorithms tractable."
+        }
+      ]
+    }
+  ]
+}

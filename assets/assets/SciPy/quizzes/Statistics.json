@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Statistics",
+      "questions": [
+        {
+          "question": "Which SciPy sub-package is specifically designed for statistical functions and probability distributions?",
+          "options": {
+            "A": "`scipy.optimize`",
+            "B": "`scipy.linalg`",
+            "C": "`scipy.signal`",
+            "D": "`scipy.stats`"
+          },
+          "correct_answer": "D",
+          "explanation": "`scipy.stats` is the core module for statistical computations in SciPy."
+        },
+        {
+          "question": "To calculate the mean of a NumPy array `data` using SciPy's statistics module, which function would you typically use?",
+          "options": {
+            "A": "`scipy.stats.average(data)`",
+            "B": "`scipy.stats.mean(data)`",
+            "C": "`numpy.mean(data)` (or `scipy.stats.tmean(data)` for trimmed mean)",
+            "D": "`scipy.stats.median(data)`"
+          },
+          "correct_answer": "C",
+          "explanation": "While `scipy.stats` has functions like `tmean` (trimmed mean), for a simple arithmetic mean, `numpy.mean` is commonly used and very efficient as `scipy.stats` often leverages NumPy's basic array operations."
+        },
+        {
+          "question": "Which `scipy.stats` function would you use to calculate the Pearson correlation coefficient between two 1-D arrays, `x` and `y`?",
+          "options": {
+            "A": "`scipy.stats.spearmanr(x, y)`",
+            "B": "`scipy.stats.kendalltau(x, y)`",
+            "C": "`scipy.stats.pearsonr(x, y)`",
+            "D": "`scipy.stats.corr(x, y)`"
+          },
+          "correct_answer": "C",
+          "explanation": "`pearsonr` computes the Pearson correlation coefficient and the 2-tailed p-value."
+        },
+        {
+          "question": "If you want to perform a Student's t-test to compare the means of two independent samples, which `scipy.stats` function would you use?",
+          "options": {
+            "A": "`scipy.stats.ttest_rel(sample1, sample2)`",
+            "B": "`scipy.stats.chisquare(data)`",
+            "C": "`scipy.stats.f_oneway(sample1, sample2)`",
+            "D": "`scipy.stats.ttest_ind(sample1, sample2)`"
+          },
+          "correct_answer": "D",
+          "explanation": "`ttest_ind` performs an independent samples t-test. `ttest_rel` is for paired samples."
+        },
+        {
+          "question": "What does the `cdf` method of a distribution object (e.g., `scipy.stats.norm.cdf(x)`) calculate?",
+          "options": {
+            "A": "The Probability Density Function (PDF) at x.",
+            "B": "The inverse of the Cumulative Distribution Function (PPF) at x.",
+            "C": "The Cumulative Distribution Function (CDF) at x, which is the probability that a random variable takes a value less than or equal to x.",
+            "D": "A random sample from the distribution."
+          },
+          "correct_answer": "C",
+          "explanation": "The CDF gives the probability of observing a value up to a certain point."
+        },
+        {
+          "question": "Which `scipy.stats` function is used to calculate the skewness of a dataset?",
+          "options": {
+            "A": "`scipy.stats.kurtosis(data)`",
+            "B": "`scipy.stats.mode(data)`",
+            "C": "`scipy.stats.skew(data)`",
+            "D": "`scipy.stats.gmean(data)`"
+          },
+          "correct_answer": "C",
+          "explanation": "`skew` measures the asymmetry of the probability distribution of a real-valued random variable about its mean."
+        },
+        {
+          "question": "What is the purpose of the `scipy.stats.linregress` function?",
+          "options": {
+            "A": "To perform logistic regression.",
+            "B": "To calculate principal components for dimensionality reduction.",
+            "C": "To perform a simple linear regression model (OLS) and return slope, intercept, r-value, p-value, and standard error.",
+            "D": "To fit a polynomial regression model."
+          },
+          "correct_answer": "C",
+          "explanation": "`linregress` is a convenient function for quick linear regression analysis between two variables."
+        },
+        {
+          "question": "Which of the following is NOT a method typically associated with a frozen distribution object (e.g., `norm` from `scipy.stats`)?",
+          "options": {
+            "A": "`pdf()` (Probability Density Function)",
+            "B": "`rvs()` (Random Variates Sample)",
+            "C": "`fit()` (Fit parameters to data)",
+            "D": "`plot()` (Plot the distribution)"
+          },
+          "correct_answer": "D",
+          "explanation": "While you can generate data or parameters from distributions in `scipy.stats`, plotting is typically handled by dedicated visualization libraries like Matplotlib or Seaborn."
+        },
+        {
+          "question": "You want to generate 100 random numbers from a standard normal distribution. Which `scipy.stats` function would you use?",
+          "options": {
+            "A": "`scipy.stats.uniform.rvs(size=100)`",
+            "B": "`scipy.stats.norm.rvs(size=100)`",
+            "C": "`scipy.stats.randint.rvs(size=100)`",
+            "D": "`scipy.stats.random.normal(size=100)`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `rvs` method of a distribution object generates random variates (samples) from that distribution."
+        },
+        {
+          "question": "What does the `ppf` method of a distribution object (e.g., `scipy.stats.norm.ppf(q)`) calculate?",
+          "options": {
+            "A": "The Probability Density Function (PDF) at q.",
+            "B": "The percentage of correct predictions.",
+            "C": "The Percent Point Function (PPF), also known as the quantile function or inverse CDF, which returns the value x for which the CDF is q.",
+            "D": "The mean of the distribution."
+          },
+          "correct_answer": "C",
+          "explanation": "The PPF is used to find the value at a certain percentile or cumulative probability."
+        },
+        {
+          "question": "Which `scipy.stats` test is used to check if a sample's distribution significantly differs from a theoretical distribution (e.g., normal or uniform), or if two samples come from the same distribution?",
+          "options": {
+            "A": "`scipy.stats.ttest_ind`",
+            "B": "`scipy.stats.chi2_contingency`",
+            "C": "`scipy.stats.ks_2samp` (Kolmogorov-Smirnov test for two samples)",
+            "D": "`scipy.stats.shapiro`"
+          },
+          "correct_answer": "C",
+          "explanation": "The Kolmogorov-Smirnov test is a non-parametric test used for goodness-of-fit and comparing two distributions."
+        },
+        {
+          "question": "What is the purpose of `scipy.stats.mode(data)`?",
+          "options": {
+            "A": "To calculate the most frequently occurring value(s) in an array.",
+            "B": "To determine the median of the data.",
+            "C": "To find the average of the data.",
+            "D": "To smooth the data."
+          },
+          "correct_answer": "A",
+          "explanation": "`mode` returns the mode (most frequent value) and its count. Note that it returns all modes if there are multiple."
+        },
+        {
+          "question": "Which function would you use to calculate the Spearman's rank correlation coefficient between two 1-D arrays?",
+          "options": {
+            "A": "`scipy.stats.pearsonr(x, y)`",
+            "B": "`scipy.stats.linregress(x, y)`",
+            "C": "`scipy.stats.spearmanr(x, y)`",
+            "D": "`scipy.stats.f_oneway(x, y)`"
+          },
+          "correct_answer": "C",
+          "explanation": "`spearmanr` assesses monotonic relationships between two variables."
+        },
+        {
+          "question": "What does ANOVA (Analysis of Variance), as implemented by `scipy.stats.f_oneway`, help to determine?",
+          "options": {
+            "A": "If two variables are correlated.",
+            "B": "If the means of two or more independent groups are significantly different.",
+            "C": "If a time series is stationary.",
+            "D": "If a model fits a regression line well."
+          },
+          "correct_answer": "B",
+          "explanation": "ANOVA is a powerful test for comparing means across multiple groups, often used after confirming assumptions like normality and homogeneity of variance."
+        },
+        {
+          "question": "To perform a Chi-squared test of independence on a contingency table (e.g., to see if two categorical variables are related), which `scipy.stats` function is appropriate?",
+          "options": {
+            "A": "`scipy.stats.ttest_ind`",
+            "B": "`scipy.stats.ks_2samp`",
+            "C": "`scipy.stats.chi2_contingency`",
+            "D": "`scipy.stats.normaltest`"
+          },
+          "correct_answer": "C",
+          "explanation": "`chi2_contingency` is specifically designed for testing independence between categorical variables based on observed frequencies in a contingency table."
+        },
+        {
+          "question": "What is the purpose of the `trim` parameter in functions like `scipy.stats.tmean(data, limits=(0.1, 0.9))`?",
+          "options": {
+            "A": "To normalize the data.",
+            "B": "To remove a specified percentage of observations from both ends of the sorted data before calculating the mean, to reduce the influence of outliers.",
+            "C": "To round the mean to a certain number of decimal places.",
+            "D": "To filter out missing values."
+          },
+          "correct_answer": "B",
+          "explanation": "Trimmed mean is a robust statistic that is less sensitive to extreme values than the simple arithmetic mean."
+        },
+        {
+          "question": "Which `scipy.stats` function would you use to test for normality of a sample (e.g., Shapiro-Wilk test or D'Agostino and Pearson's test)?",
+          "options": {
+            "A": "`scipy.stats.skew`",
+            "B": "`scipy.stats.kurtosis`",
+            "C": "`scipy.stats.normaltest` (or `scipy.stats.shapiro`)",
+            "D": "`scipy.stats.linregress`"
+          },
+          "correct_answer": "C",
+          "explanation": "Normality tests are crucial for determining if data meets the assumptions of many parametric statistical tests."
+        },
+        {
+          "question": "What does the `entropy` function in `scipy.stats` calculate?",
+          "options": {
+            "A": "The average value of a dataset.",
+            "B": "A measure of the uncertainty or randomness of a probability distribution.",
+            "C": "The sum of all values in a dataset.",
+            "D": "The number of unique values in a dataset."
+          },
+          "correct_answer": "B",
+          "explanation": "Entropy is a concept from information theory used to quantify the impurity or disorder of a set of data."
+        },
+        {
+          "question": "When working with hypothesis testing in `scipy.stats`, what does a small p-value (typically less than 0.05) generally indicate?",
+          "options": {
+            "A": "The null hypothesis is true.",
+            "B": "There is strong evidence against the null hypothesis, suggesting the observed effect is statistically significant.",
+            "C": "The alternative hypothesis is false.",
+            "D": "The sample size is too small."
+          },
+          "correct_answer": "B",
+          "explanation": "A small p-value suggests that the observed data would be very unlikely if the null hypothesis were true, leading to its rejection."
+        },
+        {
+          "question": "True or False: `scipy.stats` can be used to perform maximum likelihood estimation (MLE) for fitting distribution parameters to data.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. Many distribution objects in `scipy.stats` have a `fit` method that can estimate distribution parameters from data using MLE (e.g., `scipy.stats.norm.fit(data)`)."
+        }
+      ]
+    }
+  ]
+}

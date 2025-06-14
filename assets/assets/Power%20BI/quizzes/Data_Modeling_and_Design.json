@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Data_Modeling_and_Design",
+      "questions": [
+        {
+          "question": "What is data modeling in Power BI?",
+          "options": {
+            "A": "The process of creating a data model to represent the data structure and relationships.",
+            "B": "The process of deleting data.",
+            "C": "The process of visualizing data.",
+            "D": "The process of analyzing data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data modeling in Power BI involves creating a data model to represent the data structure and relationships, enabling efficient data analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI relationships?",
+          "options": {
+            "A": "To define the connections between tables in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI relationships define the connections between tables in a data model, enabling data integration and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI measures?",
+          "options": {
+            "A": "To perform calculations on data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI measures perform calculations on data in a data model, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI calculated columns?",
+          "options": {
+            "A": "To create new columns in a data model based on existing data.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI calculated columns create new columns in a data model based on existing data, providing additional insights and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI hierarchies?",
+          "options": {
+            "A": "To organize data into a hierarchical structure for analysis.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI hierarchies organize data into a hierarchical structure for analysis, providing a structured view of data."
+        },
+        {
+          "question": "What is the purpose of Power BI data types?",
+          "options": {
+            "A": "To define the type of data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data types define the type of data in a data model, ensuring data consistency and accuracy."
+        },
+        {
+          "question": "What is the purpose of Power BI data categories?",
+          "options": {
+            "A": "To categorize data in a data model for analysis.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data categories categorize data in a data model for analysis, providing a structured view of data."
+        },
+        {
+          "question": "What is the purpose of Power BI data labels?",
+          "options": {
+            "A": "To label data in a data model for analysis.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data labels label data in a data model for analysis, providing a structured view of data."
+        },
+        {
+          "question": "What is the purpose of Power BI data formats?",
+          "options": {
+            "A": "To format data in a data model for analysis.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data formats format data in a data model for analysis, ensuring data consistency and accuracy."
+        },
+        {
+          "question": "What is the purpose of Power BI data roles?",
+          "options": {
+            "A": "To define roles for data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data roles define roles for data in a data model, ensuring data security and access control."
+        },
+        {
+          "question": "What is the purpose of Power BI data security?",
+          "options": {
+            "A": "To secure data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data security secures data in a data model, ensuring data privacy and protection."
+        },
+        {
+          "question": "What is the purpose of Power BI data refresh?",
+          "options": {
+            "A": "To refresh data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data refresh refreshes data in a data model, ensuring data accuracy and timeliness."
+        },
+        {
+          "question": "What is the purpose of Power BI data validation?",
+          "options": {
+            "A": "To validate data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data validation validates data in a data model, ensuring data accuracy and consistency."
+        },
+        {
+          "question": "What is the purpose of Power BI data transformation?",
+          "options": {
+            "A": "To transform data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data transformation transforms data in a data model, enabling data integration and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI data aggregation?",
+          "options": {
+            "A": "To aggregate data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data aggregation aggregates data in a data model, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI data filtering?",
+          "options": {
+            "A": "To filter data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data filtering filters data in a data model, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI data sorting?",
+          "options": {
+            "A": "To sort data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data sorting sorts data in a data model, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI data grouping?",
+          "options": {
+            "A": "To group data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data grouping groups data in a data model, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI data merging?",
+          "options": {
+            "A": "To merge data in a data model.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI data merging merges data in a data model, providing insights and analysis."
+        }
+      ]
+    }
+  ]
+}

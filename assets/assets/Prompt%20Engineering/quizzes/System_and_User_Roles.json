@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "System_and_User_Roles",
+      "questions": [
         {
-            "topic": "System_and_User_Roles",
-            "questions": []
+          "question": "What is the primary purpose of defining a 'System Role' in a prompt?",
+          "options": {
+            "A": "To specify the user's name.",
+            "B": "To set the overarching behavior, persona, and guidelines for the AI model's entire interaction or session, providing consistent context for its responses.",
+            "C": "To define the output format.",
+            "D": "To list the required input data."
+          },
+          "correct_answer": "B",
+          "explanation": "The System Role acts as a foundational instruction set for the AI, establishing its identity (e.g., helpful assistant, code reviewer) and its default mode of operation. This ensures consistent responses across multiple turns."
+        },
+        {
+          "question": "In a multi-turn conversation, how does the 'System Role' typically persist?",
+          "options": {
+            "A": "It changes with every user prompt.",
+            "B": "It is set once at the beginning of the conversation or session and implicitly influences all subsequent responses.",
+            "C": "It is explicitly re-stated by the user in every turn.",
+            "D": "It only applies to the very first response."
+          },
+          "correct_answer": "B",
+          "explanation": "Unlike user messages which are specific to a turn, the System Role (or 'system message') is often a persistent instruction given to the AI behind the scenes, ensuring it maintains its defined persona and rules throughout the interaction."
+        },
+        {
+          "question": "What kind of instructions are typically included in a 'System Role' prompt?",
+          "options": {
+            "A": "Specific data for a single query.",
+            "B": "General guidelines like tone, safety constraints, knowledge limitations, and how to handle specific types of queries (e.g., 'Always be polite', 'Do not disclose personal information').",
+            "C": "Detailed examples for a particular task.",
+            "D": "Formatting requirements for an individual output."
+          },
+          "correct_answer": "B",
+          "explanation": "System roles are for broad behavioral parameters, acting as a 'constitution' for the AI's general conduct and personality, rather than for specific, transient tasks."
+        },
+        {
+          "question": "What is the 'User Role' in prompt engineering?",
+          "options": {
+            "A": "The role the AI plays.",
+            "B": "The perspective or intent of the human interacting with the AI, represented by their specific questions, commands, or data inputs.",
+            "C": "A pre-defined setting for the AI.",
+            "D": "A type of AI model."
+          },
+          "correct_answer": "B",
+          "explanation": "The User Role represents the input given by the human user. It contains the immediate request or information the AI needs to process, acting as the 'query' part of the interaction."
+        },
+        {
+          "question": "How do 'System Role' and 'User Role' interact?",
+          "options": {
+            "A": "They are completely independent.",
+            "B": "The System Role provides the overarching context and rules, while the User Role provides the immediate task or query that the AI processes within those established rules.",
+            "C": "The User Role always overrides the System Role completely.",
+            "D": "They are used interchangeably."
+          },
+          "correct_answer": "B",
+          "explanation": "The AI's response is a function of both: it interprets the user's request through the lens of its assigned system persona and guidelines."
+        },
+        {
+          "question": "What is the benefit of a well-defined 'System Role' for developers?",
+          "options": {
+            "A": "It requires more manual work.",
+            "B": "It allows developers to enforce consistent behavior, safety protocols, and brand voice across various user interactions without modifying individual prompts.",
+            "C": "It slows down AI responses.",
+            "D": "It makes the AI forget information."
+          },
+          "correct_answer": "B",
+          "explanation": "A strong system role is a powerful control mechanism, ensuring that the AI adheres to desired operational parameters and maintains a predictable interaction style."
+        },
+        {
+          "question": "Can a user prompt 'override' a system role instruction?",
+          "options": {
+            "A": "Never.",
+            "B": "Potentially, if the user's instruction is very strong and direct, though it's not guaranteed and often depends on the model's robustness and the severity of the conflict.",
+            "C": "Always, with no exceptions.",
+            "D": "Only if the system role is empty."
+          },
+          "correct_answer": "B",
+          "explanation": "While system roles are powerful, a sufficiently strong or conflicting user instruction might cause the AI to deviate. This is a known challenge often referred to as 'jailbreaking' or 'prompt injection'."
+        },
+        {
+          "question": "What is 'Role-playing' within a user prompt, and how does it relate to System/User roles?",
+          "options": {
+            "A": "It's the same as a System Role.",
+            "B": "It's when the *user* instructs the *AI* to adopt a temporary persona or role *within that specific prompt*, which can temporarily augment or modify the AI's default system role behavior.",
+            "C": "It's when the user acts as the AI.",
+            "D": "It's a debugging technique."
+          },
+          "correct_answer": "B",
+          "explanation": "Role-playing in a user prompt ('Act as a historian...') is a direct instruction within a single turn, whereas a System Role is a more persistent, underlying instruction. A user's role-play instruction can often temporarily guide the AI's persona for that particular response."
+        },
+        {
+          "question": "When might you use a 'System Role' to set a specific tone for the AI?",
+          "options": {
+            "A": "Only for single questions.",
+            "B": "If you want the AI to consistently respond with a formal, casual, empathetic, or humorous tone across all interactions.",
+            "C": "To change the AI's language.",
+            "D": "To increase the AI's response speed."
+          },
+          "correct_answer": "B",
+          "explanation": "Setting a tone in the System Role (e.g., 'You are a friendly and enthusiastic assistant.') ensures consistency in the AI's communication style, which is important for brand consistency or user experience."
+        },
+        {
+          "question": "What is an example of a 'safety constraint' typically placed in a System Role?",
+          "options": {
+            "A": "Limit response length to 10 words.",
+            "B": "Do not generate harmful, biased, or inappropriate content; refuse to answer questions about illegal activities.",
+            "C": "Always provide a summary.",
+            "D": "Only respond in code."
+          },
+          "correct_answer": "B",
+          "explanation": "System roles are crucial for embedding ethical guidelines and safety boundaries, preventing the AI from generating undesirable or dangerous outputs."
+        },
+        {
+          "question": "Can a 'System Role' define the AI's knowledge limitations?",
+          "options": {
+            "A": "No, AI models know everything.",
+            "B": "Yes, it can instruct the AI to state when it doesn't have sufficient information or to avoid speculating beyond its internal knowledge base.",
+            "C": "Only if the AI is very old.",
+            "D": "Only for creative tasks."
+          },
+          "correct_answer": "B",
+          "explanation": "Instructing the AI on its knowledge boundaries (e.g., 'If you don't know the answer, say so' or 'Do not use external knowledge') can prevent hallucinations and ensure responsible information delivery."
+        },
+        {
+          "question": "What is the 'Implicit User Role'?",
+          "options": {
+            "A": "The user explicitly stating their role.",
+            "B": "The AI inferring the user's intent or role based on the phrasing of their prompt, even if not explicitly stated.",
+            "C": "The AI's internal role.",
+            "D": "The system's default role."
+          },
+          "correct_answer": "B",
+          "explanation": "Sometimes, without explicitly saying 'I am a software engineer', the phrasing of a user's question might imply that role, and the AI might tailor its response accordingly (e.g., using technical jargon)."
+        },
+        {
+          "question": "When designing a prompt, why is it important to consider both the 'System Role' and the 'User Role'?",
+          "options": {
+            "A": "It's not important.",
+            "B": "To ensure that the AI's general behavior (System) aligns with the specific task being asked (User) and to avoid conflicts or misinterpretations.",
+            "C": "To make the prompt longer.",
+            "D": "To confuse the AI."
+          },
+          "correct_answer": "B",
+          "explanation": "Harmonizing these two roles ensures that the AI functions predictably within its set persona while effectively addressing the user's immediate needs."
+        },
+        {
+          "question": "What could be an example of a 'System Role' that enforces a specific output language?",
+          "options": {
+            "A": "'Always respond in English.'",
+            "B": "'Translate to French.'",
+            "C": "'Summarize this text.'",
+            "D": "'Tell me a joke.'"
+          },
+          "correct_answer": "A",
+          "explanation": "This is a common system-level instruction to ensure multilingual models stick to a primary language for consistency."
+        },
+        {
+          "question": "What is a 'dynamic' System Role?",
+          "options": {
+            "A": "A System Role that is hardcoded.",
+            "B": "A System Role that can be changed or adjusted based on the specific application context, user preferences, or session parameters, rather than being static.",
+            "C": "A System Role that applies to multiple users.",
+            "D": "A System Role that is very short."
+          },
+          "correct_answer": "B",
+          "explanation": "Some applications might programmatically adjust the system role based on the user's subscription level, the current feature being used, or other dynamic factors, to tailor the AI's behavior contextually."
+        },
+        {
+          "question": "True or False: The 'System Role' is always visible to the end-user.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Often, the System Role is a backend instruction or parameter passed via an API call and is not directly shown to the user, though its effects are evident in the AI's responses."
+        },
+        {
+          "question": "How can a 'System Role' help in preventing 'off-topic' discussions?",
+          "options": {
+            "A": "By ignoring user input.",
+            "B": "By instructing the AI to politely redirect conversations back to its area of expertise or intended purpose.",
+            "C": "By always changing the topic.",
+            "D": "By responding with irrelevant information."
+          },
+          "correct_answer": "B",
+          "explanation": "A system role can include directives like 'Stick to topics related to X' or 'If a question is outside my scope, politely state I cannot assist with that'."
+        },
+        {
+          "question": "What is the primary difference in granularity between System and User instructions?",
+          "options": {
+            "A": "No difference.",
+            "B": "System instructions are typically broad and persistent (macro-level), while user instructions are specific and per-turn (micro-level).",
+            "C": "User instructions are always more detailed.",
+            "D": "System instructions are always shorter."
+          },
+          "correct_answer": "B",
+          "explanation": "System roles set the overall framework, whereas user prompts contain the immediate, detailed task. This layered approach allows for both consistency and flexibility."
+        },
+        {
+          "question": "When designing a 'System Role', why is it important to test its interaction with various 'User Roles'?",
+          "options": {
+            "A": "To make the system more complex.",
+            "B": "To ensure the system behavior holds up across different user intents, phrasing styles, and potential attempts to bypass the role, revealing robustness or vulnerabilities.",
+            "C": "To increase the AI's processing time.",
+            "D": "To reduce the amount of data needed."
+          },
+          "correct_answer": "B",
+          "explanation": "Testing helps validate that the system role effectively guides the AI across a diverse range of user inputs and doesn't break down under unexpected or tricky prompts."
+        },
+        {
+          "question": "What is a 'meta-prompt' in the context of System and User roles?",
+          "options": {
+            "A": "A prompt that is generated by the AI.",
+            "B": "A higher-level instruction or prompt that defines the System Role itself, guiding how the AI should interpret and apply subsequent user prompts.",
+            "C": "A prompt for self-reflection.",
+            "D": "A prompt used for debugging hardware."
+          },
+          "correct_answer": "B",
+          "explanation": "A meta-prompt is essentially the prompt that sets the system role. It's the instruction that tells the AI 'You are X and should behave like Y'."
         }
-    ]
+      ]
+    }
+  ]
 }

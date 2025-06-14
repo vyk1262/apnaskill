@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Clustering",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Clustering in unsupervised learning?",
+          "options": {
+            "A": "To group similar data points together.",
+            "B": "To classify data into categories.",
+            "C": "To encrypt data for security.",
+            "D": "To visualize data trends."
+          },
+          "correct_answer": "A",
+          "explanation": "Clustering is used to group similar data points together, identifying patterns and structures in data without labeled outcomes."
+        },
+        {
+          "question": "Which of the following is a common algorithm used in Clustering?",
+          "options": {
+            "A": "K-Means",
+            "B": "Decision Tree",
+            "C": "Linear Regression",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means is a common algorithm used in Clustering, partitioning data into K clusters based on similarity."
+        },
+        {
+          "question": "What is the role of the centroid in K-Means Clustering?",
+          "options": {
+            "A": "To represent the center of a cluster.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The centroid represents the center of a cluster in K-Means Clustering, used to assign data points to clusters."
+        },
+        {
+          "question": "Which method is used to determine the optimal number of clusters in K-Means?",
+          "options": {
+            "A": "Elbow Method",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The Elbow Method is used to determine the optimal number of clusters in K-Means, analyzing the variance explained by different cluster counts."
+        },
+        {
+          "question": "What is the significance of feature scaling in Clustering?",
+          "options": {
+            "A": "To ensure distance metrics are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures distance metrics are meaningful, providing accurate proximity measurements in Clustering."
+        },
+        {
+          "question": "Which of the following is a disadvantage of K-Means Clustering?",
+          "options": {
+            "A": "Sensitive to initial centroid positions.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is sensitive to initial centroid positions, affecting the final cluster assignments and results."
+        },
+        {
+          "question": "What is the purpose of using hierarchical clustering?",
+          "options": {
+            "A": "To create a hierarchy of clusters.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Hierarchical clustering creates a hierarchy of clusters, providing a tree-like structure of nested clusters."
+        },
+        {
+          "question": "Which of the following is a common use case for Clustering?",
+          "options": {
+            "A": "Customer segmentation.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Clustering is commonly used for customer segmentation, identifying groups of customers with similar characteristics."
+        },
+        {
+          "question": "What is the role of distance metrics in Clustering?",
+          "options": {
+            "A": "To measure proximity between data points.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Distance metrics measure proximity between data points, influencing cluster assignments in Clustering."
+        },
+        {
+          "question": "Which of the following is a benefit of Clustering?",
+          "options": {
+            "A": "Can identify hidden patterns in data.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "Clustering can identify hidden patterns in data, providing insights into structures and relationships."
+        },
+        {
+          "question": "What is the significance of the dendrogram in hierarchical clustering?",
+          "options": {
+            "A": "It visualizes the hierarchy of clusters.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The dendrogram visualizes the hierarchy of clusters in hierarchical clustering, showing the nested structure of clusters."
+        },
+        {
+          "question": "Which of the following is a common algorithm used in Clustering?",
+          "options": {
+            "A": "DBSCAN",
+            "B": "Decision Tree",
+            "C": "Linear Regression",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "DBSCAN is a common algorithm used in Clustering, identifying clusters based on density and connectivity."
+        },
+        {
+          "question": "What is the role of the centroid in K-Means Clustering?",
+          "options": {
+            "A": "To represent the center of a cluster.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The centroid represents the center of a cluster in K-Means Clustering, used to assign data points to clusters."
+        },
+        {
+          "question": "Which method is used to determine the optimal number of clusters in K-Means?",
+          "options": {
+            "A": "Silhouette Method",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The Silhouette Method is used to determine the optimal number of clusters in K-Means, analyzing the separation between clusters."
+        },
+        {
+          "question": "What is the significance of feature scaling in Clustering?",
+          "options": {
+            "A": "To ensure distance metrics are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures distance metrics are meaningful, providing accurate proximity measurements in Clustering."
+        },
+        {
+          "question": "Which of the following is a disadvantage of K-Means Clustering?",
+          "options": {
+            "A": "Sensitive to initial centroid positions.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "K-Means Clustering is sensitive to initial centroid positions, affecting the final cluster assignments and results."
+        },
+        {
+          "question": "What is the purpose of using hierarchical clustering?",
+          "options": {
+            "A": "To create a hierarchy of clusters.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Hierarchical clustering creates a hierarchy of clusters, providing a tree-like structure of nested clusters."
+        },
+        {
+          "question": "Which of the following is a common use case for Clustering?",
+          "options": {
+            "A": "Customer segmentation.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Clustering is commonly used for customer segmentation, identifying groups of customers with similar characteristics."
+        },
+        {
+          "question": "What is the role of distance metrics in Clustering?",
+          "options": {
+            "A": "To measure proximity between data points.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Distance metrics measure proximity between data points, influencing cluster assignments in Clustering."
+        }
+      ]
+    }
+  ]
+}

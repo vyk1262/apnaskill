@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "css_advanced",
+      "questions": [
+        {
+          "question": "What CSS property is used to create rounded corners?",
+          "options": {
+            "A": "border-radius",
+            "B": "corner-radius",
+            "C": "border-style",
+            "D": "border-corner"
+          },
+          "correct_answer": "A",
+          "explanation": "The `border-radius` property is a CSS3 feature that allows you to round the corners of an element's outer border edge."
+        },
+        {
+          "question": "Which CSS property is used to apply an image as a border?",
+          "options": {
+            "A": "border-image",
+            "B": "background-image",
+            "C": "image-border",
+            "D": "border-style"
+          },
+          "correct_answer": "A",
+          "explanation": "The `border-image` property in CSS allows you to use an image as the border of an element, providing more flexible and creative border styles than solid colors."
+        },
+        {
+          "question": "Which property is used to set the background color of an element?",
+          "options": {
+            "A": "bg-color",
+            "B": "background-color",
+            "C": "color",
+            "D": "background"
+          },
+          "correct_answer": "B",
+          "explanation": "The `background-color` property specifically sets the solid color of an element's background. While `background` is a shorthand for multiple background properties, `background-color` is precise for just the color."
+        },
+        {
+          "question": "What does the 'rgba' function stand for in CSS?",
+          "options": {
+            "A": "Red, Green, Blue, Alpha",
+            "B": "Red, Green, Blue, Adjustment",
+            "C": "Red, Gray, Blue, Alpha",
+            "D": "Red, Green, Blue, Add"
+          },
+          "correct_answer": "A",
+          "explanation": "The `rgba()` color function allows you to specify a color using Red, Green, Blue values, and an Alpha channel for transparency. The Alpha value ranges from 0 (fully transparent) to 1 (fully opaque)."
+        },
+        {
+          "question": "Which CSS function creates a gradient?",
+          "options": {
+            "A": "color-gradient()",
+            "B": "linear-gradient()",
+            "C": "gradient()",
+            "D": "bg-gradient()"
+          },
+          "correct_answer": "B",
+          "explanation": "The `linear-gradient()` function (and `radial-gradient()`) are used to create smooth transitions between two or more specified colors along a straight line or from a central point, respectively."
+        },
+        {
+          "question": "What is the purpose of the 'box-shadow' property?",
+          "options": {
+            "A": "To create a shadow effect around an element",
+            "B": "To control text opacity",
+            "C": "To set the border color",
+            "D": "To add a background image"
+          },
+          "correct_answer": "A",
+          "explanation": "The `box-shadow` property applies one or more shadow effects to an element's box, allowing for customizability in terms of horizontal and vertical offset, blur radius, spread radius, and color."
+        },
+        {
+          "question": "Which CSS property is used to apply a text shadow?",
+          "options": {
+            "A": "text-shadow",
+            "B": "shadow-text",
+            "C": "font-shadow",
+            "D": "text-effect"
+          },
+          "correct_answer": "A",
+          "explanation": "The `text-shadow` property applies one or more shadow effects to text. Similar to `box-shadow`, it allows defining offset, blur radius, and color for the shadow."
+        },
+        {
+          "question": "What are web fonts used for in CSS?",
+          "options": {
+            "A": "To define font sizes",
+            "B": "To apply custom fonts that are not installed on the user's system",
+            "C": "To create bold text",
+            "D": "To manage text color"
+          },
+          "correct_answer": "B",
+          "explanation": "Web fonts (or `@font-face` rule) allow web designers to use custom fonts on their websites that are not necessarily installed on a user's computer. The browser downloads the font when needed, ensuring consistent typography across different systems."
+        },
+        {
+          "question": "Which property is used to apply 2D transformations in CSS?",
+          "options": {
+            "A": "transform-2D",
+            "B": "transform",
+            "C": "2D-transform",
+            "D": "rotate"
+          },
+          "correct_answer": "B",
+          "explanation": "The `transform` property is used for both 2D and 3D transformations. For 2D, functions like `translate()`, `rotate()`, `scale()`, and `skew()` are used within this property."
+        },
+        {
+          "question": "What does the 'perspective' property affect in 3D transforms?",
+          "options": {
+            "A": "The height of an element",
+            "B": "The distance between the viewer and the object",
+            "C": "The rotation speed",
+            "D": "The color depth"
+          },
+          "correct_answer": "B",
+          "explanation": "The `perspective` property defines how deep the 3D scene is, essentially setting the **distance from the viewer to the z=0 plane**. A smaller value creates a more intense 3D effect, making elements appear closer or further away."
+        },
+        {
+          "question": "Which CSS property allows you to animate changes to CSS properties?",
+          "options": {
+            "A": "animation",
+            "B": "transition",
+            "C": "transform",
+            "D": "effect"
+          },
+          "correct_answer": "B",
+          "explanation": "The `transition` property provides a way to control the animation speed when a CSS property changes from one value to another. It creates a smooth animation effect rather than an abrupt change."
+        },
+        {
+          "question": "Which property is used to define a CSS animation's duration?",
+          "options": {
+            "A": "animation-time",
+            "B": "animation-duration",
+            "C": "transition-time",
+            "D": "animation-speed"
+          },
+          "correct_answer": "B",
+          "explanation": "The `animation-duration` property specifies how long an animation takes to complete one cycle. It's a key part of defining CSS animations using `@keyframes`."
+        },
+        {
+          "question": "What is a CSS tooltip?",
+          "options": {
+            "A": "A small popup that appears when a user hovers over an element",
+            "B": "A property to control z-index",
+            "C": "A method to change font size",
+            "D": "A way to animate elements"
+          },
+          "correct_answer": "A",
+          "explanation": "A CSS tooltip is a small informational box or label that typically appears when a user hovers their mouse pointer over an element, providing additional context or details without navigating away."
+        },
+        {
+          "question": "What is the purpose of the 'object-fit' property in CSS?",
+          "options": {
+            "A": "To specify how an element should be resized to fit its container",
+            "B": "To change the alignment of text",
+            "C": "To control the size of fonts",
+            "D": "To set the color of an object"
+          },
+          "correct_answer": "A",
+          "explanation": "The `object-fit` property is used to specify how the content of a replaced element (like `<img>` or `<video>`) should be resized to fit its container, such as `fill`, `contain`, `cover`, `none`, or `scale-down`."
+        },
+        {
+          "question": "How do you create a reflection effect for an image in CSS?",
+          "options": {
+            "A": "Using the 'reflection' property",
+            "B": "Using 'image-reflection' property",
+            "C": "Using 'filter: reflect' property",
+            "D": "CSS does not support reflections"
+          },
+          "correct_answer": "C",
+          "explanation": "While CSS doesn't have a direct `reflection` property, reflections can be achieved using the `-webkit-box-reflect` property (for WebKit browsers) or by combining CSS gradients and transforms to simulate the effect. The `filter` property, specifically using `filter: reflect()`, is not a standard or direct way to create reflections across browsers."
+        },
+        {
+          "question": "What does the 'masking' property in CSS do?",
+          "options": {
+            "A": "Hides an element completely",
+            "B": "Creates a mask to show or hide parts of an element",
+            "C": "Changes the color of an element",
+            "D": "Adds a border to an element"
+          },
+          "correct_answer": "B",
+          "explanation": "CSS masking allows you to selectively show or hide parts of an element using an image or a gradient as a mask. This is similar to clipping, but offers more flexibility in terms of transparency and complex shapes."
+        },
+        {
+          "question": "Which CSS property is used to set custom variables?",
+          "options": {
+            "A": "--variable-name",
+            "B": "var()",
+            "C": "property",
+            "D": "custom-property"
+          },
+          "correct_answer": "A",
+          "explanation": "CSS Custom Properties (often called CSS variables) are defined with a double-hyphen prefix, like `--variable-name: value;`. They allow you to define reusable values that can be used throughout your stylesheets, improving maintainability and consistency. The `var()` function is used to *access* these variables."
+        },
+        {
+          "question": "What does the '@property' rule in CSS do?",
+          "options": {
+            "A": "Defines custom properties",
+            "B": "Specifies the order of styles",
+            "C": "Creates animations",
+            "D": "Sets the margin and padding"
+          },
+          "correct_answer": "A",
+          "explanation": "The `@property` CSS at-rule allows you to explicitly define custom properties and their syntax, initial value, and inheritance behavior. This makes custom properties more robust and enables them to be animated or transitioned smoothly."
+        },
+        {
+          "question": "What is the purpose of media queries in CSS?",
+          "options": {
+            "A": "To apply styles based on screen size or device characteristics",
+            "B": "To control animations",
+            "C": "To manage font sizes",
+            "D": "To create gradients"
+          },
+          "correct_answer": "A",
+          "explanation": "Media queries are a fundamental part of Responsive Web Design. They allow you to apply different CSS styles based on the characteristics of the device displaying the content, such as screen width, height, resolution, orientation, and more, ensuring a good user experience across various devices."
+        },
+        {
+          "question": "What does the 'flexbox' layout model help with?",
+          "options": {
+            "A": "Creating multi-column layouts",
+            "B": "Aligning and distributing space among items in a container",
+            "C": "Animating elements",
+            "D": "Creating background images"
+          },
+          "correct_answer": "B",
+          "explanation": "Flexbox (Flexible Box Layout module) is a one-dimensional layout method in CSS designed for **aligning and distributing space among items in a container, even when their size is unknown or dynamic**. It's ideal for distributing items in a single row or column."
+        }
+      ]
+    }
+  ]
+}

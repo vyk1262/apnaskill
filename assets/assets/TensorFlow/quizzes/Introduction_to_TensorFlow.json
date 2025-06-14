@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_TensorFlow",
+      "questions": [
+        {
+          "question": "What is TensorFlow primarily designed for?",
+          "options": {
+            "A": "Web development and backend services.",
+            "B": "Relational database management.",
+            "C": "Numerical computation and large-scale machine learning, especially deep learning.",
+            "D": "Operating system development."
+          },
+          "correct_answer": "C",
+          "explanation": "TensorFlow is a powerful open-source library for numerical computation and is particularly well-suited for building and training machine learning models, especially deep neural networks."
+        },
+        {
+          "question": "Which organization originally developed and open-sourced TensorFlow?",
+          "options": {
+            "A": "Microsoft",
+            "B": "Meta (Facebook)",
+            "C": "Google",
+            "D": "IBM"
+          },
+          "correct_answer": "C",
+          "explanation": "TensorFlow was developed by the Google Brain team and was released as open-source in 2015."
+        },
+        {
+          "question": "What is the fundamental data structure used in TensorFlow?",
+          "options": {
+            "A": "DataFrame",
+            "B": "List",
+            "C": "Tensor",
+            "D": "Dictionary"
+          },
+          "correct_answer": "C",
+          "explanation": "Tensors are multi-dimensional arrays, the core data structure in TensorFlow, used to represent all data from inputs to model parameters."
+        },
+        {
+          "question": "In the context of TensorFlow, what does an 'operation' (Op) represent?",
+          "options": {
+            "A": "A single data point.",
+            "B": "A mathematical computation that takes tensors as input and produces tensors as output.",
+            "C": "A configuration file for the model.",
+            "D": "A storage unit for variables."
+          },
+          "correct_answer": "B",
+          "explanation": "Operations are the nodes in TensorFlow's computational graph, performing mathematical computations like addition, multiplication, or matrix operations."
+        },
+        {
+          "question": "TensorFlow 2.x made which execution mode the default, simplifying development and debugging compared to its predecessor?",
+          "options": {
+            "A": "Graph execution.",
+            "B": "Distributed execution.",
+            "C": "Eager execution.",
+            "D": "Static execution."
+          },
+          "correct_answer": "C",
+          "explanation": "Eager execution allows operations to be evaluated immediately, mimicking standard Python behavior, which greatly improves the debugging experience."
+        },
+        {
+          "question": "What is the primary high-level API recommended for building models in TensorFlow 2.x?",
+          "options": {
+            "A": "SciPy",
+            "B": "NumPy",
+            "C": "Keras",
+            "D": "Pandas"
+          },
+          "correct_answer": "C",
+          "explanation": "Keras is now fully integrated into TensorFlow (tf.keras) and is the recommended API for building and training deep learning models due to its user-friendliness and modularity."
+        },
+        {
+          "question": "TensorFlow is known for its ability to run computations on various devices. Which of these is explicitly supported?",
+          "options": {
+            "A": "CPU only.",
+            "B": "GPU and TPU.",
+            "C": "Quantum processors only.",
+            "D": "Mobile devices only."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow provides robust support for running computations on CPUs, GPUs (Graphics Processing Units), and TPUs (Tensor Processing Units) for accelerated performance."
+        },
+        {
+          "question": "Which of the following is NOT a common application area for TensorFlow?",
+          "options": {
+            "A": "Computer Vision (e.g., image classification, object detection).",
+            "B": "Natural Language Processing (e.g., text translation, sentiment analysis).",
+            "C": "Creating graphical user interfaces (GUIs) for desktop applications.",
+            "D": "Reinforcement Learning (e.g., training agents for games)."
+          },
+          "correct_answer": "C",
+          "explanation": "While ML models developed with TensorFlow might be part of an application with a GUI, TensorFlow itself is not designed for GUI development."
+        },
+        {
+          "question": "Before TensorFlow 2.x, how were computations typically defined and executed?",
+          "options": {
+            "A": "By running Python code directly.",
+            "B": "By defining a static computational graph first, then executing it in a session.",
+            "C": "By using a simple function call.",
+            "D": "By directly manipulating hardware registers."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow 1.x used a 'define-and-run' paradigm where a static computational graph was built first, and then data flowed through it using a tf.Session."
+        },
+        {
+          "question": "What does 'scalability' mean in the context of TensorFlow?",
+          "options": {
+            "A": "Ability to resize images.",
+            "B": "Ability to handle very small datasets efficiently.",
+            "C": "Ability to perform computations efficiently across multiple CPUs, GPUs, or even distributed systems for large datasets and complex models.",
+            "D": "Ability to automatically update model parameters."
+          },
+          "correct_answer": "C",
+          "explanation": "TensorFlow is designed to scale from small experiments on a single machine to large-scale deployments on clusters of specialized hardware."
+        },
+        {
+          "question": "When you declare `tf.Variable` in TensorFlow, what does it typically represent?",
+          "options": {
+            "A": "A constant value that never changes.",
+            "B": "A placeholder for input data.",
+            "C": "A mutable tensor whose value can be updated during training (e.g., model weights and biases).",
+            "D": "An operation in the graph."
+          },
+          "correct_answer": "C",
+          "explanation": "Variables are crucial for training, as they store the parameters of the model that are optimized through gradient descent."
+        },
+        {
+          "question": "Which programming language is TensorFlow primarily developed in and used with?",
+          "options": {
+            "A": "Java",
+            "B": "C++",
+            "C": "Python",
+            "D": "JavaScript"
+          },
+          "correct_answer": "C",
+          "explanation": "While TensorFlow has interfaces for other languages, Python is its primary and most commonly used API."
+        },
+        {
+          "question": "What is 'TensorFlow.js' used for?",
+          "options": {
+            "A": "Running TensorFlow models on mobile devices.",
+            "B": "Running TensorFlow models directly in web browsers or Node.js environments.",
+            "C": "Converting TensorFlow models to a different format.",
+            "D": "Developing new TensorFlow operations."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow.js enables machine learning in the browser, allowing for interactive ML experiences and deployment without server-side processing."
+        },
+        {
+          "question": "What is the purpose of 'TensorBoard'?",
+          "options": {
+            "A": "To write TensorFlow code.",
+            "B": "A visualization toolkit for debugging, understanding, and optimizing TensorFlow models and training processes.",
+            "C": "A cloud platform for deploying TensorFlow models.",
+            "D": "A tool for converting models to different formats."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorBoard provides a suite of visualization tools to help track metrics, visualize graph structures, view model weights, and more."
+        },
+        {
+          "question": "Is TensorFlow open-source or proprietary?",
+          "options": {
+            "A": "Proprietary",
+            "B": "Open-source",
+            "C": "Partially open-source",
+            "D": "Licensed only for commercial use"
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow is released under the Apache 2.0 open-source license, making it freely available for use and modification."
+        },
+        {
+          "question": "When you define a computation in TensorFlow 2.x using `tf.function`, what is the primary benefit?",
+          "options": {
+            "A": "It converts the function to C++ for faster execution.",
+            "B": "It allows the function to run on GPUs only.",
+            "C": "It compiles the Python function into a callable TensorFlow graph, enabling performance optimizations, distribution, and export.",
+            "D": "It automatically finds the optimal hyperparameters."
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.function` bridges the gap between eager execution and graph execution, providing performance benefits while maintaining Pythonic flexibility."
+        },
+        {
+          "question": "Which concept allows TensorFlow to automatically calculate gradients needed for backpropagation?",
+          "options": {
+            "A": "Static typing.",
+            "B": "Automatic differentiation (Autograd).",
+            "C": "Manual gradient calculation.",
+            "D": "Linear algebra solver."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow's `tf.GradientTape` is an example of its automatic differentiation capabilities, essential for optimizing neural networks."
+        },
+        {
+          "question": "What is the term for saving a trained TensorFlow model so it can be used later for predictions without retraining?",
+          "options": {
+            "A": "Debugging.",
+            "B": "Serialization or Exporting.",
+            "C": "Compiling.",
+            "D": "Initializing."
+          },
+          "correct_answer": "B",
+          "explanation": "Saving a model (e.g., using `model.save()`) allows for its deployment and inference without needing the original training code."
+        },
+        {
+          "question": "TensorFlow Extended (TFX) is a platform built on TensorFlow. What is its main focus?",
+          "options": {
+            "A": "Gaming development.",
+            "B": "End-to-end machine learning pipelines in production.",
+            "C": "Low-level hardware programming.",
+            "D": "Data visualization dashboards."
+          },
+          "correct_answer": "B",
+          "explanation": "TFX provides components for data validation, transformation, training, model analysis, and deployment, addressing the full ML lifecycle."
+        },
+        {
+          "question": "Which of the following is true about TensorFlow's ecosystem?",
+          "options": {
+            "A": "It's a standalone library with no supporting tools.",
+            "B": "It offers a rich ecosystem of tools, libraries, and resources (e.g., TensorFlow Lite, TensorFlow.js, TFX, TensorBoard) for various ML tasks and deployment scenarios.",
+            "C": "It is only suitable for academic research.",
+            "D": "It exclusively supports text-based data."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow is backed by a vast and growing ecosystem designed to support ML development from research to production across diverse platforms."
+        }
+      ]
+    }
+  ]
+}

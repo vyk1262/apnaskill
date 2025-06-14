@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Transfer_Learning",
+      "questions": [
+        {
+          "question": "What is the core concept of Transfer Learning in deep learning?",
+          "options": {
+            "A": "Training a model from scratch on a new, very large dataset.",
+            "B": "Taking a pre-trained model developed for a task and reusing it as a starting point for a new, related task.",
+            "C": "Transferring data from one machine to another for training.",
+            "D": "Using a simpler model to train a more complex one."
+          },
+          "correct_answer": "B",
+          "explanation": "Transfer learning leverages knowledge gained from solving one problem to help solve another related problem."
+        },
+        {
+          "question": "Which of the following is a primary benefit of using Transfer Learning?",
+          "options": {
+            "A": "Guarantees perfect accuracy on the new task.",
+            "B": "Requires significantly more labeled data for the new task.",
+            "C": "Reduces training time and data requirements, and often leads to better performance, especially with limited data.",
+            "D": "Eliminates the need for GPU acceleration."
+          },
+          "correct_answer": "C",
+          "explanation": "Transfer learning significantly reduces the computational burden and data needs compared to training from scratch."
+        },
+        {
+          "question": "What does 'pre-trained model' refer to in the context of transfer learning?",
+          "options": {
+            "A": "A model that has been trained only on synthetic data.",
+            "B": "A model that has already been trained on a very large dataset (e.g., ImageNet) for a specific task.",
+            "C": "A model that is ready for immediate deployment without any further training.",
+            "D": "A model whose architecture has been predefined but not trained."
+          },
+          "correct_answer": "B",
+          "explanation": "Pre-trained models have learned robust features from extensive datasets."
+        },
+        {
+          "question": "Which of the following is a common strategy for transfer learning where the pre-trained model's convolutional base is kept frozen, and only the final classification layers are trained on the new dataset?",
+          "options": {
+            "A": "Model Pruning",
+            "B": "Feature Extraction",
+            "C": "Knowledge Distillation",
+            "D": "Full Fine-tuning"
+          },
+          "correct_answer": "B",
+          "explanation": "In feature extraction, the pre-trained model acts as a fixed feature extractor, and only a new classifier is trained."
+        },
+        {
+          "question": "In PyTorch, how do you typically 'freeze' the weights of a layer so they are not updated during training?",
+          "options": {
+            "A": "By setting `layer.trainable = False`.",
+            "B": "By setting `param.requires_grad = False` for all parameters in that layer.",
+            "C": "By removing the layer from the optimizer.",
+            "D": "By converting the layer to a constant."
+          },
+          "correct_answer": "B",
+          "explanation": "Setting `requires_grad=False` tells Autograd not to compute gradients for those parameters, effectively freezing them."
+        },
+        {
+          "question": "When would 'fine-tuning' be a more appropriate transfer learning strategy than 'feature extraction'?",
+          "options": {
+            "A": "When the new dataset is very small and very different from the original dataset.",
+            "B": "When the new dataset is large and similar to the original dataset.",
+            "C": "When computational resources are extremely limited.",
+            "D": "When the target task is entirely unrelated to the pre-training task."
+          },
+          "correct_answer": "B",
+          "explanation": "Fine-tuning all or most layers is beneficial when you have enough data to adapt the deep features to your specific task, and the tasks are related."
+        },
+        {
+          "question": "Which `torchvision.models` module provides a collection of popular pre-trained models for computer vision tasks?",
+          "options": {
+            "A": "`torchvision.datasets`",
+            "B": "`torchvision.transforms`",
+            "C": "`torchvision.models`",
+            "D": "`torchvision.utils`"
+          },
+          "correct_answer": "C",
+          "explanation": "`torchvision.models` includes pre-trained versions of architectures like ResNet, VGG, AlexNet, etc."
+        },
+        {
+          "question": "After loading a pre-trained model (e.g., `resnet18`), what is the most common modification you would make for a new classification task with a different number of classes?",
+          "options": {
+            "A": "Replace all convolutional layers.",
+            "B": "Replace the initial input layer.",
+            "C": "Replace the final fully connected (classifier) layer to match the new number of classes.",
+            "D": "Change the activation function of all layers."
+          },
+          "correct_answer": "C",
+          "explanation": "The early layers learn general features, while the final layer is task-specific and needs to be adapted."
+        },
+        {
+          "question": "When performing fine-tuning, why might you use a smaller learning rate for the pre-trained layers compared to newly added layers?",
+          "options": {
+            "A": "To make the training faster.",
+            "B": "To avoid drastically altering the well-learned features in the pre-trained layers, only making subtle adjustments.",
+            "C": "To prevent the model from converging.",
+            "D": "To increase the impact of the new layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Smaller learning rates ensure that the pre-trained weights are fine-tuned gently, rather than being drastically changed, preserving the learned features."
+        },
+        {
+          "question": "Consider a scenario where you have a small dataset (e.g., 100 images per class) for a classification task that is similar to ImageNet. Which transfer learning strategy is generally recommended?",
+          "options": {
+            "A": "Train a new model from scratch.",
+            "B": "Use the pre-trained model as a fixed feature extractor.",
+            "C": "Fine-tune all layers of the pre-trained model with a high learning rate.",
+            "D": "Use a Generative Adversarial Network (GAN)."
+          },
+          "correct_answer": "B",
+          "explanation": "For small, similar datasets, fixing the pre-trained features and training only a new classifier prevents overfitting to the limited data."
+        },
+        {
+          "question": "If you have a large dataset (e.g., 100,000 images per class) for a classification task that is very different from ImageNet, which transfer learning strategy is generally recommended?",
+          "options": {
+            "A": "Use the pre-trained model as a fixed feature extractor.",
+            "B": "Fine-tune all layers of the pre-trained model.",
+            "C": "Do not use transfer learning at all.",
+            "D": "Only train the last layer."
+          },
+          "correct_answer": "B",
+          "explanation": "With a large, diverse dataset, fine-tuning all layers allows the model to adapt its feature hierarchy to the new domain effectively."
+        },
+        {
+          "question": "True or False: Transfer learning is only applicable to computer vision tasks.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Transfer learning is widely used in NLP (e.g., BERT, GPT models), audio processing, and other domains where pre-trained models exist."
+        },
+        {
+          "question": "When loading a pre-trained model, what function from `torch.hub` or `torch.nn.Module.load_state_dict` is typically used?",
+          "options": {
+            "A": "`model.load()`",
+            "B": "`torch.load_model()`",
+            "C": "`torch.hub.load()` or `model.load_state_dict()` after loading the state dictionary.",
+            "D": "`model.import_weights()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`torch.hub.load()` is convenient for models available in PyTorch Hub, while `model.load_state_dict()` is for loading local `.pth` files."
+        },
+        {
+          "question": "What is the concept of 'unfreezing' layers during fine-tuning?",
+          "options": {
+            "A": "Removing layers from the model.",
+            "B": "Making frozen layers trainable again by setting `param.requires_grad = True`.",
+            "C": "Applying a different activation function.",
+            "D": "Resetting the weights of the layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Unfreezing allows these layers to adapt their weights to the new task, often done after an initial phase of feature extraction."
+        },
+        {
+          "question": "What is a common practice when applying data augmentation with transfer learning?",
+          "options": {
+            "A": "To disable data augmentation entirely.",
+            "B": "To use aggressive data augmentation for large datasets and mild augmentation for small datasets.",
+            "C": "To use more aggressive data augmentation when you have limited data for the new task to prevent overfitting.",
+            "D": "Data augmentation is irrelevant to transfer learning."
+          },
+          "correct_answer": "C",
+          "explanation": "Data augmentation helps expand the effective size of small datasets and improve generalization."
+        },
+        {
+          "question": "Which of the following describes 'domain adaptation' in transfer learning?",
+          "options": {
+            "A": "Adapting the model to a new programming language.",
+            "B": "Adapting a model trained on a source domain to perform well on a target domain with a different data distribution but related task.",
+            "C": "Adapting the model to a new GPU type.",
+            "D": "Adapting the model to run on a mobile device."
+          },
+          "correct_answer": "B",
+          "explanation": "Domain adaptation addresses the challenge when the source and target data distributions differ significantly."
+        },
+        {
+          "question": "What is a potential downside of fine-tuning all layers of a very large pre-trained model on a very small new dataset?",
+          "options": {
+            "A": "It will always lead to better performance.",
+            "B": "It is computationally inexpensive.",
+            "C": "It can easily lead to overfitting on the small dataset, as the model has too many trainable parameters.",
+            "D": "It will prevent the model from learning anything new."
+          },
+          "correct_answer": "C",
+          "explanation": "With limited data, a complex model can simply memorize the training examples rather than generalize."
+        },
+        {
+          "question": "How does using a pre-trained model typically affect the convergence speed during training on a new task?",
+          "options": {
+            "A": "It makes training slower.",
+            "B": "It usually leads to much faster convergence because the model starts with good feature representations.",
+            "C": "It has no effect on convergence speed.",
+            "D": "It only affects the final accuracy, not the speed."
+          },
+          "correct_answer": "B",
+          "explanation": "Starting from well-initialized weights significantly reduces the time needed for the model to learn the new task."
+        },
+        {
+          "question": "When is it generally NOT advisable to use transfer learning?",
+          "options": {
+            "A": "When you have a very large dataset and sufficient computational resources to train from scratch.",
+            "B": "When the source and target tasks are completely unrelated.",
+            "C": "When the pre-trained model's architecture is significantly different from what your task requires.",
+            "D": "All of the above."
+          },
+          "correct_answer": "D",
+          "explanation": "While transfer learning is powerful, it's not a silver bullet. If the tasks are too disparate or resources are abundant for scratch training, it might not be the best approach."
+        },
+        {
+          "question": "After replacing the final classification layer of a pre-trained model and freezing its base layers, how should you configure the optimizer for training?",
+          "options": {
+            "A": "Optimize all parameters of the entire model.",
+            "B": "Only optimize the parameters of the newly added (unfrozen) classification layer.",
+            "C": "Optimize only the parameters of the frozen base layers.",
+            "D": "Do not use an optimizer."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, the optimizer only considers parameters that have `requires_grad=True`, so it will naturally only train the new, unfrozen layers."
+        }
+      ]
+    }
+  ]
+}

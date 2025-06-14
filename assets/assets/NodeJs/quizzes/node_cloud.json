@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_cloud",
+      "questions": [
+        {
+          "question": "What is 'Serverless Computing' (e.g., AWS Lambda, Azure Functions) in the context of Node.js?",
+          "options": {
+            "A": "Running Node.js applications on physical servers without an operating system.",
+            "B": "A deployment model where developers don't manage servers directly; the cloud provider automatically provisions, scales, and manages the infrastructure, executing functions in response to events.",
+            "C": "A Node.js framework for building REST APIs without any server.",
+            "D": "A type of database that doesn't require a server."
+          },
+          "correct_answer": "B",
+          "explanation": "Serverless allows developers to focus on writing code (functions) without worrying about server provisioning, scaling, or maintenance, paying only for the compute time consumed."
+        },
+        {
+          "question": "Which AWS service is specifically designed for running serverless Node.js functions?",
+          "options": {
+            "A": "Amazon EC2",
+            "B": "Amazon S3",
+            "C": "AWS Lambda",
+            "D": "Amazon RDS"
+          },
+          "correct_answer": "C",
+          "explanation": "AWS Lambda is Amazon's serverless compute service that runs code in response to events and automatically manages the underlying compute resources."
+        },
+        {
+          "question": "Which Azure service is used for deploying and running serverless Node.js functions?",
+          "options": {
+            "A": "Azure Virtual Machines",
+            "B": "Azure SQL Database",
+            "C": "Azure Functions",
+            "D": "Azure Kubernetes Service (AKS)"
+          },
+          "correct_answer": "C",
+          "explanation": "Azure Functions is Microsoft Azure's serverless compute service, supporting Node.js among other languages."
+        },
+        {
+          "question": "Which Google Cloud Platform (GCP) service allows you to run serverless Node.js functions?",
+          "options": {
+            "A": "Google Compute Engine",
+            "B": "Google Cloud Storage",
+            "C": "Google App Engine",
+            "D": "Google Cloud Functions"
+          },
+          "correct_answer": "D",
+          "explanation": "Google Cloud Functions is GCP's lightweight, event-driven serverless compute platform for building and connecting cloud services."
+        },
+        {
+          "question": "What is a 'Platform as a Service (PaaS)' offering (e.g., Heroku, AWS Elastic Beanstalk) for Node.js applications?",
+          "options": {
+            "A": "A service that provides raw virtual machines for you to configure.",
+            "B": "A complete environment for developing, running, and managing applications without the complexity of building and maintaining the infrastructure.",
+            "C": "A service that only provides databases.",
+            "D": "A tool for local Node.js development."
+          },
+          "correct_answer": "B",
+          "explanation": "PaaS abstracts away infrastructure concerns, allowing developers to focus on writing code. Popular Node.js PaaS options include Heroku, AWS Elastic Beanstalk, and Azure App Service."
+        },
+        {
+          "question": "When deploying a Node.js application that heavily uses containers, which AWS service is best suited for managing and orchestrating Docker containers?",
+          "options": {
+            "A": "Amazon S3",
+            "B": "AWS Lambda",
+            "C": "Amazon ECS (Elastic Container Service) or Amazon EKS (Elastic Kubernetes Service)",
+            "D": "Amazon RDS"
+          },
+          "correct_answer": "C",
+          "explanation": "ECS is a managed container orchestration service, and EKS is a managed Kubernetes service. Both are designed for deploying, managing, and scaling containerized applications on AWS."
+        },
+        {
+          "question": "What is an 'API Gateway' (e.g., AWS API Gateway, Azure API Management) in a cloud architecture for Node.js APIs?",
+          "options": {
+            "A": "A tool for sending emails.",
+            "B": "A service that acts as a single entry point for client requests, routing them to appropriate backend services (e.g., Node.js Lambda functions or microservices), and handling concerns like authentication, rate limiting, and caching.",
+            "C": "A database access layer.",
+            "D": "A system for monitoring application performance."
+          },
+          "correct_answer": "B",
+          "explanation": "API Gateways are crucial for managing complex microservices architectures, providing a unified and secure interface for clients."
+        },
+        {
+          "question": "Which AWS service is commonly used for storing static assets (like images, videos, CSS, JS files) for a Node.js web application?",
+          "options": {
+            "A": "Amazon EBS",
+            "B": "Amazon S3 (Simple Storage Service)",
+            "C": "Amazon DynamoDB",
+            "D": "Amazon Redshift"
+          },
+          "correct_answer": "B",
+          "explanation": "Amazon S3 is an object storage service offering industry-leading scalability, data availability, security, and performance. It's ideal for static web hosting and storing media files."
+        },
+        {
+          "question": "When building a Node.js application in the cloud, why might you choose a 'Database-as-a-Service' (DBaaS) like Amazon RDS or Azure Cosmos DB over self-managing a database on a VM?",
+          "options": {
+            "A": "DBaaS is always cheaper.",
+            "B": "DBaaS offers more control over the operating system.",
+            "C": "DBaaS handles database provisioning, scaling, patching, backups, and high availability, reducing operational overhead and increasing reliability.",
+            "D": "DBaaS is only compatible with Node.js."
+          },
+          "correct_answer": "C",
+          "explanation": "DBaaS solutions remove the burden of database administration, allowing developers to focus more on application logic."
+        },
+        {
+          "question": "What is the purpose of a CDN (Content Delivery Network) when deploying a Node.js web application?",
+          "options": {
+            "A": "To host the Node.js backend logic.",
+            "B": "To distribute static assets (images, CSS, JS) to edge locations globally, reducing latency and speeding up content delivery to users.",
+            "C": "To manage serverless functions.",
+            "D": "To provide a database connection."
+          },
+          "correct_answer": "B",
+          "explanation": "CDNs cache static content closer to users, improving load times and reducing the load on your origin server (Node.js application)."
+        },
+        {
+          "question": "Which cloud service provides virtual machines (IaaS) where you can manually install and configure Node.js?",
+          "options": {
+            "A": "AWS Lambda",
+            "B": "Heroku",
+            "C": "AWS EC2 (Elastic Compute Cloud) or Azure Virtual Machines",
+            "D": "Amazon S3"
+          },
+          "correct_answer": "C",
+          "explanation": "EC2 and Azure VMs provide raw computing capacity in the cloud, giving you full control over the operating system and installed software, including Node.js."
+        },
+        {
+          "question": "What is a 'CloudFormation' template in AWS, and its equivalent in Azure or GCP?",
+          "options": {
+            "A": "A tool for monitoring cloud resources.",
+            "B": "A template for defining and provisioning cloud resources (Infrastructure as Code). Equivalent: Azure Resource Manager (ARM) templates, Google Cloud Deployment Manager.",
+            "C": "A way to backup cloud data.",
+            "D": "A type of serverless function."
+          },
+          "correct_answer": "B",
+          "explanation": "Infrastructure as Code (IaC) allows you to manage and provision infrastructure using code, ensuring consistency and reproducibility across environments."
+        },
+        {
+          "question": "When troubleshooting a deployed Node.js application in the cloud, where would you typically look for application logs?",
+          "options": {
+            "A": "Directly on the local development machine.",
+            "B": "In cloud-native logging services (e.g., AWS CloudWatch Logs, Azure Monitor, Google Cloud Logging).",
+            "C": "In the browser's developer console.",
+            "D": "In the `node_modules` folder."
+          },
+          "correct_answer": "B",
+          "explanation": "Cloud providers offer centralized logging services that aggregate logs from various resources, making it easier to monitor and troubleshoot applications at scale."
+        },
+        {
+          "question": "What is a 'VPC' (Virtual Private Cloud) in cloud environments?",
+          "options": {
+            "A": "A public network where all resources are exposed.",
+            "B": "A logically isolated virtual network within a cloud provider's infrastructure where you can launch resources securely.",
+            "C": "A service for managing virtual machines.",
+            "D": "A global content delivery network."
+          },
+          "correct_answer": "B",
+          "explanation": "VPCs provide a secure and isolated environment for your cloud resources, allowing you to define your own IP address ranges, subnets, route tables, and network gateways."
+        },
+        {
+          "question": "For a Node.js microservices architecture on AWS, which service is often used as a message queue to enable asynchronous communication between services?",
+          "options": {
+            "A": "Amazon EC2",
+            "B": "Amazon SQS (Simple Queue Service)",
+            "C": "Amazon DynamoDB",
+            "D": "AWS Lambda"
+          },
+          "correct_answer": "B",
+          "explanation": "SQS is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications."
+        },
+        {
+          "question": "What is the primary benefit of using a managed container service (like AWS ECS Fargate or Azure Container Apps) for Node.js container deployment?",
+          "options": {
+            "A": "It gives you full control over the underlying EC2 instances.",
+            "B": "It eliminates the need to provision and manage servers for your containers, allowing you to focus purely on application development.",
+            "C": "It reduces the cost of Docker images.",
+            "D": "It's only for development environments."
+          },
+          "correct_answer": "B",
+          "explanation": "Fargate and Container Apps are serverless compute engines for containers, meaning you pay for container resources without managing VMs."
+        },
+        {
+          "question": "When deploying a Node.js application, why might you use a 'Secrets Manager' service (e.g., AWS Secrets Manager, Azure Key Vault, Google Secret Manager)?",
+          "options": {
+            "A": "To store publicly accessible configuration.",
+            "B": "To store and retrieve sensitive credentials (database passwords, API keys) securely, integrating with your application at runtime without exposing secrets in code or environment variables directly.",
+            "C": "To manage environment variables that are not secret.",
+            "D": "To store static website files."
+          },
+          "correct_answer": "B",
+          "explanation": "Secrets managers provide a more secure and auditable way to handle sensitive data than just environment variables, allowing for rotation, versioning, and fine-grained access control."
+        },
+        {
+          "question": "What is a common cloud-native approach to running scheduled tasks (e.g., daily data backups, cron jobs) for a Node.js application?",
+          "options": {
+            "A": "Running them manually from your local machine.",
+            "B": "Using serverless functions triggered by time-based events (e.g., AWS Lambda with CloudWatch Events, Azure Functions with Timers, GCP Cloud Functions with Cloud Scheduler).",
+            "C": "Dedicated physical servers for each task.",
+            "D": "Embedding cron jobs directly in the Node.js application's main process."
+          },
+          "correct_answer": "B",
+          "explanation": "Serverless functions are ideal for scheduled tasks as they are cost-effective (pay-per-execution) and scale automatically."
+        },
+        {
+          "question": "When setting up CI/CD for a Node.js application in the cloud, which types of tools are commonly used for automated testing and deployment?",
+          "options": {
+            "A": "Only manual testing tools.",
+            "B": "Version control systems (e.g., Git) for code, and cloud-native CI/CD services (e.g., AWS CodePipeline/CodeBuild, Azure DevOps, GitLab CI/CD, GitHub Actions) for automation.",
+            "C": "Only database management tools.",
+            "D": "Only project management software."
+          },
+          "correct_answer": "B",
+          "explanation": "Modern CI/CD pipelines leverage version control systems and specialized CI/CD platforms to automate the build, test, and deployment phases."
+        },
+        {
+          "question": "Which AWS service would you use for a highly scalable and managed NoSQL database for your Node.js application?",
+          "options": {
+            "A": "Amazon RDS (Relational Database Service)",
+            "B": "Amazon DynamoDB",
+            "C": "Amazon Redshift",
+            "D": "Amazon Athena"
+          },
+          "correct_answer": "B",
+          "explanation": "DynamoDB is a fully managed, serverless, key-value, and document database that delivers single-digit millisecond performance at any scale, making it a popular choice for high-throughput Node.js applications."
+        }
+      ]
+    }
+  ]
+}

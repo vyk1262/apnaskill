@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Intermediate_Strategies",
+      "questions": [
+        {
+          "question": "What is a 'Naked Pair' in Sudoku?",
+          "options": {
+            "A": "Two cells in the same row, column, or block that contain the same two candidate numbers, and no other candidates.",
+            "B": "Two cells that are empty.",
+            "C": "Two cells that contain the same given number.",
+            "D": "Two cells where you are guessing between two numbers."
+          },
+          "correct_answer": "A",
+          "explanation": "If two cells in the same unit (row, column, or block) both contain only the same two candidate numbers, then those two numbers cannot appear in any other cells within that same unit."
+        },
+        {
+          "question": "How does finding a 'Naked Pair' help you solve the puzzle?",
+          "options": {
+            "A": "It immediately tells you the values of those two cells.",
+            "B": "It allows you to eliminate those two candidate numbers from all other empty cells within the same row, column, or 3x3 block.",
+            "C": "It means you have found a mistake.",
+            "D": "It helps you find 'Hidden Singles'."
+          },
+          "correct_answer": "B",
+          "explanation": "By identifying a Naked Pair, you can reduce the possibilities in other cells of the same unit."
+        },
+        {
+          "question": "What is a 'Hidden Pair' in Sudoku?",
+          "options": {
+            "A": "Two empty cells that are hard to find.",
+            "B": "Two candidate numbers that appear in only two cells within a specific row, column, or 3x3 block, even if those cells contain other candidates as well.",
+            "C": "Two given numbers that are in the same row, column, or block.",
+            "D": "A pair of numbers that you are trying to guess."
+          },
+          "correct_answer": "B",
+          "explanation": "If two numbers are candidates in only two specific cells within a unit, then those two cells must contain those two numbers, and any other candidates in those cells can be eliminated."
+        },
+        {
+          "question": "How does finding a 'Hidden Pair' help you solve the puzzle?",
+          "options": {
+            "A": "It immediately tells you the values of those two cells.",
+            "B": "It allows you to eliminate any other candidate numbers from those two specific cells.",
+            "C": "It means you have found a contradiction.",
+            "D": "It helps you find 'Naked Singles'."
+          },
+          "correct_answer": "B",
+          "explanation": "Hidden Pairs help to narrow down the possibilities within specific cells."
+        },
+        {
+          "question": "What is a 'Naked Triple' in Sudoku?",
+          "options": {
+            "A": "Three empty cells in the same row, column, or block that together contain exactly three candidate numbers (in any combination), and no other candidates.",
+            "B": "Three cells that are empty and next to each other.",
+            "C": "Three cells that contain the same given number.",
+            "D": "A situation where you are guessing between three numbers."
+          },
+          "correct_answer": "A",
+          "explanation": "Similar to Naked Pairs, these three numbers are confined to these three cells within that unit."
+        },
+        {
+          "question": "How does finding a 'Naked Triple' help you solve the puzzle?",
+          "options": {
+            "A": "It immediately tells you the values of those three cells.",
+            "B": "It allows you to eliminate those three candidate numbers from all other empty cells within the same row, column, or 3x3 block.",
+            "C": "It indicates a puzzle with three solutions.",
+            "D": "It helps you find 'Hidden Pairs'."
+          },
+          "correct_answer": "B",
+          "explanation": "Naked Triples further reduce possibilities in the surrounding cells of the same unit."
+        },
+        {
+          "question": "What is a 'Hidden Triple' in Sudoku?",
+          "options": {
+            "A": "Three empty cells that are hard to spot.",
+            "B": "Three candidate numbers that appear in only three cells within a specific row, column, or 3x3 block, even if those cells contain other candidates as well.",
+            "C": "Three given numbers in a line.",
+            "D": "A set of three numbers you are trying to guess."
+          },
+          "correct_answer": "B",
+          "explanation": "These three cells are the only places within that unit where these three numbers can exist."
+        },
+        {
+          "question": "How does finding a 'Hidden Triple' help you solve the puzzle?",
+          "options": {
+            "A": "It immediately tells you the values of those three cells.",
+            "B": "It allows you to eliminate any other candidate numbers from those three specific cells.",
+            "C": "It suggests a very difficult puzzle.",
+            "D": "It helps you find 'Naked Triples'."
+          },
+          "correct_answer": "B",
+          "explanation": "Hidden Triples help to clean up the candidates within those specific cells."
+        },
+        {
+          "question": "What are 'Pointing Pairs' or 'Pointing Triples'?",
+          "options": {
+            "A": "Pairs or triples of given numbers that point to each other.",
+            "B": "When two or three candidates for a specific number are confined to the same row or column within a 3x3 block. This means that number cannot appear in any other cells in that same row or column outside of that block.",
+            "C": "Pairs or triples of empty cells that are aligned.",
+            "D": "A situation where your pencil is pointing at a pair or triple of candidates."
+          },
+          "correct_answer": "B",
+          "explanation": "Pointing Pairs/Triples allow you to eliminate candidates in other blocks that share the same row or column."
+        },
+        {
+          "question": "How do 'Pointing Pairs/Triples' help in solving?",
+          "options": {
+            "A": "They directly fill those cells with the candidate number.",
+            "B": "They allow you to eliminate the candidate number from other cells in the same row or column but in different 3x3 blocks.",
+            "C": "They indicate a simpler way to solve the puzzle.",
+            "D": "They help you find 'Naked Pairs/Triples'."
+          },
+          "correct_answer": "B",
+          "explanation": "This technique leverages the block structure to constrain possibilities in rows and columns."
+        },
+        {
+          "question": "What are 'Box/Line Reduction' or 'Claiming Pairs/Triples'?",
+          "options": {
+            "A": "When you reduce the size of a 3x3 block you are focusing on.",
+            "B": "When the candidates for a specific number in a row or column are confined to only one 3x3 block. This means that number cannot appear in any other cells within that same block outside of that row or column.",
+            "C": "When you claim that a certain number must go in a specific cell.",
+            "D": "When you reduce the number of candidates in a line."
+          },
+          "correct_answer": "B",
+          "explanation": "Box/Line Reduction works in the opposite way to Pointing Pairs/Triples, using rows/columns to constrain possibilities within a block."
+        },
+        {
+          "question": "How does 'Box/Line Reduction' help in solving?",
+          "options": {
+            "A": "It directly fills those cells with the candidate number.",
+            "B": "It allows you to eliminate the candidate number from other cells in the same 3x3 block but in different rows or columns.",
+            "C": "It makes the puzzle visually simpler.",
+            "D": "It helps you find 'Hidden Pairs/Triples'."
+          },
+          "correct_answer": "B",
+          "explanation": "This technique uses the row/column structure to limit possibilities within a block."
+        },
+        {
+          "question": "What is the difference between 'Pointing Pairs' and 'Claiming Pairs'?",
+          "options": {
+            "A": "They are the same thing.",
+            "B": "Pointing Pairs eliminate candidates within a row/column *outside* of a block, while Claiming Pairs eliminate candidates within a block *outside* of a row/column.",
+            "C": "Pointing Pairs are easier to spot.",
+            "D": "Claiming Pairs involve claiming a number for a specific cell."
+          },
+          "correct_answer": "B",
+          "explanation": "They work in opposite directions to reduce candidates based on the interaction between blocks and rows/columns."
+        },
+        {
+          "question": "What are 'Naked Quads' and 'Hidden Quads'?",
+          "options": {
+            "A": "Groups of four empty cells that are hard to find.",
+            "B": "Similar to Naked/Hidden Pairs and Triples, but involving four cells and four candidate numbers confined within a row, column, or block.",
+            "C": "Four given numbers in a line or block.",
+            "D": "Situations where you are guessing between four numbers."
+          },
+          "correct_answer": "B",
+          "explanation": "These are extensions of the pair and triple logic, becoming less frequent but still useful."
+        },
+        {
+          "question": "How do 'Naked Quads' help in solving?",
+          "options": {
+            "A": "They immediately fill those four cells.",
+            "B": "They allow you to eliminate those four candidate numbers from other empty cells within the same row, column, or block.",
+            "C": "They indicate a very difficult puzzle.",
+            "D": "They help you find other types of pairs and triples."
+          },
+          "correct_answer": "B",
+          "explanation": "Naked Quads further restrict possibilities within their unit."
+        },
+        {
+          "question": "How do 'Hidden Quads' help in solving?",
+          "options": {
+            "A": "They directly fill those four cells.",
+            "B": "They allow you to eliminate any other candidate numbers from those four specific cells.",
+            "C": "They suggest a puzzle with multiple solutions.",
+            "D": "They are usually very easy to spot."
+          },
+          "correct_answer": "B",
+          "explanation": "Hidden Quads help to clean up candidates within those specific cells."
+        },
+        {
+          "question": "When should you start looking for intermediate strategies like Naked/Hidden Pairs/Triples/Quads and Pointing/Claiming?",
+          "options": {
+            "A": "Right at the beginning of the puzzle.",
+            "B": "After you have exhausted the basic techniques (Naked/Hidden Singles) and are still left with many empty cells and multiple candidates.",
+            "C": "Only in expert-level puzzles.",
+            "D": "If you get stuck for more than five minutes."
+          },
+          "correct_answer": "B",
+          "explanation": "These strategies become necessary when basic deductions are no longer sufficient."
+        },
+        {
+          "question": "Do intermediate strategies guarantee progress in every Sudoku puzzle?",
+          "options": {
+            "A": "Yes, if you apply them correctly.",
+            "B": "No, some puzzles require even more advanced techniques beyond these.",
+            "C": "Only in puzzles with a unique solution.",
+            "D": "It depends on how many candidates you have marked."
+          },
+          "correct_answer": "B",
+          "explanation": "Sudoku puzzles can have varying levels of difficulty, requiring a wider range of strategies."
+        },
+        {
+          "question": "What is the key skill required to effectively use intermediate Sudoku strategies?",
+          "options": {
+            "A": "Fast guessing.",
+            "B": "Careful and systematic scanning of the grid and the candidate numbers within rows, columns, and blocks.",
+            "C": "Memorizing common Sudoku patterns.",
+            "D": "Using a Sudoku solving software."
+          },
+          "correct_answer": "B",
+          "explanation": "Patience and attention to detail in analyzing candidate placements are crucial."
+        },
+        {
+          "question": "How do intermediate strategies build upon the basic solving techniques?",
+          "options": {
+            "A": "They replace the basic techniques.",
+            "B": "They use the information gained from basic techniques (eliminated candidates and filled cells) to identify more complex relationships and further reduce possibilities.",
+            "C": "They involve guessing more strategically.",
+            "D": "They focus on different parts of the grid."
+          },
+          "correct_answer": "B",
+          "explanation": "Intermediate strategies are logical extensions of the fundamental rules and deductions."
+        }
+      ]
+    }
+  ]
+}

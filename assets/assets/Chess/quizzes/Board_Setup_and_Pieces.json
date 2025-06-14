@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Board_Setup_and_Pieces",
+      "questions": [
+        {
+          "question": "In the initial setup of a chessboard, where is the white king placed?",
+          "options": {
+            "A": "On the d1 square.",
+            "B": "On the e1 square.",
+            "C": "On the f1 square.",
+            "D": "On the a1 square."
+          },
+          "correct_answer": "B",
+          "explanation": "The white king starts on the e1 square."
+        },
+        {
+          "question": "In the initial setup of a chessboard, where is the black king placed?",
+          "options": {
+            "A": "On the d8 square.",
+            "B": "On the e8 square.",
+            "C": "On the f8 square.",
+            "D": "On the h8 square."
+          },
+          "correct_answer": "B",
+          "explanation": "The black king starts on the e8 square, directly opposite the white king."
+        },
+        {
+          "question": "In the initial setup, where are the white queens placed?",
+          "options": {
+            "A": "On the e1 square.",
+            "B": "On the d1 square.",
+            "C": "On the c1 square.",
+            "D": "On the b1 square."
+          },
+          "correct_answer": "B",
+          "explanation": "The white queen starts on the d1 square, on a square of its own color."
+        },
+        {
+          "question": "In the initial setup, where are the black queens placed?",
+          "options": {
+            "A": "On the e8 square.",
+            "B": "On the d8 square.",
+            "C": "On the c8 square.",
+            "D": "On the f8 square."
+          },
+          "correct_answer": "B",
+          "explanation": "The black queen starts on the d8 square, on a square of its own color."
+        },
+        {
+          "question": "In the initial setup, where are the white rooks placed?",
+          "options": {
+            "A": "On the b1 and g1 squares.",
+            "B": "On the c1 and f1 squares.",
+            "C": "On the a1 and h1 squares.",
+            "D": "On the d1 and e1 squares."
+          },
+          "correct_answer": "C",
+          "explanation": "The white rooks start on the corners of the board: a1 and h1."
+        },
+        {
+          "question": "In the initial setup, where are the black rooks placed?",
+          "options": {
+            "A": "On the b8 and g8 squares.",
+            "B": "On the c8 and f8 squares.",
+            "C": "On the a8 and h8 squares.",
+            "D": "On the d8 and e8 squares."
+          },
+          "correct_answer": "C",
+          "explanation": "The black rooks also start on the corners of the board: a8 and h8."
+        },
+        {
+          "question": "In the initial setup, where are the white bishops placed?",
+          "options": {
+            "A": "On the a2 and h2 squares.",
+            "B": "On the b1 and g1 squares.",
+            "C": "On the c1 and f1 squares.",
+            "D": "On the d2 and e2 squares."
+          },
+          "correct_answer": "C",
+          "explanation": "The white bishops start on the c1 and f1 squares, flanking the king and queen."
+        },
+        {
+          "question": "In the initial setup, where are the black bishops placed?",
+          "options": {
+            "A": "On the a7 and h7 squares.",
+            "B": "On the b8 and g8 squares.",
+            "C": "On the c8 and f8 squares.",
+            "D": "On the d7 and e7 squares."
+          },
+          "correct_answer": "C",
+          "explanation": "The black bishops start on the c8 and f8 squares, mirroring the white bishops' positions."
+        },
+        {
+          "question": "In the initial setup, where are the white knights placed?",
+          "options": {
+            "A": "On the a3 and h3 squares.",
+            "B": "On the b1 and g1 squares.",
+            "C": "On the c2 and f2 squares.",
+            "D": "On the d1 and e1 squares."
+          },
+          "correct_answer": "B",
+          "explanation": "The white knights start on the b1 and g1 squares, between the rooks and the bishops."
+        },
+        {
+          "question": "In the initial setup, where are the black knights placed?",
+          "options": {
+            "A": "On the a6 and h6 squares.",
+            "B": "On the b8 and g8 squares.",
+            "C": "On the c7 and f7 squares.",
+            "D": "On the d8 and e8 squares."
+          },
+          "correct_answer": "B",
+          "explanation": "The black knights start on the b8 and g8 squares, mirroring the white knights' positions."
+        },
+        {
+          "question": "In the initial setup, where are the white pawns placed?",
+          "options": {
+            "A": "On the first rank (rank 1).",
+            "B": "On the second rank (rank 2).",
+            "C": "On the seventh rank (rank 7).",
+            "D": "On the eighth rank (rank 8)."
+          },
+          "correct_answer": "B",
+          "explanation": "The eight white pawns are placed on the second rank (a2, b2, c2, d2, e2, f2, g2, h2)."
+        },
+        {
+          "question": "In the initial setup, where are the black pawns placed?",
+          "options": {
+            "A": "On the first rank (rank 1).",
+            "B": "On the second rank (rank 2).",
+            "C": "On the seventh rank (rank 7).",
+            "D": "On the eighth rank (rank 8)."
+          },
+          "correct_answer": "C",
+          "explanation": "The eight black pawns are placed on the seventh rank (a7, b7, c7, d7, e7, f7, g7, h7)."
+        },
+        {
+          "question": "How many pawns does each player start with?",
+          "options": {
+            "A": "Six",
+            "B": "Eight",
+            "C": "Ten",
+            "D": "Twelve"
+          },
+          "correct_answer": "B",
+          "explanation": "Each player begins a game of chess with eight pawns."
+        },
+        {
+          "question": "Which piece is considered a 'minor piece' in chess?",
+          "options": {
+            "A": "Rook",
+            "B": "Queen",
+            "C": "Bishop",
+            "D": "Pawn"
+          },
+          "correct_answer": "C",
+          "explanation": "Bishops and knights are generally referred to as minor pieces."
+        },
+        {
+          "question": "Which piece is also considered a 'minor piece' in chess?",
+          "options": {
+            "A": "Rook",
+            "B": "Queen",
+            "C": "King",
+            "D": "Knight"
+          },
+          "correct_answer": "D",
+          "explanation": "Along with bishops, knights are classified as minor pieces, generally considered less powerful than rooks and queens ('major pieces')."
+        },
+        {
+          "question": "Which piece is considered a 'major piece' in chess?",
+          "options": {
+            "A": "Bishop",
+            "B": "Knight",
+            "C": "Rook",
+            "D": "Pawn"
+          },
+          "correct_answer": "C",
+          "explanation": "Rooks and queens are the major pieces in chess."
+        },
+        {
+          "question": "Which other piece is considered a 'major piece' in chess?",
+          "options": {
+            "A": "Bishop",
+            "B": "Knight",
+            "C": "King",
+            "D": "Queen"
+          },
+          "correct_answer": "D",
+          "explanation": "The queen, being the most powerful piece, is the other major piece besides the rook."
+        },
+        {
+          "question": "What is the color of the square in the bottom right corner from White's perspective?",
+          "options": {
+            "A": "Black",
+            "B": "White",
+            "C": "It can vary.",
+            "D": "Grey"
+          },
+          "correct_answer": "B",
+          "explanation": "A standard chessboard is always set up so that the square in the bottom right corner from White's perspective is a white square."
+        },
+        {
+          "question": "How many pieces in total does each player start with?",
+          "options": {
+            "A": "8",
+            "B": "12",
+            "C": "16",
+            "D": "20"
+          },
+          "correct_answer": "C",
+          "explanation": "Each player starts the game with 1 king, 1 queen, 2 rooks, 2 bishops, 2 knights, and 8 pawns, totaling 16 pieces."
+        },
+        {
+          "question": "Which rank are the white pieces initially placed on?",
+          "options": {
+            "A": "Ranks 1 and 2",
+            "B": "Ranks 2 and 3",
+            "C": "Ranks 6 and 7",
+            "D": "Ranks 7 and 8"
+          },
+          "correct_answer": "A",
+          "explanation": "White's pieces are initially positioned on the first two ranks (rank 1 for the major pieces and king, rank 2 for the pawns)."
+        }
+      ]
+    }
+  ]
+}

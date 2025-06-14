@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_PySpark",
+      "questions": [
+        {
+          "question": "What is PySpark?",
+          "options": {
+            "A": "A Python library for data visualization.",
+            "B": "A Python API for Apache Spark, enabling Python developers to interact with Spark's distributed processing capabilities.",
+            "C": "A standalone Python framework for machine learning.",
+            "D": "A database management system written in Python."
+          },
+          "correct_answer": "B",
+          "explanation": "PySpark acts as the Python interface to the powerful Apache Spark distributed computing engine."
+        },
+        {
+          "question": "What is Apache Spark?",
+          "options": {
+            "A": "A relational database system.",
+            "B": "An open-source distributed computing system for big data processing and analytics, known for its speed and generality.",
+            "C": "A programming language.",
+            "D": "A tool exclusively for real-time data streaming."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark is a unified analytics engine for large-scale data processing."
+        },
+        {
+          "question": "Which of the following is a key advantage of Apache Spark's processing model?",
+          "options": {
+            "A": "It exclusively uses disk-based processing for maximum durability.",
+            "B": "It performs computations in-memory for faster processing compared to disk-based systems like traditional MapReduce.",
+            "C": "It is designed for single-node processing only.",
+            "D": "It requires manual memory management for every task."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark's ability to cache data in memory across iterations greatly speeds up complex applications."
+        },
+        {
+          "question": "What is the fundamental data abstraction in Apache Spark, which stands for 'Resilient Distributed Dataset'?",
+          "options": {
+            "A": "DataFrame",
+            "B": "Dataset",
+            "C": "RDD",
+            "D": "SQL Table"
+          },
+          "correct_answer": "C",
+          "explanation": "RDDs are the foundational low-level data structure in Spark, representing an immutable, fault-tolerant, distributed collection of objects."
+        },
+        {
+          "question": "What is the entry point to programming Spark with the RDD API in PySpark?",
+          "options": {
+            "A": "SparkSession",
+            "B": "SQLContext",
+            "C": "SparkContext",
+            "D": "HiveContext"
+          },
+          "correct_answer": "C",
+          "explanation": "SparkContext is the entry point for creating RDDs and managing the Spark cluster connection."
+        },
+        {
+          "question": "What is the primary entry point for working with DataFrames and Spark SQL in PySpark applications (since Spark 2.0)?",
+          "options": {
+            "A": "SparkContext",
+            "B": "SQLContext",
+            "C": "HiveContext",
+            "D": "SparkSession"
+          },
+          "correct_answer": "D",
+          "explanation": "SparkSession unifies all the contexts (SparkContext, SQLContext, HiveContext) into a single entry point for all Spark functionalities."
+        },
+        {
+          "question": "In PySpark, are RDDs mutable or immutable?",
+          "options": {
+            "A": "Mutable",
+            "B": "Immutable",
+            "C": "Mutable only in batch processing.",
+            "D": "Immutable only in streaming processing."
+          },
+          "correct_answer": "B",
+          "explanation": "RDDs are immutable, meaning once created, they cannot be changed. Transformations on RDDs create new RDDs."
+        },
+        {
+          "question": "What does 'lazy evaluation' mean in the context of Spark RDD/DataFrame operations?",
+          "options": {
+            "A": "Spark executes transformations immediately after they are called.",
+            "B": "Spark defers the execution of transformations until an action is called, creating a Directed Acyclic Graph (DAG) of operations.",
+            "C": "Spark only processes data when the cluster is idle.",
+            "D": "Spark does not perform any computation."
+          },
+          "correct_answer": "B",
+          "explanation": "Lazy evaluation allows Spark to optimize the execution plan by seeing the full chain of transformations before executing any computation."
+        },
+        {
+          "question": "Which of the following is considered a 'transformation' operation in Spark RDD/DataFrame API?",
+          "options": {
+            "A": "collect()",
+            "B": "count()",
+            "C": "map()",
+            "D": "show()"
+          },
+          "correct_answer": "C",
+          "explanation": "Transformations like `map()`, `filter()`, `join()` create new RDDs/DataFrames without triggering computation immediately."
+        },
+        {
+          "question": "Which of the following is considered an 'action' operation in Spark RDD/DataFrame API?",
+          "options": {
+            "A": "filter()",
+            "B": "select()",
+            "C": "reduce()",
+            "D": "withColumn()"
+          },
+          "correct_answer": "C",
+          "explanation": "Actions like `reduce()`, `collect()`, `count()`, `show()`, `write()` trigger the execution of the DAG and return results to the driver program or external storage."
+        },
+        {
+          "question": "What is the relationship between DataFrames and RDDs in PySpark?",
+          "options": {
+            "A": "DataFrames completely replace RDDs and have no relation.",
+            "B": "DataFrames are built on top of RDDs, providing a higher-level abstraction for structured and semi-structured data with schema information.",
+            "C": "RDDs are used only for streaming, DataFrames for batch processing.",
+            "D": "DataFrames are a subset of RDDs."
+          },
+          "correct_answer": "B",
+          "explanation": "DataFrames leverage Spark SQL's Catalyst optimizer for performance, while still being distributed collections."
+        },
+        {
+          "question": "What is the primary benefit of using DataFrames over RDDs for structured data in PySpark?",
+          "options": {
+            "A": "RDDs are slower for structured data.",
+            "B": "DataFrames provide schema information, which enables Spark SQL optimizations (Catalyst optimizer) and easier interoperability with various data sources.",
+            "C": "DataFrames can only process text data.",
+            "D": "DataFrames automatically handle all data cleaning."
+          },
+          "correct_answer": "B",
+          "explanation": "The schema and columnar storage of DataFrames allow for significant performance gains through optimization."
+        },
+        {
+          "question": "Which of the following is NOT a core component of the Apache Spark ecosystem?",
+          "options": {
+            "A": "Spark SQL",
+            "B": "Spark Streaming",
+            "C": "MLlib",
+            "D": "HDFS (Hadoop Distributed File System)"
+          },
+          "correct_answer": "D",
+          "explanation": "HDFS is a storage system, often used *with* Spark, but not a core *component* of the Spark compute engine itself. Spark provides APIs for SQL, streaming, machine learning, and graph processing."
+        },
+        {
+          "question": "For what purpose is Spark SQL used in PySpark?",
+          "options": {
+            "A": "To perform only basic data type conversions.",
+            "B": "To process structured data using SQL queries or a DataFrame API that feels like SQL.",
+            "C": "To manage Spark cluster resources.",
+            "D": "To connect to traditional relational databases only."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark SQL allows users to query structured data using standard SQL or a rich DataFrame API."
+        },
+        {
+          "question": "What kind of processing does Spark Streaming enable?",
+          "options": {
+            "A": "Only batch processing of static datasets.",
+            "B": "Real-time processing of live data streams from various sources like Kafka, Flume, or Kinesis.",
+            "C": "Processing of unstructured data stored in text files.",
+            "D": "Building graphical user interfaces."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark Streaming provides fault-tolerant, high-throughput stream processing."
+        },
+        {
+          "question": "What does MLlib offer in the Spark ecosystem?",
+          "options": {
+            "A": "A library for building web applications.",
+            "B": "A scalable machine learning library with common learning algorithms and utilities.",
+            "C": "Tools for monitoring network traffic.",
+            "D": "A graph database."
+          },
+          "correct_answer": "B",
+          "explanation": "MLlib provides tools for machine learning tasks like classification, regression, clustering, and collaborative filtering, scaled for big data."
+        },
+        {
+          "question": "When you run a PySpark application, which component is responsible for coordinating tasks and managing the cluster resources?",
+          "options": {
+            "A": "Executor",
+            "B": "Worker Node",
+            "C": "Driver Program",
+            "D": "Client Application"
+          },
+          "correct_answer": "C",
+          "explanation": "The Driver Program contains the main function of your Spark application and creates the SparkContext/SparkSession."
+        },
+        {
+          "question": "What does a 'Cluster Manager' (e.g., YARN, Mesos, Kubernetes, Standalone) do in a Spark deployment?",
+          "options": {
+            "A": "Executes all computations on a single machine.",
+            "B": "Manages resources across the cluster, allocating resources (CPU, memory) to Spark applications.",
+            "C": "Performs data storage and retrieval.",
+            "D": "Provides a user interface for Spark applications."
+          },
+          "correct_answer": "B",
+          "explanation": "The Cluster Manager is crucial for Spark's distributed nature, enabling it to run across many machines."
+        },
+        {
+          "question": "Which of the following is a common use case for PySpark?",
+          "options": {
+            "A": "Developing small-scale desktop applications.",
+            "B": "Real-time chat applications.",
+            "C": "Large-scale data processing, ETL (Extract, Transform, Load), big data analytics, and machine learning on distributed datasets.",
+            "D": "Creating static HTML websites."
+          },
+          "correct_answer": "C",
+          "explanation": "PySpark excels in scenarios requiring distributed processing and analysis of massive datasets."
+        },
+        {
+          "question": "To start a PySpark shell session, what command would you typically use?",
+          "options": {
+            "A": "python",
+            "B": "pip install pyspark",
+            "C": "pyspark",
+            "D": "jupyter notebook"
+          },
+          "correct_answer": "C",
+          "explanation": "The `pyspark` command launches an interactive PySpark shell, which automatically configures a SparkSession."
+        }
+      ]
+    }
+  ]
+}

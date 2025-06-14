@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_mongodb",
+      "questions": [
+        {
+          "question": "What type of database is MongoDB?",
+          "options": {
+            "A": "Relational Database (SQL)",
+            "B": "Document-oriented (NoSQL)",
+            "C": "Graph Database",
+            "D": "Key-Value Store"
+          },
+          "correct_answer": "B",
+          "explanation": "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents, which means fields can vary from document to document and data structure can be changed over time."
+        },
+        {
+          "question": "What is the primary way data is stored in MongoDB?",
+          "options": {
+            "A": "Rows and Tables",
+            "B": "Nodes and Edges",
+            "C": "Documents within Collections",
+            "D": "Key-Value Pairs"
+          },
+          "correct_answer": "C",
+          "explanation": "MongoDB organizes data into collections, and each collection contains individual documents. Documents are analogous to rows in relational databases, and collections are analogous to tables."
+        },
+        {
+          "question": "Which of the following is a popular Node.js library used for interacting with MongoDB, often referred to as an ODM (Object Data Modeling) library?",
+          "options": {
+            "A": "Sequelize",
+            "B": "Mongoose",
+            "C": "Knex.js",
+            "D": "TypeORM"
+          },
+          "correct_answer": "B",
+          "explanation": "Mongoose is a widely used ODM library for Node.js and MongoDB. It provides a schema-based solution to model your application data, enforcing structure and providing powerful validation."
+        },
+        {
+          "question": "What is the typical connection string format for connecting to a local MongoDB instance in Node.js?",
+          "options": {
+            "A": "`http://localhost:27017/dbname`",
+            "B": "`mongodb://localhost:27017/dbname`",
+            "C": "`sql://localhost:27017/dbname`",
+            "D": "`mongo://localhost/dbname`"
+          },
+          "correct_answer": "B",
+          "explanation": "MongoDB connection URIs typically start with `mongodb://` followed by the host, port (default 27017), and the database name."
+        },
+        {
+          "question": "In Mongoose, what is a 'Schema'?",
+          "options": {
+            "A": "A JavaScript object representing a single document in a collection.",
+            "B": "A class that represents a collection.",
+            "C": "A blueprint that defines the structure, data types, validators, and default values for documents within a collection.",
+            "D": "A query builder for MongoDB."
+          },
+          "correct_answer": "C",
+          "explanation": "A Mongoose Schema maps to a MongoDB collection and defines the shape of the documents within that collection."
+        },
+        {
+          "question": "In Mongoose, what is a 'Model'?",
+          "options": {
+            "A": "The actual MongoDB collection in the database.",
+            "B": "A compiled version of a Schema that provides an interface for interacting with the database (e.g., querying, creating, updating, deleting documents).",
+            "C": "A data type within a Schema.",
+            "D": "A piece of middleware for database connections."
+          },
+          "correct_answer": "B",
+          "explanation": "A Mongoose Model is a constructor function that provides methods for CRUD operations on a specific collection, based on a defined Schema."
+        },
+        {
+          "question": "Which Mongoose method is used to create and save a new document to a collection?",
+          "options": {
+            "A": "`find()`",
+            "B": "`update()`",
+            "C": "`create()` or calling `save()` on a new model instance",
+            "D": "`deleteMany()`"
+          },
+          "correct_answer": "C",
+          "explanation": "You can either use `Model.create(doc)` or instantiate a new model (`const doc = new Model(data);`) and then call `doc.save()`."
+        },
+        {
+          "question": "Which Mongoose method is typically used to retrieve multiple documents from a collection that match a certain query?",
+          "options": {
+            "A": "`findOne()`",
+            "B": "`findById()`",
+            "C": "`find()`",
+            "D": "`aggregate()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`Model.find(query)` returns a Mongoose Query object that can be chained with other query helpers (like `sort()`, `limit()`) and finally executed with `exec()` or `await`."
+        },
+        {
+          "question": "Which Mongoose method is used to retrieve a single document by its unique `_id`?",
+          "options": {
+            "A": "`findId()`",
+            "B": "`findOne({ _id: id })` or `findById()`",
+            "C": "`getById()`",
+            "D": "`retrieve()`"
+          },
+          "correct_answer": "B",
+          "explanation": "`Model.findById(id)` is a convenience method for `Model.findOne({ _id: id })`."
+        },
+        {
+          "question": "How do you typically handle asynchronous MongoDB operations (like `find()`, `save()`) in Node.js with Mongoose?",
+          "options": {
+            "A": "Using synchronous blocking calls.",
+            "B": "Using callbacks, Promises (`.then().catch()`), or `async/await`.",
+            "C": "MongoDB operations are always synchronous.",
+            "D": "Through direct database connections without Mongoose."
+          },
+          "correct_answer": "B",
+          "explanation": "Node.js is asynchronous by nature, and MongoDB operations using Mongoose return Promises, making callbacks or `async/await` the standard for handling their results."
+        },
+        {
+          "question": "Which Mongoose method is used to update existing documents in a collection?",
+          "options": {
+            "A": "`insert()`",
+            "B": "`delete()`",
+            "C": "`updateMany()` or `findByIdAndUpdate()` or `updateOne()`",
+            "D": "`create()`"
+          },
+          "correct_answer": "C",
+          "explanation": "Mongoose offers various update methods depending on whether you want to update one or many documents, or find and update a specific one by ID."
+        },
+        {
+          "question": "Which Mongoose method is used to delete documents from a collection?",
+          "options": {
+            "A": "`remove()` (deprecated) or `deleteOne()` / `deleteMany()`",
+            "B": "`clear()`",
+            "C": "`drop()`",
+            "D": "`destroy()`"
+          },
+          "correct_answer": "A",
+          "explanation": "The `remove()` method is deprecated; `deleteOne()` and `deleteMany()` are the current recommended methods for deleting documents."
+        },
+        {
+          "question": "What is 'document validation' in Mongoose?",
+          "options": {
+            "A": "Checking if a document is saved to the correct collection.",
+            "B": "Ensuring that data inserted into a document conforms to the rules defined in its Schema (e.g., data types, required fields, custom validators).",
+            "C": "Verifying the authenticity of a document against a digital signature.",
+            "D": "Comparing documents between different collections."
+          },
+          "correct_answer": "B",
+          "explanation": "Mongoose schemas allow you to define validation rules, which are executed before saving documents to the database, helping maintain data integrity."
+        },
+        {
+          "question": "What is the purpose of `db.on('error', ...)` when setting up a Mongoose connection?",
+          "options": {
+            "A": "To handle errors that occur during query execution.",
+            "B": "To log successful database connections.",
+            "C": "To listen for and handle connection errors to the MongoDB database.",
+            "D": "To disconnect from the database."
+          },
+          "correct_answer": "C",
+          "explanation": "The Mongoose connection object emits `error` events if there's a problem with the database connection, and listening to this event is crucial for robust error handling."
+        },
+        {
+          "question": "When connecting to MongoDB using Mongoose, what method is used to establish the connection?",
+          "options": {
+            "A": "`mongoose.createConnection()`",
+            "B": "`mongoose.open()`",
+            "C": "`mongoose.connect()`",
+            "D": "`mongoose.start()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`mongoose.connect()` takes a MongoDB connection URI and an optional options object to establish a connection to the database."
+        },
+        {
+          "question": "Can you define relationships between documents in MongoDB like in relational databases?",
+          "options": {
+            "A": "Yes, using foreign keys.",
+            "B": "No, MongoDB is strictly for isolated documents.",
+            "C": "Yes, primarily through embedding documents or using references (similar to foreign keys, but handled at the application level).",
+            "D": "Only if you use a specific MongoDB plugin."
+          },
+          "correct_answer": "C",
+          "explanation": "MongoDB supports both embedding (nesting related documents within a single document) and referencing (storing the `_id` of one document in another) to model relationships. Mongoose provides population features to work with references."
+        },
+        {
+          "question": "What is the significance of the `_id` field in MongoDB documents?",
+          "options": {
+            "A": "It's an optional field for indexing.",
+            "B": "It serves as the primary key for every document in a collection and is automatically generated if not provided.",
+            "C": "It's used for tracking document versions.",
+            "D": "It's the only field that cannot be indexed."
+          },
+          "correct_answer": "B",
+          "explanation": "The `_id` field is a unique identifier for each document within a collection. MongoDB automatically creates an ObjectId for this field if you don't provide one."
+        },
+        {
+          "question": "What is an 'index' in MongoDB and why is it used?",
+          "options": {
+            "A": "A way to organize collections into groups.",
+            "B": "A list of all fields in a document.",
+            "C": "A special data structure that stores a small portion of the collection's data in an easy-to-traverse form, enabling faster query execution.",
+            "D": "A security measure to prevent unauthorized access."
+          },
+          "correct_answer": "C",
+          "explanation": "Indexes significantly improve query performance by allowing MongoDB to quickly locate documents without scanning the entire collection."
+        },
+        {
+          "question": "What does `populate()` do in Mongoose?",
+          "options": {
+            "A": "It pre-fills a form with existing data.",
+            "B": "It's used to insert a large number of documents into a collection.",
+            "C": "It automatically replaces the specified paths in the document with actual document(s) from other collections based on their references (joins data).",
+            "D": "It updates all fields in a document."
+          },
+          "correct_answer": "C",
+          "explanation": "`populate()` is Mongoose's way of handling referenced relationships, allowing you to fetch related documents efficiently in a single query chain."
+        },
+        {
+          "question": "Is it generally recommended to store large binary data (like images or videos) directly within MongoDB documents?",
+          "options": {
+            "A": "Yes, it's the most efficient way.",
+            "B": "No, it's generally discouraged; better to store references (paths/URLs) to files stored on a file system or cloud storage, or use GridFS for very large binary files.",
+            "C": "Only if the database is very small.",
+            "D": "Only if the data is encrypted."
+          },
+          "correct_answer": "B",
+          "explanation": "Storing large binary data directly in documents can lead to performance issues and database size limitations. GridFS is a MongoDB specification for storing and retrieving files that exceed the BSON document size limit."
+        }
+      ]
+    }
+  ]
+}

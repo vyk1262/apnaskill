@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Data_Ingestion_and_Loading",
+      "questions": [
+        {
+          "question": "Which object in PySpark is the primary entry point for reading data from various sources into a DataFrame?",
+          "options": {
+            "A": "SparkContext",
+            "B": "DataFrameWriter",
+            "C": "SparkSession.read",
+            "D": "RDD.from_file"
+          },
+          "correct_answer": "C",
+          "explanation": "`spark.read` (where `spark` is a `SparkSession` object) provides methods for reading different data formats."
+        },
+        {
+          "question": "What is the correct PySpark code to load a CSV file named 'data.csv' into a DataFrame, assuming the first row contains headers?",
+          "options": {
+            "A": "spark.read.csv('data.csv')",
+            "B": "spark.read.load('data.csv', format='csv', header=True)",
+            "C": "spark.read.csv('data.csv', header=True)",
+            "D": "spark.load.csv('data.csv')"
+          },
+          "correct_answer": "C",
+          "explanation": "`spark.read.csv()` is a convenience method, and `header=True` explicitly tells Spark to treat the first row as column names."
+        },
+        {
+          "question": "When loading a CSV file, what does the `inferSchema=True` option do?",
+          "options": {
+            "A": "It forces all columns to be loaded as strings.",
+            "B": "It tells Spark to automatically determine the data types of columns by sampling the data.",
+            "C": "It creates a fixed schema for the DataFrame.",
+            "D": "It infers the number of rows in the CSV file."
+          },
+          "correct_answer": "B",
+          "explanation": "Schema inference can be convenient but might be slow for very large datasets and can sometimes infer incorrect types, especially for mixed data."
+        },
+        {
+          "question": "Which of the following file formats is known for its columnar storage, schema evolution, and efficient read performance in Spark?",
+          "options": {
+            "A": "CSV",
+            "B": "JSON",
+            "C": "Parquet",
+            "D": "TXT"
+          },
+          "correct_answer": "C",
+          "explanation": "Parquet is a highly optimized columnar storage format widely used in the Apache Hadoop ecosystem for big data analytics."
+        },
+        {
+          "question": "What PySpark method is used to load data from a Parquet file?",
+          "options": {
+            "A": "spark.read.text()",
+            "B": "spark.read.parquet()",
+            "C": "spark.read.json()",
+            "D": "spark.read.csv()"
+          },
+          "correct_answer": "B",
+          "explanation": "`spark.read.parquet()` is the specific method for reading Parquet files."
+        },
+        {
+          "question": "To load a JSON file where each line is a self-contained JSON object, which PySpark method should be used?",
+          "options": {
+            "A": "spark.read.csv()",
+            "B": "spark.read.text()",
+            "C": "spark.read.json()",
+            "D": "spark.read.parquet()"
+          },
+          "correct_answer": "C",
+          "explanation": "`spark.read.json()` is designed for reading JSON data, either as multi-line JSON or one JSON object per line."
+        },
+        {
+          "question": "When is it generally recommended to explicitly define a schema using `StructType` and `StructField` instead of relying on `inferSchema=True`?",
+          "options": {
+            "A": "Only when working with small datasets.",
+            "B": "When you need strict control over column data types, for performance optimization on large datasets, or when `inferSchema` might fail or be inaccurate.",
+            "C": "Only when loading text files.",
+            "D": "It's never recommended to define a schema manually."
+          },
+          "correct_answer": "B",
+          "explanation": "Explicit schema definition avoids a full pass over the data for inference and ensures type correctness."
+        },
+        {
+          "question": "How do you specify a custom delimiter (e.g., a tab character `\t`) when loading a CSV file using `spark.read.csv()`?",
+          "options": {
+            "A": "spark.read.csv('data.csv', separator='\t')",
+            "B": "spark.read.csv('data.csv', delimiter='\t')",
+            "C": "spark.read.csv('data.csv', sep='\t')",
+            "D": "spark.read.csv('data.csv').option('delimiter', '\t')"
+          },
+          "correct_answer": "C",
+          "explanation": "The `sep` option is specifically for defining the field delimiter in CSV files."
+        },
+        {
+          "question": "Which method would you use to read a plain text file, where each line becomes a single string column in the DataFrame?",
+          "options": {
+            "A": "spark.read.csv()",
+            "B": "spark.read.text()",
+            "C": "spark.read.json()",
+            "D": "spark.read.option('format', 'txt').load()"
+          },
+          "correct_answer": "B",
+          "explanation": "`spark.read.text()` creates a DataFrame with a single string column named 'value', where each row is a line from the text file."
+        },
+        {
+          "question": "To load data from a Hive table directly into a PySpark DataFrame, which method would you typically use?",
+          "options": {
+            "A": "spark.read.jdbc()",
+            "B": "spark.read.csv()",
+            "C": "spark.sql('SELECT * FROM my_hive_table')",
+            "D": "spark.read.table('my_hive_table')"
+          },
+          "correct_answer": "D",
+          "explanation": "`spark.read.table()` is the most straightforward way to read directly from a registered table, including Hive tables, assuming Hive support is enabled in SparkSession."
+        },
+        {
+          "question": "If you want to read data from a relational database using JDBC in PySpark, what kind of options would you typically provide?",
+          "options": {
+            "A": "Only the table name.",
+            "B": "JDBC URL, table name, driver class, and optionally user/password.",
+            "C": "Only the file path of the database.",
+            "D": "A SparkContext configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "JDBC connections require full connection details to access the database and specific table."
+        },
+        {
+          "question": "What is the purpose of the `schema` argument in `spark.read.csv('path', schema=my_schema)`?",
+          "options": {
+            "A": "To infer the schema from the file.",
+            "B": "To write the schema to a file.",
+            "C": "To explicitly provide a `StructType` object defining the DataFrame's column names and data types, overriding schema inference.",
+            "D": "To ignore the schema entirely."
+          },
+          "correct_answer": "C",
+          "explanation": "Providing a schema manually gives you precise control and can improve performance by avoiding schema inference."
+        },
+        {
+          "question": "Which columnar storage format is optimized for reads and is commonly used in data warehouses, also having native support in PySpark?",
+          "options": {
+            "A": "CSV",
+            "B": "TXT",
+            "C": "ORC (Optimized Row Columnar)",
+            "D": "XML"
+          },
+          "correct_answer": "C",
+          "explanation": "ORC is another popular columnar storage format, similar to Parquet, offering good compression and query performance."
+        },
+        {
+          "question": "When loading multiple CSV files from a directory, how does PySpark handle this by default?",
+          "options": {
+            "A": "It only loads the first file it finds.",
+            "B": "It concatenates all files in the directory that match the specified format into a single DataFrame.",
+            "C": "It creates a separate DataFrame for each file.",
+            "D": "It throws an error, requiring individual file loading."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark's file-based readers can take a directory path and will read all compatible files within it."
+        },
+        {
+          "question": "What is the `multiline=True` option used for when reading JSON files in PySpark?",
+          "options": {
+            "A": "To read JSON files that contain arrays.",
+            "B": "To read JSON files where a single JSON object spans multiple lines.",
+            "C": "To read multiple JSON files simultaneously.",
+            "D": "To read JSON files with no nested structure."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, Spark expects one JSON object per line. `multiline=True` is needed for pretty-printed JSON files or those with root-level arrays where a single record spans multiple lines."
+        },
+        {
+          "question": "To programmatically create a PySpark DataFrame from a Python list of tuples, which method can be used?",
+          "options": {
+            "A": "spark.read.list()",
+            "B": "spark.createDataFrame()",
+            "C": "spark.sql()",
+            "D": "spark.table()"
+          },
+          "correct_answer": "B",
+          "explanation": "`spark.createDataFrame()` is a versatile method for creating DataFrames from various Python collections like lists of tuples, lists of dicts, or Pandas DataFrames."
+        },
+        {
+          "question": "Which option is used in `spark.read.csv()` to specify the character used for quoting values (e.g., to handle commas within fields)?",
+          "options": {
+            "A": "quoteChar",
+            "B": "quote",
+            "C": "enclosure",
+            "D": "quotation"
+          },
+          "correct_answer": "B",
+          "explanation": "The `quote` option (defaulting to double-quote `\"`) defines the character used to escape special characters within a field."
+        },
+        {
+          "question": "If you want to read a file that is compressed (e.g., GZIP, BZIP2), how does Spark handle this?",
+          "options": {
+            "A": "You must manually decompress the file before loading.",
+            "B": "Spark automatically detects and decompresses common compression codecs when reading.",
+            "C": "Spark can only read uncompressed files.",
+            "D": "You need a special connector for compressed files."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark's readers are designed to automatically handle various compression formats, making it convenient to work with compressed data directly."
+        },
+        {
+          "question": "What is the role of `mode` option (e.g., 'failfast', 'dropmalformed', 'permissive') when reading data in PySpark?",
+          "options": {
+            "A": "It specifies the cluster mode for execution.",
+            "B": "It dictates how Spark should handle malformed or corrupt records during data ingestion.",
+            "C": "It defines the storage mode for the DataFrame.",
+            "D": "It sets the logging level for errors."
+          },
+          "correct_answer": "B",
+          "explanation": "The `mode` option allows you to control error handling during parsing, for instance, `permissive` (default) puts malformed records in a corrupted column, `dropmalformed` drops them, and `failfast` raises an exception."
+        },
+        {
+          "question": "To load data from a Pandas DataFrame directly into a PySpark DataFrame, which `SparkSession` method is used?",
+          "options": {
+            "A": "spark.read.pandas()",
+            "B": "spark.createDataFrame(pandas_df)",
+            "C": "spark.from_pandas()",
+            "D": "spark.dataframe.from_pandas()"
+          },
+          "correct_answer": "B",
+          "explanation": "`spark.createDataFrame()` is highly versatile and can directly convert Pandas DataFrames into PySpark DataFrames, leveraging the schema and data types from Pandas."
+        }
+      ]
+    }
+  ]
+}

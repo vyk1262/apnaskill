@@ -1,0 +1,119 @@
+{
+  "result": [
+    {
+      "topic": "html_forms",
+      "questions": [
+        {
+          "question": "What is the purpose of HTML forms?",
+          "options": {
+            "A": "To structure web pages",
+            "B": "To collect user input",
+            "C": "To style web pages",
+            "D": "To add images to web pages"
+          },
+          "correct_answer": "B",
+          "explanation": "HTML forms are used to collect user input, such as text, numbers, and selections, which can then be submitted to a server."
+        },
+        {
+          "question": "Which HTML tag is used to create a form?",
+          "options": {
+            "A": "<form>",
+            "B": "<input>",
+            "C": "<textarea>",
+            "D": "<button>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<form>` tag is a container for all the input elements and other form controls."
+        },
+        {
+          "question": "Which attribute is used to specify where to send form data when submitted?",
+          "options": {
+            "A": "method",
+            "B": "action",
+            "C": "target",
+            "D": "name"
+          },
+          "correct_answer": "B",
+          "explanation": "The `action` attribute specifies the URL where the form data will be sent when the form is submitted."
+        },
+        {
+          "question": "Which attribute defines the HTTP method for sending form data?",
+          "options": {
+            "A": "method",
+            "B": "action",
+            "C": "type",
+            "D": "id"
+          },
+          "correct_answer": "A",
+          "explanation": "The `method` attribute specifies the HTTP method (e.g., GET or POST) to be used when submitting the form data."
+        },
+        {
+          "question": "What is the purpose of the <input> element?",
+          "options": {
+            "A": "To define a clickable button",
+            "B": "To define an input field for user data",
+            "C": "To display text",
+            "D": "To add a paragraph to the form"
+          },
+          "correct_answer": "B",
+          "explanation": "The `<input>` element is a versatile tag used to create various types of input fields, such as text fields, checkboxes, radio buttons, and more, for collecting user data."
+        },
+        {
+          "question": "Which attribute is used to provide placeholder text in an input field?",
+          "options": {
+            "A": "placeholder",
+            "B": "value",
+            "C": "name",
+            "D": "id"
+          },
+          "correct_answer": "A",
+          "explanation": "The `placeholder` attribute provides a hint to the user about what kind of information is expected in the input field. This text is displayed when the input field is empty and disappears when the user starts typing."
+        },
+        {
+          "question": "Which input type is used for selecting multiple options?",
+          "options": {
+            "A": "text",
+            "B": "radio",
+            "C": "checkbox",
+            "D": "password"
+          },
+          "correct_answer": "C",
+          "explanation": "Input elements with `type='checkbox'` allow users to select multiple options from a set of choices."
+        },
+        {
+          "question": "Which attribute is used to ensure a field is filled out before submitting the form?",
+          "options": {
+            "A": "required",
+            "B": "readonly",
+            "C": "autofocus",
+            "D": "maxlength"
+          },
+          "correct_answer": "A",
+          "explanation": "The `required` attribute is a boolean attribute that specifies that an input field must be filled out before submitting the form."
+        },
+        {
+          "question": "What is the purpose of the <textarea> element?",
+          "options": {
+            "A": "To allow multi-line text input",
+            "B": "To create a clickable button",
+            "C": "To select an option",
+            "D": "To create a text header"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<textarea>` element is used to create a multi-line text input control, allowing users to enter larger blocks of text."
+        },
+        {
+          "question": "Which attribute is used to group related options in a dropdown menu?",
+          "options": {
+            "A": "<optgroup>",
+            "B": "<fieldset>",
+            "C": "<datalist>",
+            "D": "<label>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<optgroup>` tag is used within a `<select>` element to group related options in a dropdown list. It provides a label for the group, making the options more organized and user-friendly."
+        }
+      ]
+    }
+  ]
+}

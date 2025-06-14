@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_Reinforcement_Learning",
+      "questions": [
+        {
+          "question": "What is the primary goal of an agent in Reinforcement Learning (RL)?",
+          "options": {
+            "A": "To classify data into predefined categories.",
+            "B": "To predict future numerical values based on past data.",
+            "C": "To learn a policy that maximizes cumulative reward over time.",
+            "D": "To find hidden patterns in unlabeled data."
+          },
+          "correct_answer": "C",
+          "explanation": "The core objective of an RL agent is to interact with an environment and learn a sequence of actions that leads to the highest possible total reward."
+        },
+        {
+          "question": "Which of the following best describes the 'environment' in an RL setup?",
+          "options": {
+            "A": "The physical location where the agent operates.",
+            "B": "The set of rules and states that define the problem the agent is trying to solve, providing observations and rewards to the agent.",
+            "C": "The raw data input provided to the agent.",
+            "D": "The training dataset used to train the agent."
+          },
+          "correct_answer": "B",
+          "explanation": "The environment is everything outside the agent that it interacts with, providing feedback in terms of state changes and rewards."
+        },
+        {
+          "question": "What is a 'reward' in Reinforcement Learning?",
+          "options": {
+            "A": "A penalty given to the agent for incorrect actions.",
+            "B": "A numerical signal that indicates how good or bad the agent's action was in a given state.",
+            "C": "The final outcome of the agent's entire learning process.",
+            "D": "A textual description of the agent's performance."
+          },
+          "correct_answer": "B",
+          "explanation": "Rewards are the immediate feedback the agent receives from the environment, guiding its learning process towards desired behaviors."
+        },
+        {
+          "question": "The sequence of states, actions, and rewards from a start state to a terminal state is called what?",
+          "options": {
+            "A": "A policy.",
+            "B": "A value function.",
+            "C": "An episode (or trajectory).",
+            "D": "A model."
+          },
+          "correct_answer": "C",
+          "explanation": "An episode represents a complete sequence of interactions between the agent and the environment, from start to finish."
+        },
+        {
+          "question": "What is a 'policy' in Reinforcement Learning?",
+          "options": {
+            "A": "A table that stores all possible rewards.",
+            "B": "A function that maps states to actions, dictating the agent's behavior.",
+            "C": "A measure of how good a state is.",
+            "D": "The rule for updating the agent's internal parameters."
+          },
+          "correct_answer": "B",
+          "explanation": "The policy is the agent's strategy; it tells the agent what action to take in any given state."
+        },
+        {
+          "question": "Which of the following best describes the 'exploration-exploitation dilemma' in RL?",
+          "options": {
+            "A": "Deciding whether to use a neural network or a Q-table.",
+            "B": "Balancing between trying new actions (exploration) and choosing known-good actions (exploitation) to maximize long-term reward.",
+            "C": "Choosing between discrete and continuous action spaces.",
+            "D": "The trade-off between computational cost and learning speed."
+          },
+          "correct_answer": "B",
+          "explanation": "A key challenge in RL is how to effectively explore the environment to discover better actions without sacrificing too much accumulated reward by sticking to sub-optimal but known actions."
+        },
+        {
+          "question": "What is the 'value function' in Reinforcement Learning?",
+          "options": {
+            "A": "A function that assigns a monetary value to each action.",
+            "B": "A prediction of the long-term cumulative reward that can be obtained from a given state (or state-action pair) following a particular policy.",
+            "C": "A measure of the immediate reward received.",
+            "D": "A function that determines the best action to take."
+          },
+          "correct_answer": "B",
+          "explanation": "Value functions help evaluate the 'goodness' of states or state-action pairs, guiding the agent towards higher reward trajectories."
+        },
+        {
+          "question": "In contrast to Supervised Learning, Reinforcement Learning typically involves which of the following characteristics?",
+          "options": {
+            "A": "Learning from a pre-labeled dataset.",
+            "B": "No concept of feedback or reward.",
+            "C": "Learning from trial and error through interactions with a dynamic environment, with delayed and sequential rewards.",
+            "D": "Focusing solely on classification tasks."
+          },
+          "correct_answer": "C",
+          "explanation": "RL's interactive, trial-and-error, and sequential nature with delayed rewards distinguishes it from supervised learning's direct error feedback on labeled data."
+        },
+        {
+          "question": "What is the role of the 'discount factor' ($gamma$) in RL?",
+          "options": {
+            "A": "It speeds up the learning process.",
+            "B": "It reduces the total number of actions an agent can take.",
+            "C": "It determines the present value of future rewards, making immediate rewards more valuable than future rewards.",
+            "D": "It scales the learning rate of the agent."
+          },
+          "correct_answer": "C",
+          "explanation": "The discount factor ensures that the agent prioritizes immediate rewards, preventing infinite returns in continuing tasks and reflecting the uncertainty of future rewards."
+        },
+        {
+          "question": "Which of the following is an example of an 'action' in an RL environment?",
+          "options": {
+            "A": "The agent's current location on a map.",
+            "B": "The score obtained by the agent in a game.",
+            "C": "Moving a robot arm forward.",
+            "D": "The battery level of the agent."
+          },
+          "correct_answer": "C",
+          "explanation": "An action is an output from the agent that changes the state of the environment."
+        },
+        {
+          "question": "What is an 'observation' in Reinforcement Learning?",
+          "options": {
+            "A": "The command given to the agent.",
+            "B": "The immediate reward received by the agent.",
+            "C": "The data an agent receives from the environment about its current state.",
+            "D": "The agent's internal decision-making process."
+          },
+          "correct_answer": "C",
+          "explanation": "An observation is the agent's perception of the environment's state. It might be the full state or a partial view."
+        },
+        {
+          "question": "What does it mean for an RL environment to be 'episodic'?",
+          "options": {
+            "A": "The agent learns continuously without end.",
+            "B": "The interaction between the agent and environment naturally breaks into a sequence of episodes, each ending in a terminal state.",
+            "C": "The agent always receives the same reward in each step.",
+            "D": "The environment changes its rules frequently."
+          },
+          "correct_answer": "B",
+          "explanation": "Episodic tasks have clear starting and ending points, like a game that finishes. Continuing tasks do not have natural termination."
+        },
+        {
+          "question": "Which concept helps the agent evaluate the 'goodness' of taking a particular action in a particular state, considering future rewards?",
+          "options": {
+            "A": "State-value function V(s)",
+            "B": "Action-value function Q(s, a)",
+            "C": "Immediate reward r(s, a)",
+            "D": "Policy $pi(s)$"
+          },
+          "correct_answer": "B",
+          "explanation": "The Q-value (or action-value function) estimates the expected cumulative reward from taking a specific action in a specific state and then following a given policy thereafter."
+        },
+        {
+          "question": "What is 'Model-Free' Reinforcement Learning?",
+          "options": {
+            "A": "The agent has a perfect understanding of how the environment works.",
+            "B": "The agent uses a pre-trained model from supervised learning.",
+            "C": "The agent learns optimal behavior directly from interaction with the environment without explicitly building a model of the environment's dynamics.",
+            "D": "The agent does not use any form of internal representation."
+          },
+          "correct_answer": "C",
+          "explanation": "Model-free methods learn policies or value functions directly from experience, making them suitable when the environment's dynamics are unknown or too complex to model."
+        },
+        {
+          "question": "What is 'Model-Based' Reinforcement Learning?",
+          "options": {
+            "A": "The agent relies solely on trial and error.",
+            "B": "The agent learns or is given a model of the environment's dynamics, which it then uses for planning or simulating future outcomes.",
+            "C": "The agent uses a statistical model for data classification.",
+            "D": "The agent trains a model on a fixed dataset."
+          },
+          "correct_answer": "B",
+          "explanation": "Model-based methods learn an internal representation of how the environment behaves, which can then be used for more efficient planning or learning."
+        },
+        {
+          "question": "Which of the following is a common challenge in Reinforcement Learning?",
+          "options": {
+            "A": "Lack of data points.",
+            "B": "The need for huge, labeled datasets.",
+            "C": "Sparse rewards (rewards are infrequent) and the credit assignment problem (determining which actions led to a delayed reward).",
+            "D": "Overfitting to training data."
+          },
+          "correct_answer": "C",
+          "explanation": "Sparse and delayed rewards make it difficult for the agent to know which specific actions contributed to a positive or negative outcome, leading to the credit assignment problem."
+        },
+        {
+          "question": "In a given state, if an agent always chooses the action that has the highest estimated value, what kind of policy is it following?",
+          "options": {
+            "A": "A random policy.",
+            "B": "An exploratory policy.",
+            "C": "A greedy policy.",
+            "D": "A defensive policy."
+          },
+          "correct_answer": "C",
+          "explanation": "A greedy policy always exploits the currently known best action, without exploring alternatives."
+        },
+        {
+          "question": "The problem of Reinforcement Learning can be formally described as a:",
+          "options": {
+            "A": "Regression Problem.",
+            "B": "Classification Problem.",
+            "C": "Markov Decision Process (MDP).",
+            "D": "Clustering Problem."
+          },
+          "correct_answer": "C",
+          "explanation": "The MDP framework provides the mathematical foundation for most RL problems, defining states, actions, transitions, and rewards."
+        },
+        {
+          "question": "Which of the following statements about 'reward hypothesis' is true?",
+          "options": {
+            "A": "Every learning process can be reduced to the maximization of a single, scalar reward signal.",
+            "B": "Rewards are always immediate and never delayed.",
+            "C": "Rewards are only given at the end of an episode.",
+            "D": "Rewards are a secondary component in RL."
+          },
+          "correct_answer": "A",
+          "explanation": "The reward hypothesis states that all goals and purposes can be seen as the maximization of the expected cumulative sum of a received scalar reward signal."
+        },
+        {
+          "question": "Why is the concept of 'return' important in RL?",
+          "options": {
+            "A": "It's the immediate reward an agent receives.",
+            "B": "It represents the total sum of discounted future rewards from a certain time step, which the agent aims to maximize.",
+            "C": "It's the probability of reaching a terminal state.",
+            "D": "It's a measure of the agent's computational efficiency."
+          },
+          "correct_answer": "B",
+          "explanation": "The return (or cumulative discounted reward) is the quantity that the agent is actually trying to optimize over the long term, not just the immediate reward."
+        }
+      ]
+    }
+  ]
+}

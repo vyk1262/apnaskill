@@ -11,7 +11,8 @@
             "C": "To analyze numerical data using statistical methods.",
             "D": "To create visual representations of text data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The fundamental goal of **Natural Language Processing (NLP)** is to bridge the communication gap between humans and computers by allowing machines to process, understand, and even generate human languages (like English, Spanish, etc.)."
         },
         {
           "question": "Which of the following is a fundamental task in NLP?",
@@ -21,7 +22,8 @@
             "C": "Time series forecasting",
             "D": "Clustering of numerical data"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Sentiment analysis** (determining the emotional tone of text) is a widely recognized and applied task within NLP. Image recognition, time series forecasting, and clustering of numerical data belong to other domains of AI and machine learning."
         },
         {
           "question": "What does tokenization refer to in NLP?",
@@ -31,7 +33,8 @@
             "C": "Removing stop words from the text.",
             "D": "Assigning grammatical tags to words."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Tokenization** is the initial step in many NLP pipelines where a large piece of text is broken down into smaller, meaningful units called tokens. These tokens can be words, subwords, or even characters, depending on the granularity required."
         },
         {
           "question": "What are stop words in NLP?",
@@ -41,7 +44,8 @@
             "C": "Words that indicate the end of a sentence.",
             "D": "Words that are specific to a particular domain."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Stop words** are very common words in a language (like 'the', 'is', 'and', 'a') that often carry little semantic meaning and are frequently removed during text preprocessing to reduce noise and improve efficiency for many NLP tasks."
         },
         {
           "question": "What is stemming in NLP?",
@@ -51,7 +55,8 @@
             "C": "Converting text to uppercase.",
             "D": "Removing punctuation from the text."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Stemming** is a heuristic process that chops off suffixes from words to reduce them to their root form, or 'stem'. For example, 'running', 'runs', and 'runner' would all be reduced to 'run'."
         },
         {
           "question": "What is lemmatization in NLP?",
@@ -61,7 +66,8 @@
             "C": "Identifying named entities in the text.",
             "D": "Translating text from one language to another."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Lemmatization** is a more sophisticated process than stemming. It reduces words to their meaningful base form, called a lemma, by using a vocabulary and morphological analysis. Unlike stemming, it ensures the resulting word is a valid word in the language (e.g., 'better' to 'good')."
         },
         {
           "question": "What is Part-of-Speech (POS) tagging?",
@@ -71,7 +77,8 @@
             "C": "Removing irrelevant words from the text.",
             "D": "Combining words into phrases."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Part-of-Speech (POS) tagging** is the process of labeling words in a text with their corresponding grammatical categories, such as noun, verb, adjective, adverb, etc., based on their definition and context."
         },
         {
           "question": "What is Named Entity Recognition (NER)?",
@@ -81,7 +88,8 @@
             "C": "Translating named entities into different languages.",
             "D": "Generating names based on a given context."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Named Entity Recognition (NER)** is an NLP task that aims to locate and classify named entities mentioned in unstructured text into pre-defined categories such as person names, organizations, locations, expressions of times, quantities, monetary values, percentages, etc."
         },
         {
           "question": "What is sentiment analysis?",
@@ -91,7 +99,8 @@
             "C": "Identifying the grammatical structure of a sentence.",
             "D": "Extracting key information from a document."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Sentiment analysis**, also known as opinion mining, is the computational study of people's opinions, sentiments, and emotions expressed in text. It typically classifies text as positive, negative, or neutral."
         },
         {
           "question": "What is text classification?",
@@ -101,7 +110,8 @@
             "C": "Generating new text based on a given style.",
             "D": "Translating text between languages."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Text classification** is the task of assigning one or more predefined categories or tags to a document or text. Examples include spam detection (spam/not spam) or topic categorization (sports, politics, technology)."
         },
         {
           "question": "What is text summarization?",
@@ -111,7 +121,8 @@
             "C": "Identifying the language of a text.",
             "D": "Correcting spelling and grammatical errors in a text."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Text summarization** aims to create a concise and coherent summary of a longer document or set of documents, preserving the key information and overall meaning."
         },
         {
           "question": "What is machine translation?",
@@ -121,7 +132,8 @@
             "C": "Generating text in a specific style.",
             "D": "Analyzing the frequency of words in a text."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Machine translation (MT)** is a subfield of computational linguistics that investigates the use of software to translate text or speech from one natural language to another."
         },
         {
           "question": "What are word embeddings (e.g., Word2Vec, GloVe)?",
@@ -131,7 +143,8 @@
             "C": "Techniques for stemming and lemmatizing words.",
             "D": "Ways to represent the grammatical structure of sentences."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Word embeddings** are dense vector representations of words. They map words into a continuous vector space where words with similar meanings are located closer together, capturing semantic and syntactic relationships. Word2Vec and GloVe are popular examples."
         },
         {
           "question": "What are sequence-to-sequence models commonly used for in NLP?",
@@ -141,7 +154,8 @@
             "C": "Analyzing the sentiment of short phrases.",
             "D": "Identifying named entities in single sentences."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Sequence-to-sequence (Seq2Seq) models** are neural network architectures designed to transform one sequence into another. They are widely used in tasks like **machine translation** (source sentence to target sentence) and **text summarization** (long text to short summary)."
         },
         {
           "question": "What are Recurrent Neural Networks (RNNs) particularly well-suited for in NLP?",
@@ -151,7 +165,8 @@
             "C": "Clustering documents based on topic.",
             "D": "Predicting continuous values from independent features."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Recurrent Neural Networks (RNNs)** are a class of neural networks specifically designed to process sequential data, such as natural language. They have internal memory (a hidden state) that allows them to consider previous inputs in the sequence when processing the current input, making them suitable for tasks where context matters."
         },
         {
           "question": "What are Transformers and why have they become prominent in NLP?",
@@ -161,7 +176,8 @@
             "C": "A traditional statistical method for language modeling.",
             "D": "A technique for visualizing word embeddings."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Transformers** are a revolutionary neural network architecture that primarily relies on the **attention mechanism**. They excel in NLP because they can process input sequences in parallel (unlike sequential RNNs) and effectively capture long-range dependencies between words, leading to significant performance gains in many tasks."
         },
         {
           "question": "What is the attention mechanism in Transformer networks?",
@@ -171,7 +187,8 @@
             "C": "A method for reducing the dimensionality of word embeddings.",
             "D": "A technique for generating new words based on context."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **attention mechanism** is a key innovation in Transformers. It allows the model to dynamically weigh the importance of different words in the input sequence when producing an output, essentially letting the model 'focus' on the most relevant parts of the input to understand context and generate accurate responses."
         },
         {
           "question": "What are large language models (LLMs) like GPT and BERT?",
@@ -181,7 +198,8 @@
             "C": "Traditional statistical models for language analysis.",
             "D": "Algorithms for compressing text data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Large Language Models (LLMs)** like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers) are state-of-the-art deep learning models, often based on the Transformer architecture, that are pre-trained on enormous amounts of text data. This pre-training enables them to learn complex language patterns and perform a wide variety of NLP tasks with impressive accuracy."
         },
         {
           "question": "What are some ethical considerations in NLP?",
@@ -191,7 +209,8 @@
             "C": "Primarily about the accuracy of language translation.",
             "D": "Mostly focused on the efficiency of text processing algorithms."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Ethical considerations in NLP are broad and critical. They include addressing **bias** in models (e.g., gender, racial bias learned from training data), safeguarding **privacy** when handling sensitive text data, and mitigating the potential for **misuse** of powerful language generation models (e.g., for misinformation or propaganda)."
         },
         {
           "question": "What are some real-world applications of NLP?",
@@ -201,7 +220,8 @@
             "C": "Primarily for analyzing numerical data.",
             "D": "Mainly used for image and video processing."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NLP has a vast array of real-world applications that impact daily life. These include interactive **chatbots** and **virtual assistants** (Siri, Alexa), automatic **machine translation** (Google Translate), understanding customer feedback through **sentiment analysis**, condensing information with **text summarization**, and filtering unwanted content with **spam detection**."
         }
       ]
     }

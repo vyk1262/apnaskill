@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Context_and_Instructions",
+      "questions": [
         {
-            "topic": "Context_and_Instructions",
-            "questions": []
+          "question": "What is the primary role of 'context' in a prompt?",
+          "options": {
+            "A": "To specify the desired output format.",
+            "B": "To provide background information and relevant details that help the AI understand the scenario, topic, or specific entities involved.",
+            "C": "To set the maximum length of the response.",
+            "D": "To define the AI model's persona."
+          },
+          "correct_answer": "B",
+          "explanation": "Context gives the AI the necessary background knowledge to generate a relevant and informed response, preventing generic or off-topic outputs."
+        },
+        {
+          "question": "Why are 'clear and unambiguous instructions' crucial in a prompt?",
+          "options": {
+            "A": "They help the AI run faster.",
+            "B": "They eliminate guesswork for the AI, directly telling it what task to perform, what limitations to observe, and what the expected outcome is.",
+            "C": "They make the prompt shorter.",
+            "D": "They reduce the AI's memory usage."
+          },
+          "correct_answer": "B",
+          "explanation": "Clear instructions leave no room for misinterpretation, ensuring the AI performs the exact task intended by the user."
+        },
+        {
+          "question": "How does providing 'negative constraints' (e.g., 'Do NOT include...') improve prompt effectiveness?",
+          "options": {
+            "A": "It makes the prompt less efficient.",
+            "B": "It explicitly tells the AI what to avoid, preventing undesirable content or styles in the output.",
+            "C": "It increases the length of the response.",
+            "D": "It forces the AI to use more creative language."
+          },
+          "correct_answer": "B",
+          "explanation": "Negative constraints are powerful for guiding the AI away from unwanted elements, ensuring the output aligns more precisely with user expectations."
+        },
+        {
+          "question": "What is the impact of placing critical instructions at the 'beginning' of a prompt?",
+          "options": {
+            "A": "It makes the prompt harder to read.",
+            "B": "It ensures the AI processes the most important directives first, potentially improving adherence to the core task.",
+            "C": "It has no impact on AI understanding.",
+            "D": "It only affects the visual appeal of the prompt."
+          },
+          "correct_answer": "B",
+          "explanation": "AI models often give more weight to information presented earlier in the prompt. Starting with the main instruction sets the primary focus immediately."
+        },
+        {
+          "question": "How can you use 'delimiters' to structure context and instructions?",
+          "options": {
+            "A": "By using random characters.",
+            "B": "By using clear separators (e.g., triple quotes `'''`, XML tags `<text>`, `---`) to logically separate instructions from context or input data.",
+            "C": "By avoiding any punctuation.",
+            "D": "By making the entire prompt one long sentence."
+          },
+          "correct_answer": "B",
+          "explanation": "Delimiters help the AI distinguish between different sections of the prompt, preventing confusion and ensuring it correctly interprets which part is an instruction, which is context, and which is data."
+        },
+        {
+          "question": "When should 'context' be provided to the AI?",
+          "options": {
+            "A": "Only when the AI asks for it.",
+            "B": "Before or alongside the instructions, ensuring the AI has the necessary background before attempting the task.",
+            "C": "After the AI has generated its response.",
+            "D": "Never."
+          },
+          "correct_answer": "B",
+          "explanation": "Context should precede or accompany instructions so the AI can integrate that information into its understanding of the task from the outset."
+        },
+        {
+          "question": "What is a common pitfall of providing 'too much' context?",
+          "options": {
+            "A": "It always leads to better results.",
+            "B": "It can dilute the focus, introduce irrelevant information, increase token usage, and potentially lead to the AI missing critical instructions.",
+            "C": "It makes the AI respond faster.",
+            "D": "It reduces the chances of errors."
+          },
+          "correct_answer": "B",
+          "explanation": "While context is important, excessive or irrelevant context can overload the AI, make it harder for it to identify key information, and contribute to higher processing costs or slower responses."
+        },
+        {
+          "question": "How does specifying the 'target audience' in the instructions affect the AI's response?",
+          "options": {
+            "A": "It makes the response shorter.",
+            "B": "It influences the AI's vocabulary, tone, complexity, and the type of examples or analogies it uses.",
+            "C": "It only changes the font of the output.",
+            "D": "It has no impact on the content."
+          },
+          "correct_answer": "B",
+          "explanation": "Directing the AI to address a specific audience (e.g., 'Explain to a child', 'Write for industry experts') ensures the response is tailored appropriately."
+        },
+        {
+          "question": "What is the importance of providing 'specific examples' within the context or instructions?",
+          "options": {
+            "A": "They are only for human understanding.",
+            "B": "They demonstrate the desired input-output mapping or desired behavior, reducing ambiguity and guiding the AI towards the correct pattern.",
+            "C": "They increase the cost of running the AI.",
+            "D": "They slow down the AI's processing time."
+          },
+          "correct_answer": "B",
+          "explanation": "Examples are a powerful form of instruction. They show the AI exactly what kind of output is expected given a particular input, which is especially helpful for complex or nuanced tasks."
+        },
+        {
+          "question": "What is 'system-level' context or instruction?",
+          "options": {
+            "A": "Instructions given directly by the user in each prompt.",
+            "B": "High-level, overarching instructions or background information that persists across multiple turns in a conversation or session, often set by the developer.",
+            "C": "Instructions about the AI's internal architecture.",
+            "D": "Instructions for the operating system."
+          },
+          "correct_answer": "B",
+          "explanation": "System-level context provides persistent guidance to the AI, establishing its general role or baseline behavior for an entire conversation or application session, often invisible to the end-user."
+        },
+        {
+          "question": "What is 'user-level' context or instruction?",
+          "options": {
+            "A": "Instructions only given by the AI.",
+            "B": "Instructions and context directly provided by the end-user in their individual prompts, overriding or extending system-level guidance.",
+            "C": "Instructions for model training.",
+            "D": "Instructions for hardware configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "User-level context and instructions are the immediate directives given by the person interacting with the AI, directly shaping the response to that specific query."
+        },
+        {
+          "question": "How does 'role-playing' or 'persona setting' function as an instruction?",
+          "options": {
+            "A": "It tells the AI to generate random text.",
+            "B": "It directs the AI to adopt a specific identity (e.g., 'Act as a historian', 'You are a cybersecurity expert'), influencing its knowledge scope, tone, and approach to the task.",
+            "C": "It limits the AI's vocabulary.",
+            "D": "It speeds up the AI's response time."
+          },
+          "correct_answer": "B",
+          "explanation": "Role-playing is a powerful instruction method that implicitly guides the AI's generation by making it assume a specific perspective or expertise."
+        },
+        {
+          "question": "Why is 'specificity' important in instructions?",
+          "options": {
+            "A": "It makes the prompt look more professional.",
+            "B": "Vague instructions lead to generic or incorrect outputs; specificity ensures the AI understands precisely what is required for the task.",
+            "C": "It allows the AI to interpret the prompt broadly.",
+            "D": "It reduces the need for context."
+          },
+          "correct_answer": "B",
+          "explanation": "Specific instructions minimize ambiguity and guide the AI more effectively towards the desired, precise outcome."
+        },
+        {
+          "question": "What is the concept of 'instruction ordering' in a prompt?",
+          "options": {
+            "A": "The alphabetical order of words in the prompt.",
+            "B": "The sequence in which instructions are given, which can influence the AI's processing and prioritization of different directives.",
+            "C": "The number of instructions used.",
+            "D": "The length of each instruction."
+          },
+          "correct_answer": "B",
+          "explanation": "The order of instructions can matter. Placing the most important or overarching instructions first often helps the AI to set its primary focus before considering secondary details or constraints."
+        },
+        {
+          "question": "When instructing for a 'summary', what additional instructions can be crucial?",
+          "options": {
+            "A": "The background color of the text.",
+            "B": "Desired length (e.g., '100 words', '3 sentences'), key points to include/exclude, or target audience for the summary.",
+            "C": "The font style.",
+            "D": "The AI model's internal version number."
+          },
+          "correct_answer": "B",
+          "explanation": "For summarization, mere 'summarize this' is often insufficient. Specifying length, focus, or audience provides precise guidance for the AI."
+        },
+        {
+          "question": "How can 'bullet points' or 'numbered lists' be used effectively in instructions?",
+          "options": {
+            "A": "To make the prompt longer.",
+            "B": "To clearly delineate multiple, distinct instructions or requirements, making them easy for the AI to parse and follow.",
+            "C": "To hide instructions from the AI.",
+            "D": "To make the prompt less readable."
+          },
+          "correct_answer": "B",
+          "explanation": "Using structured lists helps break down complex sets of instructions into digestible, distinct points, which can improve the AI's adherence to all specified requirements."
+        },
+        {
+          "question": "What is the danger of using 'implied' context or instructions?",
+          "options": {
+            "A": "It always makes the AI smarter.",
+            "B": "The AI might misinterpret or fail to infer the unstated information, leading to irrelevant or incorrect outputs.",
+            "C": "It speeds up the AI's response.",
+            "D": "It reduces the overall prompt length."
+          },
+          "correct_answer": "B",
+          "explanation": "Relying on implied information risks the AI not understanding your intent, as it lacks human common sense. Explicit instructions and context are generally preferred."
+        },
+        {
+          "question": "In a conversational AI, how does the 'chat history' act as context?",
+          "options": {
+            "A": "It's irrelevant to the current turn.",
+            "B": "Previous turns in the conversation serve as implicit context for the current prompt, allowing the AI to maintain coherence and follow-up on earlier discussions.",
+            "C": "It only influences the AI's internal processing.",
+            "D": "It only impacts the user interface."
+          },
+          "correct_answer": "B",
+          "explanation": "Most conversational AIs maintain a memory of the preceding turns. This chat history acts as crucial context, allowing the AI to understand pronouns, refer to previous statements, and maintain topic coherence."
+        },
+        {
+          "question": "What is the concept of 'grounding' the AI's response with context?",
+          "options": {
+            "A": "To make the AI's response very generic.",
+            "B": "To ensure the AI's output is strictly based on the provided context, preventing it from 'hallucinating' or bringing in outside, potentially incorrect, information.",
+            "C": "To limit the AI's creativity.",
+            "D": "To make the AI respond faster."
+          },
+          "correct_answer": "B",
+          "explanation": "Grounding means telling the AI to only use the information provided in the prompt's context to formulate its answer, making the response verifiable and preventing fabrication."
+        },
+        {
+          "question": "True or False: A prompt should contain all relevant context and instructions in a single, well-structured input.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. While iterative prompting is a technique, for a single, focused task, providing all necessary context and clear instructions in one comprehensive prompt generally leads to the best initial response, minimizing the need for follow-up clarifications."
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Logistic_Regression",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Logistic Regression in machine learning?",
+          "options": {
+            "A": "To model binary outcomes using a logistic function.",
+            "B": "To store data in a hierarchical structure.",
+            "C": "To visualize data trends.",
+            "D": "To encrypt data for security."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression models binary outcomes using a logistic function to predict probabilities."
+        },
+        {
+          "question": "Which of the following is a common use case for Logistic Regression?",
+          "options": {
+            "A": "Binary classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression is commonly used for binary classification tasks, predicting probabilities of outcomes."
+        },
+        {
+          "question": "What is the role of the sigmoid function in Logistic Regression?",
+          "options": {
+            "A": "To map predictions to probabilities.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The sigmoid function maps predictions to probabilities, providing a range between 0 and 1 in Logistic Regression."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in Logistic Regression?",
+          "options": {
+            "A": "Regularization",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Regularization prevents overfitting in Logistic Regression by controlling the complexity of the model."
+        },
+        {
+          "question": "What is the significance of the threshold in Logistic Regression?",
+          "options": {
+            "A": "To determine the class label.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The threshold determines the class label, converting probabilities into binary outcomes in Logistic Regression."
+        },
+        {
+          "question": "Which of the following is a disadvantage of Logistic Regression?",
+          "options": {
+            "A": "Limited to binary classification.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression is limited to binary classification, making it unsuitable for multi-class tasks."
+        },
+        {
+          "question": "What is the purpose of using the log-odds in Logistic Regression?",
+          "options": {
+            "A": "To linearize the relationship between features and outcomes.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Log-odds linearize the relationship between features and outcomes, allowing Logistic Regression to model probabilities."
+        },
+        {
+          "question": "Which of the following is a common use case for Logistic Regression?",
+          "options": {
+            "A": "Predicting binary outcomes.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression is commonly used for predicting binary outcomes, providing probabilities of class labels."
+        },
+        {
+          "question": "What is the role of the cost function in Logistic Regression?",
+          "options": {
+            "A": "To minimize the error between predicted and actual outcomes.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The cost function minimizes the error between predicted and actual outcomes, optimizing the model in Logistic Regression."
+        },
+        {
+          "question": "Which of the following is a benefit of Logistic Regression?",
+          "options": {
+            "A": "Simple and efficient for binary classification.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression is simple and efficient for binary classification, providing quick predictions of probabilities."
+        },
+        {
+          "question": "What is the significance of the learning rate in Logistic Regression?",
+          "options": {
+            "A": "It controls the speed of model optimization.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The learning rate controls the speed of model optimization, influencing the convergence of Logistic Regression."
+        },
+        {
+          "question": "Which of the following is a common use case for Logistic Regression?",
+          "options": {
+            "A": "Binary classification tasks.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression is commonly used for binary classification tasks, predicting probabilities of outcomes."
+        },
+        {
+          "question": "What is the role of the sigmoid function in Logistic Regression?",
+          "options": {
+            "A": "To map predictions to probabilities.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The sigmoid function maps predictions to probabilities, providing a range between 0 and 1 in Logistic Regression."
+        },
+        {
+          "question": "Which method is used to prevent overfitting in Logistic Regression?",
+          "options": {
+            "A": "Regularization",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Regularization prevents overfitting in Logistic Regression by controlling the complexity of the model."
+        },
+        {
+          "question": "What is the significance of the threshold in Logistic Regression?",
+          "options": {
+            "A": "To determine the class label.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The threshold determines the class label, converting probabilities into binary outcomes in Logistic Regression."
+        },
+        {
+          "question": "Which of the following is a disadvantage of Logistic Regression?",
+          "options": {
+            "A": "Limited to binary classification.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression is limited to binary classification, making it unsuitable for multi-class tasks."
+        },
+        {
+          "question": "What is the purpose of using the log-odds in Logistic Regression?",
+          "options": {
+            "A": "To linearize the relationship between features and outcomes.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Log-odds linearize the relationship between features and outcomes, allowing Logistic Regression to model probabilities."
+        },
+        {
+          "question": "Which of the following is a common use case for Logistic Regression?",
+          "options": {
+            "A": "Predicting binary outcomes.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Logistic Regression is commonly used for predicting binary outcomes, providing probabilities of class labels."
+        },
+        {
+          "question": "What is the role of the cost function in Logistic Regression?",
+          "options": {
+            "A": "To minimize the error between predicted and actual outcomes.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The cost function minimizes the error between predicted and actual outcomes, optimizing the model in Logistic Regression."
+        }
+      ]
+    }
+  ]
+}

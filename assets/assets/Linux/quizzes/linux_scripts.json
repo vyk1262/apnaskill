@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "topic": "linux_scripts",
+      "questions": [
+        {
+          "question": "What is the primary purpose of scripting in Linux?",
+          "options": {
+            "A": "To enhance graphical performance.",
+            "B": "To automate tasks and processes.",
+            "C": "To increase network connectivity.",
+            "D": "To provide better user interface."
+          },
+          "correct_answer": "B",
+          "explanation": "Scripting in Linux is used to automate tasks and processes, making system management more efficient."
+        },
+        {
+          "question": "Which command is used to execute a script in Linux?",
+          "options": {
+            "A": "bash",
+            "B": "run",
+            "C": "exec",
+            "D": "start"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'bash' command in Linux is used to execute scripts, running the commands contained within the script file."
+        },
+        {
+          "question": "What is the function of the 'sh' command in Linux?",
+          "options": {
+            "A": "To execute shell scripts.",
+            "B": "To delete files.",
+            "C": "To move files.",
+            "D": "To rename files."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'sh' command in Linux is used to execute shell scripts, running the commands contained within the script file."
+        },
+        {
+          "question": "Which tool in Linux helps with script debugging?",
+          "options": {
+            "A": "bashdb",
+            "B": "scriptdebug",
+            "C": "debugtool",
+            "D": "debugwatch"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'bashdb' tool in Linux helps with script debugging, providing a debugger for Bash scripts."
+        },
+        {
+          "question": "How can you view the contents of a script in Linux?",
+          "options": {
+            "A": "Using the 'cat' command.",
+            "B": "Through the 'view' command.",
+            "C": "By editing the file.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'cat' command in Linux is used to view the contents of a script, displaying its text in the terminal."
+        },
+        {
+          "question": "What is the purpose of the 'chmod +x' command in Linux?",
+          "options": {
+            "A": "To make a script executable.",
+            "B": "To manage user permissions.",
+            "C": "To configure network settings.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'chmod +x' command in Linux is used to make a script executable, allowing it to be run as a program."
+        },
+        {
+          "question": "Which Linux feature assists with script scheduling?",
+          "options": {
+            "A": "Cron jobs.",
+            "B": "Script optimization.",
+            "C": "Script configuration.",
+            "D": "Script execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Cron jobs in Linux assist with script scheduling, allowing scripts to be run automatically at specified intervals."
+        },
+        {
+          "question": "What is the role of 'crontab' in Linux?",
+          "options": {
+            "A": "To manage cron jobs.",
+            "B": "To configure network settings.",
+            "C": "To monitor system performance.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'crontab' command in Linux is used to manage cron jobs, scheduling scripts to run at specified times."
+        },
+        {
+          "question": "How can you enable advanced scripting features in Linux?",
+          "options": {
+            "A": "By installing a scripting package.",
+            "B": "Through the script manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced scripting features in Linux can be enabled through the script manager, providing tools for configuring and managing scripts."
+        },
+        {
+          "question": "Which feature in Linux helps with script execution control?",
+          "options": {
+            "A": "Execution management.",
+            "B": "Execution optimization.",
+            "C": "Execution configuration.",
+            "D": "Execution execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Execution management features in Linux help users control script execution, ensuring scripts run as intended."
+        },
+        {
+          "question": "What is the purpose of 'nohup' in Linux?",
+          "options": {
+            "A": "To run scripts in the background.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'nohup' command in Linux is used to run scripts in the background, allowing them to continue running after the user logs out."
+        },
+        {
+          "question": "How can you enable advanced script execution features in Linux?",
+          "options": {
+            "A": "By installing an execution package.",
+            "B": "Through the execution manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced script execution features in Linux can be enabled through the execution manager, providing tools for configuring and managing script execution."
+        },
+        {
+          "question": "Which Linux feature assists with script security?",
+          "options": {
+            "A": "Security management.",
+            "B": "Security optimization.",
+            "C": "Security configuration.",
+            "D": "Security execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Security management features in Linux help users manage script security, ensuring scripts are protected from unauthorized access."
+        },
+        {
+          "question": "What is the function of 'trap' in Linux scripts?",
+          "options": {
+            "A": "To handle signals and errors.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'trap' command in Linux scripts is used to handle signals and errors, allowing scripts to respond to unexpected events."
+        },
+        {
+          "question": "How can you enable advanced script security features in Linux?",
+          "options": {
+            "A": "By installing a security package.",
+            "B": "Through the security manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced script security features in Linux can be enabled through the security manager, providing tools for configuring and managing script security."
+        },
+        {
+          "question": "Which Linux feature assists with script resource management?",
+          "options": {
+            "A": "Resource management.",
+            "B": "Resource optimization.",
+            "C": "Resource configuration.",
+            "D": "Resource execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Script resource management features in Linux help users manage resources used by scripts, ensuring efficient resource usage."
+        }
+      ]
+    }
+  ]
+}

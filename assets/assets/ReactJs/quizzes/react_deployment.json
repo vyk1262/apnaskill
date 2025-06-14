@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_deployment",
+      "questions": [
+        {
+          "question": "What is the primary output of building a React application for production?",
+          "options": {
+            "A": "A single JavaScript file.",
+            "B": "A server-side executable.",
+            "C": "Optimized HTML, CSS, and JavaScript files (static assets) ready for deployment.",
+            "D": "Database configuration files."
+          },
+          "correct_answer": "C",
+          "explanation": "When you build a React app (e.g., using `npm run build` or `yarn build`), it generates a `build` or `dist` folder containing minified and optimized static assets."
+        },
+        {
+          "question": "Which command is typically used to create a production-ready build of a Create React App project?",
+          "options": {
+            "A": "`npm start`",
+            "B": "`npm test`",
+            "C": "`npm run build`",
+            "D": "`npm install`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `npm run build` (or `yarn build`) command bundles React in production mode and optimizes the build for the best performance."
+        },
+        {
+          "question": "What is the purpose of minification and uglification in a production React build?",
+          "options": {
+            "A": "To make the code harder to read for security.",
+            "B": "To reduce the file size of the JavaScript and CSS code by removing whitespace, comments, and shortening variable names.",
+            "C": "To convert JSX to regular JavaScript.",
+            "D": "To add new features to the application."
+          },
+          "correct_answer": "B",
+          "explanation": "Minification and uglification are crucial for reducing the bundle size, which leads to faster download and parse times for users."
+        },
+        {
+          "question": "What is 'Gzip compression' and why is it important for React deployment?",
+          "options": {
+            "A": "A method to encrypt the application code.",
+            "B": "A technique to compress files on the server before sending them to the browser, significantly reducing download sizes and improving load times.",
+            "C": "A tool for managing Node.js packages.",
+            "D": "A database compression method."
+          },
+          "correct_answer": "B",
+          "explanation": "Most web servers and CDNs automatically apply Gzip compression, which further reduces file sizes transferred over the network."
+        },
+        {
+          "question": "Which type of web server is suitable for hosting a static React production build?",
+          "options": {
+            "A": "Only specialized application servers like Node.js.",
+            "B": "Any static file server (e.g., Nginx, Apache, Netlify, Vercel, AWS S3).",
+            "C": "Only servers that support PHP.",
+            "D": "A database server."
+          },
+          "correct_answer": "B",
+          "explanation": "A built React application is a collection of static files (HTML, CSS, JS), which can be served by any web server capable of serving static assets."
+        },
+        {
+          "question": "When deploying a React Router application, what server-side configuration is often needed to handle client-side routing?",
+          "options": {
+            "A": "A server-side redirect for every possible route.",
+            "B": "Configuring the server to always serve `index.html` for any unmatched path, allowing React Router to handle the client-side routing.",
+            "C": "No special configuration is needed.",
+            "D": "Installing a Node.js server specifically for routing."
+          },
+          "correct_answer": "B",
+          "explanation": "This 'fallback' or 'rewrites' configuration ensures that direct URL access (e.g., refreshing a `/about` page) still loads your React app, which then handles the routing."
+        },
+        {
+          "question": "What is a 'CDN' (Content Delivery Network) and why is it beneficial for deploying React apps?",
+          "options": {
+            "A": "A type of database for storing user data.",
+            "B": "A network of distributed servers that deliver web content to users based on their geographic location, improving load times and reducing latency.",
+            "C": "A tool for writing React components.",
+            "D": "A system for managing server logs."
+          },
+          "correct_answer": "B",
+          "explanation": "CDNs cache your static assets at 'edge locations' closer to users, speeding up content delivery globally."
+        },
+        {
+          "question": "What is the purpose of environment variables in React deployment?",
+          "options": {
+            "A": "To store sensitive user data.",
+            "B": "To configure build-time settings, such as API endpoints or analytics keys, that vary between development and production environments.",
+            "C": "To store images and videos.",
+            "D": "To manage React component state."
+          },
+          "correct_answer": "B",
+          "explanation": "Environment variables (`process.env.REACT_APP_...` in Create React App) allow you to easily swap configuration based on the deployment environment without changing code."
+        },
+        {
+          "question": "Are environment variables accessible on the client-side after a React app is built for production?",
+          "options": {
+            "A": "No, they are only for the build process.",
+            "B": "Yes, but only those prefixed with `REACT_APP_` (or similar for other build tools) are embedded into the client-side bundle.",
+            "C": "Only if using a Node.js server.",
+            "D": "Only if the browser supports them."
+          },
+          "correct_answer": "B",
+          "explanation": "Build tools typically inject these specific environment variables directly into the compiled JavaScript, making them available in the client-side code."
+        },
+        {
+          "question": "What is a common practice for continuous deployment (CD) of React applications?",
+          "options": {
+            "A": "Manually copying files to the server for every change.",
+            "B": "Using CI/CD pipelines (e.g., GitHub Actions, GitLab CI, Netlify, Vercel) that automatically build and deploy on code commits.",
+            "C": "Sending builds via email to the server administrator.",
+            "D": "Only deploying once a year."
+          },
+          "correct_answer": "B",
+          "explanation": "Automated CI/CD pipelines streamline the deployment process, ensuring consistent and rapid releases."
+        },
+        {
+          "question": "When deploying a React application to a sub-directory (e.g., `example.com/my-app/`), what configuration typically needs to be adjusted?",
+          "options": {
+            "A": "Only the API endpoint.",
+            "B": "The `homepage` field in `package.json` or a similar `publicPath` setting in the build configuration.",
+            "C": "The number of components in the application.",
+            "D": "The browser's default settings."
+          },
+          "correct_answer": "B",
+          "explanation": "This tells the build tool where your static assets will be served from, ensuring correct path resolution for your bundled files."
+        },
+        {
+          "question": "What is 'SSR' (Server-Side Rendering) in the context of React deployment, and why is it used?",
+          "options": {
+            "A": "It's only for debugging purposes.",
+            "B": "Rendering React components to HTML on the server before sending to the client, improving initial load performance and SEO.",
+            "C": "A method to store all data on the server.",
+            "D": "It's an outdated deployment method."
+          },
+          "correct_answer": "B",
+          "explanation": "SSR provides a faster first paint and better crawlability for search engines compared to pure client-side rendering."
+        },
+        {
+          "question": "Which tools or frameworks are commonly used for React SSR deployments?",
+          "options": {
+            "A": "Create React App (out-of-the-box).",
+            "B": "Next.js, Remix, or a custom Node.js server with Express.",
+            "C": "Only static site generators.",
+            "D": "Python Flask."
+          },
+          "correct_answer": "B",
+          "explanation": "Next.js and Remix provide robust frameworks with built-in SSR capabilities, while a custom Node.js server offers flexibility."
+        },
+        {
+          "question": "What is 'Static Site Generation' (SSG) in React deployment?",
+          "options": {
+            "A": "Rendering dynamic content on demand.",
+            "B": "Generating HTML files for each page at build time, which are then served as static assets.",
+            "C": "Generating images and videos dynamically.",
+            "D": "A method to stream content live."
+          },
+          "correct_answer": "B",
+          "explanation": "SSG combines the benefits of static sites (speed, security) with React's development experience, ideal for content-heavy sites."
+        },
+        {
+          "question": "When is SSG generally preferred over SSR for a React application?",
+          "options": {
+            "A": "When the data changes very frequently.",
+            "B": "For applications with mostly static content or content that doesn't change often, providing excellent performance and scalability.",
+            "C": "When real-time data updates are critical.",
+            "D": "For highly interactive dashboards."
+          },
+          "correct_answer": "B",
+          "explanation": "SSG produces pre-built HTML, which can be served directly from a CDN, leading to very fast page loads and reduced server costs."
+        },
+        {
+          "question": "What is 'Pre-rendering' in React deployment, encompassing both SSR and SSG?",
+          "options": {
+            "A": "Rendering the UI in the browser after JavaScript loads.",
+            "B": "Generating the HTML for a page at build time or on request, before the client-side JavaScript takes over.",
+            "C": "Preparing images for display.",
+            "D": "Optimizing CSS files."
+          },
+          "correct_answer": "B",
+          "explanation": "Pre-rendering improves initial load experience and SEO by providing immediate content, as opposed to waiting for JavaScript to execute."
+        },
+        {
+          "question": "What is a 'build manifest' file generated during React deployment?",
+          "options": {
+            "A": "A list of all installed Node.js packages.",
+            "B": "A file that maps original source file names to their minified/hashed production filenames, crucial for browser caching and caching invalidation.",
+            "C": "A manifest of all API endpoints.",
+            "D": "A file containing user authentication details."
+          },
+          "correct_answer": "B",
+          "explanation": "The manifest helps the browser efficiently load the correct, fresh assets when content changes, and leverage long-term caching for unchanged assets."
+        },
+        {
+          "question": "Why is it important to configure caching headers for static assets during React deployment?",
+          "options": {
+            "A": "To prevent unauthorized access to your files.",
+            "B": "To ensure that users' browsers effectively cache static files (like JS, CSS, images) for faster subsequent visits, reducing server load.",
+            "C": "To force a full page reload on every visit.",
+            "D": "To send data to analytics services."
+          },
+          "correct_answer": "B",
+          "explanation": "Proper caching helps deliver a faster experience for returning users by allowing their browsers to reuse previously downloaded assets."
+        },
+        {
+          "question": "What is the typical deployment process for a Create React App to a hosting service like Netlify or Vercel?",
+          "options": {
+            "A": "Manually compiling code and uploading files via FTP.",
+            "B": "Connecting the hosting service to your Git repository, and it automatically builds and deploys on pushes to a specified branch.",
+            "C": "Running a local server that exposes your app to the internet.",
+            "D": "Emailing the entire project folder to the hosting provider."
+          },
+          "correct_answer": "B",
+          "explanation": "Modern hosting platforms offer seamless Git integration for automated CI/CD, simplifying the deployment workflow."
+        },
+        {
+          "question": "What is the significance of the `public` folder in a Create React App project for deployment?",
+          "options": {
+            "A": "It contains all the React components.",
+            "B": "It holds static assets (like `index.html`, images, manifest.json) that are copied directly to the `build` folder without being processed by webpack.",
+            "C": "It stores all the source code.",
+            "D": "It's where Node.js dependencies are installed."
+          },
+          "correct_answer": "B",
+          "explanation": "Files in the `public` folder are treated as raw assets and are not bundled by webpack, making them accessible directly from the root of your deployed application."
+        }
+      ]
+    }
+  ]
+}

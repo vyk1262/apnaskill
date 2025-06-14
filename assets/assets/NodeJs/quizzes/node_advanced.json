@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_advanced",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Node.js 'Worker Threads'?",
+          "options": {
+            "A": "To perform non-blocking I/O operations.",
+            "B": "To handle synchronous, CPU-bound tasks in parallel without blocking the main event loop.",
+            "C": "To create new HTTP server instances.",
+            "D": "To manage database connections."
+          },
+          "correct_answer": "B",
+          "explanation": "Worker Threads allow you to run CPU-intensive JavaScript operations in a separate thread, preventing them from blocking the main event loop and maintaining the responsiveness of your Node.js application."
+        },
+        {
+          "question": "How do Worker Threads communicate with the main Node.js thread?",
+          "options": {
+            "A": "Directly through shared memory.",
+            "B": "Via synchronous function calls.",
+            "C": "By passing messages using `postMessage()` and listening for `'message'` events.",
+            "D": "Through a shared database."
+          },
+          "correct_answer": "C",
+          "explanation": "Communication between Worker Threads and the main thread (or other workers) is done asynchronously by passing serialized messages, preventing shared memory issues and race conditions."
+        },
+        {
+          "question": "In the Node.js Event Loop, which phase is responsible for executing callbacks scheduled by `setTimeout()` and `setInterval()`?",
+          "options": {
+            "A": "Poll phase",
+            "B": "Check phase",
+            "C": "Timers phase",
+            "D": "Close callbacks phase"
+          },
+          "correct_answer": "C",
+          "explanation": "The Timers phase is the first phase of the Event Loop, where callbacks for `setTimeout()` and `setInterval()` are executed if their delay has expired."
+        },
+        {
+          "question": "What is the difference between a 'microtask' and a 'macrotask' in the Node.js Event Loop?",
+          "options": {
+            "A": "Microtasks run after each macrotask, ensuring high-priority updates (e.g., Promises) are handled quickly, while macrotasks are typical asynchronous operations (e.g., timers, I/O).",
+            "B": "Macrotasks are always executed before microtasks.",
+            "C": "Microtasks are only for I/O operations, macrotasks are for CPU-bound operations.",
+            "D": "They are interchangeable terms with no difference."
+          },
+          "correct_answer": "A",
+          "explanation": "Microtasks (e.g., Promise callbacks, `process.nextTick`) are processed immediately after the currently executing script or after a macrotask completes, within the same Event Loop tick. Macrotasks (e.g., `setTimeout`, `setImmediate`, I/O callbacks) are processed in subsequent ticks."
+        },
+        {
+          "question": "Which Node.js module is used to create and manage child processes, allowing you to run external commands or scripts?",
+          "options": {
+            "A": "`threads`",
+            "B": "`workers`",
+            "C": "`child_process`",
+            "D": "`process_manager`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `child_process` module provides methods like `spawn()`, `exec()`, `fork()`, and `execFile()` to interact with the operating system by creating new processes."
+        },
+        {
+          "question": "What is the key difference between `child_process.exec()` and `child_process.spawn()`?",
+          "options": {
+            "A": "`exec()` runs synchronously, `spawn()` runs asynchronously.",
+            "B": "`exec()` buffers the entire output before returning, while `spawn()` streams data in chunks.",
+            "C": "`exec()` is for internal Node.js commands, `spawn()` is for external commands.",
+            "D": "`exec()` creates new processes, `spawn()` does not."
+          },
+          "correct_answer": "B",
+          "explanation": "`exec()` is simpler for small outputs as it buffers everything and then returns. `spawn()` is more efficient for large outputs as it provides streams for stdin, stdout, and stderr, allowing for chunked data processing (non-blocking)."
+        },
+        {
+          "question": "What is a 'Transform Stream' in Node.js, and what is its characteristic?",
+          "options": {
+            "A": "A stream that can only be written to.",
+            "B": "A stream that transforms data as it's being written to and read from it (e.g., compression, encryption).",
+            "C": "A stream that only reads data.",
+            "D": "A stream that signals the end of an operation."
+          },
+          "correct_answer": "B",
+          "explanation": "Transform streams are a type of Duplex stream that modify data as it passes through. Examples include zlib streams for compression/decompression or crypto streams for encryption/decryption."
+        },
+        {
+          "question": "What is 'backpressure' in Node.js streams, and why is `pipe()` effective in handling it?",
+          "options": {
+            "A": "It's a type of network congestion.",
+            "B": "It occurs when a readable stream produces data faster than a writable stream can consume it. `pipe()` automatically pauses/resumes the readable stream to prevent buffer overflow.",
+            "C": "It's an error that occurs when a stream is closed too early.",
+            "D": "It's a method to increase stream throughput."
+          },
+          "correct_answer": "B",
+          "explanation": "Managing backpressure is crucial for efficient stream processing. `pipe()` handles this flow control automatically by listening to `drain` and `pause` events."
+        },
+        {
+          "question": "What does `process.nextTick()` do in Node.js relative to the Event Loop?",
+          "options": {
+            "A": "Schedules a callback to be executed in the next full Event Loop tick.",
+            "B": "Schedules a callback to be executed immediately, at the end of the current operation, before the Event Loop continues to the next phase.",
+            "C": "Schedules a callback after a specified delay.",
+            "D": "Schedules a callback to run after all I/O callbacks."
+          },
+          "correct_answer": "B",
+          "explanation": "`process.nextTick()` callbacks are processed at the end of the current operation, making them higher priority than microtasks and macrotasks scheduled for the *next* tick."
+        },
+        {
+          "question": "When does an `unhandledRejection` event occur in Node.js?",
+          "options": {
+            "A": "When a synchronous error is thrown and not caught by a `try...catch` block.",
+            "B": "When a Promise is rejected and there is no `.catch()` handler attached to it.",
+            "C": "When an Express route cannot be found.",
+            "D": "When a database connection fails."
+          },
+          "correct_answer": "B",
+          "explanation": "It's crucial to handle promise rejections to prevent unhandled rejections from potentially crashing your Node.js application, especially in older Node.js versions or without proper global error handling."
+        },
+        {
+          "question": "What is the purpose of `domain` module (though largely deprecated) or more modern alternatives for error handling in Node.js?",
+          "options": {
+            "A": "To resolve domain names to IP addresses.",
+            "B": "To catch errors that occur across different asynchronous operations within a 'context', but often problematic; replaced by `async_hooks` or centralized error handling.",
+            "C": "To manage security permissions.",
+            "D": "To monitor CPU usage."
+          },
+          "correct_answer": "B",
+          "explanation": "The `domain` module was an attempt to provide a mechanism for handling errors across multiple asynchronous callbacks, but it had issues and is mostly replaced by better patterns involving Promises, `async/await`, and `async_hooks` for deeper tracing."
+        },
+        {
+          "question": "What is the primary function of the `cluster` module in Node.js?",
+          "options": {
+            "A": "To create a cluster of databases.",
+            "B": "To enable multiple Node.js worker processes to share the same server port, allowing a single application to utilize all CPU cores.",
+            "C": "To group related NPM packages.",
+            "D": "To manage file system permissions."
+          },
+          "correct_answer": "B",
+          "explanation": "The `cluster` module allows you to create child processes (workers) that all share the same server port, effectively distributing the load across multiple CPU cores, similar to what process managers like PM2 do internally."
+        },
+        {
+          "question": "What is 'module caching' in Node.js?",
+          "options": {
+            "A": "Storing downloaded NPM packages for offline use.",
+            "B": "A mechanism where Node.js caches modules after their first `require()` call, so subsequent `require()` calls for the same module return the cached instance.",
+            "C": "Caching HTTP responses for faster delivery.",
+            "D": "Caching database query results."
+          },
+          "correct_answer": "B",
+          "explanation": "Module caching prevents redundant module loading and ensures that a module's initialization code runs only once, which is crucial for managing state within modules (e.g., database connections)."
+        },
+        {
+          "question": "What is a 'circular dependency' in Node.js modules?",
+          "options": {
+            "A": "When a module depends on a package that is not installed.",
+            "B": "When Module A requires Module B, and Module B in turn requires Module A, creating a loop.",
+            "C": "When a module requires too many other modules.",
+            "D": "When a module is included in the `package.json` but not used."
+          },
+          "correct_answer": "B",
+          "explanation": "Circular dependencies can lead to issues where modules might receive partially initialized `exports` objects, leading to runtime errors or unexpected behavior if not handled carefully."
+        },
+        {
+          "question": "Which Node.js module provides an API for debugging and collecting diagnostic information about the Node.js runtime, such as event loop performance and garbage collection?",
+          "options": {
+            "A": "`console`",
+            "B": "`debugger`",
+            "C": "`perf_hooks`",
+            "D": "`v8`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `perf_hooks` module provides performance monitoring capabilities similar to the Web Performance API, allowing you to measure execution times and observe performance metrics."
+        },
+        {
+          "question": "What is the role of `setImmediate()` in the Node.js Event Loop?",
+          "options": {
+            "A": "To execute a callback after a specified delay.",
+            "B": "To schedule a callback to execute immediately after the current poll phase, often used for I/O-bound tasks.",
+            "C": "To schedule a callback to execute at the beginning of the next tick.",
+            "D": "To perform network requests."
+          },
+          "correct_answer": "B",
+          "explanation": "`setImmediate()` callbacks are queued in the 'check' phase of the Event Loop, which runs after the 'poll' phase completes, typically handling I/O events."
+        },
+        {
+          "question": "When working with binary data in Node.js, which built-in global class is used to handle raw data, often from network or file operations?",
+          "options": {
+            "A": "String",
+            "B": "ArrayBuffer",
+            "C": "Buffer",
+            "D": "DataView"
+          },
+          "correct_answer": "C",
+          "explanation": "The `Buffer` class is specifically designed to handle octet streams of binary data and is central to Node.js's I/O capabilities."
+        },
+        {
+          "question": "What is the purpose of `EventEmitter.removeListener()` or `EventEmitter.off()`?",
+          "options": {
+            "A": "To clear all events from an emitter.",
+            "B": "To stop an event from being emitted.",
+            "C": "To unregister a previously registered event listener for a given event.",
+            "D": "To rename an event."
+          },
+          "correct_answer": "C",
+          "explanation": "Properly removing listeners is crucial to prevent memory leaks, especially for long-lived processes where event listeners might accumulate over time."
+        },
+        {
+          "question": "Which global object can you use to get information about the Node.js runtime version and environment variables?",
+          "options": {
+            "A": "`global`",
+            "B": "`os`",
+            "C": "`process`",
+            "D": "`env`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `process` object provides access to various system-level details, including `process.version`, `process.env`, `process.uptime()`, etc."
+        },
+        {
+          "question": "What is an 'Async Hook' in Node.js and its primary use case?",
+          "options": {
+            "A": "A new way to write asynchronous code instead of Promises.",
+            "B": "A low-level API that allows developers to trace the lifetime of asynchronous resources (like Promises, `setTimeout`, I/O operations) within a Node.js application, useful for debugging and profiling.",
+            "C": "A hook for connecting to asynchronous databases.",
+            "D": "A tool for handling HTTP requests asynchronously."
+          },
+          "correct_answer": "B",
+          "explanation": "Async Hooks provide powerful capabilities for understanding the flow of asynchronous operations, which is essential for building advanced debugging tools, APM (Application Performance Monitoring) solutions, or custom profilers."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_Power_BI",
+      "questions": [
+        {
+          "question": "What is Power BI?",
+          "options": {
+            "A": "A business analytics tool by Microsoft.",
+            "B": "A data entry software.",
+            "C": "A word processing application.",
+            "D": "A spreadsheet program."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI is a business analytics tool by Microsoft that provides interactive visualizations and business intelligence capabilities."
+        },
+        {
+          "question": "What is the primary function of Power BI?",
+          "options": {
+            "A": "To provide data visualization and business intelligence.",
+            "B": "To edit documents.",
+            "C": "To manage emails.",
+            "D": "To create presentations."
+          },
+          "correct_answer": "A",
+          "explanation": "The primary function of Power BI is to provide data visualization and business intelligence, enabling users to make informed decisions."
+        },
+        {
+          "question": "What is Power BI Desktop?",
+          "options": {
+            "A": "A desktop application for designing reports and dashboards.",
+            "B": "A mobile app for viewing reports.",
+            "C": "A web-based platform for sharing reports.",
+            "D": "A cloud service for storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Desktop is a desktop application for designing reports and dashboards, providing a comprehensive environment for data analysis."
+        },
+        {
+          "question": "What is Power BI Service?",
+          "options": {
+            "A": "A cloud-based service for sharing and collaborating on reports.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Service is a cloud-based service for sharing and collaborating on reports, enabling users to access data insights from anywhere."
+        },
+        {
+          "question": "What is Power BI Mobile?",
+          "options": {
+            "A": "A mobile app for viewing reports and dashboards.",
+            "B": "A desktop application for designing reports.",
+            "C": "A web-based platform for sharing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Mobile is a mobile app for viewing reports and dashboards, providing access to data insights on the go."
+        },
+        {
+          "question": "What is Power BI Report Server?",
+          "options": {
+            "A": "An on-premises report server for hosting Power BI reports.",
+            "B": "A cloud-based service for sharing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Report Server is an on-premises report server for hosting Power BI reports, providing a secure environment for data analysis."
+        },
+        {
+          "question": "What is Power BI Gateway?",
+          "options": {
+            "A": "A tool for connecting on-premises data sources to Power BI.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A cloud-based service for sharing reports."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Gateway is a tool for connecting on-premises data sources to Power BI, enabling seamless data integration."
+        },
+        {
+          "question": "What is Power BI Embedded?",
+          "options": {
+            "A": "A service for embedding Power BI reports into applications.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Embedded is a service for embedding Power BI reports into applications, providing interactive data insights."
+        },
+        {
+          "question": "What is Power BI Q&A?",
+          "options": {
+            "A": "A feature for asking questions about data in natural language.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Q&A is a feature for asking questions about data in natural language, providing quick insights into data."
+        },
+        {
+          "question": "What is Power BI Visuals?",
+          "options": {
+            "A": "Custom visuals for enhancing data insights.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Visuals are custom visuals for enhancing data insights, providing unique ways to visualize data."
+        },
+        {
+          "question": "What is Power BI Dataflows?",
+          "options": {
+            "A": "A tool for creating reusable data transformation logic.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Dataflows is a tool for creating reusable data transformation logic, enabling efficient data preparation."
+        },
+        {
+          "question": "What is Power BI DAX?",
+          "options": {
+            "A": "A formula language for creating custom calculations.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI DAX is a formula language for creating custom calculations, providing advanced data analysis capabilities."
+        },
+        {
+          "question": "What is Power BI RLS?",
+          "options": {
+            "A": "A feature for implementing row-level security.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI RLS is a feature for implementing row-level security, ensuring data privacy and security."
+        },
+        {
+          "question": "What is Power BI AI Insights?",
+          "options": {
+            "A": "A feature for applying AI models to data.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI AI Insights is a feature for applying AI models to data, providing advanced data analysis capabilities."
+        },
+        {
+          "question": "What is Power BI Paginated Reports?",
+          "options": {
+            "A": "A feature for creating pixel-perfect reports.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Paginated Reports is a feature for creating pixel-perfect reports, providing detailed data insights."
+        },
+        {
+          "question": "What is Power BI Data Alerts?",
+          "options": {
+            "A": "A feature for setting alerts on data changes.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Data Alerts is a feature for setting alerts on data changes, providing timely notifications."
+        },
+        {
+          "question": "What is Power BI Quick Insights?",
+          "options": {
+            "A": "A feature for generating automated insights from data.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Quick Insights is a feature for generating automated insights from data, providing quick data analysis."
+        },
+        {
+          "question": "What is Power BI Content Packs?",
+          "options": {
+            "A": "Pre-packaged content for specific data sources.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Content Packs are pre-packaged content for specific data sources, providing ready-to-use data insights."
+        },
+        {
+          "question": "What is Power BI Workspaces?",
+          "options": {
+            "A": "Collaborative environments for sharing reports.",
+            "B": "A desktop application for designing reports.",
+            "C": "A mobile app for viewing reports.",
+            "D": "A tool for data entry."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Workspaces are collaborative environments for sharing reports, enabling team collaboration."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "result": [
+    {
+      "topic": "Transfer_Learning",
+      "questions": [
+        {
+          "question": "What is the primary motivation for using 'Transfer Learning' in deep learning with Keras?",
+          "options": {
+            "A": "To always achieve 100% accuracy on any dataset.",
+            "B": "To train models from scratch faster on small datasets.",
+            "C": "To leverage knowledge (pre-trained weights and architecture) from a model trained on a large, general dataset for a new, often smaller or more specific task.",
+            "D": "To avoid the need for any data preprocessing."
+          },
+          "correct_answer": "C",
+          "explanation": "Transfer learning accelerates training and improves performance, especially when target datasets are small or specialized."
+        },
+        {
+          "question": "Which of the following Keras modules provides access to popular pre-trained models (e.g., VGG16, ResNet50) with weights trained on the ImageNet dataset?",
+          "options": {
+            "A": "tf.keras.layers",
+            "B": "tf.keras.optimizers",
+            "C": "tf.keras.applications",
+            "D": "tf.keras.callbacks"
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.keras.applications` is designed to easily load these large, pre-trained CNN architectures."
+        },
+        {
+          "question": "When performing 'Feature Extraction' with a pre-trained Keras model, what is done with the layers of the pre-trained base model?",
+          "options": {
+            "A": "They are randomly reinitialized.",
+            "B": "They are kept fixed (frozen) by setting `layer.trainable = False`.",
+            "C": "They are extensively retrained with a high learning rate.",
+            "D": "They are replaced with new layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Freezing layers prevents their weights from being updated during training on the new task, preserving the learned features."
+        },
+        {
+          "question": "For a classification task, what kind of layers are typically added on top of the frozen convolutional base of a pre-trained model in Keras?",
+          "options": {
+            "A": "More convolutional layers.",
+            "B": "Recurrent layers (e.g., LSTM).",
+            "C": "Flattening and Dense (fully connected) layers with a new output layer for the specific number of classes.",
+            "D": "Embedding layers."
+          },
+          "correct_answer": "C",
+          "explanation": "The convolutional base acts as a feature extractor, and the new 'head' performs the classification based on these extracted features."
+        },
+        {
+          "question": "What is 'Fine-tuning' in the context of Transfer Learning using Keras?",
+          "options": {
+            "A": "Training only the new classification head from scratch.",
+            "B": "Unfreezing some or all of the layers in the pre-trained base and retraining them (along with the new head), usually with a very low learning rate.",
+            "C": "Manually adjusting individual weights of the pre-trained model.",
+            "D": "Applying data augmentation to the training set."
+          },
+          "correct_answer": "B",
+          "explanation": "Fine-tuning allows the pre-trained model to adapt its features more specifically to the target dataset."
+        },
+        {
+          "question": "Why is a very low learning rate often used when fine-tuning the pre-trained layers in Keras?",
+          "options": {
+            "A": "To make the training process converge faster.",
+            "B": "To ensure that the model does not overfit.",
+            "C": "To avoid drastically altering the beneficial, pre-learned features and only make small adjustments.",
+            "D": "To initialize the weights to zero."
+          },
+          "correct_answer": "C",
+          "explanation": "Large learning rates could quickly corrupt the useful patterns learned from the large original dataset."
+        },
+        {
+          "question": "When would 'Feature Extraction' (using a frozen pre-trained base) be generally preferred over 'Fine-tuning'?",
+          "options": {
+            "A": "When your new dataset is very large and significantly different from the original dataset.",
+            "B": "When your new dataset is small and very similar to the original dataset (e.g., ImageNet).",
+            "C": "When you have abundant computational resources.",
+            "D": "When the pre-trained model is very small."
+          },
+          "correct_answer": "B",
+          "explanation": "With small, similar datasets, the pre-trained features are likely already very relevant, and fine-tuning risks overfitting."
+        },
+        {
+          "question": "What does the `include_top=False` argument mean when loading a model from `tf.keras.applications` (e.g., `VGG16(include_top=False)`)?",
+          "options": {
+            "A": "It means the model will not be compiled.",
+            "B": "It loads the convolutional base of the model without its original fully-connected classification head, allowing you to add your own.",
+            "C": "It prevents the model from using a GPU.",
+            "D": "It means the model will train very slowly."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a standard practice in transfer learning as the original classification head is designed for the ImageNet dataset, not your specific task."
+        },
+        {
+          "question": "True or False: After adding new layers and optionally unfreezing some base layers, you must re-compile the Keras model before continuing training for fine-tuning.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. If you change the `trainable` status of layers, the optimizer needs to be re-initialized to account for the change in which weights are updated."
+        },
+        {
+          "question": "Which of the following is a common technique used with transfer learning, especially on smaller datasets, to help prevent overfitting?",
+          "options": {
+            "A": "Reducing the number of training epochs significantly.",
+            "B": "Extensive data augmentation (e.g., random rotations, flips, zooms).",
+            "C": "Using a very high learning rate.",
+            "D": "Removing the pre-trained base entirely."
+          },
+          "correct_answer": "B",
+          "explanation": "Data augmentation artificially expands the training set, exposing the model to more variations of the data and improving generalization."
+        },
+        {
+          "question": "What is the primary benefit of using a pre-trained model over training a large CNN from scratch on a new image classification task?",
+          "options": {
+            "A": "It removes the need for any feature engineering.",
+            "B": "It can save a significant amount of computational time and resources, and often leads to better performance due to leveraging powerful pre-learned features.",
+            "C": "It eliminates the need for any test data.",
+            "D": "It ensures 100% accuracy on the first epoch."
+          },
+          "correct_answer": "B",
+          "explanation": "Training large models like ResNet from scratch is computationally very expensive and requires massive datasets. Transfer learning bypasses this."
+        },
+        {
+          "question": "Which Keras layer is often placed directly after the convolutional base's output and before new Dense layers to flatten the 3D feature maps into a 1D vector?",
+          "options": {
+            "A": "tf.keras.layers.Reshape",
+            "B": "tf.keras.layers.AveragePooling2D",
+            "C": "tf.keras.layers.Flatten",
+            "D": "tf.keras.layers.Concatenate"
+          },
+          "correct_answer": "C",
+          "explanation": "Dense layers (for classification) require flat inputs."
+        },
+        {
+          "question": "If you want to use the MobileNetV2 model from `tf.keras.applications`, what is the typical input image size (height, width) it expects by default?",
+          "options": {
+            "A": "(32, 32)",
+            "B": "(224, 224)",
+            "C": "(600, 600)",
+            "D": "(1000, 1000)"
+          },
+          "correct_answer": "B",
+          "explanation": "Most ImageNet-trained models, including MobileNetV2, are typically designed for 224x224 pixel inputs (or 299x299 for Inception-based models)."
+        },
+        {
+          "question": "What is the main reason to unfreeze only the 'top' layers of a pre-trained convolutional base during fine-tuning, rather than all layers?",
+          "options": {
+            "A": "The bottom layers are always useless.",
+            "B": "The top layers of the convolutional base learn more abstract, task-specific features, which are more likely to benefit from fine-tuning, while earlier layers learn more generic features.",
+            "C": "It speeds up training dramatically by unfreezing fewer layers.",
+            "D": "It's a requirement of the Keras API."
+          },
+          "correct_answer": "B",
+          "explanation": "Earlier layers extract basic features (edges, textures), while deeper layers combine these into more complex, semantic features relevant to the original large dataset. Fine-tuning the top layers allows these more specialized features to adapt."
+        },
+        {
+          "question": "When might 'Fine-tuning' a pre-trained model be potentially detrimental?",
+          "options": {
+            "A": "When your new dataset is extremely large.",
+            "B": "When you have unlimited computational resources.",
+            "C": "When your new dataset is very small and has very little data variability, leading to severe overfitting if not handled carefully.",
+            "D": "When the pre-trained model is very small."
+          },
+          "correct_answer": "C",
+          "explanation": "If the new dataset is tiny, fine-tuning too many layers can cause the model to memorize the specific examples and lose its ability to generalize."
+        },
+        {
+          "question": "Which of these Keras callbacks is useful for visualizing the training process, including loss, accuracy, and model graphs, when doing transfer learning?",
+          "options": {
+            "A": "EarlyStopping",
+            "B": "ModelCheckpoint",
+            "C": "TensorBoard",
+            "D": "ReduceLROnPlateau"
+          },
+          "correct_answer": "C",
+          "explanation": "TensorBoard provides a powerful suite of tools for monitoring and debugging ML experiments."
+        },
+        {
+          "question": "After loading a pre-trained model from `tf.keras.applications`, how do you typically add your new classification head (e.g., Dense layers)?",
+          "options": {
+            "A": "By modifying the original model directly.",
+            "B": "By using the Keras Functional API or Model Subclassing to build a new model that takes the output of the pre-trained base as its input.",
+            "C": "By passing the new layers as arguments to `model.fit()`.",
+            "D": "By setting `model.trainable = True` for all layers."
+          },
+          "correct_answer": "B",
+          "explanation": "This allows for flexible model construction where you connect the pre-trained base to your custom layers."
+        },
+        {
+          "question": "If you're fine-tuning a pre-trained model and encounter overfitting, what's a common Keras regularization technique you might add to your *new* classification head?",
+          "options": {
+            "A": "Adding more convolutional layers.",
+            "B": "Increasing the learning rate.",
+            "C": "Adding `tf.keras.layers.Dropout` layers.",
+            "D": "Decreasing the number of training epochs."
+          },
+          "correct_answer": "C",
+          "explanation": "Dropout helps prevent co-adaptation of neurons, which is crucial for preventing overfitting, especially in the newly trained parts of the network."
+        },
+        {
+          "question": "True or False: Transfer learning is only applicable to image data.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Transfer learning is also highly effective in Natural Language Processing (e.g., using pre-trained word embeddings or large language models like BERT) and other domains where rich pre-trained representations exist."
+        },
+        {
+          "question": "What is the purpose of setting `input_tensor` when loading a pre-trained model from `tf.keras.applications` (e.g., `VGG16(input_tensor=my_input_tensor)`)?",
+          "options": {
+            "A": "To specify the output of the model.",
+            "B": "To use a custom Keras `Input` tensor instead of the default input layer, allowing integration into more complex Functional API models.",
+            "C": "To define the batch size for the model.",
+            "D": "To load specific pre-trained weights from a custom path."
+          },
+          "correct_answer": "B",
+          "explanation": "This allows you to control the exact input node of the pre-trained model within a larger Keras Functional API graph."
+        }
+      ]
+    }
+  ]
+}

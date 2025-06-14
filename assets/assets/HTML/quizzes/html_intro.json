@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "html_intro",
+      "questions": [
+        {
+          "question": "What is HTML?",
+          "options": {
+            "A": "A programming language",
+            "B": "A markup language",
+            "C": "A scripting language",
+            "D": "A styling language"
+          },
+          "correct_answer": "B",
+          "explanation": "HTML stands for HyperText Markup Language. It is a markup language used to create the structure and content of web pages."
+        },
+        {
+          "question": "What is the purpose of HTML?",
+          "options": {
+            "A": "To create dynamic web pages",
+            "B": "To style web pages",
+            "C": "To structure and present content on web pages",
+            "D": "To interact with users on web pages"
+          },
+          "correct_answer": "C",
+          "explanation": "HTML defines the meaning and structure of web content. It tells browsers how to display the elements on a web page."
+        },
+        {
+          "question": "What are HTML elements?",
+          "options": {
+            "A": "Building blocks of HTML pages",
+            "B": "Keywords used in HTML",
+            "C": "Attributes of HTML tags",
+            "D": "Styles applied to HTML content"
+          },
+          "correct_answer": "A",
+          "explanation": "HTML elements are the fundamental components of an HTML page. They are defined by tags and typically consist of a start tag, content, and an end tag."
+        },
+        {
+          "question": "What is the correct syntax for an HTML element?",
+          "options": {
+            "A": "<element>content</element>",
+            "B": "{element: content}",
+            "C": "[element, content]",
+            "D": "#element#content#"
+          },
+          "correct_answer": "A",
+          "explanation": "An HTML element typically starts with an opening tag, contains content, and ends with a closing tag. For example, `<p>This is a paragraph.</p>`."
+        },
+        {
+          "question": "What are HTML attributes?",
+          "options": {
+            "A": "Additional information about an element",
+            "B": "Styles applied to an element",
+            "C": "Keywords used in HTML",
+            "D": "Building blocks of HTML pages"
+          },
+          "correct_answer": "A",
+          "explanation": "HTML attributes provide additional information about HTML elements. They are always specified in the start tag and usually come in name/value pairs like `name=\"value\"`."
+        },
+        {
+          "question": "What is the correct syntax for an HTML attribute?",
+          "options": {
+            "A": "element attribute=\"value\"",
+            "B": "attribute=\"value\" element",
+            "C": "{element: attribute: \"value\"}",
+            "D": "[element, attribute, \"value\"]"
+          },
+          "correct_answer": "A",
+          "explanation": "Attributes are placed within the opening tag of an HTML element and follow the `attribute=\"value\"` format. For example, `<a href=\"https://www.example.com\">`."
+        },
+        {
+          "question": "Which HTML tag is used to define the most important heading?",
+          "options": {
+            "A": "<h1>",
+            "B": "<h6>",
+            "C": "<head>",
+            "D": "<title>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<h1>` tag defines the most important heading in an HTML document, typically displayed with the largest font size by default."
+        },
+        {
+          "question": "Which HTML tag is used to define a paragraph?",
+          "options": {
+            "A": "<p>",
+            "B": "<par>",
+            "C": "<text>",
+            "D": "<div>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<p>` tag is used to define a paragraph of text. Browsers typically add some whitespace (margin) before and after a paragraph."
+        },
+        {
+          "question": "What are inline styles?",
+          "options": {
+            "A": "Styles defined within the HTML element",
+            "B": "Styles defined in an external CSS file",
+            "C": "Styles defined in the <head> section of the HTML document",
+            "D": "Styles inherited from the parent element"
+          },
+          "correct_answer": "A",
+          "explanation": "Inline styles are CSS styles applied directly to an individual HTML element using the `style` attribute. This is generally discouraged for larger projects due to maintainability."
+        },
+        {
+          "question": "Which HTML tag is used to make text bold?",
+          "options": {
+            "A": "<b>",
+            "B": "<strong>",
+            "C": "<i>",
+            "D": "<em>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<b>` tag is used to make text bold. While `<strong>` also makes text bold, `<b>` is for stylistic emphasis without semantic importance, whereas `<strong>` indicates strong importance."
+        },
+        {
+          "question": "Which HTML tag is used to define a blockquote?",
+          "options": {
+            "A": "<quote>",
+            "B": "<blockquote>",
+            "C": "<q>",
+            "D": "<cite>"
+          },
+          "correct_answer": "B",
+          "explanation": "The `<blockquote>` tag is used to define a section that is quoted from another source. Browsers typically indent `<blockquote>` elements."
+        },
+        {
+          "question": "How do you add a comment in HTML?",
+          "options": {
+            "A": "// This is a comment",
+            "B": "/* This is a comment */",
+            "C": "",
+            "D": "This is a comment"
+          },
+          "correct_answer": "C",
+          "explanation": "HTML comments are written using ``. Content within these tags is ignored by the browser and is not displayed on the web page."
+        },
+        {
+          "question": "How can you specify a color in HTML?",
+          "options": {
+            "A": "By using color names",
+            "B": "By using RGB values",
+            "C": "By using hexadecimal values",
+            "D": "All of the above"
+          },
+          "correct_answer": "D",
+          "explanation": "Colors in HTML can be specified using predefined color names (e.g., 'red'), RGB values (e.g., `rgb(255, 0, 0)`), or hexadecimal values (e.g., `#FF0000`)."
+        },
+        {
+          "question": "Which HTML tag is used to create a hyperlink?",
+          "options": {
+            "A": "<a>",
+            "B": "<link>",
+            "C": "<url>",
+            "D": "<href>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<a>` tag (anchor tag) is used to create hyperlinks, which link one web page to another or to a different part of the same page. The `href` attribute specifies the destination URL."
+        },
+        {
+          "question": "Which HTML tag is used to embed an image in an HTML page?",
+          "options": {
+            "A": "<img>",
+            "B": "<picture>",
+            "C": "<figure>",
+            "D": "<image>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<img>` tag is used to embed an image into an HTML document. It is a self-closing tag and requires the `src` attribute to specify the image source."
+        },
+        {
+          "question": "Which HTML tag is used to define a table row?",
+          "options": {
+            "A": "<tr>",
+            "B": "<td>",
+            "C": "<th>",
+            "D": "<table>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<tr>` tag defines a row within an HTML table."
+        },
+        {
+          "question": "Which HTML tag is used to define an unordered list?",
+          "options": {
+            "A": "<ul>",
+            "B": "<ol>",
+            "C": "<li>",
+            "D": "<dl>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<ul>` tag is used to define an unordered (bulleted) list. List items within it are defined by `<li>` tags."
+        },
+        {
+          "question": "What is the purpose of the <div> tag?",
+          "options": {
+            "A": "To define a division or section in an HTML document",
+            "B": "To define a table row",
+            "C": "To define a table cell",
+            "D": "To define a hyperlink"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<div>` tag is a generic container for flow content. It has no semantic meaning but is commonly used to group and style blocks of content with CSS."
+        },
+        {
+          "question": "How do you assign a class to an HTML element?",
+          "options": {
+            "A": "<element class=\"classname\">",
+            "B": "<element classname>",
+            "C": "class=\"classname\" <element>",
+            "D": "<class>classname</class> <element>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `class` attribute is used to assign one or more class names to an HTML element. This allows multiple elements to share the same styling or JavaScript behavior."
+        },
+        {
+          "question": "How do you assign an ID to an HTML element?",
+          "options": {
+            "A": "<element id=\"idname\">",
+            "B": "<element idname>",
+            "C": "id=\"idname\" <element>",
+            "D": "<id>idname</id> <element>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `id` attribute is used to assign a unique identifier to a single HTML element within a document. IDs are often used to target specific elements with CSS or JavaScript."
+        }
+      ]
+    }
+  ]
+}

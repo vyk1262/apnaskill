@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_deployment",
+      "questions": [
+        {
+          "question": "What is the primary purpose of a process manager like PM2 for Node.js applications in production?",
+          "options": {
+            "A": "To provide a front-end UI for the application.",
+            "B": "To manage the application's lifecycle, keep it alive forever, enable hot reloads, and provide process monitoring.",
+            "C": "To handle database connections.",
+            "D": "To automatically generate API documentation."
+          },
+          "correct_answer": "B",
+          "explanation": "PM2 (Process Manager 2) ensures your Node.js application stays online, automatically restarts it on crashes, and manages clusters."
+        },
+        {
+          "question": "Why is it generally recommended to run multiple instances of a Node.js application (using clustering or a process manager) on a multi-core CPU server?",
+          "options": {
+            "A": "To increase development speed.",
+            "B": "To avoid memory leaks.",
+            "C": "To take full advantage of multi-core processors and improve application performance and availability by distributing the load.",
+            "D": "To simplify debugging."
+          },
+          "correct_answer": "C",
+          "explanation": "Node.js is single-threaded, so running multiple instances allows each CPU core to run a separate Node.js process, effectively utilizing the server's resources for better concurrency and fault tolerance."
+        },
+        {
+          "question": "What is 'containerization' (e.g., using Docker) and its main benefit for Node.js deployment?",
+          "options": {
+            "A": "It's a way to compress Node.js application code.",
+            "B": "It's a method of packaging an application and all its dependencies into a single, isolated unit, ensuring consistent behavior across different environments.",
+            "C": "It replaces the need for a database.",
+            "D": "It's a type of server hardware."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker containers provide isolated, portable, and reproducible environments, simplifying deployment by ensuring your Node.js app runs the same way from development to production."
+        },
+        {
+          "question": "What is the purpose of a `Dockerfile`?",
+          "options": {
+            "A": "To define database schema.",
+            "B": "To configure a Node.js application's environment variables.",
+            "C": "To provide instructions for building a Docker image, including base image, dependencies, and application code.",
+            "D": "To manage Node.js package versions."
+          },
+          "correct_answer": "C",
+          "explanation": "A `Dockerfile` is a text document that contains all the commands a user could call on the command line to assemble an image."
+        },
+        {
+          "question": "Why is a 'Reverse Proxy' (like Nginx or Apache) often used in front of a Node.js application in production?",
+          "options": {
+            "A": "To serve static files directly from the Node.js app.",
+            "B": "To encrypt all incoming traffic automatically.",
+            "C": "To handle load balancing, SSL termination, static file serving, caching, and provide an additional layer of security/performance.",
+            "D": "To manage Node.js processes."
+          },
+          "correct_answer": "C",
+          "explanation": "Reverse proxies sit in front of your Node.js application, forwarding requests to it while handling tasks that a Node.js app isn't optimized for, such as serving static content, managing multiple instances, and security features."
+        },
+        {
+          "question": "When deploying a Node.js application, where should sensitive configurations (e.g., database URLs, API keys) be stored?",
+          "options": {
+            "A": "Directly in `index.js`.",
+            "B": "In environment variables.",
+            "C": "In a publicly accessible configuration file.",
+            "D": "Hardcoded into a `.json` file committed to Git."
+          },
+          "correct_answer": "B",
+          "explanation": "Environment variables are the standard and most secure way to manage configuration that varies between environments (development, staging, production) and to keep sensitive data out of source control."
+        },
+        {
+          "question": "What is a 'CI/CD Pipeline' and its relevance to Node.js deployment?",
+          "options": {
+            "A": "A tool for debugging Node.js applications.",
+            "B": "A process for continuously delivering software updates to users.",
+            "C": "An automated process that includes building, testing, and deploying Node.js code changes frequently and reliably.",
+            "D": "A network configuration for Node.js servers."
+          },
+          "correct_answer": "C",
+          "explanation": "CI/CD (Continuous Integration/Continuous Delivery or Deployment) automates the entire software delivery process, from code commit to deployment, ensuring faster and more reliable releases."
+        },
+        {
+          "question": "What is 'Load Balancing' in the context of Node.js deployment?",
+          "options": {
+            "A": "Balancing the memory usage of the application.",
+            "B": "Distributing incoming network traffic across multiple Node.js server instances to ensure no single server is overloaded, improving responsiveness and availability.",
+            "C": "Balancing CPU usage within a single Node.js process.",
+            "D": "Distributing Node.js packages across multiple NPM registries."
+          },
+          "correct_answer": "B",
+          "explanation": "Load balancers distribute traffic to multiple servers, preventing bottlenecks and increasing the scalability and reliability of your application."
+        },
+        {
+          "question": "When configuring an Nginx reverse proxy for a Node.js application, which directive typically forwards requests to the Node.js server?",
+          "options": {
+            "A": "`root`",
+            "B": "`listen`",
+            "C": "`proxy_pass`",
+            "D": "`server_name`"
+          },
+          "correct_answer": "C",
+          "explanation": "`proxy_pass` is the Nginx directive used to specify the backend server (your Node.js application) to which requests should be forwarded."
+        },
+        {
+          "question": "What is the purpose of a `.`gitignore` file in a Node.js project?",
+          "options": {
+            "A": "To specify packages to install.",
+            "B": "To list files and directories that Git should ignore and not track (e.g., `node_modules`, `.env`).",
+            "C": "To configure deployment settings.",
+            "D": "To store environment variables."
+          },
+          "correct_answer": "B",
+          "explanation": "Ignoring non-essential files like `node_modules`, build artifacts, and sensitive configuration files from version control is a standard practice."
+        },
+        {
+          "question": "What is the role of the `start` script in `package.json` for deployment?",
+          "options": {
+            "A": "It defines how to install dependencies.",
+            "B": "It specifies the main entry point for the application when started (e.g., `node server.js` or `pm2 start app.js`).",
+            "C": "It's used for testing the application.",
+            "D": "It compiles the application code."
+          },
+          "correct_answer": "B",
+          "explanation": "The `start` script is a conventional way to define how your application should be launched in production, often used by PaaS providers like Heroku or deployment tools."
+        },
+        {
+          "question": "When deploying to cloud platforms like AWS EC2, what is a common way to ensure your Node.js application is accessible via a public IP address?",
+          "options": {
+            "A": "By setting `localhost` as the host.",
+            "B": "By assigning an Elastic IP address.",
+            "C": "By using a private IP address.",
+            "D": "By directly running `node` on the public IP."
+          },
+          "correct_answer": "B",
+          "explanation": "An Elastic IP address is a static public IPv4 address designed for dynamic cloud computing. It allows you to mask the failure of an instance or software by rapidly remapping the address to another instance."
+        },
+        {
+          "question": "Which cloud service model typically offers the most control over the underlying infrastructure for Node.js deployment?",
+          "options": {
+            "A": "SaaS (Software as a Service)",
+            "B": "PaaS (Platform as a Service) like Heroku",
+            "C": "FaaS (Function as a Service) like AWS Lambda",
+            "D": "IaaS (Infrastructure as a Service) like AWS EC2 or Google Compute Engine"
+          },
+          "correct_answer": "D",
+          "explanation": "IaaS provides virtualized computing resources over the internet. You manage the operating system, middleware, and applications, offering the most flexibility but also the most operational overhead."
+        },
+        {
+          "question": "When running a Node.js application in production behind a proxy (like Nginx), how can you ensure `req.ip` gets the *actual* client IP address instead of the proxy's IP?",
+          "options": {
+            "A": "It's automatically handled by Express.",
+            "B": "By setting the `X-Forwarded-For` header in the proxy and configuring Express with `app.set('trust proxy', true);`.",
+            "C": "By restarting the Node.js application.",
+            "D": "By logging the `req.hostname`."
+          },
+          "correct_answer": "B",
+          "explanation": "Proxies typically forward the original client IP in the `X-Forwarded-For` header. Express needs to be configured to trust this header to correctly populate `req.ip`."
+        },
+        {
+          "question": "What is the importance of structured logging in Node.js applications for deployment and monitoring?",
+          "options": {
+            "A": "It's only for debugging in development.",
+            "B": "It makes log files look pretty.",
+            "C": "It produces machine-readable logs (e.g., JSON format) that can be easily parsed, filtered, and analyzed by log management systems (e.g., ELK Stack, Splunk) for monitoring, debugging, and security auditing.",
+            "D": "It prevents memory leaks."
+          },
+          "correct_answer": "C",
+          "explanation": "Structured logging allows for robust analysis of application behavior, performance, and issues in production environments."
+        },
+        {
+          "question": "Which tool is commonly used to build, manage, and deploy multi-container Docker applications?",
+          "options": {
+            "A": "Webpack",
+            "B": "Docker Compose",
+            "C": "Kubernetes",
+            "D": "NPM"
+          },
+          "correct_answer": "B",
+          "explanation": "Docker Compose allows you to define and run multi-container Docker applications using a YAML file, simplifying the management of interdependent services."
+        },
+        {
+          "question": "What is 'Zero Downtime Deployment' for a Node.js application, and why is it desirable?",
+          "options": {
+            "A": "Deploying only during off-peak hours.",
+            "B": "A deployment strategy that ensures the application remains continuously available to users during the update process, without any noticeable interruption.",
+            "C": "Deploying only to a single server.",
+            "D": "Deploying without using any external tools."
+          },
+          "correct_answer": "B",
+          "explanation": "Zero downtime deployments (e.g., blue-green deployments, rolling updates) are critical for maintaining high availability and a seamless user experience in production systems."
+        },
+        {
+          "question": "Before deploying a Node.js application to production, what is a crucial step regarding environment variables?",
+          "options": {
+            "A": "Hardcoding them into the source code.",
+            "B": "Ensuring all necessary environment variables (e.g., `PORT`, `NODE_ENV`, database credentials) are correctly set in the production environment.",
+            "C": "Deleting all environment variables.",
+            "D": "Making them accessible from the client-side."
+          },
+          "correct_answer": "B",
+          "explanation": "Missing or incorrect environment variables can lead to application failures, security vulnerabilities, or incorrect behavior in production."
+        },
+        {
+          "question": "Which `NODE_ENV` value is typically set for a Node.js application running in a production environment?",
+          "options": {
+            "A": "`development`",
+            "B": "`test`",
+            "C": "`production`",
+            "D": "`staging`"
+          },
+          "correct_answer": "C",
+          "explanation": "Setting `NODE_ENV` to `production` often enables optimizations in Express and other libraries, disables verbose logging, and generally configures the application for a production-ready state."
+        },
+        {
+          "question": "What is the role of a build process (e.g., using Webpack, Babel) before deploying a Node.js application?",
+          "options": {
+            "A": "To fetch data from a database.",
+            "B": "To transpile modern JavaScript (ES6+) to a compatible version, minify code, bundle modules, and optimize assets for production.",
+            "C": "To create a Docker image.",
+            "D": "To start the application server."
+          },
+          "correct_answer": "B",
+          "explanation": "While Node.js generally supports newer JS features, a build step can optimize code size, remove unnecessary development features, and improve startup times, especially for larger applications or older Node.js versions."
+        }
+      ]
+    }
+  ]
+}

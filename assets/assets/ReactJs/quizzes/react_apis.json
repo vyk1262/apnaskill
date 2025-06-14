@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_apis",
+      "questions": [
+        {
+          "question": "What is the most common way to fetch data from an API in a React functional component after it renders?",
+          "options": {
+            "A": "Directly inside the component's render function.",
+            "B": "Using the `useState` Hook.",
+            "C": "Using the `useEffect` Hook.",
+            "D": "Using `this.fetchData()` in a class component."
+          },
+          "correct_answer": "C",
+          "explanation": "`useEffect` is designed for side effects, including data fetching, that occur after the component renders."
+        },
+        {
+          "question": "Which browser API is commonly used for making HTTP requests in modern JavaScript (and thus React)?",
+          "options": {
+            "A": "XMLHttpRequest (XHR)",
+            "B": "jQuery.ajax()",
+            "C": "Fetch API",
+            "D": "Node.js http module"
+          },
+          "correct_answer": "C",
+          "explanation": "The Fetch API provides a modern, promise-based interface for making network requests, widely used in React."
+        },
+        {
+          "question": "What does the `fetch` API return?",
+          "options": {
+            "A": "The JSON data directly.",
+            "B": "A Promise that resolves to a `Response` object.",
+            "C": "An error object.",
+            "D": "The raw text of the response."
+          },
+          "correct_answer": "B",
+          "explanation": "Fetch returns a Promise that resolves to a `Response` object, which then needs to be parsed (e.g., `response.json()`)."
+        },
+        {
+          "question": "How do you parse a JSON response from the Fetch API?",
+          "options": {
+            "A": "By calling `response.text()`",
+            "B": "By calling `response.blob()`",
+            "C": "By calling `response.json()`",
+            "D": "By directly accessing `response.data`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `json()` method of the `Response` object parses the body text as JSON, returning a Promise that resolves with the JavaScript object."
+        },
+        {
+          "question": "When fetching data with `useEffect`, what should be included in the dependency array to avoid infinite loops or stale closures?",
+          "options": {
+            "A": "An empty array `[]` if the fetch should run only once on mount.",
+            "B": "No dependency array, so it runs on every render.",
+            "C": "All variables and functions from the component scope that the effect relies on.",
+            "D": "Only `useState` variables."
+          },
+          "correct_answer": "C",
+          "explanation": "The dependency array tells `useEffect` when to re-run. Missing dependencies can lead to stale data or incorrect behavior, while including them correctly ensures the effect runs when necessary."
+        },
+        {
+          "question": "What is a common practice for handling loading states when fetching data in React?",
+          "options": {
+            "A": "Always display the final data, even if not loaded.",
+            "B": "Use a boolean state variable (e.g., `isLoading`) to conditionally render a loading spinner or message.",
+            "C": "Reload the page until data is fetched.",
+            "D": "Store loading state in a global variable outside of React."
+          },
+          "correct_answer": "B",
+          "explanation": "Managing `isLoading` state provides a good user experience by indicating that data is being fetched."
+        },
+        {
+          "question": "What is a common practice for handling errors during API calls in React?",
+          "options": {
+            "A": "Ignore errors and display nothing.",
+            "B": "Displaying a generic error message or an error component using an error state variable.",
+            "C": "Always refresh the page on error.",
+            "D": "Sending the user to a different website."
+          },
+          "correct_answer": "B",
+          "explanation": "Capturing errors in a state variable (`error`) allows for graceful error handling and user feedback."
+        },
+        {
+          "question": "Which popular third-party library is often used for making HTTP requests in React (and JavaScript in general) due to its ease of use and features?",
+          "options": {
+            "A": "jQuery",
+            "B": "Axios",
+            "C": "Lodash",
+            "D": "Moment.js"
+          },
+          "correct_answer": "B",
+          "explanation": "Axios is a widely used promise-based HTTP client for the browser and Node.js, often preferred over Fetch for its features like automatic JSON parsing, request/response interceptors, and better error handling."
+        },
+        {
+          "question": "When using `async/await` with `useEffect` for data fetching, where should the `async` keyword be placed?",
+          "options": {
+            "A": "Directly on the `useEffect` callback function.",
+            "B": "On a nested function defined inside the `useEffect` callback.",
+            "C": "On the component function itself.",
+            "D": "It cannot be used with `useEffect`."
+          },
+          "correct_answer": "B",
+          "explanation": "The `useEffect` callback itself cannot be `async`. You should define an `async` function inside the effect and then call it, or use an IIFE (Immediately Invoked Function Expression)."
+        },
+        {
+          "question": "What is the purpose of the `cleanup` function returned by `useEffect`?",
+          "options": {
+            "A": "To re-fetch data on every render.",
+            "B": "To perform actions after the component updates.",
+            "C": "To clean up resources (e.g., clear timers, cancel network requests) when the component unmounts or before the effect re-runs.",
+            "D": "To reset component state to its initial value."
+          },
+          "correct_answer": "C",
+          "explanation": "The cleanup function prevents memory leaks and ensures that side effects are properly managed when a component unmounts or its dependencies change."
+        },
+        {
+          "question": "When sending data to an API (e.g., a POST request), what `Content-Type` header is typically used for JSON data?",
+          "options": {
+            "A": "`text/plain`",
+            "B": "`application/xml`",
+            "C": "`application/json`",
+            "D": "`multipart/form-data`"
+          },
+          "correct_answer": "C",
+          "explanation": "`application/json` is the standard media type for sending JSON data in HTTP requests."
+        },
+        {
+          "question": "How do you typically send data in the body of a POST/PUT request using the Fetch API?",
+          "options": {
+            "A": "As a query parameter in the URL.",
+            "B": "As a JavaScript object directly in the `body` option.",
+            "C": "As a JSON string using `JSON.stringify()` in the `body` option.",
+            "D": "As form data without any special formatting."
+          },
+          "correct_answer": "C",
+          "explanation": "HTTP bodies are typically strings. When sending JSON, you need to stringify the JavaScript object before putting it in the request body."
+        },
+        {
+          "question": "What is a 'CORS' error, and how does it relate to React API calls?",
+          "options": {
+            "A": "An error indicating a syntax mistake in your React code.",
+            "B": "A security feature that restricts web pages from making requests to a different domain than the one that served the web page.",
+            "C": "An error related to incorrect state management.",
+            "D": "An error caused by slow network speeds."
+          },
+          "correct_answer": "B",
+          "explanation": "CORS (Cross-Origin Resource Sharing) is a browser security mechanism. If your React app is on one domain and your API on another, the browser might block requests unless the API server explicitly allows the origin."
+        },
+        {
+          "question": "What is the common approach for displaying data fetched from an API in a React component?",
+          "options": {
+            "A": "Directly append fetched data to the DOM.",
+            "B": "Store the fetched data in component state and render it in JSX.",
+            "C": "Console log the data and manually update the UI.",
+            "D": "Store data in local storage and retrieve it from there."
+          },
+          "correct_answer": "B",
+          "explanation": "Storing data in state allows React to automatically re-render the component when the data changes, ensuring the UI stays in sync."
+        },
+        {
+          "question": "When performing multiple API calls that depend on each other, which pattern is often used?",
+          "options": {
+            "A": "Making them in parallel without waiting.",
+            "B": "Nesting `fetch().then()` calls or using sequential `await` calls.",
+            "C": "Only calling the first API, ignoring subsequent ones.",
+            "D": "Using `setTimeout` to delay calls."
+          },
+          "correct_answer": "B",
+          "explanation": "Sequential calls ensure that the data from one API is available before the next dependent call is made."
+        },
+        {
+          "question": "What is the benefit of using a custom Hook (e.g., `useFetch`) for API calls?",
+          "options": {
+            "A": "It eliminates the need for `useEffect`.",
+            "B": "It allows for reusing API fetching logic, loading, and error states across multiple components.",
+            "C": "It automatically handles all network errors without any code.",
+            "D": "It makes API calls synchronous."
+          },
+          "correct_answer": "B",
+          "explanation": "Custom Hooks encapsulate reusable logic, making your components cleaner and reducing code duplication."
+        },
+        {
+          "question": "Which of the following is NOT a good practice when handling API keys in a client-side React application?",
+          "options": {
+            "A": "Storing API keys in environment variables.",
+            "B": "Hardcoding sensitive API keys directly in the JavaScript source code.",
+            "C": "Using a backend proxy to hide API keys from the client.",
+            "D": "Restricting API key usage with IP whitelisting or domain restrictions on the API provider side."
+          },
+          "correct_answer": "B",
+          "explanation": "Hardcoding sensitive API keys exposes them to anyone inspecting the client-side code, posing a security risk."
+        },
+        {
+          "question": "What does the 'unmounting' phase of a component refer to in the context of API cleanup?",
+          "options": {
+            "A": "When the component first renders.",
+            "B": "When the component's state is updated.",
+            "C": "When the component is removed from the DOM.",
+            "D": "When the component receives new props."
+          },
+          "correct_answer": "C",
+          "explanation": "Unmounting is the phase where a component is destroyed. Cleanup in `useEffect`'s return function is crucial here to prevent memory leaks."
+        },
+        {
+          "question": "What is the purpose of aborting an API request when a component unmounts?",
+          "options": {
+            "A": "To save network bandwidth if the response is no longer needed.",
+            "B": "To prevent 'Can't perform a React state update on an unmounted component' warnings/errors.",
+            "C": "Both A and B.",
+            "D": "It's not necessary; the request completes anyway."
+          },
+          "correct_answer": "C",
+          "explanation": "Aborting requests prevents unnecessary resource consumption and avoids issues where you try to update state on a component that no longer exists in the DOM."
+        },
+        {
+          "question": "Which API can be used to abort network requests in modern browsers?",
+          "options": {
+            "A": "XMLHttpRequest's `abort()` method.",
+            "B": "The `AbortController` API with Fetch.",
+            "C": "Setting `fetch()` timeout to 0.",
+            "D": "There is no way to abort Fetch requests."
+          },
+          "correct_answer": "B",
+          "explanation": "The `AbortController` provides a way to abort one or more Web requests as and when desired."
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,8 @@
             "C": "Creating static models based on predefined rules.",
             "D": "Developing complex algorithms for data storage."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Machine learning focuses on creating systems that can learn from data to identify patterns, make predictions, or discover insights, rather than being given step-by-step instructions for every task."
         },
         {
           "question": "Which of the following is NOT a main type of machine learning?",
@@ -21,7 +22,8 @@
             "C": "Reinforcement Learning",
             "D": "Rule-Based Learning"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The three main types of machine learning are **Supervised Learning** (learning from labeled data), **Unsupervised Learning** (finding patterns in unlabeled data), and **Reinforcement Learning** (learning through trial and error with rewards). **Rule-Based Learning** relies on predefined rules, which is not machine learning in the conventional sense of learning from data."
         },
         {
           "question": "In supervised learning, what type of data is used for training?",
@@ -31,7 +33,8 @@
             "C": "Data with only numerical features.",
             "D": "Data that is randomly generated."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Supervised learning** algorithms learn from a dataset where each input example has a corresponding correct output (or 'label'). The goal is to learn a mapping from inputs to outputs."
         },
         {
           "question": "What is the primary goal of unsupervised learning?",
@@ -41,7 +44,8 @@
             "C": "To learn through trial and error with a reward system.",
             "D": "To classify data into predefined categories."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Unsupervised learning** deals with unlabeled data. Its main objective is to find intrinsic structures, relationships, or groupings within the data without any prior knowledge of output categories."
         },
         {
           "question": "What is the key characteristic of reinforcement learning?",
@@ -51,7 +55,8 @@
             "C": "Learning through interaction with an environment and receiving rewards or penalties.",
             "D": "Learning to classify data based on similarity."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Reinforcement learning** involves an agent learning optimal actions by interacting with an environment. It receives **rewards** for desirable actions and **penalties** for undesirable ones, guiding its learning process towards maximizing cumulative reward."
         },
         {
           "question": "What is a 'feature' in the context of machine learning?",
@@ -61,7 +66,8 @@
             "C": "A parameter that the model learns during training.",
             "D": "A method for evaluating the performance of a model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In machine learning, a **feature** is an attribute or characteristic of the data that the model uses to make predictions. For example, in predicting house prices, features could be 'number of bedrooms' or 'square footage'."
         },
         {
           "question": "What is a 'target variable' (or 'label') in supervised learning?",
@@ -71,7 +77,8 @@
             "C": "A hyperparameter that controls the learning process.",
             "D": "A measure of the model's error."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In **supervised learning**, the **target variable** (or **label**) is the specific outcome or value that the machine learning model is trained to predict based on the input features."
         },
         {
           "question": "What is the purpose of splitting a dataset into training and testing sets?",
@@ -81,7 +88,8 @@
             "C": "To increase the size of the dataset for better training.",
             "D": "To visualize the data distribution."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Splitting data into **training** and **testing** sets is crucial for evaluating a model's ability to **generalize** to new, unseen data. The model learns from the training set and its performance is then assessed on the independent testing set."
         },
         {
           "question": "What is 'overfitting' in machine learning?",
@@ -91,7 +99,8 @@
             "C": "When a model generalizes well to unseen data.",
             "D": "When the training data is insufficient to learn the underlying patterns."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Overfitting** occurs when a model becomes too complex and learns the training data's noise and specific patterns rather than the underlying trends. This leads to excellent performance on the training data but poor performance on new, unseen data."
         },
         {
           "question": "What is 'underfitting' in machine learning?",
@@ -101,7 +110,8 @@
             "C": "When the model is too complex for the amount of data.",
             "D": "When the learning rate is set too high."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Underfitting** happens when a model is too simple to capture the complexity of the data. It performs poorly on both the training data and new data because it hasn't learned the fundamental relationships."
         },
         {
           "question": "What is the 'bias-variance tradeoff' in machine learning?",
@@ -111,7 +121,8 @@
             "C": "The tradeoff between a model's tendency to underfit (high bias) and overfit (high variance).",
             "D": "The tradeoff between precision and recall in classification."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The **bias-variance tradeoff** is a central concept where reducing **bias** (the error from overly simplistic assumptions, leading to underfitting) often increases **variance** (the error from sensitivity to small fluctuations in the training data, leading to overfitting), and vice-versa. Finding the right balance is key to building good models."
         },
         {
           "question": "What is a 'hyperparameter' in a machine learning model?",
@@ -121,7 +132,8 @@
             "C": "An input feature used to make predictions.",
             "D": "The predicted output of the model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Hyperparameters** are configuration variables that are external to the model and whose values cannot be estimated from the data. They are typically set by the data scientist before the training process begins and control how the model learns (e.g., learning rate, number of hidden layers)."
         },
         {
           "question": "What is the purpose of 'model evaluation' in machine learning?",
@@ -131,7 +143,8 @@
             "C": "To select the features to be used for training.",
             "D": "To tune the hyperparameters of the model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Model evaluation** is the process of assessing how well a machine learning model performs on data it has not seen before. This is crucial for understanding its generalization ability and reliability."
         },
         {
           "question": "What is a 'loss function' (or 'cost function') used for in training machine learning models?",
@@ -141,7 +154,8 @@
             "C": "To determine the optimal hyperparameters of the model.",
             "D": "To visualize the learning process."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **loss function** calculates the difference or discrepancy between a model's predicted output and the actual (true) output. During training, the goal is to minimize this loss, guiding the model to make more accurate predictions."
         },
         {
           "question": "What is 'gradient descent'?",
@@ -151,7 +165,8 @@
             "C": "A technique for reducing the dimensionality of the input data.",
             "D": "A way to prevent overfitting by penalizing large weights."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Gradient Descent** is a widely used optimization algorithm in machine learning. It iteratively adjusts the model's **parameters** (weights and biases) in the direction that reduces the **loss function**, gradually moving towards the optimal solution."
         },
         {
           "question": "What is the difference between a 'parameter' and a 'hyperparameter' in machine learning?",
@@ -161,7 +176,8 @@
             "C": "Parameters are used for unsupervised learning, while hyperparameters are for supervised learning.",
             "D": "There is no significant difference between them."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Hyperparameters** are configurations set by the data scientist *before* training (e.g., learning rate, number of layers). **Parameters** are internal variables of the model that are *learned from the data* during the training process (e.g., weights and biases in a neural network)."
         },
         {
           "question": "What is the goal of 'feature scaling'?",
@@ -171,7 +187,8 @@
             "C": "To create new features from existing ones.",
             "D": "To convert categorical features into numerical representations."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Feature scaling** (like normalization or standardization) transforms numerical features to a similar range. This is important for many machine learning algorithms (e.g., those using distance calculations or gradient descent) to prevent features with larger values from dominating the learning process."
         },
         {
           "question": "What is 'feature encoding' primarily used for?",
@@ -181,7 +198,8 @@
             "C": "Converting categorical features into a numerical format that machine learning algorithms can understand.",
             "D": "Selecting the most relevant features."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Feature encoding** is the process of converting non-numerical (categorical) data into numerical representations. Machine learning algorithms typically require numerical input, so encoding techniques (like One-Hot Encoding or Label Encoding) are used to prepare categorical features."
         },
         {
           "question": "What is the machine learning lifecycle?",
@@ -191,7 +209,8 @@
             "C": "A one-time process of building a machine learning model.",
             "D": "The period from when a model is deployed until it becomes obsolete."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **machine learning lifecycle** is an iterative and continuous process that involves several stages, from understanding the problem and collecting data to preparing the data, building and evaluating models, and finally deploying and monitoring them."
         },
         {
           "question": "Why is interpretability sometimes important in machine learning models?",
@@ -201,7 +220,8 @@
             "C": "It simplifies the model development process.",
             "D": "It is only important for very simple models like linear regression."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Interpretability** allows us to understand *why* a machine learning model makes a particular prediction. This is vital in domains where transparency, fairness, and accountability are critical, such as medical diagnoses, financial lending, or criminal justice, as it helps build trust and identify potential biases."
         }
       ]
     }

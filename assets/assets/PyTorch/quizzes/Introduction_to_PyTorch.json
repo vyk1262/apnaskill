@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Introduction_to_PyTorch",
+      "questions": [
+        {
+          "question": "What is PyTorch primarily used for?",
+          "options": {
+            "A": "Web development and backend APIs.",
+            "B": "Database management and SQL querying.",
+            "C": "Building and training deep learning models.",
+            "D": "Data visualization and dashboard creation."
+          },
+          "correct_answer": "C",
+          "explanation": "PyTorch is an open-source machine learning library primarily used for applications like computer vision and natural language processing, focusing on deep learning."
+        },
+        {
+          "question": "Which company originally developed and maintains PyTorch?",
+          "options": {
+            "A": "Google",
+            "B": "Microsoft",
+            "C": "Facebook (Meta AI)",
+            "D": "Amazon"
+          },
+          "correct_answer": "C",
+          "explanation": "PyTorch was developed by Facebook AI Research (FAIR)."
+        },
+        {
+          "question": "What is a core advantage of PyTorch's 'define-by-run' approach?",
+          "options": {
+            "A": "It compiles the entire graph before execution, leading to faster deployment.",
+            "B": "It allows for dynamic graph construction, making debugging easier and enabling control flow within models.",
+            "C": "It requires less memory for large models.",
+            "D": "It's only suitable for very simple neural networks."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'define-by-run' paradigm (eager execution) means the computation graph is built as operations are performed, offering great flexibility and ease of debugging."
+        },
+        {
+          "question": "What is the fundamental data structure in PyTorch that is a multi-dimensional array, similar to NumPy arrays?",
+          "options": {
+            "A": "PyTorch Array",
+            "B": "PyTorch Matrix",
+            "C": "torch.Tensor",
+            "D": "DataBlock"
+          },
+          "correct_answer": "C",
+          "explanation": "`torch.Tensor` is the central data structure around which all PyTorch operations revolve."
+        },
+        {
+          "question": "Which Python library is `torch.Tensor` designed to be highly compatible with for numerical operations?",
+          "options": {
+            "A": "Pandas",
+            "B": "Matplotlib",
+            "C": "Scikit-learn",
+            "D": "NumPy"
+          },
+          "correct_answer": "D",
+          "explanation": "PyTorch Tensors can be easily converted to and from NumPy arrays, allowing for seamless integration with the scientific Python ecosystem."
+        },
+        {
+          "question": "What is the name of PyTorch's automatic differentiation engine?",
+          "options": {
+            "A": "AutoDiff",
+            "B": "GradFlow",
+            "C": "Autograd",
+            "D": "Derivator"
+          },
+          "correct_answer": "C",
+          "explanation": "`Autograd` is responsible for automatically calculating gradients for all operations on tensors that require gradient computation."
+        },
+        {
+          "question": "To enable GPU acceleration for PyTorch operations, what NVIDIA platform or technology is required?",
+          "options": {
+            "A": "OpenCL",
+            "B": "CUDA",
+            "C": "OpenGL",
+            "D": "DirectX"
+          },
+          "correct_answer": "B",
+          "explanation": "PyTorch leverages NVIDIA's CUDA for performing computations on GPUs, significantly speeding up deep learning workloads."
+        },
+        {
+          "question": "Which PyTorch module provides pre-built neural network layers (e.g., Linear, Conv2d, ReLU) and containers (e.g., Sequential)?",
+          "options": {
+            "A": "`torch.optim`",
+            "B": "`torch.utils.data`",
+            "C": "`torch.nn`",
+            "D": "`torch.tensor`"
+          },
+          "correct_answer": "C",
+          "explanation": "`torch.nn` is a fundamental module for defining and building neural network architectures."
+        },
+        {
+          "question": "What is the purpose of `torch.optim` in PyTorch?",
+          "options": {
+            "A": "To optimize the GPU memory usage.",
+            "B": "To provide various optimization algorithms (e.g., SGD, Adam, Adagrad) for updating model weights during training.",
+            "C": "To optimize the input data loading process.",
+            "D": "To optimize the PyTorch installation."
+          },
+          "correct_answer": "B",
+          "explanation": "Optimizers adjust model parameters based on the computed gradients to minimize the loss function."
+        },
+        {
+          "question": "Which utility class in `torch.utils.data` is used to load data in batches and shuffle it, providing an iterable over a dataset?",
+          "options": {
+            "A": "`Dataset`",
+            "B": "`DataLoader`",
+            "C": "`DataSampler`",
+            "D": "`BatchProcessor`"
+          },
+          "correct_answer": "B",
+          "explanation": "`DataLoader` wraps a `Dataset` and provides functionalities like batching, shuffling, and multi-process data loading."
+        },
+        {
+          "question": "What is the primary difference in graph construction between PyTorch (by default) and older TensorFlow versions (before TF 2.0 eager mode)?",
+          "options": {
+            "A": "PyTorch uses static graphs; TensorFlow uses dynamic graphs.",
+            "B": "PyTorch uses define-by-run (dynamic) graphs; older TensorFlow used define-and-run (static) graphs.",
+            "C": "PyTorch has no concept of a computational graph.",
+            "D": "They both use the same type of graph construction."
+          },
+          "correct_answer": "B",
+          "explanation": "This 'dynamic vs. static' graph distinction was a key differentiator, although TensorFlow 2.0 now also offers eager execution similar to PyTorch."
+        },
+        {
+          "question": "When defining a neural network module in PyTorch, what method must be implemented to define the forward pass of the network?",
+          "options": {
+            "A": "`__init__`",
+            "B": "`compute`",
+            "C": "`forward`",
+            "D": "`train`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `forward` method specifies how input data flows through the layers of the network to produce an output."
+        },
+        {
+          "question": "To move a `torch.Tensor` or a `torch.nn.Module` to a GPU, what method should you call on the object?",
+          "options": {
+            "A": "`to_gpu()`",
+            "B": "`cuda()`",
+            "C": "`to('cuda')`",
+            "D": "Both B and C are common ways."
+          },
+          "correct_answer": "D",
+          "explanation": "Both `.cuda()` and `.to('cuda')` are valid and commonly used methods to transfer objects to the GPU."
+        },
+        {
+          "question": "Which of the following is typically NOT a direct use case for PyTorch?",
+          "options": {
+            "A": "Image classification.",
+            "B": "Natural Language Processing (NLP).",
+            "C": "Relational database querying.",
+            "D": "Reinforcement Learning."
+          },
+          "correct_answer": "C",
+          "explanation": "PyTorch is for machine learning, not for traditional database interactions."
+        },
+        {
+          "question": "What does `requires_grad=True` on a `torch.Tensor` indicate?",
+          "options": {
+            "A": "The tensor must be on the GPU.",
+            "B": "PyTorch should calculate gradients for this tensor during the backward pass.",
+            "C": "The tensor is a constant and does not require any computation.",
+            "D": "The tensor will be used for visualization only."
+          },
+          "correct_answer": "B",
+          "explanation": "This flag is crucial for `Autograd` to track operations on the tensor and compute its gradients with respect to the loss."
+        },
+        {
+          "question": "When is the backward pass (gradient computation) performed in PyTorch?",
+          "options": {
+            "A": "Before the forward pass.",
+            "B": "Automatically after every operation.",
+            "C": "When the `.backward()` method is called on a scalar loss tensor.",
+            "D": "Only when the model is being deployed."
+          },
+          "correct_answer": "C",
+          "explanation": "Calling `loss.backward()` triggers the computation of gradients throughout the computational graph."
+        },
+        {
+          "question": "Which statement correctly describes the relationship between `torch.utils.data.Dataset` and `torch.utils.data.DataLoader`?",
+          "options": {
+            "A": "`DataLoader` is a base class for `Dataset`.",
+            "B": "`Dataset` is responsible for storing and accessing individual data samples, while `DataLoader` wraps a `Dataset` to provide batching, shuffling, and multi-process data loading.",
+            "C": "They are interchangeable terms.",
+            "D": "`Dataset` performs optimization, and `DataLoader` performs inference."
+          },
+          "correct_answer": "B",
+          "explanation": "This separation of concerns makes data handling flexible and efficient."
+        },
+        {
+          "question": "What does `model.train()` and `model.eval()` do in PyTorch?",
+          "options": {
+            "A": "They control whether the model is trained on CPU or GPU.",
+            "B": "`model.train()` sets the model to training mode (e.g., enables dropout, batch norm updates), while `model.eval()` sets it to evaluation mode (e.g., disables dropout, uses running averages for batch norm).",
+            "C": "They start and stop the training process respectively.",
+            "D": "They define the number of epochs for training."
+          },
+          "correct_answer": "B",
+          "explanation": "These methods are crucial for correctly handling layers that behave differently during training vs. inference (e.g., BatchNorm, Dropout)."
+        },
+        {
+          "question": "PyTorch is often favored by researchers due to its:",
+          "options": {
+            "A": "Strict, static graph compilation.",
+            "B": "Proprietary license.",
+            "C": "Flexibility, Pythonic feel, and ease of debugging due to dynamic graphs.",
+            "D": "Limited support for custom layers."
+          },
+          "correct_answer": "C",
+          "explanation": "Its intuitive API and dynamic nature make it very adaptable for experimental research."
+        },
+        {
+          "question": "What is `torch.no_grad()` context manager primarily used for?",
+          "options": {
+            "A": "To temporarily set all tensors to `requires_grad=True`.",
+            "B": "To temporarily disable gradient calculation, useful during inference or evaluation to save memory and computations.",
+            "C": "To re-enable gradient calculation.",
+            "D": "To clear all existing gradients."
+          },
+          "correct_answer": "B",
+          "explanation": "Disabling gradient computation is essential during inference to avoid unnecessary calculations and memory consumption."
+        }
+      ]
+    }
+  ]
+}

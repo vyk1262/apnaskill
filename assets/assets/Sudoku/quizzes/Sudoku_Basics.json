@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Sudoku_Basics",
+      "questions": [
+        {
+          "question": "What is the standard size of a Sudoku grid?",
+          "options": {
+            "A": "8x8",
+            "B": "9x9",
+            "C": "10x10",
+            "D": "12x12"
+          },
+          "correct_answer": "B",
+          "explanation": "A standard Sudoku puzzle uses a 9x9 grid."
+        },
+        {
+          "question": "Into how many 3x3 blocks is a standard Sudoku grid divided?",
+          "options": {
+            "A": "4",
+            "B": "6",
+            "C": "9",
+            "D": "12"
+          },
+          "correct_answer": "C",
+          "explanation": "The 9x9 grid is divided into nine 3x3 subgrids, often called blocks, boxes, or regions."
+        },
+        {
+          "question": "What is the objective of a Sudoku puzzle?",
+          "options": {
+            "A": "To fill the grid with the numbers 1-9 randomly.",
+            "B": "To fill the grid with the numbers 1-9 such that each row, each column, and each 3x3 block contains all of the digits from 1 to 9.",
+            "C": "To fill the grid with any numbers as long as no row or column has the same number twice.",
+            "D": "To complete the grid using only the numbers provided initially."
+          },
+          "correct_answer": "B",
+          "explanation": "The goal is to complete the grid following the fundamental Sudoku rules."
+        },
+        {
+          "question": "How many times should each digit from 1 to 9 appear in a completed row of a standard Sudoku puzzle?",
+          "options": {
+            "A": "9",
+            "B": "3",
+            "C": "1",
+            "D": "As many times as possible"
+          },
+          "correct_answer": "C",
+          "explanation": "Each digit must appear exactly once in each row."
+        },
+        {
+          "question": "How many times should each digit from 1 to 9 appear in a completed column of a standard Sudoku puzzle?",
+          "options": {
+            "A": "9",
+            "B": "3",
+            "C": "1",
+            "D": "As many times as possible"
+          },
+          "correct_answer": "C",
+          "explanation": "Each digit must appear exactly once in each column."
+        },
+        {
+          "question": "How many times should each digit from 1 to 9 appear in a completed 3x3 block of a standard Sudoku puzzle?",
+          "options": {
+            "A": "9",
+            "B": "3",
+            "C": "1",
+            "D": "As many times as possible"
+          },
+          "correct_answer": "C",
+          "explanation": "Each digit must appear exactly once in each 3x3 block."
+        },
+        {
+          "question": "What are the initially filled numbers in a Sudoku puzzle called?",
+          "options": {
+            "A": "Solutions",
+            "B": "Hints",
+            "C": "Givens",
+            "D": "Starters"
+          },
+          "correct_answer": "C",
+          "explanation": "The pre-filled cells are referred to as givens."
+        },
+        {
+          "question": "What is a 'cell' in the context of a Sudoku grid?",
+          "options": {
+            "A": "Any of the 3x3 blocks.",
+            "B": "A single square within the 9x9 grid.",
+            "C": "A completed row or column.",
+            "D": "The intersection of a row and a 3x3 block."
+          },
+          "correct_answer": "B",
+          "explanation": "Each individual square in the grid is a cell."
+        },
+        {
+          "question": "What is a 'row' in a Sudoku grid?",
+          "options": {
+            "A": "A horizontal line of 9 cells.",
+            "B": "A vertical line of 9 cells.",
+            "C": "A 3x3 block of cells.",
+            "D": "Any three consecutive cells."
+          },
+          "correct_answer": "A",
+          "explanation": "A row extends horizontally across the grid."
+        },
+        {
+          "question": "What is a 'column' in a Sudoku grid?",
+          "options": {
+            "A": "A horizontal line of 9 cells.",
+            "B": "A vertical line of 9 cells.",
+            "C": "A 3x3 block of cells.",
+            "D": "Any three consecutive cells."
+          },
+          "correct_answer": "B",
+          "explanation": "A column extends vertically down the grid."
+        },
+        {
+          "question": "Is there only one unique solution to a well-formed standard Sudoku puzzle?",
+          "options": {
+            "A": "No, there can be multiple solutions.",
+            "B": "Yes, a properly designed Sudoku puzzle should have only one unique solution.",
+            "C": "Sometimes, depending on the number of givens.",
+            "D": "It depends on the solver's skill level."
+          },
+          "correct_answer": "B",
+          "explanation": "A puzzle with more than one solution is generally considered invalid."
+        },
+        {
+          "question": "Can a digit appear more than once in the same 3x3 block in a valid Sudoku puzzle?",
+          "options": {
+            "A": "Yes, if it doesn't appear in the same row or column.",
+            "B": "No, each digit from 1 to 9 must appear exactly once in each 3x3 block.",
+            "C": "Only if it's one of the givens.",
+            "D": "It depends on the difficulty of the puzzle."
+          },
+          "correct_answer": "B",
+          "explanation": "This is one of the fundamental rules of Sudoku."
+        },
+        {
+          "question": "Can a digit appear more than once in the same row in a valid Sudoku puzzle?",
+          "options": {
+            "A": "Yes, if it doesn't appear in the same 3x3 block.",
+            "B": "No, each digit from 1 to 9 must appear exactly once in each row.",
+            "C": "Only if it's one of the givens.",
+            "D": "It depends on the difficulty of the puzzle."
+          },
+          "correct_answer": "B",
+          "explanation": "This is another fundamental rule of Sudoku."
+        },
+        {
+          "question": "Can a digit appear more than once in the same column in a valid Sudoku puzzle?",
+          "options": {
+            "A": "Yes, if it doesn't appear in the same 3x3 block.",
+            "B": "No, each digit from 1 to 9 must appear exactly once in each column.",
+            "C": "Only if it's one of the givens.",
+            "D": "It depends on the difficulty of the puzzle."
+          },
+          "correct_answer": "B",
+          "explanation": "This is the final fundamental rule of Sudoku."
+        },
+        {
+          "question": "What is the minimum number of givens generally required for a standard 9x9 Sudoku puzzle to have a unique solution?",
+          "options": {
+            "A": "8",
+            "B": "17",
+            "C": "25",
+            "D": "30"
+          },
+          "correct_answer": "B",
+          "explanation": "The minimum number of givens for a unique solution in a 9x9 Sudoku is 17, although some puzzles with 17 givens can be very difficult."
+        },
+        {
+          "question": "Are Sudoku puzzles considered mathematical problems or logic puzzles?",
+          "options": {
+            "A": "Purely mathematical problems involving complex calculations.",
+            "B": "Primarily logic puzzles that rely on deduction and pattern recognition.",
+            "C": "A combination of both mathematics and logic.",
+            "D": "Neither; they are purely recreational."
+          },
+          "correct_answer": "B",
+          "explanation": "While numbers are used, solving Sudoku relies on logical deduction rather than mathematical operations."
+        },
+        {
+          "question": "What is the term for a cell in a Sudoku grid that has not yet been filled with a number?",
+          "options": {
+            "A": "Solved cell",
+            "B": "Empty cell or blank cell",
+            "C": "Hint cell",
+            "D": "Blocked cell"
+          },
+          "correct_answer": "B",
+          "explanation": "These are the cells the solver needs to fill in."
+        },
+        {
+          "question": "Can you use letters instead of numbers in a Sudoku puzzle?",
+          "options": {
+            "A": "Yes, as long as there are 9 unique symbols.",
+            "B": "No, standard Sudoku always uses the digits 1-9.",
+            "C": "Only in very advanced variations.",
+            "D": "It depends on the country the puzzle is from."
+          },
+          "correct_answer": "A",
+          "explanation": "While standard Sudoku uses 1-9, the underlying logic applies to any set of 9 unique symbols."
+        },
+        {
+          "question": "What is the relationship between the rows, columns, and 3x3 blocks in terms of the numbers they must contain?",
+          "options": {
+            "A": "Rows and columns must contain 1-9, but blocks can have repeats.",
+            "B": "Blocks must contain 1-9, but rows and columns can have repeats.",
+            "C": "Each row, each column, and each 3x3 block must independently contain all digits from 1 to 9 exactly once.",
+            "D": "There is no specific relationship between them."
+          },
+          "correct_answer": "C",
+          "explanation": "This is the core constraint that governs Sudoku solutions."
+        },
+        {
+          "question": "Is guessing generally a recommended strategy for solving Sudoku puzzles?",
+          "options": {
+            "A": "Yes, especially for difficult puzzles.",
+            "B": "No, guessing can often lead to contradictions and make the puzzle harder to solve logically.",
+            "C": "Only if you are stuck for a long time.",
+            "D": "It depends on the type of Sudoku."
+          },
+          "correct_answer": "B",
+          "explanation": "Logical deduction is the intended method for solving Sudoku."
+        }
+      ]
+    }
+  ]
+}

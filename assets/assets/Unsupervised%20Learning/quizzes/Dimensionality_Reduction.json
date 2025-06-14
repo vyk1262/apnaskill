@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Dimensionality_Reduction",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Dimensionality Reduction in data analysis?",
+          "options": {
+            "A": "To reduce the number of variables under consideration.",
+            "B": "To classify data into categories.",
+            "C": "To encrypt data for security.",
+            "D": "To visualize data trends."
+          },
+          "correct_answer": "A",
+          "explanation": "Dimensionality Reduction is used to reduce the number of variables under consideration, simplifying models and reducing computation."
+        },
+        {
+          "question": "Which of the following is a common technique used in Dimensionality Reduction?",
+          "options": {
+            "A": "Principal Component Analysis (PCA)",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "Linear Regression"
+          },
+          "correct_answer": "A",
+          "explanation": "Principal Component Analysis (PCA) is a common technique used in Dimensionality Reduction, transforming data into a lower-dimensional space."
+        },
+        {
+          "question": "What is the role of eigenvectors in PCA?",
+          "options": {
+            "A": "To represent the directions of maximum variance.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum variance in PCA, used to transform data into a lower-dimensional space."
+        },
+        {
+          "question": "Which method is used to select the number of components in PCA?",
+          "options": {
+            "A": "Scree Plot",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The Scree Plot is used to select the number of components in PCA, analyzing the variance explained by each component."
+        },
+        {
+          "question": "What is the significance of feature scaling in Dimensionality Reduction?",
+          "options": {
+            "A": "To ensure components are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures components are meaningful, providing accurate transformations in Dimensionality Reduction."
+        },
+        {
+          "question": "Which of the following is a disadvantage of PCA?",
+          "options": {
+            "A": "Sensitive to outliers.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is sensitive to outliers, as they can distort the components and affect the transformation."
+        },
+        {
+          "question": "What is the purpose of using t-SNE in Dimensionality Reduction?",
+          "options": {
+            "A": "To visualize high-dimensional data in a lower-dimensional space.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "t-SNE is used to visualize high-dimensional data in a lower-dimensional space, preserving local structures."
+        },
+        {
+          "question": "Which of the following is a common use case for Dimensionality Reduction?",
+          "options": {
+            "A": "Data visualization.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "Dimensionality Reduction is commonly used for data visualization, simplifying complex data for analysis."
+        },
+        {
+          "question": "What is the role of eigenvalues in PCA?",
+          "options": {
+            "A": "To represent the amount of variance explained by each component.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvalues represent the amount of variance explained by each component in PCA, used to select the number of components."
+        },
+        {
+          "question": "Which of the following is a benefit of Dimensionality Reduction?",
+          "options": {
+            "A": "Can simplify models and reduce computation.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "Dimensionality Reduction can simplify models and reduce computation, making analysis more efficient."
+        },
+        {
+          "question": "What is the significance of the explained variance ratio in PCA?",
+          "options": {
+            "A": "It indicates the proportion of variance explained by each component.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The explained variance ratio indicates the proportion of variance explained by each component in PCA, guiding component selection."
+        },
+        {
+          "question": "Which of the following is a common technique used in Dimensionality Reduction?",
+          "options": {
+            "A": "Linear Discriminant Analysis (LDA)",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "Linear Regression"
+          },
+          "correct_answer": "A",
+          "explanation": "Linear Discriminant Analysis (LDA) is a common technique used in Dimensionality Reduction, transforming data into a lower-dimensional space."
+        },
+        {
+          "question": "What is the role of eigenvectors in PCA?",
+          "options": {
+            "A": "To represent the directions of maximum variance.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum variance in PCA, used to transform data into a lower-dimensional space."
+        },
+        {
+          "question": "Which method is used to select the number of components in PCA?",
+          "options": {
+            "A": "Cumulative Explained Variance",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Cumulative Explained Variance is used to select the number of components in PCA, analyzing the total variance explained by selected components."
+        },
+        {
+          "question": "What is the significance of feature scaling in Dimensionality Reduction?",
+          "options": {
+            "A": "To ensure components are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures components are meaningful, providing accurate transformations in Dimensionality Reduction."
+        },
+        {
+          "question": "Which of the following is a disadvantage of PCA?",
+          "options": {
+            "A": "Sensitive to multicollinearity.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is sensitive to multicollinearity, as it can distort the components and affect the transformation."
+        },
+        {
+          "question": "What is the purpose of using t-SNE in Dimensionality Reduction?",
+          "options": {
+            "A": "To visualize high-dimensional data in a lower-dimensional space.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "t-SNE is used to visualize high-dimensional data in a lower-dimensional space, preserving local structures."
+        },
+        {
+          "question": "Which of the following is a common use case for Dimensionality Reduction?",
+          "options": {
+            "A": "Data visualization.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "Dimensionality Reduction is commonly used for data visualization, simplifying complex data for analysis."
+        },
+        {
+          "question": "What is the role of eigenvalues in PCA?",
+          "options": {
+            "A": "To represent the amount of variance explained by each component.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvalues represent the amount of variance explained by each component in PCA, used to select the number of components."
+        }
+      ]
+    }
+  ]
+}

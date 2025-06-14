@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Resource_Management",
+      "questions": [
         {
-            "topic": "Resource_Management",
-            "questions": []
+          "question": "What are the two primary resource types managed by Kubernetes for Pods?",
+          "options": {
+            "A": "Disk space and Network bandwidth.",
+            "B": "CPU and Memory.",
+            "C": "GPU and SSD.",
+            "D": "Threads and Processes."
+          },
+          "correct_answer": "B",
+          "explanation": "Kubernetes primarily manages CPU and Memory resources for containers within Pods, allowing administrators to define requests and limits for these resources."
+        },
+        {
+          "question": "What is a 'Resource Request' for a container in Kubernetes?",
+          "options": {
+            "A": "The maximum amount of a resource the container can use.",
+            "B": "The minimum guaranteed amount of a resource (CPU or memory) that Kubernetes will reserve for the container, influencing Pod scheduling.",
+            "C": "The total resources available on the Node.",
+            "D": "The amount of resources that can be shared with other containers."
+          },
+          "correct_answer": "B",
+          "explanation": "A 'request' is the amount of resource that Kubernetes *guarantees* for a container. The scheduler uses requests to decide which Node a Pod can be placed on, ensuring the Node has enough available resources to meet the Pod's minimum needs."
+        },
+        {
+          "question": "What is a 'Resource Limit' for a container in Kubernetes?",
+          "options": {
+            "A": "The minimum guaranteed amount of a resource.",
+            "B": "The maximum amount of a resource (CPU or memory) that a container is allowed to consume. If exceeded, the container might be throttled (CPU) or killed (memory).",
+            "C": "The total resources needed for the entire Pod.",
+            "D": "The resources reserved for the Kubelet."
+          },
+          "correct_answer": "B",
+          "explanation": "A 'limit' is the upper bound on the amount of resource a container can consume. If a container exceeds its CPU limit, it is throttled. If it exceeds its memory limit, it is terminated by the OOMKiller (Out Of Memory Killer)."
+        },
+        {
+          "question": "What happens if a container exceeds its CPU limit?",
+          "options": {
+            "A": "The container is immediately terminated.",
+            "B": "The container is throttled, meaning its CPU usage is restricted but it continues to run.",
+            "C": "The entire Node crashes.",
+            "D": "The Pod is rescheduled to another Node."
+          },
+          "correct_answer": "B",
+          "explanation": "When a container reaches its CPU limit, its CPU usage is throttled. This means its execution is paused for a short period, preventing it from consuming more CPU than allowed, but the container remains running."
+        },
+        {
+          "question": "What happens if a container exceeds its memory limit?",
+          "options": {
+            "A": "The container is throttled.",
+            "B": "The container is terminated by the OOMKiller (Out Of Memory Killer) and will be restarted by its controller (if configured).",
+            "C": "The Pod is automatically scaled up.",
+            "D": "The application logs an error but continues running."
+          },
+          "correct_answer": "B",
+          "explanation": "Unlike CPU, memory is not compressible. If a container tries to consume more memory than its limit, it will be immediately terminated by the kernel's Out Of Memory Killer (OOMKiller). The Pod's controller (e.g., Deployment) will then attempt to restart the container."
+        },
+        {
+          "question": "Why is it important to set both requests and limits for Pods in a production environment?",
+          "options": {
+            "A": "To make Pods start faster.",
+            "B": "To guarantee application performance (via requests) and protect the node from resource starvation by rogue Pods (via limits), ensuring cluster stability and efficient scheduling.",
+            "C": "To enable persistent storage.",
+            "D": "To simplify network configuration."
+          },
+          "correct_answer": "B",
+          "explanation": "Setting requests ensures that your Pods have the minimum resources needed to run and helps the scheduler place them correctly. Setting limits prevents individual Pods from consuming all available resources on a Node, protecting other applications and the Node itself from resource exhaustion."
+        },
+        {
+          "question": "What is a 'Quality of Service (QoS) Class' for a Pod, and what are the three types?",
+          "options": {
+            "A": "Network QoS; High, Medium, Low.",
+            "B": "Storage QoS; Fast, Standard, Slow.",
+            "C": "A classification that indicates how Kubernetes will prioritize and manage Pods based on their resource requests and limits; `Guaranteed`, `Burstable`, `BestEffort`.",
+            "D": "Security QoS; Strict, Moderate, Lenient."
+          },
+          "correct_answer": "C",
+          "explanation": "Kubernetes assigns a QoS class to each Pod based on its resource requests and limits. This class influences scheduling and eviction decisions. The three classes are `Guaranteed`, `Burstable`, and `BestEffort`."
+        },
+        {
+          "question": "Which QoS class is assigned to a Pod if all containers in the Pod have CPU and memory requests *equal* to their limits?",
+          "options": {
+            "A": "Burstable",
+            "B": "BestEffort",
+            "C": "Guaranteed",
+            "D": "Standard"
+          },
+          "correct_answer": "C",
+          "explanation": "`Guaranteed` QoS is assigned when every container in the Pod has both CPU `requests` and `limits` specified and they are equal, and memory `requests` and `limits` specified and they are equal. These Pods have the highest priority and are least likely to be evicted under resource pressure."
+        },
+        {
+          "question": "Which QoS class is assigned if a Pod has at least one container with a request and a limit that are *not* equal, or only requests are specified, but no limits?",
+          "options": {
+            "A": "Guaranteed",
+            "B": "BestEffort",
+            "C": "Burstable",
+            "D": "Critical"
+          },
+          "correct_answer": "C",
+          "explanation": "`Burstable` QoS is assigned when a Pod has at least one container with a resource request (but possibly no limit, or a limit greater than the request). These Pods can burst beyond their requests if resources are available, but are more likely to be evicted than `Guaranteed` Pods under pressure."
+        },
+        {
+          "question": "Which QoS class is assigned if a Pod has no resource requests or limits defined for any of its containers?",
+          "options": {
+            "A": "Guaranteed",
+            "B": "BestEffort",
+            "C": "Burstable",
+            "D": "Default"
+          },
+          "correct_answer": "B",
+          "explanation": "`BestEffort` QoS is assigned when no container in the Pod has any CPU or memory requests or limits defined. These Pods have the lowest priority and are the first to be evicted when Node resources are constrained."
+        },
+        {
+          "question": "What is a `LimitRange` in Kubernetes?",
+          "options": {
+            "A": "A tool to limit network bandwidth for Pods.",
+            "B": "An object that defines default resource requests/limits and constraints (min/max) for Pods and Containers within a Namespace.",
+            "C": "A range of IP addresses for Services.",
+            "D": "A way to limit the number of Pods on a Node."
+          },
+          "correct_answer": "B",
+          "explanation": "A `LimitRange` is a policy object that sets default resource requests and limits for containers in a Pod if none are explicitly specified. It also sets minimum and maximum resource values that can be requested or limited by Pods within a given Namespace, helping to enforce resource governance."
+        },
+        {
+          "question": "What is a `ResourceQuota` in Kubernetes?",
+          "options": {
+            "A": "A quota for the total number of Pods in the entire cluster.",
+            "B": "An object that defines aggregate resource consumption constraints (e.g., total CPU, memory, number of Pods, Services) for a given Namespace.",
+            "C": "A quota for disk space on a Node.",
+            "D": "A quota for network traffic."
+          },
+          "correct_answer": "B",
+          "explanation": "A `ResourceQuota` provides constraints that limit aggregate resource consumption per Namespace. It can restrict the total amount of CPU and memory that all Pods in a Namespace can consume, or limit the number of specific Kubernetes objects (e.g., Pods, Services, PVCs)."
+        },
+        {
+          "question": "What is the primary difference between `LimitRange` and `ResourceQuota`?",
+          "options": {
+            "A": "`LimitRange` is for storage, `ResourceQuota` is for networking.",
+            "B": "`LimitRange` defines constraints for *individual* Pods/Containers, while `ResourceQuota` defines *aggregate* limits for a Namespace.",
+            "C": "`LimitRange` applies cluster-wide, `ResourceQuota` applies to specific Nodes.",
+            "D": "They serve the same purpose."
+          },
+          "correct_answer": "B",
+          "explanation": "`LimitRange` works at the object level (per Pod/Container), setting defaults and min/max values. `ResourceQuota` works at the Namespace level, setting overall consumption limits for all objects within that Namespace. They complement each other for comprehensive resource governance."
+        },
+        {
+          "question": "Which Kubernetes component is responsible for enforcing resource limits (CPU throttling, OOM killing)?",
+          "options": {
+            "A": "Kube-scheduler",
+            "B": "Kube-apiserver",
+            "C": "Kubelet (using cgroups)",
+            "D": "Kube-proxy"
+          },
+          "correct_answer": "C",
+          "explanation": "The Kubelet, in conjunction with the underlying container runtime (e.g., containerd) and Linux cgroups, is responsible for enforcing the resource limits set on containers. Cgroups (control groups) are a Linux kernel feature that limits, accounts for, and isolates resource usage (CPU, memory, disk I/O, network) of collections of processes."
+        },
+        {
+          "question": "What is the purpose of `cpu: 100m` in a resource request/limit?",
+          "options": {
+            "A": "100 cores.",
+            "B": "100 milliseconds of CPU time per second (0.1 CPU core).",
+            "C": "100% of a single CPU core.",
+            "D": "100 megabytes of memory."
+          },
+          "correct_answer": "B",
+          "explanation": "CPU resources are measured in CPU units. `1.0` CPU unit is equivalent to 1 CPU core (or 1 virtual CPU). `100m` (milliCPU) means 100 millicores, or 0.1 of a CPU core. This allows for fine-grained allocation of CPU resources."
+        },
+        {
+          "question": "What is the purpose of `memory: 512Mi` in a resource request/limit?",
+          "options": {
+            "A": "512 megabytes of disk space.",
+            "B": "512 megabytes of network bandwidth.",
+            "C": "512 mebibytes of memory (approximately 512 MB).",
+            "D": "512 megahertz CPU speed."
+          },
+          "correct_answer": "C",
+          "explanation": "Memory resources are measured in bytes. Kubernetes supports standard suffixes like `E`, `P`, `T`, `G`, `M`, `K` (for powers of 1000) or `Ei`, `Pi`, `Ti`, `Gi`, `Mi`, `Ki` (for powers of 1024). `512Mi` represents 512 mebibytes, which is $512 \times 2^{20}$ bytes."
+        },
+        {
+          "question": "What is `Node-pressure eviction` in Kubernetes?",
+          "options": {
+            "A": "Manually removing Pods from a node.",
+            "B": "The Kubelet's mechanism to reclaim resources by evicting Pods from a Node when critical resources (e.g., memory, disk space) are running low, to protect the node's stability.",
+            "C": "A network security feature.",
+            "D": "A way to force Pods onto specific nodes."
+          },
+          "correct_answer": "B",
+          "explanation": "Node-pressure eviction is a Kubelet feature that monitors node-level resource usage (memory, disk, inode availability). If a resource goes below a defined threshold, the Kubelet proactively evicts Pods (starting with lower QoS classes) to prevent the node from crashing or becoming unstable due to resource exhaustion."
+        },
+        {
+          "question": "True or False: If a Pod has a `Guaranteed` QoS class, it will never be evicted.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While `Guaranteed` Pods have the highest priority for eviction, they can still be evicted. This typically happens for `Node-pressure eviction` if the Node itself is running out of critical resources, or for other reasons like Node failures or `kubectl drain` commands. They are the *last* to be evicted, not immune."
+        },
+        {
+          "question": "What is the primary benefit of enabling 'Horizontal Pod Autoscaling' in conjunction with resource management?",
+          "options": {
+            "A": "To manually scale Pods on demand.",
+            "B": "To automatically adjust the number of Pod replicas (scale in/out) based on observed CPU utilization or custom metrics, optimizing resource usage and application performance.",
+            "C": "To automatically adjust the number of Nodes.",
+            "D": "To configure network load balancing."
+          },
+          "correct_answer": "B",
+          "explanation": "Horizontal Pod Autoscaler (HPA) automatically scales the number of Pods in a Deployment or ReplicaSet based on resource metrics (like CPU or memory utilization) or custom metrics. This ensures that your application has enough capacity to handle varying loads, while also optimizing costs by scaling down during low demand."
+        },
+        {
+          "question": "What is `OOMKiller` (Out Of Memory Killer) in the context of Kubernetes?",
+          "options": {
+            "A": "A tool to kill network connections.",
+            "B": "A Linux kernel mechanism that terminates processes (containers in this case) that consume too much memory, often triggered when a container exceeds its memory limit.",
+            "C": "A Kubernetes controller that manages Pod restarts.",
+            "D": "A security feature that prevents memory leaks."
+          },
+          "correct_answer": "B",
+          "explanation": "The OOMKiller is a kernel-level process. When a system or a cgroup (which is used by Docker/containerd to manage container resources) runs out of memory, the OOMKiller steps in to terminate processes to free up memory. In Kubernetes, if a container exceeds its memory limit, the OOMKiller will terminate that specific container."
         }
-    ]
+      ]
+    }
+  ]
 }

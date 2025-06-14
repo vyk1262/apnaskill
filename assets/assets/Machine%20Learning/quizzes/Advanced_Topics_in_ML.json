@@ -11,7 +11,8 @@
             "C": "Machine learning algorithms that do not require training data.",
             "D": "Techniques for visualizing high-dimensional data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Bayesian methods provide a framework for statistical inference where probability is used to quantify uncertainty about unknown parameters. They leverage **Bayes' theorem** to update prior beliefs about a hypothesis or parameter in the light of new evidence (data), resulting in a posterior distribution."
         },
         {
           "question": "What is the key difference between Bayesian and frequentist approaches to statistics and machine learning?",
@@ -21,7 +22,8 @@
             "C": "Frequentist methods are more computationally intensive than Bayesian methods.",
             "D": "Bayesian methods are only applicable to small datasets."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The core distinction lies in their view of parameters. **Bayesian methods** treat unknown parameters as **random variables** and incorporate **prior knowledge** through probability distributions. In contrast, **frequentist methods** consider parameters as **fixed, but unknown, constants** and focus on the probability of observing data given those fixed parameters."
         },
         {
           "question": "What are probabilistic graphical models (PGMs)?",
@@ -31,7 +33,8 @@
             "C": "Machine learning models that output probabilities instead of point estimates.",
             "D": "Techniques for handling uncertainty in deep learning."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Probabilistic Graphical Models (PGMs)** are a powerful framework that uses graphs to represent complex probabilistic relationships among a set of random variables. They provide a compact and intuitive way to model joint probability distributions, allowing for efficient inference and learning."
         },
         {
           "question": "What are some examples of probabilistic graphical models?",
@@ -41,7 +44,8 @@
             "C": "Convolutional Neural Networks and Recurrent Neural Networks.",
             "D": "K-Means and DBSCAN."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Key examples of PGMs include: **Bayesian Networks** (directed acyclic graphs representing conditional dependencies), **Markov Random Fields** (undirected graphs), **Hidden Markov Models** (used for sequential data where underlying states are hidden), and **Gaussian Mixture Models** (representing probability distributions as a sum of Gaussian components)."
         },
         {
           "question": "What is causal inference in machine learning?",
@@ -51,7 +55,8 @@
             "C": "Identifying clusters in the data.",
             "D": "Reducing the dimensionality of the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Causal inference** in machine learning focuses on identifying and quantifying **cause-and-effect relationships** between variables, rather than merely observing correlations. This is crucial for understanding *why* events happen and for making informed interventions or policy decisions."
         },
         {
           "question": "What are some techniques used for causal inference in machine learning?",
@@ -61,7 +66,8 @@
             "C": "Deep neural networks.",
             "D": "Time series forecasting methods like ARIMA."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Techniques for causal inference include: **Randomized Controlled Trials (RCTs)** (the gold standard for establishing causality by randomly assigning treatments); **Instrumental Variables** (used when direct randomization isn't possible); and **Causal Graphical Models** (like Bayesian networks with causal interpretations, which explicitly represent causal links and allow for counterfactual reasoning)."
         },
         {
           "question": "What is federated learning?",
@@ -71,7 +77,8 @@
             "C": "A technique for training very large deep learning models.",
             "D": "A method for deploying machine learning models on edge devices."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Federated learning** is a privacy-preserving and distributed machine learning paradigm where models are trained collaboratively across multiple decentralized devices or servers holding local data. Crucially, the raw data itself never leaves the local device; only aggregated model updates (e.g., gradients) are shared."
         },
         {
           "question": "What are the main benefits of federated learning?",
@@ -81,7 +88,8 @@
             "C": "Faster training times due to parallel processing on a single powerful server.",
             "D": "Simplified model deployment and maintenance."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The primary benefits of federated learning are **improved privacy** and data security (as raw data remains on local devices), and the ability to **leverage vast amounts of decentralized data** that might otherwise be inaccessible due to privacy concerns or data transfer costs."
         },
         {
           "question": "What are graph neural networks (GNNs)?",
@@ -91,7 +99,8 @@
             "C": "Neural networks with a graph-like architecture for better interpretability.",
             "D": "Neural networks used for visualizing complex data relationships."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Graph Neural Networks (GNNs)** are a class of deep learning models specifically designed to process and learn from **graph-structured data**. Unlike traditional neural networks that operate on Euclidean data (grids like images or sequences like text), GNNs can handle arbitrary graph topologies, where data points (nodes) are connected by relationships (edges)."
         },
         {
           "question": "What are some applications of graph neural networks?",
@@ -101,7 +110,8 @@
             "C": "Social network analysis, drug discovery, and recommender systems.",
             "D": "Time series forecasting and anomaly detection."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "GNNs excel in applications where data has an inherent graph structure, such as: **social network analysis** (e.g., predicting friendships, community detection); **drug discovery** (modeling molecular structures and interactions); and **recommender systems** (modeling user-item interactions in a graph)."
         },
         {
           "question": "What is meta-learning (or learning to learn)?",
@@ -111,7 +121,8 @@
             "C": "Fine-tuning hyperparameters of a machine learning model.",
             "D": "A technique for combining the predictions of multiple machine learning models."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Meta-learning**, or 'learning to learn,' is an advanced field where a machine learning model or algorithm learns to improve its own learning process. Instead of learning a single task, it learns how to adapt to new tasks quickly and efficiently, often by leveraging experience from previous learning experiences."
         },
         {
           "question": "What are some common approaches in meta-learning?",
@@ -121,7 +132,8 @@
             "C": "Convolutional neural networks and recurrent neural networks.",
             "D": "K-means clustering and principal component analysis."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Common meta-learning approaches include: **Model-Agnostic Meta-Learning (MAML)**, which learns a good model initialization that can be quickly fine-tuned for new tasks; **metric-based meta-learning**, which learns an embedding space where similar tasks or data points are close; and **optimization-based meta-learning**, which learns to optimize the learning process itself."
         },
         {
           "question": "What is reinforcement learning with continuous action spaces?",
@@ -131,7 +143,8 @@
             "C": "Reinforcement learning applied to continuous time series data.",
             "D": "A type of reinforcement learning that does not use rewards."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In **reinforcement learning with continuous action spaces**, the agent's actions are not discrete choices (like 'left' or 'right') but rather values that can fall within a continuous range (e.g., the angle of a robotic arm, the acceleration of a vehicle). This presents a challenge as the number of possible actions is infinite."
         },
         {
           "question": "What are some algorithms used in reinforcement learning with continuous action spaces?",
@@ -141,7 +154,8 @@
             "C": "Value Iteration and Policy Iteration.",
             "D": "REINFORCE with discrete action spaces."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Algorithms designed for continuous action spaces in RL often involve policy gradient methods. Examples include **Deep Deterministic Policy Gradient (DDPG)**, which learns a deterministic policy and a Q-function, and **Proximal Policy Optimization (PPO)**, which is a popular and robust policy gradient method often used in robotics and complex control tasks."
         },
         {
           "question": "What are generative adversarial networks (GANs)?",
@@ -151,7 +165,8 @@
             "C": "Neural networks designed for sequence-to-sequence tasks.",
             "D": "Neural networks used for anomaly detection."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Generative Adversarial Networks (GANs)** are a powerful class of generative models composed of two neural networks: a **generator** that learns to create new data samples resembling the training data, and a **discriminator** that learns to distinguish between real and generated samples. They are trained in a zero-sum game, where the generator tries to fool the discriminator, and the discriminator tries to correctly identify real vs. fake."
         },
         {
           "question": "What are some applications of generative adversarial networks (GANs)?",
@@ -161,7 +176,8 @@
             "C": "Time series forecasting and stock price prediction.",
             "D": "Clustering and dimensionality reduction."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "GANs are highly versatile in generating realistic data. Their applications include: **realistic image generation** (e.g., creating faces of non-existent people); **image editing** (e.g., transforming images, converting sketches to photos); and **data augmentation** (generating synthetic training data to expand datasets)."
         },
         {
           "question": "What is self-supervised learning?",
@@ -171,7 +187,8 @@
             "C": "A form of unsupervised learning where the model learns to cluster data points.",
             "D": "A reinforcement learning technique where the agent learns from its own actions without external rewards."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Self-supervised learning** is a paradigm where a model learns representations from data by solving a 'pretext task' where the supervisory signal is derived automatically from the data itself, without the need for human-annotated labels. The learned representations can then be used for downstream tasks."
         },
         {
           "question": "What are some common techniques in self-supervised learning?",
@@ -181,7 +198,8 @@
             "C": "Convolution and pooling.",
             "D": "Clustering and dimensionality reduction."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Common self-supervised techniques include: **Autoencoders** (learning to reconstruct input data); **Contrastive Learning** (learning embeddings by pushing similar data points closer and dissimilar points further apart); and **Masked Language Modeling** (predicting masked words in text, as seen in BERT)."
         },
         {
           "question": "What is explainable AI (XAI)?",
@@ -191,7 +209,8 @@
             "C": "AI systems that can explain any concept to a non-technical audience.",
             "D": "A set of regulations governing the development and deployment of AI."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Explainable AI (XAI)** is an evolving field dedicated to developing methods and techniques that make the predictions and decision-making processes of AI systems, particularly complex 'black-box' models, comprehensible to humans. This is crucial for trust, accountability, and debugging."
         },
         {
           "question": "What are some methods used in explainable AI (XAI)?",
@@ -201,7 +220,8 @@
             "C": "Only rule-based systems.",
             "D": "Techniques for visualizing the training data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "XAI methods include: **Feature importance analysis** (quantifying the contribution of each feature); **SHAP (SHapley Additive exPlanations)** and **LIME (Local Interpretable Model-agnostic Explanations)**, which provide local explanations for individual predictions; and **attention mechanisms** (in neural networks), which highlight parts of the input that were most relevant to the output."
         }
       ]
     }

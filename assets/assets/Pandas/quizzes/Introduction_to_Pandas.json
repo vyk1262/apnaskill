@@ -11,7 +11,8 @@
             "C": "For data manipulation and analysis.",
             "D": "For building web applications."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Pandas is a core library for data analysis in Python, providing powerful data structures like DataFrames and Series, and tools for cleaning, transforming, and analyzing data."
         },
         {
           "question": "Which of the following is a core data structure in Pandas?",
@@ -21,7 +22,8 @@
             "C": "Series",
             "D": "Dictionary"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A Pandas Series is a one-dimensional labeled array capable of holding any data type. It is one of the two fundamental data structures in Pandas, the other being the DataFrame."
         },
         {
           "question": "What is a Pandas Series object most similar to?",
@@ -31,7 +33,8 @@
             "C": "A 1D labeled array.",
             "D": "A collection of key-value pairs."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A Pandas Series is essentially a column or a row in a table. It's a 1-dimensional array-like object that can hold various data types (integers, floats, strings, Python objects, etc.) and has a labeled index."
         },
         {
           "question": "Which of the following is another core data structure in Pandas, representing a 2D labeled table?",
@@ -41,7 +44,8 @@
             "C": "Panel",
             "D": "Array2D"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A Pandas DataFrame is a two-dimensional, size-mutable, and potentially heterogeneous tabular data structure with labeled axes (rows and columns). It's similar to a spreadsheet or SQL table."
         },
         {
           "question": "What are the two main components of a Pandas Series?",
@@ -51,7 +55,8 @@
             "C": "Rows and values.",
             "D": "Keys and values."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Every Pandas Series consists of the actual data values (the content) and an associated index (labels) that provides a way to access these values."
         },
         {
           "question": "What is the index in a Pandas Series or DataFrame?",
@@ -61,7 +66,8 @@
             "C": "The number of dimensions of the data structure.",
             "D": "The data type of the elements."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The index in Pandas serves as an identifier for rows (in DataFrames) or elements (in Series). It allows for efficient data retrieval, alignment during operations, and enables powerful selection capabilities."
         },
         {
           "question": "Can the index in a Pandas Series have duplicate labels?",
@@ -71,7 +77,8 @@
             "C": "Only for integer-based indexing.",
             "D": "Only for string-based indexing."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "While unique indices are generally preferred and simplify many operations, Pandas does allow duplicate index labels. However, working with unique indices is often more straightforward."
         },
         {
           "question": "How do you import the Pandas library in Python, conventionally?",
@@ -81,7 +88,8 @@
             "C": "import PyPandas as pp",
             "D": "import pandas"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The standard and widely accepted convention for importing Pandas is `import pandas as pd`. This makes code more concise and readable."
         },
         {
           "question": "What kind of data can a Pandas Series hold?",
@@ -91,7 +99,8 @@
             "C": "Any data type (integers, floats, strings, booleans, etc.).",
             "D": "Only homogeneous data of a single type within the Series."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "A Pandas Series is designed to hold homogeneous data, meaning all elements within a single Series will have the same data type (e.g., all integers, all floats, all strings). If mixed types are introduced, Pandas will typically upcast to a common compatible type (like `object`)."
         },
         {
           "question": "How is a Pandas DataFrame conceptually different from a collection of Pandas Series?",
@@ -101,7 +110,8 @@
             "C": "A DataFrame is just a list of Series objects.",
             "D": "There is no conceptual difference; they are interchangeable."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A DataFrame can be thought of as a dictionary-like collection of Series objects where each Series represents a column, and they all share a common index, ensuring alignment and consistency across columns."
         },
         {
           "question": "Which of the following is NOT a benefit of using Pandas for data analysis?",
@@ -111,7 +121,8 @@
             "C": "High-performance numerical computations on arrays.",
             "D": "Easy handling of missing data."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "While Pandas *uses* NumPy for its underlying numerical computations, Pandas itself is not primarily about raw, high-performance array computations. That's NumPy's domain. Pandas provides higher-level data structures and tools built *on top* of NumPy for more complex data handling and analysis, including features like labeled axes and missing data handling."
         },
         {
           "question": "What is the equivalent of a column in a Pandas DataFrame?",
@@ -121,7 +132,8 @@
             "C": "A Series.",
             "D": "A scalar value."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Each column in a Pandas DataFrame is itself a Pandas Series object. This allows for consistent operations across columns and within individual Series."
         },
         {
           "question": "What is the equivalent of a row in a Pandas DataFrame?",
@@ -131,7 +143,8 @@
             "C": "A Series.",
             "D": "A record or observation across all columns."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "A row in a DataFrame represents a single record or observation, where each value in that row corresponds to a specific feature or variable (column)."
         },
         {
           "question": "Can you have different data types in different columns of a Pandas DataFrame?",
@@ -141,7 +154,8 @@
             "C": "Only if the DataFrame is created from a dictionary.",
             "D": "Only for string-based DataFrames."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Yes, a DataFrame is 'heterogeneous' in its columns. Each column (which is a Series) can have a different data type. This is one of the key advantages of DataFrames for representing real-world datasets that often contain mixed data types."
         },
         {
           "question": "What is the role of the index in aligning data during operations between Pandas Series or DataFrames?",
@@ -151,7 +165,8 @@
             "C": "It specifies the data type of the resulting data structure.",
             "D": "It has no role in data alignment."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "One of the most powerful features of Pandas is its label-based alignment. When you perform operations (like addition or merging) between Series or DataFrames, Pandas automatically aligns the data based on their index labels. If labels don't match, missing values (NaN) are introduced."
         },
         {
           "question": "Which library does Pandas build upon for numerical computations?",
@@ -161,7 +176,8 @@
             "C": "Matplotlib",
             "D": "Seaborn"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Pandas is built on top of NumPy, leveraging its efficient array operations. This allows Pandas to handle large datasets and perform vectorized operations quickly."
         },
         {
           "question": "What is a potential drawback of using Pandas for extremely large datasets that exceed available RAM?",
@@ -171,7 +187,8 @@
             "C": "Data types are automatically converted to less memory-intensive formats.",
             "D": "Visualization capabilities are limited for large datasets."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A significant consideration when working with Pandas is that DataFrames are typically held entirely in memory (RAM). For datasets larger than available RAM, performance can degrade significantly, or you might encounter `MemoryError`."
         },
         {
           "question": "What is the purpose of the `pd.set_option()` function in Pandas?",
@@ -181,7 +198,8 @@
             "C": "To optimize the performance of Pandas operations.",
             "D": "To save Pandas objects to different file formats."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`pd.set_option()` allows you to control how Pandas objects are displayed in the console, such as the maximum number of rows or columns to show, floating point precision, etc."
         },
         {
           "question": "Which Pandas data structure is best suited for representing time series data with associated labels?",
@@ -191,7 +209,8 @@
             "C": "A Panel (though less commonly used now).",
             "D": "A NumPy array."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "While a Series with a DatetimeIndex can represent a single time series, a DataFrame with a `DatetimeIndex` is exceptionally well-suited for multiple time series (where each column is a series) that share the same time observations, allowing for powerful time-based indexing and resampling operations."
         },
         {
           "question": "In summary, Pandas provides Python with powerful tools for:",
@@ -201,7 +220,8 @@
             "C": "Efficient data manipulation, analysis, and cleaning.",
             "D": "Building machine learning models."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "This option best encapsulates the primary uses of Pandas: it's a versatile library for all stages of data wrangling, from initial loading and cleaning to transformation and aggregation, leading up to analysis."
         }
       ]
     }

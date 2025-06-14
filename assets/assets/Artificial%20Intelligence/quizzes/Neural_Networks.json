@@ -11,7 +11,8 @@
             "C": "A database system for storing large amounts of data",
             "D": "A programming language for artificial intelligence"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A neural network is a computational model inspired by the structure of the human brain. It's composed of 'neurons' (or nodes) organized in layers, processing and transmitting information through weighted connections to learn complex patterns from data."
         },
         {
           "question": "Which component of a neural network processes and transmits information?",
@@ -21,7 +22,8 @@
             "C": "Memory unit",
             "D": "Control panel"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "In a neural network, the **neuron (or node)** is the fundamental processing unit. Each neuron receives inputs, performs a simple computation (weighted sum and activation), and then transmits its output to other neurons in subsequent layers."
         },
         {
           "question": "What is backpropagation in neural networks?",
@@ -31,7 +33,8 @@
             "C": "A way to store network parameters",
             "D": "A technique to visualize network architecture"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Backpropagation is a key algorithm used to train neural networks. It works by calculating the gradient of the loss function with respect to the weights of the network, then uses this gradient to iteratively adjust the weights, minimizing the difference between the network's predictions and the actual target values."
         },
         {
           "question": "What is the purpose of the activation function in a neural network?",
@@ -41,7 +44,8 @@
             "C": "To connect different layers",
             "D": "To initialize network weights"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Activation functions are crucial because they introduce **non-linearity** into the neural network. Without them, even a deep network would behave like a simple linear model, unable to learn complex, non-linear relationships present in real-world data. They decide whether a neuron should be activated or not based on its input."
         },
         {
           "question": "Which of the following is NOT a common activation function?",
@@ -51,7 +55,8 @@
             "C": "Gaussian",
             "D": "Tanh"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Gaussian** is not a common activation function used within the layers of standard neural networks. ReLU, Sigmoid, and Tanh are widely used to introduce non-linearity."
         },
         {
           "question": "What is a deep neural network?",
@@ -61,7 +66,8 @@
             "C": "A neural network that processes images only",
             "D": "A neural network with high accuracy"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **deep neural network** is characterized by having multiple hidden layers between the input and output layers. The term 'deep' refers to the depth of the network, allowing it to learn hierarchical features and increasingly complex representations of the data."
         },
         {
           "question": "What is the purpose of the loss function in neural networks?",
@@ -71,7 +77,8 @@
             "C": "To store network parameters",
             "D": "To process input data"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The **loss function** (or cost function) quantifies the error or discrepancy between the neural network's predicted output and the true (actual) target values. The goal during training is to minimize this loss, indicating that the model's predictions are getting closer to the correct answers."
         },
         {
           "question": "What is dropout in neural networks?",
@@ -81,7 +88,8 @@
             "C": "A method to initialize weights",
             "D": "A way to structure network layers"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Dropout** is a powerful regularization technique used to prevent overfitting in neural networks. During training, it randomly 'drops out' (sets to zero) a certain percentage of neurons in a layer, forcing the network to learn more robust features and preventing over-reliance on specific neurons."
         },
         {
           "question": "What is a convolutional neural network (CNN) primarily used for?",
@@ -91,7 +99,8 @@
             "C": "Sound analysis",
             "D": "Data storage"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Convolutional Neural Networks (CNNs) are a specialized type of neural network that excel at processing data with a grid-like topology, such as **images**. They use convolutional layers to automatically and adaptively learn spatial hierarchies of features from input data, making them ideal for image recognition, object detection, and other computer vision tasks."
         },
         {
           "question": "What is batch normalization?",
@@ -101,7 +110,8 @@
             "C": "A way to initialize network weights",
             "D": "A type of activation function"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Batch normalization** is a technique that normalizes the inputs to layers within a neural network. This helps to stabilize and accelerate the training process by reducing the 'internal covariate shift,' allowing for faster convergence and often enabling the use of higher learning rates."
         },
         {
           "question": "What is the vanishing gradient problem?",
@@ -111,7 +121,8 @@
             "C": "When the network uses too much memory",
             "D": "When the input data is too large"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **vanishing gradient problem** occurs in deep neural networks, especially with certain activation functions (like Sigmoid or Tanh), where the gradients become extremely small as they propagate backward through many layers. This makes it very difficult for the early layers to learn and update their weights effectively, hindering training."
         },
         {
           "question": "What is a recurrent neural network (RNN)?",
@@ -121,7 +132,8 @@
             "C": "A network with only one layer",
             "D": "A network that only uses binary data"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **Recurrent Neural Network (RNN)** is a type of neural network designed to handle sequential data (like time series or natural language). Unlike feedforward networks, RNNs have connections that form a directed cycle, allowing information to persist and enabling them to 'remember' past inputs in the sequence."
         },
         {
           "question": "What is the purpose of learning rate in neural networks?",
@@ -131,7 +143,8 @@
             "C": "To calculate the final output",
             "D": "To store training data"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The **learning rate** is a hyperparameter that controls how much the weights of the neural network are adjusted with respect to the loss gradient during backpropagation. A higher learning rate means larger steps are taken, while a lower rate means smaller, more precise adjustments."
         },
         {
           "question": "What is transfer learning in neural networks?",
@@ -141,7 +154,8 @@
             "C": "Transferring weights between layers",
             "D": "Converting between different file formats"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Transfer learning** is a machine learning technique where a model trained on a large dataset for one task (e.g., image classification on millions of images) is repurposed as a starting point for a different but related task (e.g., classifying a new set of images). This significantly reduces training time and data requirements for the new task."
         },
         {
           "question": "What is the purpose of the softmax function?",
@@ -151,7 +165,8 @@
             "C": "To initialize weights",
             "D": "To reduce network size"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **softmax function** is commonly used in the output layer of neural networks, especially for multi-class classification problems. It takes a vector of arbitrary real-valued scores and converts them into a probability distribution, where each value is between 0 and 1, and all values sum up to 1. This allows the network to output a 'confidence score' for each possible class."
         },
         {
           "question": "What is an epoch in neural network training?",
@@ -161,7 +176,8 @@
             "C": "A method to save the model",
             "D": "A type of activation function"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "An **epoch** refers to one complete forward and backward pass of the entire training dataset through the neural network. During one epoch, the network sees every training example once, processes it, calculates the loss, and updates its weights via backpropagation."
         },
         {
           "question": "What is the purpose of early stopping?",
@@ -171,7 +187,8 @@
             "C": "To reduce memory usage",
             "D": "To speed up training"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Early stopping** is a regularization technique that prevents overfitting. It involves monitoring the model's performance on a separate validation set during training and stopping the training process when the performance on the validation set starts to degrade (i.e., the validation error increases), even if the training error is still decreasing."
         },
         {
           "question": "What is a Long Short-Term Memory (LSTM) network?",
@@ -181,7 +198,8 @@
             "C": "A network that only processes short sequences",
             "D": "A network with limited memory capacity"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **Long Short-Term Memory (LSTM)** network is a specialized type of Recurrent Neural Network (RNN) that's particularly adept at learning and remembering long-term dependencies in sequential data. It achieves this through internal mechanisms called 'gates' that regulate the flow of information, overcoming the vanishing gradient problem common in traditional RNNs."
         },
         {
           "question": "What is the purpose of data augmentation in neural networks?",
@@ -191,7 +209,8 @@
             "C": "To compress the network",
             "D": "To initialize weights"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Data augmentation** is a technique used to expand the diversity of a training dataset by creating new, slightly modified versions of existing data. For images, this might include rotations, flips, or zooms. For text, it could be paraphrasing or synonym replacement. This helps improve the model's generalization capabilities and reduces overfitting."
         },
         {
           "question": "What is the difference between supervised and unsupervised learning in neural networks?",
@@ -201,7 +220,8 @@
             "C": "Unsupervised learning is always more accurate",
             "D": "There is no difference between them"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Supervised learning** trains neural networks on datasets where each input is paired with a corresponding correct output (label). The network learns to map inputs to these labels. In contrast, **unsupervised learning** works with unlabeled data, aiming to discover inherent structures, patterns, or groupings within the data itself."
         }
       ]
     }

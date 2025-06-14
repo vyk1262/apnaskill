@@ -1,0 +1,207 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Power_BI_Topics",
+      "questions": [
+        {
+          "question": "What is DAX in Power BI?",
+          "options": {
+            "A": "Data Analysis Expressions.",
+            "B": "Data Aggregation Expressions.",
+            "C": "Data Access Expressions.",
+            "D": "Data Application Expressions."
+          },
+          "correct_answer": "A",
+          "explanation": "DAX stands for Data Analysis Expressions, a formula language used in Power BI for data modeling."
+        },
+        {
+          "question": "What is Power Query?",
+          "options": {
+            "A": "A data connection technology that enables you to discover, connect, combine, and refine data across a wide variety of sources.",
+            "B": "A tool for creating dashboards.",
+            "C": "A tool for creating reports.",
+            "D": "A tool for data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Power Query is a data connection technology that enables you to discover, connect, combine, and refine data across a wide variety of sources."
+        },
+        {
+          "question": "What is the purpose of Power BI Desktop?",
+          "options": {
+            "A": "To create reports and dashboards.",
+            "B": "To manage data connections.",
+            "C": "To visualize data.",
+            "D": "To analyze data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Desktop is used to create reports and dashboards, providing a comprehensive environment for data analysis and visualization."
+        },
+        {
+          "question": "What is the Power BI service?",
+          "options": {
+            "A": "A cloud-based service that allows you to share and collaborate on reports and dashboards.",
+            "B": "A tool for data modeling.",
+            "C": "A tool for data cleaning.",
+            "D": "A tool for data integration."
+          },
+          "correct_answer": "A",
+          "explanation": "The Power BI service is a cloud-based service that allows you to share and collaborate on reports and dashboards, enabling real-time data access and collaboration."
+        },
+        {
+          "question": "What is Power BI Report Server?",
+          "options": {
+            "A": "An on-premises report server where you can publish your Power BI reports.",
+            "B": "A tool for data visualization.",
+            "C": "A tool for data integration.",
+            "D": "A tool for data modeling."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Report Server is an on-premises report server where you can publish your Power BI reports, providing a secure environment for data sharing."
+        },
+        {
+          "question": "What is the purpose of Power BI Mobile?",
+          "options": {
+            "A": "To access and interact with Power BI reports and dashboards on mobile devices.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Mobile allows you to access and interact with Power BI reports and dashboards on mobile devices, providing flexibility and mobility in data analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI Embedded?",
+          "options": {
+            "A": "To embed Power BI reports and dashboards into applications.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Embedded allows you to embed Power BI reports and dashboards into applications, providing seamless integration and enhanced user experience."
+        },
+        {
+          "question": "What is the purpose of Power BI Gateway?",
+          "options": {
+            "A": "To connect on-premises data sources to Power BI.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Gateway connects on-premises data sources to Power BI, enabling secure and reliable data access."
+        },
+        {
+          "question": "What is the purpose of Power BI API?",
+          "options": {
+            "A": "To programmatically interact with Power BI service.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI API allows you to programmatically interact with Power BI service, providing automation and integration capabilities."
+        },
+        {
+          "question": "What is the purpose of Power BI Visuals?",
+          "options": {
+            "A": "To create custom visualizations in Power BI.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Visuals allow you to create custom visualizations in Power BI, providing flexibility and creativity in data presentation."
+        },
+        {
+          "question": "What is the purpose of Power BI Templates?",
+          "options": {
+            "A": "To create reusable report templates in Power BI.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Templates allow you to create reusable report templates in Power BI, providing consistency and efficiency in report creation."
+        },
+        {
+          "question": "What is the purpose of Power BI Themes?",
+          "options": {
+            "A": "To apply consistent styling to Power BI reports.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Themes allow you to apply consistent styling to Power BI reports, providing a cohesive and professional appearance."
+        },
+        {
+          "question": "What is the purpose of Power BI Bookmarks?",
+          "options": {
+            "A": "To save and share specific views of Power BI reports.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Bookmarks allow you to save and share specific views of Power BI reports, providing quick access to important insights."
+        },
+        {
+          "question": "What is the purpose of Power BI Q&A?",
+          "options": {
+            "A": "To interact with Power BI reports using natural language queries.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Q&A allows you to interact with Power BI reports using natural language queries, providing intuitive and accessible data exploration."
+        },
+        {
+          "question": "What is the purpose of Power BI Alerts?",
+          "options": {
+            "A": "To notify users of important changes in Power BI reports.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Alerts notify users of important changes in Power BI reports, providing timely and relevant information."
+        },
+        {
+          "question": "What is the purpose of Power BI Subscriptions?",
+          "options": {
+            "A": "To automatically send Power BI reports to users on a regular basis.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Subscriptions automatically send Power BI reports to users on a regular basis, providing consistent and reliable access to insights."
+        },
+        {
+          "question": "What is the purpose of Power BI Workspaces?",
+          "options": {
+            "A": "To organize and collaborate on Power BI content.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Workspaces organize and collaborate on Power BI content, providing a structured and collaborative environment for data analysis."
+        },
+        {
+          "question": "What is the purpose of Power BI Dataflows?",
+          "options": {
+            "A": "To create and manage data transformation processes in Power BI.",
+            "B": "To create reports.",
+            "C": "To manage data connections.",
+            "D": "To visualize data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power BI Dataflows create and manage data transformation processes in Power BI, providing efficient and scalable data management."
+        }
+      ]
+    }
+  ]
+}

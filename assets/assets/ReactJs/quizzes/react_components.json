@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_components",
+      "questions": [
+        {
+          "question": "What is the fundamental building block of a React application?",
+          "options": {
+            "A": "HTML elements",
+            "B": "CSS stylesheets",
+            "C": "Components",
+            "D": "JavaScript functions"
+          },
+          "correct_answer": "C",
+          "explanation": "React applications are composed of independent and reusable UI pieces called components."
+        },
+        {
+          "question": "What are the two main types of components in React?",
+          "options": {
+            "A": "Static and Dynamic components",
+            "B": "Class components and Functional components",
+            "C": "HTML components and JavaScript components",
+            "D": "Parent components and Child components"
+          },
+          "correct_answer": "B",
+          "explanation": "Historically, React used class components; more recently, functional components with Hooks have become the preferred way to write components."
+        },
+        {
+          "question": "How do you define a class component in React?",
+          "options": {
+            "A": "As a JavaScript function that returns JSX.",
+            "B": "By extending `React.Component` and implementing a `render()` method.",
+            "C": "Using the `const` keyword and an arrow function.",
+            "D": "By directly manipulating the `document` object."
+          },
+          "correct_answer": "B",
+          "explanation": "Class components are ES6 classes that inherit from `React.Component` and must define a `render()` method that returns JSX."
+        },
+        {
+          "question": "What is required for a class component to render UI?",
+          "options": {
+            "A": "A `constructor` method.",
+            "B": "A `setState` call.",
+            "C": "A `render()` method that returns JSX.",
+            "D": "A `componentDidMount` method."
+          },
+          "correct_answer": "C",
+          "explanation": "The `render()` method is where the UI of a class component is defined."
+        },
+        {
+          "question": "How do you define a functional component in React?",
+          "options": {
+            "A": "By extending `React.Component`.",
+            "B": "As a regular JavaScript function that accepts `props` as an argument and returns JSX.",
+            "C": "Using `new Component()` syntax.",
+            "D": "By importing `ClassComponent` from React."
+          },
+          "correct_answer": "B",
+          "explanation": "Functional components are simpler JavaScript functions that take props as an argument and return what should be rendered."
+        },
+        {
+          "question": "What is the primary difference between class components and functional components (before Hooks)?",
+          "options": {
+            "A": "Functional components could manage state; class components could not.",
+            "B": "Class components had lifecycle methods and state; functional components were stateless.",
+            "C": "Class components were faster.",
+            "D": "Functional components used `this.props` and class components used `props` directly."
+          },
+          "correct_answer": "B",
+          "explanation": "Before Hooks, functional components were primarily 'presentational' or 'stateless' because they couldn't manage their own state or access lifecycle methods."
+        },
+        {
+          "question": "What are 'props' primarily used for in React components?",
+          "options": {
+            "A": "To manage internal component data.",
+            "B": "To pass data from child components to parent components.",
+            "C": "To pass data from parent components to child components.",
+            "D": "To define global application settings."
+          },
+          "correct_answer": "C",
+          "explanation": "Props (properties) are a mechanism for passing data down the component tree, from parent to child."
+        },
+        {
+          "question": "Are props immutable (read-only) within a component?",
+          "options": {
+            "A": "Yes, they should never be modified by the receiving component.",
+            "B": "No, they can be modified directly like any other variable.",
+            "C": "Only if they are primitive types.",
+            "D": "Only when using functional components."
+          },
+          "correct_answer": "A",
+          "explanation": "Props are read-only. A component should never modify its own props. This ensures a unidirectional data flow and predictability."
+        },
+        {
+          "question": "How do you access props in a functional component?",
+          "options": {
+            "A": "Using `this.props.propertyName`",
+            "B": "As a parameter to the function, e.g., `function MyComponent(props) { return <p>{props.propertyName}</p>; }`",
+            "C": "By importing them from `React`.",
+            "D": "They are automatically available as global variables."
+          },
+          "correct_answer": "B",
+          "explanation": "Functional components receive props as their first argument."
+        },
+        {
+          "question": "How do you access props in a class component?",
+          "options": {
+            "A": "Using `props.propertyName`",
+            "B": "Using `this.props.propertyName`",
+            "C": "As a parameter in the `render()` method.",
+            "D": "They are automatically available as global variables."
+          },
+          "correct_answer": "B",
+          "explanation": "In class components, props are accessible via `this.props`."
+        },
+        {
+          "question": "What is 'lifting state up' in React?",
+          "options": {
+            "A": "Moving state from a child component to a grandparent component.",
+            "B": "Moving state from a child component to its closest common ancestor component.",
+            "C": "Moving state from a parent component to a child component.",
+            "D": "Storing all state in a global Redux store."
+          },
+          "correct_answer": "B",
+          "explanation": "Lifting state up is a common pattern to share state between sibling components by moving the state to their closest common ancestor."
+        },
+        {
+          "question": "What is the purpose of the `key` prop when rendering lists of components?",
+          "options": {
+            "A": "It's used for styling list items.",
+            "B": "It helps React identify which items have changed, are added, or are removed, for efficient reconciliation.",
+            "C": "It defines the order of items in the list permanently.",
+            "D": "It's a security feature to prevent unauthorized access."
+          },
+          "correct_answer": "B",
+          "explanation": "Keys are crucial for React's reconciliation algorithm to correctly update list items when their order or content changes."
+        },
+        {
+          "question": "Which of the following is a correct way to render a list of items using `.map()` in React?",
+          "options": {
+            "A": "`<ul>{myArray.forEach(item => <li>{item}</li>)}</ul>`",
+            "B": "`<ul>{for (let item of myArray) {<li>{item}</li>}}</ul>`",
+            "C": "`<ul>{myArray.map(item => <li key={item.id}>{item.name}</li>)}</ul>`",
+            "D": "`<ul>{myArray.filter(item => <li>{item}</li>)}</ul>`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `.map()` method is the standard way to iterate over arrays and render a list of React elements, and each element needs a unique `key` prop."
+        },
+        {
+          "question": "What is 'component composition' in React?",
+          "options": {
+            "A": "The process of combining multiple JavaScript files into one.",
+            "B": "The idea of building complex UIs by combining simpler, independent components.",
+            "C": "Styling components using CSS-in-JS libraries.",
+            "D": "Optimizing components for faster rendering."
+          },
+          "correct_answer": "B",
+          "explanation": "Component composition is fundamental to React, allowing you to build large applications from small, reusable pieces."
+        },
+        {
+          "question": "What does `children` refer to in React components?",
+          "options": {
+            "A": "A special prop that represents the content passed between the opening and closing tags of a component.",
+            "B": "An array of all the sub-components of a parent component.",
+            "C": "A method used to create new components.",
+            "D": "A lifecycle method for unmounting components."
+          },
+          "correct_answer": "A",
+          "explanation": "The `children` prop allows components to render arbitrary children, providing flexibility for composition."
+        },
+        {
+          "question": "How can you make a component conditionally render content?",
+          "options": {
+            "A": "By always rendering all content and hiding it with CSS.",
+            "B": "Using JavaScript conditional statements (e.g., `if`, ternary operator, logical `&&`).",
+            "C": "React components cannot render conditionally.",
+            "D": "By setting the `display: none` style on the component."
+          },
+          "correct_answer": "B",
+          "explanation": "React's declarative nature allows for conditional rendering using standard JavaScript logic within JSX."
+        },
+        {
+          "question": "What is the purpose of default props?",
+          "options": {
+            "A": "To provide default values for props if they are not explicitly passed to a component.",
+            "B": "To make props immutable.",
+            "C": "To prevent props from being passed to a component.",
+            "D": "To force a component to re-render."
+          },
+          "correct_answer": "A",
+          "explanation": "Default props ensure that a component has a fallback value for props that might not always be provided by the parent."
+        },
+        {
+          "question": "In a class component, which lifecycle method is called immediately after a component is mounted (inserted into the DOM tree)?",
+          "options": {
+            "A": "`constructor()`",
+            "B": "`render()`",
+            "C": "`componentDidMount()`",
+            "D": "`componentWillUnmount()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`componentDidMount()` is ideal for fetching data or setting up subscriptions that require the DOM to be available."
+        },
+        {
+          "question": "What is 'controlled component' in React forms?",
+          "options": {
+            "A": "An input element whose value is managed by the DOM.",
+            "B": "An input element whose value is controlled by React state.",
+            "C": "An input element that cannot be modified by the user.",
+            "D": "An input element that automatically submits the form."
+          },
+          "correct_answer": "B",
+          "explanation": "In a controlled component, form data is handled by the React component's state, making the component the 'single source of truth' for the input's value."
+        },
+        {
+          "question": "What is an 'uncontrolled component' in React forms?",
+          "options": {
+            "A": "An input element whose value is controlled by React state.",
+            "B": "An input element whose value is managed by the DOM itself, typically accessed using a ref.",
+            "C": "An input element that has no default value.",
+            "D": "A component that causes frequent re-renders."
+          },
+          "correct_answer": "B",
+          "explanation": "Uncontrolled components let the DOM handle form data, with React accessing values only when needed (e.g., on form submission) via refs."
+        }
+      ]
+    }
+  ]
+}

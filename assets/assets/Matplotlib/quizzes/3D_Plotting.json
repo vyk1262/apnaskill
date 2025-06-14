@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "3D_Plotting",
+      "questions": [
+        {
+          "question": "What is the primary use of 3D plotting in Matplotlib?",
+          "options": {
+            "A": "To visualize data in three dimensions.",
+            "B": "To create 2D plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "3D plotting in Matplotlib is primarily used to visualize data in three dimensions, providing a more comprehensive view of the data."
+        },
+        {
+          "question": "Which function is used to create 3D plots in Matplotlib?",
+          "options": {
+            "A": "plot3D()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The plot3D() function is used to create 3D plots in Matplotlib, allowing for visualization of data in three dimensions."
+        },
+        {
+          "question": "What is the purpose of the Axes3D class in Matplotlib?",
+          "options": {
+            "A": "To provide 3D plotting capabilities.",
+            "B": "To create 2D plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The Axes3D class in Matplotlib provides 3D plotting capabilities, enabling the creation of 3D plots."
+        },
+        {
+          "question": "What is the function of the scatter3D() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D scatter plots.",
+            "B": "To create 2D scatter plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The scatter3D() method in Matplotlib is used to create 3D scatter plots, allowing for visualization of data points in three dimensions."
+        },
+        {
+          "question": "What is the purpose of the plot_surface() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D surface plots.",
+            "B": "To create 2D surface plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The plot_surface() method in Matplotlib is used to create 3D surface plots, providing a visual representation of data surfaces."
+        },
+        {
+          "question": "What is the function of the contour3D() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D contour plots.",
+            "B": "To create 2D contour plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The contour3D() method in Matplotlib is used to create 3D contour plots, allowing for visualization of contour lines in three dimensions."
+        },
+        {
+          "question": "What is the purpose of the wireframe() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D wireframe plots.",
+            "B": "To create 2D wireframe plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The wireframe() method in Matplotlib is used to create 3D wireframe plots, providing a skeletal representation of data surfaces."
+        },
+        {
+          "question": "What is the function of the bar3D() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D bar plots.",
+            "B": "To create 2D bar plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The bar3D() method in Matplotlib is used to create 3D bar plots, allowing for visualization of data in bar format in three dimensions."
+        },
+        {
+          "question": "What is the purpose of the text3D() method in Matplotlib?",
+          "options": {
+            "A": "To add text annotations to 3D plots.",
+            "B": "To add text annotations to 2D plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The text3D() method in Matplotlib is used to add text annotations to 3D plots, providing additional context to the visualizations."
+        },
+        {
+          "question": "What is the function of the quiver3D() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D quiver plots.",
+            "B": "To create 2D quiver plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The quiver3D() method in Matplotlib is used to create 3D quiver plots, allowing for visualization of vector fields in three dimensions."
+        },
+        {
+          "question": "What is the purpose of the streamplot() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D stream plots.",
+            "B": "To create 2D stream plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The streamplot() method in Matplotlib is used to create 3D stream plots, providing a visual representation of flow lines in three dimensions."
+        },
+        {
+          "question": "What is the function of the trisurf() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D triangular surface plots.",
+            "B": "To create 2D triangular surface plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The trisurf() method in Matplotlib is used to create 3D triangular surface plots, allowing for visualization of data surfaces with triangular elements."
+        },
+        {
+          "question": "What is the purpose of the tricontour() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D triangular contour plots.",
+            "B": "To create 2D triangular contour plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The tricontour() method in Matplotlib is used to create 3D triangular contour plots, providing a visual representation of contour lines with triangular elements."
+        },
+        {
+          "question": "What is the function of the contourf3D() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D filled contour plots.",
+            "B": "To create 2D filled contour plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The contourf3D() method in Matplotlib is used to create 3D filled contour plots, allowing for visualization of filled contour areas in three dimensions."
+        },
+        {
+          "question": "What is the purpose of the hist3D() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D histogram plots.",
+            "B": "To create 2D histogram plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The hist3D() method in Matplotlib is used to create 3D histogram plots, providing a visual representation of data distribution in three dimensions."
+        },
+        {
+          "question": "What is the function of the hexbin3D() method in Matplotlib?",
+          "options": {
+            "A": "To create 3D hexbin plots.",
+            "B": "To create 2D hexbin plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The hexbin3D() method in Matplotlib is used to create 3D hexbin plots, allowing for visualization of data density in hexagonal bins in three dimensions."
+        },
+        {
+          "question": "What is the purpose of the imshow3D() method in Matplotlib?",
+          "options": {
+            "A": "To display 3D images.",
+            "B": "To display 2D images.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The imshow3D() method in Matplotlib is used to display 3D images, providing a visual representation of image data in three dimensions."
+        }
+      ]
+    }
+  ]
+}

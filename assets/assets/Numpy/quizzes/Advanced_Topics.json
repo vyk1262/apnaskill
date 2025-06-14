@@ -11,7 +11,8 @@
             "C": "Multi-dimensional arrays with a specific organization of sub-arrays.",
             "D": "Arrays that can only store string data types."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Structured arrays in NumPy allow you to define a compound data type, where each element (or 'record') can contain fields of different data types and sizes, similar to a `struct` in C or a row in a database table. This is distinct from regular NumPy arrays where all elements have the same single data type."
         },
         {
           "question": "How do you define the data type for a structured array in NumPy?",
@@ -21,7 +22,8 @@
             "C": "Structured arrays do not require a specific data type definition.",
             "D": "Using a dictionary where keys are field names and values are data types."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The data type for a structured array is typically defined using a list of tuples. Each tuple contains `(field_name, data_type)`, for example, `[('name', 'S10'), ('age', 'i4')]`."
         },
         {
           "question": "What are masked arrays in NumPy primarily used for?",
@@ -31,7 +33,8 @@
             "C": "For optimizing numerical computations on large arrays.",
             "D": "For creating arrays with specific patterns or shapes."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Masked arrays (from `numpy.ma` module) are specialized arrays that allow you to treat certain values as 'invalid' or 'missing'. This is done by associating a boolean mask with the data, where `True` in the mask indicates a masked (invalid) data point, and `False` indicates a valid data point. Operations on masked arrays typically ignore masked values."
         },
         {
           "question": "How is the mask in a NumPy masked array represented?",
@@ -41,7 +44,8 @@
             "C": "By assigning a specific data type to represent missing values.",
             "D": "Masked arrays do not use a separate representation for missing values."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A masked array internally stores both the data array and a separate boolean mask array. For every element in the data array, there's a corresponding boolean value in the mask. If the mask value is `True`, the data element is considered masked (invalid) and is ignored in calculations. While NaNs can indicate missing data in regular arrays, masked arrays offer a more explicit and controllable way to handle them."
         },
         {
           "question": "What is the purpose of NumPy's C-API?",
@@ -51,7 +55,8 @@
             "C": "To optimize Python code that uses NumPy by translating it to C.",
             "D": "To visualize NumPy arrays using C libraries."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy provides a C-API (Application Programming Interface) that allows developers to write C or C++ extensions that can efficiently work with NumPy arrays. This is crucial for performance-critical computations that benefit from compiled languages, enabling seamless data exchange and function calls between Python and C."
         },
         {
           "question": "Which of the following is a benefit of using NumPy's C-API?",
@@ -61,7 +66,8 @@
             "C": "It simplifies the process of writing pure Python code for numerical tasks.",
             "D": "It automatically translates existing C/C++ code to Python NumPy."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The primary benefit of the C-API is to enable high-performance operations by allowing custom C/C++ code to directly access and manipulate NumPy array data. This is particularly useful for complex algorithms or when integrating with existing C/C++ libraries. It doesn't simplify pure Python code or automatically translate C++ to Python."
         },
         {
           "question": "What are universal functions (ufuncs) in NumPy?",
@@ -71,7 +77,8 @@
             "C": "Functions used for creating universal constants in NumPy.",
             "D": "Functions that can operate on arrays of any data type without explicit casting."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Ufuncs (universal functions) are vectorized wrappers around C functions. They operate element-wise on NumPy arrays, supporting broadcasting and various input/output configurations. Their implementation in C makes them very fast, avoiding explicit Python loops."
         },
         {
           "question": "Which of the following is an example of a NumPy ufunc?",
@@ -81,7 +88,8 @@
             "C": "numpy.sin()",
             "D": "numpy.concatenate()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "`numpy.sin()` is a common example of a ufunc. Ufuncs typically perform mathematical operations element-wise (e.g., `sin`, `cos`, `add`, `multiply`). `numpy.array()` creates an array, `numpy.reshape()` changes its shape, and `numpy.concatenate()` joins arrays, none of which are ufuncs."
         },
         {
           "question": "What is the purpose of the `out` argument in many NumPy ufuncs?",
@@ -91,7 +99,8 @@
             "C": "To define the shape of the output array.",
             "D": "To specify the number of output arrays the ufunc should return."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `out` argument in ufuncs allows you to provide an existing array as a buffer for the result. This can be beneficial for performance and memory management in large computations, as it avoids allocating new memory for the output array."
         },
         {
           "question": "What are NumPy broadcasting rules primarily designed to handle efficiently?",
@@ -101,7 +110,8 @@
             "C": "Operations involving scalar values and arrays.",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Broadcasting is NumPy's mechanism for working with arrays of different shapes when performing arithmetic operations. It efficiently extends smaller arrays across larger arrays so that they have compatible shapes for element-wise operations, eliminating the need for explicit looping or creating large temporary arrays. This includes operations between arrays and scalars (which are effectively broadcast)."
         },
         {
           "question": "What are NumPy iterators used for?",
@@ -111,7 +121,8 @@
             "C": "To optimize the speed of mathematical functions in NumPy.",
             "D": "To handle missing data in NumPy arrays."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy iterators (like `numpy.nditer`) provide a highly flexible and efficient way to iterate over the elements of one or more arrays. They are particularly useful for working with multi-dimensional arrays, allowing controlled traversal order, buffering, and even read-write access to elements. While ufuncs perform element-wise operations, iterators provide the underlying mechanism for custom, efficient element access."
         },
         {
           "question": "What is the difference between a NumPy view and a copy?",
@@ -121,7 +132,8 @@
             "C": "Copies are created using slicing, while views are created using fancy indexing.",
             "D": "There is no functional difference between them."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "This is a fundamental concept in NumPy. A 'view' is a new array object that looks at the *same data* as the original array. Modifying the view will directly modify the original array. A 'copy' is a new array object with a completely *new and independent copy of the data*. Changes to a copy do not affect the original array."
         },
         {
           "question": "Which of the following operations typically creates a view of a NumPy array?",
@@ -131,7 +143,8 @@
             "C": "Fancy indexing (e.g., `arr[[1, 3, 5]]`).",
             "D": "Reshaping an array with a different total number of elements."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Basic slicing (e.g., `arr[1:5]`, `arr[:, 0]`) in NumPy typically returns a view of the original array. The `copy()` method explicitly creates a copy. Fancy indexing and operations that change the total number of elements (like `resize()` or some `reshape()` operations when data is not contiguous) generally create copies."
         },
         {
           "question": "What are NumPy's `einsum` function used for?",
@@ -141,7 +154,8 @@
             "C": "Creating identity matrices of arbitrary dimensions.",
             "D": "Handling complex number operations in NumPy."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.einsum()` is a highly versatile function that uses Einstein summation convention to perform a wide variety of array operations, including dot products, outer products, transpositions, and reductions, often in a more concise and potentially more optimized way than using multiple explicit NumPy functions."
         },
         {
           "question": "What are NumPy memory views?",
@@ -151,7 +165,8 @@
             "C": "Visualizations of how NumPy arrays are stored in memory.",
             "D": "Optimized data structures for very large arrays that don't fit into RAM."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "NumPy arrays are built on top of the buffer protocol in Python, which allows other Python objects to expose their internal data as 'memory views'. A memory view is a non-copying view into the memory of an array, allowing other libraries (like Cython, other C extensions) to efficiently work with NumPy array data without the overhead of copying."
         },
         {
           "question": "What is the purpose of the `order` argument in some NumPy array creation and manipulation functions (e.g., `reshape`, `flatten`)?",
@@ -161,7 +176,8 @@
             "C": "To determine the number of dimensions of the resulting array.",
             "D": "To set the data type of the array."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `order` argument in functions like `reshape` or `flatten` (and `copy`) specifies the memory layout for the array. 'C' order (row-major) means elements are stored row by row (like in C/C++). 'F' order (column-major) means elements are stored column by column (like in Fortran). This affects how the array is traversed or interpreted when its shape changes."
         },
         {
           "question": "What are NumPy's polynomial functions (in `numpy.polynomial`) used for?",
@@ -171,7 +187,8 @@
             "C": "Optimizing numerical algorithms using polynomial approximations.",
             "D": "Visualizing polynomial functions."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.polynomial` package provides tools for working with various types of polynomials (e.g., Legendre, Chebyshev, Hermite, Power series). It allows for tasks like representing polynomials by their coefficients, evaluating them, finding roots, differentiation, integration, and fitting data to polynomial curves."
         },
         {
           "question": "What are NumPy's financial functions (in `numpy.financial`) used for?",
@@ -181,7 +198,8 @@
             "C": "Converting currencies between different exchange rates.",
             "D": "Optimizing investment portfolios."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.financial` module (which was often included directly in older NumPy versions but is now typically a separate package like `numpy_financial`) provides functions for various financial calculations such as Net Present Value (NPV), Internal Rate of Return (IRR), Future Value (FV), Present Value (PV), and payment calculations."
         },
         {
           "question": "What are NumPy's discrete Fourier transform (DFT) functions (in `numpy.fft`) used for?",
@@ -191,7 +209,8 @@
             "C": "Performing fast matrix multiplications.",
             "D": "Generating random numbers with specific frequency distributions."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.fft` module provides functions for computing the Discrete Fourier Transform (DFT) and its inverse, as well as Fast Fourier Transform (FFT) algorithms. These are fundamental tools in signal processing for analyzing the frequency content of discrete signals, which is useful in fields like audio processing, image processing, and communications."
         },
         {
           "question": "What are NumPy's linear algebra functions (in `numpy.linalg`) used for?",
@@ -201,7 +220,8 @@
             "C": "Optimizing machine learning models.",
             "D": "Visualizing high-dimensional data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.linalg` module provides a comprehensive set of functions for linear algebra operations, which are core to many scientific and engineering applications. This includes matrix and vector products, determinants, inverses, eigenvalues and eigenvectors, singular value decomposition, and solving linear systems."
         }
       ]
     }

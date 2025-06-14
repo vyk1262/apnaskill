@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Feature_Engineering_and_Selection",
+      "questions": [
+        {
+          "question": "What is the primary goal of feature engineering?",
+          "options": {
+            "A": "To create new features from existing data.",
+            "B": "To eliminate all features.",
+            "C": "To duplicate features.",
+            "D": "To increase the number of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature engineering aims to create new features from existing data, improving model performance and providing better insights."
+        },
+        {
+          "question": "Which technique is commonly used for feature selection?",
+          "options": {
+            "A": "Recursive Feature Elimination (RFE)",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Recursive Feature Elimination (RFE) is a widely used technique for feature selection, identifying important features by recursively removing less important ones."
+        },
+        {
+          "question": "What is the purpose of using RFE in feature selection?",
+          "options": {
+            "A": "To identify the most important features.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "RFE is used to identify the most important features by recursively removing less important ones, improving model performance."
+        },
+        {
+          "question": "Which method is used to create new features from existing data?",
+          "options": {
+            "A": "Feature Engineering",
+            "B": "Feature Selection",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Feature Engineering is a method used to create new features from existing data, improving model performance and providing better insights."
+        },
+        {
+          "question": "What is the benefit of feature engineering in machine learning?",
+          "options": {
+            "A": "Improved model performance and better insights.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature engineering improves model performance and provides better insights by creating new features from existing data."
+        },
+        {
+          "question": "Which algorithm is used for feature selection by ranking features based on their importance?",
+          "options": {
+            "A": "Random Forest",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Random Forest is an algorithm used for feature selection by ranking features based on their importance, improving model performance."
+        },
+        {
+          "question": "What is the purpose of using Random Forest in feature selection?",
+          "options": {
+            "A": "To rank features based on their importance.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "Random Forest is used to rank features based on their importance, improving model performance and providing better insights."
+        },
+        {
+          "question": "Which technique is used for feature selection by evaluating the correlation between features and the target variable?",
+          "options": {
+            "A": "Correlation-Based Feature Selection",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Correlation-Based Feature Selection is a technique used for feature selection by evaluating the correlation between features and the target variable, improving model performance."
+        },
+        {
+          "question": "What is the benefit of using Correlation-Based Feature Selection in feature selection?",
+          "options": {
+            "A": "Improved model performance and better insights.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Correlation-Based Feature Selection improves model performance and provides better insights by evaluating the correlation between features and the target variable."
+        },
+        {
+          "question": "Which method is used for feature selection by selecting features based on their importance?",
+          "options": {
+            "A": "Feature Importance",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Feature Importance is a method used for feature selection by selecting features based on their importance, improving model performance and providing better insights."
+        },
+        {
+          "question": "What is the purpose of using Feature Importance in feature selection?",
+          "options": {
+            "A": "To select features based on their importance.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature Importance is used to select features based on their importance, improving model performance and providing better insights."
+        },
+        {
+          "question": "Which algorithm is used for feature selection by evaluating the importance of features using a decision tree?",
+          "options": {
+            "A": "Decision Tree",
+            "B": "Linear Regression",
+            "C": "Random Forest",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Decision Tree is an algorithm used for feature selection by evaluating the importance of features using a decision tree, improving model performance."
+        },
+        {
+          "question": "What is the benefit of using Decision Tree in feature selection?",
+          "options": {
+            "A": "Improved model performance and better insights.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Decision Tree improves model performance and provides better insights by evaluating the importance of features using a decision tree."
+        },
+        {
+          "question": "Which technique is used for feature selection by evaluating the importance of features using a linear model?",
+          "options": {
+            "A": "Linear Model Feature Selection",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Linear Model Feature Selection is a technique used for feature selection by evaluating the importance of features using a linear model, improving model performance."
+        },
+        {
+          "question": "What is the benefit of using Linear Model Feature Selection in feature selection?",
+          "options": {
+            "A": "Improved model performance and better insights.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Linear Model Feature Selection improves model performance and provides better insights by evaluating the importance of features using a linear model."
+        },
+        {
+          "question": "Which method is used for feature selection by selecting features based on their correlation with the target variable?",
+          "options": {
+            "A": "Correlation-Based Feature Selection",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Correlation-Based Feature Selection is a method used for feature selection by selecting features based on their correlation with the target variable, improving model performance."
+        },
+        {
+          "question": "What is the purpose of using Correlation-Based Feature Selection in feature selection?",
+          "options": {
+            "A": "To select features based on their correlation with the target variable.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "Correlation-Based Feature Selection is used to select features based on their correlation with the target variable, improving model performance and providing better insights."
+        }
+      ]
+    }
+  ]
+}

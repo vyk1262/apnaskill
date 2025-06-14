@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Ethics_and_Best_Practices",
+      "questions": [
         {
-            "topic": "Ethics_and_Best_Practices",
-            "questions": []
+          "question": "What is 'Bias Mitigation' in prompt engineering, and why is it important?",
+          "options": {
+            "A": "Making AI responses more opinionated.",
+            "B": "Techniques to reduce or eliminate harmful stereotypes, unfair preferences, or prejudiced language that might be present in the AI's training data and surface in its outputs, ensuring fair and equitable responses.",
+            "C": "Enhancing the AI's ability to generate biased content.",
+            "D": "Limiting the AI's creativity."
+          },
+          "correct_answer": "B",
+          "explanation": "AI models can reflect biases from their training data. Prompt engineers must actively work to counteract these biases through careful prompt design, content filtering, and iterative testing to ensure outputs are fair and inclusive."
+        },
+        {
+          "question": "What does 'Transparency' mean in the context of ethical AI and prompt engineering?",
+          "options": {
+            "A": "Making AI models invisible.",
+            "B": "Clearly communicating to users that they are interacting with an AI, and potentially explaining the AI's capabilities, limitations, and how its responses are generated.",
+            "C": "Hiding the AI's identity.",
+            "D": "Making AI decisions unpredictable."
+          },
+          "correct_answer": "B",
+          "explanation": "Ethical AI practice often mandates transparency. Users should be aware they are interacting with an AI and have a basic understanding of what it can and cannot do, and how its responses are formed (e.g., if it uses external tools or limited knowledge)."
+        },
+        {
+          "question": "How does 'Privacy' relate to prompt engineering?",
+          "options": {
+            "A": "It means sharing all user data.",
+            "B": "It involves being mindful of not prompting the AI with sensitive personal identifiable information (PII) and ensuring the AI is instructed to avoid generating or retaining private data.",
+            "C": "It only applies to developers.",
+            "D": "It's irrelevant to AI interactions."
+          },
+          "correct_answer": "B",
+          "explanation": "Prompt engineers must be cautious about what data they feed into an AI, especially if the AI's responses are not guaranteed to be confidential or if the data might inadvertently train future models. Strict instructions to avoid or redact PII are crucial."
+        },
+        {
+          "question": "What is the ethical concern known as 'Hallucination' in AI outputs?",
+          "options": {
+            "A": "The AI generating highly creative content.",
+            "B": "The AI generating factually incorrect or fabricated information with high confidence, which can mislead users.",
+            "C": "The AI recognizing real-world objects.",
+            "D": "The AI being overly cautious in its responses."
+          },
+          "correct_answer": "B",
+          "explanation": "Hallucinations pose a significant ethical risk because users may trust AI-generated content as factual. Prompt engineers use techniques like RAG, grounding, and confidence scores to mitigate this."
+        },
+        {
+          "question": "What is the best practice for giving 'safety instructions' in a prompt?",
+          "options": {
+            "A": "Bury them deep within the prompt.",
+            "B": "Place clear, concise safety instructions (e.g., 'Do not provide medical advice', 'Refuse illegal requests') prominently, ideally within a system role or at the start of a user prompt.",
+            "C": "Make them optional for the AI.",
+            "D": "Only include them for highly technical prompts."
+          },
+          "correct_answer": "B",
+          "explanation": "Safety instructions are paramount. Their prominence and clarity ensure the AI understands and prioritizes adherence to ethical and safety boundaries, preventing harmful or irresponsible outputs."
+        },
+        {
+          "question": "Why is it a best practice to 'verify critical AI-generated information'?",
+          "options": {
+            "A": "Because AI models are always wrong.",
+            "B": "Because AI models, despite their capabilities, can make errors, hallucinate, or reflect biases; critical information should always be cross-referenced with reliable sources.",
+            "C": "To slow down the process.",
+            "D": "To increase the AI's workload."
+          },
+          "correct_answer": "B",
+          "explanation": "Especially for domains like health, finance, or law, relying solely on AI outputs without verification is irresponsible and potentially dangerous. Prompt engineers should advocate for human oversight."
+        },
+        {
+          "question": "What is 'Fairness' in the context of prompt engineering?",
+          "options": {
+            "A": "Ensuring the AI gives the same answer to everyone.",
+            "B": "Designing prompts to ensure the AI's responses do not discriminate against or unfairly treat any group of people based on attributes like gender, race, religion, or background.",
+            "C": "Allowing the AI to be biased if it wants.",
+            "D": "Ensuring the AI answers questions quickly."
+          },
+          "correct_answer": "B",
+          "explanation": "Fairness is a core ethical principle. Prompts should be designed to encourage neutral, respectful, and unbiased outputs, actively challenging and mitigating any discriminatory tendencies."
+        },
+        {
+          "question": "Why should prompt engineers be cautious about 'Sensitive Information' in prompts?",
+          "options": {
+            "A": "It makes the prompt too long.",
+            "B": "Because large language models might retain or inadvertently expose sensitive data if not properly handled, posing security and privacy risks.",
+            "C": "Sensitive information improves AI performance.",
+            "D": "It's only a concern for small AI models."
+          },
+          "correct_answer": "B",
+          "explanation": "Unless working with highly secure, custom-trained models with strong privacy guarantees, users should avoid including PII or confidential information in prompts, as data handling policies can vary."
+        },
+        {
+          "question": "What is 'Human Oversight' as a best practice in AI deployment?",
+          "options": {
+            "A": "Allowing AI to operate completely autonomously.",
+            "B": "Implementing mechanisms for human review and intervention, especially for critical or high-stakes AI-generated content, to correct errors or ensure ethical compliance.",
+            "C": "Replacing humans with AI.",
+            "D": "Training AI models to be fully independent."
+          },
+          "correct_answer": "B",
+          "explanation": "Human oversight acknowledges that AI is a tool, not a perfect oracle. For important applications, a human in the loop can catch errors, refine outputs, and ensure ethical considerations are met."
+        },
+        {
+          "question": "What does 'Accountability' mean for prompt engineers?",
+          "options": {
+            "A": "Not being responsible for AI outputs.",
+            "B": "Taking responsibility for the design of prompts and the downstream effects of the AI's outputs, ensuring that the AI is used responsibly and ethically.",
+            "C": "Only focusing on technical performance.",
+            "D": "Delegating all responsibility to the AI."
+          },
+          "correct_answer": "B",
+          "explanation": "Prompt engineers are an integral part of the AI development pipeline. They have a role in shaping the AI's behavior and must be accountable for the ethical implications of their prompt designs."
+        },
+        {
+          "question": "How can prompt engineering contribute to 'Accessibility'?",
+          "options": {
+            "A": "By using only complex language.",
+            "B": "By designing prompts that encourage the AI to generate content in clear, simple language, with appropriate formatting (e.g., bullet points) that is easy for diverse users to understand.",
+            "C": "By limiting the AI's response options.",
+            "D": "By ignoring user preferences."
+          },
+          "correct_answer": "B",
+          "explanation": "Prompts can explicitly ask for simplified language, alternative text for images, or structured outputs that are more accessible to users with disabilities or different levels of understanding."
+        },
+        {
+          "question": "What is 'Over-reliance' on AI, and why is it an ethical concern?",
+          "options": {
+            "A": "Using AI for too many tasks.",
+            "B": "Excessive or uncritical trust in AI outputs, potentially leading to a decline in human critical thinking, skill degradation, or acceptance of inaccurate information without verification.",
+            "C": "Ignoring AI suggestions.",
+            "D": "Not using AI enough."
+          },
+          "correct_answer": "B",
+          "explanation": "An ethical prompt engineering strategy should discourage over-reliance by promoting critical engagement with AI outputs, especially in domains where accuracy is paramount."
+        },
+        {
+          "question": "Why is 'Continuous Monitoring' of AI outputs important from an ethical perspective?",
+          "options": {
+            "A": "To ensure the AI always responds quickly.",
+            "B": "To detect emerging biases, performance degradation, or new misuse patterns over time, allowing for prompt adaptation and mitigation.",
+            "C": "To collect more training data.",
+            "D": "To monitor AI's internal processes."
+          },
+          "correct_answer": "B",
+          "explanation": "AI models and their interactions with the world are dynamic. What was ethical or unbiased yesterday might not be today. Continuous monitoring is crucial for adapting to new challenges."
+        },
+        {
+          "question": "What is the ethical consideration of 'Intellectual Property' (IP) regarding AI-generated content?",
+          "options": {
+            "A": "AI automatically owns all its outputs.",
+            "B": "Clarifying ownership and usage rights of content generated by AI, especially when based on copyrighted input, and ensuring prompts respect existing IP laws.",
+            "C": "IP is not a concern for AI.",
+            "D": "IP only applies to human creations."
+          },
+          "correct_answer": "B",
+          "explanation": "The legal landscape around AI-generated IP is evolving. Prompt engineers should be aware of these complexities, especially when using AI for creative or commercial purposes, and ensure they operate within legal and ethical boundaries."
+        },
+        {
+          "question": "What is 'Data Contamination' in the context of prompt engineering ethics?",
+          "options": {
+            "A": "Feeding clean, curated data to the AI.",
+            "B": "The risk of unintended harmful content (e.g., PII, biases, harmful instructions) from user prompts or generated outputs inadvertently contaminating future training datasets for AI models.",
+            "C": "Only using public data.",
+            "D": "Adding random noise to data."
+          },
+          "correct_answer": "B",
+          "explanation": "If user inputs or AI outputs are collected for future training, there's a risk of 'poisoning' the dataset with undesirable information. Prompt engineers need to be aware of this risk and employ filtering or sanitization techniques."
+        },
+        {
+          "question": "How can 'Guardrails' be implemented ethically in prompt engineering?",
+          "options": {
+            "A": "By allowing AI to generate anything.",
+            "B": "By explicitly programming safety mechanisms, refusal criteria, or content filters (often via system prompts or external tools) to prevent the AI from generating harmful, illegal, or unethical responses.",
+            "C": "By removing all constraints.",
+            "D": "By making the AI ignore ethical rules."
+          },
+          "correct_answer": "B",
+          "explanation": "Guardrails are proactive measures to ensure AI operates within ethical boundaries, acting as protective barriers against misuse or unintended harmful outputs."
+        },
+        {
+          "question": "What is the ethical implication of using AI for 'Deception' or 'Misinformation'?",
+          "options": {
+            "A": "It's always beneficial for communication.",
+            "B": "Using AI (e.g., via malicious prompts) to intentionally create misleading, false, or deceptive content, which can erode trust, manipulate opinions, or cause societal harm.",
+            "C": "AI is incapable of deception.",
+            "D": "It's a form of creative writing."
+          },
+          "correct_answer": "B",
+          "explanation": "Prompt engineers have an ethical responsibility to ensure their prompts are not used to generate content that intentionally deceives or spreads misinformation, and to put safeguards in place to prevent such misuse."
+        },
+        {
+          "question": "What is the 'Principle of Least Privilege' applied to AI interaction?",
+          "options": {
+            "A": "Giving the AI maximum possible access.",
+            "B": "Designing prompts and systems so that the AI only has access to the minimal necessary information and capabilities required to perform its task, reducing potential misuse or data exposure.",
+            "C": "Limiting AI to only one task.",
+            "D": "Making the AI's responses very short."
+          },
+          "correct_answer": "B",
+          "explanation": "This cybersecurity principle is relevant to AI: don't give the AI access to more data or more powerful functions than it absolutely needs for the task at hand. This reduces risk."
+        },
+        {
+          "question": "True or False: Ethical considerations in prompt engineering are static and do not change over time.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Ethical considerations are dynamic and evolve with AI capabilities, societal norms, and new applications. Prompt engineers must stay informed and adapt their practices continuously."
+        },
+        {
+          "question": "What is the best practice regarding 'Documentation' for prompts, from an ethical standpoint?",
+          "options": {
+            "A": "No documentation is needed.",
+            "B": "Maintaining clear records of prompt versions, their intended purpose, testing results, and any known limitations or ethical guardrails to ensure accountability, reproducibility, and responsible deployment.",
+            "C": "Only document prompts that fail.",
+            "D": "Documenting only the final version."
+          },
+          "correct_answer": "B",
+          "explanation": "Good documentation is critical for responsible AI development. It ensures transparency, allows for auditing, helps track changes, and supports ongoing ethical review and improvement."
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Dimensionality_Reduction",
+      "questions": [
+        {
+          "question": "What is the primary goal of dimensionality reduction?",
+          "options": {
+            "A": "To increase the number of features.",
+            "B": "To reduce the number of features while preserving important information.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "B",
+          "explanation": "Dimensionality reduction aims to reduce the number of features while preserving important information, improving model performance and reducing computational cost."
+        },
+        {
+          "question": "Which technique is commonly used for dimensionality reduction?",
+          "options": {
+            "A": "Principal Component Analysis (PCA)",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Principal Component Analysis (PCA) is a widely used technique for dimensionality reduction, transforming data into a lower-dimensional space."
+        },
+        {
+          "question": "What is the purpose of using PCA in dimensionality reduction?",
+          "options": {
+            "A": "To identify the most important features.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is used to identify the most important features by transforming data into a lower-dimensional space, capturing the variance in the data."
+        },
+        {
+          "question": "Which method is used to reduce dimensionality by selecting important features?",
+          "options": {
+            "A": "Feature Selection",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Feature Selection is a method used to reduce dimensionality by selecting important features, improving model performance and reducing computational cost."
+        },
+        {
+          "question": "What is the benefit of dimensionality reduction in machine learning?",
+          "options": {
+            "A": "Improved model performance and reduced computational cost.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Dimensionality reduction improves model performance and reduces computational cost by reducing the number of features while preserving important information."
+        },
+        {
+          "question": "Which algorithm is used for dimensionality reduction by projecting data onto a lower-dimensional space?",
+          "options": {
+            "A": "t-Distributed Stochastic Neighbor Embedding (t-SNE)",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "t-Distributed Stochastic Neighbor Embedding (t-SNE) is an algorithm used for dimensionality reduction by projecting data onto a lower-dimensional space, preserving the structure of the data."
+        },
+        {
+          "question": "What is the purpose of using t-SNE in dimensionality reduction?",
+          "options": {
+            "A": "To visualize high-dimensional data in a lower-dimensional space.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "t-SNE is used to visualize high-dimensional data in a lower-dimensional space, preserving the structure of the data and facilitating interpretation."
+        },
+        {
+          "question": "Which technique is used for dimensionality reduction by transforming data into a lower-dimensional space?",
+          "options": {
+            "A": "Linear Discriminant Analysis (LDA)",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Linear Discriminant Analysis (LDA) is a technique used for dimensionality reduction by transforming data into a lower-dimensional space, capturing the variance in the data."
+        },
+        {
+          "question": "What is the benefit of using LDA in dimensionality reduction?",
+          "options": {
+            "A": "Improved model performance and reduced computational cost.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA improves model performance and reduces computational cost by transforming data into a lower-dimensional space, capturing the variance in the data."
+        },
+        {
+          "question": "Which method is used for dimensionality reduction by selecting important features based on their importance?",
+          "options": {
+            "A": "Feature Importance",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Feature Importance is a method used for dimensionality reduction by selecting important features based on their importance, improving model performance and reducing computational cost."
+        },
+        {
+          "question": "What is the purpose of using Feature Importance in dimensionality reduction?",
+          "options": {
+            "A": "To select important features based on their importance.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature Importance is used to select important features based on their importance, improving model performance and reducing computational cost."
+        },
+        {
+          "question": "Which algorithm is used for dimensionality reduction by projecting data onto a lower-dimensional space while preserving the structure of the data?",
+          "options": {
+            "A": "Isomap",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Isomap is an algorithm used for dimensionality reduction by projecting data onto a lower-dimensional space while preserving the structure of the data, facilitating interpretation."
+        },
+        {
+          "question": "What is the benefit of using Isomap in dimensionality reduction?",
+          "options": {
+            "A": "Improved model performance and reduced computational cost.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Isomap improves model performance and reduces computational cost by projecting data onto a lower-dimensional space while preserving the structure of the data."
+        },
+        {
+          "question": "Which technique is used for dimensionality reduction by transforming data into a lower-dimensional space while preserving the variance in the data?",
+          "options": {
+            "A": "Kernel PCA",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Kernel PCA is a technique used for dimensionality reduction by transforming data into a lower-dimensional space while preserving the variance in the data, improving model performance."
+        },
+        {
+          "question": "What is the benefit of using Kernel PCA in dimensionality reduction?",
+          "options": {
+            "A": "Improved model performance and reduced computational cost.",
+            "B": "Increased number of features.",
+            "C": "Elimination of all features.",
+            "D": "Duplication of features."
+          },
+          "correct_answer": "A",
+          "explanation": "Kernel PCA improves model performance and reduces computational cost by transforming data into a lower-dimensional space while preserving the variance in the data."
+        },
+        {
+          "question": "Which method is used for dimensionality reduction by selecting important features based on their correlation with the target variable?",
+          "options": {
+            "A": "Correlation-Based Feature Selection",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Correlation-Based Feature Selection is a method used for dimensionality reduction by selecting important features based on their correlation with the target variable, improving model performance."
+        },
+        {
+          "question": "What is the purpose of using Correlation-Based Feature Selection in dimensionality reduction?",
+          "options": {
+            "A": "To select important features based on their correlation with the target variable.",
+            "B": "To increase the number of features.",
+            "C": "To eliminate all features.",
+            "D": "To duplicate features."
+          },
+          "correct_answer": "A",
+          "explanation": "Correlation-Based Feature Selection is used to select important features based on their correlation with the target variable, improving model performance and reducing computational cost."
+        }
+      ]
+    }
+  ]
+}

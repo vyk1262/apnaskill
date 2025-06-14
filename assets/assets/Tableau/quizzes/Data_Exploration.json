@@ -1,0 +1,207 @@
+{
+  "result": [
+    {
+      "topic": "Data_Exploration",
+      "questions": [
+        {
+          "question": "What is data exploration in Tableau?",
+          "options": {
+            "A": "The process of analyzing data to discover patterns and insights.",
+            "B": "The process of storing data.",
+            "C": "The process of visualizing data.",
+            "D": "The process of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data exploration in Tableau involves analyzing data to discover patterns and insights, enabling informed decision-making."
+        },
+        {
+          "question": "What is the purpose of data filtering in Tableau?",
+          "options": {
+            "A": "To limit the data displayed in visualizations.",
+            "B": "To store data values.",
+            "C": "To perform data calculations.",
+            "D": "To create visualizations."
+          },
+          "correct_answer": "A",
+          "explanation": "Data filtering in Tableau limits the data displayed in visualizations, allowing users to focus on specific data insights."
+        },
+        {
+          "question": "What is a data set in Tableau?",
+          "options": {
+            "A": "A collection of related data points.",
+            "B": "A single data point.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A data set in Tableau is a collection of related data points, providing a comprehensive view of data insights."
+        },
+        {
+          "question": "What is the purpose of data aggregation in Tableau?",
+          "options": {
+            "A": "To summarize data by combining multiple data points.",
+            "B": "To store data values.",
+            "C": "To perform data calculations.",
+            "D": "To create visualizations."
+          },
+          "correct_answer": "A",
+          "explanation": "Data aggregation in Tableau summarizes data by combining multiple data points, enabling analysis of data trends."
+        },
+        {
+          "question": "What is a data dimension in Tableau?",
+          "options": {
+            "A": "A field that categorizes data for analysis.",
+            "B": "A field that stores data values.",
+            "C": "A field used for data visualization.",
+            "D": "A field used for data filtering."
+          },
+          "correct_answer": "A",
+          "explanation": "A data dimension in Tableau categorizes data for analysis, allowing for detailed exploration of data insights."
+        },
+        {
+          "question": "What is a data measure in Tableau?",
+          "options": {
+            "A": "A field that quantifies data for analysis.",
+            "B": "A field that stores data values.",
+            "C": "A field used for data visualization.",
+            "D": "A field used for data filtering."
+          },
+          "correct_answer": "A",
+          "explanation": "A data measure in Tableau quantifies data for analysis, providing numerical insights into data trends."
+        },
+        {
+          "question": "What is a data hierarchy in Tableau?",
+          "options": {
+            "A": "A structured organization of data fields.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data hierarchy in Tableau is a structured organization of data fields, enabling users to drill down into data details."
+        },
+        {
+          "question": "What is a data set in Tableau?",
+          "options": {
+            "A": "A collection of related data points.",
+            "B": "A single data point.",
+            "C": "A data table.",
+            "D": "A data filter."
+          },
+          "correct_answer": "A",
+          "explanation": "A data set in Tableau is a collection of related data points, providing a comprehensive view of data insights."
+        },
+        {
+          "question": "What is a data source in Tableau?",
+          "options": {
+            "A": "A connection to a database or file that provides data for analysis.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data source in Tableau is a connection to a database or file that provides data for analysis, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data blend in Tableau?",
+          "options": {
+            "A": "A method of combining data from different sources.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data blending in Tableau is a method of combining data from different sources, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data join in Tableau?",
+          "options": {
+            "A": "A method of combining data from different tables based on common fields.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data join in Tableau is a method of combining data from different tables based on common fields, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data union in Tableau?",
+          "options": {
+            "A": "A method of combining data from different tables by appending rows.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data union in Tableau is a method of combining data from different tables by appending rows, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data pivot in Tableau?",
+          "options": {
+            "A": "A method of transforming data by rotating rows into columns.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data pivot in Tableau is a method of transforming data by rotating rows into columns, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data extract in Tableau?",
+          "options": {
+            "A": "A snapshot of data stored locally for faster analysis.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data extract in Tableau is a snapshot of data stored locally for faster analysis, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data connection in Tableau?",
+          "options": {
+            "A": "A link between Tableau and a data source.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data connection in Tableau is a link between Tableau and a data source, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data refresh in Tableau?",
+          "options": {
+            "A": "The process of updating data in Tableau to reflect changes in the source.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data refresh in Tableau is the process of updating data in Tableau to reflect changes in the source, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data snapshot in Tableau?",
+          "options": {
+            "A": "A static view of data at a specific point in time.",
+            "B": "A method of filtering data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of storing data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data snapshot in Tableau is a static view of data at a specific point in time, enabling comprehensive data analysis."
+        },
+        {
+          "question": "What is a data filter in Tableau?",
+          "options": {
+            "A": "A tool that limits the data displayed in visualizations.",
+            "B": "A method of storing data.",
+            "C": "A method of visualizing data.",
+            "D": "A method of filtering data."
+          },
+          "correct_answer": "A",
+          "explanation": "A data filter in Tableau is a tool that limits the data displayed in visualizations, allowing users to focus on specific data insights."
+        }
+      ]
+    }
+  ]
+}

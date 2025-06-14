@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Docker_Networking",
+      "questions": [
         {
-            "topic": "Docker_Networking",
-            "questions": []
+          "question": "What is the primary purpose of Docker networking?",
+          "options": {
+            "A": "To secure Docker images.",
+            "B": "To allow communication between Docker containers and between containers and the outside world.",
+            "C": "To manage persistent data storage for containers.",
+            "D": "To monitor container resource usage."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker networking allows containers to communicate with each other, with the Docker host, and with external networks. It's essential for building distributed applications where different services run in separate containers."
+        },
+        {
+          "question": "What is the default network driver for Docker containers on a single host?",
+          "options": {
+            "A": "Host",
+            "B": "Overlay",
+            "C": "Bridge",
+            "D": "None"
+          },
+          "correct_answer": "C",
+          "explanation": "The 'bridge' network driver is the default on a single Docker host. It creates a private internal network for containers, allowing them to communicate with each other and the host via NAT (Network Address Translation)."
+        },
+        {
+          "question": "How do containers on the default bridge network communicate with each other?",
+          "options": {
+            "A": "They all share the host's IP address and port.",
+            "B": "They can communicate directly using their container names.",
+            "C": "They can communicate using their assigned IP addresses on the bridge network.",
+            "D": "They cannot communicate with each other by default."
+          },
+          "correct_answer": "C",
+          "explanation": "Each container on the default bridge network gets its own internal IP address. Containers can communicate with each other using these IP addresses. However, for easier management, custom bridge networks offer DNS resolution by container name."
+        },
+        {
+          "question": "Which Docker network driver allows containers to use the host's network stack directly?",
+          "options": {
+            "A": "Bridge",
+            "B": "Overlay",
+            "C": "Host",
+            "D": "None"
+          },
+          "correct_answer": "C",
+          "explanation": "When a container uses the 'host' network driver, it shares the host's network namespace. This means the container directly uses the host's IP address and port mappings, bypassing the Docker network stack. This can be faster but sacrifices network isolation."
+        },
+        {
+          "question": "What is the primary use case for the 'none' network driver?",
+          "options": {
+            "A": "For containers that require full network access.",
+            "B": "For containers that don't require any network connectivity.",
+            "C": "For creating highly secure isolated networks.",
+            "D": "For connecting containers across multiple hosts."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'none' network driver isolates a container completely from the network. The container will not have an IP address and cannot communicate with other containers or the outside world. It's useful for containers that perform tasks purely locally and don't need network access (e.g., a batch processing job that only reads from a mounted volume)."
+        },
+        {
+          "question": "How do you expose a container's internal port to a specific port on the host machine?",
+          "options": {
+            "A": "Using the `--network host` flag.",
+            "B": "Using the `-e` flag.",
+            "C": "Using the `-p` or `--publish` flag with `docker run`.",
+            "D": "Using the `--link` flag."
+          },
+          "correct_answer": "C",
+          "explanation": "The `-p` or `--publish` flag is used to map a port from the container to a port on the Docker host (e.g., `-p 8080:80` maps host port 8080 to container port 80). This allows external traffic to reach the service inside the container."
+        },
+        {
+          "question": "What is the purpose of a user-defined bridge network in Docker?",
+          "options": {
+            "A": "To allow containers to share the host's IP address.",
+            "B": "To create an isolated network with built-in DNS resolution by container name.",
+            "C": "To connect containers across multiple Docker hosts.",
+            "D": "To disable all network connectivity for containers."
+          },
+          "correct_answer": "B",
+          "explanation": "User-defined bridge networks offer several advantages over the default bridge: they provide automatic DNS resolution for container names (allowing containers to find each other by name), better isolation, and can be managed more explicitly."
+        },
+        {
+          "question": "Which command is used to create a new user-defined bridge network?",
+          "options": {
+            "A": "`docker network link`",
+            "B": "`docker network create --driver bridge my_network`",
+            "C": "`docker bridge add my_network`",
+            "D": "`docker new network my_network`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker network create` command is used to create custom networks. Specifying `--driver bridge` creates a user-defined bridge network, which is the most common type for single-host deployments."
+        },
+        {
+          "question": "How do you connect a new container to an existing user-defined bridge network?",
+          "options": {
+            "A": "It connects automatically if the network exists.",
+            "B": "Using the `--link` flag.",
+            "C": "Using the `--network <network_name>` flag with `docker run`.",
+            "D": "By editing the container's configuration file."
+          },
+          "correct_answer": "C",
+          "explanation": "When running a new container, you use the `--network` flag to specify which user-defined network it should connect to (e.g., `docker run --network my_network my_image`)."
+        },
+        {
+          "question": "Which network driver is primarily used for connecting containers across multiple Docker hosts (e.g., in a Swarm cluster)?",
+          "options": {
+            "A": "Bridge",
+            "B": "Host",
+            "C": "Overlay",
+            "D": "Macvlan"
+          },
+          "correct_answer": "C",
+          "explanation": "The 'overlay' network driver is specifically designed for multi-host container networking. It creates a distributed network layer that allows containers on different Docker hosts to communicate seamlessly as if they were on the same network."
+        },
+        {
+          "question": "What does `docker network inspect <network_name>` show you?",
+          "options": {
+            "A": "The current network usage of the containers on that network.",
+            "B": "Detailed information about the network, including its configuration and connected containers.",
+            "C": "A list of all images available on that network.",
+            "D": "Errors encountered by the network."
+          },
+          "correct_answer": "B",
+          "explanation": "`docker network inspect` provides a JSON output with extensive details about a specific Docker network, such as its ID, driver, subnet, gateway, and a list of all containers currently attached to it."
+        },
+        {
+          "question": "Can you attach a running container to multiple Docker networks simultaneously?",
+          "options": {
+            "A": "No, a container can only be on one network at a time.",
+            "B": "Yes, using the `docker network connect` command.",
+            "C": "Only if they are all bridge networks.",
+            "D": "Only if they are all overlay networks."
+          },
+          "correct_answer": "B",
+          "explanation": "Yes, a container can be attached to multiple networks. You can connect a running container to an additional network using `docker network connect <network_name> <container_name>`."
+        },
+        {
+          "question": "What is the purpose of port publishing (e.g., `-p 8080:80`) in Docker networking?",
+          "options": {
+            "A": "To allow the container to access external websites.",
+            "B": "To enable communication between containers on the same internal network.",
+            "C": "To make a port inside the container accessible from the Docker host and potentially the outside world.",
+            "D": "To allocate more network bandwidth to the container."
+          },
+          "correct_answer": "C",
+          "explanation": "Port publishing (or port mapping) maps a port on the Docker host to a port inside the container. This allows external clients to connect to the service running inside the container via the host's IP address and the published port."
+        },
+        {
+          "question": "When using `--network host`, what is a potential security implication?",
+          "options": {
+            "A": "The container becomes inaccessible from outside the host.",
+            "B": "The container loses its internal IP address.",
+            "C": "The container has full access to the host's network interfaces and loopback device, reducing isolation.",
+            "D": "The container can only communicate with other containers on the same host."
+          },
+          "correct_answer": "C",
+          "explanation": "Using `--network host` means the container shares the host's network namespace. While it offers performance benefits, it reduces the network isolation provided by Docker, as the container's processes can bind to ports on the host and directly access network services available to the host."
+        },
+        {
+          "question": "What is Docker's built-in DNS service primarily used for in user-defined networks?",
+          "options": {
+            "A": "Resolving external domain names.",
+            "B": "Resolving container names to their IP addresses within the network.",
+            "C": "Resolving host machine IP addresses.",
+            "D": "Encrypting network traffic between containers."
+          },
+          "correct_answer": "B",
+          "explanation": "In user-defined bridge networks (and overlay networks), Docker provides an embedded DNS server. This allows containers to resolve each other's IP addresses by their container names, making inter-container communication much easier and more flexible than relying on hardcoded IP addresses."
+        },
+        {
+          "question": "Which command detaches a container from a specific network?",
+          "options": {
+            "A": "`docker network disconnect <network_name> <container_name>`",
+            "B": "`docker network remove <network_name> <container_name>`",
+            "C": "`docker disconnect <container_name> <network_name>`",
+            "D": "`docker rm -n <network_name> <container_name>`"
+          },
+          "correct_answer": "A",
+          "explanation": "The `docker network disconnect` command is used to disconnect a running container from a specific network. The container will remain running but will no longer be part of that particular network."
+        },
+        {
+          "question": "What is the purpose of the `--ip` flag when running a Docker container?",
+          "options": {
+            "A": "To assign a static IP address to the container on a specific network.",
+            "B": "To display the container's current IP address.",
+            "C": "To allow the container to access the internet.",
+            "D": "To prevent the container from getting an IP address."
+          },
+          "correct_answer": "A",
+          "explanation": "The `--ip` flag allows you to assign a specific static IP address to a container when connecting it to a user-defined network. This can be useful for applications that require predictable IP addresses, though it's often more flexible to rely on Docker's built-in DNS resolution."
+        },
+        {
+          "question": "What is a network alias in Docker?",
+          "options": {
+            "A": "An alternative name for a Docker network.",
+            "B": "An additional hostname that a container can be reached by within a user-defined network.",
+            "C": "A shortcut for a network driver.",
+            "D": "A temporary IP address assigned to a container."
+          },
+          "correct_answer": "B",
+          "explanation": "Network aliases allow containers to be discoverable by multiple names within a user-defined network. When a container is attached to a network, you can specify an alias for it (e.g., `--network-alias db-service`), allowing other containers on that network to reach it using either its container name or any of its aliases."
+        },
+        {
+          "question": "Which command is used to list all Docker networks available on your host?",
+          "options": {
+            "A": "`docker networks`",
+            "B": "`docker network ls`",
+            "C": "`docker info network`",
+            "D": "`docker show networks`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker network ls` command lists all the networks (bridge, host, none, and any user-defined networks) that exist on your Docker host, along with their IDs, names, and drivers."
+        },
+        {
+          "question": "True or False: Containers on different user-defined bridge networks on the same host can communicate directly without explicit port mapping or linking.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Containers on different user-defined bridge networks are isolated from each other. For them to communicate, you would typically need to connect one or both containers to both networks, or explicitly publish ports and communicate via the host's IP address and published port."
         }
-    ]
+      ]
+    }
+  ]
 }

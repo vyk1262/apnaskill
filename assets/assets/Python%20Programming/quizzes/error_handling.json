@@ -11,7 +11,8 @@
             "C": "A built-in function",
             "D": "A data structure"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. It's a way for Python to signal that something unexpected or erroneous has happened."
         },
         {
           "question": "Which keyword is used to handle exceptions in Python?",
@@ -21,7 +22,8 @@
             "C": "except",
             "D": "handle"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `try` block is where you place the code that might raise an exception. It's the first part of the `try-except` (or `try-except-else-finally`) statement used for exception handling."
         },
         {
           "question": "What does the 'finally' block do in exception handling?",
@@ -31,7 +33,8 @@
             "C": "Initializes variables",
             "D": "Defines functions"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `finally` block in a `try-except-finally` statement is guaranteed to execute, whether an exception occurred or not, and whether it was handled or not. It's typically used for cleanup operations, like closing files or network connections."
         },
         {
           "question": "How do you raise an exception in Python?",
@@ -41,7 +44,8 @@
             "C": "catch ExceptionName",
             "D": "handle ExceptionName"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `raise` statement is used to explicitly trigger an exception. You can raise built-in exceptions or custom exceptions defined by the user."
         },
         {
           "question": "What is the purpose of the 'assert' statement in Python?",
@@ -51,7 +55,8 @@
             "C": "To define functions",
             "D": "To initialize variables"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `assert` statement is used for debugging purposes to test if a condition is true. If the condition is false, it raises an `AssertionError`, indicating that something unexpected happened in the code logic."
         },
         {
           "question": "Which built-in function is used to get the type of an exception?",
@@ -61,7 +66,8 @@
             "C": "getattr()",
             "D": "exception_type()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `type()` built-in function returns the type (class) of an object. When used with an exception object, it will return the class of that exception."
         },
         {
           "question": "What is the purpose of the 'logging' module in Python?",
@@ -71,7 +77,8 @@
             "C": "To define functions",
             "D": "To create data structures"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `logging` module provides a flexible framework for emitting log messages from Python programs. It's used to record events that happen during the execution of software, which can be useful for debugging, monitoring, and auditing."
         },
         {
           "question": "Which method of the 'logging' module is used to log an error message?",
@@ -81,7 +88,8 @@
             "C": "info()",
             "D": "log()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `logging.error()` method is specifically used to log messages with a severity level of `ERROR`. Other common methods include `debug()`, `info()`, `warning()`, and `critical()` for different severity levels."
         },
         {
           "question": "What is a common method for debugging in Python?",
@@ -91,7 +99,8 @@
             "C": "Using loops",
             "D": "Defining new functions"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A very common and simple method for debugging, especially for small scripts or quick checks, is to insert `print()` statements to inspect the values of variables at different points in the code to understand the program's state."
         },
         {
           "question": "What does the 'pdb' module provide in Python?",
@@ -101,7 +110,8 @@
             "C": "A logging utility",
             "D": "A testing framework"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `pdb` module provides the Python Debugger. It allows you to set breakpoints, step through code, inspect variables, and execute Python commands interactively during program execution, which is crucial for finding and fixing bugs."
         },
         {
           "question": "What is unit testing?",
@@ -111,7 +121,8 @@
             "C": "Testing user interfaces",
             "D": "Testing for performance issues"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Unit testing is a software testing method where individual units or components (like functions or methods) of a software are tested in isolation to validate that each unit performs as designed."
         },
         {
           "question": "Which framework is commonly used for unit testing in Python?",
@@ -121,7 +132,8 @@
             "C": "nose",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "`unittest` is Python's built-in unit testing framework. `pytest` and `nose` (or `nose2`) are popular third-party testing frameworks that offer more advanced features and often a simpler syntax. All three are commonly used for unit testing in Python."
         },
         {
           "question": "What does the 'setUp()' method do in a unit test?",
@@ -131,7 +143,8 @@
             "C": "Defines the main function",
             "D": "Initializes variables"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "In testing frameworks like `unittest`, the `setUp()` method is a special method that gets executed before each individual test method (test case) is run. It's used to set up the necessary test fixtures or preconditions."
         },
         {
           "question": "What is a test case in unit testing?",
@@ -141,7 +154,8 @@
             "C": "A debugging technique",
             "D": "A type of exception"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A test case in unit testing refers to a single, isolated scenario designed to verify a specific piece of code functionality or a particular behavior of a unit (e.g., a function or method) under defined conditions."
         },
         {
           "question": "Which assertion method checks for equality in unit tests?",
@@ -151,7 +165,8 @@
             "C": "assertIsNone()",
             "D": "assertRaises()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "In `unittest` and similar testing frameworks, `assertEqual(a, b)` is the assertion method used to check if the value of `a` is equal to the value of `b`."
         },
         {
           "question": "What is the purpose of the 'tearDown()' method in unit testing?",
@@ -161,7 +176,8 @@
             "C": "To define functions",
             "D": "To handle exceptions"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `tearDown()` method in unit testing frameworks is executed after each test method has completed. It's used to clean up any resources or state that were set up by `setUp()` or modified during the test, ensuring tests are isolated."
         },
         {
           "question": "What is the output of an unhandled exception in Python?",
@@ -171,7 +187,8 @@
             "C": "No output",
             "D": "A warning message"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "When an exception occurs in Python and is not caught by a `try-except` block, the program terminates, and Python prints a traceback, which is a detailed report of the sequence of calls that led to the exception, along with the error type and message."
         },
         {
           "question": "What keyword is used to catch exceptions in Python?",
@@ -181,7 +198,8 @@
             "C": "handle",
             "D": "try"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `except` keyword is used in conjunction with `try` to define a block of code that will be executed if a specific type of exception (or any exception) occurs within the corresponding `try` block. The `catch` keyword is used in other languages, but not Python."
         }
       ]
     }

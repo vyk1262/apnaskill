@@ -1,0 +1,207 @@
+{
+  "result": [
+    {
+      "topic": "Creating_Plots",
+      "questions": [
+        {
+          "question": "What is the primary function of the plot() method in Matplotlib?",
+          "options": {
+            "A": "To create line plots.",
+            "B": "To store data.",
+            "C": "To perform data analysis.",
+            "D": "To create bar charts."
+          },
+          "correct_answer": "A",
+          "explanation": "The plot() method in Matplotlib is primarily used to create line plots, providing a simple way to visualize data trends."
+        },
+        {
+          "question": "Which method is used to create scatter plots in Matplotlib?",
+          "options": {
+            "A": "scatter()",
+            "B": "plot()",
+            "C": "bar()",
+            "D": "hist()"
+          },
+          "correct_answer": "A",
+          "explanation": "The scatter() method in Matplotlib is used to create scatter plots, allowing for visualization of data points in two dimensions."
+        },
+        {
+          "question": "What is the purpose of the bar() method in Matplotlib?",
+          "options": {
+            "A": "To create bar charts.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The bar() method in Matplotlib is used to create bar charts, providing a visual representation of categorical data."
+        },
+        {
+          "question": "Which method is used to create histograms in Matplotlib?",
+          "options": {
+            "A": "hist()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The hist() method in Matplotlib is used to create histograms, allowing for visualization of data distribution."
+        },
+        {
+          "question": "What is the function of the pie() method in Matplotlib?",
+          "options": {
+            "A": "To create pie charts.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The pie() method in Matplotlib is used to create pie charts, providing a visual representation of data proportions."
+        },
+        {
+          "question": "Which method is used to create box plots in Matplotlib?",
+          "options": {
+            "A": "boxplot()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The boxplot() method in Matplotlib is used to create box plots, allowing for visualization of data distribution and outliers."
+        },
+        {
+          "question": "What is the purpose of the violinplot() method in Matplotlib?",
+          "options": {
+            "A": "To create violin plots.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The violinplot() method in Matplotlib is used to create violin plots, providing a visual representation of data distribution and density."
+        },
+        {
+          "question": "Which method is used to create heatmaps in Matplotlib?",
+          "options": {
+            "A": "imshow()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The imshow() method in Matplotlib is used to create heatmaps, allowing for visualization of data intensity."
+        },
+        {
+          "question": "What is the function of the contour() method in Matplotlib?",
+          "options": {
+            "A": "To create contour plots.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The contour() method in Matplotlib is used to create contour plots, providing a visual representation of data gradients."
+        },
+        {
+          "question": "Which method is used to create quiver plots in Matplotlib?",
+          "options": {
+            "A": "quiver()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The quiver() method in Matplotlib is used to create quiver plots, allowing for visualization of vector fields."
+        },
+        {
+          "question": "What is the purpose of the streamplot() method in Matplotlib?",
+          "options": {
+            "A": "To create stream plots.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The streamplot() method in Matplotlib is used to create stream plots, providing a visual representation of flow lines."
+        },
+        {
+          "question": "Which method is used to create polar plots in Matplotlib?",
+          "options": {
+            "A": "polar()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The polar() method in Matplotlib is used to create polar plots, allowing for visualization of data in polar coordinates."
+        },
+        {
+          "question": "What is the function of the hexbin() method in Matplotlib?",
+          "options": {
+            "A": "To create hexagonal bin plots.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The hexbin() method in Matplotlib is used to create hexagonal bin plots, providing a visual representation of data density."
+        },
+        {
+          "question": "Which method is used to create error bar plots in Matplotlib?",
+          "options": {
+            "A": "errorbar()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The errorbar() method in Matplotlib is used to create error bar plots, allowing for visualization of data variability."
+        },
+        {
+          "question": "What is the purpose of the stem() method in Matplotlib?",
+          "options": {
+            "A": "To create stem plots.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The stem() method in Matplotlib is used to create stem plots, providing a visual representation of data points and their stems."
+        },
+        {
+          "question": "Which method is used to create step plots in Matplotlib?",
+          "options": {
+            "A": "step()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The step() method in Matplotlib is used to create step plots, allowing for visualization of data changes in steps."
+        },
+        {
+          "question": "What is the function of the fill_between() method in Matplotlib?",
+          "options": {
+            "A": "To fill the area between two curves.",
+            "B": "To create line plots.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The fill_between() method in Matplotlib is used to fill the area between two curves, providing a visual representation of data range."
+        },
+        {
+          "question": "Which method is used to create stacked bar plots in Matplotlib?",
+          "options": {
+            "A": "bar() with stacked=True",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "hist()"
+          },
+          "correct_answer": "A",
+          "explanation": "The bar() method with stacked=True in Matplotlib is used to create stacked bar plots, allowing for visualization of cumulative data."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "result": [
+    {
+      "topic": "Deep_Learning_with_PySpark",
+      "questions": [
+        {
+          "question": "What is the primary reason for integrating PySpark with Deep Learning frameworks?",
+          "options": {
+            "A": "PySpark has built-in deep learning algorithms that outperform TensorFlow or PyTorch.",
+            "B": "To leverage Spark's distributed data processing capabilities for large datasets, which can then be fed into deep learning models.",
+            "C": "To replace the need for GPUs in deep learning training.",
+            "D": "To simplify the creation of deep learning model architectures."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark excels at large-scale ETL and data preparation, making it an ideal companion for deep learning frameworks that require massive datasets."
+        },
+        {
+          "question": "Which of the following is NOT a native deep learning library within PySpark's MLlib?",
+          "options": {
+            "A": "TensorFlow",
+            "B": "Keras",
+            "C": "PyTorch",
+            "D": "All of the above are external; MLlib provides traditional ML algorithms."
+          },
+          "correct_answer": "D",
+          "explanation": "MLlib focuses on traditional machine learning algorithms. Deep learning integration relies on external libraries like TensorFlow, Keras, or PyTorch."
+        },
+        {
+          "question": "What role does PySpark primarily play in a deep learning workflow involving large datasets?",
+          "options": {
+            "A": "It performs the actual neural network computations on GPUs.",
+            "B": "It acts as a powerful engine for data loading, preprocessing, feature engineering, and sometimes distributed inference.",
+            "C": "It is used for hyperparameter tuning of deep learning models.",
+            "D": "It replaces the need for data scientists to write Python code."
+          },
+          "correct_answer": "B",
+          "explanation": "PySpark's strengths lie in scalable data handling. The deep learning model training itself is typically offloaded to specialized frameworks and hardware (GPUs)."
+        },
+        {
+          "question": "Which open-source framework is specifically designed to run distributed TensorFlow, Keras, and PyTorch training on Spark clusters?",
+          "options": {
+            "A": "Spark NLP",
+            "B": "Horovod",
+            "C": "DeepMind Lab",
+            "D": "OpenCV"
+          },
+          "correct_answer": "B",
+          "explanation": "Horovod is a widely used distributed training framework that integrates well with various deep learning libraries across different distributed systems, including Spark."
+        },
+        {
+          "question": "When using `spark-tensorflow-connector`, what file format is commonly used to efficiently read and write TensorFlow-compatible data with Spark DataFrames?",
+          "options": {
+            "A": "CSV",
+            "B": "JSON",
+            "C": "TFRecord",
+            "D": "Parquet"
+          },
+          "correct_answer": "C",
+          "explanation": "TFRecord is a simple record-oriented binary format for machine learning data, optimized for TensorFlow consumption."
+        },
+        {
+          "question": "What is a common challenge when moving data from PySpark DataFrames to a deep learning framework for training?",
+          "options": {
+            "A": "Deep learning frameworks cannot read DataFrames.",
+            "B": "The overhead of converting Spark's distributed DataFrames into a format (e.g., NumPy arrays or tensors) consumable by the deep learning framework, especially when collecting data to the driver.",
+            "C": "PySpark does not support numerical data.",
+            "D": "Deep learning models cannot handle large numbers of features."
+          },
+          "correct_answer": "B",
+          "explanation": "Efficient data transfer between the distributed Spark environment and single-node deep learning training processes is a key concern."
+        },
+        {
+          "question": "How can Pandas UDFs (User-Defined Functions) in PySpark facilitate deep learning integration?",
+          "options": {
+            "A": "They allow for distributed training of neural networks directly within the UDF.",
+            "B": "They enable the application of arbitrary Python functions that can leverage Pandas and NumPy, useful for batching data or performing pre-inference preprocessing with deep learning models.",
+            "C": "They are exclusively for plotting deep learning results.",
+            "D": "They transform PySpark DataFrames into RDDs for deep learning."
+          },
+          "correct_answer": "B",
+          "explanation": "Pandas UDFs are very powerful for applying single-node Python libraries (like those used for DL inference on CPU/GPU) in a distributed manner over DataFrame partitions."
+        },
+        {
+          "question": "True or False: PySpark can directly utilize a GPU for training a deep learning model without any external libraries or configurations.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. PySpark itself is CPU-bound. To use GPUs for deep learning, you need external deep learning frameworks (TensorFlow, PyTorch) configured to use GPUs, and integration tools to bridge Spark's data processing with these GPU-accelerated training processes."
+        },
+        {
+          "question": "When would you typically use Spark to prepare data for deep learning, even if the actual training happens outside Spark (e.g., on a specialized GPU cluster)?",
+          "options": {
+            "A": "Only when the dataset is very small.",
+            "B": "When the raw data is too large to fit in memory on a single machine, requiring distributed processing for ETL, cleaning, and feature engineering before feeding it to the DL cluster.",
+            "C": "Never; deep learning frameworks handle all data preparation.",
+            "D": "Only for text data, not image data."
+          },
+          "correct_answer": "B",
+          "explanation": "Spark's strength in big data processing makes it ideal for the initial stages of the deep learning pipeline: ingestion, cleaning, and transformation."
+        },
+        {
+          "question": "Which concept relates to distributing the training of a deep learning model by splitting the data across multiple workers, with each worker holding a full copy of the model?",
+          "options": {
+            "A": "Model Parallelism",
+            "B": "Data Parallelism",
+            "C": "Feature Parallelism",
+            "D": "Hybrid Parallelism"
+          },
+          "correct_answer": "B",
+          "explanation": "Data parallelism is common for scaling deep learning, where mini-batches are processed in parallel, and gradients are aggregated."
+        },
+        {
+          "question": "What is Koalas, and how does it relate to deep learning with PySpark?",
+          "options": {
+            "A": "A new deep learning library within Spark.",
+            "B": "A project that implements the Pandas DataFrame API on top of PySpark DataFrames, making it easier for Pandas users to scale their code, which can then be used for data preparation before DL.",
+            "C": "A tool for model serving only.",
+            "D": "A system for visualizing neural network architectures."
+          },
+          "correct_answer": "B",
+          "explanation": "Koalas allows data scientists familiar with Pandas to easily write scalable data preparation code that runs on Spark, simplifying the transition to big data DL workflows."
+        },
+        {
+          "question": "Which of the following describes 'distributed inference' using PySpark for deep learning models?",
+          "options": {
+            "A": "Training the model across multiple nodes.",
+            "B": "Evaluating a pre-trained deep learning model on a large, distributed dataset, typically by distributing the data and applying the model in parallel using Pandas UDFs or similar mechanisms.",
+            "C": "Deploying the model to a web server.",
+            "D": "Tuning model hyperparameters automatically."
+          },
+          "correct_answer": "B",
+          "explanation": "Distributed inference is a common use case for PySpark, where the model is loaded on each worker and applied to partitions of the data."
+        },
+        {
+          "question": "For integrating PyTorch with PySpark, which library provides utilities for converting Spark DataFrames to PyTorch tensors and vice-versa, facilitating distributed training?",
+          "options": {
+            "A": "Spark NLP",
+            "B": "Spark MLlib",
+            "C": "There isn't one single official library; it often involves custom data loading/conversion or frameworks like Horovod.",
+            "D": "Delta Lake"
+          },
+          "correct_answer": "C",
+          "explanation": "While there are community efforts and patterns (like using Horovod with `torch.distributed.rpc`), a single official PyTorch-Spark connector isn't as prevalent as `spark-tensorflow-connector` was for TF."
+        },
+        {
+          "question": "If you're using `tf.data` for efficient data loading within TensorFlow, how can PySpark contribute to this pipeline for very large datasets?",
+          "options": {
+            "A": "PySpark can directly train the `tf.data.Dataset`.",
+            "B": "PySpark can generate TFRecord files or Parquet files from massive raw data, which can then be efficiently read by `tf.data.Dataset`.",
+            "C": "PySpark acts as a substitute for `tf.data`.",
+            "D": "PySpark automatically converts any DataFrame to a `tf.data.Dataset`."
+          },
+          "correct_answer": "B",
+          "explanation": "PySpark is excellent for preparing large-scale data into formats optimized for deep learning frameworks, which can then be consumed by their native data loading APIs."
+        },
+        {
+          "question": "What is the primary role of `Apache Arrow` in the context of PySpark and deep learning integration?",
+          "options": {
+            "A": "It's a deep learning framework for Spark.",
+            "B": "It's a columnar in-memory data format that enables efficient data transfer between JVM and Python processes, speeding up operations like `toPandas()` and Pandas UDFs.",
+            "C": "It's a tool for visualizing deep learning models.",
+            "D": "It's a new type of distributed file system."
+          },
+          "correct_answer": "B",
+          "explanation": "Apache Arrow significantly reduces serialization/deserialization overhead when converting data between Spark (JVM) and Python/Pandas, which is crucial for performance in DL workflows."
+        },
+        {
+          "question": "When serving a pre-trained deep learning model, how might PySpark be used?",
+          "options": {
+            "A": "To host the deep learning model directly on a Spark worker.",
+            "B": "To perform batch inference on large incoming datasets, where Spark distributes the data and applies the model predictions in parallel.",
+            "C": "To train the model in real-time.",
+            "D": "To monitor GPU temperatures."
+          },
+          "correct_answer": "B",
+          "explanation": "PySpark is well-suited for batch inference scenarios where a trained model needs to process a large volume of new data in a distributed manner."
+        },
+        {
+          "question": "True or False: You can train a deep learning model entirely within a PySpark DataFrame cell in a Jupyter notebook without needing external deep learning libraries.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. While PySpark can facilitate data preparation, the actual training of complex neural networks requires dedicated deep learning libraries like TensorFlow, Keras, or PyTorch."
+        },
+        {
+          "question": "What is the primary benefit of using `tf.distribute.Strategy` in TensorFlow when integrated with Spark for distributed training?",
+          "options": {
+            "A": "It automatically converts Spark DataFrames to TensorFlow datasets.",
+            "B": "It provides a simple API for distributing TensorFlow training across multiple GPUs or machines, which Spark can help orchestrate or provide data to.",
+            "C": "It creates a new Spark cluster.",
+            "D": "It replaces the need for an optimizer in TensorFlow."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow's distribution strategies are crucial for scaling up training within TensorFlow itself, and Spark often provides the distributed data and cluster resources for this."
+        },
+        {
+          "question": "When setting up a PySpark environment for deep learning, what is a crucial dependency you might need to ensure is available on your cluster nodes, beyond PySpark itself?",
+          "options": {
+            "A": "Only the Python standard library.",
+            "B": "The specific deep learning framework (e.g., TensorFlow, PyTorch) and potentially GPU drivers/libraries if using GPUs.",
+            "C": "A specific version of Java Runtime Environment (JRE).",
+            "D": "A web server (e.g., Nginx)."
+          },
+          "correct_answer": "B",
+          "explanation": "The deep learning framework and its dependencies (especially for GPU acceleration) must be present on the nodes where the actual model training/inference will occur."
+        },
+        {
+          "question": "What does 'model parallelism' (as opposed to data parallelism) conceptually involve in distributed deep learning?",
+          "options": {
+            "A": "Distributing the input data across multiple devices.",
+            "B": "Splitting the neural network model itself across multiple devices, with different layers or parts of the model residing on different machines/GPUs.",
+            "C": "Training multiple independent models simultaneously.",
+            "D": "Running multiple inference tasks concurrently."
+          },
+          "correct_answer": "B",
+          "explanation": "Model parallelism is used when the model itself is too large to fit into the memory of a single device. Spark might manage the data pipeline for such scenarios."
+        }
+      ]
+    }
+  ]
+}

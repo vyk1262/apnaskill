@@ -11,7 +11,8 @@
             "C": "Inspecting the data for inconsistencies and issues.",
             "D": "Standardizing or normalizing the data."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Before you can fix any issues, you must first understand what problems exist in your data. This involves exploring the data to identify missing values, inconsistencies, incorrect data types, outliers, and duplicates."
         },
         {
           "question": "Which Pandas method is commonly used to detect missing values?",
@@ -21,7 +22,8 @@
             "C": ".isnull()",
             "D": ".replace()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `.isnull()` (or its alias `.isna()`) method in Pandas returns a boolean DataFrame of the same shape as the original, indicating `True` where a value is missing (NaN) and `False` otherwise."
         },
         {
           "question": "How can you count the number of missing values in each column of a Pandas DataFrame `df`?",
@@ -31,7 +33,8 @@
             "C": "df.missing_count()",
             "D": "df.na.count()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`df.isnull()` returns a boolean DataFrame. When you apply `.sum()` to this boolean DataFrame, `True` values are treated as 1 and `False` as 0. Summing along the columns (the default behavior of `.sum()` on a DataFrame) therefore gives the count of `True` (missing) values for each column."
         },
         {
           "question": "What are the common strategies for handling missing values in a DataFrame?",
@@ -41,7 +44,8 @@
             "C": "Using more advanced imputation techniques.",
             "D": "All of the above."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All listed options are valid and commonly used strategies for handling missing data. The choice of strategy depends on the nature of the data, the percentage of missing values, and the impact on subsequent analysis."
         },
         {
           "question": "Which Pandas method is used to remove rows with missing values?",
@@ -51,7 +55,8 @@
             "C": ".remove_na()",
             "D": ".delete_na()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `.dropna()` method in Pandas is used to remove rows or columns containing missing values (NaN). By default, it removes rows that have at least one missing value."
         },
         {
           "question": "How can you remove columns with any missing values in a DataFrame `df`?",
@@ -61,7 +66,8 @@
             "C": "df.drop_columns_na(how='any')",
             "D": "Both A and B"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "To drop columns, you need to specify `axis=1` (or `axis='columns'`). The `how='any'` argument ensures that a column is dropped if *any* of its values are missing. Both `axis=1` and `axis='columns'` are equivalent."
         },
         {
           "question": "Which Pandas method is used to fill missing values?",
@@ -71,7 +77,8 @@
             "C": ".replace_na()",
             "D": ".impute()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `.fillna()` method is the primary Pandas function for replacing missing values (NaN) with a specified value, or using a method like forward-fill (`ffill`) or backward-fill (`bfill`)."
         },
         {
           "question": "How can you fill all missing values in a DataFrame `df` with the value 0?",
@@ -81,7 +88,8 @@
             "C": "df.impute(0)",
             "D": "df.fill(0)"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "You pass the desired replacement value directly to the `fillna()` method. The `value=` keyword argument is optional but improves readability."
         },
         {
           "question": "How can you fill missing values in a specific column 'Age' with the mean of that column?",
@@ -91,7 +99,8 @@
             "C": "df.loc[df['Age'].isnull(), 'Age'] = df['Age'].mean()",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All three options are correct ways to fill missing values in a specific column with its mean. \n- A is direct for a Series. \n- B uses a dictionary for DataFrame-wide `fillna` but targeting specific columns. \n- C uses boolean indexing for direct assignment."
         },
         {
           "question": "What are outliers in a dataset?",
@@ -101,7 +110,8 @@
             "C": "Values that are significantly different from other observations.",
             "D": "Missing values represented by NaN."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Outliers are data points that deviate significantly from other observations, often indicating variability in measurement, experimental errors, or a novelty."
         },
         {
           "question": "What are common methods for identifying outliers?",
@@ -111,7 +121,8 @@
             "C": "Machine learning techniques.",
             "D": "All of the above."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Outliers can be identified through various methods. Visualizations help in spotting them directly, statistical rules provide quantitative criteria, and advanced machine learning algorithms (like Isolation Forest or One-Class SVM) can detect complex outlier patterns."
         },
         {
           "question": "What is the Interquartile Range (IQR) method used for in outlier detection?",
@@ -121,7 +132,8 @@
             "C": "To measure the spread of the middle 50% of the data.",
             "D": "Both B and C."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The IQR is the range between the first quartile (Q1) and the third quartile (Q3), representing the middle 50% of the data. In outlier detection, values are considered outliers if they fall outside the 'fences' defined by $Q1 - 1.5 \times IQR$ and $Q3 + 1.5 \times IQR$."
         },
         {
           "question": "How can you replace outliers in a column 'Value' of a DataFrame `df` with the median of that column (assuming you've identified them)?",
@@ -131,7 +143,8 @@
             "C": "df['Value'].mask(df['Value'].isin(outlier_values), df['Value'].median())",
             "D": "Both B and C."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both B and C are valid and effective ways to replace specific values (identified as outliers) in a column. \n- B uses boolean indexing for direct assignment. \n- C uses the `.mask()` method, which replaces values where the condition is `True` with a specified replacement value."
         },
         {
           "question": "What are potential issues with inconsistent data?",
@@ -141,7 +154,8 @@
             "C": "Errors in data visualization.",
             "D": "All of the above."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Inconsistent data (e.g., 'USA' vs 'U.S.A.', mixed date formats, typos) can lead to erroneous calculations, prevent proper data integration, and produce misleading visualizations, ultimately compromising the validity of any conclusions drawn from the data."
         },
         {
           "question": "How can you handle inconsistent capitalization in string columns of a DataFrame?",
@@ -151,7 +165,8 @@
             "C": "Manually correcting each inconsistency.",
             "D": "Both A and B."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "To standardize capitalization, you can convert all strings to lowercase (`.str.lower()`), uppercase (`.str.upper()`), or title case (`.str.capitalize()`). The choice depends on the desired standard format for your data."
         },
         {
           "question": "How can you remove duplicate rows from a Pandas DataFrame `df`?",
@@ -161,7 +176,8 @@
             "C": "df.unique()",
             "D": "df.distinct()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "`df.drop_duplicates()` is the standard Pandas method for identifying and removing duplicate rows from a DataFrame. By default, it considers all columns to identify duplicates and keeps the first occurrence."
         },
         {
           "question": "How can you remove duplicate rows based on the values in specific columns ('ID', 'Name') of a DataFrame `df`?",
@@ -171,7 +187,8 @@
             "C": "df.unique(subset=['ID', 'Name'])",
             "D": "df.distinct(columns=['ID', 'Name'])"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `subset` argument in `drop_duplicates()` allows you to specify a list of column names. Pandas will then consider rows as duplicates only if they have identical values across all columns specified in the `subset`."
         },
         {
           "question": "What is data validation in the context of data cleaning?",
@@ -181,7 +198,8 @@
             "C": "The process of removing duplicate entries.",
             "D": "The process of transforming data into a consistent format."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data validation involves checking the data against predefined rules, constraints, or expected patterns to ensure its accuracy, integrity, and consistency. This might include checking data types, ranges of values, formats, or adherence to business logic."
         },
         {
           "question": "How can you ensure that values in a 'Category' column of a DataFrame only contain a predefined set of valid categories?",
@@ -191,7 +209,8 @@
             "C": "Creating a boolean mask and using it to select valid rows.",
             "D": "All of the above."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All three methods are useful for validating categorical data. \n- `df['Category'].isin(valid_categories)` creates a boolean Series, which can be used to filter. \n- `.replace()` can be used to standardize misspelled categories or turn invalid ones into NaNs. \n- Creating a boolean mask is a general technique for selection based on conditions."
         },
         {
           "question": "Why is data cleaning a crucial step in the data analysis process?",
@@ -201,7 +220,8 @@
             "C": "It reduces the size of the dataset.",
             "D": "It speeds up the computation time."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Clean data is paramount for accurate and reliable analysis. 'Garbage in, garbage out' applies here; if your data is flawed, any insights or models built upon it will also be flawed, leading to incorrect decisions."
         }
       ]
     }

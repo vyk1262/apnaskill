@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_security",
+      "questions": [
+        {
+          "question": "Which security vulnerability is React inherently good at mitigating due to its default rendering behavior?",
+          "options": {
+            "A": "SQL Injection",
+            "B": "Cross-Site Scripting (XSS)",
+            "C": "Cross-Site Request Forgery (CSRF)",
+            "D": "Broken Authentication"
+          },
+          "correct_answer": "B",
+          "explanation": "React automatically escapes values embedded in JSX, preventing malicious scripts from being injected into the DOM as part of the content, which is the core of XSS attacks."
+        },
+        {
+          "question": "When should you use `dangerouslySetInnerHTML` in React, and what is the primary security risk associated with it?",
+          "options": {
+            "A": "It should be used for all text rendering; the risk is performance degradation.",
+            "B": "It should only be used when rendering static, trusted HTML; the risk is XSS if the content is not sanitized.",
+            "C": "It's a debugging tool and safe to use in production; the risk is a larger bundle size.",
+            "D": "It's required for all dynamic content; the risk is CSRF."
+          },
+          "correct_answer": "B",
+          "explanation": "`dangerouslySetInnerHTML` bypasses React's escaping mechanism. It should only be used with content from a known, trusted source or content that has been rigorously sanitized to prevent XSS."
+        },
+        {
+          "question": "Where should sensitive API keys or secrets for backend services (e.g., database credentials) be stored in a production React application architecture?",
+          "options": {
+            "A": "Directly in the client-side JavaScript bundle as environment variables (e.g., `process.env.REACT_APP_SECRET_KEY`).",
+            "B": "In browser `localStorage` or `sessionStorage`.",
+            "C": "On the server-side only (e.g., in server environment variables or a secrets manager), accessed by the React app via authenticated API calls.",
+            "D": "Hardcoded in a separate JavaScript file that is git-ignored."
+          },
+          "correct_answer": "C",
+          "explanation": "Any sensitive data exposed on the client-side can be accessed by an attacker. Secrets must reside on the server and be securely managed and accessed via backend APIs."
+        },
+        {
+          "question": "What is the primary purpose of Content Security Policy (CSP) in securing a React application?",
+          "options": {
+            "A": "To encrypt data transmitted over the network.",
+            "B": "To prevent brute-force login attempts.",
+            "C": "To specify trusted sources for content (scripts, styles, images, etc.), mitigating XSS and data injection attacks by restricting what the browser can load.",
+            "D": "To manage cross-origin resource sharing (CORS)."
+          },
+          "correct_answer": "C",
+          "explanation": "CSP acts as an additional layer of security by instructing the browser to only execute or render resources loaded from specified trusted domains."
+        },
+        {
+          "question": "To protect against Cross-Site Request Forgery (CSRF) in a React application communicating with a backend, what is a common and effective mitigation strategy?",
+          "options": {
+            "A": "Only using GET requests for all data fetching.",
+            "B": "Implementing anti-CSRF tokens (e.g., synchronizer token, double-submit cookie) on the backend and verifying them on each state-changing request.",
+            "C": "Storing all user data in browser `localStorage`.",
+            "D": "Disabling all HTTP-only cookies."
+          },
+          "correct_answer": "B",
+          "explanation": "CSRF tokens ensure that requests that change state (like POST, PUT, DELETE) originate from the legitimate application, not a forged request from another site."
+        },
+        {
+          "question": "Why is client-side input validation alone insufficient for security in a React application?",
+          "options": {
+            "A": "It makes the application slower.",
+            "B": "Client-side validation can be bypassed by attackers, requiring server-side validation for true security.",
+            "C": "It is difficult to implement in React.",
+            "D": "It only checks for data type, not content."
+          },
+          "correct_answer": "B",
+          "explanation": "Client-side validation is good for user experience, but it's easily bypassed. All input must be validated and sanitized on the server before processing or storing to prevent injection attacks."
+        },
+        {
+          "question": "Which method of storing authentication tokens (e.g., JWTs) on the client-side is generally considered most secure against XSS attacks?",
+          "options": {
+            "A": "Storing in `localStorage`.",
+            "B": "Storing in `sessionStorage`.",
+            "C": "Storing in JavaScript variables in React state.",
+            "D": "Using `HttpOnly` cookies set by the server."
+          },
+          "correct_answer": "D",
+          "explanation": "`HttpOnly` cookies are not accessible via client-side JavaScript, which prevents malicious scripts (from XSS) from stealing the token directly."
+        },
+        {
+          "question": "What is the purpose of 'Dependency Auditing' (e.g., `npm audit`, `yarn audit`) in a React project?",
+          "options": {
+            "A": "To optimize the application's build process.",
+            "B": "To check for unused dependencies.",
+            "C": "To scan project dependencies for known security vulnerabilities and suggest fixes.",
+            "D": "To enforce coding style guidelines."
+          },
+          "correct_answer": "C",
+          "explanation": "Third-party libraries can contain vulnerabilities. Regularly auditing dependencies helps identify and mitigate these risks by updating to secure versions or finding alternatives."
+        },
+        {
+          "question": "Why is 'HTTPS' essential for all deployed React applications, especially those handling sensitive data?",
+          "options": {
+            "A": "It makes the application load faster.",
+            "B": "It encrypts data in transit, protecting against eavesdropping, tampering, and ensuring data integrity and authenticity.",
+            "C": "It's only required for server-side rendered (SSR) applications.",
+            "D": "It automatically handles all security headers."
+          },
+          "correct_answer": "B",
+          "explanation": "HTTPS (using SSL/TLS) establishes a secure connection, preventing attackers from intercepting or modifying data exchanged between the client and server."
+        },
+        {
+          "question": "What is a potential security risk when a React application relies heavily on Server-Side Rendering (SSR) without proper precautions?",
+          "options": {
+            "A": "Increased client-side processing.",
+            "B": "Exposure to SSR injection attacks if user input is not properly sanitized before being rendered on the server.",
+            "C": "Slower initial page load times.",
+            "D": "Difficulty in managing client-side state."
+          },
+          "correct_answer": "B",
+          "explanation": "If user-controlled data is rendered directly on the server without proper escaping or sanitization, it can lead to code injection vulnerabilities during the server-side rendering process."
+        },
+        {
+          "question": "Which HTTP security header prevents a webpage from being embedded in an iframe on another site, mitigating 'Clickjacking' attacks?",
+          "options": {
+            "A": "Strict-Transport-Security",
+            "B": "X-Content-Type-Options",
+            "C": "X-Frame-Options",
+            "D": "Referrer-Policy"
+          },
+          "correct_answer": "C",
+          "explanation": "The `X-Frame-Options` header (e.g., `DENY` or `SAMEORIGIN`) instructs the browser whether to allow the page to be displayed in a frame or iframe."
+        },
+        {
+          "question": "Why should sensitive data (like unencrypted personal information) never be stored in browser `localStorage` or `sessionStorage` in a React application?",
+          "options": {
+            "A": "It takes up too much space.",
+            "B": "It is synchronous and blocks the main thread.",
+            "C": "It is not encrypted and can be accessed by any JavaScript running on the same origin (e.g., via XSS).",
+            "D": "Data stored there expires too quickly."
+          },
+          "correct_answer": "C",
+          "explanation": "Both `localStorage` and `sessionStorage` are client-side storage mechanisms directly accessible via JavaScript, making them vulnerable if an XSS attack occurs."
+        },
+        {
+          "question": "When fetching data from an API, which security feature controls which origins are allowed to make requests to your server?",
+          "options": {
+            "A": "WebSocket Security",
+            "B": "JSON Web Tokens (JWT)",
+            "C": "Cross-Origin Resource Sharing (CORS)",
+            "D": "Server-Sent Events (SSE)"
+          },
+          "correct_answer": "C",
+          "explanation": "CORS is a browser security mechanism that restricts cross-origin HTTP requests made from scripts unless the server explicitly grants permission."
+        },
+        {
+          "question": "What is 'Rate Limiting' on an API endpoint, and why is it important for a React application's security?",
+          "options": {
+            "A": "It limits the data transfer speed to the client.",
+            "B": "It restricts the number of requests a client can make in a given timeframe, preventing abuse, brute-force attacks, and Denial of Service (DoS) attacks.",
+            "C": "It limits the number of concurrent users.",
+            "D": "It prioritizes API requests based on user role."
+          },
+          "correct_answer": "B",
+          "explanation": "Rate limiting protects your backend API from being overwhelmed or exploited by malicious clients making excessive requests."
+        },
+        {
+          "question": "When rendering user-provided URLs in an `<a>` tag, what is a critical security precaution to take in React?",
+          "options": {
+            "A": "Ensure the URL starts with `javascript:` to make it executable.",
+            "B": "Always use `target='_blank'`.",
+            "C": "Sanitize and validate the URL to ensure it uses safe protocols (e.g., `http`, `https`) and does not contain malicious schemes like `javascript:`.",
+            "D": "Encode the entire URL using `encodeURIComponent`."
+          },
+          "correct_answer": "C",
+          "explanation": "Malicious `javascript:` URLs in `href` attributes can lead to XSS. Always validate URLs, ideally against a whitelist of safe protocols."
+        },
+        {
+          "question": "Why should you regularly update your React framework and its dependencies?",
+          "options": {
+            "A": "To gain access to new experimental features.",
+            "B": "To ensure compatibility with older browsers.",
+            "C": "To receive critical security patches, bug fixes, and performance improvements.",
+            "D": "To increase the application's build time."
+          },
+          "correct_answer": "C",
+          "explanation": "Outdated software is a common source of vulnerabilities. Keeping dependencies updated ensures you benefit from the latest security advisories and fixes."
+        },
+        {
+          "question": "What is the principle of 'Least Privilege' in the context of a React application accessing backend resources?",
+          "options": {
+            "A": "Granting all users full administrative access by default.",
+            "B": "Giving an application or user only the minimum necessary permissions to perform its required functions, nothing more.",
+            "C": "Limiting the number of users who can access the application.",
+            "D": "Allowing public access to all API endpoints."
+          },
+          "correct_answer": "B",
+          "explanation": "Applying the principle of least privilege reduces the potential impact of a security breach by limiting what an attacker can do if they compromise a part of your system."
+        },
+        {
+          "question": "What is a common pitfall regarding environment variables (e.g., `REACT_APP_...`) in client-side React applications?",
+          "options": {
+            "A": "They make the application run slower.",
+            "B": "They are only accessible during development, not in production.",
+            "C": "Any variable prefixed with `REACT_APP_` is bundled into the client-side JavaScript and is therefore publicly visible, even if stored in a `.env` file.",
+            "D": "They prevent the use of `useState`."
+          },
+          "correct_answer": "C",
+          "explanation": "While `.env` files are not committed to Git, `create-react-app` (and similar build tools) injects these variables into the final JavaScript bundle, making them accessible to anyone inspecting the deployed app. Sensitive secrets should *never* be stored this way."
+        },
+        {
+          "question": "When using third-party libraries for UI components or utilities, what security best practice should be followed?",
+          "options": {
+            "A": "Assume all third-party libraries are secure by default.",
+            "B": "Only use libraries with a large number of downloads.",
+            "C": "Regularly audit them for known vulnerabilities, verify their source, and prefer well-maintained libraries from trusted sources.",
+            "D": "Avoid using any third-party libraries whatsoever."
+          },
+          "correct_answer": "C",
+          "explanation": "Third-party libraries are a common source of vulnerabilities. Due diligence in selection, regular auditing, and keeping them updated are essential."
+        },
+        {
+          "question": "What is the primary security concern when handling JSON data from an API and embedding it directly into the HTML using server-side rendering (SSR) without proper escaping?",
+          "options": {
+            "A": "Performance bottlenecks due to large JSON payloads.",
+            "B": "Potential for JSON injection, where malicious HTML/JavaScript within the JSON can be executed by the browser.",
+            "C": "Increased memory consumption on the server.",
+            "D": "Difficulty in parsing the JSON on the client-side."
+          },
+          "correct_answer": "B",
+          "explanation": "If JSON data contains unescaped HTML or script tags and is directly embedded into a server-rendered page, it can lead to XSS vulnerabilities. The data must be properly serialized and escaped."
+        }
+      ]
+    }
+  ]
+}

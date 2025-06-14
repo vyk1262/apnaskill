@@ -1,0 +1,225 @@
+{
+  "result": [
+    {
+      "topic": "git_optimization",
+      "questions": [
+        {
+          "question": "What is the primary goal of Git repository optimization?",
+          "options": {
+            "A": "To encrypt all repository data.",
+            "B": "To reduce repository size, improve clone/fetch/push speeds, and enhance overall Git command performance.",
+            "C": "To automatically resolve all merge conflicts.",
+            "D": "To change the default branch name."
+          },
+          "correct_answer": "B",
+          "explanation": "Optimization focuses on efficiency, making Git faster and more manageable, especially for large repositories."
+        },
+        {
+          "question": "Which Git command is used to clean up unnecessary files and pack objects in the repository, making it more efficient?",
+          "options": {
+            "A": "`git clean -f`",
+            "B": "`git gc` (garbage collect)",
+            "C": "`git prune`",
+            "D": "`git reset --hard`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git gc` reorganizes the repository's internal data, compressing objects and removing unreachable ones, significantly reducing its size and improving performance."
+        },
+        {
+          "question": "What happens to 'loose objects' when `git gc` runs?",
+          "options": {
+            "A": "They are deleted.",
+            "B": "They are moved to the working directory.",
+            "C": "They are packed into larger 'packfiles' for more efficient storage.",
+            "D": "They are ignored."
+          },
+          "correct_answer": "C",
+          "explanation": "Packing loose objects into packfiles is a key optimization technique, as it allows Git to store them more compactly using delta compression."
+        },
+        {
+          "question": "What is the primary benefit of a 'shallow clone' (e.g., `git clone --depth 1`)?",
+          "options": {
+            "A": "It clones the entire history, but with a smaller working directory.",
+            "B": "It only clones the latest commit(s) without the full history, significantly reducing clone time and disk space, especially for large repositories.",
+            "C": "It encrypts the repository during cloning.",
+            "D": "It allows cloning without an internet connection."
+          },
+          "correct_answer": "B",
+          "explanation": "Shallow clones are perfect for CI/CD pipelines or environments where only the most recent code is needed, not the entire historical archive."
+        },
+        {
+          "question": "Why is `git repack` sometimes run manually, even though `git gc` does it automatically?",
+          "options": {
+            "A": "To remove untracked files.",
+            "B": "To force a repack with different strategies (e.g., more aggressively) or after specific operations, to optimize object storage.",
+            "C": "To rebase commits.",
+            "D": "To restore lost commits."
+          },
+          "correct_answer": "B",
+          "explanation": "`git repack` explicitly reorganizes packfiles, and can be used to optimize repository structure in ways `git gc` might not always do by default."
+        },
+        {
+          "question": "What does `git prune` do?",
+          "options": {
+            "A": "Deletes all local branches.",
+            "B": "Removes unreachable (dangling) objects from the object database that are not referenced by any commit, tag, or branch.",
+            "C": "Removes files from the working directory.",
+            "D": "Trims the commit history."
+          },
+          "correct_answer": "B",
+          "explanation": "`git prune` specifically targets dangling objects, which `git gc` also does as part of its operation but `prune` can be run independently."
+        },
+        {
+          "question": "If you have a very large file that was accidentally committed multiple times throughout history, bloating your repository, what is the most effective way to permanently remove it and shrink the repo size?",
+          "options": {
+            "A": "`git rm large_file.bin`",
+            "B": "`git revert <commit-hash>`",
+            "C": "Using history rewriting tools like `git filter-repo` or BFG Repo-Cleaner to permanently scrub the file from all history.",
+            "D": "`git gc --aggressive`"
+          },
+          "correct_answer": "C",
+          "explanation": "Regular `git rm` only removes the file from the HEAD, not its historical presence. Tools like `git filter-repo` are necessary for full historical purging, which will reduce the repository size after a `git gc`."
+        },
+        {
+          "question": "How can `git sparse-checkout` help optimize your Git workflow, especially with monorepos?",
+          "options": {
+            "A": "It automatically squashes commits.",
+            "B": "It allows you to clone only a subset of directories or files from a repository into your working directory, reducing disk space and increasing checkout speed.",
+            "C": "It removes old branches.",
+            "D": "It optimizes network connections for Git."
+          },
+          "correct_answer": "B",
+          "explanation": "For projects with many unrelated components in a single repository, sparse checkout lets developers only download and work with the relevant parts."
+        },
+        {
+          "question": "What is the benefit of configuring a 'credential helper' (e.g., `cache`, `store`, `osxkeychain`) for Git?",
+          "options": {
+            "A": "It encrypts all local files.",
+            "B": "It reduces network latency during Git operations.",
+            "C": "It securely stores and retrieves your authentication credentials, avoiding repeated prompts and improving convenience for network operations.",
+            "D": "It optimizes local disk I/O."
+          },
+          "correct_answer": "C",
+          "explanation": "While primarily a security/convenience feature, by avoiding constant credential re-entry, it contributes to a smoother and faster workflow for network-bound Git operations."
+        },
+        {
+          "question": "True or False: Using SSH for Git remote operations can sometimes be faster than HTTPS due to SSH's connection multiplexing capabilities.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. While both are performant, SSH can sometimes offer advantages in terms of connection reuse and overhead for frequent operations."
+        },
+        {
+          "question": "What is the purpose of the `core.autocrlf` configuration in Git, and how can its incorrect setting affect cross-platform collaboration?",
+          "options": {
+            "A": "It optimizes branch merging.",
+            "B": "It handles line ending conversions (CRLF vs LF); incorrect settings can lead to unintended 'changes' in files when collaborating across Windows/Linux/macOS, causing unnecessary diffs and merge conflicts.",
+            "C": "It automatically compresses files.",
+            "D": "It configures Git's caching mechanism."
+          },
+          "correct_answer": "B",
+          "explanation": "Line ending issues can be a significant annoyance and source of 'phantom' changes in cross-platform projects, making careful configuration important."
+        },
+        {
+          "question": "When developing on a large project with many contributors, why is it beneficial to frequently run `git fetch` (or `git pull --rebase`)?",
+          "options": {
+            "A": "To increase repository size.",
+            "B": "To ensure your local branch is up-to-date with upstream changes, minimizing complex merge conflicts later and making your history cleaner if you rebase.",
+            "C": "To download new Git commands.",
+            "D": "To delete old remote branches."
+          },
+          "correct_answer": "B",
+          "explanation": "Frequent synchronization reduces the amount of divergence between your work and the main line, making integration smoother and faster."
+        },
+        {
+          "question": "What are 'packfiles' in Git's object database?",
+          "options": {
+            "A": "Temporary files created during merges.",
+            "B": "Compressed collections of Git objects (blobs, trees, commits) stored efficiently using delta compression, improving storage and transfer performance.",
+            "C": "Files containing repository configuration.",
+            "D": "Encrypted backups of the repository."
+          },
+          "correct_answer": "B",
+          "explanation": "Packfiles are how Git stores most of its data efficiently, making repository operations faster than if every object was stored individually as a 'loose object'."
+        },
+        {
+          "question": "How can optimizing `.gitignore` files contribute to overall Git performance?",
+          "options": {
+            "A": "By ignoring all files, speeding up operations.",
+            "B": "By preventing Git from unnecessarily tracking, indexing, and processing large or frequently changing generated files (like `node_modules`, build artifacts), speeding up `git status`, `git add`, and commits.",
+            "C": "By encrypting ignored files.",
+            "D": "By compressing the repository size."
+          },
+          "correct_answer": "B",
+          "explanation": "A well-maintained `.gitignore` prevents bloat and unnecessary work for Git, leading to faster local operations."
+        },
+        {
+          "question": "What is `git config --global gc.auto 0` used for?",
+          "options": {
+            "A": "To disable automatic garbage collection, potentially useful for very large or constantly changing repositories to schedule `git gc` manually.",
+            "B": "To enable aggressive garbage collection.",
+            "C": "To clean the working directory automatically.",
+            "D": "To configure automatic merging."
+          },
+          "correct_answer": "A",
+          "explanation": "Disabling auto-gc can be useful in specific scenarios to prevent performance hits during 'random' auto-gc runs, allowing administrators to schedule it during off-peak hours."
+        },
+        {
+          "question": "When creating a new repository for a very large project, why might you consider starting with `git init --bare` on a server and then having developers clone from it, rather than just using a regular `git init` on a developer's machine and pushing?",
+          "options": {
+            "A": "Bare repos are faster for initial development.",
+            "B": "Bare repos are optimized for server-side operations (push/pull target) and don't include a working directory, which is more efficient for central management.",
+            "C": "Bare repos are automatically encrypted.",
+            "D": "Bare repos allow for easier merge conflict resolution."
+          },
+          "correct_answer": "B",
+          "explanation": "Bare repos are lean, server-side containers for Git history without the overhead of a working directory, making them ideal for central shared repositories."
+        },
+        {
+          "question": "What is the typical impact on repository size and performance if you frequently commit large binary files without using Git LFS?",
+          "options": {
+            "A": "No significant impact.",
+            "B": "It dramatically increases repository size and slows down cloning, fetching, and other operations for all users.",
+            "C": "It only affects the individual who commits the file.",
+            "D": "It makes rebasing faster."
+          },
+          "correct_answer": "B",
+          "explanation": "Git's design is optimized for text-based changes. Large binaries, when frequently modified, create many full-copy objects in history, leading to significant bloat."
+        },
+        {
+          "question": "How can configuring a `post-receive` hook on a bare server-side repository contribute to deployment optimization?",
+          "options": {
+            "A": "It automatically shrinks the repository.",
+            "B": "It allows for automated deployment workflows (e.g., checking out the latest code to a web server) immediately after a successful push, streamlining the CI/CD process.",
+            "C": "It encrypts pushed data.",
+            "D": "It resolves merge conflicts on the server."
+          },
+          "correct_answer": "B",
+          "explanation": "Automating deployment with hooks reduces manual steps and accelerates the time from commit to live application."
+        },
+        {
+          "question": "True or False: Using Git's built-in `index.cache` can significantly speed up `git status` and `git add` operations by caching file system information.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. The index (staging area) acts as a cache for file information, allowing Git to quickly determine what has changed without rescanning the entire working directory every time."
+        },
+        {
+          "question": "For very large repositories with a long history, why might a 'shallow clone' be a good choice for ephemeral environments like CI/CD build agents?",
+          "options": {
+            "A": "It requires more disk space.",
+            "B": "It increases build time.",
+            "C": "It reduces the amount of data transferred and stored, making clone operations much faster and saving resources in short-lived environments.",
+            "D": "It allows local development on the build agent."
+          },
+          "correct_answer": "C",
+          "explanation": "In CI/CD, the goal is often speed and efficiency for building and testing, and a shallow clone serves this purpose perfectly by minimizing overhead."
+        }
+      ]
+    }
+  ]
+}

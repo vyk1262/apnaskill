@@ -11,7 +11,8 @@
             "C": "Descriptive statistics deal with qualitative data, while inferential statistics deal with quantitative data.",
             "D": "There is no significant difference between them."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Descriptive statistics aim to summarize and describe the characteristics of a dataset (e.g., mean, median, standard deviation, histograms). Inferential statistics, on the other hand, use techniques to draw conclusions or make predictions about a larger population based on data from a smaller sample, often involving hypothesis testing and confidence intervals."
         },
         {
           "question": "Which of the following is a measure of central tendency?",
@@ -21,7 +22,8 @@
             "C": "Median",
             "D": "Range"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Measures of central tendency aim to describe the 'center' or typical value of a dataset. The mean, median, and mode are the three most common measures. Standard deviation, variance, and range are measures of dispersion or spread."
         },
         {
           "question": "What does the variance of a dataset measure?",
@@ -31,7 +33,8 @@
             "C": "The shape of the data distribution.",
             "D": "The most frequent value in the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Variance quantifies how far data points in a dataset are spread out from their average value (the mean). A higher variance indicates that data points are widely dispersed, while a lower variance indicates that data points are clustered closer to the mean."
         },
         {
           "question": "What is a probability distribution?",
@@ -41,7 +44,8 @@
             "C": "A graph that displays the relationship between two variables.",
             "D": "A measure of the central tendency of a dataset."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A probability distribution describes all the possible values a random variable can take within a given range and the likelihood (probability) of each value occurring. It can be represented by a table, graph, or mathematical formula."
         },
         {
           "question": "Which of the following is an example of a discrete probability distribution?",
@@ -51,7 +55,8 @@
             "C": "Binomial distribution",
             "D": "Uniform distribution (continuous)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Discrete probability distributions deal with variables that can only take on a finite or countably infinite number of distinct values (e.g., number of heads in coin flips, number of defects). The Binomial distribution is a classic example, representing the probability of a number of successes in a fixed number of independent Bernoulli trials. Normal, Exponential, and continuous Uniform distributions are for continuous variables."
         },
         {
           "question": "What is the Central Limit Theorem?",
@@ -61,7 +66,8 @@
             "C": "It states that the distribution of sample means will tend to be normally distributed as the sample size increases, regardless of the shape of the original population distribution.",
             "D": "It is used to calculate the probability of rare events."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The Central Limit Theorem (CLT) is a fundamental theorem in statistics. It states that, given a sufficiently large sample size, the sampling distribution of the mean of a set of random variables will be approximately normally distributed, regardless of the shape of the individual variable's population distribution. This theorem is crucial for many inferential statistical tests."
         },
         {
           "question": "What is a hypothesis test?",
@@ -71,7 +77,8 @@
             "C": "A way to visualize the distribution of data.",
             "D": "A technique for cleaning and preprocessing data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A hypothesis test is a statistical method that uses sample data to decide whether to accept or reject a statement (hypothesis) about a population parameter. It involves setting up a null and alternative hypothesis, collecting data, calculating a test statistic, and comparing it to a critical value or p-value."
         },
         {
           "question": "What is the null hypothesis ($H_0$) in hypothesis testing?",
@@ -81,7 +88,8 @@
             "C": "The alternative hypothesis.",
             "D": "The hypothesis based on the sample data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The null hypothesis ($H_0$) is a statement that there is no statistical significance between two observed phenomena, or that there is no difference between a sample mean and a population mean. It's the assumption you start with and try to find evidence against. The researcher typically aims to reject the null hypothesis in favor of the alternative hypothesis."
         },
         {
           "question": "What is the p-value in hypothesis testing?",
@@ -91,7 +99,8 @@
             "C": "The probability of observing data as extreme as, or more extreme than, the data collected if the null hypothesis were true.",
             "D": "The probability of the alternative hypothesis being true."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The p-value (probability value) is the probability of obtaining test results at least as extreme as the observed results, assuming that the null hypothesis is true. A small p-value (typically less than the significance level $alpha$) suggests that the observed data is unlikely under the null hypothesis, leading to its rejection."
         },
         {
           "question": "What is the significance level ($alpha$) in hypothesis testing?",
@@ -101,7 +110,8 @@
             "C": "The p-value of the test.",
             "D": "The power of the test."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The significance level, denoted by $alpha$ (alpha), is a pre-determined probability of rejecting the null hypothesis when it is, in fact, true (making a Type I error). Common values for $alpha$ are 0.05 or 0.01. If the p-value is less than or equal to $alpha$, the null hypothesis is rejected."
         },
         {
           "question": "What is a Type I error in hypothesis testing?",
@@ -111,7 +121,8 @@
             "C": "Incorrectly calculating the p-value.",
             "D": "Choosing the wrong statistical test."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A Type I error (also known as a false positive) occurs when you incorrectly reject a true null hypothesis. The probability of making a Type I error is equal to the significance level ($alpha$) set for the test."
         },
         {
           "question": "What is a Type II error in hypothesis testing?",
@@ -121,7 +132,8 @@
             "C": "Using an inappropriate significance level.",
             "D": "Misinterpreting the results of the test."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A Type II error (also known as a false negative) occurs when you fail to reject a false null hypothesis. This means you conclude there is no significant effect or difference when one actually exists in the population. The probability of a Type II error is denoted by $\beta$ (beta)."
         },
         {
           "question": "What is correlation?",
@@ -131,7 +143,8 @@
             "C": "A visual representation of the relationship between two variables.",
             "D": "A method for predicting future values based on past data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Correlation is a statistical measure that expresses the extent to which two variables are linearly related (i.e., they change together at a constant rate). It indicates both the strength and direction of the linear relationship, but it does not imply causation."
         },
         {
           "question": "What does a correlation coefficient of -1 indicate?",
@@ -141,7 +154,8 @@
             "C": "A strong negative linear relationship.",
             "D": "A perfect non-linear relationship."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A correlation coefficient (like Pearson's r) ranges from -1 to +1. A value of -1 indicates a perfect negative linear relationship, meaning as one variable increases, the other decreases proportionally. A value of +1 indicates a perfect positive linear relationship, and 0 indicates no linear relationship."
         },
         {
           "question": "What is regression analysis?",
@@ -151,7 +165,8 @@
             "C": "A way to group data points into clusters.",
             "D": "A technique for visualizing the distribution of a single variable."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Regression analysis is a powerful statistical technique used to understand and model the relationship between a dependent variable (the outcome you want to predict) and one or more independent variables (the predictors). It aims to find the best-fitting line or curve that describes how the dependent variable changes with changes in the independent variables."
         },
         {
           "question": "In simple linear regression, what does the slope of the regression line represent?",
@@ -161,7 +176,8 @@
             "C": "The point where the regression line intersects the y-axis.",
             "D": "The strength of the linear relationship between the variables."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In simple linear regression ($Y = \beta_0 + \beta_1 X$), the slope ($\beta_1$) represents the estimated average change in the dependent variable (Y) for every one-unit increase in the independent variable (X), assuming all other factors are held constant. The y-intercept ($\beta_0$) is where the line crosses the y-axis."
         },
         {
           "question": "What is statistical power?",
@@ -171,7 +187,8 @@
             "C": "The significance level of the test.",
             "D": "The size of the sample used in the hypothesis test."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Statistical power is the probability that a statistical test will correctly reject a false null hypothesis. In other words, it is the probability of detecting an effect or difference when an effect or difference actually exists in the population. Power is typically set at 0.80, meaning an 80% chance of detecting a true effect."
         },
         {
           "question": "What is the difference between a population and a sample?",
@@ -181,7 +198,8 @@
             "C": "Population refers to categorical data, while sample refers to numerical data.",
             "D": "There is no difference between them in statistical analysis."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A population refers to the entire group of individuals, objects, or data points that a researcher is interested in studying. A sample is a smaller, manageable subset of that population, selected for the purpose of conducting research and making inferences about the entire population."
         },
         {
           "question": "What is sampling bias?",
@@ -191,7 +209,8 @@
             "C": "A bias introduced during the analysis phase.",
             "D": "A bias caused by outliers in the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Sampling bias occurs when the method of selecting a sample results in a sample that is not truly representative of the population it is intended to represent. This systematic error can lead to misleading conclusions because certain individuals or groups in the population are more likely to be included (or excluded) than others."
         },
         {
           "question": "Why are statistical foundations important for data analytics?",
@@ -201,7 +220,8 @@
             "C": "They are only important for academic research, not practical applications.",
             "D": "They primarily dictate the choice of visualization techniques."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Statistical foundations are crucial for data analytics because they provide the theoretical basis for data collection, organization, analysis, interpretation, and presentation. Without a solid understanding of statistics, data analysts risk misinterpreting data, drawing incorrect conclusions, making biased decisions, and failing to provide truly evidence-based insights."
         }
       ]
     }

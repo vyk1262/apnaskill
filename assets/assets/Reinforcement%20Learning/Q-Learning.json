@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Q-Learning",
+      "questions": [
+        {
+          "question": "Which category of Reinforcement Learning algorithms does Q-Learning belong to?",
+          "options": {
+            "A": "Model-based and on-policy.",
+            "B": "Model-free and off-policy.",
+            "C": "Model-based and off-policy.",
+            "D": "Model-free and on-policy."
+          },
+          "correct_answer": "B",
+          "explanation": "Q-Learning learns directly from interaction without needing a model of the environment (model-free) and can learn about the optimal policy even while following an exploratory policy (off-policy)."
+        },
+        {
+          "question": "What is the primary objective of the Q-Learning algorithm?",
+          "options": {
+            "A": "To directly learn an optimal policy.",
+            "B": "To estimate the state-value function $V(s)$.",
+            "C": "To learn an optimal action-value function, $Q^*(s, a)$, that represents the maximum expected future rewards for taking action `a` in state `s`.",
+            "D": "To predict the next state given the current state and action."
+          },
+          "correct_answer": "C",
+          "explanation": "Q-Learning's goal is to accurately estimate the Q-values (action-values) for all state-action pairs, from which an optimal policy can be derived."
+        },
+        {
+          "question": "What data structure is typically used in basic Q-Learning to store the estimated Q-values?",
+          "options": {
+            "A": "A neural network.",
+            "B": "A Q-table (a lookup table).",
+            "C": "A decision tree.",
+            "D": "A linked list."
+          },
+          "correct_answer": "B",
+          "explanation": "For environments with discrete and manageable state and action spaces, Q-values are often stored in a table, allowing direct lookup."
+        },
+        {
+          "question": "Which of the following is the correct update rule for Q-Learning?",
+          "options": {
+            "A": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha [R_{t+1} + \\gamma V(s_{t+1}) - Q(s,a)]$",
+            "B": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha [R_{t+1} + \\gamma Q(s_{t+1}, a_{t+1}) - Q(s,a)]$",
+            "C": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha [R_{t+1} + \\gamma \\max_{a'} Q(s_{t+1}, a') - Q(s,a)]$",
+            "D": "$Q(s,a) \\leftarrow R_{t+1} + \\gamma \\max_{a'} Q(s_{t+1}, a')$"
+          },
+          "correct_answer": "C",
+          "explanation": "This is the classic Q-Learning update rule. It uses the maximum Q-value from the *next* state, which is why it's off-policy (it evaluates the best possible action, not necessarily the one taken)."
+        },
+        {
+          "question": "In the Q-Learning update rule, what does the learning rate $\\alpha$ (alpha) control?",
+          "options": {
+            "A": "The rate at which the agent explores the environment.",
+            "B": "The weight given to immediate rewards versus future rewards.",
+            "C": "How much the newly acquired information overrides the old information.",
+            "D": "The probability of taking a random action."
+          },
+          "correct_answer": "C",
+          "explanation": "A higher $\\alpha$ means the agent learns faster from new experiences but can be unstable; a lower $\\alpha$ means slower but more stable learning."
+        },
+        {
+          "question": "What is the role of the discount factor $\\gamma$ (gamma) in the Q-Learning update rule?",
+          "options": {
+            "A": "It determines the step size for updating Q-values.",
+            "B": "It controls the balance between exploration and exploitation.",
+            "C": "It determines the present value of future rewards, making immediate rewards more valuable than future rewards.",
+            "D": "It scales the magnitude of the immediate reward."
+          },
+          "correct_answer": "C",
+          "explanation": "The discount factor affects the agent's long-term planning horizon. It's the same $\\gamma$ from MDPs."
+        },
+        {
+          "question": "Why is Q-Learning considered an 'off-policy' algorithm?",
+          "options": {
+            "A": "It doesn't use a policy.",
+            "B": "It learns the value of the optimal policy while following a different (e.g., exploratory) behavior policy.",
+            "C": "It updates Q-values based on the action actually taken in the next state.",
+            "D": "It requires a model of the environment."
+          },
+          "correct_answer": "B",
+          "explanation": "The 'max' operator in the Q-Learning update rule means it's always learning about the optimal policy, regardless of how the agent actually behaves (its behavior policy)."
+        },
+        {
+          "question": "Which strategy is commonly used in Q-Learning to balance exploration and exploitation?",
+          "options": {
+            "A": "Greedy policy.",
+            "B": "Random walk.",
+            "C": "Boltzmann exploration.",
+            "D": "$\\epsilon$-greedy policy."
+          },
+          "correct_answer": "D",
+          "explanation": "With $\\epsilon$-greedy, the agent takes a random action with probability $\\epsilon$ and the greedy action (based on current Q-values) with probability $1-\\epsilon$."
+        },
+        {
+          "question": "Under what conditions is Q-Learning guaranteed to converge to the optimal Q-values?",
+          "options": {
+            "A": "Only if the environment is deterministic.",
+            "B": "If all state-action pairs are visited infinitely often, and the learning rate $\\alpha$ decays appropriately.",
+            "C": "Only if the discount factor $\\gamma = 1$.",
+            "D": "Only if the initial Q-values are all zero."
+          },
+          "correct_answer": "B",
+          "explanation": "Convergence guarantees are theoretical and depend on sufficient exploration and a well-behaved learning rate."
+        },
+        {
+          "question": "What is the main limitation of tabular Q-Learning for complex problems?",
+          "options": {
+            "A": "It cannot handle continuous rewards.",
+            "B": "The Q-table becomes impractically large and impossible to store or update for large state and/or action spaces (curse of dimensionality).",
+            "C": "It can only be applied to deterministic environments.",
+            "D": "It requires a perfect model of the environment."
+          },
+          "correct_answer": "B",
+          "explanation": "The need to store and update a Q-value for every state-action pair makes tabular Q-Learning unfeasible for most real-world problems with high-dimensional or continuous state/action spaces."
+        },
+        {
+          "question": "In the context of Q-Learning, what does 'temporal difference (TD) error' refer to?",
+          "options": {
+            "A": "The difference between the current Q-value and the immediate reward.",
+            "B": "The difference between the estimated value of the current state-action pair and a more accurate estimate of that value derived from the next state and reward.",
+            "C": "The difference between the current Q-value and the maximum possible Q-value.",
+            "D": "The difference between the expected future reward and the actual reward."
+          },
+          "correct_answer": "B",
+          "explanation": "The TD error is the quantity inside the square brackets in the Q-Learning update rule, representing the discrepancy between the current estimate and the 'target' for the update."
+        },
+        {
+          "question": "When does Q-Learning update its Q-values?",
+          "options": {
+            "A": "Only at the end of an episode.",
+            "B": "After each time step (or transition) of interaction with the environment.",
+            "C": "Only after reaching the optimal policy.",
+            "D": "Only when the agent receives a positive reward."
+          },
+          "correct_answer": "B",
+          "explanation": "Q-Learning is an online learning algorithm, updating its Q-values incrementally based on each experience tuple (s, a, r, s')."
+        },
+        {
+          "question": "If an agent in a Q-Learning setup is always exploring (e.g., $\\epsilon=1$ in $\\epsilon$-greedy), what impact will this have on its learning?",
+          "options": {
+            "A": "It will converge very quickly to the optimal policy.",
+            "B": "It will never learn effectively because it won't exploit known good actions, potentially leading to slow or non-convergence.",
+            "C": "It will only receive positive rewards.",
+            "D": "It will always find the global optimum."
+          },
+          "correct_answer": "B",
+          "explanation": "Pure exploration prevents the agent from leveraging what it has learned, making it inefficient or ineffective at maximizing rewards."
+        },
+        {
+          "question": "How do terminal states typically impact Q-values in Q-Learning?",
+          "options": {
+            "A": "Their Q-values are set to infinity.",
+            "B": "Their Q-values are typically initialized to zero and are not updated, as there are no subsequent states or rewards.",
+            "C": "They receive a very large negative reward.",
+            "D": "They lead to immediate reset of the Q-table."
+          },
+          "correct_answer": "B",
+          "explanation": "Since no further actions or rewards are possible from a terminal state, the expected future return from such a state is zero."
+        },
+        {
+          "question": "Which of the following is an advantage of Q-Learning being a model-free algorithm?",
+          "options": {
+            "A": "It requires less computational power.",
+            "B": "It does not need to learn or be given a model of the environment's dynamics, making it applicable when the environment model is unknown or too complex.",
+            "C": "It always converges faster than model-based methods.",
+            "D": "It can be applied to continuous state spaces easily."
+          },
+          "correct_answer": "B",
+          "explanation": "Model-free learning is very powerful for real-world scenarios where precise environmental dynamics are often unavailable."
+        },
+        {
+          "question": "Consider a situation where the environment's rewards are very sparse (i.e., rewards are given very infrequently). What challenge does this pose for Q-Learning?",
+          "options": {
+            "A": "The algorithm will converge too quickly.",
+            "B": "The agent will constantly explore without exploiting.",
+            "C": "The agent may struggle to learn effectively because it rarely receives direct feedback, making the credit assignment problem very difficult.",
+            "D": "The Q-table will become too large."
+          },
+          "correct_answer": "C",
+          "explanation": "Sparse rewards exacerbate the credit assignment problem, as it's hard to trace which actions much earlier in an episode contributed to a distant reward."
+        },
+        {
+          "question": "How does Q-Learning relate to the Bellman Optimality Equation?",
+          "options": {
+            "A": "Q-Learning is a direct numerical solution to the Bellman Expectation Equation.",
+            "B": "Q-Learning is an iterative method that *converges* to the solution of the Bellman Optimality Equation in a model-free way.",
+            "C": "Q-Learning only works for deterministic versions of the Bellman Optimality Equation.",
+            "D": "The Bellman Optimality Equation is irrelevant to Q-Learning."
+          },
+          "correct_answer": "B",
+          "explanation": "The Q-Learning update rule is directly inspired by the Bellman Optimality Equation, aiming to iteratively update Q-values until they satisfy the optimality condition."
+        },
+        {
+          "question": "What is the key difference between Q-Learning and SARSA (another TD control algorithm)?",
+          "options": {
+            "A": "Q-Learning uses a discount factor, SARSA does not.",
+            "B": "Q-Learning is model-free, SARSA is model-based.",
+            "C": "Q-Learning is off-policy (uses $\\max_{a'} Q(s_{t+1}, a')$ in its update), while SARSA is on-policy (uses $Q(s_{t+1}, a_{t+1})$ for the action actually taken in the next state).",
+            "D": "Q-Learning works for continuous actions, SARSA for discrete actions."
+          },
+          "correct_answer": "C",
+          "explanation": "This is the fundamental distinction: Q-Learning learns the optimal policy's values, while SARSA learns the values of the *behavior* policy it is currently following."
+        },
+        {
+          "question": "In a scenario where the environment is deterministic, and rewards are not sparse, what might be an effect of setting a very low learning rate ($\\alpha$) in Q-Learning?",
+          "options": {
+            "A": "The Q-table will become unstable.",
+            "B": "The learning will be very slow, potentially requiring many more episodes to converge.",
+            "C": "The agent will always choose random actions.",
+            "D": "The discount factor will automatically increase."
+          },
+          "correct_answer": "B",
+          "explanation": "A low learning rate means new information is incorporated very slowly, making convergence slow, although typically more stable."
+        },
+        {
+          "question": "When Q-Learning has converged, how can the optimal policy be derived from the Q-table?",
+          "options": {
+            "A": "By taking the average of all Q-values in each row.",
+            "B": "For each state `s`, select the action `a` that has the maximum Q-value $Q(s, a)$.",
+            "C": "By selecting the action with the minimum Q-value.",
+            "D": "By randomly choosing an action for each state."
+          },
+          "correct_answer": "B",
+          "explanation": "Once the optimal Q-values are learned, the optimal policy is simply to act greedily with respect to these Q-values."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "css_responsive",
+      "questions": [
+        {
+          "question": "What does RWD stand for in web development?",
+          "options": {
+            "A": "Responsive Web Design",
+            "B": "Real World Design",
+            "C": "Rapid Web Development",
+            "D": "Responsive Web Development"
+          },
+          "correct_answer": "A",
+          "explanation": "RWD stands for Responsive Web Design, an approach to web design aimed at crafting sites to provide an optimal viewing experience—easy reading and navigation with a minimum of resizing, panning, and scrolling—across a wide range of devices (from desktop computer monitors to mobile phones)."
+        },
+        {
+          "question": "What is the purpose of the viewport meta tag?",
+          "options": {
+            "A": "To control the layout on mobile browsers",
+            "B": "To define the background color",
+            "C": "To set the font size",
+            "D": "To add a title to the page"
+          },
+          "correct_answer": "A",
+          "explanation": "The viewport meta tag `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">` is crucial for responsive design. It instructs the browser on how to control the page's dimensions and scaling, ensuring it renders correctly on different screen sizes, especially mobile devices."
+        },
+        {
+          "question": "Which CSS property is used to create a responsive grid layout?",
+          "options": {
+            "A": "display: flex;",
+            "B": "display: grid;",
+            "C": "display: inline-block;",
+            "D": "display: block;"
+          },
+          "correct_answer": "B",
+          "explanation": "The `display: grid;` property is used to define a container as a CSS Grid container, enabling a powerful two-dimensional layout system that is highly effective for creating responsive grid-based designs."
+        },
+        {
+          "question": "What is the use of media queries in responsive design?",
+          "options": {
+            "A": "To change styles based on device characteristics",
+            "B": "To control animations",
+            "C": "To set font sizes",
+            "D": "To manage image formats"
+          },
+          "correct_answer": "A",
+          "explanation": "Media queries allow you to apply different CSS styles based on various characteristics of the device, such as screen width, height, orientation, resolution, and more. This enables websites to adapt their layout and appearance to suit the user's device."
+        },
+        {
+          "question": "How can you make images responsive?",
+          "options": {
+            "A": "By using max-width: 100%;",
+            "B": "By using fixed width and height",
+            "C": "By using background images only",
+            "D": "By setting the height to auto"
+          },
+          "correct_answer": "A",
+          "explanation": "To make images responsive, setting `max-width: 100%;` (and often `height: auto;`) is a common practice. This ensures the image will scale down to fit its container while maintaining its aspect ratio, but it will never become larger than its intrinsic size."
+        },
+        {
+          "question": "What should you use for responsive video?",
+          "options": {
+            "A": "Setting width and height in pixels",
+            "B": "Using max-width: 100%; and height: auto;",
+            "C": "Using fixed aspect ratio only",
+            "D": "Embedding without any attributes"
+          },
+          "correct_answer": "B",
+          "explanation": "Similar to responsive images, applying `max-width: 100%;` and `height: auto;` to video elements (or their containing wrapper) allows them to scale down fluidly while preserving their aspect ratio, making them responsive to different screen sizes."
+        },
+        {
+          "question": "Which of the following is a popular framework for responsive design?",
+          "options": {
+            "A": "Bootstrap",
+            "B": "jQuery",
+            "C": "Node.js",
+            "D": "Django"
+          },
+          "correct_answer": "A",
+          "explanation": "Bootstrap is one of the most widely used front-end frameworks for building responsive and mobile-first websites. It provides pre-built CSS and JavaScript components for navigation, forms, buttons, and a responsive grid system."
+        },
+        {
+          "question": "What is the purpose of a responsive template?",
+          "options": {
+            "A": "To ensure consistency across different devices",
+            "B": "To set the layout in fixed widths",
+            "C": "To provide only desktop views",
+            "D": "To hide elements on mobile"
+          },
+          "correct_answer": "A",
+          "explanation": "A responsive template is designed to provide a consistent and optimal user experience across various devices and screen sizes. It dynamically adjusts the layout, content, and elements to fit the available viewport, ensuring readability and usability."
+        },
+        {
+          "question": "What is a common breakpoint for mobile devices in media queries?",
+          "options": {
+            "A": "768px",
+            "B": "480px",
+            "C": "1024px",
+            "D": "1200px"
+          },
+          "correct_answer": "B",
+          "explanation": "While breakpoints can vary, `480px` is a very common breakpoint used to target smaller mobile devices. `768px` is often used for tablets, and larger values for desktops."
+        },
+        {
+          "question": "What is the default value of the 'box-sizing' property?",
+          "options": {
+            "A": "content-box",
+            "B": "border-box",
+            "C": "padding-box",
+            "D": "none"
+          },
+          "correct_answer": "A",
+          "explanation": "The default value for `box-sizing` is `content-box`. In this model, the `width` and `height` properties only refer to the content area, and padding and border are added to this specified size, potentially making the element larger than intended."
+        },
+        {
+          "question": "Which layout model is used in CSS Grid?",
+          "options": {
+            "A": "Grid model",
+            "B": "Flex model",
+            "C": "Table model",
+            "D": "Block model"
+          },
+          "correct_answer": "A",
+          "explanation": "CSS Grid Layout (or 'Grid model') is a two-dimensional layout system for the web. It allows developers to lay out content in rows and columns, making it very powerful for complex, responsive layouts."
+        },
+        {
+          "question": "How do you define a grid container in CSS?",
+          "options": {
+            "A": "display: flex;",
+            "B": "display: grid;",
+            "C": "grid-container: true;",
+            "D": "grid: container;"
+          },
+          "correct_answer": "B",
+          "explanation": "To define an element as a grid container, you apply the CSS property `display: grid;` to it. This then allows you to use other grid properties to define rows, columns, and place items within the grid."
+        },
+        {
+          "question": "What is the purpose of 'grid-template-columns'?",
+          "options": {
+            "A": "To define the number of columns in a grid",
+            "B": "To set the height of the grid",
+            "C": "To apply styles to grid items",
+            "D": "To define rows in a grid"
+          },
+          "correct_answer": "A",
+          "explanation": "The `grid-template-columns` property defines the number and size of columns in a grid layout. You can specify fixed sizes, flexible sizes (using `fr` units), or repeat patterns to create your column structure."
+        },
+        {
+          "question": "How do you create a grid item?",
+          "options": {
+            "A": "By using display: block;",
+            "B": "By placing a child element inside a grid container",
+            "C": "By using grid-item property",
+            "D": "By using display: inline;"
+          },
+          "correct_answer": "B",
+          "explanation": "Any direct child element of a CSS Grid container automatically becomes a grid item. You don't need a specific property on the child; its parent being `display: grid;` is enough."
+        },
+        {
+          "question": "What is SASS?",
+          "options": {
+            "A": "A CSS preprocessor",
+            "B": "A JavaScript framework",
+            "C": "A design tool",
+            "D": "A type of CSS framework"
+          },
+          "correct_answer": "A",
+          "explanation": "Sass (Syntactically Awesome Style Sheets) is a CSS preprocessor, meaning it extends CSS with features like variables, nested rules, mixins, functions, and more. It then compiles these extended stylesheets into standard CSS that browsers can understand."
+        },
+        {
+          "question": "Which of the following is a feature of SASS?",
+          "options": {
+            "A": "Variables",
+            "B": "Mixins",
+            "C": "Nesting",
+            "D": "All of the above"
+          },
+          "correct_answer": "D",
+          "explanation": "Sass offers all these features: Variables (`$` prefix) for reusable values, Mixins (`@mixin` and `@include`) for reusable blocks of styles, and Nesting (writing CSS rules within other rules) for more organized and readable stylesheets."
+        },
+        {
+          "question": "What file extension does a SASS file have?",
+          "options": {
+            "A": ".css",
+            "B": ".scss",
+            "C": ".sass",
+            "D": ".sassc"
+          },
+          "correct_answer": "B",
+          "explanation": "Sass supports two syntax formats: the original indented syntax with a `.sass` extension, and the more popular SCSS (Sassy CSS) syntax, which is a superset of CSS and uses the `.scss` extension. Both compile to standard `.css`."
+        },
+        {
+          "question": "How do you define a variable in SASS?",
+          "options": {
+            "A": "$variableName: value;",
+            "B": "@variable variableName value;",
+            "C": "variableName: value;",
+            "D": "var variableName = value;"
+          },
+          "correct_answer": "A",
+          "explanation": "In Sass, variables are defined using a `$` symbol followed by the variable name, a colon, and the value, like `$primary-color: #336699;`. They allow you to store and reuse values throughout your stylesheets."
+        },
+        {
+          "question": "Which feature allows you to reuse styles in SASS?",
+          "options": {
+            "A": "Mixins",
+            "B": "Classes",
+            "C": "IDs",
+            "D": "Comments"
+          },
+          "correct_answer": "A",
+          "explanation": "Mixins in Sass (`@mixin` and `@include`) allow you to define reusable blocks of CSS declarations. You can include these mixins in any CSS rule, which helps to reduce code duplication and improve maintainability."
+        }
+      ]
+    }
+  ]
+}

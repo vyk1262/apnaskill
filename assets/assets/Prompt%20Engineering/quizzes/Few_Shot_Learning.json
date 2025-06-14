@@ -1,8 +1,225 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Few_Shot_Learning",
+      "questions": [
         {
-            "topic": "Few_Shot_Learning",
-            "questions": []
+          "question": "What is the core concept of 'Few-Shot Learning' in the context of AI models?",
+          "options": {
+            "A": "Training a model with a massive dataset.",
+            "B": "Enabling a model to learn a new task or concept effectively from a very small number of examples.",
+            "C": "Using only a single data point for training.",
+            "D": "A method for reducing the size of AI models."
+          },
+          "correct_answer": "B",
+          "explanation": "Few-shot learning focuses on situations where you have only a handful of examples (e.g., 1-5) for a specific task, yet the model can still generalize and perform well."
+        },
+        {
+          "question": "How does Few-Shot Learning differ from Zero-Shot Learning?",
+          "options": {
+            "A": "Few-shot uses more complex models.",
+            "B": "Few-shot provides a small number of examples, while zero-shot provides no examples for the specific task.",
+            "C": "Zero-shot is always more accurate.",
+            "D": "Few-shot is a much older technique."
+          },
+          "correct_answer": "B",
+          "explanation": "The key distinction is the presence of examples. Zero-shot relies solely on the model's pre-trained knowledge, whereas few-shot provides explicit demonstrations within the prompt itself."
+        },
+        {
+          "question": "What is the primary mechanism by which Few-Shot Learning is implemented in prompt engineering?",
+          "options": {
+            "A": "By fine-tuning the model's parameters with a small dataset.",
+            "B": "By providing input-output examples directly within the prompt itself.",
+            "C": "By adding more layers to the neural network.",
+            "D": "By training a separate, smaller model."
+          },
+          "correct_answer": "B",
+          "explanation": "In prompt engineering, few-shot learning is achieved by constructing a prompt that includes a few pairs of example inputs and their corresponding desired outputs, followed by the new input for which a response is needed."
+        },
+        {
+          "question": "What is the main benefit of using Few-Shot Learning in prompt design?",
+          "options": {
+            "A": "It makes the AI model run faster.",
+            "B": "It helps the AI model understand the desired pattern, format, and style, leading to more accurate and consistent outputs for new, similar inputs.",
+            "C": "It significantly reduces the cost of AI models.",
+            "D": "It removes the need for human input entirely."
+          },
+          "correct_answer": "B",
+          "explanation": "Examples serve as strong signals to the AI, demonstrating the exact behavior or output format expected, which greatly improves the quality of responses for tasks that might be ambiguous without them."
+        },
+        {
+          "question": "For what types of tasks is Few-Shot Learning particularly effective?",
+          "options": {
+            "A": "Tasks requiring only simple retrieval of facts.",
+            "B": "Tasks requiring specific formatting, nuanced stylistic writing, classification, or adherence to a particular mapping rule.",
+            "C": "Tasks that are entirely novel and unseen by the model.",
+            "D": "Tasks that involve only numerical calculations."
+          },
+          "correct_answer": "B",
+          "explanation": "Few-shot learning excels when the task's pattern, style, or specific output structure needs to be conveyed to the model, which is difficult to achieve with just a textual description."
+        },
+        {
+          "question": "What is a potential disadvantage of using too many examples in a few-shot prompt?",
+          "options": {
+            "A": "It can make the prompt too short.",
+            "B": "It can increase the prompt's length (token usage), leading to higher computational costs and slower inference times.",
+            "C": "It might cause the model to forget previous examples.",
+            "D": "It always makes the model less accurate."
+          },
+          "correct_answer": "B",
+          "explanation": "Each example adds to the overall token count of the prompt. While beneficial, this can make prompts very long, impacting cost efficiency and response latency, especially for models with limited context windows."
+        },
+        {
+          "question": "When choosing examples for few-shot prompting, what characteristic is most important?",
+          "options": {
+            "A": "They should be as long as possible.",
+            "B": "They should be diverse and representative of the variations the AI might encounter in real inputs, and clearly demonstrate the desired output.",
+            "C": "They should be extremely simple.",
+            "D": "They should be unrelated to the task."
+          },
+          "correct_answer": "B",
+          "explanation": "High-quality, representative examples teach the model effectively. If examples are too similar, too simple, or don't cover typical edge cases, the model might not generalize well."
+        },
+        {
+          "question": "True or False: Few-Shot Learning replaces the need for any pre-training of the AI model.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Few-shot learning relies heavily on the powerful pre-trained knowledge within large language models. The examples merely guide the model to apply its existing knowledge in a specific way for the new task, not to learn the task from scratch."
+        },
+        {
+          "question": "What is the 'in-context learning' ability related to Few-Shot Learning?",
+          "options": {
+            "A": "The model's ability to learn from external databases.",
+            "B": "The model's ability to learn new tasks or adapt its behavior based on the examples provided *within the input prompt*, without requiring any weight updates or fine-tuning.",
+            "C": "The model's ability to create its own context.",
+            "D": "The model's ability to forget context."
+          },
+          "correct_answer": "B",
+          "explanation": "In-context learning is the phenomenon observed in large language models where they can pick up new skills or modify their behavior by simply processing examples provided in the prompt, demonstrating a powerful form of rapid adaptation."
+        },
+        {
+          "question": "How can Few-Shot Learning be used for 'classification' tasks?",
+          "options": {
+            "A": "By providing a list of categories without any examples.",
+            "B": "By giving examples of inputs paired with their correct classification labels (e.g., 'Input: 'Happy customer', Output: 'Positive Sentiment').",
+            "C": "By asking the model to guess the category.",
+            "D": "By only providing the input without an expected output."
+          },
+          "correct_answer": "B",
+          "explanation": "For classification, few-shot prompts train the model on how to map a given text to a specific label by showing it a few examples of this mapping."
+        },
+        {
+          "question": "What is a common pitfall if the examples in a few-shot prompt are inconsistent?",
+          "options": {
+            "A": "The model will always ignore them.",
+            "B": "The model may become confused, leading to inconsistent or incorrect outputs that do not follow a clear pattern.",
+            "C": "It will make the prompt shorter.",
+            "D": "It will make the model respond faster."
+          },
+          "correct_answer": "B",
+          "explanation": "If the examples contradict each other or do not clearly demonstrate a single, consistent pattern, the AI will struggle to infer the correct behavior and its output will likely suffer."
+        },
+        {
+          "question": "When should you consider using Few-Shot Learning over Zero-Shot Learning?",
+          "options": {
+            "A": "Always, as it's inherently better.",
+            "B": "When the task is highly specific, requires a particular output format, or when the AI struggles with zero-shot prompting due to ambiguity or novelty.",
+            "C": "When you want to save on token usage.",
+            "D": "Only for very simple tasks."
+          },
+          "correct_answer": "B",
+          "explanation": "Few-shot learning is a powerful technique for fine-tuning the AI's behavior for specific tasks that might be too subtle or specialized for a general zero-shot instruction."
+        },
+        {
+          "question": "How does the order of examples in a few-shot prompt typically impact the AI's response?",
+          "options": {
+            "A": "It has no impact on the response.",
+            "B": "The order can subtly influence the AI's weighting of patterns; sometimes placing the most important or challenging examples first can be beneficial.",
+            "C": "It strictly dictates the order of words in the output.",
+            "D": "It only affects the prompt's readability for humans."
+          },
+          "correct_answer": "B",
+          "explanation": "While not always a dramatic effect, the order of examples can sometimes prime the model in specific ways. Experimentation is often needed to find the optimal order."
+        },
+        {
+          "question": "Can Few-Shot Learning be combined with 'Chain-of-Thought' prompting?",
+          "options": {
+            "A": "No, these techniques are mutually exclusive.",
+            "B": "Yes, 'Few-shot CoT' involves providing examples that include the step-by-step reasoning process along with the final answer.",
+            "C": "Only if the task is very simple.",
+            "D": "Only if the model is specifically designed for both."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a very powerful combination where the examples not only show the desired output but also *how* that output was achieved through intermediate reasoning steps, significantly boosting performance on complex reasoning tasks."
+        },
+        {
+          "question": "What is the concept of 'demonstration engineering' in few-shot prompting?",
+          "options": {
+            "A": "The process of showing the AI a demonstration.",
+            "B": "The careful selection and crafting of the optimal examples (demonstrations) to include in a few-shot prompt to maximize the AI's learning.",
+            "C": "The process of demonstrating the prompt to a user.",
+            "D": "The engineering of the AI model itself."
+          },
+          "correct_answer": "B",
+          "explanation": " 'Demonstration engineering' emphasizes that the quality and relevance of the few-shot examples are critical to the success of the prompting strategy. It's about curating the best 'lessons' for the AI."
+        },
+        {
+          "question": "Is Few-Shot Learning a form of 'fine-tuning'?",
+          "options": {
+            "A": "Yes, it updates the model's weights.",
+            "B": "No, it's a form of 'in-context learning' that does not involve updating the model's underlying weights; the learning happens purely within the context of the prompt.",
+            "C": "Only for very large models.",
+            "D": "Only when using a specific library."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a crucial distinction. Fine-tuning involves actual changes to the model's parameters. Few-shot learning, as implemented via prompting, is a way to *leverage* the pre-trained model's capabilities to adapt its output based on context without changing its core weights."
+        },
+        {
+          "question": "How can Few-Shot Learning help in 'summarization' tasks?",
+          "options": {
+            "A": "By providing a very long text to summarize.",
+            "B": "By providing examples of original texts and their desired summarized versions, teaching the AI the specific summarization style or length desired.",
+            "C": "By only giving keywords for the summary.",
+            "D": "By instructing the AI to ignore the text."
+          },
+          "correct_answer": "B",
+          "explanation": "If you want summaries of a certain length, style (e.g., extractive vs. abstractive), or focus, a few examples can effectively guide the AI to match that specific summarization behavior."
+        },
+        {
+          "question": "What happens if the examples in a few-shot prompt are irrelevant to the new input?",
+          "options": {
+            "A": "The model will still perform well.",
+            "B": "The model may fail to generalize or produce irrelevant outputs, as the examples will not properly guide its understanding of the new task.",
+            "C": "It will make the prompt easier for the AI to understand.",
+            "D": "It will not affect the output at all."
+          },
+          "correct_answer": "B",
+          "explanation": "Irrelevant examples are worse than no examples, as they can confuse the model and lead it down the wrong path, diminishing the effectiveness of few-shot learning."
+        },
+        {
+          "question": "What is the optimal number of examples for few-shot prompting?",
+          "options": {
+            "A": "Always exactly 5.",
+            "B": "There's no fixed optimal number; it depends on the task's complexity, the model's capabilities, and the desired balance between accuracy and token usage, often determined by experimentation.",
+            "C": "As many as possible.",
+            "D": "Always just one."
+          },
+          "correct_answer": "B",
+          "explanation": "The term 'few' implies a small number, but the exact count varies. Sometimes just one well-chosen example is enough; for more complex tasks, five or even more might be beneficial. Experimentation is key."
+        },
+        {
+          "question": "True or False: Few-Shot Learning is most effective when the AI model has been extensively pre-trained on a diverse and large dataset.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. The ability of large language models to perform few-shot learning stems directly from their vast pre-training. This pre-training equips them with a broad understanding of language, patterns, and general knowledge, which they then adapt and apply to the specific task demonstrated by the few examples."
         }
-    ]
+      ]
+    }
+  ]
 }

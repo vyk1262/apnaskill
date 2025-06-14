@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Linear_Regression",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Linear Regression in machine learning?",
+          "options": {
+            "A": "To model the relationship between a dependent variable and one or more independent variables.",
+            "B": "To classify data into categories.",
+            "C": "To encrypt data for security.",
+            "D": "To visualize data trends."
+          },
+          "correct_answer": "A",
+          "explanation": "Linear Regression models the relationship between a dependent variable and one or more independent variables, predicting continuous outcomes."
+        },
+        {
+          "question": "Which of the following is a common method for fitting a linear regression model?",
+          "options": {
+            "A": "Least Squares",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Least Squares is a common method for fitting a linear regression model, minimizing the sum of squared residuals."
+        },
+        {
+          "question": "What is the role of the intercept in a linear regression model?",
+          "options": {
+            "A": "To represent the expected value of the dependent variable when all independent variables are zero.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The intercept represents the expected value of the dependent variable when all independent variables are zero in a linear regression model."
+        },
+        {
+          "question": "Which method is used to assess the goodness of fit in a linear regression model?",
+          "options": {
+            "A": "R-squared",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "R-squared is used to assess the goodness of fit in a linear regression model, indicating the proportion of variance explained by the model."
+        },
+        {
+          "question": "What is the significance of feature scaling in linear regression?",
+          "options": {
+            "A": "To ensure coefficients are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures coefficients are meaningful, providing accurate predictions in linear regression."
+        },
+        {
+          "question": "Which of the following is a disadvantage of linear regression?",
+          "options": {
+            "A": "Sensitive to outliers.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Linear regression is sensitive to outliers, as they can distort the model and affect prediction accuracy."
+        },
+        {
+          "question": "What is the purpose of using regularization in linear regression?",
+          "options": {
+            "A": "To prevent overfitting.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Regularization prevents overfitting in linear regression by penalizing large coefficients, improving model generalization."
+        },
+        {
+          "question": "Which of the following is a common use case for linear regression?",
+          "options": {
+            "A": "Predicting continuous outcomes.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Linear regression is commonly used for predicting continuous outcomes, modeling relationships between variables."
+        },
+        {
+          "question": "What is the role of coefficients in a linear regression model?",
+          "options": {
+            "A": "To represent the change in the dependent variable for a unit change in an independent variable.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Coefficients represent the change in the dependent variable for a unit change in an independent variable in a linear regression model."
+        },
+        {
+          "question": "Which of the following is a benefit of linear regression?",
+          "options": {
+            "A": "Simple and intuitive for modeling relationships.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "Linear regression is simple and intuitive for modeling relationships, providing straightforward predictions based on coefficients."
+        },
+        {
+          "question": "What is the significance of the residuals in a linear regression model?",
+          "options": {
+            "A": "They represent the difference between observed and predicted values.",
+            "B": "They determine the encryption strength.",
+            "C": "They visualize data trends.",
+            "D": "They store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Residuals represent the difference between observed and predicted values, indicating the accuracy of a linear regression model."
+        },
+        {
+          "question": "Which of the following is a common method for fitting a linear regression model?",
+          "options": {
+            "A": "Gradient Descent",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "PCA"
+          },
+          "correct_answer": "A",
+          "explanation": "Gradient Descent is a common method for fitting a linear regression model, optimizing coefficients to minimize the cost function."
+        },
+        {
+          "question": "What is the role of the intercept in a linear regression model?",
+          "options": {
+            "A": "To represent the expected value of the dependent variable when all independent variables are zero.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The intercept represents the expected value of the dependent variable when all independent variables are zero in a linear regression model."
+        },
+        {
+          "question": "Which method is used to assess the goodness of fit in a linear regression model?",
+          "options": {
+            "A": "Adjusted R-squared",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Adjusted R-squared is used to assess the goodness of fit in a linear regression model, accounting for the number of predictors."
+        },
+        {
+          "question": "What is the significance of feature scaling in linear regression?",
+          "options": {
+            "A": "To ensure coefficients are meaningful.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures coefficients are meaningful, providing accurate predictions in linear regression."
+        },
+        {
+          "question": "Which of the following is a disadvantage of linear regression?",
+          "options": {
+            "A": "Sensitive to multicollinearity.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "Linear regression is sensitive to multicollinearity, as it can distort the model and affect prediction accuracy."
+        },
+        {
+          "question": "What is the purpose of using regularization in linear regression?",
+          "options": {
+            "A": "To prevent overfitting.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "Regularization prevents overfitting in linear regression by penalizing large coefficients, improving model generalization."
+        },
+        {
+          "question": "Which of the following is a common use case for linear regression?",
+          "options": {
+            "A": "Predicting continuous outcomes.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data visualization."
+          },
+          "correct_answer": "A",
+          "explanation": "Linear regression is commonly used for predicting continuous outcomes, modeling relationships between variables."
+        },
+        {
+          "question": "What is the role of coefficients in a linear regression model?",
+          "options": {
+            "A": "To represent the change in the dependent variable for a unit change in an independent variable.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Coefficients represent the change in the dependent variable for a unit change in an independent variable in a linear regression model."
+        }
+      ]
+    }
+  ]
+}

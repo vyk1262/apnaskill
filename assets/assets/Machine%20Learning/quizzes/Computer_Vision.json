@@ -11,7 +11,8 @@
             "C": "To efficiently store and retrieve image data.",
             "D": "To compress image files for efficient transmission."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The core objective of **computer vision** is to empower machines with the ability to understand and derive meaningful information from digital images and videos, mimicking the human visual system. This includes tasks like recognizing objects, identifying people, and understanding scenes."
         },
         {
           "question": "Which of the following is a fundamental task in computer vision?",
@@ -21,7 +22,8 @@
             "C": "Image classification",
             "D": "Time series forecasting"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Image classification** (assigning a label to an entire image, e.g., 'cat' or 'dog') is one of the most fundamental and widely studied tasks in computer vision. The other options belong to different AI subfields."
         },
         {
           "question": "What is image classification?",
@@ -31,7 +33,8 @@
             "C": "Segmenting an image into different regions.",
             "D": "Generating a new image based on a description."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Image classification** is the task of taking an input image and outputting a class or category label (e.g., 'dog', 'car', 'airplane') that best describes the entire image's content."
         },
         {
           "question": "What is object detection?",
@@ -41,7 +44,8 @@
             "C": "Enhancing the resolution of an image.",
             "D": "Removing noise from an image."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Object detection** goes beyond classification by not only identifying what objects are present in an image but also determining their precise location, usually indicated by drawing a **bounding box** around each detected object and assigning a class label."
         },
         {
           "question": "What is image segmentation?",
@@ -51,7 +55,8 @@
             "C": "Changing the color balance of an image.",
             "D": "Rotating an image to a different orientation."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Image segmentation** is a more granular task than object detection. It involves partitioning an image into multiple segments (sets of pixels), with each pixel in a segment sharing certain characteristics. This often means assigning a class label to *every pixel* in the image, effectively drawing precise outlines around objects."
         },
         {
           "question": "What are convolutional neural networks (CNNs) primarily used for in computer vision?",
@@ -61,7 +66,8 @@
             "C": "Generating realistic synthetic data.",
             "D": "Performing dimensionality reduction on tabular data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Convolutional Neural Networks (CNNs)** are a specialized type of neural network architecture that has proven exceptionally effective for tasks involving **image and video analysis**. Their design is inspired by the organization of the animal visual cortex, making them adept at learning hierarchical features from visual data."
         },
         {
           "question": "What is a convolution operation in a CNN?",
@@ -71,7 +77,8 @@
             "C": "A method for combining the outputs of multiple neurons.",
             "D": "A technique for normalizing the pixel values of an image."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **convolution operation** is the fundamental building block of CNNs. It involves sliding a small matrix of learnable weights, called a **kernel** (or filter), over the input image. At each position, the kernel performs element-wise multiplication and summation, generating a single value in the **feature map** that highlights specific local patterns or features."
         },
         {
           "question": "What is a kernel (or filter) in a CNN?",
@@ -81,7 +88,8 @@
             "C": "A function that introduces non-linearity into the network.",
             "D": "A method for randomly dropping out neurons during training."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In a CNN, a **kernel (or filter)** is a small, learnable matrix of numerical weights. This kernel is used to convolve over the input image (or feature maps from previous layers) to detect specific patterns like edges, textures, or shapes."
         },
         {
           "question": "What is a feature map in a CNN?",
@@ -91,7 +99,8 @@
             "C": "A visualization of the weights learned by the network.",
             "D": "A map showing the importance of different pixels in the image."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **feature map** is the output of a convolutional layer. Each value in the feature map indicates the presence and strength of a specific feature (detected by the kernel) at a particular spatial location in the input image. As data passes through multiple convolutional layers, these feature maps represent increasingly complex and abstract features."
         },
         {
           "question": "What is a pooling layer in a CNN?",
@@ -101,7 +110,8 @@
             "C": "A layer that applies a non-linear activation function.",
             "D": "A layer that performs the convolution operation."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **pooling layer** (e.g., max pooling, average pooling) serves to **reduce the spatial dimensions (width and height) of the feature maps**. This helps to reduce the computational complexity, control overfitting, and make the detected features more invariant to small shifts or distortions in the input."
         },
         {
           "question": "What are common types of pooling operations?",
@@ -111,7 +121,8 @@
             "C": "Max pooling and average pooling.",
             "D": "Batch normalization and dropout."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The two most common types of pooling operations are **Max Pooling** (which takes the maximum value from each receptive field) and **Average Pooling** (which takes the average value). ReLU and Sigmoid are activation functions, convolution is an operation, and batch normalization/dropout are regularization techniques."
         },
         {
           "question": "What are fully connected layers in a CNN typically used for?",
@@ -121,7 +132,8 @@
             "C": "Performing the final classification or regression based on the high-level features learned by the convolutional and pooling layers.",
             "D": "Visualizing the learned filters."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "After several convolutional and pooling layers have extracted hierarchical features, the flattened output is typically fed into one or more **fully connected layers**. These layers learn non-linear combinations of the high-level features and are responsible for performing the **final classification or regression task**."
         },
         {
           "question": "What is data augmentation in computer vision?",
@@ -131,7 +143,8 @@
             "C": "A method for improving the resolution of images.",
             "D": "A way to compress image data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Data augmentation** involves creating new, varied training examples from existing ones by applying transformations such as rotation, scaling, flipping, cropping, or changing brightness. This artificially expands the dataset and helps the model learn to be more robust to variations in real-world data."
         },
         {
           "question": "Why is data augmentation often beneficial in computer vision tasks?",
@@ -141,7 +154,8 @@
             "C": "It simplifies the model architecture.",
             "D": "It is only useful for small datasets."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Data augmentation** is highly beneficial because it increases the diversity of the training data without collecting new images. This makes the model more robust to different viewpoints, lighting conditions, and orientations, thereby improving its **generalization ability** and reducing the likelihood of **overfitting** to the specific training examples."
         },
         {
           "question": "What are transfer learning and pre-trained models in computer vision?",
@@ -151,7 +165,8 @@
             "C": "Transferring images between different storage devices.",
             "D": "A technique for visualizing the features learned by a model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Transfer learning** is a machine learning technique where a model developed for a task is reused as the starting point for a model on a second task. In computer vision, this often involves using a **pre-trained model** (a model already trained on a very large, generic dataset like ImageNet) and fine-tuning it for a specific, often smaller, new task."
         },
         {
           "question": "Why is transfer learning often effective in computer vision?",
@@ -161,7 +176,8 @@
             "C": "It always makes the training process faster.",
             "D": "It simplifies the model architecture significantly."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Transfer learning is effective** because the features learned by models trained on vast datasets (like ImageNet's millions of diverse images) are highly generalizable. These models learn low-level features (edges, textures) and higher-level concepts that are relevant to many visual tasks. This significantly **reduces the need for large amounts of labeled data and extensive training time** for new tasks."
         },
         {
           "question": "What are some common pre-trained CNN architectures used for transfer learning?",
@@ -171,7 +187,8 @@
             "C": "AlexNet, VGG, ResNet, Inception, and EfficientNet.",
             "D": "K-Means and DBSCAN."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Several powerful **CNN architectures** have become benchmarks and are widely used as **pre-trained models** for transfer learning. Notable examples include **AlexNet, VGG, ResNet, Inception, and EfficientNet**, each representing significant advancements in CNN design."
         },
         {
           "question": "What are some applications of computer vision?",
@@ -181,7 +198,8 @@
             "C": "Primarily used for text analysis.",
             "D": "Mainly used for audio processing."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Computer vision has transformed numerous industries and daily life. Key applications include enabling **autonomous vehicles** to perceive their surroundings, aiding diagnosis in **medical image analysis**, securing systems with **facial recognition**, monitoring spaces with **object detection in surveillance**, and automating quality control in **industrial inspection**."
         },
         {
           "question": "What are some challenges in computer vision?",
@@ -191,7 +209,8 @@
             "C": "Computer vision problems are generally very easy to solve.",
             "D": "The computational cost is always very low."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Despite significant progress, computer vision faces several inherent challenges. These include handling the wide array of natural variations in images: different **lighting conditions**, diverse **viewpoints**, varying **scales** of objects, **occlusion** (objects partially hidden), and complex **background clutter**, all of which can confuse a model."
         },
         {
           "question": "What are some ethical considerations in computer vision?",
@@ -201,7 +220,8 @@
             "C": "Primarily about the artistic quality of generated images.",
             "D": "Mostly focused on the efficiency of image processing algorithms."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Ethical concerns in computer vision are critical and span several areas. These include **bias** encoded in training data, which can lead to unfair or discriminatory performance (e.g., facial recognition systems performing poorly on certain demographics). **Privacy** concerns arise from the collection and processing of vast amounts of visual data. Finally, there's the potential for **misuse** in applications like mass surveillance or autonomous weapon systems, raising significant societal questions."
         }
       ]
     }

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Data_Transformations_and_Cleaning",
+      "questions": [
+        {
+          "question": "What is data transformation in Power BI?",
+          "options": {
+            "A": "The process of converting data from one format or structure to another.",
+            "B": "The process of deleting data.",
+            "C": "The process of visualizing data.",
+            "D": "The process of analyzing data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data transformation in Power BI involves converting data from one format or structure to another, enabling data integration and analysis."
+        },
+        {
+          "question": "What is the purpose of Power Query in data transformation?",
+          "options": {
+            "A": "To perform data transformation and cleaning tasks.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Power Query in Power BI performs data transformation and cleaning tasks, providing a comprehensive environment for data preparation."
+        },
+        {
+          "question": "What is the purpose of data cleaning in Power BI?",
+          "options": {
+            "A": "To remove or correct inaccurate, incomplete, or irrelevant data.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data cleaning in Power BI removes or corrects inaccurate, incomplete, or irrelevant data, ensuring data quality and accuracy."
+        },
+        {
+          "question": "What is the purpose of data filtering in Power BI?",
+          "options": {
+            "A": "To filter data based on specific criteria.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data filtering in Power BI filters data based on specific criteria, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of data sorting in Power BI?",
+          "options": {
+            "A": "To sort data in a specific order.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data sorting in Power BI sorts data in a specific order, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of data grouping in Power BI?",
+          "options": {
+            "A": "To group data based on specific criteria.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data grouping in Power BI groups data based on specific criteria, providing insights and analysis."
+        },
+        {
+          "question": "What is the purpose of data merging in Power BI?",
+          "options": {
+            "A": "To merge data from different sources.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data merging in Power BI merges data from different sources, providing a unified view of data."
+        },
+        {
+          "question": "What is the purpose of data appending in Power BI?",
+          "options": {
+            "A": "To append data from different sources.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data appending in Power BI appends data from different sources, providing a comprehensive view of data."
+        },
+        {
+          "question": "What is the purpose of data pivoting in Power BI?",
+          "options": {
+            "A": "To pivot data to change its structure.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data pivoting in Power BI pivots data to change its structure, providing a different perspective of data."
+        },
+        {
+          "question": "What is the purpose of data unpivoting in Power BI?",
+          "options": {
+            "A": "To unpivot data to change its structure.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data unpivoting in Power BI unpivots data to change its structure, providing a different perspective of data."
+        },
+        {
+          "question": "What is the purpose of data splitting in Power BI?",
+          "options": {
+            "A": "To split data into separate columns.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data splitting in Power BI splits data into separate columns, providing a detailed view of data."
+        },
+        {
+          "question": "What is the purpose of data replacing in Power BI?",
+          "options": {
+            "A": "To replace data with new values.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data replacing in Power BI replaces data with new values, ensuring data accuracy and consistency."
+        },
+        {
+          "question": "What is the purpose of data removing in Power BI?",
+          "options": {
+            "A": "To remove unwanted data.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data removing in Power BI removes unwanted data, ensuring data quality and accuracy."
+        },
+        {
+          "question": "What is the purpose of data renaming in Power BI?",
+          "options": {
+            "A": "To rename data columns.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data renaming in Power BI renames data columns, providing clarity and consistency in data presentation."
+        },
+        {
+          "question": "What is the purpose of data formatting in Power BI?",
+          "options": {
+            "A": "To format data for presentation.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data formatting in Power BI formats data for presentation, ensuring data clarity and readability."
+        },
+        {
+          "question": "What is the purpose of data validation in Power BI?",
+          "options": {
+            "A": "To validate data for accuracy.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data validation in Power BI validates data for accuracy, ensuring data quality and reliability."
+        },
+        {
+          "question": "What is the purpose of data enrichment in Power BI?",
+          "options": {
+            "A": "To enrich data with additional information.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data enrichment in Power BI enriches data with additional information, providing a comprehensive view of data."
+        },
+        {
+          "question": "What is the purpose of data deduplication in Power BI?",
+          "options": {
+            "A": "To remove duplicate data.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data deduplication in Power BI removes duplicate data, ensuring data accuracy and consistency."
+        },
+        {
+          "question": "What is the purpose of data normalization in Power BI?",
+          "options": {
+            "A": "To normalize data for analysis.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data normalization in Power BI normalizes data for analysis, ensuring data consistency and comparability."
+        },
+        {
+          "question": "What is the purpose of data standardization in Power BI?",
+          "options": {
+            "A": "To standardize data for analysis.",
+            "B": "To visualize data.",
+            "C": "To analyze data.",
+            "D": "To delete data."
+          },
+          "correct_answer": "A",
+          "explanation": "Data standardization in Power BI standardizes data for analysis, ensuring data consistency and comparability."
+        }
+      ]
+    }
+  ]
+}

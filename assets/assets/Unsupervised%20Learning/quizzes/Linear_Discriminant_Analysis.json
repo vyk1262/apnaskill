@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Linear_Discriminant_Analysis",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Linear Discriminant Analysis (LDA)?",
+          "options": {
+            "A": "To find a linear combination of features that separates classes.",
+            "B": "To encrypt data for security.",
+            "C": "To visualize data trends.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA aims to find a linear combination of features that separates classes, maximizing class separability."
+        },
+        {
+          "question": "Which of the following is a key assumption of LDA?",
+          "options": {
+            "A": "Normal distribution of features.",
+            "B": "Data encryption.",
+            "C": "Data visualization.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA assumes that features are normally distributed, which helps in finding linear combinations for class separation."
+        },
+        {
+          "question": "What is the role of the scatter matrix in LDA?",
+          "options": {
+            "A": "To measure the spread of data points.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The scatter matrix measures the spread of data points, helping to find the linear combination that separates classes in LDA."
+        },
+        {
+          "question": "Which method is commonly used to evaluate the performance of LDA?",
+          "options": {
+            "A": "Confusion Matrix",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The Confusion Matrix is commonly used to evaluate the performance of LDA, analyzing the accuracy of class predictions."
+        },
+        {
+          "question": "What is the significance of feature scaling in LDA?",
+          "options": {
+            "A": "To ensure features are comparable.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures features are comparable, providing accurate class separation in LDA."
+        },
+        {
+          "question": "Which of the following is a disadvantage of LDA?",
+          "options": {
+            "A": "Sensitive to multicollinearity.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA is sensitive to multicollinearity, as it can affect the linear combinations and class separation."
+        },
+        {
+          "question": "What is the purpose of using LDA in data analysis?",
+          "options": {
+            "A": "To separate classes based on feature combinations.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA is used to separate classes based on feature combinations, maximizing class separability."
+        },
+        {
+          "question": "Which of the following is a common use case for LDA?",
+          "options": {
+            "A": "Face recognition.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA is commonly used for face recognition, identifying distinct classes based on feature combinations."
+        },
+        {
+          "question": "What is the role of eigenvectors in LDA?",
+          "options": {
+            "A": "To represent the directions of maximum class separability.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum class separability in LDA, guiding the linear combinations for class separation."
+        },
+        {
+          "question": "Which of the following is a benefit of LDA?",
+          "options": {
+            "A": "Can simplify class separation.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA can simplify class separation, making analysis more efficient and interpretable."
+        },
+        {
+          "question": "What is the significance of the explained variance ratio in LDA?",
+          "options": {
+            "A": "It indicates the proportion of variance explained by each feature combination.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The explained variance ratio indicates the proportion of variance explained by each feature combination in LDA, guiding feature selection."
+        },
+        {
+          "question": "Which of the following is a common technique used in LDA?",
+          "options": {
+            "A": "Scatter Matrix Analysis",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "Linear Regression"
+          },
+          "correct_answer": "A",
+          "explanation": "Scatter Matrix Analysis is a common technique used in LDA, evaluating the spread of data points for class separation."
+        },
+        {
+          "question": "What is the role of eigenvectors in LDA?",
+          "options": {
+            "A": "To represent the directions of maximum class separability.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum class separability in LDA, guiding the linear combinations for class separation."
+        },
+        {
+          "question": "Which method is used to select the number of features in LDA?",
+          "options": {
+            "A": "Cumulative Explained Variance",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Cumulative Explained Variance is used to select the number of features in LDA, analyzing the total variance explained by selected features."
+        },
+        {
+          "question": "What is the significance of feature scaling in LDA?",
+          "options": {
+            "A": "To ensure features are comparable.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures features are comparable, providing accurate class separation in LDA."
+        },
+        {
+          "question": "Which of the following is a disadvantage of LDA?",
+          "options": {
+            "A": "Sensitive to multicollinearity.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA is sensitive to multicollinearity, as it can affect the linear combinations and class separation."
+        },
+        {
+          "question": "What is the purpose of using LDA in data analysis?",
+          "options": {
+            "A": "To separate classes based on feature combinations.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA is used to separate classes based on feature combinations, maximizing class separability."
+        },
+        {
+          "question": "Which of the following is a common use case for LDA?",
+          "options": {
+            "A": "Face recognition.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "LDA is commonly used for face recognition, identifying distinct classes based on feature combinations."
+        },
+        {
+          "question": "What is the role of eigenvectors in LDA?",
+          "options": {
+            "A": "To represent the directions of maximum class separability.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum class separability in LDA, guiding the linear combinations for class separation."
+        }
+      ]
+    }
+  ]
+}

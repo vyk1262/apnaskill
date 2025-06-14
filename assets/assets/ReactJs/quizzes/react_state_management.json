@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_state_management",
+      "questions": [
+        {
+          "question": "What is 'state' in React?",
+          "options": {
+            "A": "External data fetched from an API.",
+            "B": "A built-in object that allows components to manage their own internal, mutable data.",
+            "C": "Data passed from a parent component to a child component.",
+            "D": "A global variable for application settings."
+          },
+          "correct_answer": "B",
+          "explanation": "State is data that a component owns and can change over time, triggering re-renders of the component and its children."
+        },
+        {
+          "question": "How do you initialize state in a functional component?",
+          "options": {
+            "A": "By assigning directly to `this.state`.",
+            "B": "Using the `useState` Hook.",
+            "C": "By passing it as a prop.",
+            "D": "Through a `constructor` method."
+          },
+          "correct_answer": "B",
+          "explanation": "The `useState` Hook is the standard way to add state to functional components."
+        },
+        {
+          "question": "What does the `useState` Hook return?",
+          "options": {
+            "A": "Only the current state value.",
+            "B": "An array with the current state value and a function to update it.",
+            "C": "Only the function to update the state.",
+            "D": "A boolean indicating if the state has changed."
+          },
+          "correct_answer": "B",
+          "explanation": "`useState` returns a pair: the current state value and a 'setter' function that lets you update it."
+        },
+        {
+          "question": "How do you update state in a functional component using `useState`?",
+          "options": {
+            "A": "By directly modifying the state variable.",
+            "B": "By calling `this.setState()`.",
+            "C": "By calling the state 'setter' function returned by `useState`.",
+            "D": "By assigning a new value to `props`."
+          },
+          "correct_answer": "C",
+          "explanation": "To update state, you must use the update function provided by `useState`. Direct mutation will not trigger a re-render."
+        },
+        {
+          "question": "When `setState` (or the state setter in functional components) is called, what happens to the component?",
+          "options": {
+            "A": "Only the component's state is updated, but no re-render occurs.",
+            "B": "The component and its children re-render.",
+            "C": "Only the parent component re-renders.",
+            "D": "The application crashes."
+          },
+          "correct_answer": "B",
+          "explanation": "Updating state schedules a re-render of the component and its subtree, allowing the UI to reflect the new data."
+        },
+        {
+          "question": "What is the correct way to update state based on the previous state in a functional component?",
+          "options": {
+            "A": "`setCount(count + 1)`",
+            "B": "`setCount(prevCount => prevCount + 1)`",
+            "C": "`count = count + 1`",
+            "D": "Directly modifying the state variable `count++`"
+          },
+          "correct_answer": "B",
+          "explanation": "When the new state depends on the previous state, it's safer to pass a function to the state setter to ensure you're working with the most up-to-date state."
+        },
+        {
+          "question": "What is 'lifting state up' and why is it used?",
+          "options": {
+            "A": "A technique to optimize rendering performance by reducing state.",
+            "B": "Moving state from a child component to its closest common ancestor to share it between siblings.",
+            "C": "A method to persist state in local storage.",
+            "D": "Converting a functional component to a class component."
+          },
+          "correct_answer": "B",
+          "explanation": "It's a common pattern to share state between sibling components by moving the state to their closest common ancestor, and then passing it down via props."
+        },
+        {
+          "question": "When should you use a global state management library like Redux or Zustand?",
+          "options": {
+            "A": "For every small component with local state.",
+            "B": "When state needs to be shared across many components at different levels of the component tree, avoiding prop drilling.",
+            "C": "Only for fetching data from APIs.",
+            "D": "When you want to replace `useState` entirely."
+          },
+          "correct_answer": "B",
+          "explanation": "Global state management solutions become beneficial for complex applications with highly interconnected state that needs to be accessible from many places."
+        },
+        {
+          "question": "What is 'prop drilling'?",
+          "options": {
+            "A": "Passing props efficiently between parent and child components.",
+            "B": "Passing data from a parent component down through multiple layers of intermediate components that don't directly use the data.",
+            "C": "A method to optimize component re-renders.",
+            "D": "Managing state without using hooks."
+          },
+          "correct_answer": "B",
+          "explanation": "Prop drilling can make code harder to maintain and understand, and is often a sign that global state management or Context API might be useful."
+        },
+        {
+          "question": "What is the React Context API primarily used for?",
+          "options": {
+            "A": "To handle form submissions.",
+            "B": "To manage asynchronous operations.",
+            "C": "To provide a way to pass data through the component tree without having to pass props down manually at every level.",
+            "D": "To perform server-side rendering."
+          },
+          "correct_answer": "C",
+          "explanation": "Context API is designed for sharing 'global' data (like theme, authenticated user) that can be considered 'global' for a tree of React components."
+        },
+        {
+          "question": "What two things do you typically create when using the React Context API?",
+          "options": {
+            "A": "A Provider and a Consumer.",
+            "B": "A State and an Effect.",
+            "C": "A Class and a Function.",
+            "D": "A Reducer and an Action."
+          },
+          "correct_answer": "A",
+          "explanation": "The `Provider` component makes the context value available to components in its subtree, while `Consumer` (or `useContext` Hook) reads that value."
+        },
+        {
+          "question": "Which Hook is used to consume context in a functional component?",
+          "options": {
+            "A": "`useState`",
+            "B": "`useEffect`",
+            "C": "`useContext`",
+            "D": "`useReducer`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `useContext` Hook provides a direct way to access the value of a context in a functional component."
+        },
+        {
+          "question": "What is the purpose of the `useReducer` Hook?",
+          "options": {
+            "A": "To fetch data from an API.",
+            "B": "To manage complex state logic that involves multiple sub-values or when the next state depends on the previous one.",
+            "C": "To optimize component re-renders.",
+            "D": "To perform side effects after rendering."
+          },
+          "correct_answer": "B",
+          "explanation": "`useReducer` is an alternative to `useState` for more complex state management, often used with a 'reducer' function similar to Redux."
+        },
+        {
+          "question": "How does `useReducer` update state?",
+          "options": {
+            "A": "By calling `setState` directly.",
+            "B": "By directly mutating the state object.",
+            "C": "By dispatching an 'action' to a 'reducer' function.",
+            "D": "By modifying props received from a parent."
+          },
+          "correct_answer": "C",
+          "explanation": "`useReducer` works by dispatching actions, which are then processed by a reducer function to produce the new state."
+        },
+        {
+          "question": "What is the concept of 'immutability' in React state management?",
+          "options": {
+            "A": "State values can be directly changed at any time.",
+            "B": "State values should not be directly modified; instead, new state objects/arrays should be created with the desired changes.",
+            "C": "Props cannot be changed.",
+            "D": "Components never re-render."
+          },
+          "correct_answer": "B",
+          "explanation": "React relies on immutability for efficient change detection. Direct mutation of state can lead to bugs because React might not detect the change and thus not re-render."
+        },
+        {
+          "question": "Which of the following is an immutable way to update an array in React state?",
+          "options": {
+            "A": "`myArray.push(newItem); setState({ myArray });`",
+            "B": "`setState(myArray.concat(newItem))`",
+            "C": "`myArray[0] = newValue; setState({ myArray });`",
+            "D": "`setState(myArray)` after modifying it."
+          },
+          "correct_answer": "B",
+          "explanation": "`concat()` creates a new array without modifying the original. Other options directly mutate the array, which React's reconciliation might miss. Spread syntax (`[...myArray, newItem]`) is also a common immutable way."
+        },
+        {
+          "question": "Which of the following is an immutable way to update an object in React state?",
+          "options": {
+            "A": "`myObject.property = newValue; setState({ myObject });`",
+            "B": "`setState({ myObject: { ...myObject, property: newValue } })`",
+            "C": "`Object.assign(myObject, { property: newValue }); setState({ myObject });`",
+            "D": "`setState(myObject)` after modifying it."
+          },
+          "correct_answer": "B",
+          "explanation": "The spread syntax (`...`) creates a shallow copy of the object and allows overriding specific properties, ensuring immutability."
+        },
+        {
+          "question": "What happens if you directly modify `this.state` in a class component instead of using `this.setState()`?",
+          "options": {
+            "A": "The component will re-render immediately.",
+            "B": "React will throw an error and stop the application.",
+            "C": "The state will be updated, but the component will not re-render, leading to UI inconsistencies.",
+            "D": "It's the preferred way to update state."
+          },
+          "correct_answer": "C",
+          "explanation": "Directly modifying `this.state` bypasses React's internal mechanisms for tracking state changes and scheduling updates, resulting in an unupdated UI."
+        },
+        {
+          "question": "When using `this.setState()` in a class component, is it synchronous or asynchronous?",
+          "options": {
+            "A": "Always synchronous.",
+            "B": "Always asynchronous.",
+            "C": "It can be asynchronous, and React often batches multiple `setState` calls for performance.",
+            "D": "Depends on the browser."
+          },
+          "correct_answer": "C",
+          "explanation": "React may batch multiple `setState` calls into a single update for performance. Therefore, you cannot rely on `this.state` reflecting the new value immediately after calling `setState`."
+        },
+        {
+          "question": "Which pattern is generally preferred for managing shared state in smaller to medium-sized React applications, before considering large libraries?",
+          "options": {
+            "A": "Extensive prop drilling.",
+            "B": "Global variables.",
+            "C": "Lifting state up and/or using React Context API.",
+            "D": "Directly manipulating the DOM."
+          },
+          "correct_answer": "C",
+          "explanation": "Lifting state up and Context API provide built-in solutions for managing shared state without the overhead of external libraries, suitable for many common scenarios."
+        }
+      ]
+    }
+  ]
+}

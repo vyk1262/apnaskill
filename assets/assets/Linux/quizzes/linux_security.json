@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "topic": "linux_security",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Linux security features?",
+          "options": {
+            "A": "To enhance graphical performance.",
+            "B": "To protect the system from unauthorized access.",
+            "C": "To increase network connectivity.",
+            "D": "To provide better user interface."
+          },
+          "correct_answer": "B",
+          "explanation": "Linux security features are designed to protect the system from unauthorized access and ensure data integrity."
+        },
+        {
+          "question": "Which command is used to change user passwords in Linux?",
+          "options": {
+            "A": "passwd",
+            "B": "chpass",
+            "C": "passchange",
+            "D": "chpasswd"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'passwd' command in Linux is used to change user passwords, enhancing account security."
+        },
+        {
+          "question": "What is the function of the 'iptables' command in Linux?",
+          "options": {
+            "A": "To configure firewall rules.",
+            "B": "To delete files.",
+            "C": "To move files.",
+            "D": "To rename files."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'iptables' command in Linux is used to configure firewall rules, controlling network traffic and enhancing security."
+        },
+        {
+          "question": "Which tool in Linux helps with security auditing?",
+          "options": {
+            "A": "Lynis",
+            "B": "audittool",
+            "C": "securitytool",
+            "D": "auditwatch"
+          },
+          "correct_answer": "A",
+          "explanation": "The 'Lynis' tool in Linux helps with security auditing, providing a comprehensive security assessment of the system."
+        },
+        {
+          "question": "How can you view security logs in Linux?",
+          "options": {
+            "A": "Using the 'cat' command.",
+            "B": "Through the 'logview' command.",
+            "C": "By editing the log files.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'cat' command in Linux is used to view security logs, displaying log entries in the terminal."
+        },
+        {
+          "question": "What is the purpose of the 'sudo' command in Linux?",
+          "options": {
+            "A": "To execute commands with superuser privileges.",
+            "B": "To manage user permissions.",
+            "C": "To configure network settings.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'sudo' command in Linux is used to execute commands with superuser privileges, allowing authorized users to perform administrative tasks."
+        },
+        {
+          "question": "Which Linux feature assists with user authentication?",
+          "options": {
+            "A": "Authentication management.",
+            "B": "Authentication optimization.",
+            "C": "Authentication configuration.",
+            "D": "Authentication execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Authentication management features in Linux help users manage user authentication, ensuring secure access to the system."
+        },
+        {
+          "question": "What is the role of 'fail2ban' in Linux?",
+          "options": {
+            "A": "To prevent brute-force attacks.",
+            "B": "To configure network settings.",
+            "C": "To monitor system performance.",
+            "D": "To enhance system security."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'fail2ban' tool in Linux is used to prevent brute-force attacks, blocking IP addresses after multiple failed login attempts."
+        },
+        {
+          "question": "How can you enable advanced security features in Linux?",
+          "options": {
+            "A": "By installing a security package.",
+            "B": "Through the security manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced security features in Linux can be enabled through the security manager, providing tools for configuring and managing security settings."
+        },
+        {
+          "question": "Which feature in Linux helps with access control?",
+          "options": {
+            "A": "Access management.",
+            "B": "Access optimization.",
+            "C": "Access configuration.",
+            "D": "Access execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Access management features in Linux help users control access to the system, ensuring security and privacy."
+        },
+        {
+          "question": "What is the purpose of 'AppArmor' in Linux?",
+          "options": {
+            "A": "To enforce application security policies.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'AppArmor' tool in Linux is used to enforce application security policies, restricting applications' access to system resources."
+        },
+        {
+          "question": "How can you enable advanced access control features in Linux?",
+          "options": {
+            "A": "By installing an access control package.",
+            "B": "Through the access control manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced access control features in Linux can be enabled through the access control manager, providing tools for configuring and managing access rights."
+        },
+        {
+          "question": "Which Linux feature assists with system integrity?",
+          "options": {
+            "A": "Integrity management.",
+            "B": "Integrity optimization.",
+            "C": "Integrity configuration.",
+            "D": "Integrity execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Integrity management features in Linux help users ensure system integrity, protecting against unauthorized changes."
+        },
+        {
+          "question": "What is the function of 'SELinux' in Linux?",
+          "options": {
+            "A": "To enforce security policies.",
+            "B": "To enhance system security.",
+            "C": "To configure network settings.",
+            "D": "To monitor system performance."
+          },
+          "correct_answer": "A",
+          "explanation": "The 'SELinux' tool in Linux is used to enforce security policies, providing a mechanism for access control and system protection."
+        },
+        {
+          "question": "How can you enable advanced integrity management features in Linux?",
+          "options": {
+            "A": "By installing an integrity management package.",
+            "B": "Through the integrity manager.",
+            "C": "Using a command-line tool.",
+            "D": "Via a third-party application."
+          },
+          "correct_answer": "B",
+          "explanation": "Advanced integrity management features in Linux can be enabled through the integrity manager, providing tools for configuring and managing system integrity."
+        },
+        {
+          "question": "Which Linux feature assists with system monitoring?",
+          "options": {
+            "A": "Monitoring management.",
+            "B": "Monitoring optimization.",
+            "C": "Monitoring configuration.",
+            "D": "Monitoring execution."
+          },
+          "correct_answer": "A",
+          "explanation": "Monitoring management features in Linux help users monitor system performance, providing tools for tracking resource usage and identifying potential issues."
+        }
+      ]
+    }
+  ]
+}

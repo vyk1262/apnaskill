@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Keras_Topics",
+      "questions": [
+        {
+          "question": "Which Keras API allows you to build models with non-linear topologies, shared layers, and multiple inputs or outputs?",
+          "options": {
+            "A": "The Sequential API.",
+            "B": "The Functional API.",
+            "C": "The SimpleRNN API.",
+            "D": "The Lambda API."
+          },
+          "correct_answer": "B",
+          "explanation": "The Functional API provides greater flexibility over the Sequential API for complex model architectures."
+        },
+        {
+          "question": "When building models using the Keras Functional API, what is the starting point for defining input layers?",
+          "options": {
+            "A": "`tf.keras.layers.Dense`",
+            "B": "`tf.keras.Input`",
+            "C": "`tf.keras.Model`",
+            "D": "`tf.keras.layers.Layer`"
+          },
+          "correct_answer": "B",
+          "explanation": "`tf.keras.Input` is used to instantiate a Keras tensor, which is then fed into subsequent layers."
+        },
+        {
+          "question": "What is the primary benefit of 'Model Subclassing' (inheriting from `tf.keras.Model`) in Keras?",
+          "options": {
+            "A": "It's the simplest way to build basic feedforward networks.",
+            "B": "It offers the highest level of customizability and control, allowing for custom forward passes, training loops, and dynamic model structures.",
+            "C": "It automatically parallelizes training across multiple GPUs.",
+            "D": "It's exclusively for building Generative Adversarial Networks."
+          },
+          "correct_answer": "B",
+          "explanation": "Model Subclassing is ideal for research and highly specific model designs that cannot be easily expressed with Sequential or Functional API."
+        },
+        {
+          "question": "To create a reusable custom layer with its own trainable weights and `call()` logic, which Keras class should you inherit from?",
+          "options": {
+            "A": "`tf.keras.Model`",
+            "B": "`tf.keras.Sequential`",
+            "C": "`tf.keras.layers.Layer`",
+            "D": "`tf.keras.optimizers.Optimizer`"
+          },
+          "correct_answer": "C",
+          "explanation": "`tf.keras.layers.Layer` provides the necessary infrastructure for managing weights and defining the layer's forward pass."
+        },
+        {
+          "question": "When implementing a 'Custom Loss Function' in Keras, what are the two required arguments for the function?",
+          "options": {
+            "A": "`y_pred` and `y_true`",
+            "B": "`y_true` and `y_pred`",
+            "C": "`inputs` and `outputs`",
+            "D": "`weights` and `biases`"
+          },
+          "correct_answer": "B",
+          "explanation": "Custom loss functions receive the true labels and the model's predictions as input to compute the loss value."
+        },
+        {
+          "question": "Which of the following Keras callbacks allows you to execute custom logic (e.g., logging, visualization, custom metrics) at specific points during training (e.g., at the end of each epoch or batch)?",
+          "options": {
+            "A": "`EarlyStopping`",
+            "B": "`ModelCheckpoint`",
+            "C": "`CustomCallback` (by inheriting from `tf.keras.callbacks.Callback`)",
+            "D": "`ReduceLROnPlateau`"
+          },
+          "correct_answer": "C",
+          "explanation": "Custom Callbacks provide hooks into the `model.fit()` loop, enabling highly flexible monitoring and control."
+        },
+        {
+          "question": "What is the recommended file format for saving and loading entire Keras models (architecture, weights, optimizer state) for production deployment or sharing?",
+          "options": {
+            "A": ".txt",
+            "B": ".csv",
+            "C": "The TensorFlow SavedModel format (`.tf` directory or H5 for older Keras).",
+            "D": ".json"
+          },
+          "correct_answer": "C",
+          "explanation": "The SavedModel format is TensorFlow's universal serialization format, suitable for deployment with TensorFlow Serving, TF Lite, TF.js, etc."
+        },
+        {
+          "question": "What is the primary benefit of using `tf.keras.mixed_precision` for training deep learning models?",
+          "options": {
+            "A": "It ensures higher model accuracy on all datasets.",
+            "B": "It reduces memory usage and speeds up training on compatible hardware (GPUs/TPUs) by performing operations in lower-precision floating-point formats (e.g., float16) where appropriate.",
+            "C": "It automatically tunes hyperparameters.",
+            "D": "It enables models to run on CPUs only."
+          },
+          "correct_answer": "B",
+          "explanation": "Mixed precision training is an optimization technique that can significantly boost performance without sacrificing much accuracy."
+        },
+        {
+          "question": "Which Keras preprocessing layer is useful for standardizing input features (e.g., image pixels or numerical data) to have zero mean and unit variance?",
+          "options": {
+            "A": "`tf.keras.layers.TextVectorization`",
+            "B": "`tf.keras.layers.Normalization`",
+            "C": "`tf.keras.layers.CategoryEncoding`",
+            "D": "`tf.keras.layers.Rescaling`"
+          },
+          "correct_answer": "B",
+          "explanation": "Normalization layers are crucial for many models, especially those with varying input scales, to improve training stability and performance."
+        },
+        {
+          "question": "What is `tf.keras.utils.Sequence` used for?",
+          "options": {
+            "A": "To define a sequential model.",
+            "B": "To write custom data generators that are thread-safe and can be used with `model.fit()` for large datasets that don't fit in memory.",
+            "C": "To create a sequence of layers.",
+            "D": "To perform sequence padding."
+          },
+          "correct_answer": "B",
+          "explanation": "It's a way to provide data to Keras models iteratively, especially helpful for large datasets or complex preprocessing."
+        },
+        {
+          "question": "For hyperparameter tuning in Keras, which library is often used to automate the search for optimal learning rates, batch sizes, number of layers, etc.?",
+          "options": {
+            "A": "Scikit-learn",
+            "B": "Pandas",
+            "C": "Keras Tuner",
+            "D": "Matplotlib"
+          },
+          "correct_answer": "C",
+          "explanation": "Keras Tuner is a specialized library for systematic hyperparameter search with Keras models."
+        },
+        {
+          "question": "How do you explicitly enable eager execution (the default in TF 2.x) if it was somehow disabled or in an older TensorFlow version?",
+          "options": {
+            "A": "`tf.disable_eager_execution()`",
+            "B": "`tf.compat.v1.enable_eager_execution()` or it's enabled by default in TF 2.x.",
+            "C": "`tf.graph_mode()`",
+            "D": "It cannot be enabled explicitly."
+          },
+          "correct_answer": "B",
+          "explanation": "Eager execution is the default and recommended execution mode in TensorFlow 2.x, simplifying debugging and making Keras feel more like standard Python."
+        },
+        {
+          "question": "When debugging a Keras model built with the Functional API or Model Subclassing, what is a common way to inspect intermediate tensor shapes and values?",
+          "options": {
+            "A": "Only by using `model.summary()`.",
+            "B": "By setting breakpoints and inspecting tensors, as Keras operations are executed imperatively (eagerly) by default.",
+            "C": "It's impossible to inspect intermediate values in Keras.",
+            "D": "By converting the model to a TensorFlow graph and then using a graph debugger."
+          },
+          "correct_answer": "B",
+          "explanation": "The eager execution mode of TensorFlow 2.x (which Keras uses) allows for interactive debugging similar to regular Python."
+        },
+        {
+          "question": "What is the primary role of `tf.data.Dataset` when working with Keras models, especially for large datasets?",
+          "options": {
+            "A": "To create new training data.",
+            "B": "To build highly optimized, performant input pipelines for loading, transforming, and batching data efficiently during training.",
+            "C": "To store the model's weights.",
+            "D": "To compress the dataset size on disk."
+          },
+          "correct_answer": "B",
+          "explanation": "The `tf.data` API is crucial for scalable and efficient data loading, preventing bottlenecks during training."
+        },
+        {
+          "question": "Which Keras preprocessing layer is suitable for mapping string categories (e.g., 'cat', 'dog') to integer indices or one-hot encoded vectors?",
+          "options": {
+            "A": "`tf.keras.layers.TextVectorization`",
+            "B": "`tf.keras.layers.Normalization`",
+            "C": "`tf.keras.layers.CategoryEncoding`",
+            "D": "`tf.keras.layers.RandomFlip`"
+          },
+          "correct_answer": "C",
+          "explanation": "`CategoryEncoding` handles the conversion of categorical features into numerical representations suitable for neural networks."
+        },
+        {
+          "question": "When should you prefer the Keras Functional API over Model Subclassing?",
+          "options": {
+            "A": "When you need maximum control and dynamic behavior.",
+            "B": "When you're building simple, linear stack of layers.",
+            "C": "When your model has a complex graph of layers (shared layers, multiple inputs/outputs) but a static structure that can be defined once.",
+            "D": "When you want to avoid using `tf.keras.Input`."
+          },
+          "correct_answer": "C",
+          "explanation": "The Functional API strikes a balance between flexibility and ease of use for many common complex architectures."
+        },
+        {
+          "question": "To save only the weights of a Keras model to an HDF5 file, which method would you use?",
+          "options": {
+            "A": "`model.save('my_model.h5')`",
+            "B": "`model.save_weights('my_weights.h5')`",
+            "C": "`tf.saved_model.save(model, 'my_model_dir')`",
+            "D": "`model.to_json()`"
+          },
+          "correct_answer": "B",
+          "explanation": "`model.save_weights()` is specifically for saving only the trainable parameters of the model."
+        },
+        {
+          "question": "Which Keras utility is used for padding sequences to a uniform length, often necessary before feeding them into RNNs?",
+          "options": {
+            "A": "`tf.keras.preprocessing.image.ImageDataGenerator`",
+            "B": "`tf.keras.preprocessing.sequence.pad_sequences`",
+            "C": "`tf.keras.utils.to_categorical`",
+            "D": "`tf.keras.utils.plot_model`"
+          },
+          "correct_answer": "B",
+          "explanation": "`pad_sequences` ensures that all sequences in a batch have the same length by adding padding values (e.g., zeros) or truncating them."
+        },
+        {
+          "question": "What is the benefit of using `tf.keras.layers.TextVectorization` as a preprocessing layer within a Keras model?",
+          "options": {
+            "A": "It converts text directly into images.",
+            "B": "It tokenizes text, builds a vocabulary, and converts text into numerical representations (e.g., integer sequences or one-hot encodings) directly as part of the model's graph.",
+            "C": "It performs sentiment analysis.",
+            "D": "It translates text into different languages."
+          },
+          "correct_answer": "B",
+          "explanation": "Placing preprocessing layers within the model graph makes the model self-contained and simplifies deployment as preprocessing becomes part of the exported model."
+        },
+        {
+          "question": "For visualization of a Keras model's architecture (Functional API or Model Subclassing), which utility function can generate a plot of the graph?",
+          "options": {
+            "A": "`model.summary()`",
+            "B": "`tf.keras.utils.plot_model()`",
+            "C": "`tf.keras.Model.get_config()`",
+            "D": "`tf.keras.backend.function()`"
+          },
+          "correct_answer": "B",
+          "explanation": "`plot_model` is incredibly useful for understanding complex model topologies visually."
+        }
+      ]
+    }
+  ]
+}

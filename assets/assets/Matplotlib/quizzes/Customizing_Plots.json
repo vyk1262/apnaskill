@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Customizing_Plots",
+      "questions": [
+        {
+          "question": "What is the primary purpose of customizing plots in Matplotlib?",
+          "options": {
+            "A": "To enhance the visual appeal and clarity of plots.",
+            "B": "To store data.",
+            "C": "To perform data analysis.",
+            "D": "To create static plots."
+          },
+          "correct_answer": "A",
+          "explanation": "Customizing plots in Matplotlib is primarily aimed at enhancing the visual appeal and clarity of plots, making them more informative and engaging."
+        },
+        {
+          "question": "Which method is used to set the title of a plot in Matplotlib?",
+          "options": {
+            "A": "title()",
+            "B": "xlabel()",
+            "C": "ylabel()",
+            "D": "legend()"
+          },
+          "correct_answer": "A",
+          "explanation": "The title() method in Matplotlib is used to set the title of a plot, providing a descriptive heading for the visualization."
+        },
+        {
+          "question": "What is the purpose of the xlabel() method in Matplotlib?",
+          "options": {
+            "A": "To set the label for the x-axis.",
+            "B": "To set the label for the y-axis.",
+            "C": "To set the plot title.",
+            "D": "To add a legend."
+          },
+          "correct_answer": "A",
+          "explanation": "The xlabel() method in Matplotlib is used to set the label for the x-axis, providing context for the data represented along the horizontal axis."
+        },
+        {
+          "question": "Which method is used to set the label for the y-axis in Matplotlib?",
+          "options": {
+            "A": "ylabel()",
+            "B": "xlabel()",
+            "C": "title()",
+            "D": "legend()"
+          },
+          "correct_answer": "A",
+          "explanation": "The ylabel() method in Matplotlib is used to set the label for the y-axis, providing context for the data represented along the vertical axis."
+        },
+        {
+          "question": "What is the function of the legend() method in Matplotlib?",
+          "options": {
+            "A": "To add a legend to the plot.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The legend() method in Matplotlib is used to add a legend to the plot, providing a key for interpreting the data series represented."
+        },
+        {
+          "question": "Which method is used to customize the line style in Matplotlib?",
+          "options": {
+            "A": "plot() with linestyle parameter",
+            "B": "scatter()",
+            "C": "bar()",
+            "D": "hist()"
+          },
+          "correct_answer": "A",
+          "explanation": "The plot() method with the linestyle parameter in Matplotlib is used to customize the line style, allowing for different visual representations of data trends."
+        },
+        {
+          "question": "What is the purpose of the color parameter in Matplotlib plotting methods?",
+          "options": {
+            "A": "To set the color of plot elements.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The color parameter in Matplotlib plotting methods is used to set the color of plot elements, enhancing the visual distinction between different data series."
+        },
+        {
+          "question": "Which method is used to adjust the plot's axis limits in Matplotlib?",
+          "options": {
+            "A": "xlim() and ylim()",
+            "B": "xlabel() and ylabel()",
+            "C": "title() and legend()",
+            "D": "plot() and scatter()"
+          },
+          "correct_answer": "A",
+          "explanation": "The xlim() and ylim() methods in Matplotlib are used to adjust the plot's axis limits, providing control over the range of data displayed."
+        },
+        {
+          "question": "What is the function of the grid() method in Matplotlib?",
+          "options": {
+            "A": "To add a grid to the plot.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The grid() method in Matplotlib is used to add a grid to the plot, providing reference lines for easier interpretation of data points."
+        },
+        {
+          "question": "Which method is used to customize the font size in Matplotlib plots?",
+          "options": {
+            "A": "rcParams['font.size']",
+            "B": "xlabel()",
+            "C": "ylabel()",
+            "D": "legend()"
+          },
+          "correct_answer": "A",
+          "explanation": "The rcParams['font.size'] setting in Matplotlib is used to customize the font size in plots, ensuring text elements are appropriately sized for readability."
+        },
+        {
+          "question": "What is the purpose of the figsize parameter in Matplotlib?",
+          "options": {
+            "A": "To set the size of the figure.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The figsize parameter in Matplotlib is used to set the size of the figure, controlling the overall dimensions of the plot."
+        },
+        {
+          "question": "Which method is used to save a plot to a file in Matplotlib?",
+          "options": {
+            "A": "savefig()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The savefig() method in Matplotlib is used to save a plot to a file, allowing for sharing and reuse of visualizations."
+        },
+        {
+          "question": "What is the function of the tight_layout() method in Matplotlib?",
+          "options": {
+            "A": "To automatically adjust subplot parameters for a neat layout.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The tight_layout() method in Matplotlib is used to automatically adjust subplot parameters for a neat layout, ensuring elements do not overlap."
+        },
+        {
+          "question": "Which method is used to add annotations to a plot in Matplotlib?",
+          "options": {
+            "A": "annotate()",
+            "B": "xlabel()",
+            "C": "ylabel()",
+            "D": "legend()"
+          },
+          "correct_answer": "A",
+          "explanation": "The annotate() method in Matplotlib is used to add annotations to a plot, providing additional context or information about specific data points."
+        },
+        {
+          "question": "What is the purpose of the subplots() method in Matplotlib?",
+          "options": {
+            "A": "To create multiple subplots in a single figure.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The subplots() method in Matplotlib is used to create multiple subplots in a single figure, allowing for comparison of different data sets."
+        },
+        {
+          "question": "Which method is used to customize the tick labels in Matplotlib?",
+          "options": {
+            "A": "xticks() and yticks()",
+            "B": "xlabel() and ylabel()",
+            "C": "title() and legend()",
+            "D": "plot() and scatter()"
+          },
+          "correct_answer": "A",
+          "explanation": "The xticks() and yticks() methods in Matplotlib are used to customize the tick labels, providing control over the appearance of axis ticks."
+        },
+        {
+          "question": "What is the function of the set_facecolor() method in Matplotlib?",
+          "options": {
+            "A": "To set the background color of the plot.",
+            "B": "To set the plot title.",
+            "C": "To set the label for the x-axis.",
+            "D": "To set the label for the y-axis."
+          },
+          "correct_answer": "A",
+          "explanation": "The set_facecolor() method in Matplotlib is used to set the background color of the plot, enhancing the visual appeal of the visualization."
+        }
+      ]
+    }
+  ]
+}

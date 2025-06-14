@@ -1,0 +1,196 @@
+{
+  "result": [
+    {
+      "topic": "Model_Deployment",
+      "questions": [
+        {
+          "question": "What is the primary goal of model deployment?",
+          "options": {
+            "A": "To make a trained model available for use in production.",
+            "B": "To eliminate all models.",
+            "C": "To duplicate models.",
+            "D": "To increase the number of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Model deployment aims to make a trained model available for use in production, enabling real-time predictions and decision-making."
+        },
+        {
+          "question": "Which technique is commonly used for deploying machine learning models?",
+          "options": {
+            "A": "Containerization",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Containerization is a widely used technique for deploying machine learning models, providing a consistent environment for model execution."
+        },
+        {
+          "question": "What is the purpose of using containerization in model deployment?",
+          "options": {
+            "A": "To provide a consistent environment for model execution.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Containerization is used to provide a consistent environment for model execution, ensuring reliability and scalability in production."
+        },
+        {
+          "question": "Which method is used to deploy machine learning models in a scalable manner?",
+          "options": {
+            "A": "Cloud Deployment",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Cloud Deployment is a method used to deploy machine learning models in a scalable manner, leveraging cloud infrastructure for flexibility and scalability."
+        },
+        {
+          "question": "What is the benefit of model deployment in machine learning?",
+          "options": {
+            "A": "Real-time predictions and decision-making.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Model deployment enables real-time predictions and decision-making by making trained models available for use in production."
+        },
+        {
+          "question": "Which algorithm is used for deploying machine learning models by providing a consistent environment for execution?",
+          "options": {
+            "A": "Docker",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Docker is an algorithm used for deploying machine learning models by providing a consistent environment for execution, ensuring reliability and scalability."
+        },
+        {
+          "question": "What is the purpose of using Docker in model deployment?",
+          "options": {
+            "A": "To provide a consistent environment for model execution.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Docker is used to provide a consistent environment for model execution, ensuring reliability and scalability in production."
+        },
+        {
+          "question": "Which technique is used for deploying machine learning models by leveraging cloud infrastructure?",
+          "options": {
+            "A": "Cloud Deployment",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Cloud Deployment is a technique used for deploying machine learning models by leveraging cloud infrastructure, providing flexibility and scalability."
+        },
+        {
+          "question": "What is the benefit of using Cloud Deployment in model deployment?",
+          "options": {
+            "A": "Real-time predictions and decision-making.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Cloud Deployment enables real-time predictions and decision-making by leveraging cloud infrastructure for flexibility and scalability."
+        },
+        {
+          "question": "Which method is used for deploying machine learning models by providing a consistent environment for execution?",
+          "options": {
+            "A": "Containerization",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Containerization is a method used for deploying machine learning models by providing a consistent environment for execution, ensuring reliability and scalability."
+        },
+        {
+          "question": "What is the purpose of using Containerization in model deployment?",
+          "options": {
+            "A": "To provide a consistent environment for model execution.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Containerization is used to provide a consistent environment for model execution, ensuring reliability and scalability in production."
+        },
+        {
+          "question": "Which algorithm is used for deploying machine learning models by leveraging cloud infrastructure?",
+          "options": {
+            "A": "AWS",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "AWS is an algorithm used for deploying machine learning models by leveraging cloud infrastructure, providing flexibility and scalability."
+        },
+        {
+          "question": "What is the benefit of using AWS in model deployment?",
+          "options": {
+            "A": "Real-time predictions and decision-making.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "AWS enables real-time predictions and decision-making by leveraging cloud infrastructure for flexibility and scalability."
+        },
+        {
+          "question": "Which technique is used for deploying machine learning models by providing a consistent environment for execution?",
+          "options": {
+            "A": "Docker",
+            "B": "Linear Regression",
+            "C": "Decision Trees",
+            "D": "K-Means Clustering"
+          },
+          "correct_answer": "A",
+          "explanation": "Docker is a technique used for deploying machine learning models by providing a consistent environment for execution, ensuring reliability and scalability."
+        },
+        {
+          "question": "What is the benefit of using Docker in model deployment?",
+          "options": {
+            "A": "Real-time predictions and decision-making.",
+            "B": "Increased number of models.",
+            "C": "Elimination of all models.",
+            "D": "Duplication of models."
+          },
+          "correct_answer": "A",
+          "explanation": "Docker enables real-time predictions and decision-making by providing a consistent environment for execution, ensuring reliability and scalability."
+        },
+        {
+          "question": "Which method is used for deploying machine learning models by leveraging cloud infrastructure?",
+          "options": {
+            "A": "Cloud Deployment",
+            "B": "Feature Engineering",
+            "C": "Feature Duplication",
+            "D": "Feature Elimination"
+          },
+          "correct_answer": "A",
+          "explanation": "Cloud Deployment is a method used for deploying machine learning models by leveraging cloud infrastructure, providing flexibility and scalability."
+        },
+        {
+          "question": "What is the purpose of using Cloud Deployment in model deployment?",
+          "options": {
+            "A": "To provide a consistent environment for model execution.",
+            "B": "To increase the number of models.",
+            "C": "To eliminate all models.",
+            "D": "To duplicate models."
+          },
+          "correct_answer": "A",
+          "explanation": "Cloud Deployment is used to provide a consistent environment for model execution, ensuring reliability and scalability in production."
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,229 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Container_Lifecycle_Management",
+      "questions": [
         {
-            "topic": "Container_Lifecycle_Management",
-            "questions": []
+          "question": "What are the typical states in a Docker container's lifecycle?",
+          "options": {
+            "A": "Build, Push, Pull, Run, Stop",
+            "B": "Created, Running, Paused, Stopped, Exited, Removed",
+            "C": "Active, Inactive, Dormant, Terminated",
+            "D": "Image, Container, Volume, Network"
+          },
+          "correct_answer": "B",
+          "explanation": "Docker containers transition through various states: 'Created' (after `docker create`), 'Running' (after `docker start` or `docker run`), 'Paused' (temporarily suspended), 'Stopped' (gracefully shut down), 'Exited' (process finished or failed), and 'Removed' (deleted from the system)."
+        },
+        {
+          "question": "Which command is used to create a new container from an image but not start it immediately?",
+          "options": {
+            "A": "`docker run`",
+            "B": "`docker start`",
+            "C": "`docker create`",
+            "D": "`docker build`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker create` command creates a writeable container layer over the specified image and prepares it for running, but it does not start the container. This allows for configuration before starting."
+        },
+        {
+          "question": "Which command is used to start a previously created or stopped Docker container?",
+          "options": {
+            "A": "`docker run`",
+            "B": "`docker start`",
+            "C": "`docker attach`",
+            "D": "`docker resume`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `docker start` command starts one or more stopped containers. If the container was created with `docker create` or stopped after running, `docker start` will bring it back to a 'Running' state."
+        },
+        {
+          "question": "What is the primary effect of `docker stop <container_name>`?",
+          "options": {
+            "A": "It immediately and forcefully terminates the container.",
+            "B": "It sends a graceful shutdown signal (SIGTERM) to the main process inside the container, with a timeout before a forceful kill (SIGKILL).",
+            "C": "It pauses the container without releasing resources.",
+            "D": "It deletes the container from the system."
+          },
+          "correct_answer": "B",
+          "explanation": "`docker stop` attempts a graceful shutdown. It first sends a `SIGTERM` signal to the container's main process, allowing the application to clean up. If the application doesn't exit within a default timeout (usually 10 seconds), Docker sends a `SIGKILL` to force termination."
+        },
+        {
+          "question": "What is the primary effect of `docker kill <container_name>`?",
+          "options": {
+            "A": "It gently stops the container after its process finishes.",
+            "B": "It sends a SIGTERM signal and waits for cleanup.",
+            "C": "It immediately and forcefully terminates the container by sending a SIGKILL signal.",
+            "D": "It removes the container and its associated image."
+          },
+          "correct_answer": "C",
+          "explanation": "`docker kill` is a forceful way to stop a container. It sends a `SIGKILL` signal to the container's main process, which immediately terminates the process without allowing for graceful shutdown or cleanup. This should be used when `docker stop` is ineffective or when an immediate halt is required."
+        },
+        {
+          "question": "Which command is used to completely remove a Docker container from the system?",
+          "options": {
+            "A": "`docker stop`",
+            "B": "`docker rmi`",
+            "C": "`docker rm`",
+            "D": "`docker prune`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker rm` command removes one or more containers. A container must be in a 'Stopped' or 'Exited' state to be removed, unless the `-f` (force) flag is used, which will stop and then remove it."
+        },
+        {
+          "question": "What is the purpose of `docker pause <container_name>`?",
+          "options": {
+            "A": "To temporarily stop the container's processes without killing them, using cgroups.",
+            "B": "To shut down the container and release its resources.",
+            "C": "To create a checkpoint of the container's state.",
+            "D": "To prevent external access to the container's ports."
+          },
+          "correct_answer": "A",
+          "explanation": "`docker pause` suspends all processes within a running container. It leverages `cgroups` freezer functionality, effectively freezing the container's processes. The container still occupies memory and other resources, but its processes are suspended until unpaused (`docker unpause`)."
+        },
+        {
+          "question": "How can you view the current status of all Docker containers (running, stopped, etc.)?",
+          "options": {
+            "A": "`docker images`",
+            "B": "`docker ps -a`",
+            "C": "`docker logs`",
+            "D": "`docker stats`"
+          },
+          "correct_answer": "B",
+          "explanation": "`docker ps` lists only running containers. Adding the `-a` or `--all` flag (i.e., `docker ps -a`) lists all containers, including those that are stopped, exited, or paused, along with their status."
+        },
+        {
+          "question": "What is the primary use case for `docker attach <container_name>`?",
+          "options": {
+            "A": "To connect two containers to the same network.",
+            "B": "To connect your terminal's standard input, output, and error streams to a running container's main process.",
+            "C": "To attach a volume to a container.",
+            "D": "To attach a debugging tool to a container."
+          },
+          "correct_answer": "B",
+          "explanation": "`docker attach` allows you to connect to a running container's standard input, output, and error streams. This is useful for interacting with the main process of a container that was started in detached mode or for observing its output directly."
+        },
+        {
+          "question": "What is the difference between `docker run` and `docker start`?",
+          "options": {
+            "A": "`docker run` only starts containers, while `docker start` creates them.",
+            "B": "`docker run` creates and starts a new container, while `docker start` only starts an already created/stopped container.",
+            "C": "`docker run` uses an image, while `docker start` uses a container ID.",
+            "D": "They are interchangeable commands for launching containers."
+          },
+          "correct_answer": "B",
+          "explanation": "`docker run` is a composite command: if the image doesn't exist locally, it pulls it; then it creates a new container from that image, and finally starts it. `docker start`, on the other hand, is only used to start a container that has already been created (either by `docker create` or a previous `docker run` that subsequently stopped)."
+        },
+        {
+          "question": "What does `docker exec -it <container_name> bash` do?",
+          "options": {
+            "A": "It creates a new container and runs bash inside it.",
+            "B": "It stops the specified container.",
+            "C": "It opens an interactive bash shell *inside* a running container.",
+            "D": "It builds a new image with bash installed."
+          },
+          "correct_answer": "C",
+          "explanation": "`docker exec` runs a new command in an *already running* container. The `-it` flags provide an interactive terminal session. This command is frequently used to debug or inspect a running container without affecting its primary process."
+        },
+        {
+          "question": "Which command is used to remove all stopped containers?",
+          "options": {
+            "A": "`docker rm -a`",
+            "B": "`docker container prune`",
+            "C": "`docker stop --all`",
+            "D": "`docker clean containers`"
+          },
+          "correct_answer": "B",
+          "explanation": "`docker container prune` (or the older `docker system prune --containers`) is a convenient command to remove all stopped Docker containers, helping to free up disk space and clean up the Docker environment."
+        },
+        {
+          "question": "What is the primary benefit of restarting containers using Docker's restart policies?",
+          "options": {
+            "A": "Ensuring containers always use the latest image.",
+            "B": "Automating container recovery after failures or host reboots.",
+            "C": "Reducing the resource consumption of containers.",
+            "D": "Allowing containers to be paused indefinitely."
+          },
+          "correct_answer": "B",
+          "explanation": "Docker's restart policies (e.g., `unless-stopped`, `always`, `on-failure`) allow you to configure how Docker should restart containers when they exit or when the Docker daemon restarts. This is critical for maintaining application availability and ensuring services automatically recover from unexpected shutdowns."
+        },
+        {
+          "question": "If a container is configured with `--restart always`, what happens if the Docker daemon restarts?",
+          "options": {
+            "A": "The container will remain stopped.",
+            "B": "The container will be automatically removed.",
+            "C": "The container will automatically restart.",
+            "D": "The container will enter a paused state."
+          },
+          "correct_answer": "C",
+          "explanation": "The `--restart always` policy ensures that the container will always restart if it stops (unless explicitly stopped by a user) and also automatically restarts when the Docker daemon itself starts up, for example, after a host reboot."
+        },
+        {
+          "question": "Which command would you use to get detailed information (network settings, volumes, state) about a specific container?",
+          "options": {
+            "A": "`docker logs <container_name>`",
+            "B": "`docker ps <container_name>`",
+            "C": "`docker inspect <container_name>`",
+            "D": "`docker stats <container_name>`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `docker inspect` command returns low-level information on Docker objects, including containers, images, volumes, and networks. For containers, it provides a wealth of data in JSON format about its configuration, network settings, mounted volumes, current state, and more."
+        },
+        {
+          "question": "When a container exits, what happens to the changes made in its writable layer (if no volumes are used)?",
+          "options": {
+            "A": "They are automatically committed to the image.",
+            "B": "They are immediately deleted.",
+            "C": "They persist as part of the container and are accessible if the container is restarted, but are lost if the container is removed.",
+            "D": "They are synced back to the host filesystem."
+          },
+          "correct_answer": "C",
+          "explanation": "Changes made within the container's writable layer (the top layer) persist as long as the container itself exists. If the container is stopped and then started again, these changes will still be there. However, if the container is removed (`docker rm`), all changes in its writable layer are lost. This is why volumes are crucial for persistent data."
+        },
+        {
+          "question": "What is the purpose of the `--name` flag when running a Docker container?",
+          "options": {
+            "A": "To specify the image name.",
+            "B": "To give a custom, human-readable name to the container instead of a random one.",
+            "C": "To specify the network name the container should join.",
+            "D": "To set the hostname inside the container."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, Docker assigns a random, often hard-to-remember name to containers. The `--name` flag allows you to assign a specific, descriptive name (e.g., `--name my-web-server`) to a container, making it easier to refer to in subsequent commands (`docker stop my-web-server`, `docker logs my-web-server`, etc.)."
+        },
+        {
+          "question": "What is the difference between `docker stop` and `docker pause` regarding resource usage?",
+          "options": {
+            "A": "`stop` releases all resources, `pause` suspends processes but keeps resources allocated.",
+            "B": "`pause` releases all resources, `stop` only suspends processes.",
+            "C": "Both release all resources immediately.",
+            "D": "Both suspend processes and keep all resources allocated."
+          },
+          "correct_answer": "A",
+          "explanation": "When you `stop` a container, its processes are terminated, and Docker attempts to release most of the resources (CPU, memory) back to the host. When you `pause` a container, its processes are merely suspended, but it continues to consume memory and keep other resources (like network interfaces) allocated."
+        },
+        {
+          "question": "How can you view the CPU, memory, and I/O usage of running containers in real-time?",
+          "options": {
+            "A": "`docker inspect`",
+            "B": "`docker logs`",
+            "C": "`docker ps`",
+            "D": "`docker stats`"
+          },
+          "correct_answer": "D",
+          "explanation": "The `docker stats` command provides a live stream of resource usage statistics for running containers, including CPU usage, memory usage, network I/O, and block I/O. It's a useful tool for monitoring container performance."
+        },
+        {
+          "question": "What is the purpose of the exit code of a Docker container?",
+          "options": {
+            "A": "It indicates the container's IP address.",
+            "B": "It shows how many times the container has restarted.",
+            "C": "It is a numerical value indicating the success or failure of the container's main process.",
+            "D": "It specifies the Docker image version."
+          },
+          "correct_answer": "C",
+          "explanation": "The exit code (also known as the return code or status code) of a container's main process is a numerical value that provides information about why the process terminated. An exit code of `0` typically indicates successful completion, while any non-zero value signifies an error or abnormal termination. This is crucial for automation and health checks."
         }
-    ]
+      ]
+    }
+  ]
 }

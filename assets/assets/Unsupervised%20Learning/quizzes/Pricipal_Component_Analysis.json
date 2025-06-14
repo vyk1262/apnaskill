@@ -1,0 +1,218 @@
+{
+  "result": [
+    {
+      "topic": "Pricipal_Component_Analysis",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Principal Component Analysis (PCA)?",
+          "options": {
+            "A": "To reduce the dimensionality of data.",
+            "B": "To encrypt data for security.",
+            "C": "To visualize data trends.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA aims to reduce the dimensionality of data, simplifying analysis and interpretation."
+        },
+        {
+          "question": "Which of the following is a key step in PCA?",
+          "options": {
+            "A": "Calculation of eigenvectors and eigenvalues.",
+            "B": "Data encryption.",
+            "C": "Data visualization.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "Calculation of eigenvectors and eigenvalues is a key step in PCA, determining the principal components for dimensionality reduction."
+        },
+        {
+          "question": "What is the role of the covariance matrix in PCA?",
+          "options": {
+            "A": "To measure the variance and correlation between features.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "The covariance matrix measures the variance and correlation between features, guiding the calculation of principal components in PCA."
+        },
+        {
+          "question": "Which method is commonly used to evaluate the performance of PCA?",
+          "options": {
+            "A": "Explained Variance Ratio",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "The Explained Variance Ratio is commonly used to evaluate the performance of PCA, analyzing the proportion of variance explained by each component."
+        },
+        {
+          "question": "What is the significance of feature scaling in PCA?",
+          "options": {
+            "A": "To ensure features are comparable.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures features are comparable, providing accurate dimensionality reduction in PCA."
+        },
+        {
+          "question": "Which of the following is a disadvantage of PCA?",
+          "options": {
+            "A": "Sensitive to outliers.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is sensitive to outliers, as they can distort the principal components and affect the dimensionality reduction."
+        },
+        {
+          "question": "What is the purpose of using PCA in data analysis?",
+          "options": {
+            "A": "To simplify data by reducing its dimensionality.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is used to simplify data by reducing its dimensionality, making analysis more efficient and interpretable."
+        },
+        {
+          "question": "Which of the following is a common use case for PCA?",
+          "options": {
+            "A": "Image compression.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is commonly used for image compression, reducing the dimensionality of image data while preserving important features."
+        },
+        {
+          "question": "What is the role of eigenvectors in PCA?",
+          "options": {
+            "A": "To represent the directions of maximum variance.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum variance in PCA, guiding the calculation of principal components for dimensionality reduction."
+        },
+        {
+          "question": "Which of the following is a benefit of PCA?",
+          "options": {
+            "A": "Can simplify data analysis and interpretation.",
+            "B": "Requires large datasets.",
+            "C": "Slow to train.",
+            "D": "Complex to interpret."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA can simplify data analysis and interpretation, making insights more accessible and efficient."
+        },
+        {
+          "question": "What is the significance of the explained variance ratio in PCA?",
+          "options": {
+            "A": "It indicates the proportion of variance explained by each principal component.",
+            "B": "It determines the encryption strength.",
+            "C": "It visualizes data trends.",
+            "D": "It stores data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "The explained variance ratio indicates the proportion of variance explained by each principal component in PCA, guiding component selection."
+        },
+        {
+          "question": "Which of the following is a common technique used in PCA?",
+          "options": {
+            "A": "Scree Plot Analysis",
+            "B": "K-Means",
+            "C": "Decision Tree",
+            "D": "Linear Regression"
+          },
+          "correct_answer": "A",
+          "explanation": "Scree Plot Analysis is a common technique used in PCA, evaluating the proportion of variance explained by each component."
+        },
+        {
+          "question": "What is the role of eigenvectors in PCA?",
+          "options": {
+            "A": "To represent the directions of maximum variance.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum variance in PCA, guiding the calculation of principal components for dimensionality reduction."
+        },
+        {
+          "question": "Which method is used to select the number of components in PCA?",
+          "options": {
+            "A": "Cumulative Explained Variance",
+            "B": "Clustering",
+            "C": "Normalization",
+            "D": "Encryption"
+          },
+          "correct_answer": "A",
+          "explanation": "Cumulative Explained Variance is used to select the number of components in PCA, analyzing the total variance explained by selected components."
+        },
+        {
+          "question": "What is the significance of feature scaling in PCA?",
+          "options": {
+            "A": "To ensure features are comparable.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Feature scaling ensures features are comparable, providing accurate dimensionality reduction in PCA."
+        },
+        {
+          "question": "Which of the following is a disadvantage of PCA?",
+          "options": {
+            "A": "Sensitive to multicollinearity.",
+            "B": "Complex to interpret.",
+            "C": "Requires large datasets.",
+            "D": "Slow to train."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is sensitive to multicollinearity, as it can affect the principal components and dimensionality reduction."
+        },
+        {
+          "question": "What is the purpose of using PCA in data analysis?",
+          "options": {
+            "A": "To simplify data by reducing its dimensionality.",
+            "B": "To visualize data trends.",
+            "C": "To encrypt data for security.",
+            "D": "To store data in a hierarchical structure."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is used to simplify data by reducing its dimensionality, making analysis more efficient and interpretable."
+        },
+        {
+          "question": "Which of the following is a common use case for PCA?",
+          "options": {
+            "A": "Image compression.",
+            "B": "Data encryption.",
+            "C": "Data storage.",
+            "D": "Data classification."
+          },
+          "correct_answer": "A",
+          "explanation": "PCA is commonly used for image compression, reducing the dimensionality of image data while preserving important features."
+        },
+        {
+          "question": "What is the role of eigenvectors in PCA?",
+          "options": {
+            "A": "To represent the directions of maximum variance.",
+            "B": "To encrypt data.",
+            "C": "To visualize data.",
+            "D": "To store data."
+          },
+          "correct_answer": "A",
+          "explanation": "Eigenvectors represent the directions of maximum variance in PCA, guiding the calculation of principal components for dimensionality reduction."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Data_Analysis",
+      "questions": [
+        {
+          "question": "Which DataFrame method in PySpark provides a summary of the schema, including column names and data types?",
+          "options": {
+            "A": "df.info()",
+            "B": "df.describe()",
+            "C": "df.printSchema()",
+            "D": "df.summary()"
+          },
+          "correct_answer": "C",
+          "explanation": "`printSchema()` displays the tree-like structure of the DataFrame's schema."
+        },
+        {
+          "question": "To generate descriptive statistics (count, mean, stddev, min, max) for numerical columns in a PySpark DataFrame, which method is used?",
+          "options": {
+            "A": "df.stats()",
+            "B": "df.summary()",
+            "C": "df.analyze()",
+            "D": "df.explain()"
+          },
+          "correct_answer": "B",
+          "explanation": "`summary()` provides a comprehensive set of statistics for numerical columns and basic counts for string columns."
+        },
+        {
+          "question": "Which `pyspark.sql.functions` aggregate function returns the average value of a column?",
+          "options": {
+            "A": "mean()",
+            "B": "avg()",
+            "C": "average()",
+            "D": "median()"
+          },
+          "correct_answer": "B",
+          "explanation": "The `avg()` function is used to calculate the mean."
+        },
+        {
+          "question": "To count the number of rows in a PySpark DataFrame, what is the correct method?",
+          "options": {
+            "A": "df.size()",
+            "B": "df.count()",
+            "C": "df.length()",
+            "D": "df.shape()"
+          },
+          "correct_answer": "B",
+          "explanation": "`count()` is an action that returns the total number of rows in the DataFrame."
+        },
+        {
+          "question": "When performing aggregations on grouped data, if you want to calculate the sum of 'sales' for each 'region', which PySpark code snippet is correct?",
+          "options": {
+            "A": "df.groupBy('region').sum('sales')",
+            "B": "df.agg(sum('sales')).groupBy('region')",
+            "C": "df.groupBy('region').agg(sum('sales'))",
+            "D": "df.filter(sum('sales')).by('region')"
+          },
+          "correct_answer": "C",
+          "explanation": "The correct sequence is `groupBy()` followed by `agg()` to apply aggregate functions."
+        },
+        {
+          "question": "Which `pyspark.sql.functions` function is used to find the correlation between two numerical columns?",
+          "options": {
+            "A": "corr()",
+            "B": "covariance()",
+            "C": "correlation()",
+            "D": "co_relate()"
+          },
+          "correct_answer": "A",
+          "explanation": "`corr()` computes the Pearson Correlation Coefficient between two columns."
+        },
+        {
+          "question": "What is the purpose of a 'Window Function' in PySpark?",
+          "options": {
+            "A": "To create a sliding window for streaming data.",
+            "B": "To perform calculations across a set of DataFrame rows that are related to the current row, without collapsing the rows into a single aggregated output.",
+            "C": "To open a new visualization window.",
+            "D": "To partition the data across different clusters."
+          },
+          "correct_answer": "B",
+          "explanation": "Window functions are powerful for tasks like calculating running totals, rankings, or moving averages while retaining individual row details."
+        },
+        {
+          "question": "To define a window specification in PySpark for a window function, which object from `pyspark.sql.window` is commonly used?",
+          "options": {
+            "A": "Partition",
+            "B": "Window",
+            "C": "Frame",
+            "D": "Spec"
+          },
+          "correct_answer": "B",
+          "explanation": "`Window.partitionBy().orderBy()` is the standard way to define a window."
+        },
+        {
+          "question": "Which window function assigns a unique rank to each row within its partition, with gaps in rank values for ties?",
+          "options": {
+            "A": "row_number()",
+            "B": "rank()",
+            "C": "dense_rank()",
+            "D": "ntile()"
+          },
+          "correct_answer": "B",
+          "explanation": "`rank()` produces ranks with gaps (e.g., 1, 1, 3 for a tie), while `dense_rank()` produces ranks without gaps (e.g., 1, 1, 2)."
+        },
+        {
+          "question": "To calculate a running sum of 'quantity' ordered by 'date' within each 'product_id' group, what components are essential?",
+          "options": {
+            "A": "`groupBy('product_id').sum('quantity')`",
+            "B": "`Window.partitionBy('product_id').orderBy('date')` and `sum('quantity').over(...)`",
+            "C": "Only `df.select(sum('quantity'))`",
+            "D": "`df.filter('product_id').agg(sum('quantity'))`"
+          },
+          "correct_answer": "B",
+          "explanation": "This is a classic use case for window functions, where `sum()` is applied over a defined window."
+        },
+        {
+          "question": "Which DataFrame method can be used to create a cross-tabulation (frequency table) between two columns?",
+          "options": {
+            "A": "df.crosstab()",
+            "B": "df.pivot()",
+            "C": "df.groupBy().pivot()",
+            "D": "df.tabulate()"
+          },
+          "correct_answer": "A",
+          "explanation": "`crosstab()` is specifically designed for creating contingency tables."
+        },
+        {
+          "question": "To reshape a DataFrame by transforming distinct values from one column into new columns, what method is commonly used with `groupBy()`?",
+          "options": {
+            "A": "df.unpivot()",
+            "B": "df.stack()",
+            "C": "df.pivot()",
+            "D": "df.transpose()"
+          },
+          "correct_answer": "C",
+          "explanation": "`pivot()` is used to rotate data from rows to columns, typically after a `groupBy()` operation."
+        },
+        {
+          "question": "Which `pyspark.sql.functions` function can you use to get the first value of a column within a window?",
+          "options": {
+            "A": "lead()",
+            "B": "lag()",
+            "C": "first()",
+            "D": "nth_value()"
+          },
+          "correct_answer": "C",
+          "explanation": "`first()` (when used with `ignorenulls=True` or `False`) returns the first value in the group/window."
+        },
+        {
+          "question": "To sample a fraction of the rows from a PySpark DataFrame, which method would you use?",
+          "options": {
+            "A": "df.head()",
+            "B": "df.sample()",
+            "C": "df.limit()",
+            "D": "df.take()"
+          },
+          "correct_answer": "B",
+          "explanation": "`sample()` allows you to get a random sample of rows, with or without replacement."
+        },
+        {
+          "question": "If you want to find the row number for each record within a group, ordered by a specific column, which window function is most suitable?",
+          "options": {
+            "A": "rank()",
+            "B": "dense_rank()",
+            "C": "row_number()",
+            "D": "ntile()"
+          },
+          "correct_answer": "C",
+          "explanation": "`row_number()` assigns sequential integers (1, 2, 3...) to rows within each partition, without gaps for ties."
+        },
+        {
+          "question": "What is the purpose of `rowsBetween(Window.unboundedPreceding, Window.currentRow)` in a window specification?",
+          "options": {
+            "A": "It limits the window to only the current row.",
+            "B": "It defines the window frame to include all rows from the beginning of the partition up to and including the current row.",
+            "C": "It defines the window frame to include only rows that occur after the current row.",
+            "D": "It means the window applies to the entire DataFrame."
+          },
+          "correct_answer": "B",
+          "explanation": "This is commonly used for calculating running totals or cumulative sums."
+        },
+        {
+          "question": "Which method should you use to convert a PySpark DataFrame into a Pandas DataFrame (and collect all data to the driver)?",
+          "options": {
+            "A": "df.toPandas()",
+            "B": "df.collectAsPandas()",
+            "C": "df.convert_to_pandas()",
+            "D": "df.as_pandas()"
+          },
+          "correct_answer": "A",
+          "explanation": "`toPandas()` is the method for converting a PySpark DataFrame to a Pandas DataFrame, but it should be used with caution on large datasets as it collects all data to the driver's memory."
+        },
+        {
+          "question": "Which `pyspark.sql.functions` function is used to calculate the standard deviation of a numerical column?",
+          "options": {
+            "A": "stdev()",
+            "B": "std_dev()",
+            "C": "stddev()",
+            "D": "std()"
+          },
+          "correct_answer": "C",
+          "explanation": "`stddev()` is the correct function name in PySpark for standard deviation."
+        },
+        {
+          "question": "What does `df.explain()` provide in PySpark?",
+          "options": {
+            "A": "A description of the dataset's contents.",
+            "B": "The physical and/or logical execution plan of a DataFrame, showing how Spark will process the transformations.",
+            "C": "The data types of all columns.",
+            "D": "Error messages during execution."
+          },
+          "correct_answer": "B",
+          "explanation": "`explain()` is a powerful debugging tool to understand Spark's optimization decisions and query execution flow."
+        },
+        {
+          "question": "If you need to calculate the value of the 'previous' row within a sorted group using a window function, which function would you use?",
+          "options": {
+            "A": "lead()",
+            "B": "lag()",
+            "C": "prev()",
+            "D": "shift()"
+          },
+          "correct_answer": "B",
+          "explanation": "`lag()` allows you to access a row at an offset before the current row within a window."
+        }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,8 @@
             "C": "A function",
             "D": "An instance of an object"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "In Object-Oriented Programming (OOP), a class serves as a blueprint or a template for creating objects (instances). It defines the common attributes (data) and methods (functions) that all objects of that class will possess."
         },
         {
           "question": "How do you create an object from a class in Python?",
@@ -21,7 +22,8 @@
             "C": "obj = ClassName{}",
             "D": "obj = ClassName<>"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "To create an object (also known as an instance) from a class in Python, you call the class name followed by parentheses, like `ClassName()`. This action typically invokes the class's `__init__` method, if one is defined, to initialize the new object."
         },
         {
           "question": "What is inheritance in OOP?",
@@ -31,7 +33,8 @@
             "C": "A method of creating functions",
             "D": "The ability to hide data"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Inheritance is a fundamental principle of OOP that allows a new class (subclass or derived class) to acquire attributes and methods from an existing class (superclass or base class). This promotes code reusability and establishes an 'is-a' relationship (e.g., a 'Dog' is an 'Animal')."
         },
         {
           "question": "Which of the following keywords is used to define a subclass in Python?",
@@ -41,7 +44,8 @@
             "C": "inherits",
             "D": "class"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "In Python, the `class` keyword is used to define both a base class and a subclass. To define a subclass, you specify the parent class(es) in parentheses after the subclass name during its definition (e.g., `class SubClass(ParentClass):`)."
         },
         {
           "question": "What does polymorphism allow in OOP?",
@@ -51,7 +55,8 @@
             "C": "Classes to inherit from multiple classes",
             "D": "A class to have multiple data types"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Polymorphism, meaning 'many forms', allows objects of different classes that share a common superclass (or interface) to be treated uniformly through a common interface. This enables a single method call to perform different actions based on the specific type of object it is called on, typically achieved through method overriding."
         },
         {
           "question": "What is encapsulation?",
@@ -61,7 +66,8 @@
             "C": "Using multiple classes",
             "D": "The ability to define methods"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Encapsulation is the bundling of data (attributes) and the methods (functions) that operate on that data into a single unit (a class). A key aspect is also restricting direct access to some of an object's components, thereby hiding the internal implementation details and protecting data integrity."
         },
         {
           "question": "What is the purpose of the __init__ method in a class?",
@@ -71,7 +77,8 @@
             "C": "To create a subclass",
             "D": "To encapsulate data"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `__init__` method is a special method in Python, often referred to as the constructor. It is automatically called when a new instance of the class is created. Its main purpose is to initialize the object's attributes with initial values or perform any setup required for the new object."
         },
         {
           "question": "What is an example of abstraction in OOP?",
@@ -81,7 +88,8 @@
             "C": "Using multiple classes",
             "D": "Defining a class"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Abstraction in OOP focuses on presenting only the essential features of an object or system while hiding the underlying complex implementation details. Using abstract classes and abstract methods that serve as a contract for subclasses to implement is a direct way to achieve this, providing a high-level view without exposing complexity."
         },
         {
           "question": "Which of the following is true about the super() function?",
@@ -91,7 +99,8 @@
             "C": "It creates an instance of a class",
             "D": "It encapsulates data"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `super()` function is used in subclasses to refer to the parent or superclass. Its primary use is to call methods (especially `__init__`) of the parent class, allowing the subclass to extend or override behavior while still leveraging the parent's functionality."
         },
         {
           "question": "What will the following code output?\n\nclass Animal:\n    def speak(self):\n        return 'Animal speaks'\n\nclass Dog(Animal):\n    def speak(self):\n        return 'Dog barks'\n\nmy_dog = Dog()\nprint(my_dog.speak())",
@@ -101,7 +110,8 @@
             "C": "Error",
             "D": "'Animal barks'"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "This code demonstrates method overriding. The `Dog` class, being a subclass of `Animal`, provides its own implementation of the `speak()` method. When `my_dog.speak()` is called, Python's method resolution order (MRO) dictates that the `speak()` method from the `Dog` class is executed, overriding the parent's method, thus returning 'Dog barks'."
         },
         {
           "question": "What is method overriding?",
@@ -111,7 +121,8 @@
             "C": "Defining multiple classes",
             "D": "Hiding data in a class"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Method overriding is an OOP feature where a subclass provides its own specific implementation for a method that is already defined in its superclass. This allows the subclass to tailor inherited behavior to its specific needs while maintaining the same method signature."
         },
         {
           "question": "Which keyword is used to inherit a class in Python?",
@@ -121,7 +132,8 @@
             "C": "super",
             "D": "class"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "While many languages use `extends` or `inherits`, Python uses the `class` keyword along with parentheses to indicate inheritance. For example, `class ChildClass(ParentClass):` declares `ChildClass` as a subclass inheriting from `ParentClass`."
         },
         {
           "question": "What will the following code print?\n\nclass Car:\n    def __init__(self, brand):\n        self.brand = brand\n\nmy_car = Car('Toyota')\nprint(my_car.brand)",
@@ -131,7 +143,8 @@
             "C": "Error",
             "D": "None"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "When `my_car = Car('Toyota')` is executed, the `__init__` method of the `Car` class is called with 'Toyota' as the `brand` argument. Inside `__init__`, `self.brand` is set to 'Toyota'. This makes `brand` an instance variable of `my_car`. Subsequently, `print(my_car.brand)` accesses and outputs the value 'Toyota'."
         },
         {
           "question": "What is the difference between an instance variable and a class variable?",
@@ -141,7 +154,8 @@
             "C": "Class variables are private, instance variables are public",
             "D": "Instance variables can be accessed without creating an object"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Instance variables are unique to each instance (object) of a class and are typically defined within methods (especially `__init__`) using `self.variable_name`. Class variables are shared by all instances of a class and are defined directly within the class body, outside any method."
         },
         {
           "question": "What is the purpose of using private variables in a class?",
@@ -151,7 +165,8 @@
             "C": "To create multiple instances",
             "D": "To define a method"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The purpose of 'private' variables (conventionally, those prefixed with double underscores like `__variable` in Python) is to indicate that they are intended for internal use within the class and to restrict or discourage direct access and modification from outside the class, thereby supporting encapsulation and data integrity."
         },
         {
           "question": "Which of the following best describes abstraction?",
@@ -161,7 +176,8 @@
             "C": "Allowing multiple forms of behavior",
             "D": "The ability to change class variables"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Abstraction is one of the core principles of OOP. It involves simplifying complex systems by providing a simplified, high-level interface to the user, while concealing the intricate internal workings and implementation details. It allows users to interact with objects without needing to know how they function internally."
         },
         {
           "question": "What happens if a method is defined in a subclass but not in the parent class?",
@@ -171,7 +187,8 @@
             "C": "The method will be inherited",
             "D": "It will be ignored"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "If a method is defined solely within a subclass, it becomes a specific method for that subclass. Instances of that subclass can directly call and utilize this method. It is not inherited (as it doesn't exist in the parent), nor does it cause an error; it simply extends the functionality of the subclass."
         },
         {
           "question": "Which of the following is NOT a feature of OOP?",
@@ -181,7 +198,8 @@
             "C": "Recursion",
             "D": "Inheritance"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The four fundamental principles or features of Object-Oriented Programming (OOP) are Encapsulation, Abstraction, Inheritance, and Polymorphism. Recursion is a programming technique where a function calls itself, which is a general concept used in various paradigms, not exclusive to or defining OOP."
         }
       ]
     }

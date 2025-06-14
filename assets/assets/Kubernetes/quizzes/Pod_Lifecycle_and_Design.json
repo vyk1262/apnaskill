@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Pod_Lifecycle_and_Design",
+      "questions": [
         {
-            "topic": "Pod_Lifecycle_and_Design",
-            "questions": []
+          "question": "What is the smallest deployable unit in Kubernetes?",
+          "options": {
+            "A": "Container",
+            "B": "Deployment",
+            "C": "Node",
+            "D": "Pod"
+          },
+          "correct_answer": "D",
+          "explanation": "A Pod is the smallest and most fundamental unit of compute that can be created and managed in Kubernetes. It encapsulates one or more containers, storage resources, a unique network IP, and options that control how the containers should run."
+        },
+        {
+          "question": "Can multiple containers within the same Pod share the same network namespace?",
+          "options": {
+            "A": "No, each container gets its own IP.",
+            "B": "Yes, containers in the same Pod share the Pod's IP address and network ports.",
+            "C": "Only if explicitly configured to do so.",
+            "D": "Only if they are from the same image."
+          },
+          "correct_answer": "B",
+          "explanation": "Containers within a single Pod share the same network namespace. This means they can communicate with each other via `localhost` and share the Pod's IP address and network ports, simplifying inter-container communication for co-located processes."
+        },
+        {
+          "question": "What is the primary reason to run multiple containers in a single Pod?",
+          "options": {
+            "A": "To save disk space.",
+            "B": "When containers are tightly coupled and need to share resources (network, storage) or cooperate to provide a single logical unit of service.",
+            "C": "To distribute load across different nodes.",
+            "D": "To increase the security of the application."
+          },
+          "correct_answer": "B",
+          "explanation": "The primary reason for multi-container Pods is for 'sidecar' or 'ambassador' patterns where containers are tightly coupled. They are designed to work together as a single cohesive unit, often sharing data via shared volumes or communicating via `localhost`."
+        },
+        {
+          "question": "What is an 'Init Container' in a Pod, and when does it run?",
+          "options": {
+            "A": "A container that runs continuously alongside the main application.",
+            "B": "A container that runs to initialize the Pod before the main application containers start, and it must complete successfully before the main containers begin.",
+            "C": "A container used for monitoring and logging.",
+            "D": "A container that cleans up resources after the main application stops."
+          },
+          "correct_answer": "B",
+          "explanation": "Init Containers are special containers that run to completion before any app containers in a Pod are started. They are useful for setup scripts, cloning Git repositories, or waiting for external services, ensuring the main application has its prerequisites met."
+        },
+        {
+          "question": "What is the primary purpose of a 'Liveness Probe' for a Pod?",
+          "options": {
+            "A": "To check if the container image exists.",
+            "B": "To determine if a container is still running and healthy; if it fails, Kubernetes will restart the container.",
+            "C": "To check if the Pod is ready to receive traffic.",
+            "D": "To measure the network latency of the Pod."
+          },
+          "correct_answer": "B",
+          "explanation": "A Liveness Probe indicates whether the container is running and healthy. If the Liveness Probe fails, Kubernetes restarts the container, ensuring that unresponsive or dead processes are brought back to a working state."
+        },
+        {
+          "question": "What is the primary purpose of a 'Readiness Probe' for a Pod?",
+          "options": {
+            "A": "To restart the container if it crashes.",
+            "B": "To determine if a container is ready to start accepting traffic; if it fails, the Pod's IP endpoint is removed from the Service, preventing traffic from being sent to it.",
+            "C": "To check the container's disk space.",
+            "D": "To verify the Dockerfile syntax."
+          },
+          "correct_answer": "B",
+          "explanation": "A Readiness Probe indicates whether the container is ready to handle requests. If it fails, Kubernetes removes the Pod's IP from the Service's endpoints, directing traffic away from it until it becomes ready again. This prevents traffic from being sent to a container that is still starting up or temporarily unhealthy."
+        },
+        {
+          "question": "What is the 'lifecycle' of a Pod primarily managed by?",
+          "options": {
+            "A": "The user manually starting and stopping containers.",
+            "B": "The Kubelet on the Node and the various controllers (e.g., ReplicationController, Deployment Controller) in the Control Plane.",
+            "C": "The Docker daemon.",
+            "D": "Network policies."
+          },
+          "correct_answer": "B",
+          "explanation": "The Kubelet on the Worker Node is responsible for running the containers in a Pod and reporting their status. Higher-level controllers (like Deployment, ReplicaSet) in the Control Plane manage the desired state of Pods, ensuring the correct number of replicas are running and handling restarts/failures."
+        },
+        {
+          "question": "What happens to a Pod when its underlying Node fails or becomes unreachable?",
+          "options": {
+            "A": "The Pod continues to run as normal.",
+            "B": "The Pod is immediately deleted from the cluster.",
+            "C": "The Pod is marked as 'NodeLost' or 'Unknown' and eventually (after a timeout) will be evicted by the Node Controller, allowing a new Pod to be scheduled elsewhere.",
+            "D": "The Pod automatically migrates to another node."
+          },
+          "correct_answer": "C",
+          "explanation": "If a Node fails, the Kubelet on that node stops sending heartbeats. After a timeout (default 5 minutes), the Node Controller marks the Node as `NotReady` and eventually as `Unknown`, leading to the eviction of Pods from that Node so they can be rescheduled on healthy nodes."
+        },
+        {
+          "question": "What is the purpose of `resources` (requests and limits) for containers in a Pod definition?",
+          "options": {
+            "A": "To specify the image name.",
+            "B": "To define the minimum guaranteed resources (requests) and maximum allowable resources (limits) for CPU and memory.",
+            "C": "To configure network settings.",
+            "D": "To specify the health check probe types."
+          },
+          "correct_answer": "B",
+          "explanation": "Resource requests define the minimum amount of CPU and memory guaranteed to a container, influencing scheduling. Resource limits define the maximum amount of CPU and memory a container can consume. This helps prevent resource exhaustion and ensures fair sharing of resources among Pods."
+        },
+        {
+          "question": "What does a Pod's `status.phase` indicate?",
+          "options": {
+            "A": "The number of containers in the Pod.",
+            "B": "The current state of the Pod in its lifecycle (e.g., Pending, Running, Succeeded, Failed, Unknown).",
+            "C": "The version of Kubernetes API used.",
+            "D": "The health of the individual containers."
+          },
+          "correct_answer": "B",
+          "explanation": "The `phase` of a Pod is a simple, high-level summary of where the Pod is in its lifecycle. Common phases include `Pending` (Pod accepted, but not all containers created), `Running` (all containers created and running), `Succeeded` (all containers terminated successfully), `Failed` (at least one container terminated in failure), and `Unknown`."
+        },
+        {
+          "question": "Can a Pod directly communicate with a Pod on a different node in the same cluster using its IP address?",
+          "options": {
+            "A": "No, they need an external load balancer.",
+            "B": "Yes, if the cluster's CNI plugin is configured correctly.",
+            "C": "Only if both Pods are in the same Namespace.",
+            "D": "Only if they share a common volume."
+          },
+          "correct_answer": "B",
+          "explanation": "A core principle of Kubernetes networking is that all Pods in a cluster can communicate with each other directly using their IP addresses, regardless of which node they are on. This is enabled by the Container Network Interface (CNI) plugin deployed in the cluster."
+        },
+        {
+          "question": "What is the purpose of Pod `preStop` hook?",
+          "options": {
+            "A": "To run a command before the Pod starts.",
+            "B": "To run a command immediately before a container is terminated, allowing for graceful shutdown procedures.",
+            "C": "To clean up resources after the Pod stops.",
+            "D": "To check the Pod's health."
+          },
+          "correct_answer": "B",
+          "explanation": "A `preStop` hook is executed immediately before a container is terminated due to an API request or a management event (like a scaling down event). It's used for graceful termination, such as draining traffic or committing in-memory state before the container is killed."
+        },
+        {
+          "question": "What is the purpose of Pod `postStart` hook?",
+          "options": {
+            "A": "To run a command after the Pod finishes.",
+            "B": "To run a command immediately after a container is created, but before its entrypoint is executed.",
+            "C": "To check the Pod's network connectivity.",
+            "D": "To restart the container if it fails."
+          },
+          "correct_answer": "B",
+          "explanation": "A `postStart` hook is executed immediately after a container is created. It's useful for initialization tasks that need to run once the container process has started, such as database setup or registration with a service discovery system."
+        },
+        {
+          "question": "What is a 'static Pod'?",
+          "options": {
+            "A": "A Pod that never changes its configuration.",
+            "B": "A Pod that is managed directly by the Kubelet on a specific node, without being controlled by the API Server.",
+            "C": "A Pod that runs without any network access.",
+            "D": "A Pod with a fixed IP address."
+          },
+          "correct_answer": "B",
+          "explanation": "Static Pods are Pods defined in a specific directory on a Node and are managed directly by the Kubelet on that node, rather than by the Kubernetes API server. They are often used for running core cluster components like `etcd` or the API server itself on the control plane node."
+        },
+        {
+          "question": "When designing Pods, what is the 'principle of least privilege' applied to containers?",
+          "options": {
+            "A": "Giving containers the most network access possible.",
+            "B": "Running all containers as the root user.",
+            "C": "Granting containers only the necessary permissions and capabilities required for their function, reducing the attack surface.",
+            "D": "Limiting the number of containers in a Pod."
+          },
+          "correct_answer": "C",
+          "explanation": "Applying the principle of least privilege means configuring containers (e.g., via `securityContext`) to run as non-root users, dropping unnecessary Linux capabilities (`CAP_DROP`), and applying Seccomp profiles, to minimize the potential damage if a container is compromised."
+        },
+        {
+          "question": "What is the purpose of `terminationGracePeriodSeconds` in a Pod definition?",
+          "options": {
+            "A": "The time a Pod waits before starting after creation.",
+            "B": "The duration Kubernetes waits for Pods to gracefully shut down before forcefully terminating them.",
+            "C": "The interval between health checks.",
+            "D": "The time allowed for Init Containers to complete."
+          },
+          "correct_answer": "B",
+          "explanation": "When a Pod is deleted or needs to be terminated (e.g., during a scaling down or node drain), Kubernetes sends a `SIGTERM` signal to its containers. `terminationGracePeriodSeconds` defines how long the system will wait after sending `SIGTERM` before sending a `SIGKILL` (forceful termination)."
+        },
+        {
+          "question": "How can you inject configuration data (e.g., environment variables, file content) into a Pod without baking it into the image?",
+          "options": {
+            "A": "Only via `kubectl exec` after the Pod starts.",
+            "B": "Using `ConfigMaps` or `Secrets`.",
+            "C": "By modifying the Dockerfile after deployment.",
+            "D": "Through direct database writes."
+          },
+          "correct_answer": "B",
+          "explanation": "ConfigMaps are used to inject non-sensitive configuration data as environment variables or mounted files. Secrets are similar but designed for sensitive information, providing better security for credentials. Both allow separating configuration from image builds."
+        },
+        {
+          "question": "What is the primary difference between a Pod and a Deployment in terms of lifecycle management?",
+          "options": {
+            "A": "Pods manage Deployments, not the other way around.",
+            "B": "A Pod is a single instance of your application, while a Deployment is a higher-level object that manages the desired state and lifecycle of a set of identical Pods.",
+            "C": "Deployments are only for stateful applications.",
+            "D": "Pods are for production, Deployments are for development."
+          },
+          "correct_answer": "B",
+          "explanation": "While a Pod is the smallest unit, you rarely create Pods directly in production. Deployments are used to declare the desired state for your Pods (e.g., how many replicas, which image, how to update). The Deployment controller then creates and manages ReplicaSets, which in turn manage the individual Pods, ensuring desired replicas and enabling rolling updates/rollbacks."
+        },
+        {
+          "question": "When a Pod needs to store persistent data, what Kubernetes object is typically used?",
+          "options": {
+            "A": "ConfigMap",
+            "B": "Secret",
+            "C": "PersistentVolumeClaim (PVC)",
+            "D": "Service"
+          },
+          "correct_answer": "C",
+          "explanation": "Pods themselves are ephemeral. For persistent data, a Pod requests storage using a PersistentVolumeClaim (PVC). The PVC then binds to an available PersistentVolume (PV), which represents a piece of storage from the underlying infrastructure."
+        },
+        {
+          "question": "True or False: If a container within a Pod crashes, the entire Pod is immediately terminated and not restarted.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. If a container crashes, the Kubelet attempts to restart it based on the Pod's `restartPolicy`. If the `restartPolicy` is `Always` (default for `Deployment`), the container will be restarted within the same Pod. The Pod only terminates if all containers inside it terminate according to the `restartPolicy`."
         }
-    ]
+      ]
+    }
+  ]
 }

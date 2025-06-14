@@ -11,7 +11,8 @@
             "C": "To select the features to be used for training.",
             "D": "To tune the hyperparameters of the model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The core purpose of **model evaluation** is to understand how well a machine learning model performs on data it hasn't seen before. This assesses its ability to **generalize** to new, real-world examples, which is crucial for its practical usefulness."
         },
         {
           "question": "Why is it important to evaluate a model on a separate test set rather than the training set?",
@@ -21,7 +22,8 @@
             "C": "The test set contains more accurate labels.",
             "D": "Evaluating on the test set is computationally cheaper."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Evaluating a model on the **training set** will almost always yield high performance because the model has already 'seen' and learned from that data. This can lead to **overfitting**, where the model memorizes the training data but performs poorly on new data. A separate **test set** provides an unbiased assessment of its true generalization capability."
         },
         {
           "question": "Which of the following is a common evaluation metric for classification problems?",
@@ -31,7 +33,8 @@
             "C": "Accuracy",
             "D": "Root Mean Squared Error (RMSE)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Accuracy** is a common and intuitive metric for classification problems, representing the proportion of correctly classified instances. MSE, R-squared, and RMSE are metrics used for regression problems."
         },
         {
           "question": "What does 'accuracy' measure in classification?",
@@ -41,7 +44,8 @@
             "C": "The overall proportion of correctly classified instances.",
             "D": "The ability of the model to find all the positive instances."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Accuracy** quantifies the fraction of predictions that the model got correct, counting both true positives and true negatives among all predictions."
         },
         {
           "question": "When might accuracy be a misleading evaluation metric for classification?",
@@ -51,7 +55,8 @@
             "C": "When the dataset has an imbalanced class distribution.",
             "D": "Accuracy is always a reliable metric."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Accuracy can be misleading** when dealing with **imbalanced class distributions**. For example, if 95% of emails are not spam, a model that simply predicts 'not spam' for all emails would achieve 95% accuracy, but it would be useless for identifying spam."
         },
         {
           "question": "What do 'precision' and 'recall' measure in binary classification?",
@@ -61,7 +66,8 @@
             "C": "Precision: proportion of correct positive predictions; Recall: ability to find all positives.",
             "D": "Precision and recall are the same metric."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Precision** answers: 'Of all instances predicted as positive, how many were actually positive?' **Recall** (also known as sensitivity or true positive rate) answers: 'Of all actual positive instances, how many did the model correctly identify?'"
         },
         {
           "question": "What is the F1-score?",
@@ -71,7 +77,8 @@
             "C": "The harmonic mean of precision and recall.",
             "D": "Another term for accuracy."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The **F1-score** is the **harmonic mean of precision and recall**. It provides a single metric that balances both, being particularly useful when you need to consider both false positives and false negatives, especially in imbalanced datasets."
         },
         {
           "question": "What does the 'confusion matrix' show?",
@@ -81,7 +88,8 @@
             "C": "The counts of true positives, true negatives, false positives, and false negatives.",
             "D": "The learning curve of the model."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A **confusion matrix** is a table that visualizes the performance of a classification model. It breaks down the predictions into **true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN)**, providing a detailed view of where the model is succeeding and failing."
         },
         {
           "question": "What does the 'AUC' (Area Under the ROC Curve) measure?",
@@ -91,7 +99,8 @@
             "C": "The precision of the model at a specific recall level.",
             "D": "The area under the precision-recall curve."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**AUC** (Area Under the Receiver Operating Characteristic Curve) provides an aggregate measure of performance across all possible classification thresholds. A higher AUC indicates that the model is better at distinguishing between positive and negative classes, essentially representing the probability that the model will rank a randomly chosen positive instance higher than a randomly chosen negative instance."
         },
         {
           "question": "Which of the following is a common evaluation metric for regression problems?",
@@ -101,7 +110,8 @@
             "C": "Mean Absolute Error (MAE)",
             "D": "Precision"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Mean Absolute Error (MAE)** is a common metric for **regression** problems, measuring the average absolute difference between the predicted and actual values. F1-score, AUC, and Precision are all classification metrics."
         },
         {
           "question": "What does 'Mean Squared Error' (MSE) measure in regression?",
@@ -111,7 +121,8 @@
             "C": "The square root of the average squared differences.",
             "D": "The correlation between predicted and actual values."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Mean Squared Error (MSE)** calculates the average of the **squared differences** between the model's predicted continuous values and the actual observed values. Squaring the errors penalizes larger errors more heavily."
         },
         {
           "question": "What does 'R-squared' measure in regression?",
@@ -121,7 +132,8 @@
             "C": "The correlation between the independent variables.",
             "D": "The statistical significance of the model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**R-squared** (coefficient of determination) indicates the **proportion of the variance in the dependent variable that can be explained by the independent variables** in the regression model. A higher R-squared value means the model accounts for more of the variation in the output."
         },
         {
           "question": "What is 'cross-validation' used for in model evaluation and selection?",
@@ -131,7 +143,8 @@
             "C": "To tune the hyperparameters of the model.",
             "D": "To reduce the dimensionality of the data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Cross-validation** is a technique used to obtain a more reliable and less biased estimate of a model's performance on unseen data. By repeatedly splitting the data into different train and test sets, it provides a more robust measure of generalization than a single train-test split."
         },
         {
           "question": "What are the common types of cross-validation?",
@@ -141,7 +154,8 @@
             "C": "Forward selection, backward elimination.",
             "D": "L1 and L2 regularization."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Popular cross-validation strategies include **K-fold cross-validation** (splitting data into K folds), **Stratified K-fold cross-validation** (preserving class proportions in each fold, essential for imbalanced datasets), and **Leave-One-Out Cross-Validation (LOOCV)** (using all but one data point for training). Train-test split is a single split, and the others are related to feature selection or regularization."
         },
         {
           "question": "What is 'stratified k-fold cross-validation' particularly useful for?",
@@ -151,7 +165,8 @@
             "C": "Classification problems with imbalanced class distributions.",
             "D": "High-dimensional datasets."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Stratified k-fold cross-validation** is especially beneficial for **classification problems with imbalanced class distributions**. It ensures that each fold maintains approximately the same proportion of class labels as the original dataset, preventing a fold from having too few (or no) instances of a minority class."
         },
         {
           "question": "What is 'model selection' in machine learning?",
@@ -161,7 +176,8 @@
             "C": "The process of tuning the hyperparameters of a model.",
             "D": "The process of deploying a trained model."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Model selection** involves comparing and choosing the most appropriate machine learning algorithm or model architecture from a range of candidates for a specific problem. This decision is typically based on their evaluated performance metrics and other practical considerations."
         },
         {
           "question": "How can cross-validation be used for model selection?",
@@ -171,7 +187,8 @@
             "C": "By selecting the model with the fewest parameters.",
             "D": "By choosing the model that trains the fastest."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "To use cross-validation for model selection, you would **train and evaluate each candidate model using the cross-validation procedure**. The model that consistently shows the best average performance across all folds is typically considered the best choice."
         },
         {
           "question": "What are 'learning curves' and how can they help in model evaluation?",
@@ -181,7 +198,8 @@
             "C": "Visualizations of the model's decision boundaries.",
             "D": "Plots that show the performance of different algorithms on the same dataset."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Learning curves** are plots that illustrate how the model's performance (e.g., accuracy or error) on both the **training set and a validation set changes with the size of the training data**. They are invaluable for diagnosing common problems like high bias (underfitting) or high variance (overfitting)."
         },
         {
           "question": "What are 'validation curves' and how can they help in model evaluation?",
@@ -191,7 +209,8 @@
             "C": "Visualizations of the model's predictions on the test set.",
             "D": "Curves that show the amount of data used for validation."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "**Validation curves** plot the training and validation scores of a model for various values of a single **hyperparameter**. They help in understanding the impact of that hyperparameter on model performance and in identifying its optimal setting to balance bias and variance."
         },
         {
           "question": "When selecting a model, what factors beyond just performance metrics should be considered?",
@@ -201,7 +220,8 @@
             "C": "The programming language in which the model is implemented.",
             "D": "The default hyperparameters of the algorithms."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Beyond raw performance metrics, practical considerations are vital for model selection. These include **interpretability** (how easy it is to understand the model's decisions), **complexity** (computational resources, training/inference time), **scalability** (handling larger datasets/more users), and the **specific constraints and requirements of the real-world application** (e.g., real-time predictions, regulatory compliance)."
         }
       ]
     }

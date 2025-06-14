@@ -1,0 +1,185 @@
+{
+  "result": [
+    {
+      "topic": "Subplots_and_Figures",
+      "questions": [
+        {
+          "question": "What is the primary purpose of using subplots in Matplotlib?",
+          "options": {
+            "A": "To display multiple plots in a single figure.",
+            "B": "To store data.",
+            "C": "To perform data analysis.",
+            "D": "To manage databases."
+          },
+          "correct_answer": "A",
+          "explanation": "Subplots in Matplotlib are used to display multiple plots in a single figure, allowing for comparison of different data sets."
+        },
+        {
+          "question": "Which function is used to create subplots in Matplotlib?",
+          "options": {
+            "A": "subplot()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The subplot() function in Matplotlib is used to create subplots, providing a way to organize multiple plots within a single figure."
+        },
+        {
+          "question": "What is the purpose of the figure() function in Matplotlib?",
+          "options": {
+            "A": "To create a new figure for plotting.",
+            "B": "To create a new subplot.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The figure() function in Matplotlib is used to create a new figure for plotting, serving as a container for all plot elements."
+        },
+        {
+          "question": "Which method is used to add a subplot to a figure in Matplotlib?",
+          "options": {
+            "A": "add_subplot()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The add_subplot() method in Matplotlib is used to add a subplot to a figure, allowing for the arrangement of multiple plots."
+        },
+        {
+          "question": "What is the function of the subplots() method in Matplotlib?",
+          "options": {
+            "A": "To create a grid of subplots in a single figure.",
+            "B": "To create a single plot.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The subplots() method in Matplotlib is used to create a grid of subplots in a single figure, facilitating the comparison of multiple data sets."
+        },
+        {
+          "question": "Which parameter is used to specify the number of rows and columns in subplots?",
+          "options": {
+            "A": "nrows and ncols",
+            "B": "rows and columns",
+            "C": "x and y",
+            "D": "width and height"
+          },
+          "correct_answer": "A",
+          "explanation": "The nrows and ncols parameters in Matplotlib are used to specify the number of rows and columns in subplots, defining the layout of the grid."
+        },
+        {
+          "question": "What is the purpose of the sharex and sharey parameters in subplots?",
+          "options": {
+            "A": "To share the x-axis and y-axis among subplots.",
+            "B": "To create a single plot.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The sharex and sharey parameters in Matplotlib are used to share the x-axis and y-axis among subplots, ensuring consistent scaling across plots."
+        },
+        {
+          "question": "Which method is used to adjust the spacing between subplots in Matplotlib?",
+          "options": {
+            "A": "subplots_adjust()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The subplots_adjust() method in Matplotlib is used to adjust the spacing between subplots, providing control over the layout of the figure."
+        },
+        {
+          "question": "What is the function of the tight_layout() method in Matplotlib?",
+          "options": {
+            "A": "To automatically adjust subplot parameters for a neat layout.",
+            "B": "To create a single plot.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The tight_layout() method in Matplotlib is used to automatically adjust subplot parameters for a neat layout, ensuring elements do not overlap."
+        },
+        {
+          "question": "Which function is used to save a figure to a file in Matplotlib?",
+          "options": {
+            "A": "savefig()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The savefig() function in Matplotlib is used to save a figure to a file, allowing for sharing and reuse of visualizations."
+        },
+        {
+          "question": "What is the purpose of the figsize parameter in Matplotlib?",
+          "options": {
+            "A": "To set the size of the figure.",
+            "B": "To create a single plot.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The figsize parameter in Matplotlib is used to set the size of the figure, controlling the overall dimensions of the plot."
+        },
+        {
+          "question": "Which method is used to add a title to a subplot in Matplotlib?",
+          "options": {
+            "A": "set_title()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The set_title() method in Matplotlib is used to add a title to a subplot, providing a descriptive heading for the visualization."
+        },
+        {
+          "question": "What is the function of the set_xlabel() and set_ylabel() methods in Matplotlib?",
+          "options": {
+            "A": "To set the labels for the x-axis and y-axis of a subplot.",
+            "B": "To create a single plot.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The set_xlabel() and set_ylabel() methods in Matplotlib are used to set the labels for the x-axis and y-axis of a subplot, providing context for the data represented."
+        },
+        {
+          "question": "Which method is used to add a legend to a subplot in Matplotlib?",
+          "options": {
+            "A": "legend()",
+            "B": "plot()",
+            "C": "scatter()",
+            "D": "bar()"
+          },
+          "correct_answer": "A",
+          "explanation": "The legend() method in Matplotlib is used to add a legend to a subplot, providing a key for interpreting the data series represented."
+        },
+        {
+          "question": "What is the purpose of the grid() method in Matplotlib?",
+          "options": {
+            "A": "To add a grid to the subplot.",
+            "B": "To create a single plot.",
+            "C": "To store data.",
+            "D": "To perform data analysis."
+          },
+          "correct_answer": "A",
+          "explanation": "The grid() method in Matplotlib is used to add a grid to the subplot, providing reference lines for easier interpretation of data points."
+        },
+        {
+          "question": "Which method is used to customize the tick labels in a subplot in Matplotlib?",
+          "options": {
+            "A": "set_xticks() and set_yticks()",
+            "B": "plot() and scatter()",
+            "C": "bar() and hist()",
+            "D": "line() and area()"
+          },
+          "correct_answer": "A",
+          "explanation": "The set_xticks() and set_yticks() methods in Matplotlib are used to customize the tick labels in a subplot, providing control over the appearance of axis ticks."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "git_branches",
+      "questions": [
+        {
+          "question": "What is a 'branch' in Git?",
+          "options": {
+            "A": "A folder to organize project files.",
+            "B": "A permanent, independent copy of the entire repository.",
+            "C": "A lightweight, movable pointer to a commit, representing a separate line of development.",
+            "D": "A tag used for marking releases."
+          },
+          "correct_answer": "C",
+          "explanation": "Branches in Git are incredibly lightweight and allow developers to work on new features or fixes in isolation without affecting the main codebase until ready."
+        },
+        {
+          "question": "What is the primary purpose of using branches in Git?",
+          "options": {
+            "A": "To compress the repository size.",
+            "B": "To allow multiple developers to work on different features or bug fixes concurrently and independently without interfering with each other's work.",
+            "C": "To automatically deploy code to production.",
+            "D": "To encrypt sensitive information."
+          },
+          "correct_answer": "B",
+          "explanation": "Branches enable parallel development, fostering a more organized and less disruptive workflow."
+        },
+        {
+          "question": "Which command is used to list all local branches in your repository?",
+          "options": {
+            "A": "`git list-branches`",
+            "B": "`git show-branches`",
+            "C": "`git branch`",
+            "D": "`git branches`"
+          },
+          "correct_answer": "C",
+          "explanation": "`git branch` alone lists local branches. Adding options like `-a` shows all (local and remote-tracking) branches."
+        },
+        {
+          "question": "How do you create a new branch named `new-feature` without switching to it?",
+          "options": {
+            "A": "`git checkout -b new-feature`",
+            "B": "`git branch new-feature`",
+            "C": "`git new branch new-feature`",
+            "D": "`git create branch new-feature`"
+          },
+          "correct_answer": "B",
+          "explanation": "`git branch <name>` creates the new branch pointer at the current commit but keeps your `HEAD` (and working directory) on the current branch."
+        },
+        {
+          "question": "To switch from your current branch to an existing branch named `develop`, which command would you use?",
+          "options": {
+            "A": "`git switch develop`",
+            "B": "`git move develop`",
+            "C": "`git branch develop`",
+            "D": "Both A and C are correct."
+          },
+          "correct_answer": "A",
+          "explanation": "`git switch` is the newer, clearer command introduced in Git 2.23 specifically for switching branches. `git checkout develop` also works and is historically more common."
+        },
+        {
+          "question": "What does the `HEAD` pointer in Git represent?",
+          "options": {
+            "A": "The very first commit in the repository.",
+            "B": "The last commit on the remote repository.",
+            "C": "The current commit that your working directory is based on; it usually points to the tip of the current branch.",
+            "D": "The oldest commit in the branch."
+          },
+          "correct_answer": "C",
+          "explanation": "`HEAD` is crucial for understanding your current position in the repository's history. When you switch branches, `HEAD` moves with it."
+        },
+        {
+          "question": "You have a local branch named `bugfix` that you've finished working on and successfully merged into `main`. How do you safely delete this local branch?",
+          "options": {
+            "A": "`git branch -d bugfix`",
+            "B": "`git branch -D bugfix`",
+            "C": "`git delete branch bugfix`",
+            "D": "`git remove bugfix`"
+          },
+          "correct_answer": "A",
+          "explanation": "`git branch -d` (or `--delete`) is the 'safe' option; it only deletes the branch if it has been fully merged into its upstream branch (or `HEAD`). If not, it will warn you."
+        },
+        {
+          "question": "When would you use `git branch -D <branch-name>` instead of `git branch -d <branch-name>`?",
+          "options": {
+            "A": "When deleting a remote branch.",
+            "B": "When the branch has uncommitted changes.",
+            "C": "When you want to forcefully delete a local branch, even if it has unmerged changes.",
+            "D": "When deleting a branch that is already merged."
+          },
+          "correct_answer": "C",
+          "explanation": "`git branch -D` (or `--delete --force`) is used to force deletion of a local branch, which might lead to loss of unmerged commits if not careful."
+        },
+        {
+          "question": "What is a 'remote-tracking branch' (e.g., `origin/main`)?",
+          "options": {
+            "A": "A branch that only exists on the remote server.",
+            "B": "A local branch that automatically tracks changes from a remote branch.",
+            "C": "A read-only local copy of a remote branch, reflecting the state of the remote repository's branch as of the last `git fetch` or `git pull`.",
+            "D": "A branch that is only used for deployment."
+          },
+          "correct_answer": "C",
+          "explanation": "Remote-tracking branches act as bookmarks, showing you where the remote branch was the last time you communicated with the remote. You cannot directly commit to them."
+        },
+        {
+          "question": "When you execute `git checkout -b new-feature`, what two actions does this command perform?",
+          "options": {
+            "A": "Creates a new branch named `new-feature` and pushes it to the remote.",
+            "B": "Creates a new branch named `new-feature` and deletes the current branch.",
+            "C": "Creates a new branch named `new-feature` based on the current `HEAD` and immediately switches to it.",
+            "D": "Merges `new-feature` into the current branch."
+          },
+          "correct_answer": "C",
+          "explanation": "This is a very common and efficient way to start working on a new feature in a dedicated branch."
+        },
+        {
+          "question": "What is the primary benefit of 'feature branching' (a common branching strategy)?",
+          "options": {
+            "A": "It simplifies code review by having all changes in one place.",
+            "B": "It allows features to be developed in isolation without destabilizing the `main` or `develop` branch, facilitating continuous integration and delivery.",
+            "C": "It reduces the number of commits in the repository.",
+            "D": "It prevents merge conflicts entirely."
+          },
+          "correct_answer": "B",
+          "explanation": "Feature branching promotes a clean and stable main codebase by isolating experimental or ongoing development work."
+        },
+        {
+          "question": "If you're on branch `feature-A` and run `git branch -d feature-B` (assuming `feature-B` is fully merged), what happens?",
+          "options": {
+            "A": "You switch to `feature-B` and then delete it.",
+            "B": "Git deletes the `feature-B` branch from your local repository.",
+            "C": "Git deletes `feature-B` from the remote repository.",
+            "D": "The command fails because you are not on `feature-B`."
+          },
+          "correct_answer": "B",
+          "explanation": "You can delete a local branch from any other branch, provided it's not the currently checked-out branch and it's either fully merged (for `-d`) or forcefully deleted (for `-D`)."
+        },
+        {
+          "question": "What is a 'hotfix' branch typically used for?",
+          "options": {
+            "A": "Developing major new features.",
+            "B": "Making quick, urgent fixes to production bugs without waiting for the next planned release cycle.",
+            "C": "Experimenting with new technologies.",
+            "D": "Long-term refactoring efforts."
+          },
+          "correct_answer": "B",
+          "explanation": "Hotfix branches are designed for immediate fixes that need to bypass the standard development flow to address critical issues in production."
+        },
+        {
+          "question": "What is the common purpose of the `main` (or `master`) branch in most Git workflows?",
+          "options": {
+            "A": "It's the branch for all experimental features.",
+            "B": "It's the primary branch that holds the stable, release-ready, or production-ready version of the code.",
+            "C": "It's where all uncommitted changes are stored.",
+            "D": "It's a temporary branch used for testing."
+          },
+          "correct_answer": "B",
+          "explanation": "The `main`/`master` branch usually represents the official history of the project, from which releases are made."
+        },
+        {
+          "question": "If you are on the `main` branch and run `git checkout HEAD~1`, what will happen?",
+          "options": {
+            "A": "You will delete the last commit on `main`.",
+            "B": "You will switch to the commit directly before the current `HEAD` commit (a detached HEAD state).",
+            "C": "You will create a new branch from the previous commit.",
+            "D": "You will revert the last commit."
+          },
+          "correct_answer": "B",
+          "explanation": "`HEAD~1` refers to the commit directly preceding `HEAD`. Checking out a specific commit puts you in a 'detached HEAD' state, meaning `HEAD` points directly to a commit, not a branch."
+        },
+        {
+          "question": "How do you delete a remote branch named `feature/old-branch`?",
+          "options": {
+            "A": "`git branch -d origin/feature/old-branch`",
+            "B": "`git push origin --delete feature/old-branch`",
+            "C": "`git remote rm feature/old-branch`",
+            "D": "`git checkout feature/old-branch; git branch -D`"
+          },
+          "correct_answer": "B",
+          "explanation": "To delete a remote branch, you `push` a command to the remote specifying that you want to delete that branch."
+        },
+        {
+          "question": "What does `git branch -vv` show you?",
+          "options": {
+            "A": "Only local branches.",
+            "B": "Local branches, and for each branch, its upstream tracking branch (if any) and whether it's ahead or behind the upstream.",
+            "C": "Only remote branches.",
+            "D": "A verbose log of all branch activities."
+          },
+          "correct_answer": "B",
+          "explanation": "`git branch -vv` provides detailed information about your local branches and how they relate to their upstream remote-tracking branches, which is very useful for keeping track of your synchronization status."
+        },
+        {
+          "question": "Is it possible to commit changes while on a 'detached HEAD' state?",
+          "options": {
+            "A": "No, commits are only possible on branches.",
+            "B": "Yes, you can commit, but the new commit will not be part of any branch's history unless explicitly attached.",
+            "C": "Only if you have an internet connection.",
+            "D": "Only if the commit is a hotfix."
+          },
+          "correct_answer": "B",
+          "explanation": "Committing in a detached HEAD state creates 'orphan' commits. To save them, you must create a new branch from that commit before switching away from it."
+        },
+        {
+          "question": "What is the common branching strategy where there is a `main` (for releases) and a `develop` (for ongoing development) branch, with feature branches off `develop`?",
+          "options": {
+            "A": "Trunk-Based Development",
+            "B": "GitHub Flow",
+            "C": "Git Flow",
+            "D": "Forking Workflow"
+          },
+          "correct_answer": "C",
+          "explanation": "Git Flow is a formalized branching model often used for projects with defined release cycles, featuring long-lived `main` and `develop` branches."
+        },
+        {
+          "question": "If you have uncommitted changes in your working directory and try to `git checkout` to another branch, what is Git's default behavior?",
+          "options": {
+            "A": "It will automatically commit your changes.",
+            "B": "It will stash your changes automatically.",
+            "C": "It will prevent you from switching branches, warning you about uncommitted changes.",
+            "D": "It will discard your uncommitted changes."
+          },
+          "correct_answer": "C",
+          "explanation": "Git protects your work. If switching branches would cause your uncommitted changes to be lost or conflict, it will stop you and tell you to commit or stash your changes first."
+        }
+      ]
+    }
+  ]
+}

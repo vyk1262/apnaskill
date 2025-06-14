@@ -1,0 +1,196 @@
+{
+    "result": [
+        {
+            "topic": "Inferential_Statistics",
+            "questions": [
+    {
+      "question": "What is the primary purpose of inferential statistics?",
+      "options": {
+        "A": "To describe the features of a dataset.",
+        "B": "To make predictions or inferences about a population based on a sample.",
+        "C": "To calculate the mean.",
+        "D": "To display data graphically."
+      },
+      "correct_answer": "B",
+      "explanation": "Inferential statistics are used to make predictions or inferences about a population based on a sample of data."
+    },
+    {
+      "question": "Which statistical test is used to determine if there is a significant difference between the means of three or more groups?",
+      "options": {
+        "A": "t-test",
+        "B": "ANOVA",
+        "C": "Chi-square test",
+        "D": "Regression analysis"
+      },
+      "correct_answer": "B",
+      "explanation": "ANOVA (Analysis of Variance) is used to determine if there is a significant difference between the means of three or more groups."
+    },
+    {
+      "question": "What is a confidence interval?",
+      "options": {
+        "A": "A range of values that is likely to contain the population parameter.",
+        "B": "A measure of central tendency.",
+        "C": "A graphical representation of data.",
+        "D": "A hypothesis test result."
+      },
+      "correct_answer": "A",
+      "explanation": "A confidence interval is a range of values that is likely to contain the population parameter, providing an estimate of uncertainty."
+    },
+    {
+      "question": "What does a p-value represent in hypothesis testing?",
+      "options": {
+        "A": "The probability of the null hypothesis being true.",
+        "B": "The probability of observing the data given the null hypothesis is true.",
+        "C": "The probability of the alternative hypothesis being true.",
+        "D": "The probability of making a Type I error."
+      },
+      "correct_answer": "B",
+      "explanation": "A p-value represents the probability of observing the data, or something more extreme, given that the null hypothesis is true."
+    },
+    {
+      "question": "What is the purpose of a hypothesis test?",
+      "options": {
+        "A": "To describe the features of a dataset.",
+        "B": "To make predictions about future outcomes.",
+        "C": "To determine if there is enough evidence to reject the null hypothesis.",
+        "D": "To calculate the mean."
+      },
+      "correct_answer": "C",
+      "explanation": "A hypothesis test is used to determine if there is enough evidence to reject the null hypothesis in favor of the alternative hypothesis."
+    },
+    {
+      "question": "What is the significance level in hypothesis testing?",
+      "options": {
+        "A": "The probability of rejecting the null hypothesis when it is true.",
+        "B": "The probability of accepting the null hypothesis when it is false.",
+        "C": "The probability of observing the data given the null hypothesis is true.",
+        "D": "The probability of making a Type II error."
+      },
+      "correct_answer": "A",
+      "explanation": "The significance level is the probability of rejecting the null hypothesis when it is true, often set at 0.05 or 5%."
+    },
+    {
+      "question": "What is the purpose of a t-test?",
+      "options": {
+        "A": "To compare the means of two groups.",
+        "B": "To test for independence between categorical variables.",
+        "C": "To predict the value of a dependent variable.",
+        "D": "To calculate probabilities."
+      },
+      "correct_answer": "A",
+      "explanation": "A t-test is used to compare the means of two groups to determine if they are significantly different."
+    },
+    {
+      "question": "What is the purpose of a chi-square test?",
+      "options": {
+        "A": "To compare the means of two groups.",
+        "B": "To test for independence between categorical variables.",
+        "C": "To predict the value of a dependent variable.",
+        "D": "To calculate probabilities."
+      },
+      "correct_answer": "B",
+      "explanation": "A chi-square test is used to test for independence between categorical variables, determining if there is a significant association."
+    },
+    {
+      "question": "What is the purpose of regression analysis?",
+      "options": {
+        "A": "To summarize data.",
+        "B": "To predict the value of a dependent variable based on an independent variable.",
+        "C": "To test for independence.",
+        "D": "To calculate probabilities."
+      },
+      "correct_answer": "B",
+      "explanation": "Regression analysis is used to predict the value of a dependent variable based on the value of one or more independent variables."
+    },
+    {
+      "question": "What is the purpose of a correlation coefficient?",
+      "options": {
+        "A": "To measure the strength and direction of a linear relationship between two variables.",
+        "B": "To calculate probabilities.",
+        "C": "To summarize data.",
+        "D": "To test for independence."
+      },
+      "correct_answer": "A",
+      "explanation": "A correlation coefficient measures the strength and direction of a linear relationship between two variables, ranging from -1 to 1."
+    },
+    {
+      "question": "What is the purpose of a normal distribution?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To model continuous data that is symmetrically distributed.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A normal distribution models continuous data that is symmetrically distributed, with most data points clustering around the mean."
+    },
+    {
+      "question": "What is the purpose of a z-score?",
+      "options": {
+        "A": "To measure the strength of a relationship between two variables.",
+        "B": "To calculate probabilities.",
+        "C": "To standardize a data point relative to the mean and standard deviation.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "C",
+      "explanation": "A z-score standardizes a data point relative to the mean and standard deviation, indicating how many standard deviations it is from the mean."
+    },
+    {
+      "question": "What is the purpose of a sampling distribution?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the distribution of a sample statistic.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A sampling distribution shows the distribution of a sample statistic, providing insight into the variability of the statistic."
+    },
+    {
+      "question": "What is the purpose of a Type I error?",
+      "options": {
+        "A": "To reject the null hypothesis when it is true.",
+        "B": "To accept the null hypothesis when it is false.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "A",
+      "explanation": "A Type I error occurs when the null hypothesis is rejected when it is true, leading to a false positive result."
+    },
+    {
+      "question": "What is the purpose of a Type II error?",
+      "options": {
+        "A": "To reject the null hypothesis when it is true.",
+        "B": "To accept the null hypothesis when it is false.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A Type II error occurs when the null hypothesis is accepted when it is false, leading to a false negative result."
+    },
+    {
+      "question": "What is the purpose of a power analysis?",
+      "options": {
+        "A": "To determine the sample size needed to detect an effect.",
+        "B": "To calculate probabilities.",
+        "C": "To summarize data.",
+        "D": "To test for independence."
+      },
+      "correct_answer": "A",
+      "explanation": "A power analysis is used to determine the sample size needed to detect an effect, ensuring the study has enough power to detect a true effect."
+    },
+    {
+      "question": "What is the purpose of a sampling error?",
+      "options": {
+        "A": "To display categorical data.",
+        "B": "To show the difference between a sample statistic and the population parameter.",
+        "C": "To calculate probabilities.",
+        "D": "To summarize data."
+      },
+      "correct_answer": "B",
+      "explanation": "A sampling error shows the difference between a sample statistic and the population parameter, providing insight into the accuracy of the sample."
+    }
+  ]
+        }
+    ]
+}

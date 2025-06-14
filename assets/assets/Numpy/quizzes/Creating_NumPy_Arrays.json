@@ -11,7 +11,8 @@
             "C": "numpy.array()",
             "D": "numpy.arange()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.array()` function is the primary way to create a NumPy array from an existing Python sequence (like a list or tuple). It infers the data type and shape from the input sequence."
         },
         {
           "question": "To create a 2x2 NumPy array initialized with zeros, which function and arguments would you use?",
@@ -21,7 +22,8 @@
             "C": "numpy.array([0, 0], [0, 0])",
             "D": "numpy.zeros([2, 2])"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.zeros()` function takes a `shape` argument, which should be a tuple specifying the dimensions of the array. For a 2x2 array, the shape is `(2, 2)`. While `D` is syntactically correct, `(2, 2)` is the canonical tuple notation for shape."
         },
         {
           "question": "What is the output of `numpy.ones((3,))`?",
@@ -31,7 +33,8 @@
             "C": "[1. 1. 1.]",
             "D": "[[1. 1. 1.]]"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The input `(3,)` specifies a 1-dimensional array of length 3. NumPy arrays typically store floating-point numbers by default when created with `ones()`, `zeros()`, etc., unless a `dtype` is specified. Thus, the output will be `[1. 1. 1.]`."
         },
         {
           "question": "Which function can create a NumPy array with uninitialized elements (values will be whatever was in memory)?",
@@ -41,7 +44,8 @@
             "C": "numpy.empty()",
             "D": "numpy.identity()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.empty()` function creates an array without initializing its elements to any particular value. The values will be arbitrary, whatever happens to be in that memory location. This can be faster for very large arrays if you intend to fill the array immediately afterward."
         },
         {
           "question": "How do you create a 3x3 identity matrix using NumPy?",
@@ -51,7 +55,8 @@
             "C": "numpy.ones((3, 3)) * numpy.eye(1)",
             "D": "numpy.diag([1, 1, 1])"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.identity(n)` function creates an $n \times n$ identity matrix, where the diagonal elements are 1s and all other elements are 0s. `numpy.eye(N, M)` can also create an identity-like matrix, but `identity` is specifically for square identity matrices."
         },
         {
           "question": "What is the primary difference between `numpy.arange()` and `numpy.linspace()` when creating sequences?",
@@ -61,7 +66,8 @@
             "C": "`arange()` only works with integer steps, while `linspace()` can handle floating-point steps.",
             "D": "There is no significant difference; they can be used interchangeably."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The main distinction is that `numpy.arange()` generates numbers based on a `step` value (similar to Python's `range()`), excluding the `stop` value. In contrast, `numpy.linspace()` generates a specified `number` of samples, *including* both the `start` and `stop` values by default, making it ideal for creating evenly spaced points over an interval."
         },
         {
           "question": "Which of the following creates an array of 5 evenly spaced numbers between 0 and 10 (inclusive)?",
@@ -71,7 +77,8 @@
             "C": "numpy.range(0, 10, 5)",
             "D": "numpy.array([0, 2.5, 5, 7.5, 10])"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.linspace(start, stop, num)` generates `num` evenly spaced samples over the interval `[start, stop]`. So, `numpy.linspace(0, 10, 5)` will produce `[ 0.   2.5  5.   7.5 10. ]`."
         },
         {
           "question": "How can you create a NumPy array of 10 random floating-point numbers between 0 and 1?",
@@ -81,7 +88,8 @@
             "C": "numpy.random.random(10)",
             "D": "Both B and C"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "Both `numpy.random.rand(d0, d1, ...)` and `numpy.random.random(size=(d0, d1, ...))` generate samples from a uniform distribution over `[0.0, 1.0)`. `rand` takes individual dimensions as arguments, while `random` takes a tuple for `size`."
         },
         {
           "question": "Which function can create an array of random integers within a specified range?",
@@ -91,7 +99,8 @@
             "C": "numpy.random.randint()",
             "D": "numpy.random.uniform()"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `numpy.random.randint(low, high, size)` function generates random integers from `low` (inclusive) to `high` (exclusive). For example, `np.random.randint(1, 10, 5)` would generate 5 random integers between 1 and 9."
         },
         {
           "question": "What is the output of `numpy.diag([1, 2, 3])`?",
@@ -101,7 +110,8 @@
             "C": "[[1, 0, 0], [0, 2, 0], [0, 0, 3]]",
             "D": "[[0, 0, 1], [0, 2, 0], [3, 0, 0]]"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "When given a 1-D array, `numpy.diag()` constructs a 2-D array with the 1-D array on the diagonal and zeros elsewhere. This creates a diagonal matrix."
         },
         {
           "question": "How can you create a NumPy array with the same shape and type as an existing array `arr` but filled with zeros?",
@@ -111,7 +121,8 @@
             "C": "numpy.zeros(len(arr))",
             "D": "numpy.zeros(arr.size)"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.zeros_like()` function (and its counterparts `ones_like()`, `empty_like()`) creates a new array with the same shape and data type as a given input array, filled with zeros. This is often more convenient and robust than manually extracting `arr.shape` and `arr.dtype`."
         },
         {
           "question": "Which function can create a 1D array from an iterable object (like a list or tuple)?",
@@ -121,7 +132,8 @@
             "C": "numpy.fromlist()",
             "D": "numpy.fromsequence()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "`numpy.asarray()` converts the input to an array. If the input is already an `ndarray` of the correct `dtype`, no copy is made. Otherwise, a new array is created. This is a common function for ensuring you have a NumPy array, whether by creating a new one or returning a view if possible."
         },
         {
           "question": "What is the purpose of the `dtype` argument when creating NumPy arrays?",
@@ -131,7 +143,8 @@
             "C": "To explicitly set the data type of the array elements.",
             "D": "To determine whether the array should be initialized with zeros or ones."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The `dtype` argument is crucial for explicitly defining the data type (e.g., `np.int32`, `np.float64`, `np.complex128`) of the elements that will be stored in the array. This ensures memory efficiency and correct numerical operations."
         },
         {
           "question": "Which of the following creates a 2x3 array with random floats between 0 and 5?",
@@ -141,7 +154,8 @@
             "C": "numpy.random.random((2, 3)) * 5",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All three options achieve the desired result. `numpy.random.rand()` and `numpy.random.random()` generate numbers in `[0, 1)`, which are then scaled by 5. `numpy.random.uniform(low, high, size)` directly generates numbers in the specified range `[low, high)` with the given size/shape."
         },
         {
           "question": "How can you create an array with a sequence from 10 to 50 (inclusive) with a step of 5?",
@@ -151,7 +165,8 @@
             "C": "numpy.range(10, 51, 5)",
             "D": "numpy.array(range(10, 51, 5))"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `numpy.arange(start, stop, step)` function generates values from `start` up to (but not including) `stop` with the given `step`. To include 50, the `stop` value needs to be 51. So, `numpy.arange(10, 51, 5)` would yield `[10, 15, 20, 25, 30, 35, 40, 45, 50]`."
         },
         {
           "question": "Which function creates a flat 1D array from a given array?",
@@ -161,7 +176,8 @@
             "C": "numpy.reshape(-1)",
             "D": "All of the above"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "All these methods can be used to flatten an array: \n- `array.flatten()` returns a *copy* of the array collapsed into one dimension.\n- `array.ravel()` returns a *view* (if possible) of the array collapsed into one dimension.\n- `array.reshape(-1)` reshapes the array into a 1D array, inferring the size from the array's elements. It also returns a view if possible."
         },
         {
           "question": "What is the output of `numpy.full((2, 2), 7)`?",
@@ -171,7 +187,8 @@
             "C": "[7, 7, 7, 7]",
             "D": "array([[7, 7], [7, 7]])"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "The `numpy.full(shape, fill_value)` function creates an array of the specified `shape` filled with the `fill_value`. Thus, `numpy.full((2, 2), 7)` will create a 2x2 array where every element is 7. The correct answer choice includes the `array(...)` representation."
         },
         {
           "question": "Which NumPy function can create an array based on a buffer object?",
@@ -181,7 +198,8 @@
             "C": "numpy.fromfile()",
             "D": "numpy.fromiter()"
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "The `numpy.frombuffer()` function interprets a buffer as a 1-dimensional array. It's useful for creating arrays from raw binary data, like bytes objects, without making a copy of the data if possible."
         },
         {
           "question": "How do you create an array of complex numbers using NumPy?",
@@ -191,7 +209,8 @@
             "C": "numpy.astype(complex)",
             "D": "numpy.asarray([1, 2, 3, 4], dtype=complex)"
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "You can create an array of complex numbers by either providing complex literals directly to `numpy.array()` (Option A is a valid way to initialize an array of complex numbers, but D is more general for conversion), or by specifying `dtype=complex` (or `dtype=np.complex64`, `np.complex128`) when creating or converting an array. Option D uses `asarray` which is good for general conversion, and explicitly sets the `dtype` to complex."
         },
         {
           "question": "Which NumPy function is used to create an array with values sampled from a standard normal distribution?",
@@ -201,7 +220,8 @@
             "C": "numpy.random.normal()",
             "D": "numpy.random.standard_normal()"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The `numpy.random.randn(d0, d1, ...)` function returns samples from the 'standard normal' or 'Gaussian' distribution (mean 0, variance 1). `numpy.random.normal(loc=0.0, scale=1.0, size=None)` is a more general function to draw samples from a normal distribution with specified mean (`loc`) and standard deviation (`scale`), but `randn` is specifically for the standard normal."
         }
       ]
     }

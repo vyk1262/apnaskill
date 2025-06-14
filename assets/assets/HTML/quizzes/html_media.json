@@ -1,0 +1,119 @@
+{
+  "result": [
+    {
+      "topic": "html_media",
+      "questions": [
+        {
+          "question": "Which HTML element is used to draw graphics on a web page?",
+          "options": {
+            "A": "<canvas>",
+            "B": "<svg>",
+            "C": "<img>",
+            "D": "<video>"
+          },
+          "correct_answer": "A",
+          "explanation": "The `<canvas>` element is used to draw graphics, on the fly, via JavaScript. It provides a drawing surface for 2D graphics and animations."
+        },
+        {
+          "question": "What does SVG stand for?",
+          "options": {
+            "A": "Styled Vector Graphics",
+            "B": "Scalable Vector Graphics",
+            "C": "Standard Vector Graphics",
+            "D": "Simple Vector Graphics"
+          },
+          "correct_answer": "B",
+          "explanation": "SVG stands for Scalable Vector Graphics. It is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation."
+        },
+        {
+          "question": "Which HTML tag is used to embed a video on a webpage?",
+          "options": {
+            "A": "<media>",
+            "B": "<movie>",
+            "C": "<video>",
+            "D": "<embed>"
+          },
+          "correct_answer": "C",
+          "explanation": "The `<video>` tag is used to embed video content in an HTML document. It provides a standard way to include videos without requiring a plug-in."
+        },
+        {
+          "question": "Which HTML attribute specifies a video file to be played?",
+          "options": {
+            "A": "src",
+            "B": "href",
+            "C": "link",
+            "D": "type"
+          },
+          "correct_answer": "A",
+          "explanation": "The `src` attribute specifies the URL of the video file that the browser should load and play."
+        },
+        {
+          "question": "Which HTML tag is used to embed an audio file on a webpage?",
+          "options": {
+            "A": "<sound>",
+            "B": "<audio>",
+            "C": "<media>",
+            "D": "<voice>"
+          },
+          "correct_answer": "B",
+          "explanation": "The `<audio>` tag is used to embed audio content in an HTML document, similar to how the `<video>` tag embeds video."
+        },
+        {
+          "question": "What does the 'controls' attribute do in the <audio> and <video> tags?",
+          "options": {
+            "A": "It sets the volume level.",
+            "B": "It enables built-in controls for play, pause, and volume.",
+            "C": "It specifies the file type.",
+            "D": "It auto-plays the file on page load."
+          },
+          "correct_answer": "B",
+          "explanation": "The `controls` attribute, when present, adds default playback controls (like play/pause button, volume, and progress bar) to the audio or video player."
+        },
+        {
+          "question": "How can you embed a YouTube video on a webpage?",
+          "options": {
+            "A": "Using the <youtube> tag",
+            "B": "Using an <embed> or <iframe> tag",
+            "C": "Using the <video> tag",
+            "D": "Using the <media> tag"
+          },
+          "correct_answer": "B",
+          "explanation": "YouTube provides embed codes that typically use an `<iframe>` tag to include their videos on other websites. The `<embed>` tag can also be used for similar purposes with various media types."
+        },
+        {
+          "question": "Which HTML element is used to define a vector graphic?",
+          "options": {
+            "A": "<canvas>",
+            "B": "<svg>",
+            "C": "<graphic>",
+            "D": "<vector>"
+          },
+          "correct_answer": "B",
+          "explanation": "The `<svg>` element is used to define vector-based graphics in HTML. SVG graphics are resolution-independent and can be scaled without loss of quality."
+        },
+        {
+          "question": "What attribute in the <video> element allows a video to play automatically?",
+          "options": {
+            "A": "controls",
+            "B": "autoplay",
+            "C": "loop",
+            "D": "play"
+          },
+          "correct_answer": "B",
+          "explanation": "The `autoplay` attribute, when set, causes the video to begin playing as soon as it is loaded, without requiring user interaction. Modern browsers often block autoplay with sound unless the user has interacted with the page."
+        },
+        {
+          "question": "Which attribute is used to make a video loop continuously?",
+          "options": {
+            "A": "autoplay",
+            "B": "controls",
+            "C": "loop",
+            "D": "muted"
+          },
+          "correct_answer": "C",
+          "explanation": "The `loop` attribute, when present, specifies that the video will start over again every time it is finished."
+        }
+      ]
+    }
+  ]
+}

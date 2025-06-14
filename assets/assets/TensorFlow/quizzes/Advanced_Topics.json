@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Advanced_Topics",
+      "questions": [
+        {
+          "question": "When would you typically implement a 'Custom Training Loop' in TensorFlow, rather than using `model.fit()`?",
+          "options": {
+            "A": "When you only need to train for a few epochs.",
+            "B": "When you require fine-grained control over the training process, such as implementing custom gradient updates, specialized logging, or non-standard training phases.",
+            "C": "When your dataset is very small.",
+            "D": "When using only the Sequential API."
+          },
+          "correct_answer": "B",
+          "explanation": "Custom training loops provide maximum flexibility for complex research or highly specialized training regimes not easily encapsulated by `model.fit()`."
+        },
+        {
+          "question": "What is the benefit of inheriting from `tf.keras.layers.Layer` to create a 'Custom Layer'?",
+          "options": {
+            "A": "It speeds up basic model compilation.",
+            "B": "It allows you to define custom reusable building blocks with their own trainable weights and forward pass logic within a Keras model.",
+            "C": "It removes the need for an optimizer.",
+            "D": "It's only for visualizing layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Custom layers are essential for implementing novel architectures or operations not provided by default Keras layers."
+        },
+        {
+          "question": "What is `tf.data.Dataset` primarily used for in TensorFlow?",
+          "options": {
+            "A": "Storing model weights.",
+            "B": "Building efficient and scalable input pipelines for machine learning models, handling operations like loading, preprocessing, batching, and shuffling data.",
+            "C": "Performing numerical calculations only.",
+            "D": "Deploying models to mobile devices."
+          },
+          "correct_answer": "B",
+          "explanation": "The `tf.data` API is fundamental for handling large datasets and optimizing data loading during training."
+        },
+        {
+          "question": "What is the purpose of `tf.function` in TensorFlow 2.x?",
+          "options": {
+            "A": "To automatically convert Python code to C++.",
+            "B": "To compile a Python function into a TensorFlow callable graph, enabling performance optimizations, distribution, and export.",
+            "C": "To create new TensorFlow operations.",
+            "D": "To define custom loss functions."
+          },
+          "correct_answer": "B",
+          "explanation": "`tf.function` is a powerful decorator that allows developers to write flexible Python code that can still benefit from TensorFlow's graph-mode performance and portability."
+        },
+        {
+          "question": "Which TensorFlow component is designed for deploying trained models to mobile and edge devices?",
+          "options": {
+            "A": "TensorFlow Extended (TFX)",
+            "B": "TensorBoard",
+            "C": "TensorFlow Lite",
+            "D": "TensorFlow Serving"
+          },
+          "correct_answer": "C",
+          "explanation": "TensorFlow Lite optimizes models for on-device inference, reducing model size and latency."
+        },
+        {
+          "question": "What is `tf.distribute.Strategy` used for?",
+          "options": {
+            "A": "Managing environment variables.",
+            "B": "Defining how training should be distributed across multiple GPUs, multiple machines, or TPUs.",
+            "C": "Choosing the best optimization algorithm.",
+            "D": "Performing data augmentation."
+          },
+          "correct_answer": "B",
+          "explanation": "This API simplifies the process of training models in a distributed manner, significantly speeding up training for large models or datasets."
+        },
+        {
+          "question": "What is 'TensorFlow Serving' primarily used for?",
+          "options": {
+            "A": "Training models in the cloud.",
+            "B": "Deploying trained machine learning models into production environments as high-performance, flexible serving systems.",
+            "C": "Data preprocessing for TensorFlow models.",
+            "D": "Visualizing model training metrics."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow Serving handles model versioning, concurrent model serving, and efficient request handling."
+        },
+        {
+          "question": "Which Keras Callback allows you to stop training automatically if a monitored metric (e.g., validation loss) stops improving for a specified number of epochs?",
+          "options": {
+            "A": "ModelCheckpoint",
+            "B": "TensorBoard",
+            "C": "EarlyStopping",
+            "D": "ReduceLROnPlateau"
+          },
+          "correct_answer": "C",
+          "explanation": "Early stopping is a critical regularization technique to prevent overfitting and save computational resources."
+        },
+        {
+          "question": "What is 'Mixed Precision Training'?",
+          "options": {
+            "A": "Training a model with both integer and floating-point numbers.",
+            "B": "Training parts of the model with float32 and other parts with float16 (or bfloat16) to speed up computations and reduce memory usage on compatible hardware (e.g., GPUs, TPUs).",
+            "C": "Training a model on different datasets simultaneously.",
+            "D": "Using different optimizers for different layers."
+          },
+          "correct_answer": "B",
+          "explanation": "Float16 operations are often faster on modern hardware, and mixed precision allows leveraging this without significant loss of accuracy due to precision issues."
+        },
+        {
+          "question": "What does 'TensorFlow Hub' provide?",
+          "options": {
+            "A": "A cloud-based IDE for TensorFlow development.",
+            "B": "A library of reusable machine learning modules (e.g., pre-trained models, embeddings) that can be easily incorporated into new models.",
+            "C": "A debugging tool for TensorFlow graphs.",
+            "D": "A system for tracking model versions."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorFlow Hub facilitates transfer learning by making it easy to share and reuse trained model components."
+        },
+        {
+          "question": "When defining a 'Custom Loss Function' in Keras, what arguments does the function typically take?",
+          "options": {
+            "A": "Only the model's predictions.",
+            "B": "Only the true labels.",
+            "C": "The true labels (`y_true`) and the model's predictions (`y_pred`).",
+            "D": "The entire dataset."
+          },
+          "correct_answer": "C",
+          "explanation": "A loss function calculates the discrepancy between the ground truth and the model's output."
+        },
+        {
+          "question": "Which Keras Callback is useful for saving the model's weights (or the entire model) periodically during training, especially when a specific metric improves?",
+          "options": {
+            "A": "LambdaCallback",
+            "B": "History",
+            "C": "ModelCheckpoint",
+            "D": "CSVLogger"
+          },
+          "correct_answer": "C",
+          "explanation": "ModelCheckpoint ensures you can resume training or use the best performing model even if training is interrupted or overfitting occurs later."
+        },
+        {
+          "question": "What is the primary goal of 'Model Quantization' in TensorFlow?",
+          "options": {
+            "A": "To add more layers to a model.",
+            "B": "To increase the model's size and complexity.",
+            "C": "To reduce the size of the model and speed up inference by converting weights and activations from higher precision (e.g., float32) to lower precision (e.g., int8).",
+            "D": "To improve model accuracy during training."
+          },
+          "correct_answer": "C",
+          "explanation": "Quantization is a common optimization technique for deploying models to resource-constrained environments."
+        },
+        {
+          "question": "What is an 'Autoencoder'?",
+          "options": {
+            "A": "A type of recurrent neural network for sequence prediction.",
+            "B": "A type of neural network trained to reconstruct its input, thereby learning a compressed 'encoding' or representation of the input data.",
+            "C": "A network that generates adversarial examples.",
+            "D": "A model used for image classification only."
+          },
+          "correct_answer": "B",
+          "explanation": "Autoencoders are unsupervised learning models often used for dimensionality reduction, feature learning, and anomaly detection."
+        },
+        {
+          "question": "Which of the following is NOT a core component of the `tf.data` API for building efficient input pipelines?",
+          "options": {
+            "A": "`map()` for transformations.",
+            "B": "`batch()` for combining elements into batches.",
+            "C": "`shuffle()` for randomizing data order.",
+            "D": "`create_table()` for database connections."
+          },
+          "correct_answer": "D",
+          "explanation": "The `tf.data` API focuses on data loading and preprocessing within TensorFlow, not database management."
+        },
+        {
+          "question": "When developing with `tf.function`, what is a common pitfall related to side effects?",
+          "options": {
+            "A": "It makes debugging easier.",
+            "B": "Python side effects (e.g., printing inside the function) might only occur on the first call when the graph is traced, not on subsequent calls.",
+            "C": "It prevents the use of `tf.Variable`.",
+            "D": "It forces all operations to run on CPU."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a common surprise when transitioning from eager to graph execution with `tf.function`."
+        },
+        {
+          "question": "What is the primary benefit of 'Model Pruning'?",
+          "options": {
+            "A": "To increase the model's training time.",
+            "B": "To enhance the model's ability to classify rare classes.",
+            "C": "To reduce the model's size and computational footprint by removing redundant or less important connections (weights) without significant loss of accuracy.",
+            "D": "To automatically adjust the learning rate during training."
+          },
+          "correct_answer": "C",
+          "explanation": "Pruning aims to create sparser, more efficient models for deployment."
+        },
+        {
+          "question": "What is a 'tf.TensorArray' typically used for?",
+          "options": {
+            "A": "Storing images in a compressed format.",
+            "B": "Dynamically sized lists of tensors, often used in graph-mode computations where tensor shapes might vary or sequences are processed iteratively.",
+            "C": "A fixed-size array of integers.",
+            "D": "A way to visualize tensors."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorArrays provide mutable sequences of tensors in a graph-compatible way, useful for RNNs or custom loops where elements are accumulated over time."
+        },
+        {
+          "question": "Which Keras API provides more flexibility for creating models with multiple inputs, multiple outputs, or shared layers, compared to the `Sequential` API?",
+          "options": {
+            "A": "ModelCheckpoint API.",
+            "B": "Functional API (`tf.keras.Model` subclassing with `Input` and chaining layers).",
+            "C": "Eager Execution API.",
+            "D": "Keras Tuner API."
+          },
+          "correct_answer": "B",
+          "explanation": "The Functional API allows for non-linear model topologies, making it suitable for more complex architectures."
+        },
+        {
+          "question": "What is 'TensorFlow Datasets (TFDS)'?",
+          "options": {
+            "A": "A tool for creating new datasets.",
+            "B": "A library that provides a collection of ready-to-use datasets in TensorFlow format, simplifying data loading and preprocessing for research and experimentation.",
+            "C": "A database management system built on TensorFlow.",
+            "D": "A method for securely transferring datasets."
+          },
+          "correct_answer": "B",
+          "explanation": "TFDS streamlines access to many popular public datasets, often with built-in preprocessing and integration with `tf.data`."
+        }
+      ]
+    }
+  ]
+}

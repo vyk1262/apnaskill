@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "node_intro",
+      "questions": [
+        {
+          "question": "What is Node.js?",
+          "options": {
+            "A": "A JavaScript framework for building front-end web applications.",
+            "B": "A runtime environment that allows you to run JavaScript on the server-side.",
+            "C": "A database system for storing JavaScript objects.",
+            "D": "A new programming language that compiles to JavaScript."
+          },
+          "correct_answer": "B",
+          "explanation": "Node.js is not a framework or a language; it's a runtime built on Chrome's V8 JavaScript engine, enabling JavaScript execution outside of a web browser."
+        },
+        {
+          "question": "Which JavaScript engine does Node.js use?",
+          "options": {
+            "A": "SpiderMonkey (Mozilla Firefox)",
+            "B": "Chakra (Microsoft Edge)",
+            "C": "V8 (Google Chrome)",
+            "D": "JavaScriptCore (Apple Safari)"
+          },
+          "correct_answer": "C",
+          "explanation": "Node.js uses Google Chrome's V8 JavaScript engine to execute JavaScript code efficiently."
+        },
+        {
+          "question": "What is the primary characteristic of Node.js's I/O model?",
+          "options": {
+            "A": "Blocking and synchronous.",
+            "B": "Non-blocking and synchronous.",
+            "C": "Blocking and asynchronous.",
+            "D": "Non-blocking and asynchronous."
+          },
+          "correct_answer": "D",
+          "explanation": "Node.js operates on a single-threaded, non-blocking, asynchronous I/O model, which makes it highly efficient for I/O-bound operations."
+        },
+        {
+          "question": "What does 'non-blocking I/O' mean in Node.js?",
+          "options": {
+            "A": "It means the application can only handle one request at a time.",
+            "B": "It means operations like file reading or network requests don't halt the execution of other code while waiting for the I/O operation to complete.",
+            "C": "It prevents any I/O operations from being performed.",
+            "D": "It automatically blocks malicious network requests."
+          },
+          "correct_answer": "B",
+          "explanation": "Non-blocking I/O allows Node.js to continue processing other requests or code while waiting for an I/O operation (like reading a file or fetching data from a database) to finish, improving scalability."
+        },
+        {
+          "question": "What is NPM in the context of Node.js?",
+          "options": {
+            "A": "Node.js Performance Monitor.",
+            "B": "Node Package Manager, a command-line utility for interacting with the npm registry.",
+            "C": "A database system for Node.js applications.",
+            "D": "A testing framework for Node.js."
+          },
+          "correct_answer": "B",
+          "explanation": "NPM (Node Package Manager) is the default package manager for Node.js, used to install, manage, and publish Node.js packages and their dependencies."
+        },
+        {
+          "question": "Which command is used to initialize a new Node.js project and create a `package.json` file?",
+          "options": {
+            "A": "`npm install`",
+            "B": "`node init`",
+            "C": "`npm start`",
+            "D": "`npm init`"
+          },
+          "correct_answer": "D",
+          "explanation": "`npm init` guides you through creating a `package.json` file, which stores metadata about your project and its dependencies."
+        },
+        {
+          "question": "Which of the following is a global object in Node.js, providing information about the current Node.js process?",
+          "options": {
+            "A": "`window`",
+            "B": "`document`",
+            "C": "`process`",
+            "D": "`navigator`"
+          },
+          "correct_answer": "C",
+          "explanation": "The `process` object is a global object that provides information about, and control over, the current Node.js process, including command-line arguments, environment variables, and standard I/O."
+        },
+        {
+          "question": "What is the purpose of `module.exports` in Node.js?",
+          "options": {
+            "A": "To import modules into a file.",
+            "B": "To define global variables.",
+            "C": "To expose variables, functions, or objects from a module so they can be used by other modules.",
+            "D": "To prevent a module from being executed."
+          },
+          "correct_answer": "C",
+          "explanation": "`module.exports` is used in Node.js's CommonJS module system to specify what a module exports and makes available when it's `require`d by another file."
+        },
+        {
+          "question": "Which function is used to import modules in Node.js's CommonJS module system?",
+          "options": {
+            "A": "`import`",
+            "B": "`load`",
+            "C": "`require()`",
+            "D": "`include()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`require()` is the synchronous function used to load modules in Node.js's CommonJS module system."
+        },
+        {
+          "question": "What is the Node.js Event Loop?",
+          "options": {
+            "A": "A loop that continuously executes JavaScript code until all tasks are complete.",
+            "B": "A mechanism that allows Node.js to handle asynchronous callbacks and I/O operations efficiently, without blocking the main thread.",
+            "C": "A loop that refreshes the browser page.",
+            "D": "A loop that processes all incoming HTTP requests synchronously."
+          },
+          "correct_answer": "B",
+          "explanation": "The Event Loop is fundamental to Node.js's non-blocking nature. It's a single-threaded loop that continuously checks the call stack for executable code and processes callback functions from the event queue."
+        },
+        {
+          "question": "Node.js is often described as 'single-threaded'. What does this refer to?",
+          "options": {
+            "A": "It can only run on single-core CPUs.",
+            "B": "It processes only one client request at a time sequentially.",
+            "C": "The JavaScript execution is single-threaded, meaning only one piece of JavaScript code runs at a time on the main thread.",
+            "D": "It cannot handle concurrent connections."
+          },
+          "correct_answer": "C",
+          "explanation": "While Node.js uses a single thread for JavaScript execution, it offloads I/O operations to worker threads in the C++ layer, making it highly concurrent despite being single-threaded at the JavaScript level."
+        },
+        {
+          "question": "What is the main difference between Node.js and client-side JavaScript (e.g., in a browser)?",
+          "options": {
+            "A": "Node.js is a compiled language, while browser JavaScript is interpreted.",
+            "B": "Node.js has access to the operating system's file system and network, while browser JavaScript interacts with the DOM and web APIs.",
+            "C": "Node.js supports ES6 features, while browser JavaScript does not.",
+            "D": "Node.js runs faster than browser JavaScript."
+          },
+          "correct_answer": "B",
+          "explanation": "Node.js runs in a server environment, granting it capabilities like file system access, network interaction (e.g., creating HTTP servers), and database connections that are not available to client-side JavaScript for security reasons."
+        },
+        {
+          "question": "Which global object in Node.js refers to the directory name of the current module?",
+          "options": {
+            "A": "`__filename`",
+            "B": "`__dirname`",
+            "C": "`process.cwd()`",
+            "D": "`module.path`"
+          },
+          "correct_answer": "B",
+          "explanation": "`__dirname` is a global variable that holds the absolute path of the directory containing the currently executing script."
+        },
+        {
+          "question": "Which of the following is a common use case for Node.js?",
+          "options": {
+            "A": "Building complex desktop GUI applications.",
+            "B": "Developing highly interactive single-page applications (SPAs) purely on the client-side.",
+            "C": "Creating real-time applications like chat apps, streaming services, and APIs.",
+            "D": "Performing heavy CPU-bound mathematical computations."
+          },
+          "correct_answer": "C",
+          "explanation": "Node.js's non-blocking I/O and event-driven architecture make it well-suited for applications that require low latency and high concurrency, such as real-time communication."
+        },
+        {
+          "question": "Can Node.js be used for full-stack development?",
+          "options": {
+            "A": "No, it's strictly for front-end.",
+            "B": "No, it's strictly for backend.",
+            "C": "Yes, by using frameworks like Express.js for the backend and a front-end framework (e.g., React, Angular, Vue) in conjunction.",
+            "D": "Only if you use a specific Node.js-based database."
+          },
+          "correct_answer": "C",
+          "explanation": "Node.js is widely used for building the backend (APIs, servers) of full-stack applications. It can be paired with any frontend framework to create a complete web solution."
+        },
+        {
+          "question": "What is a 'package.json' file used for in a Node.js project?",
+          "options": {
+            "A": "To store the application's source code.",
+            "B": "To define the application's user interface.",
+            "C": "To manage project metadata, scripts, and dependencies (both production and development).",
+            "D": "To store environment variables securely."
+          },
+          "correct_answer": "C",
+          "explanation": "The `package.json` file is central to any Node.js project, acting as a manifest for its configuration, dependencies, and scripts."
+        },
+        {
+          "question": "When you install a Node.js package using `npm install`, where are the downloaded packages typically stored by default?",
+          "options": {
+            "A": "In a global `node_modules` directory on your system.",
+            "B": "In a `node_modules` directory within your project folder.",
+            "C": "In a temporary cache that is cleared after installation.",
+            "D": "Directly in the system's root directory."
+          },
+          "correct_answer": "B",
+          "explanation": "By default, `npm install` installs packages locally into a `node_modules` directory in the current project's root folder."
+        },
+        {
+          "question": "What does `console.log()` do in Node.js?",
+          "options": {
+            "A": "It writes messages directly to the browser's console.",
+            "B": "It stores messages in a database.",
+            "C": "It prints messages to the standard output (usually the terminal or command prompt where the Node.js process is running).",
+            "D": "It logs errors to a file only."
+          },
+          "correct_answer": "C",
+          "explanation": "`console.log()` in Node.js works similarly to its browser counterpart but directs output to the server's standard output stream, which is typically the terminal."
+        },
+        {
+          "question": "Which core Node.js module is commonly used for file system operations?",
+          "options": {
+            "A": "`http`",
+            "B": "`fs`",
+            "C": "`path`",
+            "D": "`url`"
+          },
+          "correct_answer": "B",
+          "explanation": "The `fs` (File System) module provides an API for interacting with the file system, including reading, writing, and deleting files and directories."
+        },
+        {
+          "question": "Is Node.js suitable for CPU-intensive tasks (e.g., heavy computations, complex image processing)?",
+          "options": {
+            "A": "Yes, it excels at all types of tasks due to its speed.",
+            "B": "No, because its single-threaded nature means CPU-bound tasks will block the Event Loop, hindering concurrency.",
+            "C": "Only if those tasks are very short.",
+            "D": "Yes, but only if asynchronous methods are used."
+          },
+          "correct_answer": "B",
+          "explanation": "While Node.js is great for I/O-bound tasks, CPU-intensive tasks can block the single JavaScript thread and prevent the Event Loop from processing other operations, leading to performance degradation. For such tasks, worker threads or dedicated services are often used."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "react_optimization",
+      "questions": [
+        {
+          "question": "What is the primary goal of React optimization techniques?",
+          "options": {
+            "A": "To increase the application's bundle size.",
+            "B": "To reduce unnecessary re-renders and improve the application's performance and responsiveness.",
+            "C": "To make the development process slower.",
+            "D": "To force full page reloads."
+          },
+          "correct_answer": "B",
+          "explanation": "React optimizations aim to minimize the work React does to update the DOM, leading to a smoother user experience."
+        },
+        {
+          "question": "Which of the following is NOT a common cause of unnecessary re-renders in React?",
+          "options": {
+            "A": "State updates in a parent component.",
+            "B": "Props changing with new object/array references even if contents are same.",
+            "C": "Functions passed as props that are re-created on every render.",
+            "D": "Using `React.memo()` on all components without careful consideration."
+          },
+          "correct_answer": "D",
+          "explanation": "Using `React.memo()` is an optimization technique; if used appropriately, it prevents re-renders, not causes them."
+        },
+        {
+          "question": "What is the purpose of `React.memo()`?",
+          "options": {
+            "A": "To memoize state values in functional components.",
+            "B": "To prevent a functional component from re-rendering if its props have not shallowly changed.",
+            "C": "To create a memoized callback function.",
+            "D": "To store data in local storage."
+          },
+          "correct_answer": "B",
+          "explanation": "`React.memo()` acts as a performance optimization. It wraps a functional component and memoizes its rendered output."
+        },
+        {
+          "question": "What is the purpose of the `useCallback` Hook for optimization?",
+          "options": {
+            "A": "To memoize the result of an expensive calculation.",
+            "B": "To prevent a function from being recreated on every render, thus maintaining referential equality for props passed to child components.",
+            "C": "To manage asynchronous operations.",
+            "D": "To get a mutable ref object."
+          },
+          "correct_answer": "B",
+          "explanation": "If a child component is optimized with `React.memo()`, passing a stable function reference (from `useCallback`) prevents the child from re-rendering unnecessarily."
+        },
+        {
+          "question": "What is the purpose of the `useMemo` Hook for optimization?",
+          "options": {
+            "A": "To memoize a component's entire render output.",
+            "B": "To memoize the result of an expensive computation, recomputing it only when its dependencies change.",
+            "C": "To create a stable reference to a DOM element.",
+            "D": "To manage form state."
+          },
+          "correct_answer": "B",
+          "explanation": "`useMemo` is used to cache computed values, avoiding redundant calculations on subsequent renders if the inputs haven't changed."
+        },
+        {
+          "question": "When is it generally beneficial to use `React.memo()`, `useCallback()`, or `useMemo()`?",
+          "options": {
+            "A": "On every component and every function/value.",
+            "B": "When you observe performance bottlenecks and have components that frequently re-render with the same props or perform expensive calculations.",
+            "C": "Only in very small applications.",
+            "D": "When dealing with simple components that render quickly."
+          },
+          "correct_answer": "B",
+          "explanation": "These optimizations come with a cost (memory and comparison overhead), so they should be applied judiciously after profiling and identifying performance issues."
+        },
+        {
+          "question": "What is 'Code Splitting' (or Lazy Loading) in React used for optimization?",
+          "options": {
+            "A": "To break down a large component into smaller ones.",
+            "B": "To load JavaScript bundles only when specific components or routes are needed, reducing the initial load time.",
+            "C": "To separate CSS files from JavaScript files.",
+            "D": "To split the application into multiple independent pages."
+          },
+          "correct_answer": "B",
+          "explanation": "Code splitting defers the loading of non-essential code, improving the Time to Interactive for the user."
+        },
+        {
+          "question": "Which React built-in feature facilitates Code Splitting?",
+          "options": {
+            "A": "`React.createElement()`",
+            "B": "`React.Fragment`",
+            "C": "`React.lazy()` and `<Suspense>`",
+            "D": "`ReactDOM.render()`"
+          },
+          "correct_answer": "C",
+          "explanation": "`React.lazy()` allows dynamic imports, and `<Suspense>` provides a fallback UI while the code is loading."
+        },
+        {
+          "question": "What is the purpose of `key` prop when rendering lists in React, related to optimization?",
+          "options": {
+            "A": "It's used for styling list items.",
+            "B": "It helps React efficiently identify which items have changed, are added, or are removed during reconciliation, preventing unnecessary re-renders of the entire list.",
+            "C": "It defines the order of items in the list permanently.",
+            "D": "It's only for debugging purposes."
+          },
+          "correct_answer": "B",
+          "explanation": "Unique and stable keys are crucial for React's reconciliation algorithm to accurately identify changes in lists, leading to optimized updates."
+        },
+        {
+          "question": "Why is using the index as a `key` prop in lists generally discouraged when items can be reordered or added/removed?",
+          "options": {
+            "A": "It's slower than using unique IDs.",
+            "B": "It can lead to incorrect state management and UI bugs when list items change order, causing React to update the wrong elements.",
+            "C": "It prevents the list from rendering.",
+            "D": "Indexes are not unique enough."
+          },
+          "correct_answer": "B",
+          "explanation": "Using array index as a key can confuse React's diffing algorithm if the list items' order or content changes, resulting in performance issues or unexpected behavior."
+        },
+        {
+          "question": "What is 'Virtualization' or 'Windowing' for large lists in React?",
+          "options": {
+            "A": "Displaying all list items at once, regardless of size.",
+            "B": "Rendering only the visible portion of a large list at any given time, significantly improving performance.",
+            "C": "Loading list items one by one with a delay.",
+            "D": "A styling technique for list items."
+          },
+          "correct_answer": "B",
+          "explanation": "For lists with thousands of items, rendering only what's in the viewport drastically reduces DOM elements and improves performance. Libraries like `react-window` or `react-virtualized` facilitate this."
+        },
+        {
+          "question": "How can you debug performance issues and identify unnecessary re-renders in a React application?",
+          "options": {
+            "A": "By manually checking the browser's refresh button.",
+            "B": "Using the React Developer Tools Profiler and highlighting updates in the browser.",
+            "C": "By adding `console.log` statements everywhere.",
+            "D": "By restarting the server."
+          },
+          "correct_answer": "B",
+          "explanation": "The React DevTools provide powerful tools to visualize component renders, measure performance, and pinpoint bottlenecks."
+        },
+        {
+          "question": "What is 'memoization' in the context of React optimization?",
+          "options": {
+            "A": "Storing data in the browser's local storage.",
+            "B": "Caching the result of a function call or component render based on its inputs, so that the computation is not repeated if the inputs are the same.",
+            "C": "Writing notes about component behavior.",
+            "D": "A technique for asynchronously loading components."
+          },
+          "correct_answer": "B",
+          "explanation": "Memoization is a fundamental optimization technique for avoiding redundant computations, applied via `React.memo()`, `useCallback()`, and `useMemo()`."
+        },
+        {
+          "question": "Why is it important to avoid expensive calculations in the `render` method (or functional component body)?",
+          "options": {
+            "A": "It can lead to errors.",
+            "B": "It slows down every re-render of the component, as these calculations will be performed repeatedly.",
+            "C": "It makes the code harder to read.",
+            "D": "It only affects the initial load time."
+          },
+          "correct_answer": "B",
+          "explanation": "The render phase is executed frequently. Moving expensive calculations to `useMemo` or outside the component can significantly improve performance."
+        },
+        {
+          "question": "What is 'Debouncing' in the context of event handling optimization?",
+          "options": {
+            "A": "Calling a function multiple times rapidly.",
+            "B": "Delaying the execution of a function until after a certain amount of time has passed without any further calls.",
+            "C": "Executing a function immediately on every event.",
+            "D": "Canceling an ongoing network request."
+          },
+          "correct_answer": "B",
+          "explanation": "Debouncing is useful for events that fire rapidly (like `resize`, `scroll`, `input`) to limit the number of times a handler is executed."
+        },
+        {
+          "question": "What is 'Throttling' in the context of event handling optimization?",
+          "options": {
+            "A": "Executing a function every time an event fires.",
+            "B": "Executing a function at most once within a specified time period, regardless of how many times the event fires.",
+            "C": "Delaying a function's execution indefinitely.",
+            "D": "Running a function only after a set number of events."
+          },
+          "correct_answer": "B",
+          "explanation": "Throttling ensures a function executes regularly but not excessively, often used for scroll or resize events."
+        },
+        {
+          "question": "How can you optimize images in a React application?",
+          "options": {
+            "A": "By always using full-resolution images.",
+            "B": "By serving appropriately sized images, using modern formats (e.g., WebP), implementing lazy loading for images not in the viewport, and using image CDNs.",
+            "C": "By storing all images directly in the public folder.",
+            "D": "By converting all images to SVG."
+          },
+          "correct_answer": "B",
+          "explanation": "Image optimization is crucial for web performance, as images often account for a large portion of page weight."
+        },
+        {
+          "question": "What is a 'PureComponent' in React (for class components)?",
+          "options": {
+            "A": "A component that has no state.",
+            "B": "A class component that implements `shouldComponentUpdate` with a shallow prop and state comparison automatically.",
+            "C": "A component that cannot receive props.",
+            "D": "A functional component with Hooks."
+          },
+          "correct_answer": "B",
+          "explanation": "`PureComponent` provides a built-in optimization for class components, preventing re-renders if props and state are shallowly equal."
+        },
+        {
+          "question": "What is the equivalent of `PureComponent` for functional components in React?",
+          "options": {
+            "A": "There is no equivalent.",
+            "B": "`React.memo()`",
+            "C": "`useCallback`",
+            "D": "`useMemo`"
+          },
+          "correct_answer": "B",
+          "explanation": "`React.memo()` provides a similar shallow comparison optimization for functional components."
+        },
+        {
+          "question": "Which of the following is an effective strategy to reduce bundle size in a React application?",
+          "options": {
+            "A": "Including all third-party libraries regardless of usage.",
+            "B": "Minifying and gzipping JavaScript bundles, and applying code splitting.",
+            "C": "Avoiding CSS entirely.",
+            "D": "Using only class components."
+          },
+          "correct_answer": "B",
+          "explanation": "Minification, gzipping, and code splitting are standard practices for reducing the amount of JavaScript transferred over the network."
+        }
+      ]
+    }
+  ]
+}

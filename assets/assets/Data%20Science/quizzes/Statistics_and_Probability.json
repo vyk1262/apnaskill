@@ -11,7 +11,8 @@
             "C": "Descriptive statistics uses probabilities, while inferential statistics does not.",
             "D": "Descriptive statistics deals with continuous data, while inferential statistics deals with discrete data."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Descriptive statistics focuses on describing and summarizing the main features of a dataset, such as calculating averages, frequencies, or measures of spread. Inferential statistics, on the other hand, uses sample data to make predictions, generalizations, or inferences about a larger population."
         },
         {
           "question": "Which of the following is a measure of central tendency?",
@@ -21,7 +22,8 @@
             "C": "Median",
             "D": "Range"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Measures of central tendency indicate the typical or central value of a dataset. The **median** is the middle value in an ordered dataset, the **mean** is the average, and the **mode** is the most frequent value. Standard deviation, variance, and range are measures of dispersion or spread."
         },
         {
           "question": "What does the variance of a dataset measure?",
@@ -31,7 +33,8 @@
             "C": "The spread or dispersion of the data points around the mean.",
             "D": "The most frequent value in the data."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Variance quantifies how much the data points in a dataset deviate from the mean. A high variance indicates that data points are widely spread out from the average, while a low variance suggests that data points are clustered closely around the mean."
         },
         {
           "question": "What is a probability distribution?",
@@ -41,7 +44,8 @@
             "C": "A graph that displays the relationship between two variables.",
             "D": "A measure of the central tendency of a dataset."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A probability distribution describes all the possible values a random variable can take and how often they are expected to occur. It can be represented as a table, graph, or mathematical formula, providing the probabilities for each outcome in a random process."
         },
         {
           "question": "Which of the following is an example of a discrete probability distribution?",
@@ -51,7 +55,8 @@
             "C": "Binomial distribution",
             "D": "Exponential distribution"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A **discrete probability distribution** describes the probabilities of outcomes that can be counted (e.g., number of heads in coin flips). The **Binomial distribution** is a classic example, modeling the number of successes in a fixed number of independent Bernoulli trials. Normal, Uniform (continuous), and Exponential distributions are all continuous."
         },
         {
           "question": "What is the probability of an event that is certain to occur?",
@@ -61,7 +66,8 @@
             "C": "1",
             "D": "Cannot be determined"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "In probability theory, a probability of 1 (or 100%) signifies that an event is certain to happen. Conversely, a probability of 0 means the event is impossible."
         },
         {
           "question": "What is the law of large numbers?",
@@ -71,7 +77,8 @@
             "C": "Rare events are more likely to occur in a large number of trials.",
             "D": "The probability of independent events occurring together is the product of their individual probabilities."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The Law of Large Numbers states that as you collect more and more data (i.e., increase the sample size), the sample mean (average) of the observations will get closer and closer to the true population mean. This is a fundamental concept in inferential statistics."
         },
         {
           "question": "What is a hypothesis test?",
@@ -81,7 +88,8 @@
             "C": "A way to describe the characteristics of a sample.",
             "D": "A technique for visualizing data distributions."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A hypothesis test is a formal statistical procedure used to decide whether there is enough evidence in a sample of data to infer that a certain condition is true for the entire population. It involves setting up a null hypothesis and an alternative hypothesis and then collecting data to see which hypothesis is better supported."
         },
         {
           "question": "What is a p-value in hypothesis testing?",
@@ -91,7 +99,8 @@
             "C": "The significance level of the test.",
             "D": "The power of the test."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **p-value** is a critical concept in hypothesis testing. It measures the strength of evidence against the null hypothesis. A small p-value (typically less than the significance level $alpha$) suggests that the observed data would be very unlikely if the null hypothesis were true, leading us to reject the null hypothesis."
         },
         {
           "question": "What is the significance level (alpha) in hypothesis testing?",
@@ -101,7 +110,8 @@
             "C": "The power of the test.",
             "D": "The probability of the null hypothesis being true."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **significance level** ($alpha$) is the probability of making a **Type I error**, which is the error of rejecting a true null hypothesis. It is a threshold set by the researcher (commonly 0.05 or 0.01) to determine how much evidence is needed to reject the null hypothesis."
         },
         {
           "question": "What is the difference between a Type I and a Type II error in hypothesis testing?",
@@ -111,7 +121,8 @@
             "C": "A Type I error occurs with small sample sizes, while a Type II error occurs with large sample sizes.",
             "D": "A Type I error is related to the mean, while a Type II error is related to the variance."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "A **Type I error** (false positive) occurs when you incorrectly reject the null hypothesis when it is actually true. A **Type II error** (false negative) occurs when you incorrectly fail to reject the null hypothesis when it is actually false. Understanding these errors is crucial for interpreting hypothesis test results."
         },
         {
           "question": "What is a confidence interval?",
@@ -121,7 +132,8 @@
             "C": "The probability of a sample statistic falling within a certain range.",
             "D": "The standard deviation of the sample mean."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A confidence interval provides a range within which the true population parameter (e.g., population mean, proportion) is estimated to lie with a specified probability (e.g., 95% confidence). It gives a more informative estimate than a single point estimate because it accounts for sampling variability."
         },
         {
           "question": "What is the central limit theorem?",
@@ -131,7 +143,8 @@
             "C": "The variance of a sample is always smaller than the population variance.",
             "D": "Large datasets always follow a normal distribution."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **Central Limit Theorem (CLT)** is a cornerstone of statistics. It states that, given a sufficiently large sample size, the sampling distribution of the sample mean will be approximately normally distributed, regardless of the shape of the population distribution. This allows us to use normal distribution properties for inference even when the original data is not normally distributed."
         },
         {
           "question": "What is a random variable?",
@@ -141,7 +154,8 @@
             "C": "A variable that is always normally distributed.",
             "D": "A variable that is used only in descriptive statistics."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A **random variable** is a variable whose possible values are numerical outcomes of a random phenomenon. For example, when you roll a die, the outcome is a random variable that can take on values 1, 2, 3, 4, 5, or 6, each with a certain probability."
         },
         {
           "question": "What is conditional probability?",
@@ -151,7 +165,8 @@
             "C": "The probability of either one of two events occurring.",
             "D": "The probability of an event not occurring."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Conditional probability is the likelihood of an event occurring, given that another event has already occurred. It's written as $P(A|B)$, which means 'the probability of event A happening given that event B has happened'."
         },
         {
           "question": "What does Bayes' theorem describe?",
@@ -161,7 +176,8 @@
             "C": "The probability of the union of two events.",
             "D": "The probability of the complement of an event."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Bayes' Theorem describes the probability of an event, based on prior knowledge of conditions that might be related to the event. It mathematically relates conditional probabilities, allowing you to update the probability of a hypothesis as new evidence becomes available."
         },
         {
           "question": "What is the difference between independent and dependent events?",
@@ -171,7 +187,8 @@
             "C": "The outcome of an independent event does not affect the outcome of a dependent event.",
             "D": "The outcome of one independent event does not affect the probability of another independent event, while the outcome of one dependent event does affect the probability of another dependent event."
           },
-          "correct_answer": "D"
+          "correct_answer": "D",
+          "explanation": "**Independent events** are those where the occurrence of one event does not influence the probability of another event (e.g., flipping a coin twice). **Dependent events** are those where the occurrence of one event *does* affect the probability of another event (e.g., drawing cards from a deck without replacement)."
         },
         {
           "question": "What is a statistical model?",
@@ -181,7 +198,8 @@
             "C": "A summary of the main characteristics of a dataset.",
             "D": "A set of rules for cleaning and preparing data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "A statistical model is a formal mathematical framework that attempts to describe the relationship between different variables in a dataset, often with the goal of explaining a phenomenon, making predictions, or drawing inferences. It includes assumptions about the distribution of data and the nature of the relationships."
         },
         {
           "question": "Which of the following is a common statistical test used to compare the means of two independent groups?",
@@ -191,7 +209,8 @@
             "C": "t-test",
             "D": "Correlation coefficient"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The **t-test** is a widely used inferential statistical test. It is used to determine if there is a significant difference between the means of two groups. The Chi-squared test is for categorical data, ANOVA is for comparing means of three or more groups, and correlation coefficient measures the strength of a linear relationship."
         },
         {
           "question": "What is the correlation coefficient?",
@@ -201,7 +220,8 @@
             "C": "A statistical measure of the strength and direction of a linear relationship between two numerical variables.",
             "D": "A test for the difference between two means."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "The correlation coefficient (e.g., Pearson's r) measures the linear relationship between two numerical variables. Its value ranges from -1 to +1, where +1 indicates a perfect positive linear relationship, -1 indicates a perfect negative linear relationship, and 0 indicates no linear relationship."
         }
       ]
     }

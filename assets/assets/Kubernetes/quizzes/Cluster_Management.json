@@ -1,8 +1,227 @@
 {
-    "result": [
+  "result": [
+    {
+      "topic": "Cluster_Management",
+      "questions": [
         {
-            "topic": "Cluster_Management",
-            "questions": []
+          "question": "What is the primary goal of Kubernetes cluster management?",
+          "options": {
+            "A": "To build container images faster.",
+            "B": "To ensure the cluster is healthy, secure, updated, and performing optimally to support deployed applications.",
+            "C": "To provide a graphical user interface for developers.",
+            "D": "To automatically generate application code."
+          },
+          "correct_answer": "B",
+          "explanation": "Cluster management encompasses all activities related to maintaining the operational state of a Kubernetes cluster, including provisioning, upgrades, scaling, monitoring, and troubleshooting to ensure reliable application hosting."
+        },
+        {
+          "question": "Which tool is commonly used to interact with a Kubernetes cluster for management tasks from the command line?",
+          "options": {
+            "A": "`docker`",
+            "B": "`kubeadm`",
+            "C": "`kubectl`",
+            "D": "`helm`"
+          },
+          "correct_answer": "C",
+          "explanation": "`kubectl` is the official command-line tool for controlling Kubernetes clusters. It allows you to deploy applications, inspect and manage cluster resources, and view logs."
+        },
+        {
+          "question": "What does `kubectl get nodes` command display?",
+          "options": {
+            "A": "A list of all running Pods.",
+            "B": "Information about the worker nodes in the cluster, including their status, roles, and version.",
+            "C": "The current network configuration of the cluster.",
+            "D": "Available storage classes."
+          },
+          "correct_answer": "B",
+          "explanation": "`kubectl get nodes` provides a summary of each node in the cluster, showing its name, status (e.g., Ready, NotReady), roles (e.g., control-plane, <none>), and Kubernetes version."
+        },
+        {
+          "question": "What is a 'taint' on a Kubernetes node used for?",
+          "options": {
+            "A": "To mark a node as unhealthy and prevent Pods from scheduling on it.",
+            "B": "To configure a node's network settings.",
+            "C": "To tell the scheduler to repel (or 'taint') a set of Pods from a node unless those Pods have a corresponding 'toleration'.",
+            "D": "To assign an IP address to a node."
+          },
+          "correct_answer": "C",
+          "explanation": "Taints are applied to nodes to mark them as 'special' in a way that repels Pods. Pods must have a 'toleration' matching the taint to be scheduled on that node. This is often used for dedicated nodes, critical system components, or nodes with specific hardware."
+        },
+        {
+          "question": "What is a 'toleration' used for in conjunction with node taints?",
+          "options": {
+            "A": "To make a node tolerate more load.",
+            "B": "To allow a Pod to be scheduled on a node that has a specific taint.",
+            "C": "To tolerate network latency.",
+            "D": "To increase the number of available IPs on a node."
+          },
+          "correct_answer": "B",
+          "explanation": "Tolerations are applied to Pods. A Pod with a toleration for a specific taint will be able to schedule on a node that has that taint. Without the matching toleration, the Pod will not be scheduled on the tainted node."
+        },
+        {
+          "question": "Which tool is commonly used to bootstrap a Kubernetes cluster for production-grade deployments?",
+          "options": {
+            "A": "Docker Desktop",
+            "B": "Minikube",
+            "C": "Kubeadm",
+            "D": "Kompose"
+          },
+          "correct_answer": "C",
+          "explanation": "Kubeadm is a tool that provides `kubeadm init` and `kubeadm join` commands to quickly set up a minimum viable Kubernetes cluster. It's often used for bootstrapping production clusters that can then be managed and scaled with other tools."
+        },
+        {
+          "question": "How do you drain a node in Kubernetes before performing maintenance?",
+          "options": {
+            "A": "`kubectl delete node <node-name>`",
+            "B": "`kubectl cordon <node-name>`",
+            "C": "`kubectl drain <node-name>`",
+            "D": "`kubectl stop node <node-name>`"
+          },
+          "correct_answer": "C",
+          "explanation": "`kubectl drain <node-name>` cordons the node (marks it unschedulable) and then safely evicts all Pods from that node. This is a crucial step before performing maintenance, upgrades, or decommissioning a node."
+        },
+        {
+          "question": "After draining a node for maintenance, which command makes it schedulable again?",
+          "options": {
+            "A": "`kubectl uncordon <node-name>`",
+            "B": "`kubectl schedule <node-name>`",
+            "C": "`kubectl enable <node-name>`",
+            "D": "`kubectl restart <node-name>`"
+          },
+          "correct_answer": "A",
+          "explanation": "`kubectl uncordon <node-name>` removes the 'unschedulable' taint from a node, allowing the scheduler to place new Pods on it again."
+        },
+        {
+          "question": "What is the primary reason for performing Kubernetes cluster upgrades?",
+          "options": {
+            "A": "To reduce network traffic.",
+            "B": "To get new features, performance improvements, and crucial security fixes.",
+            "C": "To reduce disk space usage.",
+            "D": "To change the default storage class."
+          },
+          "correct_answer": "B",
+          "explanation": "Kubernetes is actively developed, and new versions bring bug fixes, performance enhancements, new features, and critically, security patches. Regular upgrades are essential to maintain a secure and efficient cluster."
+        },
+        {
+          "question": "Which tool is commonly used for packaging, sharing, and deploying applications on Kubernetes (often called 'The package manager for Kubernetes')?",
+          "options": {
+            "A": "Kustomize",
+            "B": "Helm",
+            "C": "Skaffold",
+            "D": "Minikube"
+          },
+          "correct_answer": "B",
+          "explanation": "Helm is a package manager for Kubernetes. Helm 'Charts' are packages of pre-configured Kubernetes resources, allowing users to easily define, install, and upgrade even the most complex Kubernetes applications."
+        },
+        {
+          "question": "What is `kube-state-metrics` commonly used for in cluster monitoring?",
+          "options": {
+            "A": "Monitoring host system metrics (CPU, memory).",
+            "B": "Exposing metrics about the state of Kubernetes objects (e.g., number of running Pods, pending Pods, available deployments) in a Prometheus-readable format.",
+            "C": "Collecting application-level logs.",
+            "D": "Checking network connectivity between Pods."
+          },
+          "correct_answer": "B",
+          "explanation": "`kube-state-metrics` is an add-on that listens to the Kubernetes API server and generates metrics about the state of various Kubernetes objects (e.g., deployments, nodes, pods, PVCs). These metrics are invaluable for cluster-level monitoring and alerting."
+        },
+        {
+          "question": "What is the general best practice for scaling a Kubernetes cluster's worker nodes?",
+          "options": {
+            "A": "Manually add/remove nodes as needed.",
+            "B": "Automatically scale nodes based on demand using an autoscaler (e.g., Cluster Autoscaler).",
+            "C": "Always run with a fixed number of nodes.",
+            "D": "Scale by increasing the resources of existing nodes only."
+          },
+          "correct_answer": "B",
+          "explanation": "For dynamic workloads, automatically scaling worker nodes using a Cluster Autoscaler is a best practice. It adjusts the number of nodes in your cluster based on the pending Pods and resource utilization, optimizing cost and performance."
+        },
+        {
+          "question": "What is the purpose of a Kubernetes 'Admission Controller'?",
+          "options": {
+            "A": "To admit users to the cluster.",
+            "B": "To intercept requests to the Kubernetes API server before an object is persisted in etcd, allowing for validation or modification of requests.",
+            "C": "To control network ingress.",
+            "D": "To manage container runtimes."
+          },
+          "correct_answer": "B",
+          "explanation": "Admission controllers are plugins that govern and enforce how the Kubernetes cluster is used. They intercept requests to the API Server *after* authentication and authorization but *before* the object is persisted. They can validate requests, mutate objects, or enforce policies."
+        },
+        {
+          "question": "How do you typically manage certificates for Kubernetes components (e.g., API Server, Kubelet) in a production cluster?",
+          "options": {
+            "A": "They are not needed for internal components.",
+            "B": "Manually create and distribute them.",
+            "C": "Using a Public Key Infrastructure (PKI) managed by tools like kubeadm or a dedicated cert manager.",
+            "D": "By hardcoding them in configuration files."
+          },
+          "correct_answer": "C",
+          "explanation": "Kubernetes components use X.509 certificates for secure communication (TLS). In production, these are typically managed by `kubeadm`'s built-in PKI capabilities, or by integrating with a certificate manager like Cert-Manager, ensuring secure and automated certificate rotation."
+        },
+        {
+          "question": "What is `kube-proxy`'s role in cluster management, specifically regarding node health?",
+          "options": {
+            "A": "It detects unhealthy nodes and removes them.",
+            "B": "It only handles network proxying for Pods; it does not directly manage node health or removal.",
+            "C": "It reports node CPU and memory usage.",
+            "D": "It performs automatic node repairs."
+          },
+          "correct_answer": "B",
+          "explanation": "Kube-proxy's role is primarily network proxying for Services. Node health detection and management (e.g., marking a node as `NotReady`, evicting Pods from it) is handled by the Kubelet and Node Controller (part of Kube-controller-manager)."
+        },
+        {
+          "question": "What is the purpose of a 'maintenance window' in Kubernetes cluster management?",
+          "options": {
+            "A": "A time when the cluster is completely shut down.",
+            "B": "A scheduled period of time during which system administrators can perform disruptive tasks like upgrades or significant configuration changes with minimal impact on users.",
+            "C": "A window for users to submit new deployments.",
+            "D": "A period for collecting detailed application logs."
+          },
+          "correct_answer": "B",
+          "explanation": "Despite Kubernetes' automation, certain maintenance tasks (e.g., major version upgrades, hardware replacement) might require a controlled, potentially disruptive, period. A maintenance window is a pre-announced time for such activities to minimize unexpected impact."
+        },
+        {
+          "question": "What is `etcdctl` used for?",
+          "options": {
+            "A": "To create new Docker images.",
+            "B": "To directly interact with the etcd key-value store, typically for debugging or administrative tasks (with caution).",
+            "C": "To manage Kubernetes network policies.",
+            "D": "To deploy applications to Kubernetes."
+          },
+          "correct_answer": "B",
+          "explanation": "`etcdctl` is the command-line client for etcd. While direct manipulation of etcd should be done with extreme care (as it can break your cluster), it's a powerful tool for inspecting the cluster's state or performing manual backups/restores of etcd data."
+        },
+        {
+          "question": "What is a common practice for backing up a Kubernetes cluster?",
+          "options": {
+            "A": "Backing up only the application logs.",
+            "B": "Regularly backing up the etcd data store, as it contains all cluster state and configuration.",
+            "C": "Backing up only the worker nodes.",
+            "D": "There is no need to back up a Kubernetes cluster."
+          },
+          "correct_answer": "B",
+          "explanation": "The etcd data store is the single source of truth for your Kubernetes cluster. A robust backup strategy for etcd data is paramount for disaster recovery, allowing you to restore your cluster's state in case of catastrophic failure."
+        },
+        {
+          "question": "What is the role of `kube-controller-manager` in maintaining node health?",
+          "options": {
+            "A": "It directly restarts failed nodes.",
+            "B": "It detects when nodes become unhealthy (e.g., heartbeat failure) and updates their status, and performs actions like evicting Pods from unreachable nodes.",
+            "C": "It reports detailed CPU and memory usage.",
+            "D": "It creates new nodes automatically."
+          },
+          "correct_answer": "B",
+          "explanation": "The Node Controller, part of the `kube-controller-manager`, continuously monitors the health of nodes by checking Kubelet heartbeats. If a node becomes unreachable, it marks it as `NotReady` and, after a configurable timeout, will evict Pods from that node so they can be rescheduled elsewhere."
+        },
+        {
+          "question": "True or False: Deleting a Pod directly with `kubectl delete pod <pod-name>` is the recommended way to scale down a deployment.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "B",
+          "explanation": "False. Deleting a Pod directly will cause the controller (e.g., Deployment or ReplicaSet) to immediately recreate it to maintain the desired number of replicas. To scale down a deployment, you should modify the `replicas` field in the Deployment manifest (e.g., `kubectl scale deployment <deployment-name> --replicas=0`) so the controller can manage the shutdown gracefully."
         }
-    ]
+      ]
+    }
+  ]
 }

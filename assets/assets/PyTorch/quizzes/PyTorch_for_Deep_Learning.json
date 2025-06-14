@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "PyTorch_for_Deep_Learning",
+      "questions": [
+        {
+          "question": "Which type of neural network architecture is primarily used in PyTorch for tasks involving image data, such as image classification or object detection?",
+          "options": {
+            "A": "Recurrent Neural Networks (RNNs)",
+            "B": "Generative Adversarial Networks (GANs)",
+            "C": "Convolutional Neural Networks (CNNs)",
+            "D": "Autoencoders"
+          },
+          "correct_answer": "C",
+          "explanation": "CNNs are specifically designed to process data with a grid-like topology, making them highly effective for image-related tasks."
+        },
+        {
+          "question": "What is the primary purpose of a `Conv2d` layer in a PyTorch CNN for images?",
+          "options": {
+            "A": "To reduce the dimensionality of the input data by flattening.",
+            "B": "To apply a linear transformation to the input.",
+            "C": "To extract spatial features from the input image using learnable filters (kernels).",
+            "D": "To normalize the input data."
+          },
+          "correct_answer": "C",
+          "explanation": "Convolutional layers detect patterns and features like edges, textures, and more complex shapes."
+        },
+        {
+          "question": "For sequence data like text or time series, which type of neural network layer is commonly used in PyTorch to capture temporal dependencies?",
+          "options": {
+            "A": "`nn.Linear`",
+            "B": "`nn.Conv1d`",
+            "C": "`nn.RNN`, `nn.LSTM`, or `nn.GRU`",
+            "D": "`nn.MaxPool2d`"
+          },
+          "correct_answer": "C",
+          "explanation": "Recurrent Neural Networks (RNNs) and their variants (LSTMs, GRUs) are designed to handle sequential data by maintaining an internal state."
+        },
+        {
+          "question": "Which `torch.nn` layer is specifically designed to handle long-range dependencies in sequential data more effectively than a vanilla RNN?",
+          "options": {
+            "A": "`nn.ReLU`",
+            "B": "`nn.Linear`",
+            "C": "`nn.LSTM` (Long Short-Term Memory)",
+            "D": "`nn.Transformer`"
+          },
+          "correct_answer": "C",
+          "explanation": "LSTMs introduce 'gates' to control the flow of information, mitigating vanishing/exploding gradient problems in long sequences."
+        },
+        {
+          "question": "What is the key mechanism introduced by Transformer networks that revolutionized Natural Language Processing (NLP)?",
+          "options": {
+            "A": "Recurrent connections.",
+            "B": "Gated recurrent units.",
+            "C": "The self-attention mechanism.",
+            "D": "Convolutional filters."
+          },
+          "correct_answer": "C",
+          "explanation": "Self-attention allows the model to weigh the importance of different parts of the input sequence when processing each element."
+        },
+        {
+          "question": "For a semantic segmentation task (pixel-wise classification) in PyTorch, which type of loss function might you consider, especially for imbalanced classes?",
+          "options": {
+            "A": "`nn.MSELoss`",
+            "B": "`nn.CrossEntropyLoss` (per pixel) or Dice Loss",
+            "C": "`nn.BCELoss`",
+            "D": "`nn.L1Loss`"
+          },
+          "correct_answer": "B",
+          "explanation": "While pixel-wise CrossEntropyLoss is common, Dice Loss (or Focal Loss) is often preferred for segmentation to handle class imbalance more effectively."
+        },
+        {
+          "question": "When creating a custom dataset for deep learning in PyTorch, which two methods must you typically implement in your `Dataset` subclass?",
+          "options": {
+            "A": "`__init__` and `__call__`",
+            "B": "`__len__` and `__getitem__`",
+            "C": "`load_data` and `preprocess`",
+            "D": "`train` and `eval`"
+          },
+          "correct_answer": "B",
+          "explanation": "`__len__` returns the size of the dataset, and `__getitem__` retrieves a sample given an index."
+        },
+        {
+          "question": "What are Generative Adversarial Networks (GANs) primarily used for in PyTorch?",
+          "options": {
+            "A": "Classification tasks.",
+            "B": "Generating new data samples that resemble the training data (e.g., realistic images, text).",
+            "C": "Regression tasks.",
+            "D": "Dimensionality reduction."
+          },
+          "correct_answer": "B",
+          "explanation": "GANs consist of a generator and a discriminator network that compete against each other to produce realistic synthetic data."
+        },
+        {
+          "question": "Which PyTorch component handles the batching, shuffling, and multi-process data loading from a `Dataset` object for efficient training?",
+          "options": {
+            "A": "`torch.data.Sampler`",
+            "B": "`torch.utils.data.DataLoader`",
+            "C": "`torch.utils.data.Batcher`",
+            "D": "`torch.data.Dataset`"
+          },
+          "correct_answer": "B",
+          "explanation": "`DataLoader` is crucial for optimizing the data pipeline to keep the GPU busy."
+        },
+        {
+          "question": "To perform object detection using PyTorch, which type of pre-trained models are often used as backbones?",
+          "options": {
+            "A": "Pre-trained RNNs.",
+            "B": "Pre-trained CNNs (e.g., ResNet, VGG) adapted for feature extraction.",
+            "C": "Pre-trained Transformers.",
+            "D": "Simple MLP models."
+          },
+          "correct_answer": "B",
+          "explanation": "Object detection models like Faster R-CNN, YOLO, or SSD often build upon powerful CNN architectures as their feature extractors."
+        },
+        {
+          "question": "What is the purpose of `torch.nn.Embedding` in NLP tasks?",
+          "options": {
+            "A": "To reduce the number of words in a sentence.",
+            "B": "To convert words or discrete tokens into dense, continuous vector representations (word embeddings).",
+            "C": "To concatenate multiple text sequences.",
+            "D": "To perform sentiment analysis directly."
+          },
+          "correct_answer": "B",
+          "explanation": "Embeddings allow neural networks to process categorical data by representing them in a continuous vector space."
+        },
+        {
+          "question": "For fine-tuning pre-trained language models (like BERT or GPT) in PyTorch, what is a common practice for their optimizer settings?",
+          "options": {
+            "A": "Use a very high learning rate.",
+            "B": "Use very low learning rates, often with specialized optimizers like AdamW, and potentially different learning rates for different layers.",
+            "C": "Use no optimizer, as they are already optimized.",
+            "D": "Only optimize the embedding layer."
+          },
+          "correct_answer": "B",
+          "explanation": "Fine-tuning large language models requires careful optimization with small learning rates to avoid catastrophic forgetting."
+        },
+        {
+          "question": "When working with image data, what transformations (from `torchvision.transforms`) are commonly applied before feeding them into a CNN?",
+          "options": {
+            "A": "Only converting to grayscale.",
+            "B": "Resizing, cropping, normalization (mean and std deviation), and converting to `torch.Tensor`.",
+            "C": "Applying only random noise.",
+            "D": "Converting to a list of pixel values."
+          },
+          "correct_answer": "B",
+          "explanation": "These transformations ensure consistent input dimensions and values for the neural network and aid in training stability."
+        },
+        {
+          "question": "What is 'TensorBoard' and how can it be used with PyTorch?",
+          "options": {
+            "A": "A specialized GPU for PyTorch.",
+            "B": "A visualization toolkit for machine learning experiments, used to log metrics, visualize graphs, project embeddings, etc.",
+            "C": "A PyTorch-specific database.",
+            "D": "A tool for converting models to other frameworks."
+          },
+          "correct_answer": "B",
+          "explanation": "TensorBoard provides a powerful suite of tools for monitoring and understanding the training process."
+        },
+        {
+          "question": "Which common technique is used to prevent exploding gradients during training of deep neural networks (especially RNNs) in PyTorch?",
+          "options": {
+            "A": "Batch Normalization",
+            "B": "Weight Initialization",
+            "C": "Gradient Clipping",
+            "D": "Dropout"
+          },
+          "correct_answer": "C",
+          "explanation": "Gradient clipping caps the gradients at a certain threshold, preventing them from becoming too large and causing unstable updates."
+        },
+        {
+          "question": "For time series forecasting, if you want your model to predict the next value based on a sequence of past values, which PyTorch module would be most suitable?",
+          "options": {
+            "A": "`nn.Linear`",
+            "B": "`nn.Conv2d`",
+            "C": "`nn.GRU` (Gated Recurrent Unit)",
+            "D": "`nn.Identity`"
+          },
+          "correct_answer": "C",
+          "explanation": "GRUs (like LSTMs) are designed to handle sequential data and learn long-term dependencies, making them suitable for time series forecasting."
+        },
+        {
+          "question": "What is `torchscript` and its primary benefit for PyTorch deep learning models?",
+          "options": {
+            "A": "A new programming language for PyTorch.",
+            "B": "A way to convert PyTorch models into a static graph representation that can be optimized and deployed in production environments without a Python dependency.",
+            "C": "A tool for debugging PyTorch models.",
+            "D": "A method for automatically generating model architectures."
+          },
+          "correct_answer": "B",
+          "explanation": "TorchScript allows for serialization and deployment of PyTorch models in various environments (e.g., C++, mobile, web) with performance optimizations."
+        },
+        {
+          "question": "Which PyTorch library provides common loss functions like `CTCLoss` used in sequence-to-sequence tasks, particularly for speech recognition?",
+          "options": {
+            "A": "`torch.nn`",
+            "B": "`torch.optim`",
+            "C": "`torch.text`",
+            "D": "`torch.audio`"
+          },
+          "correct_answer": "A",
+          "explanation": "While `torch.audio` and `torch.text` exist, `CTCLoss` itself is a core `nn.Module` in `torch.nn`."
+        },
+        {
+          "question": "When building custom layers or complex operations in PyTorch, you might use `nn.ModuleList` or `nn.Sequential`. When would `nn.ModuleList` be preferred over `nn.Sequential`?",
+          "options": {
+            "A": "When all layers are strictly sequential.",
+            "B": "When you need to dynamically add/remove layers or apply more complex control flow (loops, conditionals) in the `forward` method.",
+            "C": "When you want to automatically apply Batch Normalization.",
+            "D": "When you only have a single layer."
+          },
+          "correct_answer": "B",
+          "explanation": "`nn.ModuleList` provides a list-like interface for holding modules, giving you full control over their usage in `forward`, unlike `nn.Sequential` which rigidly chains them."
+        },
+        {
+          "question": "What is the primary role of a 'backbone' network in advanced computer vision tasks like object detection or instance segmentation?",
+          "options": {
+            "A": "To perform the final classification.",
+            "B": "To generate bounding box coordinates.",
+            "C": "To extract rich, hierarchical features from the input image, which are then used by subsequent task-specific heads.",
+            "D": "To handle data loading and preprocessing."
+          },
+          "correct_answer": "C",
+          "explanation": "The backbone (often a pre-trained CNN) is responsible for providing powerful feature representations from the input data."
+        }
+      ]
+    }
+  ]
+}

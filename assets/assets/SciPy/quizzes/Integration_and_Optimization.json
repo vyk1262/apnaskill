@@ -1,0 +1,227 @@
+{
+  "result": [
+    {
+      "topic": "Integration_and_Optimization",
+      "questions": [
+        {
+          "question": "Which SciPy sub-package is used for numerical integration and solving ordinary differential equations?",
+          "options": {
+            "A": "`scipy.optimize`",
+            "B": "`scipy.linalg`",
+            "C": "`scipy.integrate`",
+            "D": "`scipy.signal`"
+          },
+          "correct_answer": "C",
+          "explanation": "`scipy.integrate` provides functions for computing integrals (quadrature) and solving initial value problems for ODEs."
+        },
+        {
+          "question": "Which SciPy sub-package is dedicated to finding minima of functions, root finding, and curve fitting?",
+          "options": {
+            "A": "`scipy.stats`",
+            "B": "`scipy.optimize`",
+            "C": "`scipy.interpolate`",
+            "D": "`scipy.fft`"
+          },
+          "correct_answer": "B",
+          "explanation": "`scipy.optimize` is the module for optimization algorithms."
+        },
+        {
+          "question": "To numerically integrate a 1-dimensional function `f(x)` from `a` to `b` (e.g., $int_a^b f(x) dx$), which `scipy.integrate` function would you typically use?",
+          "options": {
+            "A": "`scipy.integrate.odeint`",
+            "B": "`scipy.integrate.quad`",
+            "C": "`scipy.integrate.dblquad`",
+            "D": "`scipy.integrate.solve_ivp`"
+          },
+          "correct_answer": "B",
+          "explanation": "`quad` (short for 'quadrature') is the primary function for numerical integration of single-variable functions."
+        },
+        {
+          "question": "What does `scipy.integrate.solve_ivp` primarily do?",
+          "options": {
+            "A": "Solves indefinite integrals.",
+            "B": "Solves initial value problems for systems of ordinary differential equations (ODEs).",
+            "C": "Solves optimization problems with initial values.",
+            "D": "Integrates an image."
+          },
+          "correct_answer": "B",
+          "explanation": "`solve_ivp` is the modern, recommended function for solving ODEs, offering more control and solver methods than the older `odeint`."
+        },
+        {
+          "question": "Which `scipy.optimize` function is best suited for finding the minimum of a scalar function of a single variable within a given interval?",
+          "options": {
+            "A": "`scipy.optimize.minimize`",
+            "B": "`scipy.optimize.fsolve`",
+            "C": "`scipy.optimize.minimize_scalar`",
+            "D": "`scipy.optimize.curve_fit`"
+          },
+          "correct_answer": "C",
+          "explanation": "`minimize_scalar` is optimized for single-variable minimization problems."
+        },
+        {
+          "question": "To find the roots of a non-linear equation `f(x) = 0`, given a starting guess `x0`, which `scipy.optimize` function is often used?",
+          "options": {
+            "A": "`scipy.optimize.minimize`",
+            "B": "`scipy.optimize.fsolve` (or `scipy.optimize.root`)",
+            "C": "`scipy.optimize.curve_fit`",
+            "D": "`scipy.optimize.linprog`"
+          },
+          "correct_answer": "B",
+          "explanation": "`fsolve` (for single or multiple equations) and the more general `root` function are used for finding zeros of functions."
+        },
+        {
+          "question": "What is the main purpose of `scipy.optimize.curve_fit`?",
+          "options": {
+            "A": "To fit a general regression model to data.",
+            "B": "To fit a user-defined function to data using non-linear least squares, typically returning optimal parameters and their covariance.",
+            "C": "To optimize the shape of a curve for plotting.",
+            "D": "To find the best polynomial that interpolates data."
+          },
+          "correct_answer": "B",
+          "explanation": "`curve_fit` is a powerful tool for parameter estimation in non-linear models when you have a function form and data points."
+        },
+        {
+          "question": "When using `scipy.optimize.minimize` for a multi-variable function, what is the significance of specifying the `method` parameter (e.g., 'Nelder-Mead', 'BFGS', 'SLSQP')?",
+          "options": {
+            "A": "It changes the objective function being minimized.",
+            "B": "It specifies the numerical integration technique to use.",
+            "C": "It selects the specific optimization algorithm or solver to be used, which can impact performance, convergence, and ability to handle constraints.",
+            "D": "It defines the initial guess for the variables."
+          },
+          "correct_answer": "C",
+          "explanation": "Different methods are suited for different types of problems (e.g., constrained vs. unconstrained, with or without derivatives), and choosing the right one is crucial."
+        },
+        {
+          "question": "Which `scipy.integrate` function is used for double integrals (integrating a function of two variables over a rectangular region)?",
+          "options": {
+            "A": "`scipy.integrate.quad`",
+            "B": "`scipy.integrate.trapz`",
+            "C": "`scipy.integrate.dblquad`",
+            "D": "`scipy.integrate.odeint`"
+          },
+          "correct_answer": "C",
+          "explanation": "`dblquad` computes double integrals, and `tplquad` computes triple integrals."
+        },
+        {
+          "question": "For constrained optimization problems (e.g., minimizing a function subject to equality or inequality constraints), which method in `scipy.optimize.minimize` is often used?",
+          "options": {
+            "A": "'Nelder-Mead'",
+            "B": "'Powell'",
+            "C": "'SLSQP' (Sequential Least Squares Programming)",
+            "D": "'BFGS'"
+          },
+          "correct_answer": "C",
+          "explanation": "SLSQP is a popular and robust method for non-linear optimization with constraints."
+        },
+        {
+          "question": "What is the primary input requirement for the objective function when using `scipy.optimize.minimize`?",
+          "options": {
+            "A": "It must return a boolean value.",
+            "B": "It must return a single scalar value representing the function to be minimized.",
+            "C": "It must return a NumPy array.",
+            "D": "It must plot the function."
+          },
+          "correct_answer": "B",
+          "explanation": "Optimization algorithms work by iteratively searching for the input values that produce the lowest output value of the objective function."
+        },
+        {
+          "question": "If you need to perform linear programming (optimizing a linear objective function subject to linear equality and inequality constraints), which `scipy.optimize` function would you use?",
+          "options": {
+            "A": "`scipy.optimize.minimize`",
+            "B": "`scipy.optimize.linprog`",
+            "C": "`scipy.optimize.curve_fit`",
+            "D": "`scipy.optimize.fsolve`"
+          },
+          "correct_answer": "B",
+          "explanation": "`linprog` is specifically designed for linear programming problems, which are a subset of optimization problems with specific linear structures."
+        },
+        {
+          "question": "What is the purpose of providing a Jacobian (or gradient) function to `scipy.optimize.minimize`?",
+          "options": {
+            "A": "To define the constraints of the optimization problem.",
+            "B": "To provide information about the first derivatives of the objective function, which can significantly speed up convergence for gradient-based optimization methods.",
+            "C": "To specify the bounds for the variables.",
+            "D": "To change the optimization method being used."
+          },
+          "correct_answer": "B",
+          "explanation": "Providing analytical gradients (Jacobian) allows the optimizer to make more informed steps towards the minimum, leading to faster and more reliable convergence."
+        },
+        {
+          "question": "When solving ODEs with `scipy.integrate.solve_ivp`, what does 'IVP' stand for?",
+          "options": {
+            "A": "Integral Variable Problem",
+            "B": "Iterative Value Propagation",
+            "C": "Initial Value Problem",
+            "D": "Inverse Vector Problem"
+          },
+          "correct_answer": "C",
+          "explanation": "An Initial Value Problem involves finding a solution to a differential equation given an initial condition."
+        },
+        {
+          "question": "What does the `bounds` parameter in `scipy.optimize.minimize` allow you to do?",
+          "options": {
+            "A": "Specify the initial guess for the variables.",
+            "B": "Define the upper and lower limits for the variables being optimized.",
+            "C": "Set the tolerance for convergence.",
+            "D": "Determine the number of iterations for the optimization."
+          },
+          "correct_answer": "B",
+          "explanation": "Bounds impose simple box constraints on the individual variables, preventing the optimizer from exploring regions outside these limits."
+        },
+        {
+          "question": "If you are trying to find the global minimum of a highly non-convex function, which strategy or method type in `scipy.optimize` might you consider, beyond simple local optimizers?",
+          "options": {
+            "A": "Only 'Nelder-Mead' as it's the simplest.",
+            "B": "Global optimization methods (e.g., `basinhopping`, `differential_evolution`) or running local optimizers from multiple random starting points.",
+            "C": "Using `scipy.integrate.quad`.",
+            "D": "Only methods that require a Jacobian."
+          },
+          "correct_answer": "B",
+          "explanation": "Local optimizers can get stuck in local minima. Global optimization methods are designed to explore the search space more broadly to find the true global minimum."
+        },
+        {
+          "question": "What is the primary role of the `args` parameter in `scipy.optimize.minimize` or `scipy.integrate.quad`?",
+          "options": {
+            "A": "To specify the method of optimization/integration.",
+            "B": "To pass additional, fixed arguments to the objective function or integrand that are not part of the variables being optimized/integrated over.",
+            "C": "To define the initial guess.",
+            "D": "To set the tolerance for the solution."
+          },
+          "correct_answer": "B",
+          "explanation": "This is a common pattern in SciPy to pass context or fixed parameters to the function being operated on."
+        },
+        {
+          "question": "Which of the following is a common issue when using numerical optimization algorithms?",
+          "options": {
+            "A": "They always find the global minimum instantly.",
+            "B": "They are guaranteed to converge for any function.",
+            "C": "They might get stuck in local minima, require good initial guesses, or struggle with non-smooth/discontinuous functions.",
+            "D": "They only work for linear functions."
+          },
+          "correct_answer": "C",
+          "explanation": "Numerical optimization is an iterative process, and its success often depends on the function's properties, the chosen algorithm, and the initial starting point."
+        },
+        {
+          "question": "When is `scipy.integrate.odeint` still commonly used, despite `solve_ivp` being newer?",
+          "options": {
+            "A": "It's faster for stiff ODEs.",
+            "B": "It's generally more stable.",
+            "C": "For simpler ODEs or when migrating older code, as its interface is sometimes considered more straightforward for basic use cases.",
+            "D": "It supports more complex events."
+          },
+          "correct_answer": "C",
+          "explanation": "While `solve_ivp` is more flexible and robust, `odeint` (which wraps a specific Fortran solver, LSODA) is still widely used and sufficient for many common ODE problems."
+        },
+        {
+          "question": "True or False: `scipy.optimize.minimize` can handle both unconstrained and constrained optimization problems.",
+          "options": {
+            "A": "True",
+            "B": "False"
+          },
+          "correct_answer": "A",
+          "explanation": "True. By selecting the appropriate method and providing `bounds` or `constraints` objects, `minimize` can solve a wide range of optimization problems."
+        }
+      ]
+    }
+  ]
+}

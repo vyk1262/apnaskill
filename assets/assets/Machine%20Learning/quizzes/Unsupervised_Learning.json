@@ -11,7 +11,8 @@
             "C": "Learning patterns and structures from unlabeled data.",
             "D": "Predicting a continuous output based on input features."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Unsupervised learning differs from supervised learning in that it works with **unlabeled data**. The goal is to discover inherent patterns, structures, or relationships within the data without any explicit guidance or target outputs."
         },
         {
           "question": "What is the primary goal of clustering in unsupervised learning?",
@@ -21,7 +22,8 @@
             "C": "To reduce the number of features in the dataset.",
             "D": "To discover associations between different items."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Clustering** is a core task in unsupervised learning where the objective is to divide a dataset into groups (clusters) such that data points within the same group are more similar to each other than to those in other groups."
         },
         {
           "question": "Which of the following is a common clustering algorithm?",
@@ -31,7 +33,8 @@
             "C": "K-Means",
             "D": "Support Vector Machines"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**K-Means** is one of the most popular and widely used **clustering algorithms**. Linear Regression, Logistic Regression, and Support Vector Machines are all supervised learning algorithms."
         },
         {
           "question": "What is the role of the 'K' parameter in the K-Means algorithm?",
@@ -41,7 +44,8 @@
             "C": "It determines the maximum number of iterations.",
             "D": "It controls the penalty for outliers."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In the **K-Means algorithm**, 'K' is a **hyperparameter** that explicitly defines the **number of clusters** that the algorithm should attempt to form in the dataset."
         },
         {
           "question": "What is hierarchical clustering?",
@@ -51,7 +55,8 @@
             "C": "A clustering algorithm that requires the number of clusters to be specified beforehand.",
             "D": "A clustering algorithm that is only suitable for large datasets."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Hierarchical clustering** algorithms create a tree-like structure of clusters (a dendrogram). **Agglomerative** (bottom-up) starts with individual points as clusters and merges them, while **Divisive** (top-down) starts with one large cluster and recursively splits it."
         },
         {
           "question": "What is DBSCAN (Density-Based Spatial Clustering of Applications with Noise)?",
@@ -61,7 +66,8 @@
             "C": "A density-based clustering algorithm that groups together points that are closely packed together, marking as outliers points that lie alone in low-density regions.",
             "D": "A clustering algorithm that requires specifying the number of clusters."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**DBSCAN** is a powerful **density-based clustering algorithm** that can discover clusters of arbitrary shapes and identify noise points (outliers). Unlike K-Means, it does not require specifying the number of clusters beforehand."
         },
         {
           "question": "What is dimensionality reduction in unsupervised learning?",
@@ -71,7 +77,8 @@
             "C": "The process of grouping similar data points together.",
             "D": "The process of predicting a target variable without labels."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Dimensionality reduction** is a technique used to reduce the number of input variables (features) in a dataset while retaining as much relevant information as possible. This can help combat the 'curse of dimensionality' and improve model performance or visualization."
         },
         {
           "question": "Which of the following is a common dimensionality reduction technique?",
@@ -81,7 +88,8 @@
             "C": "Linear Regression",
             "D": "Decision Trees"
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Principal Component Analysis (PCA)** is a widely used **dimensionality reduction** technique. It transforms the data into a new coordinate system such that the greatest variance by any projection of the data comes to lie on the first coordinate (called the first principal component), the second greatest variance on the second coordinate, and so on."
         },
         {
           "question": "What is the goal of Principal Component Analysis (PCA)?",
@@ -91,7 +99,8 @@
             "C": "To classify data points into predefined categories.",
             "D": "To discover association rules between items."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The core goal of **PCA** is to reduce the dimensionality of a dataset by transforming the original features into a new set of uncorrelated variables, called **principal components**, which capture the maximum possible variance in the data."
         },
         {
           "question": "What is t-SNE (t-distributed Stochastic Neighbor Embedding)?",
@@ -101,7 +110,8 @@
             "C": "A clustering algorithm based on density.",
             "D": "A technique for feature selection."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**t-SNE** is a powerful **non-linear dimensionality reduction** algorithm particularly well-suited for **visualization**. It maps high-dimensional data points to a lower-dimensional space (e.g., 2D) while trying to preserve the local structure of the data, making clusters or patterns more apparent."
         },
         {
           "question": "What is association rule mining in unsupervised learning?",
@@ -111,7 +121,8 @@
             "C": "A technique for discovering interesting relationships or associations between variables in large datasets.",
             "D": "A technique for reducing the number of dimensions in the data."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Association rule mining** (e.g., Apriori algorithm) is an unsupervised learning technique used to find strong relationships (associations) between items in large datasets, often used in market basket analysis (e.g., 'customers who buy bread also tend to buy milk')."
         },
         {
           "question": "What are 'support' and 'confidence' in the context of association rule mining?",
@@ -121,7 +132,8 @@
             "C": "Parameters used in clustering algorithms.",
             "D": "Techniques for dimensionality reduction."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "In **association rule mining**, **Support** measures the frequency of itemsets, while **Confidence** indicates the reliability of the rule (the probability that items in the consequent are bought given that items in the antecedent are bought)."
         },
         {
           "question": "What is anomaly detection (or outlier detection) in unsupervised learning?",
@@ -131,7 +143,8 @@
             "C": "The process of grouping similar data points.",
             "D": "The process of reducing the number of features."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Anomaly detection** (or outlier detection) is the task of identifying rare events, observations, or data points that raise suspicions by significantly differing from the majority of the data. Since anomalies are by definition unusual, labeled data for them is often scarce, making it a common unsupervised learning task."
         },
         {
           "question": "Which of the following is an unsupervised anomaly detection technique?",
@@ -141,7 +154,8 @@
             "C": "Isolation Forest",
             "D": "K-Nearest Neighbors (KNN) for classification"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Isolation Forest** is an effective unsupervised algorithm specifically designed for **anomaly detection**. SVM, Logistic Regression, and KNN (for classification) are typically supervised learning algorithms."
         },
         {
           "question": "How is the performance of unsupervised learning algorithms typically evaluated?",
@@ -151,7 +165,8 @@
             "C": "By directly measuring the prediction error.",
             "D": "By visualizing the decision boundaries."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Evaluating unsupervised learning is often more challenging due to the lack of labels. It relies on **intrinsic metrics** (e.g., silhouette score for clustering quality, explained variance for PCA) that measure properties of the learned structure, or sometimes **extrinsic metrics** if a small, separate labeled dataset is available for comparison."
         },
         {
           "question": "What is the silhouette score used for?",
@@ -161,7 +176,8 @@
             "C": "Measuring the accuracy of a classification model.",
             "D": "Assessing the amount of variance explained by principal components."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The **silhouette score** is a metric used to evaluate the **quality of clusters** produced by a clustering algorithm. It measures how similar an object is to its own cluster compared to other clusters, with higher values indicating better-defined clusters."
         },
         {
           "question": "What are autoencoders primarily used for in unsupervised learning?",
@@ -171,7 +187,8 @@
             "C": "Dimensionality reduction and feature learning.",
             "D": "Time series forecasting."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Autoencoders** are a type of neural network trained to reconstruct their input. In doing so, the hidden layer (bottleneck) learns a compressed, lower-dimensional representation of the input data, making them excellent for **dimensionality reduction and feature learning**."
         },
         {
           "question": "What are generative models in the context of unsupervised learning?",
@@ -181,7 +198,8 @@
             "C": "Models that are used for dimensionality reduction.",
             "D": "Models that are used for clustering data points."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "**Generative models** are a class of unsupervised learning models that learn the underlying distribution of the training data. This allows them to not only model the data but also to **generate new, synthetic data points** that resemble the original training data."
         },
         {
           "question": "Which of the following is an example of a generative model in unsupervised learning?",
@@ -191,7 +209,8 @@
             "C": "Generative Adversarial Networks (GANs)",
             "D": "Support Vector Machines (SVM)"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Generative Adversarial Networks (GANs)** are a prominent example of **generative models** that operate in an unsupervised manner. They consist of a generator network and a discriminator network that compete to produce increasingly realistic synthetic data."
         },
         {
           "question": "In what scenarios is unsupervised learning particularly useful?",
@@ -201,7 +220,8 @@
             "C": "When the data is unlabeled and the goal is to discover hidden structures or patterns.",
             "D": "When the problem involves sequential decision-making with rewards."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "**Unsupervised learning** excels in situations where obtaining labeled data is difficult, expensive, or impossible. It is used to explore data, find hidden relationships, reduce complexity, and detect anomalies without prior knowledge of outcomes."
         }
       ]
     }

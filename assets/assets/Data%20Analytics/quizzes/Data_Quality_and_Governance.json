@@ -11,7 +11,8 @@
             "C": "To accelerate the speed of data processing.",
             "D": "To reduce the cost of data storage."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "The core objective of data quality management is to ensure that data is accurate, complete, consistent, timely, and relevant, making it reliable and suitable for its specific business purposes, whether for operations or analytics."
         },
         {
           "question": "Which of the following is a key dimension of data quality?",
@@ -21,7 +22,8 @@
             "C": "Completeness",
             "D": "Data Variety"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Completeness is a vital data quality dimension, referring to the degree to which all necessary or expected data values are present and not missing. Volume, Velocity, and Variety are characteristics of Big Data, not direct dimensions of data quality itself."
         },
         {
           "question": "What does 'Accuracy' refer to as a dimension of data quality?",
@@ -31,7 +33,8 @@
             "C": "The extent to which all required data is present.",
             "D": "The consistency of data across different sources."
           },
-          "correct_answer": "A"
+          "correct_answer": "A",
+          "explanation": "Accuracy means that the data correctly reflects the real-world facts or events it is intended to represent. Inaccurate data can lead to flawed analysis and incorrect decisions."
         },
         {
           "question": "Which data quality dimension focuses on whether all necessary data is included in the dataset?",
@@ -41,7 +44,8 @@
             "C": "Completeness",
             "D": "Timeliness"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Completeness ensures that all expected data is available. For example, if a customer record is missing an email address, it lacks completeness for marketing purposes."
         },
         {
           "question": "What does 'Consistency' in data quality mean?",
@@ -51,7 +55,8 @@
             "C": "Data being the same across different systems and representations.",
             "D": "All required data fields being present."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Consistency means that identical data values are stored identically across all systems where they exist, and that data adheres to defined formats and rules. Inconsistent data can arise from different input methods or data silos."
         },
         {
           "question": "Which data quality dimension refers to how current the data is for its intended use?",
@@ -61,7 +66,8 @@
             "C": "Timeliness",
             "D": "Validity"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Timeliness indicates that the data is current enough to be useful for the specific context or decision. For example, stock prices need to be extremely timely, while quarterly sales figures have different timeliness requirements."
         },
         {
           "question": "What is data governance?",
@@ -71,7 +77,8 @@
             "C": "The tools used for data analysis and reporting.",
             "D": "The infrastructure for storing large volumes of data."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data governance is a comprehensive system of processes, roles, policies, standards, and metrics that ensures the effective and efficient use of information in enabling an organization to achieve its goals. It covers data quality, security, privacy, and compliance."
         },
         {
           "question": "Which of the following is a key component of a data governance framework?",
@@ -81,7 +88,8 @@
             "C": "Policies, procedures, and responsibilities",
             "D": "Data storage hardware"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "A robust data governance framework is built upon clearly defined policies (what needs to be done), procedures (how to do it), and assigned responsibilities (who does it) to manage data assets effectively."
         },
         {
           "question": "What is the role of data stewards in data governance?",
@@ -91,7 +99,8 @@
             "C": "To oversee data assets and ensure data quality and compliance.",
             "D": "To implement data security measures."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Data stewards are individuals or groups responsible for the day-to-day management and oversight of specific data assets. They ensure data quality, implement governance policies, and act as a liaison between business and IT for data-related matters."
         },
         {
           "question": "Why is data governance important for organizations?",
@@ -101,7 +110,8 @@
             "C": "To reduce the variety of data sources.",
             "D": "To simplify data processing techniques."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data governance provides the necessary structure to manage data as a strategic asset. This leads to improved data quality, helps meet regulatory compliance (e.g., GDPR, HIPAA), mitigates risks, and ultimately fosters trust in data for better business decisions."
         },
         {
           "question": "What are data quality rules?",
@@ -111,7 +121,8 @@
             "C": "Algorithms used for data analysis.",
             "D": "Protocols for data security."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data quality rules are specific conditions or criteria that data must meet to be considered high quality. They define expected formats, ranges, relationships, and completeness, and are used to validate and cleanse data."
         },
         {
           "question": "Which of the following is a common data quality issue?",
@@ -121,7 +132,8 @@
             "C": "Duplicate records",
             "D": "Diverse data formats"
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Duplicate records are a very common data quality issue where the same entity (e.g., a customer) appears multiple times in a dataset, leading to inaccurate counts, skewed analyses, and inefficient operations."
         },
         {
           "question": "What is data profiling?",
@@ -131,7 +143,8 @@
             "C": "The process of transforming data into a specific format.",
             "D": "The process of visualizing data for reporting."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data profiling is the process of analyzing source data to understand its characteristics, discover data quality issues, and identify potential data quality rules. It involves analyzing data structure, content, and relationships."
         },
         {
           "question": "Why is data profiling important for data quality?",
@@ -141,7 +154,8 @@
             "C": "It automates data collection from various sources.",
             "D": "It ensures compliance with data storage regulations."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data profiling provides a deep dive into the actual state of data, revealing inconsistencies, missing values, outliers, and adherence to expected patterns. This understanding is critical for effectively planning and executing data quality improvement initiatives."
         },
         {
           "question": "What are master data management (MDM) systems primarily focused on?",
@@ -151,7 +165,8 @@
             "C": "Managing the infrastructure for big data storage.",
             "D": "Visualizing real-time data streams."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Master Data Management (MDM) is a technology-enabled discipline in which business and IT work together to ensure the uniformity, accuracy, stewardship, semantic consistency, and accountability of the enterprise's official shared master data assets. It creates a 'golden record' for key entities like customers, products, or suppliers."
         },
         {
           "question": "How does data cleansing contribute to data quality?",
@@ -161,7 +176,8 @@
             "C": "By accelerating the rate at which data is generated.",
             "D": "By reducing the amount of data stored."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data cleansing (or data scrubbing) is the process of detecting and correcting (or removing) corrupt or inaccurate records from a record set, table, or database. It addresses issues like incorrect formatting, typos, missing values, and duplicate entries."
         },
         {
           "question": "What is the purpose of data validation?",
@@ -171,7 +187,8 @@
             "C": "To transform data into a different format.",
             "D": "To present data in a graphical format."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Data validation is the process of ensuring that data is clean, correct, and useful by applying rules and constraints. It checks whether data meets predefined quality standards at the point of entry or during processing."
         },
         {
           "question": "Which of the following is a benefit of implementing strong data quality and governance practices?",
@@ -181,7 +198,8 @@
             "C": "Improved decision-making and operational efficiency.",
             "D": "Decreased data security."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "High-quality, well-governed data provides a reliable foundation for analysis, enabling more accurate reports, better insights, and ultimately leading to more confident and effective business decisions, while also streamlining operational processes."
         },
         {
           "question": "What role do metadata play in data governance?",
@@ -191,7 +209,8 @@
             "C": "They are used to enforce data security policies directly on the data.",
             "D": "They are the rules used for data validation."
           },
-          "correct_answer": "B"
+          "correct_answer": "B",
+          "explanation": "Metadata is 'data about data'. In data governance, metadata provides critical context, describing data sources, definitions, relationships, quality rules, ownership, and usage. This understanding is essential for managing data assets effectively and for ensuring compliance."
         },
         {
           "question": "What is the potential impact of poor data quality on an organization?",
@@ -201,7 +220,8 @@
             "C": "Inaccurate reporting and flawed decision-making.",
             "D": "Reduced operational costs."
           },
-          "correct_answer": "C"
+          "correct_answer": "C",
+          "explanation": "Poor data quality leads to unreliable reports, faulty analyses, and misguided strategies, resulting in poor business decisions, wasted resources, missed opportunities, and potentially significant financial losses and reputational damage."
         }
       ]
     }

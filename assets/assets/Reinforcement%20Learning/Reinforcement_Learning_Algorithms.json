@@ -1,0 +1,229 @@
+{
+  "result": [
+    {
+      "topic": "Reinforcement_Learning_Algorithms",
+      "questions": [
+        {
+          "question": "Which of the following describes a key characteristic of 'Monte Carlo' Reinforcement Learning methods?",
+          "options": {
+            "A": "They update value estimates after every single step using bootstrapping.",
+            "B": "They require a model of the environment's dynamics.",
+            "C": "They learn value functions and policies by averaging returns observed from complete episodes.",
+            "D": "They are typically off-policy algorithms."
+          },
+          "correct_answer": "C",
+          "explanation": "Monte Carlo methods wait until the end of an episode to compute returns and use these returns to update value estimates or policy parameters."
+        },
+        {
+          "question": "What is the primary difference between 'Temporal-Difference (TD)' methods (like Q-Learning and SARSA) and Monte Carlo methods?",
+          "options": {
+            "A": "TD methods are model-based, while Monte Carlo methods are model-free.",
+            "B": "TD methods learn from complete episodes, while Monte Carlo methods learn incrementally.",
+            "C": "TD methods update value estimates using bootstrapping (based on estimates of future values), while Monte Carlo methods use actual returns from complete episodes.",
+            "D": "TD methods only work for continuous state spaces."
+          },
+          "correct_answer": "C",
+          "explanation": "Bootstrapping is the hallmark of TD learning, where part of the update is based on an estimate rather than the true observed outcome."
+        },
+        {
+          "question": "SARSA is an on-policy Temporal-Difference control algorithm. What does 'on-policy' mean for SARSA's updates?",
+          "options": {
+            "A": "It learns about the optimal policy while following an exploratory policy.",
+            "B": "It learns about the policy that it is actually following (its behavior policy), using the action selected by that policy in the next state to update the Q-value.",
+            "C": "It does not use a policy for learning.",
+            "D": "It uses a separate target network for stability."
+          },
+          "correct_answer": "B",
+          "explanation": "SARSA's update rule is $Q(s,a) \\leftarrow Q(s,a) + \\alpha [R_{t+1} + \\gamma Q(s_{t+1}, a_{t+1}) - Q(s,a)]$, where $a_{t+1}$ is the action *actually taken* in $s_{t+1}$ according to the behavior policy."
+        },
+        {
+          "question": "Which algorithm is widely considered one of the most successful and robust Policy Gradient algorithms, particularly for continuous control, known for its clipped surrogate objective?",
+          "options": {
+            "A": "Q-Learning",
+            "B": "DQN (Deep Q-Network)",
+            "C": "PPO (Proximal Policy Optimization)",
+            "D": "SARSA"
+          },
+          "correct_answer": "C",
+          "explanation": "PPO is a state-of-the-art algorithm that addresses the sensitivity of policy gradients to step size by limiting policy updates within a 'trust region' via clipping."
+        },
+        {
+          "question": "What is the key idea behind 'Distributional Reinforcement Learning' (e.g., C51, QR-DQN)?",
+          "options": {
+            "A": "To learn a separate policy for each possible reward distribution.",
+            "B": "To model and predict the full distribution (e.g., histogram or quantiles) of the return, rather than just its expected value.",
+            "C": "To distribute the learning across multiple agents.",
+            "D": "To learn a deterministic policy from a continuous distribution."
+          },
+          "correct_answer": "B",
+          "explanation": "Distributional RL aims to capture more information about the uncertainty and variability of returns, leading to more robust and sometimes better performing agents."
+        },
+        {
+          "question": "Why might 'Trust Region Policy Optimization (TRPO)' be more stable than basic Policy Gradient methods?",
+          "options": {
+            "A": "It uses a much larger learning rate.",
+            "B": "It restricts the size of policy updates at each step, ensuring the new policy is not too far from the old one, thus preventing erratic behavior.",
+            "C": "It averages many gradient estimates together.",
+            "D": "It only works in deterministic environments."
+          },
+          "correct_answer": "B",
+          "explanation": "TRPO enforces a constraint on the change in policy, ensuring that updates are stable and the agent doesn't 'fall off a cliff' in performance."
+        },
+        {
+          "question": "Which algorithm often combines the benefits of Actor-Critic methods with an emphasis on maximum entropy exploration and off-policy learning for continuous control?",
+          "options": {
+            "A": "REINFORCE",
+            "B": "Q-Learning",
+            "C": "SAC (Soft Actor-Critic)",
+            "D": "A2C"
+          },
+          "correct_answer": "C",
+          "explanation": "SAC is a highly successful off-policy Actor-Critic algorithm known for its excellent performance in continuous control tasks and its built-in exploration mechanism through entropy maximization."
+        },
+        {
+          "question": "What is 'Inverse Reinforcement Learning (IRL)'?",
+          "options": {
+            "A": "Learning a policy by reversing the environment's dynamics.",
+            "B": "Learning the reward function from observed expert demonstrations.",
+            "C": "A method for training an agent to perform the opposite of a desired task.",
+            "D": "Applying RL to solve inverse problems in physics."
+          },
+          "correct_answer": "B",
+          "explanation": "IRL is useful when designing a reward function is difficult, allowing the agent to infer what an expert's objectives might be from their behavior."
+        },
+        {
+          "question": "Which exploration strategy adds noise to the actions selected by a deterministic policy, often used in continuous action spaces?",
+          "options": {
+            "A": "$\\epsilon$-greedy exploration",
+            "B": "Boltzmann exploration",
+            "C": "Ornstein-Uhlenbeck (OU) noise",
+            "D": "Prioritized Experience Replay"
+          },
+          "correct_answer": "C",
+          "explanation": "OU noise is specifically designed for continuous control problems, providing temporally correlated noise to encourage smoother exploration."
+        },
+        {
+          "question": "What is the primary difference between a 'Model-Free' and a 'Model-Based' RL algorithm?",
+          "options": {
+            "A": "Model-Free algorithms are always faster.",
+            "B": "Model-Free algorithms require a full simulation of the environment, while Model-Based do not.",
+            "C": "Model-Free algorithms learn policies/value functions directly from experience without explicitly learning or using a model of the environment's dynamics, while Model-Based algorithms learn and use a model.",
+            "D": "Model-Free algorithms can only handle discrete actions."
+          },
+          "correct_answer": "C",
+          "explanation": "Model-based methods attempt to understand how the environment works, which can allow for planning and simulation, while model-free methods learn by trial and error without such understanding."
+        },
+        {
+          "question": "AlphaGo and AlphaZero famously combined which two key AI techniques to achieve superhuman performance in games like Go and Chess?",
+          "options": {
+            "A": "Supervised Learning and Unsupervised Learning.",
+            "B": "Evolutionary Algorithms and Genetic Programming.",
+            "C": "Reinforcement Learning (specifically, self-play with policy and value networks) and Monte Carlo Tree Search (MCTS).",
+            "D": "Expert Systems and Fuzzy Logic."
+          },
+          "correct_answer": "C",
+          "explanation": "AlphaGo and AlphaZero's success was a landmark achievement, showcasing the power of combining deep RL with sophisticated search algorithms."
+        },
+        {
+          "question": "Which of the following algorithms is an example of an 'On-Policy' method?",
+          "options": {
+            "A": "Q-Learning",
+            "B": "DQN",
+            "C": "SARSA",
+            "D": "DDPG"
+          },
+          "correct_answer": "C",
+          "explanation": "SARSA learns about the policy it is currently following. Q-Learning, DQN, and DDPG are off-policy."
+        },
+        {
+          "question": "What is a common limitation of 'Model-Based' RL algorithms in complex real-world environments?",
+          "options": {
+            "A": "They are too slow for real-time applications.",
+            "B": "Building an accurate and generalizable model of complex, high-dimensional, and stochastic real-world environments can be extremely difficult or impossible.",
+            "C": "They cannot learn from data.",
+            "D": "They are limited to discrete states and actions."
+          },
+          "correct_answer": "B",
+          "explanation": "The difficulty of accurate environmental modeling is a major hurdle for model-based approaches in many practical scenarios."
+        },
+        {
+          "question": "The 'actor' and 'critic' components in an Actor-Critic algorithm are typically updated how?",
+          "options": {
+            "A": "The actor minimizes the value function, and the critic maximizes the policy.",
+            "B": "The actor uses the critic's value estimates to update its policy (often via policy gradient), and the critic updates its value estimates using TD error.",
+            "C": "Both actor and critic are updated randomly.",
+            "D": "They are updated independently without any interaction."
+          },
+          "correct_answer": "B",
+          "explanation": "This describes the core interaction between the actor (policy learner) and the critic (value estimator)."
+        },
+        {
+          "question": "Which of the following is a characteristic of 'Model-Based' RL methods that differentiates them from 'Model-Free' methods?",
+          "options": {
+            "A": "They are always more sample efficient because they can plan or simulate with their learned model.",
+            "B": "They can only be used for discrete action spaces.",
+            "C": "They are less computationally intensive during training.",
+            "D": "They cannot handle stochastic environments."
+          },
+          "correct_answer": "A",
+          "explanation": "By having a model, agents can 'imagine' future outcomes and plan without needing to perform costly real-world interactions, often leading to better sample efficiency."
+        },
+        {
+          "question": "When might 'Multi-Agent Reinforcement Learning (MARL)' be necessary?",
+          "options": {
+            "A": "When the environment is very simple.",
+            "B": "When multiple independent or cooperative agents are interacting within the same environment, affecting each other's outcomes.",
+            "C": "When the agent needs to learn multiple tasks simultaneously.",
+            "D": "When the state space is continuous."
+          },
+          "correct_answer": "B",
+          "explanation": "MARL deals with the complexities arising from multiple learning agents whose actions influence each other's rewards and observations."
+        },
+        {
+          "question": "What is the primary benefit of using a 'Policy Gradient' method over a 'Value-Based' method like DQN for certain tasks?",
+          "options": {
+            "A": "Policy Gradient methods are guaranteed to converge to the global optimum.",
+            "B": "Policy Gradient methods can naturally handle continuous action spaces and learn stochastic policies.",
+            "C": "Policy Gradient methods are always more sample efficient.",
+            "D": "Policy Gradient methods do not require exploration."
+          },
+          "correct_answer": "B",
+          "explanation": "This ability is a key differentiator, as DQN is limited to discrete action spaces."
+        },
+        {
+          "question": "Which deep RL algorithm is a common choice for tasks requiring stable and continuous control, leveraging a deterministic policy with a Q-function and target networks, and is often contrasted with PPO and SAC?",
+          "options": {
+            "A": "REINFORCE",
+            "B": "SARSA",
+            "C": "DDPG (Deep Deterministic Policy Gradient)",
+            "D": "Value Iteration"
+          },
+          "correct_answer": "C",
+          "explanation": "DDPG is an off-policy, actor-critic algorithm for continuous action spaces, known for combining elements from DQN and deterministic policy gradients."
+        },
+        {
+          "question": "What is the core idea of 'Intrinsic Motivation' in Reinforcement Learning?",
+          "options": {
+            "A": "To provide extra rewards for reaching the goal state.",
+            "B": "To give the agent an internal reward signal for novel states or successful predictions, encouraging exploration in environments with sparse extrinsic rewards.",
+            "C": "To train the agent using human demonstrations.",
+            "D": "To design a perfect reward function before training."
+          },
+          "correct_answer": "B",
+          "explanation": "Intrinsic motivation helps agents explore effectively when external rewards are rare, by making exploration itself rewarding."
+        },
+        {
+          "question": "Which of the following is typically a high-level Python library or framework built on top of deep learning frameworks (like TensorFlow or PyTorch) to simplify the implementation and training of various RL algorithms?",
+          "options": {
+            "A": "NumPy",
+            "B": "Pandas",
+            "C": "Stable Baselines3",
+            "D": "Scikit-learn"
+          },
+          "correct_answer": "C",
+          "explanation": "Stable Baselines3 provides robust implementations of many state-of-the-art RL algorithms, making it easier for practitioners to apply them."
+        }
+      ]
+    }
+  ]
+}
