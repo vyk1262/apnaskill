@@ -28,6 +28,32 @@ class Footer extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const Text(
+            'Skill Factorial',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Image.asset(
+            'assets/student_home/logo.png',
+            width: 100,
+            height: 100,
+          ),
+          const SizedBox(height: 16),
+          const Text(
+            'Empowering Your Learning Journey',
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            'Skill Factorial is an online platform dedicated to enhancing learning through practice. We offer a diverse range of quizzes designed to help students and working professionals solidify their knowledge, identify areas for improvement, and gauge their understanding. Our belief is that active engagement and self-assessment are key to effective learning, making Skill Factorial an invaluable resource for anyone looking to master new skills and refine existing ones.',
+            style: TextStyle(color: Colors.grey[400], fontSize: 16),
+          ),
+          const SizedBox(height: 16),
+
           Wrap(
             spacing: 16,
             runSpacing: 16,
@@ -35,83 +61,30 @@ class Footer extends StatelessWidget {
               Column(
                 children: [
                   buildCtaButton(
-                    text: "Faqs",
-                    onPressed: () => context.go('/faqs'),
-                    bgColor: Colors.black,
-                  ),
-                  buildCtaButton(
                       text: "Home",
                       onPressed: () => context.go('/'),
                       bgColor: Colors.black),
+                ],
+              ),
+              Column(
+                children: [
                   buildCtaButton(
                       text: "Quizzes",
                       onPressed: () => context.go('/quizzes'),
                       bgColor: Colors.black),
-                  buildCtaButton(
-                      text: "Mentors",
-                      onPressed: () => context.go('/mentors'),
-                      bgColor: Colors.black),
                 ],
               ),
               Column(
                 children: [
-                  buildCtaButton(
-                      text: "Colleges",
-                      onPressed: () => context.go('/colleges'),
-                      bgColor: Colors.black),
-                  buildCtaButton(
-                      text: "Chess",
-                      onPressed: () => context.go('/chess'),
-                      bgColor: Colors.black),
-                  buildCtaButton(
-                      text: "Series",
-                      onPressed: () => context.go('/series'),
-                      bgColor: Colors.black),
-                  buildCtaButton(
-                      text: "Fast Math",
-                      onPressed: () => context.go('/fastmath'),
-                      bgColor: Colors.black),
-                ],
-              ),
-              Column(
-                children: [
-                  buildCtaButton(
-                    text: "Colleges",
-                    onPressed: () => context.go('/colleges'),
-                    bgColor: Colors.black,
-                  ),
-                  buildCtaButton(
-                      text: "Chess",
-                      onPressed: () => context.go('/chess'),
-                      bgColor: Colors.black),
                   buildCtaButton(
                     text: "Series",
                     onPressed: () => context.go('/series'),
                     bgColor: Colors.black,
                   ),
-                  buildCtaButton(
-                    text: "Fast Math",
-                    onPressed: () => context.go('/fastmath'),
-                    bgColor: Colors.black,
-                  )
                 ],
               ),
               Column(
                 children: [
-                  buildCtaButton(
-                    text: "Colleges",
-                    onPressed: () => context.go('/colleges'),
-                    bgColor: Colors.black,
-                  ),
-                  buildCtaButton(
-                      text: "Chess",
-                      onPressed: () => context.go('/chess'),
-                      bgColor: Colors.black),
-                  buildCtaButton(
-                    text: "Series",
-                    onPressed: () => context.go('/series'),
-                    bgColor: Colors.black,
-                  ),
                   buildCtaButton(
                     text: "Fast Math",
                     onPressed: () => context.go('/fastmath'),
