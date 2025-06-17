@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:skill_factorial/widgets/custom_app_bar.dart';
 import 'package:skill_factorial/constants/colors.dart';
-import 'mentor_details.dart';
+import 'mentor_page_widgets/mentor_details.dart';
 
 class Mentors extends StatefulWidget {
   const Mentors({super.key});

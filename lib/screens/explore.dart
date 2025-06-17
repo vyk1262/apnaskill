@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:skill_factorial/screens/custom_search_bar.dart';
+import 'package:skill_factorial/widgets/custom_search_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/custom_app_bar.dart';

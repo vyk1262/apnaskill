@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:skill_factorial/widgets/custom_app_bar.dart';
-import 'package:skill_factorial/screens/custom_search_bar.dart';
+import 'package:skill_factorial/widgets/custom_search_bar.dart';
 import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import 'package:skill_factorial/screens/home_page_widgets/cta_button.dart';
 import 'package:url_launcher/url_launcher.dart';
