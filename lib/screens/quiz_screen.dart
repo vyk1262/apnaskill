@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:skill_factorial/widgets/title_case.dart';
 
 import '../constants/colors.dart';
-import '../widgets/quiz_page_widgets/general_info_content.dart';
+import 'quiz_page_widgets/general_info_content.dart';
 import 'ViewResponses.dart';
 
 class QuizScreen extends StatefulWidget {

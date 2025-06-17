@@ -6,7 +6,7 @@ import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'Profile.dart';
+import '../screens/profile_page_widgets/Profile.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   CustomAppBar();

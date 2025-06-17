@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
+import 'package:skill_factorial/screens/home_page_widgets/cta_button.dart';
 
 class FeatureSectionRow extends StatelessWidget {
   final String imageUrl;

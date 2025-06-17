@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skill_factorial/custom_app_bar.dart';
+import 'package:skill_factorial/widgets/custom_app_bar.dart';
 
 class MentorDetailScreen extends StatefulWidget {
   final dynamic mentor;

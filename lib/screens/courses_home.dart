@@ -10,7 +10,7 @@ import 'package:skill_factorial/screens/custom_search_bar.dart';
 import 'package:skill_factorial/widgets/cached_network_image_widget.dart'; // Keep if used elsewhere or remove if not
 
 import '../constants/image_urls.dart'; // Keep if used elsewhere or remove if not
-import '../custom_app_bar.dart';
+import '../widgets/custom_app_bar.dart';
 import 'quiz_screen.dart';
 
 class QuizListHome extends StatefulWidget {

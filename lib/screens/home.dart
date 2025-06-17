@@ -6,17 +6,17 @@ import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/grid_dot_paint.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/main_hero.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/why.dart';
+import 'package:skill_factorial/screens/home_page_widgets/cta_button.dart';
+import 'package:skill_factorial/screens/home_page_widgets/main_hero.dart';
+import 'package:skill_factorial/screens/home_page_widgets/why.dart';
 
-import 'custom_app_bar.dart';
-import 'widgets/footer.dart';
-import 'widgets/home_page_widgets/contact.dart';
-import 'widgets/home_page_widgets/feature_modern_column.dart';
-import 'widgets/home_page_widgets/feature_section_row.dart';
-import 'widgets/home_page_widgets/feature_widget.dart';
-import 'widgets/home_page_widgets/footer_cta.dart';
+import '../widgets/custom_app_bar.dart';
+import '../widgets/footer.dart';
+import 'home_page_widgets/contact.dart';
+import 'home_page_widgets/feature_modern_column.dart';
+import 'home_page_widgets/feature_section_row.dart';
+import 'home_page_widgets/feature_widget.dart';
+import 'home_page_widgets/footer_cta.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

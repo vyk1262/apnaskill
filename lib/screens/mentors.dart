@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:skill_factorial/custom_app_bar.dart';
+import 'package:skill_factorial/widgets/custom_app_bar.dart';
 import 'package:skill_factorial/constants/colors.dart';
 import 'mentor_details.dart';
 

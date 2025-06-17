@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_factorial/constants/colors.dart';
-import 'package:skill_factorial/custom_app_bar.dart';
+import 'package:skill_factorial/widgets/custom_app_bar.dart';
 import 'package:intl/intl.dart';
 
-import 'widgets/profile_page_widgets/form_widget.dart';
-import 'widgets/profile_page_widgets/report_card.dart';
+import 'form_widget.dart';
+import 'report_card.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

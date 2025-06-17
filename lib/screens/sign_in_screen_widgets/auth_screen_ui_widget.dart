@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
+import 'package:skill_factorial/screens/home_page_widgets/cta_button.dart';
 import '../../constants/colors.dart';
 import 'google_sign_in_button.dart';
 

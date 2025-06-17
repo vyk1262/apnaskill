@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
-import 'package:skill_factorial/widgets/home_page_widgets/cta_button.dart';
+import 'package:skill_factorial/screens/home_page_widgets/cta_button.dart';
 
 class FeatureModernColumn extends StatelessWidget {
   final String imageUrl;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
-import '../cached_network_image_widget.dart';
+import '../../widgets/cached_network_image_widget.dart';
 import 'cta_button.dart';
 
 class MainHero extends StatelessWidget {

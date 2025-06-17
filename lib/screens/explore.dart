@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:skill_factorial/screens/custom_search_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../custom_app_bar.dart';
+import '../widgets/custom_app_bar.dart';
 
 class Explore extends StatefulWidget {
   @override

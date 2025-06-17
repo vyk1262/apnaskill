@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skill_factorial/constants/colors.dart';
-import 'package:skill_factorial/custom_app_bar.dart';
+import 'package:skill_factorial/widgets/custom_app_bar.dart';
 import 'package:skill_factorial/widgets/footer.dart';
 
 class JobsScreen extends StatefulWidget {

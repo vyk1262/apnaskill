@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:skill_factorial/custom_theme.dart';
+import 'package:skill_factorial/constants/custom_theme.dart';
 import 'package:skill_factorial/screens/explore.dart';
 import 'package:skill_factorial/screens/games/game_fast_math.dart';
 import 'package:skill_factorial/screens/games/game_number_series.dart';
@@ -13,10 +13,10 @@ import 'package:skill_factorial/screens/jobs.dart';
 import 'package:skill_factorial/screens/colleges.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-import 'Profile.dart';
+import 'screens/profile_page_widgets/Profile.dart';
 import 'constants/colors.dart';
 import 'firebase_options.dart';
-import 'home.dart';
+import 'screens/home.dart';
 import 'model/user_model.dart';
 import 'screens/blogs.dart';
 import 'screens/games/game_chess.dart';

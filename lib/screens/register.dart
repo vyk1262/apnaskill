@@ -8,10 +8,10 @@ import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../constants/colors.dart';
-import '../custom_app_bar.dart';
+import '../widgets/custom_app_bar.dart';
 import '../model/user_model.dart';
-import '../widgets/home_page_widgets/cta_button.dart';
-import '../widgets/sign_in_screen_widgets/auth_screen_ui_widget.dart';
+import 'home_page_widgets/cta_button.dart';
+import 'sign_in_screen_widgets/auth_screen_ui_widget.dart';
 import 'courses_home.dart';
 
 class AuthScreen extends StatefulWidget {
