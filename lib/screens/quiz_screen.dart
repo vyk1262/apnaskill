@@ -7,7 +7,7 @@ import 'package:skill_factorial/widgets/title_case.dart';
 
 import '../constants/colors.dart';
 import 'quiz_page_widgets/general_info_content.dart';
-import 'ViewResponses.dart';
+import 'quiz_page_widgets/viewResponses.dart';
 
 class QuizScreen extends StatefulWidget {
   final String internshipName;

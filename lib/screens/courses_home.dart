@@ -510,22 +510,23 @@ class _QuizListHomeState extends State<QuizListHome> {
             mainAxisSize:
                 MainAxisSize.min, // Make column only take necessary space
             children: [
-              const Text("Enter Code below: FREE"), // Instruction for the code
-              TextFormField(
-                controller: upiController,
-                decoration: const InputDecoration(hintText: 'FREE'),
-                validator: (value) {
-                  if (value == null || value.isEmpty || value != 'FREE') {
-                    return 'Code is required and must be FREE'; // Validation for the code
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 8),
+              // const Text("Enter Code below: FREE"), // Instruction for the code
+              // TextFormField(
+              //   controller: upiController,
+              //   decoration: const InputDecoration(hintText: 'FREE'),
+              //   validator: (value) {
+              //     if (value == null || value.isEmpty || value != 'FREE') {
+              //       return 'Code is required and must be FREE'; // Validation for the code
+              //     }
+              //     return null;
+              //   },
+              // ),
+              // const SizedBox(height: 8),
               const Text(
                   "Enter Mobile Number"), // Instruction for mobile number
               TextFormField(
                 controller: mobileNumberController,
+                keyboardType: TextInputType.phone,
                 decoration: const InputDecoration(hintText: 'Mobile Number'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -545,8 +546,11 @@ class _QuizListHomeState extends State<QuizListHome> {
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 // Validate form before submitting
-                await _unlockInternshipAndStoreData(internshipName,
-                    upiController.text, mobileNumberController.text);
+                await _unlockInternshipAndStoreData(
+                  internshipName,
+                  // upiController.text,
+                  mobileNumberController.text,
+                );
                 if (mounted)
                   Navigator.of(context)
                       .pop(); // Pop dialog if widget is still mounted
@@ -567,7 +571,10 @@ class _QuizListHomeState extends State<QuizListHome> {
   /// Unlocks an internship for the current user and stores the data in Firestore.
   /// Refreshes user data after the update.
   Future<void> _unlockInternshipAndStoreData(
-      String internshipName, String upiTraId, String mobileNumber) async {
+    String internshipName,
+    // String upiTraId,
+    String mobileNumber,
+  ) async {
     user = FirebaseAuth.instance.currentUser; // Get current user
     if (user != null) {
       try {
@@ -580,7 +587,7 @@ class _QuizListHomeState extends State<QuizListHome> {
             {
               'internshipName': internshipName,
               'quizMarks': [], // Initialize with empty marks
-              'upiTraId': upiTraId,
+              // 'upiTraId': upiTraId,
             }
           ]),
           'mobileNumber': mobileNumber // Update mobile number
