@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart'; // Assuming go_router is used for nav
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart'; // To open external links like Google Forms
-import 'package:skill_factorial/screens/widgets/custom_app_bar.dart';
+import 'package:skill_factorial/screens/common_widgets/custom_app_bar.dart';
 
-import 'widgets/cached_network_image_widget.dart'; // Assuming a custom app bar
+import 'common_widgets/cached_network_image_widget.dart'; // Assuming a custom app bar
 
 class VirtualInternship extends StatefulWidget {
   const VirtualInternship({Key? key}) : super(key: key);

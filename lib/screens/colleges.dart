@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'widgets/cached_network_image_widget.dart';
+import 'common_widgets/cached_network_image_widget.dart';
 
 class UniversitiesScreen extends StatefulWidget {
   const UniversitiesScreen({Key? key}) : super(key: key);

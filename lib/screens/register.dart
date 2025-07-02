@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../constants/colors.dart';
-import 'widgets/custom_app_bar.dart';
+import 'common_widgets/custom_app_bar.dart';
 import '../model/user_model.dart';
 import 'home_page_widgets/cta_button.dart';
 import 'sign_in_screen_widgets/auth_screen_ui_widget.dart';

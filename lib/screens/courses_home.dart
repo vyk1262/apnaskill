@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart'; // Assuming AppColors.primaryColor exists here
-import 'package:skill_factorial/screens/widgets/custom_search_bar.dart';
-import 'package:skill_factorial/screens/widgets/cached_network_image_widget.dart'; // Keep if used elsewhere or remove if not
+import 'package:skill_factorial/screens/common_widgets/custom_search_bar.dart';
+import 'package:skill_factorial/screens/common_widgets/cached_network_image_widget.dart'; // Keep if used elsewhere or remove if not
 
 import '../constants/image_urls.dart'; // Keep if used elsewhere or remove if not
-import 'widgets/custom_app_bar.dart';
+import 'common_widgets/custom_app_bar.dart';
 import 'quiz_screen.dart';
 
 class QuizListHome extends StatefulWidget {
