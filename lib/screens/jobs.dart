@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skill_factorial/constants/colors.dart';
-import 'package:skill_factorial/widgets/custom_app_bar.dart';
-import 'package:skill_factorial/widgets/footer.dart';
+import 'package:skill_factorial/screens/widgets/custom_app_bar.dart';
+import 'package:skill_factorial/screens/widgets/footer.dart';
 
 class JobsScreen extends StatefulWidget {
   const JobsScreen({Key? key}) : super(key: key);

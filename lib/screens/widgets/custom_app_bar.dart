@@ -3,10 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/constants/colors.dart';
-import 'package:skill_factorial/widgets/cached_network_image_widget.dart';
+import 'package:skill_factorial/screens/widgets/cached_network_image_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../screens/profile_page_widgets/Profile.dart';
+import '../profile_page_widgets/Profile.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   CustomAppBar();

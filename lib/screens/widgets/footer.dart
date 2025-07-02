@@ -6,7 +6,7 @@ import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/screens/home_page_widgets/cta_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../screens/faqs.dart';
+import '../faqs.dart';
 
 class Footer extends StatelessWidget {
   Future<void> _launchUrl(String url) async {

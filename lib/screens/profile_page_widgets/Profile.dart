@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_factorial/constants/colors.dart';
-import 'package:skill_factorial/widgets/custom_app_bar.dart';
+import 'package:skill_factorial/screens/widgets/custom_app_bar.dart';
 import 'package:intl/intl.dart';
 
 import 'form_widget.dart';
