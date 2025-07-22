@@ -11,7 +11,7 @@ import 'package:skill_factorial/screens/mentors.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/screens/jobs.dart';
 import 'package:skill_factorial/screens/colleges.dart';
-import 'package:skill_factorial/screens/virtual_internship.dart';
+import 'package:skill_factorial/screens/boot_camp_screen.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'screens/profile_page_widgets/Profile.dart';
@@ -52,7 +52,7 @@ final router = GoRouter(
         ),
         GoRoute(
           path: 'internship',
-          builder: (context, state) => const VirtualInternship(),
+          builder: (context, state) => const VirtualBootCamp(),
         ),
         GoRoute(
           path: 'login',
