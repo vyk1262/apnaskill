@@ -10,10 +10,10 @@ import 'package:skill_factorial/screens/faqs.dart';
 import 'package:skill_factorial/screens/mentors.dart';
 import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/screens/jobs.dart';
-import 'package:skill_factorial/screens/colleges.dart';
 import 'package:skill_factorial/screens/boot_camp_screen.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'screens/events.dart';
 import 'screens/profile_page_widgets/Profile.dart';
 import 'constants/colors.dart';
 import 'firebase_options.dart';
@@ -67,6 +67,10 @@ final router = GoRouter(
           builder: (context, state) => Explore(),
         ),
         GoRoute(
+          path: 'events',
+          builder: (context, state) => const Events(),
+        ),
+        GoRoute(
           path: 'blogs',
           builder: (context, state) => BlogHomeScreen(),
         ),
@@ -77,10 +81,6 @@ final router = GoRouter(
         GoRoute(
           path: 'jobs',
           builder: (context, state) => const JobsScreen(),
-        ),
-        GoRoute(
-          path: 'colleges',
-          builder: (context, state) => const UniversitiesScreen(),
         ),
         GoRoute(
           path: 'chess',
