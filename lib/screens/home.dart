@@ -49,7 +49,28 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 20),
                     FeatureGrid(),
                     const SizedBox(height: 20),
-                    WhyChooseUs(),
+                    WhyChooseUs(
+                      title: "Why Choose Us?",
+                      description:
+                          "Skill Factorial is among top-rated ed-tech companies providing Online Workshops with Certificates to working professionals.",
+                      benefits: [
+                        Benefit(
+                            icon: FontAwesomeIcons.users,
+                            text: "Enroll For Free"),
+                        Benefit(
+                            icon: FontAwesomeIcons.graduationCap,
+                            text: "Achieve Goals"),
+                        Benefit(
+                            icon: FontAwesomeIcons.certificate,
+                            text: "Explanations Available"),
+                        Benefit(
+                            icon: FontAwesomeIcons.laptop,
+                            text: "Attempt Quizzes Online"),
+                        Benefit(
+                            icon: FontAwesomeIcons.handshake,
+                            text: "Support Available"),
+                      ],
+                    ),
                     const SizedBox(height: 20),
                     FeatureModernColumn.buildFeatureGrid(),
                     const SizedBox(height: 20),

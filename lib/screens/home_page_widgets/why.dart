@@ -2,8 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:skill_factorial/constants/colors.dart';
 
+class Benefit {
+  final IconData icon;
+  final String text;
+
+  Benefit({required this.icon, required this.text});
+}
+
 class WhyChooseUs extends StatelessWidget {
-  const WhyChooseUs({super.key});
+  final String title;
+  final String description;
+  final List<Benefit> benefits;
+
+  const WhyChooseUs({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.benefits,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,22 +40,24 @@ class WhyChooseUs extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
       child: Column(
         children: [
+          /// Title + Description
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Column(
-              children: const [
+              children: [
                 Text(
-                  'Why Choose Us?',
-                  style: TextStyle(
+                  title,
+                  style: const TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
+                  textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
-                  'Skill Factorial is among top-rated ed-tech companies providing Online Workshops with Certificates to the working professionals.',
-                  style: TextStyle(
+                  description,
+                  style: const TextStyle(
                     fontSize: 18,
                     color: Colors.white,
                     height: 1.5,
@@ -49,34 +67,22 @@ class WhyChooseUs extends StatelessWidget {
               ],
             ),
           ),
+
           const SizedBox(height: 40),
+
+          /// Dynamic Benefit Items
           Wrap(
             spacing: 20,
             runSpacing: 20,
             alignment: WrapAlignment.center,
-            children: const [
-              BenefitItem(
-                icon: FontAwesomeIcons.users,
-                text: 'Enroll For Free',
-              ),
-              BenefitItem(
-                icon: FontAwesomeIcons.graduationCap,
-                text: 'Achieve Goals',
-              ),
-              BenefitItem(
-                icon: FontAwesomeIcons.certificate,
-                text: 'Explanations Available',
-              ),
-              BenefitItem(
-                icon: FontAwesomeIcons.laptop,
-                text: 'Attempt Quizzes Online',
-              ),
-              BenefitItem(
-                icon: FontAwesomeIcons.handshake,
-                text: 'Support Available',
-              ),
-            ],
+            children: benefits
+                .map((benefit) => BenefitItem(
+                      icon: benefit.icon,
+                      text: benefit.text,
+                    ))
+                .toList(),
           ),
+
           const SizedBox(height: 32),
         ],
       ),

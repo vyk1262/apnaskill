@@ -1,13 +1,18 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skill_factorial/screens/common_widgets/footer.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../constants/bootcamp_data.dart';
 import 'common_widgets/benefit_cart.dart';
 import 'common_widgets/certificate_feature.dart';
 import 'common_widgets/feature_pill.dart';
 import '../constants/colors.dart';
 import 'common_widgets/custom_app_bar.dart';
 import 'common_widgets/cached_network_image_widget.dart';
+import 'common_widgets/weekly_syllabus_card.dart';
+import 'home_page_widgets/cta_button.dart';
+import 'home_page_widgets/why.dart';
 
 class VirtualBootCamp extends StatefulWidget {
   const VirtualBootCamp({Key? key}) : super(key: key);
@@ -18,7 +23,11 @@ class VirtualBootCamp extends StatefulWidget {
 
 class _VirtualBootCampState extends State<VirtualBootCamp> {
   final String googleFormLink = 'https://forms.gle/YOUR_GOOGLE_FORM_LINK_HERE';
-  List<Map<String, dynamic>> dailyPlan = [];
+
+  String selectedCourse = "Python"; // default → Python
+
+  final courses = ["Python", "SQL", "Power BI", "DSA"];
+  // You can keep this in a constants file if you want
 
   @override
   void initState() {
@@ -44,171 +53,17 @@ class _VirtualBootCampState extends State<VirtualBootCamp> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Hero Section
-            buildHeroSection(context),
-            // Daily Plan Section
-            buildDailyPlanSection(context),
-            // Pricing Section
-            buildPricingSection(context),
-            // Final CTA
-            buildFinalCTASection(context),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildDailyPlanSection(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
-      child: Column(
-        children: [
-          Text(
-            'Your 30-Day Journey',
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            'Structured learning path with daily milestones',
-            style: TextStyle(fontSize: 18, color: Colors.grey),
-          ),
-          const SizedBox(height: 40),
-          // solve 25 problems weekly and complete 100 problems or make it 3-4 problems a day
-          const Text(
-            'Solve 25 problems weekly and complete 100 problems or make it 3-4 problems a day',
-            style: TextStyle(fontSize: 18, color: Colors.grey),
-            textAlign: TextAlign.center,
-          ),
-          // doubts clearance session every week Thursdays at 7:30 PM
-          const Text(
-            'Doubts clearance session every week Thursdays at 7:30 PM',
-            style: TextStyle(fontSize: 18, color: Colors.grey),
-            textAlign: TextAlign.center,
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget buildFinalCTASection(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
-      decoration: BoxDecoration(
-        gradient: AppColors.gradientPrimary,
-      ),
-      child: Column(
-        children: [
-          const Text(
-            'Ready to Launch Your Tech Career?',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20),
-          const Text(
-            'Join 5000+ students who transformed their careers with Skill Factorial',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 40),
-          ElevatedButton(
-            onPressed: () => _launchURL(googleFormLink),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white,
-              foregroundColor: Theme.of(context).colorScheme.primary,
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-              elevation: 8,
-              shadowColor: Colors.black.withOpacity(0.3),
-            ),
-            child: const Text(
-              'ENROLL NOW FOR ₹499',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            'Registration closes in: 2 days 14 hours',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.yellow[200],
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-Widget buildHeroSection(BuildContext context) {
-  return Column(
-    children: [
-      Container(
-        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-        decoration: BoxDecoration(
-          gradient: AppColors.gradientPrimary,
-        ),
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            Text(
-              '1-Month Python Virtual Internship',
-              style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    blurRadius: 10,
-                    color: Colors.black.withOpacity(0.3),
-                    offset: const Offset(2, 2),
-                  )
-                ],
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Transform from beginner to job-ready Python developer in just 30 days',
-              style: TextStyle(
-                fontSize: 22,
-                color: Colors.white.withOpacity(0.9),
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 30),
-            Wrap(
-              spacing: 20,
-              runSpacing: 15,
-              children: [
-                buildFeaturePill(Icons.schedule, '1 Hour/Day'),
-                buildFeaturePill(Icons.verified_user, 'Industry Mentors'),
-                buildFeaturePill(Icons.work, 'Real Projects'),
-                buildFeaturePill(Icons.laptop_chromebook, 'Flexible Schedule'),
+            WhyChooseUs(
+              title: "1-Month Python Virtual Internship",
+              description:
+                  "Transform from beginner to job-ready Python developer in 30 days",
+              benefits: [
+                Benefit(icon: Icons.schedule, text: "1 Hour/Day"),
+                Benefit(icon: Icons.people, text: "Industry Mentors"),
+                Benefit(icon: Icons.work, text: "Real Projects"),
+                Benefit(icon: Icons.laptop, text: "Flexible Schedule"),
               ],
             ),
-            const SizedBox(height: 40),
-          ],
-        ),
-      ),
-      Container(
-        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
-        color: Colors.grey[50],
-        child: Column(
-          children: [
             Text(
               'Why Join This Internship?',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -247,185 +102,187 @@ Widget buildHeroSection(BuildContext context) {
                 ),
               ],
             ),
-          ],
-        ),
-      ),
-      Container(
-        padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
-        color: Colors.grey[50],
-        child: Column(
-          children: [
+            const SizedBox(height: 30),
+            buildCtaButton(
+              text: 'ENROLL NOW FOR ₹499',
+              onPressed: () => _launchURL(googleFormLink),
+              bgColor: Colors.black,
+              fgColor: Colors.white,
+            ),
+            buildDailyPlanSection(context),
+            const SizedBox(height: 40),
             Text(
-              'Industry-Recognized Certificate',
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+              "Choose Your Track",
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.primary,
                   ),
             ),
-            const SizedBox(height: 10),
-            const Text(
-              'Showcase your skills to employers',
-              style: TextStyle(fontSize: 18, color: Colors.grey),
-            ),
-            const SizedBox(height: 40),
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 20,
-                    offset: const Offset(0, 10),
-                  )
-                ],
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: CachedNetworkImageWidget(
-                  imageUrl: "https://i.ibb.co/S4pwHMDr/javascript.png",
-                  width: MediaQuery.of(context).size.width / 1.2,
-                  height: MediaQuery.of(context).size.width / 1.2,
-                  fit: BoxFit.fitWidth,
-                  errorWidget: Icon(Icons.broken_image),
-                ),
-              ),
+            const SizedBox(height: 16),
+            ToggleButtons(
+              isSelected: courses.map((c) => c == selectedCourse).toList(),
+              onPressed: (index) {
+                setState(() {
+                  selectedCourse = courses[index];
+                });
+              },
+              borderRadius: BorderRadius.circular(10),
+              fillColor: Colors.blue.shade100,
+              selectedColor: Colors.blue.shade800,
+              color: Colors.grey.shade700,
+              constraints: const BoxConstraints(minHeight: 40, minWidth: 80),
+              children: courses
+                  .map((c) => Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(c),
+                      ))
+                  .toList(),
             ),
             const SizedBox(height: 30),
-            Wrap(
-              spacing: 20,
-              runSpacing: 15,
-              alignment: WrapAlignment.center,
-              children: [
-                buildCertificateFeature('Verifiable Online'),
-                buildCertificateFeature('Share on LinkedIn'),
-                buildCertificateFeature('Add to Resume'),
-                buildCertificateFeature('Company Recognition'),
-              ],
+            Center(
+              child: Wrap(
+                spacing: 10,
+                runSpacing: 16,
+                alignment: WrapAlignment.center,
+                children: bootcampSyllabus[selectedCourse]!
+                    .map((week) => WeekSyllabusCard(
+                          title: week["title"] as String,
+                          syllabusItems:
+                              List<String>.from(week["items"] as List),
+                        ))
+                    .toList(),
+              ),
             ),
+            const SizedBox(height: 40),
+            Footer(),
           ],
         ),
       ),
-    ],
-  );
-}
+    );
+  }
 
-Widget buildPricingSection(BuildContext context) {
-  return Container(
-    padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
-    decoration: BoxDecoration(
-      gradient: LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Theme.of(context).colorScheme.primary.withOpacity(0.8),
-          Theme.of(context).colorScheme.secondary,
-        ],
-      ),
-    ),
-    child: Column(
-      children: [
-        const Text(
-          'Limited Time Offer',
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.2,
-          ),
-        ),
-        const SizedBox(height: 20),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 30),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                blurRadius: 30,
-                offset: const Offset(0, 20),
-              ),
-            ],
-          ),
-          child: Column(
-            children: [
-              Text(
-                'Total Program Fee',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.grey[700],
+  Widget buildDailyPlanSection(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      margin: const EdgeInsets.only(top: 40),
+      child: Column(
+        children: [
+          Text(
+            'Your 30 Days / 4 Weeks Journey',
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Structured learning path with daily milestones',
+            style: TextStyle(fontSize: 18, color: Colors.grey),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 30),
+          Card(
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
                 children: [
-                  Text(
-                    '₹499',
-                    style: TextStyle(
-                      fontSize: 64,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.primary,
+                  ListTile(
+                    leading: Icon(
+                      Icons.checklist,
+                      color: Theme.of(context).colorScheme.secondary,
+                      size: 30,
+                    ),
+                    title: Text(
+                      'Solve 3-4 problems daily',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                    subtitle: const Text(
+                      'Complete 25 problems weekly and 100 problems in total.',
+                      style: TextStyle(color: Colors.grey),
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  Text(
-                    '₹4999',
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.grey[500],
-                      decoration: TextDecoration.lineThrough,
+                  const Divider(),
+                  // learn 1 hour a day
+                  ListTile(
+                      leading: Icon(
+                        Icons.timer,
+                        color: Theme.of(context).colorScheme.secondary,
+                        size: 30,
+                      ),
+                      title: Text(
+                        'Learn 1 hour a day',
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      subtitle: const Text(
+                        'Practice coding every day to reinforce your understanding.',
+                        style: TextStyle(color: Colors.grey),
+                      )),
+                  const Divider(),
+                  // if you are student become job ready
+                  ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: Theme.of(context).colorScheme.secondary,
+                      size: 30,
+                    ),
+                    title: Text(
+                      'If you are student become job ready',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                    subtitle: const Text(
+                      'Learn Python, SQL, Power BI, and DSA in 30 days.',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ),
+                  const Divider(),
+                  // if you are a working professional grow your salary with new skills
+                  ListTile(
+                    leading: Icon(
+                      Icons.monetization_on,
+                      color: Theme.of(context).colorScheme.secondary,
+                      size: 30,
+                    ),
+                    title: Text(
+                      'If you are a working professional grow your salary with new skills',
+                    ),
+                    subtitle: const Text(
+                      'Build 4 real-world projects to showcase your skills.',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ),
+                  const Divider(),
+                  ListTile(
+                    leading: Icon(
+                      Icons.support_agent,
+                      color: Theme.of(context).colorScheme.secondary,
+                      size: 30,
+                    ),
+                    title: Text(
+                      'Weekly Doubts Session',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                    subtitle: const Text(
+                      'Join our live doubts clearance session every Thursday at 7:30 PM.',
+                      style: TextStyle(color: Colors.grey),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
-              const Text(
-                '90% OFF - Limited Seats Only!',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green,
-                ),
-              ),
-              const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  // _launchURL(googleFormLink),
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).colorScheme.secondary,
-                  foregroundColor: Colors.white,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 18),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  elevation: 8,
-                  shadowColor:
-                      Theme.of(context).colorScheme.secondary.withOpacity(0.5),
-                ),
-                child: const Text(
-                  'ENROLL NOW',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                'Registration closes in 3 days',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.red,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
-      ],
-    ),
-  );
+        ],
+      ),
+    );
+  }
 }
