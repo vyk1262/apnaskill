@@ -51,7 +51,7 @@ final router = GoRouter(
           builder: (context, state) => const QuizListHome(),
         ),
         GoRoute(
-          path: 'internship',
+          path: 'bootcamp',
           builder: (context, state) => const VirtualBootCamp(),
         ),
         GoRoute(

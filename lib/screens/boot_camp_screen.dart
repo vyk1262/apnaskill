@@ -54,7 +54,7 @@ class _VirtualBootCampState extends State<VirtualBootCamp> {
         child: Column(
           children: [
             WhyChooseUs(
-              title: "1-Month Python Virtual Internship",
+              title: "1-Month Virtual Bootcamp",
               description:
                   "Transform from beginner to job-ready Python developer in 30 days",
               benefits: [
@@ -65,7 +65,7 @@ class _VirtualBootCampState extends State<VirtualBootCamp> {
               ],
             ),
             Text(
-              'Why Join This Internship?',
+              'Why Join This Bootcamp?',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.primary,

@@ -17,6 +17,15 @@ import 'home_page_widgets/feature_modern_column.dart';
 import 'home_page_widgets/feature_section_row.dart';
 import 'home_page_widgets/feature_widget.dart';
 import 'home_page_widgets/footer_cta.dart';
+import 'home_page_widgets/hero_section_ht.dart';
+import 'home_page_widgets/ht_benf_dart';
+import 'home_page_widgets/ht_contact.dart';
+import 'home_page_widgets/ht_courses.dart';
+import 'home_page_widgets/ht_cta.dart';
+import 'home_page_widgets/ht_footer.dart';
+import 'home_page_widgets/ht_inst.dart';
+import 'home_page_widgets/ht_q_col.dart';
+import 'home_page_widgets/ht_q_row.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -45,6 +54,11 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     const MainHero(),
                     const SizedBox(height: 20),
+                    const SizedBox(height: 20),
+                    CoursesSection(),
+                    const SizedBox(height: 20),
+                    InstructorsSection(),
+                    const SizedBox(height: 20),
                     FeatureSectionRow.buildFeatureList(),
                     const SizedBox(height: 20),
                     FeatureGrid(),
@@ -72,9 +86,18 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     const SizedBox(height: 20),
+                    WrapBenefitsSection(),
+                    const SizedBox(height: 20),
                     FeatureModernColumn.buildFeatureGrid(),
                     const SizedBox(height: 20),
+                    RowFeaturesSection(),
+                    const SizedBox(height: 20),
+                    ColumnFeaturesSection(),
+                    const SizedBox(height: 20),
                     const ContactCard(),
+                    const SizedBox(height: 20),
+                    ContactInfoSection(),
+                    const SizedBox(height: 20),
                     const SizedBox(height: 20),
                     const FooterCTA(),
                     const SizedBox(height: 20),

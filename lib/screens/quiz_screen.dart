@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:skill_factorial/screens/common_widgets/title_case.dart';
@@ -8,6 +9,7 @@ import 'package:skill_factorial/screens/common_widgets/title_case.dart';
 import '../constants/colors.dart';
 import 'quiz_page_widgets/general_info_content.dart';
 import 'quiz_page_widgets/viewResponses.dart';
+import 'package:http/http.dart' as http;
 
 class QuizScreen extends StatefulWidget {
   final String internshipName;
@@ -41,19 +43,47 @@ class _QuizScreenState extends State<QuizScreen> {
     _loadCompletedItems();
   }
 
-  // Load quiz data from the selected topic JSON file
   Future<void> _loadQuizData(String topic) async {
-    final String jsonString = await DefaultAssetBundle.of(context)
-        .loadString('assets/${widget.internshipName}/quizzes/$topic.json');
-    final Map<String, dynamic> jsonData = jsonDecode(jsonString);
-    setState(() {
-      quizData =
-          List<Map<String, dynamic>>.from(jsonData['result'][0]['questions']);
-      _userAnswers =
-          List<String?>.filled(quizData.length, null, growable: false);
-      selectedAssignment = null; // Reset assignment when quiz is loaded
-      _showSidebarMobile = false; // Hide sidebar when content loads
-    });
+    try {
+      // Reference to the JSON file in Firebase Storage
+      final ref = FirebaseStorage.instance.ref().child(
+          'quiz_data/${widget.internshipName.toLowerCase().replaceAll(' ', '_')}.json');
+
+      // Get a download URL for the JSON file
+      final url = await ref.getDownloadURL();
+
+      // Fetch JSON from the download URL
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> jsonData = jsonDecode(response.body);
+
+        // Find the specific topic inside the subject file
+        final List<dynamic> topics = jsonData['result'];
+        final selectedTopicData = topics.firstWhere(
+          (t) => t['topic'] == topic,
+          orElse: () => null,
+        );
+
+        if (selectedTopicData == null) {
+          throw Exception(
+              'Topic "$topic" not found in ${widget.internshipName}');
+        }
+
+        setState(() {
+          quizData =
+              List<Map<String, dynamic>>.from(selectedTopicData['questions']);
+          _userAnswers =
+              List<String?>.filled(quizData.length, null, growable: false);
+          selectedAssignment = null;
+          _showSidebarMobile = false;
+        });
+      } else {
+        throw Exception('Failed to load quiz JSON: ${response.statusCode}');
+      }
+    } catch (e) {
+      print('❌ Error loading quiz data: $e');
+    }
   }
 
   Future<void> _loadCompletedItems() async {

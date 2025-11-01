@@ -5,6 +5,15 @@ import '../common_widgets/cached_network_image_widget.dart';
 import 'cta_button.dart';
 
 class MainHero extends StatelessWidget {
+  final Map<String, dynamic> pageData = const {
+    'hero': {
+      'title': "Become a Professional with Skill Factorial.",
+      'title2': "Unlock Your Potential with Skill Factorial",
+      'subtitle':
+          "Join our comprehensive bootcamp and master the in-demand skills of Python, SQL, Power BI, and Data Structures & Algorithms.",
+      'ctaText': "Enroll Now",
+    }
+  };
   const MainHero({super.key});
 
   @override
@@ -58,6 +67,83 @@ class MainHero extends StatelessWidget {
                 CachedNetworkImageWidget(
                   imageUrl: 'https://i.ibb.co/TMTJDqGC/sf-hero-a.png',
                   errorWidget: Icon(Icons.broken_image),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 80.0),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFF4338ca), // var(--color-primary-dark)
+                Color(0xFF4f46e5), // var(--color-primary)
+              ],
+            ),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  pageData['hero']['title']!,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 36.0,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                Text(
+                  pageData['hero']['title2']!,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                Container(
+                  constraints: const BoxConstraints(maxWidth: 600.0),
+                  child: Text(
+                    pageData['hero']['subtitle']!,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white.withOpacity(0.9),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 32.0),
+                ElevatedButton(
+                  onPressed: () {
+                    // TODO: Implement CTA action
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        const Color(0xFFfacc15), // btn-cta-yellow color
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24.0, vertical: 12.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    elevation: 10.0,
+                    shadowColor: Colors.black.withOpacity(0.25),
+                  ),
+                  child: Text(
+                    pageData['hero']['ctaText']!,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF111111),
+                    ),
+                  ),
                 ),
               ],
             ),
