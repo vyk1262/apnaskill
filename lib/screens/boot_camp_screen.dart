@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/screens/common_widgets/footer.dart';
+import 'package:skill_factorial/screens/bootcamp_courses.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constants/bootcamp_data.dart';
 import 'common_widgets/benefit_cart.dart';
@@ -110,6 +111,8 @@ class _VirtualBootCampState extends State<VirtualBootCamp> {
               fgColor: Colors.white,
             ),
             buildDailyPlanSection(context),
+            const SizedBox(height: 40),
+            CoursesSection(),
             const SizedBox(height: 40),
             Text(
               "Choose Your Track",

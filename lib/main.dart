@@ -7,19 +7,15 @@ import 'package:skill_factorial/screens/games/game_fast_math.dart';
 import 'package:skill_factorial/screens/games/game_number_series.dart';
 import 'package:skill_factorial/screens/courses_home.dart';
 import 'package:skill_factorial/screens/faqs.dart';
-import 'package:skill_factorial/screens/mentors.dart';
 import 'package:skill_factorial/screens/register.dart';
-import 'package:skill_factorial/screens/jobs.dart';
 import 'package:skill_factorial/screens/boot_camp_screen.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'screens/events.dart';
 import 'screens/profile_page_widgets/Profile.dart';
-import 'constants/colors.dart';
 import 'firebase_options.dart';
 import 'screens/home.dart';
 import 'model/user_model.dart';
-import 'screens/blogs.dart';
 import 'screens/games/game_chess.dart';
 import 'screens/url_not_found.dart';
 
@@ -59,10 +55,6 @@ final router = GoRouter(
           builder: (context, state) => const AuthScreen(),
         ),
         GoRoute(
-          path: 'mentors',
-          builder: (context, state) => const Mentors(),
-        ),
-        GoRoute(
           path: 'explore',
           builder: (context, state) => Explore(),
         ),
@@ -71,16 +63,8 @@ final router = GoRouter(
           builder: (context, state) => const Events(),
         ),
         GoRoute(
-          path: 'blogs',
-          builder: (context, state) => BlogHomeScreen(),
-        ),
-        GoRoute(
           path: 'faqs',
           builder: (context, state) => FaqsScreen(),
-        ),
-        GoRoute(
-          path: 'jobs',
-          builder: (context, state) => const JobsScreen(),
         ),
         GoRoute(
           path: 'chess',

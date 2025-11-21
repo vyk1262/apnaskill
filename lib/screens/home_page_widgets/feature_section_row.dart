@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skill_factorial/screens/common_widgets/cached_network_image_widget.dart';
@@ -9,6 +8,40 @@ class FeatureSectionRow extends StatelessWidget {
   final String title;
   final String description;
   final int index; // Add index to the constructor
+
+  final Map<String, dynamic> pageData = const {
+    'rowFeatures': {
+      'title':
+          "Innovative Learning: Learn From Anywhere: Test Your Knowledge & Get Certified",
+      'features': [
+        {
+          'title': "Flexible Learning Access",
+          'description':
+              "Learn from anywhere at your own pace. All you need is an internet connection, and your learning journey continues without barriers.",
+        },
+        {
+          'title': "Quizzes That Matter",
+          'description':
+              "Every quiz is designed to test your understanding and strengthen your grasp on concepts, preparing you for real-world applications.",
+        },
+        {
+          'title': "Assignments & Projects",
+          'description':
+              "Apply what you’ve learned through assignments and hands-on projects. Build a portfolio that reflects your skills and stands out to employers.",
+        },
+        {
+          'title': "Workshops & Bootcamps",
+          'description':
+              "Join live workshops and bootcamps where you’ll collaborate, solve problems, and gain practical knowledge directly from experts.",
+        },
+        {
+          'title': "Certification for Your Growth",
+          'description':
+              "Get certified based on your performance in quizzes, assignments, and projects — a recognition of your hard work and progress.",
+        },
+      ],
+    },
+  };
 
   static List<Map<String, String>> get techContent => [
         {
