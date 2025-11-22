@@ -130,16 +130,10 @@ class _CustomAppBarState extends State<CustomAppBar>
                               label: 'Home', screenName: '/'),
                           // _buildNavButton(context,
                           //     label: 'Mentors', screenName: 'mentors'),
-                          _buildNavButton(context,
-                              label: '30-Day Bootcamp', screenName: 'bootcamp'),
+
                           _buildNavButton(context,
                               label: 'Quizzes', screenName: 'quizzes'),
-                          _buildNavButton(context,
-                              label: 'Events', screenName: 'events'),
-                          // _buildNavButton(context,
-                          //     label: 'Explore', screenName: 'explore'),
-                          // _buildNavButton(context,
-                          //     label: 'Blogs', screenName: 'blogs'),
+
                           if (user == null)
                             ElevatedButton.icon(
                               icon:
@@ -264,20 +258,9 @@ class _CustomAppBarState extends State<CustomAppBar>
                                     label: 'Home', screenName: '/'),
                                 const SizedBox(height: 15),
                                 _buildDrawerButton(context,
-                                    label: '30-Day Bootcamp',
-                                    screenName: 'bootcamp'),
-                                _buildDrawerButton(context,
                                     label: 'Quizzes', screenName: 'quizzes'),
                                 const SizedBox(height: 15),
-                                _buildDrawerButton(context,
-                                    label: 'Events', screenName: 'events'),
-                                // const SizedBox(height: 15),
-                                // _buildDrawerButton(context,
-                                //     label: "Blogs", screenName: 'blogs'),
                                 const SizedBox(height: 15),
-                                // _buildDrawerButton(context,
-                                //     label: "Explore", screenName: 'explore'),
-                                // const SizedBox(height: 15),
                                 if (user == null)
                                   _buildDrawerAuthButton(context,
                                       label: 'Login',

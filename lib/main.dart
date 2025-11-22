@@ -2,21 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skill_factorial/constants/custom_theme.dart';
-import 'package:skill_factorial/screens/explore.dart';
-import 'package:skill_factorial/screens/games/game_fast_math.dart';
-import 'package:skill_factorial/screens/games/game_number_series.dart';
 import 'package:skill_factorial/screens/courses_home.dart';
-import 'package:skill_factorial/screens/faqs.dart';
 import 'package:skill_factorial/screens/register.dart';
-import 'package:skill_factorial/screens/boot_camp_screen.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-import 'screens/events.dart';
 import 'screens/profile_page_widgets/Profile.dart';
 import 'firebase_options.dart';
-import 'screens/home.dart';
 import 'model/user_model.dart';
-import 'screens/games/game_chess.dart';
 import 'screens/url_not_found.dart';
 
 import 'package:go_router/go_router.dart';
@@ -40,43 +32,15 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const HomePage(),
+      builder: (context, state) => const QuizListHome(),
       routes: [
         GoRoute(
           path: 'quizzes',
           builder: (context, state) => const QuizListHome(),
         ),
         GoRoute(
-          path: 'bootcamp',
-          builder: (context, state) => const VirtualBootCamp(),
-        ),
-        GoRoute(
           path: 'login',
           builder: (context, state) => const AuthScreen(),
-        ),
-        GoRoute(
-          path: 'explore',
-          builder: (context, state) => Explore(),
-        ),
-        GoRoute(
-          path: 'events',
-          builder: (context, state) => const Events(),
-        ),
-        GoRoute(
-          path: 'faqs',
-          builder: (context, state) => FaqsScreen(),
-        ),
-        GoRoute(
-          path: 'chess',
-          builder: (context, state) => const GameChess(),
-        ),
-        GoRoute(
-          path: 'series',
-          builder: (context, state) => GameNumberSeries(),
-        ),
-        GoRoute(
-          path: 'fastmath',
-          builder: (context, state) => GameFastMath(),
         ),
       ],
     ),

@@ -54,9 +54,4 @@ flutter:
 
   assets:
     - assets/
-    - assets/daily_plan.json
-    - assets/course_images/
     - assets/student_home/
-    - assets/faqs.json
-    - assets/explore.json
-    - assets/mentors.json
