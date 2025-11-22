@@ -593,17 +593,43 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Widget buildContent() {
+    // 1. Determine the key for the current content state.
+    // This key MUST change when the content needs to animate.
+    final Key contentKey =
+        ValueKey(showGeneralInfo ? 'GeneralInfo' : selectedQuiz ?? 'Loading');
+
+    // 2. Define the current content widget based on the state.
+    Widget currentContent;
     if (showGeneralInfo) {
-      return buildGeneralInfoContent();
-    } else if (quizData.isNotEmpty) {
-      return buildQuizContent();
+      currentContent = buildGeneralInfoContent(key: contentKey);
+    } else if (selectedQuiz != null && quizData.isNotEmpty) {
+      // Pass the unique key here to trigger the animation when selectedQuiz changes.
+      currentContent = buildQuizContent(key: contentKey);
     } else {
-      return const Center(child: CircularProgressIndicator());
+      // Show loading state if a quiz is selected but data hasn't loaded yet.
+      currentContent = Center(
+        key: contentKey, // Use the unique key for loading state too
+        child: const CircularProgressIndicator(color: Color(0xFF3498DB)),
+      );
     }
+
+    // 3. Wrap the content with AnimatedSwitcher
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 400), // A smooth transition time
+      // Use a simple FadeTransition for a cross-fade effect
+      transitionBuilder: (Widget child, Animation<double> animation) {
+        return FadeTransition(
+          opacity: animation,
+          child: child,
+        );
+      },
+      child: currentContent,
+    );
   }
 
-  Widget buildQuizContent() {
+  Widget buildQuizContent({Key? key}) {
     return Container(
+      key: key,
       padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

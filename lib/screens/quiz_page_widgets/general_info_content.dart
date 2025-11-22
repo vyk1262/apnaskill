@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget buildGeneralInfoContent() {
+Widget buildGeneralInfoContent({Key? key}) {
   return Container(
+    key: key,
     decoration: const BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topLeft,
