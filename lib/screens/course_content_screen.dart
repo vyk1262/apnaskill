@@ -11,21 +11,21 @@ import 'quiz_page_widgets/general_info_content.dart';
 import 'quiz_page_widgets/viewResponses.dart';
 import 'package:http/http.dart' as http;
 
-class QuizScreen extends StatefulWidget {
+class CourseContentScreen extends StatefulWidget {
   final String internshipName;
   final List<String> quizList;
 
-  const QuizScreen({
+  const CourseContentScreen({
     Key? key,
     required this.internshipName,
     required this.quizList,
   }) : super(key: key);
 
   @override
-  State<QuizScreen> createState() => _QuizScreenState();
+  State<CourseContentScreen> createState() => _CourseContentScreenState();
 }
 
-class _QuizScreenState extends State<QuizScreen> {
+class _CourseContentScreenState extends State<CourseContentScreen> {
   List<String?> _userAnswers = [];
   List<Map<String, dynamic>> quizData = [];
   List<Map<String, dynamic>> assignmentData = [];
@@ -322,6 +322,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final bool isMobile = screenWidth < 768; // Adjust threshold as needed
+    final bool showSubmitButton = !showGeneralInfo && quizData.isNotEmpty;
 
     return Scaffold(
       appBar: isMobile
@@ -359,6 +360,26 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: showSubmitButton
+          ? Container(
+              height: 50,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: FloatingActionButton.extended(
+                backgroundColor: const Color(0xFF2ECC71),
+                onPressed: _submitQuiz,
+                label: const Text(
+                  'SUBMIT QUIZ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.1,
+                    color: Colors.white,
+                  ),
+                ),
+                icon: const Icon(Icons.check_circle),
+              ),
+            )
+          : null,
     );
   }
 
@@ -614,13 +635,34 @@ class _QuizScreenState extends State<QuizScreen> {
     }
 
     // 3. Wrap the content with AnimatedSwitcher
+    //
     return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 400), // A smooth transition time
-      // Use a simple FadeTransition for a cross-fade effect
+      duration: const Duration(milliseconds: 2000),
+      reverseDuration: const Duration(
+          milliseconds: 100), // Speed up the exit slightly for snappiness
+      switchInCurve: Curves.easeInOut,
+      switchOutCurve: Curves.easeInOut,
+
+      // THIS IS THE KEY FIX:
+      // It prevents the "jump" by centering the widgets in the transition stack.
+      layoutBuilder: (Widget? currentChild, List<Widget> previousChildren) {
+        return Stack(
+          alignment: Alignment.topCenter, // Keep everything anchored to the top
+          children: <Widget>[
+            ...previousChildren,
+            if (currentChild != null) currentChild,
+          ],
+        );
+      },
+
       transitionBuilder: (Widget child, Animation<double> animation) {
+        // Combine Fade with a very slight Scale for a "Premium" feel
         return FadeTransition(
           opacity: animation,
-          child: child,
+          child: ScaleTransition(
+            scale: Tween<double>(begin: 0.98, end: 1.0).animate(animation),
+            child: child,
+          ),
         );
       },
       child: currentContent,
@@ -769,28 +811,28 @@ class _QuizScreenState extends State<QuizScreen> {
               },
             ),
           ),
-          const SizedBox(height: 10),
-          Container(
-            width: double.infinity,
-            height: 30,
-            child: ElevatedButton(
-              onPressed: _submitQuiz,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF2ECC71),
-                // shape: RoundedRectangleBorder(
-                //   borderRadius: BorderRadius.circular(25),
-                // ),
-                elevation: 5,
-              ),
-              child: const Text(
-                'Submit Quiz',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
+          // const SizedBox(height: 10),
+          // Container(
+          //   width: double.infinity,
+          //   height: 30,
+          //   child: ElevatedButton(
+          //     onPressed: _submitQuiz,
+          //     style: ElevatedButton.styleFrom(
+          //       backgroundColor: const Color(0xFF2ECC71),
+          //       // shape: RoundedRectangleBorder(
+          //       //   borderRadius: BorderRadius.circular(25),
+          //       // ),
+          //       elevation: 5,
+          //     ),
+          //     child: const Text(
+          //       'Submit Quiz',
+          //       style: TextStyle(
+          //         fontSize: 15,
+          //         fontWeight: FontWeight.bold,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

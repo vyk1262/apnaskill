@@ -11,7 +11,7 @@ import 'package:skill_factorial/screens/common_widgets/cached_network_image_widg
 
 import '../constants/image_urls.dart'; // Keep if used elsewhere or remove if not
 import 'common_widgets/custom_app_bar.dart';
-import 'quiz_screen.dart';
+import 'course_content_screen.dart';
 
 class QuizListHome extends StatefulWidget {
   const QuizListHome({Key? key}) : super(key: key);
@@ -335,7 +335,7 @@ class _QuizListHomeState extends State<QuizListHome> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => QuizScreen(
+                builder: (context) => CourseContentScreen(
                   internshipName: internshipName,
                   quizList: quizList,
                 ),
@@ -454,7 +454,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QuizScreen(
+                              builder: (context) => CourseContentScreen(
                                 internshipName: internshipName,
                                 quizList: quizList,
                               ),
