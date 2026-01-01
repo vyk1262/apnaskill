@@ -4,7 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
+// removed go_router usage - will use Navigator
+import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/constants/colors.dart'; // Assuming AppColors.primaryColor exists here
 import 'package:skill_factorial/screens/common_widgets/custom_search_bar.dart';
 import 'package:skill_factorial/screens/common_widgets/cached_network_image_widget.dart'; // Keep if used elsewhere or remove if not
@@ -327,7 +328,10 @@ class _QuizListHomeState extends State<QuizListHome> {
         onTap: () {
           // Redirect to login if user is not authenticated
           if (user == null) {
-            GoRouter.of(context).go('/login');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AuthScreen()),
+            );
             return;
           }
           // Navigate to QuizScreen if unlocked, otherwise show unlock dialog
@@ -446,7 +450,11 @@ class _QuizListHomeState extends State<QuizListHome> {
                       onPressed: () {
                         // Redirect to login if user is not authenticated
                         if (user == null) {
-                          GoRouter.of(context).go('/login');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AuthScreen()),
+                          );
                           return;
                         }
                         // Navigate to QuizScreen if unlocked, otherwise show unlock dialog

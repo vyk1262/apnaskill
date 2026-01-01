@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// removed go_router usage - will use Navigator
+import 'package:skill_factorial/screens/courses_home.dart';
 
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});
@@ -10,7 +11,12 @@ class NotFoundPage extends StatelessWidget {
       appBar: AppBar(title: const Text('404 - Not Found')),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => context.go('/'),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const QuizListHome()),
+            );
+          },
           child: const Text('Go to Home'),
         ),
       ),

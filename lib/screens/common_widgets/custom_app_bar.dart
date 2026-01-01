@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// removed go_router usage - will use Navigator with MaterialPageRoute
 import 'package:skill_factorial/constants/colors.dart';
+import 'package:skill_factorial/screens/courses_home.dart';
+import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/screens/common_widgets/cached_network_image_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -66,7 +68,13 @@ class _CustomAppBarState extends State<CustomAppBar>
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () => context.go('/'),
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const QuizListHome()),
+                      );
+                    },
                     // child: const CachedNetworkImageWidget(
                     //   imageUrl: 'https://i.ibb.co/xtLkhZLb/logo.png',
                     //   width: 30,
@@ -114,7 +122,11 @@ class _CustomAppBarState extends State<CustomAppBar>
                       ? const SizedBox.shrink()
                       : IconButton(
                           onPressed: () {
-                            context.go('/profile');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ProfileScreen()),
+                            );
                           },
                           icon: const Icon(
                             Icons.account_box,
@@ -147,7 +159,11 @@ class _CustomAppBarState extends State<CustomAppBar>
                                 ),
                               ),
                               onPressed: () {
-                                context.go('/login');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const AuthScreen()),
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
@@ -167,7 +183,12 @@ class _CustomAppBarState extends State<CustomAppBar>
                                   )),
                               onPressed: () async {
                                 await FirebaseAuth.instance.signOut();
-                                context.go('/');
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const QuizListHome()),
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
@@ -292,7 +313,30 @@ class _CustomAppBarState extends State<CustomAppBar>
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: TextButton(
-        onPressed: () => context.go('/$screenName'),
+        onPressed: () {
+          final target = screenName.replaceAll('/', '');
+          if (target.isEmpty) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const QuizListHome()),
+            );
+          } else if (target == 'login') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AuthScreen()),
+            );
+          } else if (target == 'profile') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfileScreen()),
+            );
+          } else {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const QuizListHome()),
+            );
+          }
+        },
         child: Text(
           label,
           style: const TextStyle(
@@ -310,7 +354,23 @@ class _CustomAppBarState extends State<CustomAppBar>
     return TextButton(
       onPressed: () {
         Navigator.pop(context); // Close the drawer
-        context.go('/$screenName');
+        final target = screenName.replaceAll('/', '');
+        if (target.isEmpty) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const QuizListHome()),
+          );
+        } else if (target == 'login') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AuthScreen()),
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const QuizListHome()),
+          );
+        }
       },
       style: TextButton.styleFrom(
         foregroundColor: Colors.white, // Text color when pressed
@@ -332,7 +392,10 @@ class _CustomAppBarState extends State<CustomAppBar>
     return TextButton(
       onPressed: () {
         Navigator.pop(context);
-        context.go('/profile');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ProfileScreen()),
+        );
       },
       child: Column(
         children: [
@@ -378,7 +441,23 @@ class _CustomAppBarState extends State<CustomAppBar>
         if (!isLogin) {
           await FirebaseAuth.instance.signOut();
         }
-        context.go('/$screenName');
+        final target = screenName.replaceAll('/', '');
+        if (target.isEmpty) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const QuizListHome()),
+          );
+        } else if (target == 'login') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AuthScreen()),
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const QuizListHome()),
+          );
+        }
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white,

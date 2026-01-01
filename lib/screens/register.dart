@@ -2,7 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
+// removed go_router usage - will use Navigator
+import 'package:skill_factorial/screens/courses_home.dart';
 // import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -78,7 +79,10 @@ class _AuthScreenState extends State<AuthScreen> {
 
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      context.go('/quizzes');
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const QuizListHome()),
+      );
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Sign-in failed: ${e.message}');
     } finally {
@@ -128,7 +132,10 @@ class _AuthScreenState extends State<AuthScreen> {
         });
 
         Provider.of<UserModel>(context, listen: false).setUserId(user.email);
-        context.go('/quizzes');
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const QuizListHome()),
+        );
       }
     } on FirebaseAuthException catch (e) {
       _showErrorDialog('Sign-up failed: ${e.message}');
@@ -309,7 +316,10 @@ class _AuthScreenState extends State<AuthScreen> {
         } else {
           debugPrint('User document already exists in Firestore.');
         }
-        context.go('/quizzes');
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const QuizListHome()),
+        );
       } else {
         debugPrint('Firebase User object is null after Google Sign-In.');
       }

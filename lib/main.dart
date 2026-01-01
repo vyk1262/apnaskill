@@ -11,7 +11,7 @@ import 'firebase_options.dart';
 import 'model/user_model.dart';
 import 'screens/url_not_found.dart';
 
-import 'package:go_router/go_router.dart';
+// removed go_router usage - using direct navigation
 
 // void main() => runApp(MyApp());
 Future<void> main() async {
@@ -28,29 +28,7 @@ Future<void> main() async {
   );
 }
 
-final router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const QuizListHome(),
-      routes: [
-        // GoRoute(
-        //   path: 'quizzes',
-        //   builder: (context, state) => const QuizListHome(),
-        // ),
-        GoRoute(
-          path: 'login',
-          builder: (context, state) => const AuthScreen(),
-        ),
-      ],
-    ),
-    GoRoute(
-      path: '/profile',
-      builder: (context, state) => const ProfileScreen(),
-    ),
-  ],
-  errorBuilder: (context, state) => const NotFoundPage(),
-);
+// GoRouter removed. Navigation will use Navigator and MaterialPageRoute.
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -58,12 +36,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // bool isMobile = MediaQuery.of(context).size.width < 700;
-    return MaterialApp.router(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routerConfig: router,
       title: 'Skill Factorial',
       theme: CustomTheme.lightTheme,
-      // home: isMobile ? MobileTabs() : Tabs(),
+      home: const QuizListHome(),
     );
   }
 }
