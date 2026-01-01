@@ -131,8 +131,8 @@ class _CustomAppBarState extends State<CustomAppBar>
                           // _buildNavButton(context,
                           //     label: 'Mentors', screenName: 'mentors'),
 
-                          _buildNavButton(context,
-                              label: 'Quizzes', screenName: 'quizzes'),
+                          // _buildNavButton(context,
+                          //     label: 'Quizzes', screenName: 'quizzes'),
 
                           if (user == null)
                             ElevatedButton.icon(
@@ -257,10 +257,9 @@ class _CustomAppBarState extends State<CustomAppBar>
                                 _buildDrawerButton(context,
                                     label: 'Home', screenName: '/'),
                                 const SizedBox(height: 15),
-                                _buildDrawerButton(context,
-                                    label: 'Quizzes', screenName: 'quizzes'),
-                                const SizedBox(height: 15),
-                                const SizedBox(height: 15),
+                                // _buildDrawerButton(context,
+                                //     label: 'Quizzes', screenName: 'quizzes'),
+                                // const SizedBox(height: 15),
                                 if (user == null)
                                   _buildDrawerAuthButton(context,
                                       label: 'Login',

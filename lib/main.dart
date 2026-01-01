@@ -34,10 +34,10 @@ final router = GoRouter(
       path: '/',
       builder: (context, state) => const QuizListHome(),
       routes: [
-        GoRoute(
-          path: 'quizzes',
-          builder: (context, state) => const QuizListHome(),
-        ),
+        // GoRoute(
+        //   path: 'quizzes',
+        //   builder: (context, state) => const QuizListHome(),
+        // ),
         GoRoute(
           path: 'login',
           builder: (context, state) => const AuthScreen(),

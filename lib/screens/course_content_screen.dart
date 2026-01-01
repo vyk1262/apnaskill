@@ -28,11 +28,14 @@ class CourseContentScreen extends StatefulWidget {
 class _CourseContentScreenState extends State<CourseContentScreen> {
   List<String?> _userAnswers = [];
   List<Map<String, dynamic>> quizData = [];
+  List<Map<String, dynamic>> projectData = [];
   List<Map<String, dynamic>> assignmentData = [];
   bool showGeneralInfo = true;
 
   String? selectedQuiz; // Default selected quiz topic
   String? selectedAssignment; // Track selected assignment
+  String? selectedProjectWeek;
+  bool showProjects = false;
   List<String> completedQuizzes = [];
   bool _showSidebarMobile = false;
 
@@ -83,6 +86,31 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
       }
     } catch (e) {
       print('❌ Error loading quiz data: $e');
+    }
+  }
+
+  Future<void> _loadProjectData(String week) async {
+    try {
+      final ref = FirebaseStorage.instance.ref().child(
+          'quiz_data/${widget.internshipName.toLowerCase().replaceAll(' ', '_')}_projects.json');
+      final url = await ref.getDownloadURL();
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> jsonData = jsonDecode(response.body);
+        final List<dynamic> projects = jsonData['result'];
+        final selectedProject = projects.firstWhere((p) => p['week'] == week);
+
+        setState(() {
+          projectData =
+              List<Map<String, dynamic>>.from(selectedProject['instructions']);
+          selectedProjectWeek = week;
+          showProjects = true;
+          selectedQuiz = null;
+        });
+      }
+    } catch (e) {
+      print('Project not found: $e');
     }
   }
 

@@ -95,8 +95,7 @@ class _AuthScreenState extends State<AuthScreen> {
     final upiTraId = _upiTraIdController.text.trim();
 
     // Simple validation
-    if ([email, password, mobileNumber, upiTraId]
-        .any((field) => field.isEmpty)) {
+    if ([email, password, mobileNumber].any((field) => field.isEmpty)) {
       _showErrorDialog('Please fill all fields');
       return;
     }
@@ -142,61 +141,120 @@ class _AuthScreenState extends State<AuthScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final bool isMobile = screenWidth < 768; // Adjust threshold as needed
     return Scaffold(
       appBar: CustomAppBar(),
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Row(
             children: [
-              // Auth Card
-              Card(
-                elevation: 15,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Container(
-                  padding: EdgeInsets.all(30),
-                  decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: _isSignIn
-                      ? SignInForm(
-                          emailController: _emailController,
-                          passwordController: _passwordController,
-                          onSignIn: _signIn,
-                          onGoogleSignIn: _signInWithGoogle,
-                        )
-                      : SignUpForm(
-                          emailController: _emailController,
-                          passwordController: _passwordController,
-                          mobileNumberController: _mobileNumberController,
-                          onSignUp: _signUp,
+              isMobile
+                  ? Container()
+                  : Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(40.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Master Every Skill with Skill Factorial",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+                            const Text(
+                              "Target the skills that matter most to you. and unlock your full potential.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            const SizedBox(height: 50),
+                            // Image with a subtle shadow/float effect
+                            Hero(
+                              tag: 'auth_img',
+                              child: Image.asset(
+                                'assets/student_home/sfcmp.png',
+                                height: 350,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ],
                         ),
-                ),
-              ),
-              SizedBox(height: 30),
-
-              // Toggle Button
-              // buildCtaButton(
-              //   text: _isSignIn
-              //       ? 'Create New Account'
-              //       : 'Already Have an Account?',
-              //   onPressed: _toggleForm,
-              // ),
-
-              if (_isLoading)
-                Container(
-                  color: Colors.black.withOpacity(0.5),
-                  child: Center(
-                    child: CircularProgressIndicator.adaptive(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        AppColors.primaryColor,
                       ),
                     ),
-                  ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    GoogleSignInButton(
+                      onPressed: _signInWithGoogle,
+                    ),
+                    const SizedBox(height: 20),
+                    const Text(
+                      'OR',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    // Toggle Button
+                    buildCtaButton(
+                      text: _isSignIn
+                          ? 'Create New Account'
+                          : 'Already Have an Account?',
+                      onPressed: _toggleForm,
+                    ),
+                    const SizedBox(height: 20),
+                    // Auth Card
+                    Card(
+                      elevation: 15,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.all(30),
+                        decoration: BoxDecoration(
+                          color: Colors.purple.shade100,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: _isSignIn
+                            ? SignInForm(
+                                emailController: _emailController,
+                                passwordController: _passwordController,
+                                onSignIn: _signIn,
+                              )
+                            : SignUpForm(
+                                emailController: _emailController,
+                                passwordController: _passwordController,
+                                mobileNumberController: _mobileNumberController,
+                                onSignUp: _signUp,
+                              ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    if (_isLoading)
+                      Container(
+                        color: Colors.black.withOpacity(0.5),
+                        child: Center(
+                          child: CircularProgressIndicator.adaptive(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              AppColors.primaryColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
+              ),
             ],
           ),
         ),
@@ -273,105 +331,47 @@ class SignInForm extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final VoidCallback onSignIn;
-  final VoidCallback onGoogleSignIn;
 
   const SignInForm({
     Key? key,
     required this.emailController,
     required this.passwordController,
     required this.onSignIn,
-    required this.onGoogleSignIn,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Expanded(
-          flex: 1,
-          child: Padding(
-            padding: const EdgeInsets.all(40.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "Master Your Career Path",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  "Join thousands of students learning industry-ready skills with Skill Factorial.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18, color: Colors.white70),
-                ),
-                const SizedBox(height: 50),
-                // Image with a subtle shadow/float effect
-                Hero(
-                  tag: 'auth_img',
-                  child: Image.asset(
-                    'assets/student_home/sfcmp.png',
-                    height: 350,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ],
-            ),
+        TextField(
+          controller: emailController,
+          keyboardType: TextInputType.emailAddress,
+          style: const TextStyle(color: Colors.black),
+          decoration: const InputDecoration(
+            labelText: 'Email',
+            border: OutlineInputBorder(),
+            prefixIcon: Icon(Icons.email),
           ),
         ),
-        Expanded(
-          flex: 1,
-          child: Column(
-            children: [
-              GoogleSignInButton(
-                onPressed: onGoogleSignIn,
-              ),
-              // const SizedBox(height: 20),
-              // const Text(
-              //   'OR',
-              //   style: TextStyle(
-              //     fontSize: 28,
-              //     fontWeight: FontWeight.bold,
-              //     color: Colors.white,
-              //   ),
-              // ),
-              // const SizedBox(height: 20),
-              // TextField(
-              //   controller: emailController,
-              //   keyboardType: TextInputType.emailAddress,
-              //   style: const TextStyle(color: Colors.white),
-              //   decoration: const InputDecoration(
-              //     labelText: 'Email',
-              //     border: OutlineInputBorder(),
-              //     prefixIcon: Icon(Icons.email),
-              //   ),
-              // ),
-              // const SizedBox(height: 16),
-              // TextField(
-              //   controller: passwordController,
-              //   obscureText: true,
-              //   style: const TextStyle(color: Colors.white),
-              //   decoration: const InputDecoration(
-              //     labelText: 'Password',
-              //     border: OutlineInputBorder(),
-              //     prefixIcon: Icon(Icons.lock),
-              //   ),
-              // ),
-              // const SizedBox(height: 16),
-              // ElevatedButton(
-              //   style: ElevatedButton.styleFrom(
-              //     backgroundColor: AppColors.primaryColor,
-              //     padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              //   ),
-              //   onPressed: onSignIn,
-              //   child: const Text('Sign In', style: TextStyle(fontSize: 16)),
-              // ),
-            ],
+        const SizedBox(height: 16),
+        TextField(
+          controller: passwordController,
+          obscureText: true,
+          style: const TextStyle(color: Colors.black),
+          decoration: const InputDecoration(
+            labelText: 'Password',
+            border: OutlineInputBorder(),
+            prefixIcon: Icon(Icons.lock),
           ),
+        ),
+        const SizedBox(height: 16),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.primaryColor,
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+          ),
+          onPressed: onSignIn,
+          child: const Text('Sign In', style: TextStyle(fontSize: 16)),
         ),
       ],
     );
@@ -443,10 +443,10 @@ class GoogleSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 400,
       height: 50,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.black87,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
@@ -477,7 +477,7 @@ class GoogleSignInButton extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    color: Colors.black87,
+                    color: Colors.white,
                   ),
                 ),
               ],
