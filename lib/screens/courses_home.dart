@@ -411,12 +411,18 @@ class _QuizListHomeState extends State<QuizListHome> {
                   const SizedBox(width: 5),
                   Text(
                     isUnlocked
-                        ? "Unlocked"
-                        : "Free", // Display 'Unlocked' or 'Free'
+                        ? (userData?['internshipsList']?.any((item) =>
+                                    item['internshipName'] == internshipName &&
+                                    item['course_tier'] == 'accelerator') ??
+                                false
+                            ? 'Accelerator ✓'
+                            : 'Booster ✓\nUpgrade to Accelerator')
+                        : 'Free → Unlock',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 14, fontWeight: FontWeight.bold,
                       color: isUnlocked ? Colors.green : Colors.amber[700],
+                      height: 1.3, // Line height for multi-line
                     ),
                   ),
                 ],
@@ -478,7 +484,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                               : Icons
                                   .lock_open, // Icon changes based on unlocked status
                           size: 18),
-                      label: Text(isUnlocked ? "Start Quiz" : "Unlock"),
+                      label: Text(isUnlocked ? "Start Learning" : "Unlock"),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: isUnlocked
                             ? Colors.green
@@ -491,6 +497,28 @@ class _QuizListHomeState extends State<QuizListHome> {
                       ),
                     ),
                   ),
+                  // Add this new Expanded widget BEFORE the closing Row ]
+                  if (isUnlocked &&
+                      !(userData?['internshipsList']?.any((item) =>
+                              item['internshipName'] == internshipName &&
+                              item['course_tier'] == 'accelerator') ??
+                          false))
+                    Expanded(
+                      child: ElevatedButton.icon(
+                        onPressed: () =>
+                            _showUpgradeDialog(context, internshipName),
+                        icon: const Icon(Icons.flash_on, size: 18),
+                        label: const Text("Upgrade"),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ],
@@ -503,85 +531,162 @@ class _QuizListHomeState extends State<QuizListHome> {
   /// Shows a dialog for unlocking an internship.
   /// Collects UPI transaction ID and mobile number.
   void _showUnlockDialog(BuildContext context, String internshipName) {
-    final upiController = TextEditingController();
-    final mobileNumberController = TextEditingController(
-        text: userData?['mobileNumber'] ?? ''); // Pre-fill if available
-    final _formKey = GlobalKey<FormState>(); // Key for form validation
+    final mobileNumberController =
+        TextEditingController(text: userData?['mobileNumber'] ?? '');
+    String? selectedTier = 'booster'; // Default
+    final _formKey = GlobalKey<FormState>();
 
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Unlock - $internshipName"),
-        content: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisSize:
-                MainAxisSize.min, // Make column only take necessary space
-            children: [
-              // const Text("Enter Code below: FREE"), // Instruction for the code
-              // TextFormField(
-              //   controller: upiController,
-              //   decoration: const InputDecoration(hintText: 'FREE'),
-              //   validator: (value) {
-              //     if (value == null || value.isEmpty || value != 'FREE') {
-              //       return 'Code is required and must be FREE'; // Validation for the code
-              //     }
-              //     return null;
-              //   },
-              // ),
-              // const SizedBox(height: 8),
-              const Text(
-                  "Enter Mobile Number"), // Instruction for mobile number
-              TextFormField(
-                controller: mobileNumberController,
-                keyboardType: TextInputType.phone,
-                decoration: const InputDecoration(hintText: 'Mobile Number'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Mobile Number is required'; // Validation for mobile number
-                  }
-                  if (value.length != 10) {
-                    return 'Enter a 10-digit mobile number'; // Length validation
-                  }
-                  return null;
-                },
-              ),
-            ],
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: Text('Unlock $internshipName'),
+          content: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Tier Selection Section
+                Text('Choose your plan:',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+
+                RadioListTile<String>(
+                  title: Text('Booster (Quizzes Only)'),
+                  subtitle: Text('₹99/- • 4 weeks'),
+                  value: 'booster',
+                  groupValue: selectedTier,
+                  onChanged: (value) =>
+                      setDialogState(() => selectedTier = value!),
+                ),
+                RadioListTile<String>(
+                  title: Text('Accelerator (Quizzes + Projects)'),
+                  subtitle: Text('₹999/- • 12 weeks'),
+                  value: 'accelerator',
+                  groupValue: selectedTier,
+                  onChanged: (value) =>
+                      setDialogState(() => selectedTier = value!),
+                ),
+
+                const Divider(height: 32), // Clear visual separation
+
+                // Mobile Number Section
+                Text('Payment Details:',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+
+                TextFormField(
+                  controller: mobileNumberController,
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    hintText: 'Mobile Number',
+                    prefixIcon: Icon(Icons.phone),
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (v) =>
+                      v!.length != 10 ? 'Enter 10-digit number' : null,
+                ),
+              ],
+            ),
           ),
+          actions: [
+            TextButton(
+                onPressed: () => Navigator.pop(context), child: Text('Cancel')),
+            ElevatedButton(
+              onPressed: () async {
+                if (_formKey.currentState!.validate()) {
+                  await _unlockInternshipAndStoreData(internshipName,
+                      mobileNumberController.text, selectedTier!);
+                  Navigator.pop(context);
+                }
+              },
+              child: Text('Unlock - ${selectedTier!.toUpperCase()}'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Shows upgrade dialog for Accelerator plan
+  void _showUpgradeDialog(BuildContext context, String internshipName) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Upgrade to Accelerator'),
+        content: const Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('₹900/- (Quizzes + Projects)',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            SizedBox(height: 16),
+            Text('Get access to projects and extended access!'),
+          ],
         ),
         actions: [
           TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel')),
+          ElevatedButton.icon(
             onPressed: () async {
-              if (_formKey.currentState!.validate()) {
-                // Validate form before submitting
-                await _unlockInternshipAndStoreData(
-                  internshipName,
-                  // upiController.text,
-                  mobileNumberController.text,
-                );
-                if (mounted)
-                  Navigator.of(context)
-                      .pop(); // Pop dialog if widget is still mounted
-              }
+              await _upgradeToAccelerator(internshipName);
+              Navigator.pop(context);
             },
-            child: const Text("Submit"),
-          ),
-          TextButton(
-            onPressed: () =>
-                Navigator.of(context).pop(), // Close dialog on cancel
-            child: const Text("Cancel"),
+            icon: const Icon(Icons.flash_on),
+            label: const Text('Unlock Accelerator'),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
           ),
         ],
       ),
     );
   }
 
+  /// Upgrades existing booster internship to accelerator
+  Future<void> _upgradeToAccelerator(String internshipName) async {
+    user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      try {
+        // Remove old booster entry and add accelerator entry
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user!.uid)
+            .update({
+          'internshipsList': FieldValue.arrayRemove([
+            {
+              'internshipName': internshipName,
+              'course_tier': 'booster',
+            }
+          ]),
+          'internshipsList': FieldValue.arrayUnion([
+            {
+              'internshipName': internshipName,
+              'course_tier': 'accelerator',
+              'quizMarks': FieldValue.arrayUnion([]), // Preserve existing
+              'projectMarks': [], // Initialize projects
+            }
+          ]),
+          'tier': 'accelerator', // Update user tier
+        });
+
+        _fetchUserData(); // Refresh UI
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Upgraded to Accelerator! 🎉')),
+        );
+      } catch (e) {
+        print('Upgrade error: $e');
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Upgrade failed. Try again.')),
+        );
+      }
+    }
+  }
+
   /// Unlocks an internship for the current user and stores the data in Firestore.
   /// Refreshes user data after the update.
   Future<void> _unlockInternshipAndStoreData(
     String internshipName,
-    // String upiTraId,
     String mobileNumber,
+    String tier,
   ) async {
     user = FirebaseAuth.instance.currentUser; // Get current user
     if (user != null) {
@@ -594,11 +699,14 @@ class _QuizListHomeState extends State<QuizListHome> {
           'internshipsList': FieldValue.arrayUnion([
             {
               'internshipName': internshipName,
+              'course_tier': tier,
               'quizMarks': [], // Initialize with empty marks
+              'projectMarks': tier == 'accelerator' ? [] : null,
               // 'upiTraId': upiTraId,
             }
           ]),
-          'mobileNumber': mobileNumber // Update mobile number
+          'mobileNumber': mobileNumber, // Update mobile number
+          'tier': tier, // Store selected tier at user level
         }, SetOptions(merge: true)); // Merge with existing document
         _fetchUserData(); // Refresh user data to update the UI
         if (mounted) {
