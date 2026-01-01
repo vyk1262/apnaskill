@@ -307,6 +307,23 @@ class _QuizListHomeState extends State<QuizListHome> {
             (internship) => internship['internshipName'] == internshipName) ??
         false;
 
+    String? cardProfId;
+    bool hasProfId = false;
+    if (isUnlocked && userData?['internshipsList'] != null) {
+      for (var item in userData!['internshipsList']) {
+        if (item['internshipName'] == internshipName) {
+          cardProfId = item['professor_id'];
+          hasProfId = cardProfId != null;
+          break;
+        }
+      }
+    }
+
+    bool isAccelerator = userData?['internshipsList']?.any((item) =>
+            item['internshipName'] == internshipName &&
+            item['course_tier'] == 'accelerator') ??
+        false;
+
     // This part is commented out, but kept for reference if image logic is reintroduced.
     // String imageUrl = ImageUrls.courseImages[internshipName] ??
     //     'https://i.ibb.co/W4KbgWSq/sfcmp.png';
@@ -334,7 +351,7 @@ class _QuizListHomeState extends State<QuizListHome> {
             );
             return;
           }
-          // Navigate to QuizScreen if unlocked, otherwise show unlock dialog
+
           if (isUnlocked) {
             Navigator.push(
               context,
@@ -409,20 +426,23 @@ class _QuizListHomeState extends State<QuizListHome> {
                       ),
                     ),
                   const SizedBox(width: 5),
-                  Text(
-                    isUnlocked
-                        ? (userData?['internshipsList']?.any((item) =>
-                                    item['internshipName'] == internshipName &&
-                                    item['course_tier'] == 'accelerator') ??
-                                false
-                            ? 'Accelerator ✓'
-                            : 'Booster ✓\nUpgrade to Accelerator')
-                        : 'Free → Unlock',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 14, fontWeight: FontWeight.bold,
-                      color: isUnlocked ? Colors.green : Colors.amber[700],
-                      height: 1.3, // Line height for multi-line
+                  Expanded(
+                    child: Text(
+                      isUnlocked
+                          ? (userData?['internshipsList']?.any((item) =>
+                                      item['internshipName'] ==
+                                          internshipName &&
+                                      item['course_tier'] == 'accelerator') ??
+                                  false
+                              ? 'Accelerator ✓'
+                              : 'Booster ✓')
+                          : 'Free',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.bold,
+                        color: isUnlocked ? Colors.green : Colors.amber[700],
+                        height: 1.3, // Line height for multi-line
+                      ),
                     ),
                   ),
                 ],
@@ -464,19 +484,18 @@ class _QuizListHomeState extends State<QuizListHome> {
                           return;
                         }
                         // Navigate to QuizScreen if unlocked, otherwise show unlock dialog
-                        if (isUnlocked) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CourseContentScreen(
-                                internshipName: internshipName,
-                                quizList: quizList,
-                              ),
-                            ),
-                          );
-                        } else {
-                          _showUnlockDialog(context, internshipName);
-                        }
+                        final hasBooster = userData?['internshipsList']?.any(
+                              (item) =>
+                                  item['internshipName'] == internshipName &&
+                                  item['course_tier'] == 'booster',
+                            ) ??
+                            false;
+                        _showUnlockDialog(
+                          context,
+                          internshipName,
+                          isUpgradeMode: hasBooster,
+                          existingProfId: cardProfId,
+                        );
                       },
                       icon: Icon(
                           isUnlocked
@@ -484,7 +503,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                               : Icons
                                   .lock_open, // Icon changes based on unlocked status
                           size: 18),
-                      label: Text(isUnlocked ? "Start Learning" : "Unlock"),
+                      label: Text(isUnlocked ? "Upgrade" : "Unlock"),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: isUnlocked
                             ? Colors.green
@@ -498,27 +517,6 @@ class _QuizListHomeState extends State<QuizListHome> {
                     ),
                   ),
                   // Add this new Expanded widget BEFORE the closing Row ]
-                  if (isUnlocked &&
-                      !(userData?['internshipsList']?.any((item) =>
-                              item['internshipName'] == internshipName &&
-                              item['course_tier'] == 'accelerator') ??
-                          false))
-                    Expanded(
-                      child: ElevatedButton.icon(
-                        onPressed: () =>
-                            _showUpgradeDialog(context, internshipName),
-                        icon: const Icon(Icons.flash_on, size: 18),
-                        label: const Text("Upgrade"),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          foregroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                        ),
-                      ),
-                    ),
                 ],
               ),
             ],
@@ -528,64 +526,121 @@ class _QuizListHomeState extends State<QuizListHome> {
     );
   }
 
+  void _copyProfId(BuildContext context, String profId) {
+    Clipboard.setData(ClipboardData(text: profId));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Copied: $profId'), backgroundColor: Colors.green),
+    );
+  }
+
   /// Shows a dialog for unlocking an internship.
   /// Collects UPI transaction ID and mobile number.
-  void _showUnlockDialog(BuildContext context, String internshipName) {
+  /// Shows a dialog for unlocking or upgrading an internship.
+  /// Always opens; if booster exists, preselects Accelerator with discount
+  /// and prefills professorId / enrollmentType / mobile from Firestore.
+  void _showUnlockDialog(
+    BuildContext context,
+    String internshipName, {
+    bool isUpgradeMode = false,
+    String? existingProfId, // optional prefilled professor id from card
+  }) {
+    // Find existing internship entry, if any
+    Map<String, dynamic>? existingEntry;
+    if (userData?['internshipsList'] != null) {
+      for (var item in userData!['internshipsList']) {
+        if (item['internshipName'] == internshipName) {
+          existingEntry = Map<String, dynamic>.from(item);
+          break;
+        }
+      }
+    }
+
+    final bool hasExistingBooster =
+        existingEntry != null && existingEntry['course_tier'] == 'booster';
+    final bool hasExistingAccelerator =
+        existingEntry != null && existingEntry['course_tier'] == 'accelerator';
+
+    // Default tier: if booster already exists, preselect accelerator
+    String? selectedTier = hasExistingBooster ? 'accelerator' : 'booster';
+
+    // Enrollment type and prof id from Firestore if present
+    String enrollmentType = existingEntry?['enrollmentType'] ?? 'self';
+
+    // Professor ID: prefer explicitly passed one, then Firestore value
+    final String? storedProfId =
+        existingProfId ?? existingEntry?['professor_id'];
+
     final mobileNumberController =
         TextEditingController(text: userData?['mobileNumber'] ?? '');
-    String? selectedTier = 'booster'; // Default
-    String? enrollmentType = 'self'; // NEW: Self vs Classroom
+
     final TextEditingController profIdController =
-        TextEditingController(); // NEW
+        TextEditingController(text: storedProfId ?? '');
+
     final _formKey = GlobalKey<FormState>();
 
     showDialog(
       context: context,
       builder: (context) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
-          title: Text('Unlock $internshipName'),
+          // If booster exists, treat as Upgrade, else Unlock
+          title: Text(
+            hasExistingBooster
+                ? 'Upgrade $internshipName'
+                : 'Unlock $internshipName',
+          ),
           content: SingleChildScrollView(
-            // NEW: Scrollable content
             child: Form(
               key: _formKey,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // NEW: Enrollment Type Selection
-                  Text('Enrollment Type:',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  // Enrollment type
+                  const Text(
+                    'Enrollment Type:',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   RadioListTile<String>(
                     title: const Text('Self Learning'),
                     subtitle: const Text('Individual purchase'),
                     value: 'self',
                     groupValue: enrollmentType,
-                    onChanged: (value) => setDialogState(() {
-                      enrollmentType = value!;
-                      if (value == 'self') profIdController.clear();
-                    }),
+                    onChanged: (value) {
+                      setDialogState(() {
+                        enrollmentType = value!;
+                        // Clear professor id only when switching to self
+                        if (enrollmentType == 'self') {
+                          profIdController.clear();
+                        }
+                      });
+                    },
                   ),
                   RadioListTile<String>(
                     title: const Text('Classroom Learning'),
                     subtitle: const Text('Enter Professor ID'),
                     value: 'classroom',
                     groupValue: enrollmentType,
-                    onChanged: (value) =>
-                        setDialogState(() => enrollmentType = value!),
+                    onChanged: (value) {
+                      setDialogState(() {
+                        enrollmentType = value!;
+                        // keep existing prof id if any
+                      });
+                    },
                   ),
 
                   if (enrollmentType == 'classroom') ...[
-                    // NEW: Conditional Professor ID field
                     const Divider(height: 24),
                     TextFormField(
                       controller: profIdController,
                       decoration: const InputDecoration(
                         labelText: 'Professor ID (YYYY-MM-DD-XX) *',
                         hintText: 'YYYY-MM-DD-XX format',
-                        prefixIcon: const Icon(Icons.badge),
+                        prefixIcon: Icon(Icons.badge),
                         border: OutlineInputBorder(),
                       ),
-                      validator: (value) => value?.isEmpty ?? true
+                      validator: (value) => value == null || value.isEmpty
                           ? 'Professor ID is required for classroom enrollment'
                           : null,
                     ),
@@ -593,35 +648,55 @@ class _QuizListHomeState extends State<QuizListHome> {
 
                   const Divider(height: 32),
 
-                  // Tier Selection Section
-                  Text('Choose your plan:',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-
-                  RadioListTile<String>(
-                    title: const Text('Booster (Quizzes Only)'),
-                    subtitle: const Text('₹99/- • 4 weeks'),
-                    value: 'booster',
-                    groupValue: selectedTier,
-                    onChanged: (value) =>
-                        setDialogState(() => selectedTier = value!),
+                  // Plan selection
+                  const Text(
+                    'Choose your plan:',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+
+                  // Booster option: hide if already accelerator
+                  if (!hasExistingAccelerator)
+                    RadioListTile<String>(
+                      title: const Text('Booster (Quizzes Only)'),
+                      subtitle: Text(
+                        hasExistingBooster
+                            ? 'Already purchased at ₹99/-'
+                            : '₹99/- • 4 weeks',
+                      ),
+                      value: 'booster',
+                      groupValue: selectedTier,
+                      onChanged: (value) {
+                        setDialogState(() => selectedTier = value!);
+                      },
+                    ),
+
+                  // Accelerator option: if booster exists, show discounted price
                   RadioListTile<String>(
                     title: const Text('Accelerator (Quizzes + Projects)'),
-                    subtitle: const Text('₹999/- • 12 weeks'),
+                    subtitle: Text(
+                      hasExistingBooster
+                          ? '₹900/- (discounted upgrade) • 12 weeks'
+                          : '₹999/- • 12 weeks',
+                    ),
                     value: 'accelerator',
                     groupValue: selectedTier,
-                    onChanged: (value) =>
-                        setDialogState(() => selectedTier = value!),
+                    onChanged: (value) {
+                      setDialogState(() => selectedTier = value!);
+                    },
                   ),
 
                   const Divider(height: 32),
 
-                  // Mobile Number Section
-                  Text('Payment Details:',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-
+                  const Text(
+                    'Payment Details:',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   TextFormField(
                     controller: mobileNumberController,
                     keyboardType: TextInputType.phone,
@@ -630,8 +705,9 @@ class _QuizListHomeState extends State<QuizListHome> {
                       prefixIcon: Icon(Icons.phone),
                       border: OutlineInputBorder(),
                     ),
-                    validator: (v) =>
-                        v!.length != 10 ? 'Enter 10-digit number' : null,
+                    validator: (v) => v == null || v.length != 10
+                        ? 'Enter 10-digit number'
+                        : null,
                   ),
                 ],
               ),
@@ -639,60 +715,37 @@ class _QuizListHomeState extends State<QuizListHome> {
           ),
           actions: [
             TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('Cancel')),
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel'),
+            ),
             ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  await _unlockInternshipAndStoreData(
-                    internshipName,
-                    mobileNumberController.text,
-                    selectedTier!,
-                    enrollmentType!, // NEW
-                    enrollmentType == 'classroom'
-                        ? profIdController.text.trim()
-                        : null, // NEW
-                  );
-                  Navigator.pop(context);
+                  // If booster exists and user selects accelerator, treat as upgrade
+                  if (hasExistingBooster && selectedTier == 'accelerator') {
+                    await _upgradeToAccelerator(internshipName);
+                  } else {
+                    await _unlockInternshipAndStoreData(
+                      internshipName,
+                      mobileNumberController.text,
+                      selectedTier!,
+                      enrollmentType,
+                      enrollmentType == 'classroom'
+                          ? profIdController.text.trim()
+                          : null,
+                    );
+                  }
+                  if (mounted) Navigator.pop(context);
                 }
               },
-              child: Text('Unlock - ${selectedTier!.toUpperCase()}'),
+              child: Text(
+                hasExistingBooster && selectedTier == 'accelerator'
+                    ? 'Upgrade to ACCELERATOR'
+                    : 'Unlock - ${selectedTier!.toUpperCase()}',
+              ),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  /// Shows upgrade dialog for Accelerator plan
-  void _showUpgradeDialog(BuildContext context, String internshipName) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Upgrade to Accelerator'),
-        content: const Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('₹900/- (Quizzes + Projects)',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            SizedBox(height: 16),
-            Text('Get access to projects and extended access!'),
-          ],
-        ),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel')),
-          ElevatedButton.icon(
-            onPressed: () async {
-              await _upgradeToAccelerator(internshipName);
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.flash_on),
-            label: const Text('Unlock Accelerator'),
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-          ),
-        ],
       ),
     );
   }
