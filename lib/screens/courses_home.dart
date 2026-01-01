@@ -534,6 +534,9 @@ class _QuizListHomeState extends State<QuizListHome> {
     final mobileNumberController =
         TextEditingController(text: userData?['mobileNumber'] ?? '');
     String? selectedTier = 'booster'; // Default
+    String? enrollmentType = 'self'; // NEW: Self vs Classroom
+    final TextEditingController profIdController =
+        TextEditingController(); // NEW
     final _formKey = GlobalKey<FormState>();
 
     showDialog(
@@ -541,62 +544,115 @@ class _QuizListHomeState extends State<QuizListHome> {
       builder: (context) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
           title: Text('Unlock $internshipName'),
-          content: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Tier Selection Section
-                Text('Choose your plan:',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-
-                RadioListTile<String>(
-                  title: Text('Booster (Quizzes Only)'),
-                  subtitle: Text('₹99/- • 4 weeks'),
-                  value: 'booster',
-                  groupValue: selectedTier,
-                  onChanged: (value) =>
-                      setDialogState(() => selectedTier = value!),
-                ),
-                RadioListTile<String>(
-                  title: Text('Accelerator (Quizzes + Projects)'),
-                  subtitle: Text('₹999/- • 12 weeks'),
-                  value: 'accelerator',
-                  groupValue: selectedTier,
-                  onChanged: (value) =>
-                      setDialogState(() => selectedTier = value!),
-                ),
-
-                const Divider(height: 32), // Clear visual separation
-
-                // Mobile Number Section
-                Text('Payment Details:',
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-
-                TextFormField(
-                  controller: mobileNumberController,
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    hintText: 'Mobile Number',
-                    prefixIcon: Icon(Icons.phone),
-                    border: OutlineInputBorder(),
+          content: SingleChildScrollView(
+            // NEW: Scrollable content
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // NEW: Enrollment Type Selection
+                  Text('Enrollment Type:',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  RadioListTile<String>(
+                    title: const Text('Self Learning'),
+                    subtitle: const Text('Individual purchase'),
+                    value: 'self',
+                    groupValue: enrollmentType,
+                    onChanged: (value) => setDialogState(() {
+                      enrollmentType = value!;
+                      if (value == 'self') profIdController.clear();
+                    }),
                   ),
-                  validator: (v) =>
-                      v!.length != 10 ? 'Enter 10-digit number' : null,
-                ),
-              ],
+                  RadioListTile<String>(
+                    title: const Text('Classroom Learning'),
+                    subtitle: const Text('Enter Professor ID'),
+                    value: 'classroom',
+                    groupValue: enrollmentType,
+                    onChanged: (value) =>
+                        setDialogState(() => enrollmentType = value!),
+                  ),
+
+                  if (enrollmentType == 'classroom') ...[
+                    // NEW: Conditional Professor ID field
+                    const Divider(height: 24),
+                    TextFormField(
+                      controller: profIdController,
+                      decoration: const InputDecoration(
+                        labelText: 'Professor ID (YYYY-MM-DD-XX) *',
+                        hintText: 'YYYY-MM-DD-XX format',
+                        prefixIcon: const Icon(Icons.badge),
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) => value?.isEmpty ?? true
+                          ? 'Professor ID is required for classroom enrollment'
+                          : null,
+                    ),
+                  ],
+
+                  const Divider(height: 32),
+
+                  // Tier Selection Section
+                  Text('Choose your plan:',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+
+                  RadioListTile<String>(
+                    title: const Text('Booster (Quizzes Only)'),
+                    subtitle: const Text('₹99/- • 4 weeks'),
+                    value: 'booster',
+                    groupValue: selectedTier,
+                    onChanged: (value) =>
+                        setDialogState(() => selectedTier = value!),
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Accelerator (Quizzes + Projects)'),
+                    subtitle: const Text('₹999/- • 12 weeks'),
+                    value: 'accelerator',
+                    groupValue: selectedTier,
+                    onChanged: (value) =>
+                        setDialogState(() => selectedTier = value!),
+                  ),
+
+                  const Divider(height: 32),
+
+                  // Mobile Number Section
+                  Text('Payment Details:',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+
+                  TextFormField(
+                    controller: mobileNumberController,
+                    keyboardType: TextInputType.phone,
+                    decoration: const InputDecoration(
+                      hintText: 'Mobile Number',
+                      prefixIcon: Icon(Icons.phone),
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: (v) =>
+                        v!.length != 10 ? 'Enter 10-digit number' : null,
+                  ),
+                ],
+              ),
             ),
           ),
           actions: [
             TextButton(
-                onPressed: () => Navigator.pop(context), child: Text('Cancel')),
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Cancel')),
             ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  await _unlockInternshipAndStoreData(internshipName,
-                      mobileNumberController.text, selectedTier!);
+                  await _unlockInternshipAndStoreData(
+                    internshipName,
+                    mobileNumberController.text,
+                    selectedTier!,
+                    enrollmentType!, // NEW
+                    enrollmentType == 'classroom'
+                        ? profIdController.text.trim()
+                        : null, // NEW
+                  );
                   Navigator.pop(context);
                 }
               },
@@ -646,37 +702,54 @@ class _QuizListHomeState extends State<QuizListHome> {
     user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       try {
-        // Remove old booster entry and add accelerator entry
-        await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user!.uid)
-            .update({
-          'internshipsList': FieldValue.arrayRemove([
-            {
-              'internshipName': internshipName,
-              'course_tier': 'booster',
+        await FirebaseFirestore.instance.runTransaction((transaction) async {
+          DocumentReference userRef =
+              FirebaseFirestore.instance.collection('users').doc(user!.uid);
+          DocumentSnapshot snapshot = await transaction.get(userRef);
+
+          if (!snapshot.exists) throw Exception('User not found');
+
+          Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
+          List<dynamic> internshipsList = data['internshipsList'] ?? [];
+
+          // Find and replace booster with accelerator
+          bool found = false;
+          for (int i = 0; i < internshipsList.length; i++) {
+            Map<String, dynamic> item = internshipsList[i];
+            if (item['internshipName'] == internshipName &&
+                item['course_tier'] == 'booster') {
+              // Preserve quizMarks, upgrade tier, init projects
+              internshipsList[i] = {
+                'internshipName': internshipName,
+                'course_tier': 'accelerator',
+                'quizMarks': item['quizMarks'] ?? [],
+                'projectMarks': [],
+                'enrollmentType': item['enrollmentType'],
+                'professor_id': item['professor_id'],
+              };
+              found = true;
+              break;
             }
-          ]),
-          'internshipsList': FieldValue.arrayUnion([
-            {
-              'internshipName': internshipName,
-              'course_tier': 'accelerator',
-              'quizMarks': FieldValue.arrayUnion([]), // Preserve existing
-              'projectMarks': [], // Initialize projects
-            }
-          ]),
-          'tier': 'accelerator', // Update user tier
+          }
+
+          if (!found) throw Exception('Booster tier not found for upgrade');
+
+          transaction.update(userRef, {'internshipsList': internshipsList});
         });
 
-        _fetchUserData(); // Refresh UI
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Upgraded to Accelerator! 🎉')),
-        );
+        await _fetchUserData(); // Refresh UI
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Upgraded to Accelerator! 🎉')),
+          );
+        }
       } catch (e) {
         print('Upgrade error: $e');
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Upgrade failed. Try again.')),
-        );
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Upgrade failed: ${e.toString()}')),
+          );
+        }
       }
     }
   }
@@ -687,47 +760,40 @@ class _QuizListHomeState extends State<QuizListHome> {
     String internshipName,
     String mobileNumber,
     String tier,
+    String enrollmentType, // NEW
+    String? professorId, // NEW: optional
   ) async {
-    user = FirebaseAuth.instance.currentUser; // Get current user
+    user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       try {
         await FirebaseFirestore.instance
             .collection('users')
             .doc(user!.uid)
             .set({
-          // Use set with merge: true to avoid overwriting other fields
           'internshipsList': FieldValue.arrayUnion([
             {
               'internshipName': internshipName,
               'course_tier': tier,
-              'quizMarks': [], // Initialize with empty marks
+              'quizMarks': [],
               'projectMarks': tier == 'accelerator' ? [] : null,
-              // 'upiTraId': upiTraId,
+              'enrollmentType': enrollmentType, // NEW
+              'professor_id': professorId, // NEW: null for self
             }
           ]),
-          'mobileNumber': mobileNumber, // Update mobile number
-          'tier': tier, // Store selected tier at user level
-        }, SetOptions(merge: true)); // Merge with existing document
-        _fetchUserData(); // Refresh user data to update the UI
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('$internshipName unlocked successfully!')),
-          );
-        }
-      } catch (e) {
-        print('Error unlocking internship: $e');
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-                content:
-                    Text('Failed to unlock internship. Please try again.')),
-          );
-        }
-      }
-    } else {
-      if (mounted) {
+          'mobileNumber': mobileNumber,
+          'tier': tier,
+        }, SetOptions(merge: true));
+
+        _fetchUserData();
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Please log in to unlock courses.')),
+          SnackBar(
+            content: Text(
+                '$internshipName unlocked as $enrollmentType ${professorId != null ? '(Prof: $professorId)' : ''}!'),
+          ),
+        );
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Failed to unlock. Try again.')),
         );
       }
     }

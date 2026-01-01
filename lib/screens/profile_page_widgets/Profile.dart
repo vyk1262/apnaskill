@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/common_widgets/custom_app_bar.dart';
 import 'package:intl/intl.dart';
@@ -24,6 +25,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   DateTime? _selectedDate;
   String? _selectedGender;
   List<String> genderOptions = ['Male', 'Female', 'Other', 'Prefer not to say'];
+
+  TextEditingController _collegeController = TextEditingController();
+  TextEditingController _cityController = TextEditingController();
+  TextEditingController _stateController = TextEditingController();
+  bool _isGeneratingProfId = false;
 
   // Calculate profile completion percentage dynamically
   double _calculateProfileCompletion() {
@@ -50,6 +56,138 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return (completedFields / totalFields) * 100;
   }
 
+  Future<void> _generateProfessorId() async {
+    showDialog(
+      context: context,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Text('Generate Professor ID'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: _collegeController,
+                decoration: const InputDecoration(
+                  labelText: 'College Name *',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: _cityController,
+                decoration: const InputDecoration(
+                  labelText: 'City *',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: _stateController,
+                decoration: const InputDecoration(
+                  labelText: 'State *',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              onPressed: _isGeneratingProfId
+                  ? null
+                  : () => _createProfessorId(setDialogState),
+              child: _isGeneratingProfId
+                  ? const SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : const Text('Generate ID'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _createProfessorId(StateSetter setDialogState) async {
+    if (_collegeController.text.isEmpty ||
+        _cityController.text.isEmpty ||
+        _stateController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please fill all fields')),
+      );
+      return;
+    }
+
+    setDialogState(() => _isGeneratingProfId = true);
+
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+      if (user == null) throw Exception('Not logged in');
+
+      final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
+
+      // Get daily counter from Firestore
+      final counterDoc = await FirebaseFirestore.instance
+          .collection('professor_counters')
+          .doc(today)
+          .get();
+
+      int counter = 1;
+      if (counterDoc.exists) {
+        counter = (counterDoc.data()?['count'] ?? 0) + 1;
+      }
+
+      final professorId = '$today-${counter.toString().padLeft(2, '0')}';
+
+      // Update counter
+      await FirebaseFirestore.instance
+          .collection('professor_counters')
+          .doc(today)
+          .set({'count': counter, 'date': today}, SetOptions(merge: true));
+
+      // Save to user profile
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .update({
+        'professor_id': professorId,
+        'professor_college': _collegeController.text.trim(),
+        'professor_city': _cityController.text.trim(),
+        'professor_state': _stateController.text.trim(),
+        'professor_created_at': Timestamp.now(),
+      });
+
+      // Refresh user data
+      await _fetchUserData();
+
+      Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+              'Professor ID generated: $professorId ✓\nShare with your students!'),
+          backgroundColor: Colors.green,
+          duration: const Duration(seconds: 4),
+        ),
+      );
+
+      // Clear controllers
+      _collegeController.clear();
+      _cityController.clear();
+      _stateController.clear();
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e')),
+      );
+    } finally {
+      setDialogState(() => _isGeneratingProfId = false);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -62,6 +200,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void dispose() {
     _nameController.dispose();
     _mobileNumberController.dispose();
+    _collegeController.dispose(); // NEW
+    _cityController.dispose(); // NEW
+    _stateController.dispose(); // NEW
     super.dispose();
   }
 
@@ -270,6 +411,81 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                         ),
                         const SizedBox(height: 20),
+                        if (userData?['professor_id'] == null)
+                          ElevatedButton(
+                            onPressed: _generateProfessorId,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blueAccent,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 12),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            child: const Text(
+                              'Generate Professor ID',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        if (userData?['professor_id'] != null)
+                          Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Colors.green.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.green, width: 2),
+                            ),
+                            child: Column(
+                              children: [
+                                const Icon(Icons.badge,
+                                    size: 48, color: Colors.green),
+                                const SizedBox(height: 8),
+                                Text(
+                                  'Your Professor ID:',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(height: 4),
+                                Row(
+                                  children: [
+                                    Text(
+                                      userData!['professor_id'],
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    // copy id button
+                                    IconButton(
+                                      icon: const Icon(Icons.copy,
+                                          color: Colors.green),
+                                      onPressed: () {
+                                        Clipboard.setData(ClipboardData(
+                                            text: userData!['professor_id']));
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          const SnackBar(
+                                              content:
+                                                  Text('Professor ID copied')),
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  '${userData!['professor_college']}, ${userData!['professor_city']}, ${userData!['professor_state']}',
+                                  style:
+                                      TextStyle(color: Colors.green.shade800),
+                                ),
+                                const SizedBox(height: 12),
+                              ],
+                            ),
+                          ),
                         Container(
                           padding: const EdgeInsets.all(16.0),
                           decoration: BoxDecoration(
