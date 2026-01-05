@@ -837,6 +837,20 @@ class _QuizListHomeState extends State<QuizListHome> {
           'tier': tier,
         }, SetOptions(merge: true));
 
+        // If enrolled via professor (classroom), add a mapping for quick professor queries
+        if (professorId != null && professorId.isNotEmpty) {
+          await FirebaseFirestore.instance
+              .collection('professor_assignments')
+              .add({
+            'professor_id': professorId,
+            'student_uid': user!.uid,
+            'internshipName': internshipName,
+            'enrollmentType': enrollmentType,
+            'course_tier': tier,
+            'createdAt': Timestamp.now(),
+          });
+        }
+
         _fetchUserData();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

@@ -30,6 +30,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController _cityController = TextEditingController();
   TextEditingController _stateController = TextEditingController();
   bool _isGeneratingProfId = false;
+  bool _isProfessor = false;
+  bool _loadingStudents = false;
+  Map<String, List<Map<String, dynamic>>> _studentsByCourse = {};
 
   // Calculate profile completion percentage dynamically
   double _calculateProfileCompletion() {
@@ -164,6 +167,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
       // Refresh user data
       await _fetchUserData();
+      // After generating professor id, load students for this professor (if any)
+      await _loadStudentsForProfessor();
 
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
@@ -239,6 +244,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 }
               }
               _selectedGender = userData!['gender'];
+              // Detect professor
+              _isProfessor = userData?['professor_id'] != null;
+              if (_isProfessor) {
+                // load students for this professor
+                _loadStudentsForProfessor();
+              }
               // Ensure _selectedGender is one of the options or null
               if (_selectedGender != null &&
                   !genderOptions.contains(_selectedGender)) {
@@ -282,6 +293,92 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('User not logged in.')),
       );
+    }
+  }
+
+  /// Loads all users and filters students where any internship entry has this professor's id.
+  /// This is client-side filtering; for large datasets consider a server-side mapping collection.
+  Future<void> _loadStudentsForProfessor() async {
+    if (userData == null || userData!['professor_id'] == null) return;
+    setState(() {
+      _loadingStudents = true;
+      _studentsByCourse = {};
+    });
+
+    final String myProfId = userData!['professor_id'];
+
+    try {
+      // Prefer using professor_assignments mapping for efficiency if it exists
+      final QuerySnapshot paSnapshot = await FirebaseFirestore.instance
+          .collection('professor_assignments')
+          .where('professor_id', isEqualTo: myProfId)
+          .get();
+
+      if (paSnapshot.docs.isNotEmpty) {
+        // Use mapping entries to fetch student docs
+        for (var doc in paSnapshot.docs) {
+          final Map<String, dynamic>? m = doc.data() as Map<String, dynamic>?;
+          if (m == null) continue;
+          final String? studentUid = m['student_uid'];
+          final String courseName = m['internshipName'] ?? 'Unknown Course';
+          if (studentUid == null) continue;
+          final studentDoc = await FirebaseFirestore.instance
+              .collection('users')
+              .doc(studentUid)
+              .get();
+          if (!studentDoc.exists) continue;
+          final udata = studentDoc.data() as Map<String, dynamic>?;
+          final studentInfo = {
+            'uid': studentUid,
+            'name': udata?['name'] ?? udata?['email'] ?? 'Unknown',
+            'email': udata?['email'] ?? '',
+            'mobileNumber': udata?['mobileNumber'] ?? '',
+            'enrollmentType': m['enrollmentType'] ?? '',
+            'course_tier': m['course_tier'] ?? '',
+          };
+          _studentsByCourse.putIfAbsent(courseName, () => []).add(studentInfo);
+        }
+      } else {
+        // Fallback: scan all users client-side (small datasets only)
+        QuerySnapshot allUsers =
+            await FirebaseFirestore.instance.collection('users').get();
+
+        for (var doc in allUsers.docs) {
+          final Map<String, dynamic>? udata =
+              doc.data() as Map<String, dynamic>?;
+          if (udata == null) continue;
+          if (udata['internshipsList'] == null) continue;
+          final List internships = udata['internshipsList'] as List;
+          for (var entry in internships) {
+            try {
+              final Map<String, dynamic> item =
+                  Map<String, dynamic>.from(entry);
+              if (item['professor_id'] != null &&
+                  item['professor_id'] == myProfId) {
+                final String courseName =
+                    item['internshipName'] ?? 'Unknown Course';
+                final studentInfo = {
+                  'uid': doc.id,
+                  'name': udata['name'] ?? udata['email'] ?? 'Unknown',
+                  'email': udata['email'] ?? '',
+                  'mobileNumber': udata['mobileNumber'] ?? '',
+                  'enrollmentType': item['enrollmentType'] ?? '',
+                  'course_tier': item['course_tier'] ?? '',
+                };
+                _studentsByCourse
+                    .putIfAbsent(courseName, () => [])
+                    .add(studentInfo);
+              }
+            } catch (e) {
+              // ignore malformed entry
+            }
+          }
+        }
+      }
+    } catch (e) {
+      print('Error loading students for professor: $e');
+    } finally {
+      if (mounted) setState(() => _loadingStudents = false);
     }
   }
 
@@ -500,6 +597,92 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             internshipsList: userData!['internshipsList'],
                           ),
                         ),
+                        const SizedBox(height: 20),
+                        // If professor, show students grouped by course
+                        if (_isProfessor)
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.black12),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Students Assigned',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(height: 8),
+                                _loadingStudents
+                                    ? const Center(
+                                        child: Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: CircularProgressIndicator(),
+                                        ),
+                                      )
+                                    : _studentsByCourse.isEmpty
+                                        ? const Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 12.0),
+                                            child: Text(
+                                              'No students assigned to your Professor ID yet.',
+                                            ),
+                                          )
+                                        : Column(
+                                            children: _studentsByCourse.entries
+                                                .map((entry) => ExpansionTile(
+                                                      title: Text(
+                                                        '${entry.key} (${entry.value.length})',
+                                                        style: const TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                      ),
+                                                      children: entry.value
+                                                          .map(
+                                                              (student) =>
+                                                                  ListTile(
+                                                                    leading:
+                                                                        const Icon(
+                                                                            Icons.person),
+                                                                    title: Text(
+                                                                        student['name'] ??
+                                                                            'Unknown'),
+                                                                    subtitle: Text(
+                                                                        student['email'] ??
+                                                                            ''),
+                                                                    trailing:
+                                                                        Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .min,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .end,
+                                                                      children: [
+                                                                        Text(student['course_tier'] ??
+                                                                            ''),
+                                                                        const SizedBox(
+                                                                            height:
+                                                                                4),
+                                                                        Text(student['mobileNumber'] ??
+                                                                            ''),
+                                                                      ],
+                                                                    ),
+                                                                  ))
+                                                          .toList(),
+                                                    ))
+                                                .toList(),
+                                          ),
+                              ],
+                            ),
+                          ),
                       ],
                     ),
                   )
