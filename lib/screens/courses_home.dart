@@ -561,8 +561,11 @@ class _QuizListHomeState extends State<QuizListHome> {
     final bool hasExistingAccelerator =
         existingEntry != null && existingEntry['course_tier'] == 'accelerator';
 
-    // Default tier: if booster already exists, preselect accelerator
-    String? selectedTier = hasExistingBooster ? 'accelerator' : 'booster';
+    // Default tier: if already on accelerator, select accelerator and disable changes;
+    // if booster exists, preselect accelerator for upgrade; otherwise default to booster
+    String? selectedTier = hasExistingAccelerator
+        ? 'accelerator'
+        : (hasExistingBooster ? 'accelerator' : 'booster');
 
     // Enrollment type and prof id from Firestore if present
     String enrollmentType = existingEntry?['enrollmentType'] ?? 'self';
@@ -658,8 +661,8 @@ class _QuizListHomeState extends State<QuizListHome> {
                     ),
                   ),
 
-                  // Booster option: hide if already accelerator
-                  if (!hasExistingAccelerator)
+                  // Booster option: hide if already accelerator or already purchased
+                  if (!hasExistingAccelerator && !hasExistingBooster)
                     RadioListTile<String>(
                       title: const Text('Booster (Quizzes Only)'),
                       subtitle: Text(
@@ -674,20 +677,37 @@ class _QuizListHomeState extends State<QuizListHome> {
                       },
                     ),
 
-                  // Accelerator option: if booster exists, show discounted price
-                  RadioListTile<String>(
-                    title: const Text('Accelerator (Quizzes + Projects)'),
-                    subtitle: Text(
-                      hasExistingBooster
-                          ? '₹900/- (discounted upgrade) • 12 weeks'
-                          : '₹999/- • 12 weeks',
+                  // Accelerator option: if user already has accelerator, show message instead
+                  if (hasExistingAccelerator)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.check_circle, color: Colors.green),
+                          SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'You are already on the Accelerator plan.',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  else
+                    RadioListTile<String>(
+                      title: const Text('Accelerator (Quizzes + Projects)'),
+                      subtitle: Text(
+                        hasExistingBooster
+                            ? '₹900/- (discounted upgrade) • 12 weeks'
+                            : '₹999/- • 12 weeks',
+                      ),
+                      value: 'accelerator',
+                      groupValue: selectedTier,
+                      onChanged: (value) {
+                        setDialogState(() => selectedTier = value!);
+                      },
                     ),
-                    value: 'accelerator',
-                    groupValue: selectedTier,
-                    onChanged: (value) {
-                      setDialogState(() => selectedTier = value!);
-                    },
-                  ),
 
                   const Divider(height: 32),
 
@@ -719,32 +739,38 @@ class _QuizListHomeState extends State<QuizListHome> {
               onPressed: () => Navigator.pop(context),
               child: const Text('Cancel'),
             ),
-            ElevatedButton(
-              onPressed: () async {
-                if (_formKey.currentState!.validate()) {
-                  // If booster exists and user selects accelerator, treat as upgrade
-                  if (hasExistingBooster && selectedTier == 'accelerator') {
-                    await _upgradeToAccelerator(internshipName);
-                  } else {
-                    await _unlockInternshipAndStoreData(
-                      internshipName,
-                      mobileNumberController.text,
-                      selectedTier!,
-                      enrollmentType,
-                      enrollmentType == 'classroom'
-                          ? profIdController.text.trim()
-                          : null,
-                    );
-                  }
-                  if (mounted) Navigator.pop(context);
-                }
-              },
-              child: Text(
-                hasExistingBooster && selectedTier == 'accelerator'
-                    ? 'Upgrade to ACCELERATOR'
-                    : 'Unlock - ${selectedTier!.toUpperCase()}',
-              ),
-            ),
+            hasExistingAccelerator
+                ? ElevatedButton(
+                    onPressed: null,
+                    child: const Text('Already on Accelerator'),
+                  )
+                : ElevatedButton(
+                    onPressed: () async {
+                      if (_formKey.currentState!.validate()) {
+                        // If booster exists and user selects accelerator, treat as upgrade
+                        if (hasExistingBooster &&
+                            selectedTier == 'accelerator') {
+                          await _upgradeToAccelerator(internshipName);
+                        } else {
+                          await _unlockInternshipAndStoreData(
+                            internshipName,
+                            mobileNumberController.text,
+                            selectedTier!,
+                            enrollmentType,
+                            enrollmentType == 'classroom'
+                                ? profIdController.text.trim()
+                                : null,
+                          );
+                        }
+                        if (mounted) Navigator.pop(context);
+                      }
+                    },
+                    child: Text(
+                      hasExistingBooster && selectedTier == 'accelerator'
+                          ? 'Upgrade to ACCELERATOR'
+                          : 'Unlock - ${selectedTier!.toUpperCase()}',
+                    ),
+                  ),
           ],
         ),
       ),
