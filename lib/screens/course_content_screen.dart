@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,12 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
   List<Map<String, dynamic>> assignmentData = [];
   bool showGeneralInfo = true;
 
+  // Timer state for quizzes (20 minutes)
+  Timer? _quizTimer;
+  int _remainingSeconds = 20 * 60;
+  bool _timerRunning = false;
+  bool _autoSubmitted = false;
+
   String? selectedQuiz; // Default selected quiz topic
   String? selectedAssignment; // Track selected assignment
   String? selectedProjectWeek;
@@ -44,6 +51,12 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
     super.initState();
     showGeneralInfo = true;
     _loadCompletedItems();
+  }
+
+  @override
+  void dispose() {
+    _stopTimer();
+    super.dispose();
   }
 
   Future<void> _loadQuizData(String topic) async {
@@ -81,6 +94,8 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
           selectedAssignment = null;
           _showSidebarMobile = false;
         });
+        // Start/reset the quiz timer whenever a quiz loads
+        _startTimer();
       } else {
         throw Exception('Failed to load quiz JSON: ${response.statusCode}');
       }
@@ -144,7 +159,52 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
     }
   }
 
+  String _formatDuration(int totalSeconds) {
+    final minutes = (totalSeconds ~/ 60).toString().padLeft(2, '0');
+    final seconds = (totalSeconds % 60).toString().padLeft(2, '0');
+    return '$minutes:$seconds';
+  }
+
+  void _startTimer() {
+    _stopTimer();
+    setState(() {
+      _remainingSeconds = 20 * 60; // reset to 20 minutes
+      _timerRunning = true;
+      _autoSubmitted = false;
+    });
+    _quizTimer = Timer.periodic(const Duration(seconds: 1), (timer) async {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      setState(() {
+        if (_remainingSeconds > 0) {
+          _remainingSeconds--;
+        }
+      });
+      if (_remainingSeconds <= 0) {
+        timer.cancel();
+        setState(() {
+          _timerRunning = false;
+          _autoSubmitted = true;
+        });
+        // Auto-submit when timer reaches zero
+        try {
+          _submitQuiz();
+        } catch (_) {}
+      }
+    });
+  }
+
+  void _stopTimer() {
+    _quizTimer?.cancel();
+    _quizTimer = null;
+    _timerRunning = false;
+  }
+
   void _submitQuiz() async {
+    // stop timer to avoid duplicate auto-submit
+    _stopTimer();
     int correctAnswers = 0;
     for (int i = 0; i < _userAnswers.length; i++) {
       if (_userAnswers[i] == quizData[i]['correct_answer']) {
@@ -347,9 +407,11 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
               child: FloatingActionButton.extended(
                 backgroundColor: const Color(0xFF2ECC71),
                 onPressed: _submitQuiz,
-                label: const Text(
-                  'SUBMIT QUIZ',
-                  style: TextStyle(
+                label: Text(
+                  _timerRunning
+                      ? '${_formatDuration(_remainingSeconds)}  SUBMIT'
+                      : 'SUBMIT QUIZ',
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.1,
                     color: Colors.white,
@@ -438,7 +500,10 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              onPressed: () => Navigator.pop(context),
+              onPressed: () {
+                _stopTimer();
+                Navigator.pop(context);
+              },
             ),
           ),
           Container(
@@ -507,6 +572,7 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
                   quizData.clear();
                   if (isMobile) _showSidebarMobile = false;
                 });
+                _stopTimer();
               },
             ),
           ),
