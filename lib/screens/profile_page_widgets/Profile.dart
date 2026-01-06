@@ -1,13 +1,19 @@
+import 'dart:convert';
+import 'dart:io' show File, Directory;
+import 'dart:html' as html;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
+
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/common_widgets/custom_app_bar.dart';
-import 'package:intl/intl.dart';
 
 import 'form_widget.dart';
-import 'report_card.dart';
+import 'report_card.dart'; // your FormWidget file
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -17,102 +23,475 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  // User profile data from Firestore
   Map<String, dynamic>? userData;
-  bool _isLoading = true;
-  final _formKey = GlobalKey<FormState>();
+
+  // Text controllers
   late TextEditingController _nameController;
   late TextEditingController _mobileNumberController;
+
+  // Professor info controllers (for dialog)
+  final TextEditingController _collegeController = TextEditingController();
+  final TextEditingController _cityController = TextEditingController();
+  final TextEditingController _stateController = TextEditingController();
+
+  // Gender / DOB
   DateTime? _selectedDate;
   String? _selectedGender;
-  List<String> genderOptions = ['Male', 'Female', 'Other', 'Prefer not to say'];
+  final List<String> genderOptions = ['Male', 'Female', 'Other'];
 
-  TextEditingController _collegeController = TextEditingController();
-  TextEditingController _cityController = TextEditingController();
-  TextEditingController _stateController = TextEditingController();
+  // Loading flags
+  bool _isLoading = false;
   bool _isGeneratingProfId = false;
+
+  // Professor / students
   bool _isProfessor = false;
   bool _loadingStudents = false;
   Map<String, List<Map<String, dynamic>>> _studentsByCourse = {};
 
-  // Calculate profile completion percentage dynamically
-  double _calculateProfileCompletion() {
-    if (userData == null) return 0.0;
-
-    final trackableFields = [
-      'email',
-      'name',
-      'mobileNumber',
-      'dateOfBirth',
-      'gender'
-    ];
-    int completedFields = 0;
-    int totalFields = trackableFields.length;
-
-    if (userData!['email']?.isNotEmpty ?? false)
-      completedFields++; // Email usually always present
-    if (_nameController.text.isNotEmpty) completedFields++;
-    if (_mobileNumberController.text.isNotEmpty) completedFields++;
-    if (_selectedDate != null) completedFields++;
-    if (_selectedGender != null && _selectedGender!.isNotEmpty)
-      completedFields++;
-
-    return (completedFields / totalFields) * 100;
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController();
+    _mobileNumberController = TextEditingController();
+    _fetchUserData();
   }
 
-  Future<void> _generateProfessorId() async {
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _mobileNumberController.dispose();
+    _collegeController.dispose();
+    _cityController.dispose();
+    _stateController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _fetchUserData() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      try {
+        DocumentSnapshot snapshot = await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .get();
+
+        if (snapshot.exists) {
+          final data = snapshot.data() as Map<String, dynamic>?;
+          setState(() {
+            userData = data;
+            if (userData != null) {
+              _nameController.text = userData!['name'] ?? '';
+              _mobileNumberController.text = userData!['mobileNumber'] ?? '';
+
+              if (userData!['dateOfBirth'] != null &&
+                  userData!['dateOfBirth'].toString().isNotEmpty) {
+                try {
+                  if (userData!['dateOfBirth'] is Timestamp) {
+                    _selectedDate =
+                        (userData!['dateOfBirth'] as Timestamp).toDate();
+                  } else if (userData!['dateOfBirth'] is String) {
+                    _selectedDate = DateFormat('yyyy-MM-dd')
+                        .parse(userData!['dateOfBirth']);
+                  }
+                } catch (e) {
+                  debugPrint('Error parsing dateOfBirth: $e');
+                  _selectedDate = null;
+                }
+              }
+
+              _selectedGender = userData!['gender'];
+
+              // Professor detection
+              _isProfessor = userData?['professor_id'] != null;
+              if (_isProfessor) {
+                _loadStudentsForProfessor();
+              }
+
+              // Ensure selectedGender is valid or null
+              if (_selectedGender != null &&
+                  !genderOptions.contains(_selectedGender)) {
+                // Keep as is for now (already stored custom value)
+              }
+            }
+            _isLoading = false;
+          });
+        } else {
+          setState(() {
+            _isLoading = false;
+          });
+          debugPrint('User document does not exist.');
+
+          // Optionally initialize default structure
+          userData = {
+            'email': user.email ?? 'N/A',
+            'name': '',
+            'mobileNumber': '',
+            'dateOfBirth': null,
+            'gender': null,
+            'internshipsList': [],
+          };
+        }
+      } catch (e) {
+        setState(() {
+          _isLoading = false;
+        });
+        debugPrint('Error fetching user data: $e');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error fetching profile data: $e')),
+        );
+      }
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
+      debugPrint('No user logged in.');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('User not logged in.')),
+      );
+    }
+  }
+
+  /// Loads students assigned to this professor, grouped by course.
+  Future<void> _loadStudentsForProfessor() async {
+    if (userData == null || userData!['professor_id'] == null) return;
+
+    setState(() {
+      _loadingStudents = true;
+      _studentsByCourse = {};
+    });
+
+    final String myProfId = userData!['professor_id'];
+
+    try {
+      // Prefer mapping collection if exists
+      final QuerySnapshot paSnapshot = await FirebaseFirestore.instance
+          .collection('professor_assignments')
+          .where('professor_id', isEqualTo: myProfId)
+          .get();
+
+      if (paSnapshot.docs.isNotEmpty) {
+        for (var doc in paSnapshot.docs) {
+          final Map<String, dynamic>? m = doc.data() as Map<String, dynamic>?;
+          if (m == null) continue;
+
+          final String? studentUid = m['student_uid'];
+          final String courseName = m['internshipName'] ?? 'Unknown Course';
+          if (studentUid == null) continue;
+
+          final studentDoc = await FirebaseFirestore.instance
+              .collection('users')
+              .doc(studentUid)
+              .get();
+          if (!studentDoc.exists) continue;
+
+          final udata = studentDoc.data() as Map<String, dynamic>?;
+          final studentInfo = {
+            'uid': studentUid,
+            'name': udata?['name'] ?? udata?['email'] ?? 'Unknown',
+            'email': udata?['email'] ?? '',
+            'mobileNumber': udata?['mobileNumber'] ?? '',
+            'enrollmentType': m['enrollmentType'] ?? '',
+            'course_tier': m['course_tier'] ?? '',
+          };
+          _studentsByCourse.putIfAbsent(courseName, () => []).add(studentInfo);
+        }
+      } else {
+        // Fallback: scan all users (ok for small data)
+        QuerySnapshot allUsers =
+            await FirebaseFirestore.instance.collection('users').get();
+
+        for (var doc in allUsers.docs) {
+          final Map<String, dynamic>? udata =
+              doc.data() as Map<String, dynamic>?;
+          if (udata == null) continue;
+          if (udata['internshipsList'] == null) continue;
+
+          final List internships = udata['internshipsList'] as List;
+          for (var entry in internships) {
+            try {
+              final Map<String, dynamic> item =
+                  Map<String, dynamic>.from(entry);
+              if (item['professor_id'] != null &&
+                  item['professor_id'] == myProfId) {
+                final String courseName =
+                    item['internshipName'] ?? 'Unknown Course';
+                final studentInfo = {
+                  'uid': doc.id,
+                  'name': udata['name'] ?? udata['email'] ?? 'Unknown',
+                  'email': udata['email'] ?? '',
+                  'mobileNumber': udata['mobileNumber'] ?? '',
+                  'enrollmentType': item['enrollmentType'] ?? '',
+                  'course_tier': item['course_tier'] ?? '',
+                };
+                _studentsByCourse
+                    .putIfAbsent(courseName, () => [])
+                    .add(studentInfo);
+              }
+            } catch (_) {
+              // ignore malformed entries
+            }
+          }
+        }
+      }
+    } catch (e) {
+      debugPrint('Error loading students for professor: $e');
+    } finally {
+      if (mounted) {
+        setState(() => _loadingStudents = false);
+      }
+    }
+  }
+
+  /// Generate CSV for a given course and save to a temp file.
+  Future<void> _generateCsvForCourse(String courseName) async {
+    if (userData == null || userData!['professor_id'] == null) return;
+
+    final String myProfId = userData!['professor_id'];
+    setState(() => _loadingStudents = true);
+
+    try {
+      final students =
+          _studentsByCourse[courseName] ?? <Map<String, dynamic>>[];
+      const int quizCount = 30;
+
+      final StringBuffer csv = StringBuffer();
+
+      // Header
+      final headers = <String>['Student Name', 'Student Email'];
+      for (int i = 1; i <= quizCount; i++) {
+        headers.add('Q$i');
+      }
+      headers.add('Total');
+      csv.writeln(headers.map(_escapeCsv).join(','));
+
+      // Rows
+      for (final s in students) {
+        final row = <String>[];
+        row.add(_escapeCsv(s['name']));
+        row.add(_escapeCsv(s['email']));
+
+        num total = 0;
+        final quizMarks = s['quizMarks'] ?? [];
+
+        for (int i = 0; i < quizCount; i++) {
+          if (i < quizMarks.length && quizMarks[i] != null) {
+            final v = num.tryParse(quizMarks[i].toString()) ?? 0;
+            total += v;
+            row.add(v.toString());
+          } else {
+            row.add('');
+          }
+        }
+
+        row.add(total.toString());
+        csv.writeln(row.join(','));
+      }
+
+      final safeCourse = courseName.replaceAll(RegExp(r'[^A-Za-z0-9_]'), '_');
+      final fileName = 'students_${myProfId}_$safeCourse.csv';
+
+      if (kIsWeb) {
+        _downloadCsvWeb(csv.toString(), fileName);
+      } else {
+        await _downloadCsvMobile(csv.toString(), fileName);
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('CSV error: $e')));
+    } finally {
+      setState(() => _loadingStudents = false);
+    }
+  }
+
+  void _downloadCsvWeb(String csvContent, String fileName) {
+    final bytes = utf8.encode(csvContent);
+    final blob = html.Blob([bytes], 'text/csv');
+    final url = html.Url.createObjectUrlFromBlob(blob);
+    final anchor = html.AnchorElement(href: url)
+      ..setAttribute('download', fileName)
+      ..click();
+    html.Url.revokeObjectUrl(url);
+  }
+
+  Future<void> _downloadCsvMobile(String csvData, String fileName) async {
+    final dir = await getTemporaryDirectory();
+    final file = File('${dir.path}/$fileName');
+    await file.writeAsString(csvData);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('CSV saved to ${file.path}')),
+    );
+  }
+
+  String _escapeCsv(String? value) {
+    if (value == null) return '';
+    if (value.contains(',') || value.contains('"') || value.contains('\n')) {
+      final escaped = value.replaceAll('"', '""');
+      return '"$escaped"';
+    }
+    return value;
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate ?? DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+      });
+    }
+  }
+
+  void _onGenderChanged(String? newValue) {
+    setState(() {
+      _selectedGender = newValue;
+    });
+  }
+
+  Future<void> _saveUserData() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null && userData != null) {
+      try {
+        final updatedData = <String, dynamic>{
+          'name': _nameController.text,
+          'mobileNumber': _mobileNumberController.text,
+          'email': userData!['email'],
+          'dateOfBirth': _selectedDate != null
+              ? DateFormat('yyyy-MM-dd').format(_selectedDate!)
+              : null,
+          'gender': _selectedGender,
+        };
+
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .set(updatedData, SetOptions(merge: true));
+
+        setState(() {
+          userData!['name'] = _nameController.text;
+          userData!['mobileNumber'] = _mobileNumberController.text;
+          userData!['dateOfBirth'] = _selectedDate != null
+              ? DateFormat('yyyy-MM-dd').format(_selectedDate!)
+              : null;
+          userData!['gender'] = _selectedGender;
+          _isLoading = false;
+        });
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Profile updated successfully!')),
+        );
+      } catch (e) {
+        setState(() {
+          _isLoading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error updating profile: $e')),
+        );
+        debugPrint('Error saving user data: $e');
+      }
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
+      debugPrint('No user logged in to save data.');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('User not logged in.')),
+      );
+    }
+  }
+
+  double _calculateProfileCompletion() {
+    if (userData == null) return 0;
+
+    int total = 4;
+    int filled = 0;
+
+    if ((userData!['name'] ?? '').toString().isNotEmpty) filled++;
+    if ((userData!['mobileNumber'] ?? '').toString().isNotEmpty) filled++;
+    if (userData!['dateOfBirth'] != null) filled++;
+    if (userData!['gender'] != null &&
+        userData!['gender'].toString().isNotEmpty) {
+      filled++;
+    }
+
+    return filled / total;
+  }
+
+  void _generateProfessorId() {
     showDialog(
       context: context,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setDialogState) => AlertDialog(
-          title: const Text('Generate Professor ID'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: _collegeController,
-                decoration: const InputDecoration(
-                  labelText: 'College Name *',
-                  border: OutlineInputBorder(),
-                ),
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              title: const Text('Generate Professor ID'),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextField(
+                    controller: _collegeController,
+                    decoration: const InputDecoration(
+                      labelText: 'College Name *',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  TextField(
+                    controller: _cityController,
+                    decoration: const InputDecoration(
+                      labelText: 'City *',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  TextField(
+                    controller: _stateController,
+                    decoration: const InputDecoration(
+                      labelText: 'State *',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 16),
-              TextField(
-                controller: _cityController,
-                decoration: const InputDecoration(
-                  labelText: 'City *',
-                  border: OutlineInputBorder(),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Cancel'),
                 ),
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                controller: _stateController,
-                decoration: const InputDecoration(
-                  labelText: 'State *',
-                  border: OutlineInputBorder(),
+                ElevatedButton(
+                  onPressed: _isGeneratingProfId
+                      ? null
+                      : () => _createProfessorId(setDialogState),
+                  child: _isGeneratingProfId
+                      ? const SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Text('Generate ID'),
                 ),
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel'),
-            ),
-            ElevatedButton(
-              onPressed: _isGeneratingProfId
-                  ? null
-                  : () => _createProfessorId(setDialogState),
-              child: _isGeneratingProfId
-                  ? const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : const Text('Generate ID'),
-            ),
-          ],
-        ),
-      ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 
@@ -134,7 +513,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
       final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
-      // Get daily counter from Firestore
+      // Get daily counter
       final counterDoc = await FirebaseFirestore.instance
           .collection('professor_counters')
           .doc(today)
@@ -165,22 +544,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
         'professor_created_at': Timestamp.now(),
       });
 
-      // Refresh user data
+      // Refresh
       await _fetchUserData();
-      // After generating professor id, load students for this professor (if any)
       await _loadStudentsForProfessor();
 
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-              'Professor ID generated: $professorId ✓\nShare with your students!'),
+            'Professor ID generated: $professorId ✓\nShare with your students!',
+          ),
           backgroundColor: Colors.green,
           duration: const Duration(seconds: 4),
         ),
       );
 
-      // Clear controllers
       _collegeController.clear();
       _cityController.clear();
       _stateController.clear();
@@ -194,278 +572,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    _nameController = TextEditingController();
-    _mobileNumberController = TextEditingController();
-    _fetchUserData();
-  }
-
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _mobileNumberController.dispose();
-    _collegeController.dispose(); // NEW
-    _cityController.dispose(); // NEW
-    _stateController.dispose(); // NEW
-    super.dispose();
-  }
-
-  Future<void> _fetchUserData() async {
-    setState(() {
-      _isLoading = true;
-    });
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      try {
-        DocumentSnapshot snapshot = await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user.uid)
-            .get();
-        if (snapshot.exists) {
-          setState(() {
-            userData = snapshot.data() as Map<String, dynamic>?;
-            if (userData != null) {
-              _nameController.text = userData!['name'] ?? '';
-              _mobileNumberController.text = userData!['mobileNumber'] ?? '';
-              if (userData!['dateOfBirth'] != null &&
-                  userData!['dateOfBirth'].isNotEmpty) {
-                try {
-                  if (userData!['dateOfBirth'] is Timestamp) {
-                    _selectedDate =
-                        (userData!['dateOfBirth'] as Timestamp).toDate();
-                  } else if (userData!['dateOfBirth'] is String) {
-                    _selectedDate = DateFormat('yyyy-MM-dd')
-                        .parse(userData!['dateOfBirth']);
-                  }
-                } catch (e) {
-                  print('Error parsing dateOfBirth: $e');
-                  _selectedDate = null;
-                }
-              }
-              _selectedGender = userData!['gender'];
-              // Detect professor
-              _isProfessor = userData?['professor_id'] != null;
-              if (_isProfessor) {
-                // load students for this professor
-                _loadStudentsForProfessor();
-              }
-              // Ensure _selectedGender is one of the options or null
-              if (_selectedGender != null &&
-                  !genderOptions.contains(_selectedGender)) {
-                // If a custom value was stored that isn't in options, you might want to:
-                // 1. Add it to options temporarily: genderOptions.add(_selectedGender!);
-                // 2. Set to null to force user selection: _selectedGender = null;
-                // For now, we'll keep it as is if it's already stored.
-              }
-            }
-            _isLoading = false;
-          });
-        } else {
-          setState(() {
-            _isLoading = false;
-          });
-          print('User document does not exist.');
-          // Optionally, initialize userData with default values for a new user
-          userData = {
-            'email': user.email ?? 'N/A',
-            'name': '',
-            'mobileNumber': '',
-            'dateOfBirth': null,
-            'gender': null,
-            'internshipsList': [],
-          };
-        }
-      } catch (e) {
-        setState(() {
-          _isLoading = false;
-        });
-        print('Error fetching user data: $e');
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error fetching profile data: $e')),
-        );
-      }
-    } else {
-      setState(() {
-        _isLoading = false;
-      });
-      print('No user logged in.');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('User not logged in.')),
-      );
-    }
-  }
-
-  /// Loads all users and filters students where any internship entry has this professor's id.
-  /// This is client-side filtering; for large datasets consider a server-side mapping collection.
-  Future<void> _loadStudentsForProfessor() async {
-    if (userData == null || userData!['professor_id'] == null) return;
-    setState(() {
-      _loadingStudents = true;
-      _studentsByCourse = {};
-    });
-
-    final String myProfId = userData!['professor_id'];
-
-    try {
-      // Prefer using professor_assignments mapping for efficiency if it exists
-      final QuerySnapshot paSnapshot = await FirebaseFirestore.instance
-          .collection('professor_assignments')
-          .where('professor_id', isEqualTo: myProfId)
-          .get();
-
-      if (paSnapshot.docs.isNotEmpty) {
-        // Use mapping entries to fetch student docs
-        for (var doc in paSnapshot.docs) {
-          final Map<String, dynamic>? m = doc.data() as Map<String, dynamic>?;
-          if (m == null) continue;
-          final String? studentUid = m['student_uid'];
-          final String courseName = m['internshipName'] ?? 'Unknown Course';
-          if (studentUid == null) continue;
-          final studentDoc = await FirebaseFirestore.instance
-              .collection('users')
-              .doc(studentUid)
-              .get();
-          if (!studentDoc.exists) continue;
-          final udata = studentDoc.data() as Map<String, dynamic>?;
-          final studentInfo = {
-            'uid': studentUid,
-            'name': udata?['name'] ?? udata?['email'] ?? 'Unknown',
-            'email': udata?['email'] ?? '',
-            'mobileNumber': udata?['mobileNumber'] ?? '',
-            'enrollmentType': m['enrollmentType'] ?? '',
-            'course_tier': m['course_tier'] ?? '',
-          };
-          _studentsByCourse.putIfAbsent(courseName, () => []).add(studentInfo);
-        }
-      } else {
-        // Fallback: scan all users client-side (small datasets only)
-        QuerySnapshot allUsers =
-            await FirebaseFirestore.instance.collection('users').get();
-
-        for (var doc in allUsers.docs) {
-          final Map<String, dynamic>? udata =
-              doc.data() as Map<String, dynamic>?;
-          if (udata == null) continue;
-          if (udata['internshipsList'] == null) continue;
-          final List internships = udata['internshipsList'] as List;
-          for (var entry in internships) {
-            try {
-              final Map<String, dynamic> item =
-                  Map<String, dynamic>.from(entry);
-              if (item['professor_id'] != null &&
-                  item['professor_id'] == myProfId) {
-                final String courseName =
-                    item['internshipName'] ?? 'Unknown Course';
-                final studentInfo = {
-                  'uid': doc.id,
-                  'name': udata['name'] ?? udata['email'] ?? 'Unknown',
-                  'email': udata['email'] ?? '',
-                  'mobileNumber': udata['mobileNumber'] ?? '',
-                  'enrollmentType': item['enrollmentType'] ?? '',
-                  'course_tier': item['course_tier'] ?? '',
-                };
-                _studentsByCourse
-                    .putIfAbsent(courseName, () => [])
-                    .add(studentInfo);
-              }
-            } catch (e) {
-              // ignore malformed entry
-            }
-          }
-        }
-      }
-    } catch (e) {
-      print('Error loading students for professor: $e');
-    } finally {
-      if (mounted) setState(() => _loadingStudents = false);
-    }
-  }
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: _selectedDate ?? DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-    );
-    if (picked != null && picked != _selectedDate) {
-      setState(() {
-        _selectedDate = picked;
-      });
-    }
-  }
-
-  void _onGenderChanged(String? newValue) {
-    setState(() {
-      _selectedGender = newValue;
-    });
-  }
-
-  Future<void> _saveUserData() async {
-    if (_formKey.currentState!.validate()) {
-      setState(() {
-        _isLoading = true;
-      });
-      User? user = FirebaseAuth.instance.currentUser;
-      if (user != null) {
-        try {
-          Map<String, dynamic> updatedData = {
-            'name': _nameController.text,
-            'mobileNumber': _mobileNumberController.text,
-            'email': userData!['email'],
-            'dateOfBirth': _selectedDate != null
-                ? DateFormat('yyyy-MM-dd').format(_selectedDate!)
-                : null,
-            'gender': _selectedGender,
-          };
-
-          await FirebaseFirestore.instance
-              .collection('users')
-              .doc(user.uid)
-              .set(updatedData, SetOptions(merge: true));
-
-          setState(() {
-            userData!['name'] = _nameController.text;
-            userData!['mobileNumber'] = _mobileNumberController.text;
-            userData!['dateOfBirth'] = _selectedDate != null
-                ? DateFormat('yyyy-MM-dd').format(_selectedDate!)
-                : null;
-            userData!['gender'] = _selectedGender;
-            _isLoading = false;
-          });
-
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Profile updated successfully!')),
-          );
-        } catch (e) {
-          setState(() {
-            _isLoading = false;
-          });
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Error updating profile: $e')),
-          );
-          print('Error saving user data: $e');
-        }
-      } else {
-        setState(() {
-          _isLoading = false;
-        });
-        print('No user logged in to save data.');
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('User not logged in.')),
-        );
-      }
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      backgroundColor: Colors.grey[100], // Light gray background
+      backgroundColor: Colors.grey[100],
       body: Center(
-        // Center the entire body content
         child: _isLoading
             ? const CircularProgressIndicator()
             : userData != null
@@ -473,6 +584,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: [
+                        // Profile form card
                         Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -508,6 +620,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                         ),
                         const SizedBox(height: 20),
+
+                        // Generate Professor ID button (if not yet a professor)
                         if (userData?['professor_id'] == null)
                           ElevatedButton(
                             onPressed: _generateProfessorId,
@@ -524,9 +638,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               style: TextStyle(fontSize: 16),
                             ),
                           ),
+
+                        // Professor badge and details
                         if (userData?['professor_id'] != null)
                           Container(
                             padding: const EdgeInsets.all(16),
+                            margin: const EdgeInsets.only(top: 8),
                             decoration: BoxDecoration(
                               color: Colors.green.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(12),
@@ -546,6 +663,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                                 const SizedBox(height: 4),
                                 Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
                                       userData!['professor_id'],
@@ -556,7 +674,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       ),
                                       textAlign: TextAlign.center,
                                     ),
-                                    // copy id button
                                     IconButton(
                                       icon: const Icon(Icons.copy,
                                           color: Colors.green),
@@ -566,8 +683,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           const SnackBar(
-                                              content:
-                                                  Text('Professor ID copied')),
+                                            content:
+                                                Text('Professor ID copied'),
+                                          ),
                                         );
                                       },
                                     ),
@@ -575,7 +693,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  '${userData!['professor_college']}, ${userData!['professor_city']}, ${userData!['professor_state']}',
+                                  '${userData!['professor_college']}, '
+                                  '${userData!['professor_city']}, '
+                                  '${userData!['professor_state']}',
                                   style:
                                       TextStyle(color: Colors.green.shade800),
                                 ),
@@ -583,6 +703,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ],
                             ),
                           ),
+
+                        const SizedBox(height: 16),
+
+                        // Report card / internships summary
                         Container(
                           padding: const EdgeInsets.all(16.0),
                           decoration: BoxDecoration(
@@ -594,11 +718,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           child: ReportCardWidget(
-                            internshipsList: userData!['internshipsList'],
+                            internshipsList: userData!['internshipsList'] ?? [],
                           ),
                         ),
+
                         const SizedBox(height: 20),
-                        // If professor, show students grouped by course
+
+                        // Students assigned (for professors)
                         if (_isProfessor)
                           Container(
                             width: double.infinity,
@@ -636,48 +762,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           )
                                         : Column(
                                             children: _studentsByCourse.entries
-                                                .map((entry) => ExpansionTile(
-                                                      title: Text(
-                                                        '${entry.key} (${entry.value.length})',
-                                                        style: const TextStyle(
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      ),
-                                                      children: entry.value
-                                                          .map(
-                                                              (student) =>
-                                                                  ListTile(
-                                                                    leading:
-                                                                        const Icon(
-                                                                            Icons.person),
-                                                                    title: Text(
-                                                                        student['name'] ??
-                                                                            'Unknown'),
-                                                                    subtitle: Text(
-                                                                        student['email'] ??
-                                                                            ''),
-                                                                    trailing:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .min,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .end,
-                                                                      children: [
-                                                                        Text(student['course_tier'] ??
-                                                                            ''),
-                                                                        const SizedBox(
-                                                                            height:
-                                                                                4),
-                                                                        Text(student['mobileNumber'] ??
-                                                                            ''),
-                                                                      ],
-                                                                    ),
-                                                                  ))
-                                                          .toList(),
-                                                    ))
+                                                .map(
+                                                  (entry) => Padding(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 6.0),
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Expanded(
+                                                          child: Text(
+                                                            '${entry.key} (${entry.value.length})',
+                                                            style: const TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
+                                                        ),
+                                                        ElevatedButton.icon(
+                                                          icon: const Icon(
+                                                              Icons.download),
+                                                          label: const Text(
+                                                              'Download CSV'),
+                                                          onPressed: () =>
+                                                              _generateCsvForCourse(
+                                                                  entry.key),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                )
                                                 .toList(),
                                           ),
                               ],
@@ -703,7 +819,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: const Text(
                       'User data not found. Please try again later.',
                       style: TextStyle(color: Colors.black87),
-                      textAlign: TextAlign.center, // Center the text
+                      textAlign: TextAlign.center,
                     ),
                   ),
       ),
