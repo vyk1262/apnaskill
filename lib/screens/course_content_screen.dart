@@ -45,6 +45,10 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
   bool showProjects = false;
   List<String> completedQuizzes = [];
   bool _showSidebarMobile = false;
+  // Cache for the whole course JSON to avoid repeated network calls
+  final Map<String, List<Map<String, dynamic>>> _topicsMap = {};
+  bool _isCourseJsonLoaded = false;
+  bool _isCourseJsonLoading = false;
 
   @override
   void initState() {
@@ -60,47 +64,61 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
   }
 
   Future<void> _loadQuizData(String topic) async {
+    // Ensure whole course JSON is loaded and cached, then pick topic data.
     try {
-      // Reference to the JSON file in Firebase Storage
-      final ref = FirebaseStorage.instance.ref().child(
-          'quiz_data/${widget.internshipName.toLowerCase().replaceAll(' ', '_')}.json');
+      await _ensureCourseJsonLoaded();
 
-      // Get a download URL for the JSON file
-      final url = await ref.getDownloadURL();
-
-      // Fetch JSON from the download URL
-      final response = await http.get(Uri.parse(url));
-
-      if (response.statusCode == 200) {
-        final Map<String, dynamic> jsonData = jsonDecode(response.body);
-
-        // Find the specific topic inside the subject file
-        final List<dynamic> topics = jsonData['result'];
-        final selectedTopicData = topics.firstWhere(
-          (t) => t['topic'] == topic,
-          orElse: () => null,
-        );
-
-        if (selectedTopicData == null) {
-          throw Exception(
-              'Topic "$topic" not found in ${widget.internshipName}');
-        }
-
-        setState(() {
-          quizData =
-              List<Map<String, dynamic>>.from(selectedTopicData['questions']);
-          _userAnswers =
-              List<String?>.filled(quizData.length, null, growable: false);
-          selectedAssignment = null;
-          _showSidebarMobile = false;
-        });
-        // Start/reset the quiz timer whenever a quiz loads
-        _startTimer();
-      } else {
-        throw Exception('Failed to load quiz JSON: ${response.statusCode}');
+      final selectedTopicQuestions = _topicsMap[topic];
+      if (selectedTopicQuestions == null) {
+        throw Exception(
+            'Topic "${topic}" not found in ${widget.internshipName}');
       }
+
+      setState(() {
+        quizData = List<Map<String, dynamic>>.from(selectedTopicQuestions);
+        _userAnswers =
+            List<String?>.filled(quizData.length, null, growable: false);
+        selectedAssignment = null;
+        _showSidebarMobile = false;
+      });
+
+      // Start/reset the quiz timer whenever a quiz loads
+      _startTimer();
     } catch (e) {
       print('❌ Error loading quiz data: $e');
+    }
+  }
+
+  /// Loads and caches the entire course JSON from Firebase Storage once.
+  Future<void> _ensureCourseJsonLoaded() async {
+    if (_isCourseJsonLoaded || _isCourseJsonLoading) return;
+    _isCourseJsonLoading = true;
+    try {
+      final ref = FirebaseStorage.instance.ref().child(
+          'quiz_data/${widget.internshipName.toLowerCase().replaceAll(' ', '_')}.json');
+      final url = await ref.getDownloadURL();
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode != 200) {
+        throw Exception('Failed to load course JSON: ${response.statusCode}');
+      }
+
+      final Map<String, dynamic> jsonData = jsonDecode(response.body);
+      final List<dynamic> topics = jsonData['result'] ?? [];
+
+      _topicsMap.clear();
+      for (var t in topics) {
+        final String tName = t['topic'] as String? ?? '';
+        final List<dynamic> questions = t['questions'] ?? [];
+        _topicsMap[tName] = List<Map<String, dynamic>>.from(questions);
+      }
+
+      _isCourseJsonLoaded = true;
+    } catch (e) {
+      print('❌ Error loading course JSON: $e');
+      rethrow;
+    } finally {
+      _isCourseJsonLoading = false;
     }
   }
 
@@ -340,11 +358,27 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
-                setState(() {
-                  showGeneralInfo = true;
-                  selectedQuiz = '';
-                });
-                _loadCompletedItems();
+                // After submission, advance to next quiz if available
+                final currentTopic = quizName;
+                final currentIndex = widget.quizList.indexOf(currentTopic);
+                if (currentIndex >= 0 &&
+                    currentIndex < widget.quizList.length - 1) {
+                  final nextTopic = widget.quizList[currentIndex + 1];
+                  setState(() {
+                    selectedQuiz = nextTopic;
+                    showGeneralInfo = false;
+                  });
+                  // load next quiz data and refresh completed list
+                  _loadQuizData(nextTopic);
+                  _loadCompletedItems();
+                } else {
+                  // No next quiz -> go back to overview
+                  setState(() {
+                    showGeneralInfo = true;
+                    selectedQuiz = '';
+                  });
+                  _loadCompletedItems();
+                }
               },
               child: const Text('OK'),
             ),
