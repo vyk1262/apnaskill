@@ -248,9 +248,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
         // Build a map of quizName -> marks when quizMarks is list of maps
         final Map<String, num> marksByName = {};
+        bool hasMapEntries = false;
         if (rawQuizMarks is List) {
           for (var entry in rawQuizMarks) {
             if (entry is Map) {
+              hasMapEntries = true;
               final qnRaw =
                   entry['quizName'] ?? entry['quiz_name'] ?? entry['name'];
               final qn = qnRaw?.toString();
@@ -271,7 +273,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             final v = marksByName[qNameNorm]!;
             total += v;
             row.add(v.toString());
-          } else if (rawQuizMarks is List && i < rawQuizMarks.length) {
+          } else if (!hasMapEntries &&
+              rawQuizMarks is List &&
+              i < rawQuizMarks.length) {
+            // Only use index-based fallback when the quizMarks list is NOT map-based
             final vEntry = rawQuizMarks[i];
             if (vEntry is num ||
                 (vEntry is String && num.tryParse(vEntry) != null)) {
