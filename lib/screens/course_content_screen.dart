@@ -10,6 +10,7 @@ import '../constants/colors.dart';
 import 'quiz_page_widgets/general_info_content.dart';
 import 'quiz_page_widgets/viewResponses.dart';
 import 'package:http/http.dart' as http;
+import 'package:skill_factorial/api_service.dart';
 
 class CourseContentScreen extends StatefulWidget {
   final String internshipName;
@@ -168,66 +169,22 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
 
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      DocumentReference userDocRef =
-          FirebaseFirestore.instance.collection('users').doc(user.uid);
-
-      // 1. Fetch the user's document
-      DocumentSnapshot userSnapshot = await userDocRef.get();
-      Map<String, dynamic>? userData =
-          userSnapshot.data() as Map<String, dynamic>?;
-
-      if (userData != null && userData.containsKey('internshipsList')) {
-        List<dynamic> internshipsList =
-            List.from(userData['internshipsList']); // Create a mutable copy
-
-        // 2. Find the index of the specific internship
-        int internshipIndex = internshipsList.indexWhere(
-          (internship) => internship['internshipName'] == widget.internshipName,
-        );
-
-        if (internshipIndex != -1) {
-          // 3. Get the specific internship map
-          Map<String, dynamic> currentInternship =
-              Map<String, dynamic>.from(internshipsList[internshipIndex]);
-
-          // Ensure 'quizMarks' exists in the internship map, initialize if not
-          if (!currentInternship.containsKey('quizMarks')) {
-            currentInternship['quizMarks'] = [];
-          }
-
-          List<dynamic> existingQuizMarks =
-              List.from(currentInternship['quizMarks']);
-
-          // 4. Check if this quiz already exists in the quizMarks list for this internship
-          int quizMarkIndex = existingQuizMarks.indexWhere(
-            (entry) => entry['quizName'] == quizName,
+      try {
+        await ApiService.addOrUpdateQuizMark(
+            user.uid, widget.internshipName, quizEntry);
+        // Refresh local completed quizzes
+        await _loadCompletedItems();
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Quiz saved successfully.')),
           );
-
-          if (quizMarkIndex != -1) {
-            // If quiz exists, compare marks and update if the new marks are higher
-            if (existingQuizMarks[quizMarkIndex]['marks'] < correctAnswers) {
-              existingQuizMarks[quizMarkIndex]['marks'] = correctAnswers;
-            }
-          } else {
-            // If quiz doesn't exist, add it to the array
-            existingQuizMarks.add(quizEntry);
-          }
-          // 5. Update the 'quizMarks' for the current internship
-          currentInternship['quizMarks'] = existingQuizMarks;
-          // 6. Update the internship entry in the internshipsList
-          internshipsList[internshipIndex] = currentInternship;
-          // 7. Update the entire 'internshipsList' in the user's document
-          await userDocRef.update({
-            'internshipsList': internshipsList,
-          });
-        } else {
-          // This case should ideally not happen if internshipName is always valid
-          // You might want to log a warning or handle it based on your app's logic
-          print(
-              "Error: Internship '${widget.internshipName}' not found for user.");
         }
-      } else {
-        print("Error: 'internshipsList' not found or is null for user.");
+      } catch (e) {
+        debugPrint('Failed to save quiz marks: $e');
+        if (mounted)
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Failed to save quiz marks: $e')),
+          );
       }
     }
 

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // removed go_router usage - will use Navigator
 import 'package:skill_factorial/screens/register.dart';
+import 'package:skill_factorial/api_service.dart';
 import 'package:skill_factorial/constants/colors.dart'; // Assuming AppColors.primaryColor exists here
 import 'package:skill_factorial/screens/common_widgets/custom_search_bar.dart';
 import 'package:skill_factorial/screens/common_widgets/cached_network_image_widget.dart'; // Keep if used elsewhere or remove if not
@@ -819,29 +820,19 @@ class _QuizListHomeState extends State<QuizListHome> {
     user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       try {
-        await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user!.uid)
-            .set({
-          'internshipsList': FieldValue.arrayUnion([
-            {
-              'internshipName': internshipName,
-              'course_tier': tier,
-              'quizMarks': [],
-              'projectMarks': tier == 'accelerator' ? [] : null,
-              'enrollmentType': enrollmentType, // NEW
-              'professor_id': professorId, // NEW: null for self
-            }
-          ]),
-          'mobileNumber': mobileNumber,
-          'tier': tier,
-        }, SetOptions(merge: true));
+        final internshipData = {
+          'internshipName': internshipName,
+          'course_tier': tier,
+          'quizMarks': [],
+          'projectMarks': tier == 'accelerator' ? [] : null,
+          'enrollmentType': enrollmentType,
+          'professor_id': professorId,
+        };
 
-        // If enrolled via professor (classroom), add a mapping for quick professor queries
+        await ApiService.unlockInternshipForUser(user!.uid, internshipData);
+
         if (professorId != null && professorId.isNotEmpty) {
-          await FirebaseFirestore.instance
-              .collection('professor_assignments')
-              .add({
+          await ApiService.addProfessorAssignment({
             'professor_id': professorId,
             'student_uid': user!.uid,
             'internshipName': internshipName,
@@ -851,7 +842,7 @@ class _QuizListHomeState extends State<QuizListHome> {
           });
         }
 
-        _fetchUserData();
+        await _fetchUserData();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(

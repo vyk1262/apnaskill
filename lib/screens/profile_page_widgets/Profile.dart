@@ -11,6 +11,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/common_widgets/custom_app_bar.dart';
+import 'package:skill_factorial/api_service.dart';
 
 import 'form_widget.dart';
 import 'report_card.dart'; // your FormWidget file
@@ -50,13 +51,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
   bool _isProfessor = false;
   bool _loadingStudents = false;
   Map<String, List<Map<String, dynamic>>> _studentsByCourse = {};
+  // Course -> list of quiz names loaded from assets/course_list.json
+  Map<String, List<String>>? _courseQuizzes;
 
   @override
   void initState() {
     super.initState();
     _nameController = TextEditingController();
     _mobileNumberController = TextEditingController();
+    _loadCourseList();
     _fetchUserData();
+  }
+
+  Future<void> _loadCourseList() async {
+    try {
+      final jsonStr = await rootBundle.loadString('assets/course_list.json');
+      final Map<String, dynamic> data =
+          json.decode(jsonStr) as Map<String, dynamic>;
+      final Map<String, List<String>> parsed = {};
+      data.forEach((key, value) {
+        if (value is List) {
+          parsed[key] = value.map((e) => e.toString()).toList();
+        }
+      });
+      if (mounted) setState(() => _courseQuizzes = parsed);
+    } catch (e) {
+      debugPrint('Error loading course_list.json: $e');
+    }
   }
 
   @override
@@ -77,67 +98,53 @@ class _ProfileScreenState extends State<ProfileScreen> {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       try {
-        DocumentSnapshot snapshot = await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user.uid)
-            .get();
+        final data = await ApiService.getUserData(user.uid);
+        setState(() {
+          userData = data ??
+              {
+                'email': user.email ?? 'N/A',
+                'name': '',
+                'mobileNumber': '',
+                'dateOfBirth': null,
+                'gender': null,
+                'internshipsList': [],
+              };
 
-        if (snapshot.exists) {
-          final data = snapshot.data() as Map<String, dynamic>?;
-          setState(() {
-            userData = data;
-            if (userData != null) {
-              _nameController.text = userData!['name'] ?? '';
-              _mobileNumberController.text = userData!['mobileNumber'] ?? '';
+          _nameController.text = userData!['name'] ?? '';
+          _mobileNumberController.text = userData!['mobileNumber'] ?? '';
 
-              if (userData!['dateOfBirth'] != null &&
-                  userData!['dateOfBirth'].toString().isNotEmpty) {
-                try {
-                  if (userData!['dateOfBirth'] is Timestamp) {
-                    _selectedDate =
-                        (userData!['dateOfBirth'] as Timestamp).toDate();
-                  } else if (userData!['dateOfBirth'] is String) {
-                    _selectedDate = DateFormat('yyyy-MM-dd')
-                        .parse(userData!['dateOfBirth']);
-                  }
-                } catch (e) {
-                  debugPrint('Error parsing dateOfBirth: $e');
-                  _selectedDate = null;
-                }
+          if (userData!['dateOfBirth'] != null &&
+              userData!['dateOfBirth'].toString().isNotEmpty) {
+            try {
+              if (userData!['dateOfBirth'] is Timestamp) {
+                _selectedDate =
+                    (userData!['dateOfBirth'] as Timestamp).toDate();
+              } else if (userData!['dateOfBirth'] is String) {
+                _selectedDate =
+                    DateFormat('yyyy-MM-dd').parse(userData!['dateOfBirth']);
               }
-
-              _selectedGender = userData!['gender'];
-
-              // Professor detection
-              _isProfessor = userData?['professor_id'] != null;
-              if (_isProfessor) {
-                _loadStudentsForProfessor();
-              }
-
-              // Ensure selectedGender is valid or null
-              if (_selectedGender != null &&
-                  !genderOptions.contains(_selectedGender)) {
-                // Keep as is for now (already stored custom value)
-              }
+            } catch (e) {
+              debugPrint('Error parsing dateOfBirth: $e');
+              _selectedDate = null;
             }
-            _isLoading = false;
-          });
-        } else {
-          setState(() {
-            _isLoading = false;
-          });
-          debugPrint('User document does not exist.');
+          }
 
-          // Optionally initialize default structure
-          userData = {
-            'email': user.email ?? 'N/A',
-            'name': '',
-            'mobileNumber': '',
-            'dateOfBirth': null,
-            'gender': null,
-            'internshipsList': [],
-          };
-        }
+          _selectedGender = userData!['gender'];
+
+          // Professor detection
+          _isProfessor = userData?['professor_id'] != null;
+          if (_isProfessor) {
+            _loadStudentsForProfessor();
+          }
+
+          // Ensure selectedGender is valid or null
+          if (_selectedGender != null &&
+              !genderOptions.contains(_selectedGender)) {
+            // Keep as is for now
+          }
+
+          _isLoading = false;
+        });
       } catch (e) {
         setState(() {
           _isLoading = false;
@@ -170,82 +177,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final String myProfId = userData!['professor_id'];
 
     try {
-      // Prefer mapping collection if exists
-      final QuerySnapshot paSnapshot = await FirebaseFirestore.instance
-          .collection('professor_assignments')
-          .where('professor_id', isEqualTo: myProfId)
-          .get();
-
-      if (paSnapshot.docs.isNotEmpty) {
-        for (var doc in paSnapshot.docs) {
-          final Map<String, dynamic>? m = doc.data() as Map<String, dynamic>?;
-          if (m == null) continue;
-
-          final String? studentUid = m['student_uid'];
-          final String courseName = m['internshipName'] ?? 'Unknown Course';
-          if (studentUid == null) continue;
-
-          final studentDoc = await FirebaseFirestore.instance
-              .collection('users')
-              .doc(studentUid)
-              .get();
-          if (!studentDoc.exists) continue;
-
-          final udata = studentDoc.data() as Map<String, dynamic>?;
-          final studentInfo = {
-            'uid': studentUid,
-            'name': udata?['name'] ?? udata?['email'] ?? 'Unknown',
-            'email': udata?['email'] ?? '',
-            'mobileNumber': udata?['mobileNumber'] ?? '',
-            'enrollmentType': m['enrollmentType'] ?? '',
-            'course_tier': m['course_tier'] ?? '',
-          };
-          _studentsByCourse.putIfAbsent(courseName, () => []).add(studentInfo);
-        }
-      } else {
-        // Fallback: scan all users (ok for small data)
-        QuerySnapshot allUsers =
-            await FirebaseFirestore.instance.collection('users').get();
-
-        for (var doc in allUsers.docs) {
-          final Map<String, dynamic>? udata =
-              doc.data() as Map<String, dynamic>?;
-          if (udata == null) continue;
-          if (udata['internshipsList'] == null) continue;
-
-          final List internships = udata['internshipsList'] as List;
-          for (var entry in internships) {
-            try {
-              final Map<String, dynamic> item =
-                  Map<String, dynamic>.from(entry);
-              if (item['professor_id'] != null &&
-                  item['professor_id'] == myProfId) {
-                final String courseName =
-                    item['internshipName'] ?? 'Unknown Course';
-                final studentInfo = {
-                  'uid': doc.id,
-                  'name': udata['name'] ?? udata['email'] ?? 'Unknown',
-                  'email': udata['email'] ?? '',
-                  'mobileNumber': udata['mobileNumber'] ?? '',
-                  'enrollmentType': item['enrollmentType'] ?? '',
-                  'course_tier': item['course_tier'] ?? '',
-                };
-                _studentsByCourse
-                    .putIfAbsent(courseName, () => [])
-                    .add(studentInfo);
-              }
-            } catch (_) {
-              // ignore malformed entries
-            }
-          }
-        }
+      final rows = await ApiService.loadStudentsForProfessor(myProfId);
+      // ApiService returns flattened list where each item has a 'course' key
+      final Map<String, List<Map<String, dynamic>>> grouped = {};
+      for (var r in rows) {
+        final course = r['course'] ?? r['internshipName'] ?? 'Unknown Course';
+        final studentInfo = Map<String, dynamic>.from(r);
+        studentInfo.remove('course');
+        grouped.putIfAbsent(course, () => []).add(studentInfo);
       }
+      if (mounted) setState(() => _studentsByCourse = grouped);
     } catch (e) {
       debugPrint('Error loading students for professor: $e');
     } finally {
-      if (mounted) {
-        setState(() => _loadingStudents = false);
-      }
+      if (mounted) setState(() => _loadingStudents = false);
     }
   }
 
@@ -259,16 +204,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
     try {
       final students =
           _studentsByCourse[courseName] ?? <Map<String, dynamic>>[];
-      const int quizCount = 30;
-
       final StringBuffer csv = StringBuffer();
 
-      // Header
-      final headers = <String>['Student Name', 'Student Email'];
-      for (int i = 1; i <= quizCount; i++) {
-        headers.add('Q$i');
+      // Determine quiz names for this course from loaded asset list.
+      List<String> quizNames = _courseQuizzes?[courseName] ?? [];
+      // If exact match not found, try case-insensitive/trimmed lookup
+      if ((quizNames.isEmpty || quizNames.length == 0) &&
+          _courseQuizzes != null) {
+        final keyNorm = courseName.toString().toLowerCase().trim();
+        for (final k in _courseQuizzes!.keys) {
+          if (k.toLowerCase().trim() == keyNorm) {
+            quizNames = _courseQuizzes![k]!;
+            break;
+          }
+        }
       }
-      headers.add('Total');
+
+      // Fallback: if no quiz names found, infer from student data or default to Q1..Q30
+      if (quizNames.isEmpty) {
+        int maxLen = 0;
+        for (final s in students) {
+          final quizMarks = s['quizMarks'] ?? [];
+          if (quizMarks is List && quizMarks.length > maxLen)
+            maxLen = quizMarks.length;
+        }
+        if (maxLen == 0) maxLen = 30;
+        quizNames = List.generate(maxLen, (i) => 'Q${i + 1}');
+      }
+
+      // Header
+      final headers =
+          <String>['Student Name', 'Student Email'] + quizNames + ['Total'];
       csv.writeln(headers.map(_escapeCsv).join(','));
 
       // Rows
@@ -278,13 +244,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
         row.add(_escapeCsv(s['email']));
 
         num total = 0;
-        final quizMarks = s['quizMarks'] ?? [];
+        final rawQuizMarks = s['quizMarks'];
 
-        for (int i = 0; i < quizCount; i++) {
-          if (i < quizMarks.length && quizMarks[i] != null) {
-            final v = num.tryParse(quizMarks[i].toString()) ?? 0;
+        // Build a map of quizName -> marks when quizMarks is list of maps
+        final Map<String, num> marksByName = {};
+        if (rawQuizMarks is List) {
+          for (var entry in rawQuizMarks) {
+            if (entry is Map) {
+              final qnRaw =
+                  entry['quizName'] ?? entry['quiz_name'] ?? entry['name'];
+              final qn = qnRaw?.toString();
+              final markVal = entry['marks'] ?? entry['score'] ?? entry['mark'];
+              if (qn != null) {
+                final parsed = num.tryParse(markVal?.toString() ?? '') ?? 0;
+                marksByName[qn.toLowerCase().trim()] = parsed;
+              }
+            }
+          }
+        }
+
+        for (int i = 0; i < quizNames.length; i++) {
+          final qName = quizNames[i];
+          final qNameNorm = qName.toLowerCase().trim();
+
+          if (marksByName.containsKey(qNameNorm)) {
+            final v = marksByName[qNameNorm]!;
             total += v;
             row.add(v.toString());
+          } else if (rawQuizMarks is List && i < rawQuizMarks.length) {
+            final vEntry = rawQuizMarks[i];
+            if (vEntry is num ||
+                (vEntry is String && num.tryParse(vEntry) != null)) {
+              final v = num.tryParse(vEntry.toString()) ?? 0;
+              total += v;
+              row.add(v.toString());
+            } else if (vEntry is Map &&
+                (vEntry['marks'] != null || vEntry['score'] != null)) {
+              final v = num.tryParse(
+                      (vEntry['marks'] ?? vEntry['score']).toString()) ??
+                  0;
+              total += v;
+              row.add(v.toString());
+            } else {
+              row.add('');
+            }
           } else {
             row.add('');
           }
@@ -511,38 +514,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       User? user = FirebaseAuth.instance.currentUser;
       if (user == null) throw Exception('Not logged in');
 
-      final today = DateFormat('yyyy-MM-dd').format(DateTime.now());
-
-      // Get daily counter
-      final counterDoc = await FirebaseFirestore.instance
-          .collection('professor_counters')
-          .doc(today)
-          .get();
-
-      int counter = 1;
-      if (counterDoc.exists) {
-        counter = (counterDoc.data()?['count'] ?? 0) + 1;
-      }
-
-      final professorId = '$today-${counter.toString().padLeft(2, '0')}';
-
-      // Update counter
-      await FirebaseFirestore.instance
-          .collection('professor_counters')
-          .doc(today)
-          .set({'count': counter, 'date': today}, SetOptions(merge: true));
-
-      // Save to user profile
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user.uid)
-          .update({
-        'professor_id': professorId,
-        'professor_college': _collegeController.text.trim(),
-        'professor_city': _cityController.text.trim(),
-        'professor_state': _stateController.text.trim(),
-        'professor_created_at': Timestamp.now(),
-      });
+      final professorId = await ApiService.generateProfessorIdAndSave(
+          user.uid,
+          _collegeController.text.trim(),
+          _cityController.text.trim(),
+          _stateController.text.trim());
 
       // Refresh
       await _fetchUserData();
