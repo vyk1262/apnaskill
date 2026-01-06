@@ -8,6 +8,7 @@ import 'package:skill_factorial/screens/courses_home.dart';
 import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../constants/colors.dart';
+import 'package:skill_factorial/api_service.dart';
 import 'common_widgets/custom_app_bar.dart';
 import '../model/user_model.dart';
 import 'common_widgets/cta_button.dart';
@@ -125,7 +126,7 @@ class _AuthScreenState extends State<AuthScreen> {
       User? user = userCredential.user;
 
       if (user != null) {
-        await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+        await ApiService.updateUserData(user.uid, {
           'email': email,
           'mobileNumber': mobileNumber,
           'createdAt': Timestamp.now(),
@@ -306,10 +307,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
         if (!userDoc.exists) {
           debugPrint('User document does not exist. Creating new document...');
-          await FirebaseFirestore.instance
-              .collection('users')
-              .doc(user.uid)
-              .set({
+          await ApiService.updateUserData(user.uid, {
             'email': user.email,
             'createdAt': Timestamp.now(),
           });

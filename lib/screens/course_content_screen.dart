@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -118,12 +117,7 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
   Future<void> _loadCompletedItems() async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      DocumentSnapshot snapshot = await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user.uid)
-          .get();
-
-      Map<String, dynamic>? userData = snapshot.data() as Map<String, dynamic>?;
+      Map<String, dynamic>? userData = await ApiService.getUserData(user.uid);
 
       if (userData != null && userData.containsKey('internshipsList')) {
         List<dynamic> internshipsList = userData['internshipsList'];
