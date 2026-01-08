@@ -7,6 +7,7 @@ import 'package:skill_factorial/screens/register.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'screens/profile_page_widgets/Profile.dart';
+import 'screens/splash_screen.dart';
 import 'firebase_options.dart';
 import 'model/user_model.dart';
 import 'screens/url_not_found.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Skill Factorial',
       theme: CustomTheme.lightTheme,
-      home: const QuizListHome(),
+      home: const SplashScreen(),
     );
   }
 }
