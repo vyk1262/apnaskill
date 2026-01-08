@@ -35,7 +35,7 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
 
   // Timer state for quizzes (20 minutes)
   Timer? _quizTimer;
-  int _remainingSeconds = 20 * 60;
+  int _remainingSeconds = 10 * 60;
   bool _timerRunning = false;
   bool _autoSubmitted = false;
 
@@ -186,7 +186,7 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
   void _startTimer() {
     _stopTimer();
     setState(() {
-      _remainingSeconds = 20 * 60; // reset to 20 minutes
+      _remainingSeconds = 10 * 60; // reset to 20 minutes
       _timerRunning = true;
       _autoSubmitted = false;
     });

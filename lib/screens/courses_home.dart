@@ -577,6 +577,8 @@ class _QuizListHomeState extends State<QuizListHome> {
     final mobileNumberController =
         TextEditingController(text: userData?['mobileNumber'] ?? '');
 
+    final nameController = TextEditingController(text: userData?['name'] ?? '');
+
     final TextEditingController profIdController =
         TextEditingController(text: storedProfId ?? '');
 
@@ -712,12 +714,13 @@ class _QuizListHomeState extends State<QuizListHome> {
                   const Divider(height: 32),
 
                   const Text(
-                    'Payment Details:',
+                    'Personal Details:',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  const SizedBox(height: 8),
                   TextFormField(
                     controller: mobileNumberController,
                     keyboardType: TextInputType.phone,
@@ -729,6 +732,16 @@ class _QuizListHomeState extends State<QuizListHome> {
                     validator: (v) => v == null || v.length != 10
                         ? 'Enter 10-digit number'
                         : null,
+                  ),
+                  TextFormField(
+                    controller: nameController,
+                    decoration: const InputDecoration(
+                      hintText: 'Full Name',
+                      prefixIcon: Icon(Icons.person),
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: (v) =>
+                        v == null || v.isEmpty ? 'Enter your name' : null,
                   ),
                 ],
               ),
@@ -747,6 +760,32 @@ class _QuizListHomeState extends State<QuizListHome> {
                 : ElevatedButton(
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
+                        // First: persist user's name and mobile to their profile
+                        try {
+                          final currentUser = FirebaseAuth.instance.currentUser;
+                          if (currentUser != null) {
+                            await ApiService.updateUserData(
+                                currentUser.uid,
+                                {
+                                  'name': nameController.text.trim(),
+                                  'mobileNumber':
+                                      mobileNumberController.text.trim(),
+                                },
+                                // ensure merge so we don't overwrite other fields
+                                merge: true);
+                            // Refresh local copy so dialog's post-actions see updated data
+                            await _fetchUserData();
+                          }
+                        } catch (e) {
+                          // If profile update fails, continue but notify user
+                          if (mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                  content: Text('Failed to save profile: $e')),
+                            );
+                          }
+                        }
+
                         // If booster exists and user selects accelerator, treat as upgrade
                         if (hasExistingBooster &&
                             selectedTier == 'accelerator') {
@@ -755,6 +794,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                           await _unlockInternshipAndStoreData(
                             internshipName,
                             mobileNumberController.text,
+                            nameController.text,
                             selectedTier!,
                             enrollmentType,
                             enrollmentType == 'classroom'
@@ -762,6 +802,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                                 : null,
                           );
                         }
+
                         if (mounted) Navigator.pop(context);
                       }
                     },
@@ -839,6 +880,7 @@ class _QuizListHomeState extends State<QuizListHome> {
   Future<void> _unlockInternshipAndStoreData(
     String internshipName,
     String mobileNumber,
+    String name,
     String tier,
     String enrollmentType, // NEW
     String? professorId, // NEW: optional

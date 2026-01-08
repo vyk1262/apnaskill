@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -130,6 +131,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           }
 
           _selectedGender = userData!['gender'];
+
+          // Prefill professor fields if present
+          _collegeController.text = userData!['professor_college'] ?? '';
+          _cityController.text = userData!['professor_city'] ?? '';
+          _stateController.text = userData!['professor_state'] ?? '';
 
           // Professor detection
           _isProfessor = userData?['professor_id'] != null;
@@ -387,6 +393,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'gender': _selectedGender,
         };
 
+        // Include professor details if filled
+        if (_collegeController.text.isNotEmpty) {
+          updatedData['professor_college'] = _collegeController.text.trim();
+        }
+        if (_cityController.text.isNotEmpty) {
+          updatedData['professor_city'] = _cityController.text.trim();
+        }
+        if (_stateController.text.isNotEmpty) {
+          updatedData['professor_state'] = _stateController.text.trim();
+        }
+
         await FirebaseFirestore.instance
             .collection('users')
             .doc(user.uid)
@@ -443,112 +460,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   void _generateProfessorId() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return StatefulBuilder(
-          builder: (context, setDialogState) {
-            return AlertDialog(
-              title: const Text('Generate Professor ID'),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  TextField(
-                    controller: _collegeController,
-                    decoration: const InputDecoration(
-                      labelText: 'College Name *',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  TextField(
-                    controller: _cityController,
-                    decoration: const InputDecoration(
-                      labelText: 'City *',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  TextField(
-                    controller: _stateController,
-                    decoration: const InputDecoration(
-                      labelText: 'State *',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ],
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Cancel'),
-                ),
-                ElevatedButton(
-                  onPressed: _isGeneratingProfId
-                      ? null
-                      : () => _createProfessorId(setDialogState),
-                  child: _isGeneratingProfId
-                      ? const SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : const Text('Generate ID'),
-                ),
-              ],
-            );
-          },
-        );
-      },
-    );
+    // Popup removed; generation is handled inline in the form widget.
   }
 
-  Future<void> _createProfessorId(StateSetter setDialogState) async {
-    if (_collegeController.text.isEmpty ||
-        _cityController.text.isEmpty ||
-        _stateController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please fill all fields')),
-      );
-      return;
-    }
-
-    setDialogState(() => _isGeneratingProfId = true);
+  Future<void> _createProfessorIdInline() async {
+    setState(() => _isGeneratingProfId = true);
 
     try {
       User? user = FirebaseAuth.instance.currentUser;
       if (user == null) throw Exception('Not logged in');
 
+      final college = _collegeController.text.trim();
+      final city = _cityController.text.trim();
+      final state = _stateController.text.trim();
+
       final professorId = await ApiService.generateProfessorIdAndSave(
-          user.uid,
-          _collegeController.text.trim(),
-          _cityController.text.trim(),
-          _stateController.text.trim());
+        user.uid,
+        college,
+        city,
+        state,
+      );
 
       // Refresh
       await _fetchUserData();
       await _loadStudentsForProfessor();
 
-      Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-            'Professor ID generated: $professorId ✓\nShare with your students!',
-          ),
+          content: Text('Professor ID generated: $professorId ✓'),
           backgroundColor: Colors.green,
           duration: const Duration(seconds: 4),
         ),
       );
-
-      _collegeController.clear();
-      _cityController.clear();
-      _stateController.clear();
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Error: $e')),
       );
     } finally {
-      setDialogState(() => _isGeneratingProfId = false);
+      setState(() => _isGeneratingProfId = false);
     }
   }
 
@@ -598,9 +547,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             profileCompletionPercentage:
                                 _calculateProfileCompletion(),
                             userEmail: userData!['email'],
+                            collegeController: _collegeController,
+                            cityController: _cityController,
+                            stateController: _stateController,
+                            showGenerateProfessorButton:
+                                (userData?['professor_id'] == null),
+                            onGenerateProfessorId: _createProfessorIdInline,
+                            isGeneratingProfessorId: _isGeneratingProfId,
                           ),
                         ),
                         const SizedBox(height: 20),
+
+                        Text(
+                            "Only for Professors/ Instructors (Students have to enter this ID while registering for courses)",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontWeight: FontWeight.bold)),
 
                         // Generate Professor ID button (if not yet a professor)
                         if (userData?['professor_id'] == null)
@@ -615,7 +578,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                             ),
                             child: const Text(
-                              'Generate Professor ID',
+                              'Generate Professor/ Instructor ID',
                               style: TextStyle(fontSize: 16),
                             ),
                           ),
@@ -671,14 +634,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       },
                                     ),
                                   ],
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  '${userData!['professor_college']}, '
-                                  '${userData!['professor_city']}, '
-                                  '${userData!['professor_state']}',
-                                  style:
-                                      TextStyle(color: Colors.green.shade800),
                                 ),
                                 const SizedBox(height: 12),
                               ],

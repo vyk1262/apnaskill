@@ -6,6 +6,9 @@ class FormWidget extends StatelessWidget {
   final GlobalKey<FormState> formKey;
   final TextEditingController nameController;
   final TextEditingController mobileNumberController;
+  final TextEditingController? collegeController;
+  final TextEditingController? cityController;
+  final TextEditingController? stateController;
   final DateTime? selectedDate;
   final String? selectedGender;
   final List<String> genderOptions;
@@ -15,6 +18,9 @@ class FormWidget extends StatelessWidget {
   final bool isLoading;
   final double profileCompletionPercentage;
   final String? userEmail;
+  final bool showGenerateProfessorButton;
+  final Future<void> Function()? onGenerateProfessorId;
+  final bool isGeneratingProfessorId;
 
   const FormWidget({
     Key? key,
@@ -30,6 +36,12 @@ class FormWidget extends StatelessWidget {
     required this.isLoading,
     required this.profileCompletionPercentage,
     this.userEmail,
+    this.collegeController,
+    this.cityController,
+    this.stateController,
+    this.showGenerateProfessorButton = false,
+    this.onGenerateProfessorId,
+    this.isGeneratingProfessorId = false,
   }) : super(key: key);
 
   @override
@@ -114,6 +126,76 @@ class FormWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
+
+          // Professor details inline
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'College Details (For Students/Professors), Optional for Working Professionals',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              TextFormField(
+                controller: collegeController,
+                decoration: InputDecoration(
+                  labelText: 'College Name',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: cityController,
+                      decoration: InputDecoration(
+                        labelText: 'City',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: TextFormField(
+                      controller: stateController,
+                      decoration: InputDecoration(
+                        labelText: 'State',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              if (showGenerateProfessorButton && onGenerateProfessorId != null)
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: ElevatedButton(
+                    onPressed:
+                        isGeneratingProfessorId ? null : onGenerateProfessorId,
+                    child: isGeneratingProfessorId
+                        ? const SizedBox(
+                            width: 18,
+                            height: 18,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                            ),
+                          )
+                        : const Text('Generate Professor ID'),
+                  ),
+                ),
+              const SizedBox(height: 16),
+            ],
+          ),
 
           // Name - Stays stretched for good form UX
           TextFormField(

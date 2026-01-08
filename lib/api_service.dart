@@ -149,6 +149,12 @@ class ApiService {
       final data = snap.data() as Map<String, dynamic>;
       final internships = List.from(data['internshipsList'] ?? []);
 
+      // Ensure the quiz entry records when it was attempted.
+      // Use client Timestamp for consistency; can be changed to server timestamp if desired.
+      final Map<String, dynamic> enrichedEntry =
+          Map<String, dynamic>.from(quizEntry);
+      enrichedEntry['latestQuizAttemptedDate'] = Timestamp.now();
+
       final idx = internships.indexWhere(
           (it) => it is Map && it['internshipName'] == internshipName);
       if (idx == -1) {
@@ -156,18 +162,18 @@ class ApiService {
         internships.add({
           'internshipName': internshipName,
           'course_tier': 'booster',
-          'quizMarks': [quizEntry],
+          'quizMarks': [enrichedEntry],
         });
       } else {
         final curr = Map<String, dynamic>.from(internships[idx]);
         final existing = List.from(curr['quizMarks'] ?? []);
-        final qn = quizEntry['quizName'];
+        final qn = enrichedEntry['quizName'];
         final qIdx =
             existing.indexWhere((e) => e is Map && e['quizName'] == qn);
         if (qIdx != -1) {
-          existing[qIdx] = quizEntry;
+          existing[qIdx] = enrichedEntry;
         } else {
-          existing.add(quizEntry);
+          existing.add(enrichedEntry);
         }
         curr['quizMarks'] = existing;
         internships[idx] = curr;
