@@ -414,36 +414,37 @@ class _QuizListHomeState extends State<QuizListHome> {
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              // Center price and status vertically and horizontally
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (!isUnlocked) // Show price only if not unlocked
                     const Text(
                       '₹99/-',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey,
                         decoration: TextDecoration.lineThrough,
                       ),
                     ),
-                  const SizedBox(width: 5),
-                  Expanded(
-                    child: Text(
-                      isUnlocked
-                          ? (userData?['internshipsList']?.any((item) =>
-                                      item['internshipName'] ==
-                                          internshipName &&
-                                      item['course_tier'] == 'accelerator') ??
-                                  false
-                              ? 'Accelerator ✓'
-                              : 'Booster ✓')
-                          : 'Free',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14, fontWeight: FontWeight.bold,
-                        color: isUnlocked ? Colors.green : Colors.amber[700],
-                        height: 1.3, // Line height for multi-line
-                      ),
+                  if (!isUnlocked) const SizedBox(height: 5),
+                  Text(
+                    isUnlocked
+                        ? (userData?['internshipsList']?.any((item) =>
+                                    item['internshipName'] == internshipName &&
+                                    item['course_tier'] == 'accelerator') ??
+                                false
+                            ? 'Accelerator ✓'
+                            : 'Booster ✓')
+                        : 'Free',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: isUnlocked ? Colors.green : Colors.amber[700],
+                      height: 1.3, // Line height for multi-line
                     ),
                   ),
                 ],
@@ -733,6 +734,7 @@ class _QuizListHomeState extends State<QuizListHome> {
                         ? 'Enter 10-digit number'
                         : null,
                   ),
+                  const SizedBox(height: 12),
                   TextFormField(
                     controller: nameController,
                     decoration: const InputDecoration(
