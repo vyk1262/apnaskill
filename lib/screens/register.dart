@@ -182,12 +182,12 @@ class _AuthScreenState extends State<AuthScreen> {
                                 fontSize: 18,
                               ),
                             ),
-                            const SizedBox(height: 50),
+                            const SizedBox(height: 20),
                             // Image with a subtle shadow/float effect
                             Hero(
                               tag: 'auth_img',
                               child: Image.asset(
-                                'assets/student_home/sfcmp.png',
+                                'assets/student_home/reg.png',
                                 height: 350,
                                 fit: BoxFit.contain,
                               ),
@@ -201,29 +201,30 @@ class _AuthScreenState extends State<AuthScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    const Text(
+                      "Login to Continue Learning",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
                     GoogleSignInButton(
                       onPressed: _signInWithGoogle,
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     const Text(
                       'OR',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black54,
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    // Toggle Button
-                    buildCtaButton(
-                      text: _isSignIn
-                          ? 'Create New Account'
-                          : 'Already Have an Account?',
-                      onPressed: _toggleForm,
-                    ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     // Auth Card
                     Card(
+                      margin: const EdgeInsets.all(20),
                       elevation: 15,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
@@ -249,6 +250,14 @@ class _AuthScreenState extends State<AuthScreen> {
                       ),
                     ),
                     SizedBox(height: 10),
+                    // Toggle Button
+                    buildCtaButton(
+                      text: _isSignIn
+                          ? 'Create New Account'
+                          : 'Already Have an Account?',
+                      onPressed: _toggleForm,
+                    ),
+                    const SizedBox(height: 20),
                     if (_isLoading)
                       Container(
                         color: Colors.black.withOpacity(0.5),
@@ -451,7 +460,7 @@ class GoogleSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: 300,
       height: 50,
       decoration: BoxDecoration(
         color: Colors.black87,
