@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:skill_factorial/constants/colors.dart'; // Make sure this path is correct for your project
+import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:skill_factorial/constants/colors.dart';
 
 class FormWidget extends StatelessWidget {
   final GlobalKey<FormState> formKey;
@@ -16,8 +19,7 @@ class FormWidget extends StatelessWidget {
   final ValueChanged<String?> onGenderChanged;
   final VoidCallback onSave;
   final bool isLoading;
-  final double profileCompletionPercentage;
-  final String? userEmail;
+  final String? userEmail; // Keep for potential use
   final bool showGenerateProfessorButton;
   final Future<void> Function()? onGenerateProfessorId;
   final bool isGeneratingProfessorId;
@@ -34,7 +36,6 @@ class FormWidget extends StatelessWidget {
     required this.onGenderChanged,
     required this.onSave,
     required this.isLoading,
-    required this.profileCompletionPercentage,
     this.userEmail,
     this.collegeController,
     this.cityController,
@@ -49,270 +50,265 @@ class FormWidget extends StatelessWidget {
     return Form(
       key: formKey,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'My Profile',
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall
-                ?.copyWith(fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center, // Already centered
-          ),
-          // Profile completion percentage
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Column(
-              // Keep crossAxisAlignment: CrossAxisAlignment.start for the progress bar labels
-              // as this is a standard and clear layout for this element.
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment:
-                      MainAxisAlignment.spaceBetween, // Keeps labels at ends
-                  children: [
-                    Text(
-                      'Profile Completion',
-                      style: TextStyle(color: Colors.grey[700], fontSize: 14),
-                    ),
-                    Text(
-                      '${profileCompletionPercentage.toStringAsFixed(0)}%',
-                      style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+          // Professor Details Section (Optional)
+          if (collegeController != null ||
+              cityController != null ||
+              stateController != null) ...[
+            Text(
+              'College Details (Optional for Professors)',
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Colors.black87,
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              controller: collegeController,
+              decoration: InputDecoration(
+                labelText: 'College Name',
+                prefixIcon:
+                    FaIcon(Icons.school_outlined, color: Color(0xFF4A90E2)),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide(color: Colors.grey.shade300),
                 ),
-                const SizedBox(height: 8),
-                LinearProgressIndicator(
-                  value: profileCompletionPercentage / 100,
-                  backgroundColor: Colors.grey[200],
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                      Theme.of(context).primaryColor),
-                  minHeight: 8,
-                  borderRadius: BorderRadius.circular(4),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide(color: Color(0xFF4A90E2), width: 2),
+                ),
+                filled: true,
+                fillColor: Colors.grey.shade50,
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: cityController,
+                    decoration: InputDecoration(
+                      labelText: 'City',
+                      prefixIcon: FaIcon(Icons.location_city_outlined,
+                          color: Color(0xFF4A90E2)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16)),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide(color: Colors.grey.shade300),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide:
+                            BorderSide(color: Color(0xFF4A90E2), width: 2),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey.shade50,
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: TextFormField(
+                    controller: stateController,
+                    decoration: InputDecoration(
+                      labelText: 'State',
+                      prefixIcon:
+                          FaIcon(Icons.map_outlined, color: Color(0xFF4A90E2)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16)),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide(color: Colors.grey.shade300),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide:
+                            BorderSide(color: Color(0xFF4A90E2), width: 2),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey.shade50,
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    ),
+                  ),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 24),
-
-          // Email (Non-editable) - Adjusted for centering content within the card
-          Card(
-            elevation: 2,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                // Center the content (Email label and email value) within this card
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('Email',
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleSmall
-                          ?.copyWith(color: Colors.grey[700])),
-                  const SizedBox(height: 4),
-                  Text(
-                    userEmail ?? 'N/A',
-                    style: Theme.of(context).textTheme.titleMedium,
-                    textAlign:
-                        TextAlign.center, // Explicitly center the email text
+            if (showGenerateProfessorButton &&
+                onGenerateProfessorId != null) ...[
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  icon: isGeneratingProfessorId
+                      ? SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.white),
+                          ),
+                        )
+                      : FaIcon(Icons.badge_outlined),
+                  label: Text(
+                    isGeneratingProfessorId
+                        ? 'Generating...'
+                        : 'Generate Professor ID',
                   ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-
-          // Professor details inline
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'College Details (For Students/Professors), Optional for Working Professionals',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              TextFormField(
-                controller: collegeController,
-                decoration: InputDecoration(
-                  labelText: 'College Name',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green.shade600,
+                    foregroundColor: Colors.white,
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16)),
+                  ),
+                  onPressed:
+                      isGeneratingProfessorId ? null : onGenerateProfessorId,
                 ),
               ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      controller: cityController,
-                      decoration: InputDecoration(
-                        labelText: 'City',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12)),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: TextFormField(
-                      controller: stateController,
-                      decoration: InputDecoration(
-                        labelText: 'State',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12)),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              if (showGenerateProfessorButton && onGenerateProfessorId != null)
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: ElevatedButton(
-                    onPressed:
-                        isGeneratingProfessorId ? null : onGenerateProfessorId,
-                    child: isGeneratingProfessorId
-                        ? const SizedBox(
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.white),
-                            ),
-                          )
-                        : const Text('Generate Professor ID'),
-                  ),
-                ),
-              const SizedBox(height: 16),
             ],
-          ),
+            const SizedBox(height: 28),
+          ],
 
-          // Name - Stays stretched for good form UX
+          // Name Field
           TextFormField(
             controller: nameController,
-            style: TextStyle(color: Colors.black87),
+            style: GoogleFonts.poppins(color: Colors.black87),
             decoration: InputDecoration(
-              labelText: 'Name', // Label within the field
-              labelStyle: TextStyle(color: Colors.grey[700]),
+              labelText: 'Full Name *',
+              prefixIcon:
+                  FaIcon(Icons.person_outline, color: Color(0xFF4A90E2)),
               border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.grey[300]!),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Colors.grey.shade300),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Theme.of(context).primaryColor),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Color(0xFF4A90E2), width: 2),
               ),
               filled: true,
-              fillColor: Colors.grey[50],
-              prefixIcon: Icon(Icons.person_outline, color: Colors.grey[600]),
+              fillColor: Colors.grey.shade50,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              labelStyle: TextStyle(color: Colors.grey.shade600),
             ),
             validator: (value) {
-              if (value == null || value.isEmpty) {
+              if (value == null || value.trim().isEmpty) {
                 return 'Please enter your name';
               }
               return null;
             },
           ),
-          const SizedBox(height: 16),
-          // Mobile Number - Stays stretched for good form UX
+          const SizedBox(height: 20),
+
+          // Mobile Number Field
           TextFormField(
             controller: mobileNumberController,
-            style: TextStyle(color: Colors.black87),
+            style: GoogleFonts.poppins(color: Colors.black87),
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
-              labelText: 'Mobile Number', // Label within the field
-              labelStyle: TextStyle(color: Colors.grey[700]),
+              labelText: 'Mobile Number *',
+              prefixIcon:
+                  FaIcon(Icons.phone_outlined, color: Color(0xFF4A90E2)),
               border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.grey[300]!),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Colors.grey.shade300),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Theme.of(context).primaryColor),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Color(0xFF4A90E2), width: 2),
               ),
               filled: true,
-              fillColor: Colors.grey[50],
-              prefixIcon: Icon(Icons.phone_outlined, color: Colors.grey[600]),
+              fillColor: Colors.grey.shade50,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              labelStyle: TextStyle(color: Colors.grey.shade600),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter your mobile number';
               }
-              // Basic mobile number validation (e.g., 10 digits)
               if (value.length != 10 || !RegExp(r'^[0-9]+$').hasMatch(value)) {
-                return 'Please enter a valid 10-digit mobile number';
+                return 'Enter valid 10-digit number';
               }
               return null;
             },
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
 
-          // Date of Birth - Stays stretched for good form UX
+          // Date of Birth Field
           InkWell(
             onTap: () => onSelectDate(context),
-            child: InputDecorator(
-              decoration: InputDecoration(
-                labelText: 'Date of Birth', // Label within the field
-                labelStyle: TextStyle(color: Colors.grey[700]),
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Colors.grey[300]!),
-                ),
-                filled: true,
-                fillColor: Colors.grey[50],
-                prefixIcon: Icon(Icons.calendar_today_outlined,
-                    color: Colors.grey[600]),
+            borderRadius: BorderRadius.circular(16),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey.shade300),
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.grey.shade50,
               ),
-              child: Text(
-                selectedDate != null
-                    ? DateFormat('dd MMMM yyyy').format(selectedDate!)
-                    : 'Select your date of birth',
-                style: TextStyle(
-                  color: selectedDate == null
-                      ? Colors.grey[600]
-                      : Theme.of(context).textTheme.bodyLarge?.color,
-                ),
+              child: Row(
+                children: [
+                  FaIcon(
+                    Icons.calendar_today_outlined,
+                    color: Color(0xFF4A90E2),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Text(
+                      selectedDate != null
+                          ? DateFormat('dd MMMM yyyy').format(selectedDate!)
+                          : 'Date of Birth',
+                      style: GoogleFonts.poppins(
+                        color: selectedDate != null
+                            ? Colors.black87
+                            : Colors.grey.shade600,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
 
-          // Gender - Stays stretched for good form UX
+          // Gender Dropdown
           DropdownButtonFormField<String>(
             value: selectedGender,
-            style: TextStyle(color: Colors.black87),
+            style: GoogleFonts.poppins(color: Colors.black87),
             decoration: InputDecoration(
-              labelText: 'Gender', // Label within the field
-              labelStyle: TextStyle(color: Colors.grey[700]),
+              labelText: 'Gender',
+              prefixIcon: FaIcon(Icons.wc_outlined, color: Color(0xFF4A90E2)),
               border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.grey[300]!),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Colors.grey.shade300),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Theme.of(context).primaryColor),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Color(0xFF4A90E2), width: 2),
               ),
               filled: true,
-              fillColor: Colors.grey[50],
-              prefixIcon: Icon(Icons.wc_outlined, color: Colors.grey[600]),
+              fillColor: Colors.grey.shade50,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              labelStyle: TextStyle(color: Colors.grey.shade600),
             ),
             items: genderOptions.map((String value) {
               return DropdownMenuItem<String>(
@@ -321,30 +317,39 @@ class FormWidget extends StatelessWidget {
               );
             }).toList(),
             onChanged: onGenderChanged,
-            // validator: (value) => value == null ? 'Please select your gender' : null, // Optional validation
           ),
           const SizedBox(height: 32),
 
-          // Save Button - Stays stretched and centered due to Column's stretch
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)),
-              backgroundColor: Theme.of(context).primaryColor,
-              foregroundColor: Colors.white,
+          // Save Button
+          SizedBox(
+            width: double.infinity,
+            height: 56,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF4A90E2),
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16)),
+                elevation: 0,
+              ),
+              onPressed: isLoading ? null : onSave,
+              child: isLoading
+                  ? SizedBox(
+                      height: 24,
+                      width: 24,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2.5,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      ),
+                    )
+                  : Text(
+                      'Save Changes',
+                      style: GoogleFonts.poppins(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
             ),
-            onPressed: isLoading ? null : onSave,
-            child: isLoading
-                ? const SizedBox(
-                    height: 20,
-                    width: 20,
-                    child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(Colors.white)))
-                : const Text('Save Changes', style: TextStyle(fontSize: 16)),
           ),
         ],
       ),

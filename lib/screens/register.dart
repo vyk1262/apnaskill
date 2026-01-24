@@ -217,73 +217,21 @@ class _AuthScreenState extends State<AuthScreen> {
                         flex: 1,
                         child: Padding(
                           padding: const EdgeInsets.only(right: 40.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Unlock Your\nLearning Potential",
-                                style: GoogleFonts.poppins(
-                                  fontSize: 36,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                  height: 1.2,
-                                ),
-                              ),
-                              const SizedBox(height: 24),
-                              Text(
-                                "Join 50K+ learners mastering\nskills that matter most",
-                                style: GoogleFonts.poppins(
-                                  fontSize: 18,
-                                  color: Colors.white,
-                                  height: 1.4,
-                                ),
-                              ),
-                              const SizedBox(height: 40),
-                              Container(
-                                width: double.infinity,
-                                height: 300,
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(24),
-                                  border: Border.all(
-                                      color: Colors.white.withOpacity(0.2)),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Image.asset(
-                                    'assets/student_home/reg.png',
-                                    fit: BoxFit.cover,
-                                    errorBuilder:
-                                        (context, error, stackTrace) =>
-                                            Container(
-                                      color: Colors.white.withOpacity(0.1),
-                                      child: Icon(
-                                        Icons.school_outlined,
-                                        size: 100,
-                                        color: Colors.white.withOpacity(0.8),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                          child: StaticInfoWithImage(),
                         ),
                       ),
                     Expanded(
                       flex: isMobile ? 1 : 1,
                       child: Column(
                         children: [
-                          if (!isMobile)
-                            Text(
-                              "Welcome Back",
-                              style: GoogleFonts.poppins(
-                                fontSize: 28,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
-                              ),
+                          Text(
+                            "Welcome Back",
+                            style: GoogleFonts.poppins(
+                              fontSize: 28,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
                             ),
+                          ),
                           const SizedBox(height: 24),
                           Text(
                             _isSignIn
@@ -323,6 +271,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               ),
                             ),
                           ),
+                          if (isMobile) StaticInfoWithImage(),
                           if (_isLoading)
                             Container(
                               margin: const EdgeInsets.only(top: 20),
@@ -343,6 +292,65 @@ class _AuthScreenState extends State<AuthScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class StaticInfoWithImage extends StatelessWidget {
+  const StaticInfoWithImage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Unlock Your\nLearning Potential",
+          style: GoogleFonts.poppins(
+            fontSize: 36,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+            height: 1.2,
+          ),
+        ),
+        const SizedBox(height: 24),
+        Text(
+          "Join 50K+ learners mastering\nskills that matter most",
+          style: GoogleFonts.poppins(
+            fontSize: 18,
+            color: Colors.white,
+            height: 1.4,
+          ),
+        ),
+        const SizedBox(height: 40),
+        Container(
+          width: double.infinity,
+          height: 300,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(color: Colors.white.withOpacity(0.2)),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset(
+              'assets/student_home/reg.png',
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => Container(
+                color: Colors.white.withOpacity(0.1),
+                child: Icon(
+                  Icons.school_outlined,
+                  size: 100,
+                  color: Colors.white.withOpacity(0.8),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -533,7 +541,7 @@ class GoogleSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 350,
       height: 56,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -553,7 +561,7 @@ class GoogleSignInButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           onTap: onPressed,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

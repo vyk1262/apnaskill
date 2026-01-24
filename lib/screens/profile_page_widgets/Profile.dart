@@ -7,6 +7,8 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -503,261 +505,346 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 768;
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: CustomAppBar(),
-      backgroundColor: Colors.grey[100],
-      body: Center(
-        child: _isLoading
-            ? const CircularProgressIndicator()
-            : userData != null
-                ? SingleChildScrollView(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Column(
-                      children: [
-                        // Profile form card
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 1.0,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.1),
-                                spreadRadius: 1,
-                                blurRadius: 10,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          padding: const EdgeInsets.all(24.0),
-                          child: FormWidget(
-                            formKey: _formKey,
-                            nameController: _nameController,
-                            mobileNumberController: _mobileNumberController,
-                            selectedDate: _selectedDate,
-                            selectedGender: _selectedGender,
-                            genderOptions: genderOptions,
-                            onSelectDate: _selectDate,
-                            onGenderChanged: _onGenderChanged,
-                            onSave: _saveUserData,
-                            isLoading: _isLoading,
-                            profileCompletionPercentage:
-                                _calculateProfileCompletion(),
-                            userEmail: userData!['email'],
-                            collegeController: _collegeController,
-                            cityController: _cityController,
-                            stateController: _stateController,
-                            showGenerateProfessorButton:
-                                (userData?['professor_id'] == null),
-                            onGenerateProfessorId: _createProfessorIdInline,
-                            isGeneratingProfessorId: _isGeneratingProfId,
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-
-                        Text(
-                            "Only for Professors/ Instructors (Students have to enter this ID while registering for courses)",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium
-                                ?.copyWith(fontWeight: FontWeight.bold)),
-
-                        // Generate Professor ID button (if not yet a professor)
-                        if (userData?['professor_id'] == null)
-                          ElevatedButton(
-                            onPressed: _generateProfessorId,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blueAccent,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 24, vertical: 12),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                            ),
-                            child: const Text(
-                              'Generate Professor/ Instructor ID',
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          ),
-
-                        // Professor badge and details
-                        if (userData?['professor_id'] != null)
-                          Container(
-                            padding: const EdgeInsets.all(16),
-                            margin: const EdgeInsets.only(top: 8),
-                            decoration: BoxDecoration(
-                              color: Colors.green.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: Colors.green, width: 2),
-                            ),
-                            child: Column(
-                              children: [
-                                const Icon(Icons.badge,
-                                    size: 48, color: Colors.green),
-                                const SizedBox(height: 8),
-                                Text(
-                                  'Your Professor ID:',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium
-                                      ?.copyWith(fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height: 4),
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      userData!['professor_id'],
-                                      style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.green,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    IconButton(
-                                      icon: const Icon(Icons.copy,
-                                          color: Colors.green),
-                                      onPressed: () {
-                                        Clipboard.setData(ClipboardData(
-                                            text: userData!['professor_id']));
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          const SnackBar(
-                                            content:
-                                                Text('Professor ID copied'),
-                                          ),
-                                        );
-                                      },
-                                    ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF4A90E2),
+              Color(0xFF50C878),
+              Color(0xFF7B68EE),
+            ],
+          ),
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(isMobile ? 16.0 : 32.0),
+            child: _isLoading
+                ? const Center(
+                    child: CircularProgressIndicator(color: Colors.white))
+                : userData != null
+                    ? SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Profile Header
+                            Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.all(32),
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Colors.white.withOpacity(0.2),
+                                    Colors.white.withOpacity(0.05)
                                   ],
                                 ),
-                                const SizedBox(height: 12),
-                              ],
-                            ),
-                          ),
-
-                        const SizedBox(height: 16),
-
-                        // Report card / internships summary
-                        Container(
-                          padding: const EdgeInsets.all(16.0),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 1.0,
-                            ),
-                          ),
-                          child: ReportCardWidget(
-                            internshipsList: userData!['internshipsList'] ?? [],
-                          ),
-                        ),
-
-                        const SizedBox(height: 20),
-
-                        // Students assigned (for professors)
-                        if (_isProfessor)
-                          Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: Colors.black12),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Students Assigned',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium
-                                      ?.copyWith(fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height: 8),
-                                _loadingStudents
-                                    ? const Center(
-                                        child: Padding(
-                                          padding: EdgeInsets.all(8.0),
-                                          child: CircularProgressIndicator(),
-                                        ),
-                                      )
-                                    : _studentsByCourse.isEmpty
-                                        ? const Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 12.0),
-                                            child: Text(
-                                              'No students assigned to your Professor ID yet.',
-                                            ),
-                                          )
-                                        : Column(
-                                            children: _studentsByCourse.entries
-                                                .map(
-                                                  (entry) => Padding(
-                                                    padding: const EdgeInsets
-                                                        .symmetric(
-                                                        vertical: 6.0),
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Text(
-                                                            '${entry.key} (${entry.value.length})',
-                                                            style: const TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                          ),
-                                                        ),
-                                                        ElevatedButton.icon(
-                                                          icon: const Icon(
-                                                              Icons.download),
-                                                          label: const Text(
-                                                              'Download CSV'),
-                                                          onPressed: () =>
-                                                              _generateCsvForCourse(
-                                                                  entry.key),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                )
-                                                .toList(),
+                                borderRadius: BorderRadius.circular(24),
+                                border: Border.all(
+                                    color: Colors.white.withOpacity(0.3)),
+                              ),
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 40,
+                                    backgroundColor:
+                                        Colors.white.withOpacity(0.3),
+                                    child: FaIcon(
+                                      Icons.person,
+                                      size: 40,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 20),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          userData!['name']?.isNotEmpty == true
+                                              ? userData!['name']
+                                              : 'Your Name',
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 28,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
                                           ),
-                              ],
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          userData!['email'] ??
+                                              'email@example.com',
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 16,
+                                            color:
+                                                Colors.white.withOpacity(0.9),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        LinearProgressIndicator(
+                                          value: _calculateProfileCompletion(),
+                                          backgroundColor:
+                                              Colors.white.withOpacity(0.3),
+                                          valueColor:
+                                              const AlwaysStoppedAnimation<
+                                                  Color>(Colors.white),
+                                        ),
+                                        Text(
+                                          '${(_calculateProfileCompletion() * 100).toInt()}% Complete',
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 14,
+                                            color:
+                                                Colors.white.withOpacity(0.8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 32),
+
+                            // Profile Form Card
+                            _buildCard(
+                              title: "Profile Details",
+                              child: FormWidget(
+                                formKey: _formKey,
+                                nameController: _nameController,
+                                mobileNumberController: _mobileNumberController,
+                                selectedDate: _selectedDate,
+                                selectedGender: _selectedGender,
+                                genderOptions: genderOptions,
+                                onSelectDate: _selectDate,
+                                onGenderChanged: _onGenderChanged,
+                                onSave: _saveUserData,
+                                isLoading: _isLoading,
+                                // profileCompletionPercentage:
+                                //     _calculateProfileCompletion(),
+                                userEmail: userData!['email'],
+                                collegeController: _collegeController,
+                                cityController: _cityController,
+                                stateController: _stateController,
+                                showGenerateProfessorButton:
+                                    (userData?['professor_id'] == null),
+                                onGenerateProfessorId: _createProfessorIdInline,
+                                isGeneratingProfessorId: _isGeneratingProfId,
+                              ),
+                            ),
+                            const SizedBox(height: 24),
+
+                            // Professor Section
+                            if (userData?['professor_id'] != null) ...[
+                              _buildCard(
+                                title: "Professor Dashboard",
+                                child: _buildProfessorSection(),
+                              ),
+                              const SizedBox(height: 24),
+                            ],
+
+                            // Report Card
+                            _buildCard(
+                              title: "Internships & Reports",
+                              child: ReportCardWidget(
+                                internshipsList:
+                                    userData!['internshipsList'] ?? [],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : _buildErrorCard(),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCard({required String title, required Widget child}) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 30,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              FaIcon(
+                Icons.card_membership,
+                color: const Color(0xFF4A90E2),
+                size: 24,
+              ),
+              const SizedBox(width: 12),
+              Text(
+                title,
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          child,
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProfessorSection() {
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.green.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: Colors.green, width: 2),
+          ),
+          child: Row(
+            children: [
+              FaIcon(Icons.badge, size: 32, color: Colors.green),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Your Professor ID',
+                      style: GoogleFonts.poppins(
+                          fontSize: 14, color: Colors.green.shade800),
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            userData!['professor_id'],
+                            style: GoogleFonts.poppins(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green.shade800,
                             ),
                           ),
-                      ],
-                    ),
-                  )
-                : Container(
-                    padding: const EdgeInsets.all(24.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 10,
-                          offset: const Offset(0, 2),
+                        ),
+                        IconButton(
+                          icon: FaIcon(Icons.copy, color: Colors.green),
+                          onPressed: () {
+                            Clipboard.setData(
+                                ClipboardData(text: userData!['professor_id']));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Professor ID copied')),
+                            );
+                          },
                         ),
                       ],
                     ),
-                    child: const Text(
-                      'User data not found. Please try again later.',
-                      style: TextStyle(color: Colors.black87),
-                      textAlign: TextAlign.center,
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        if (_isProfessor && _studentsByCourse.isNotEmpty) ...[
+          const SizedBox(height: 20),
+          Text(
+            'Students Assigned',
+            style:
+                GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: 12),
+          ..._studentsByCourse.entries.map((entry) => Container(
+                margin: const EdgeInsets.only(bottom: 12),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey.shade200),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '${entry.key} (${entry.value.length})',
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
                     ),
-                  ),
+                    ElevatedButton.icon(
+                      icon: const FaIcon(Icons.download),
+                      label: Text('Download CSV'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF4A90E2),
+                      ),
+                      onPressed: () => _generateCsvForCourse(entry.key),
+                    ),
+                  ],
+                ),
+              )),
+        ] else if (_isProfessor)
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade50,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Text(
+              'No students assigned yet.',
+              style: TextStyle(color: Colors.grey),
+            ),
+          ),
+      ],
+    );
+  }
+
+  Widget _buildErrorCard() {
+    return Container(
+      padding: const EdgeInsets.all(40),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 30,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          FaIcon(Icons.error_outline, size: 64, color: Colors.grey),
+          const SizedBox(height: 16),
+          Text(
+            'User data not found',
+            style:
+                GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Please try refreshing or logging in again.',
+            style: GoogleFonts.poppins(color: Colors.grey.shade600),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
