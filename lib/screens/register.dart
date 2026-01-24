@@ -1,10 +1,9 @@
+import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// removed go_router usage - will use Navigator
 import 'package:skill_factorial/screens/courses_home.dart';
-// import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../constants/colors.dart';
@@ -12,9 +11,8 @@ import 'package:skill_factorial/api_service.dart';
 import 'common_widgets/custom_app_bar.dart';
 import '../model/user_model.dart';
 import 'common_widgets/cta_button.dart';
-import 'package:skill_factorial/screens/common_widgets/cta_button.dart';
-import '../../constants/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -30,35 +28,34 @@ class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _mobileNumberController = TextEditingController();
-  final TextEditingController _upiTraIdController = TextEditingController();
 
   bool _isLoading = false;
+  bool _showPassword = false;
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     _mobileNumberController.dispose();
-    _upiTraIdController.dispose();
     super.dispose();
   }
 
   void _toggleForm() {
-    setState(() {
-      _isSignIn = !_isSignIn;
-    });
+    setState(() => _isSignIn = !_isSignIn);
   }
 
   Future<void> _showErrorDialog(String message) async {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Error'),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title:
+            const Text('Oops!', style: TextStyle(fontWeight: FontWeight.bold)),
         content: Text(message),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(ctx).pop(),
-            child: const Text('OK'),
+            child: const Text('Got it'),
           ),
         ],
       ),
@@ -70,26 +67,24 @@ class _AuthScreenState extends State<AuthScreen> {
     final password = _passwordController.text.trim();
 
     if (email.isEmpty || password.isEmpty) {
-      _showErrorDialog('Please enter valid credentials');
+      _showErrorDialog('Please enter your email and password');
       return;
     }
 
-    setState(() {
-      _isLoading = true;
-    });
+    setState(() => _isLoading = true);
 
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const QuizListHome()),
-      );
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const QuizListHome()),
+        );
+      }
     } on FirebaseAuthException catch (e) {
-      _showErrorDialog('Sign-in failed: ${e.message}');
+      _showErrorDialog('Sign in failed: ${e.message}');
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) setState(() => _isLoading = false);
     }
   }
 
@@ -97,26 +92,20 @@ class _AuthScreenState extends State<AuthScreen> {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
     final mobileNumber = _mobileNumberController.text.trim();
-    final upiTraId = _upiTraIdController.text.trim();
 
-    // Simple validation
     if ([email, password, mobileNumber].any((field) => field.isEmpty)) {
-      _showErrorDialog('Please fill all fields');
+      _showErrorDialog('Please fill all required fields');
       return;
     }
 
-    // Format validation for mobile number and date of birth
-    final mobileRegExp = RegExp(r'^[0-9]{10}$');
-    if (!mobileRegExp.hasMatch(mobileNumber)) {
-      _showErrorDialog('Please enter a valid 10-digit mobile number');
+    if (!RegExp(r'^[0-9]{10}$').hasMatch(mobileNumber)) {
+      _showErrorDialog('Enter a valid 10-digit mobile number');
       return;
     }
+
+    setState(() => _isLoading = true);
 
     try {
-      setState(() {
-        _isLoading = true;
-      });
-
       UserCredential userCredential =
           await _auth.createUserWithEmailAndPassword(
         email: email,
@@ -124,7 +113,6 @@ class _AuthScreenState extends State<AuthScreen> {
       );
 
       User? user = userCredential.user;
-
       if (user != null) {
         await ApiService.updateUserData(user.uid, {
           'email': email,
@@ -133,168 +121,29 @@ class _AuthScreenState extends State<AuthScreen> {
         });
 
         Provider.of<UserModel>(context, listen: false).setUserId(user.email);
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const QuizListHome()),
-        );
+        if (mounted) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const QuizListHome()),
+          );
+        }
       }
     } on FirebaseAuthException catch (e) {
-      _showErrorDialog('Sign-up failed: ${e.message}');
+      _showErrorDialog('Sign up failed: ${e.message}');
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) setState(() => _isLoading = false);
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final bool isMobile = screenWidth < 768; // Adjust threshold as needed
-    return Scaffold(
-      appBar: CustomAppBar(),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Row(
-            children: [
-              isMobile
-                  ? Container()
-                  : Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(40.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              "Master Every Skill with Skill Factorial",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 32,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            const Text(
-                              "Target the skills that matter most to you. and unlock your full potential.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 18,
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            // Image with a subtle shadow/float effect
-                            Hero(
-                              tag: 'auth_img',
-                              child: Image.asset(
-                                'assets/student_home/reg.png',
-                                height: 350,
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-              Expanded(
-                flex: 1,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Login to Continue Learning",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black54,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    GoogleSignInButton(
-                      onPressed: _signInWithGoogle,
-                    ),
-                    const SizedBox(height: 10),
-                    const Text(
-                      'OR',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black54,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    // Auth Card
-                    Card(
-                      margin: const EdgeInsets.all(20),
-                      elevation: 15,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Container(
-                        padding: EdgeInsets.all(30),
-                        decoration: BoxDecoration(
-                          color: Colors.purple.shade100,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: _isSignIn
-                            ? SignInForm(
-                                emailController: _emailController,
-                                passwordController: _passwordController,
-                                onSignIn: _signIn,
-                              )
-                            : SignUpForm(
-                                emailController: _emailController,
-                                passwordController: _passwordController,
-                                mobileNumberController: _mobileNumberController,
-                                onSignUp: _signUp,
-                              ),
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    // Toggle Button
-                    buildCtaButton(
-                      text: _isSignIn
-                          ? 'Create New Account'
-                          : 'Already Have an Account?',
-                      onPressed: _toggleForm,
-                    ),
-                    const SizedBox(height: 20),
-                    if (_isLoading)
-                      Container(
-                        color: Colors.black.withOpacity(0.5),
-                        child: Center(
-                          child: CircularProgressIndicator.adaptive(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              AppColors.primaryColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 
   Future<void> _signInWithGoogle() async {
     try {
-      setState(() {
-        _isLoading = true;
-      });
+      setState(() => _isLoading = true);
 
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       if (googleUser == null) {
-        setState(() {
-          _isLoading = false;
-        });
+        setState(() => _isLoading = false);
         return;
       }
-
-      debugPrint(
-          'Google Sign-In successful. Google user ID: ${googleUser.id}, email: ${googleUser.email}');
 
       final GoogleSignInAuthentication googleAuth =
           await googleUser.authentication;
@@ -303,7 +152,6 @@ class _AuthScreenState extends State<AuthScreen> {
         idToken: googleAuth.idToken,
       );
 
-      // Sign in with Google
       UserCredential userCredential =
           await _auth.signInWithCredential(credential);
       User? user = userCredential.user;
@@ -315,136 +163,363 @@ class _AuthScreenState extends State<AuthScreen> {
             .get();
 
         if (!userDoc.exists) {
-          debugPrint('User document does not exist. Creating new document...');
           await ApiService.updateUserData(user.uid, {
             'email': user.email,
             'createdAt': Timestamp.now(),
           });
-        } else {
-          debugPrint('User document already exists in Firestore.');
         }
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const QuizListHome()),
-        );
-      } else {
-        debugPrint('Firebase User object is null after Google Sign-In.');
+        if (mounted) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const QuizListHome()),
+          );
+        }
       }
     } on FirebaseAuthException catch (e) {
-      debugPrint('FirebaseAuthException during Google Sign-In: ${e.message}');
-      _showErrorDialog('Google Sign-In failed');
+      _showErrorDialog('Google Sign-In failed: ${e.message}');
     } catch (e) {
-      debugPrint('An unexpected error occurred during Google Sign-In: $e');
-      _showErrorDialog('An unexpected error occurred during Sign-In.');
+      _showErrorDialog('An unexpected error occurred');
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) setState(() => _isLoading = false);
     }
   }
-}
-
-class SignInForm extends StatelessWidget {
-  final TextEditingController emailController;
-  final TextEditingController passwordController;
-  final VoidCallback onSignIn;
-
-  const SignInForm({
-    Key? key,
-    required this.emailController,
-    required this.passwordController,
-    required this.onSignIn,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextField(
-          controller: emailController,
-          keyboardType: TextInputType.emailAddress,
-          style: const TextStyle(color: Colors.black),
-          decoration: const InputDecoration(
-            labelText: 'Email',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.email),
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 768;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: CustomAppBar(),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF4A90E2),
+              Color(0xFF50C878),
+              Color(0xFF7B68EE),
+            ],
           ),
         ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: passwordController,
-          obscureText: true,
-          style: const TextStyle(color: Colors.black),
-          decoration: const InputDecoration(
-            labelText: 'Password',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.lock),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(isMobile ? 24.0 : 40.0),
+            child: Center(
+              child: SingleChildScrollView(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (!isMobile)
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 40.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Unlock Your\nLearning Potential",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 36,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                  height: 1.2,
+                                ),
+                              ),
+                              const SizedBox(height: 24),
+                              Text(
+                                "Join 50K+ learners mastering\nskills that matter most",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  height: 1.4,
+                                ),
+                              ),
+                              const SizedBox(height: 40),
+                              Container(
+                                width: double.infinity,
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(24),
+                                  border: Border.all(
+                                      color: Colors.white.withOpacity(0.2)),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.asset(
+                                    'assets/student_home/reg.png',
+                                    fit: BoxFit.cover,
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Container(
+                                      color: Colors.white.withOpacity(0.1),
+                                      child: Icon(
+                                        Icons.school_outlined,
+                                        size: 100,
+                                        color: Colors.white.withOpacity(0.8),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    Expanded(
+                      flex: isMobile ? 1 : 1,
+                      child: Column(
+                        children: [
+                          if (!isMobile)
+                            Text(
+                              "Welcome Back",
+                              style: GoogleFonts.poppins(
+                                fontSize: 28,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
+                            ),
+                          const SizedBox(height: 24),
+                          Text(
+                            _isSignIn
+                                ? "Sign in to continue"
+                                : "Create your account",
+                            style: GoogleFonts.poppins(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(height: 32),
+                          GoogleSignInButton(onPressed: _signInWithGoogle),
+                          const SizedBox(height: 24),
+                          _AuthCard(
+                            isSignIn: _isSignIn,
+                            emailController: _emailController,
+                            passwordController: _passwordController,
+                            mobileController: _mobileNumberController,
+                            showPassword: _showPassword,
+                            onTogglePassword: () =>
+                                setState(() => _showPassword = !_showPassword),
+                            onSignIn: _signIn,
+                            onSignUp: _signUp,
+                          ),
+                          const SizedBox(height: 24),
+                          TextButton(
+                            onPressed: _toggleForm,
+                            child: Text(
+                              _isSignIn
+                                  ? "Don't have an account? Create one"
+                                  : "Already have an account? Sign in",
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: Colors.white.withOpacity(0.9),
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          if (_isLoading)
+                            Container(
+                              margin: const EdgeInsets.only(top: 20),
+                              padding: const EdgeInsets.all(20),
+                              child: const CircularProgressIndicator(
+                                valueColor:
+                                    AlwaysStoppedAnimation<Color>(Colors.white),
+                                strokeWidth: 3,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
-        const SizedBox(height: 16),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-          ),
-          onPressed: onSignIn,
-          child: const Text('Sign In', style: TextStyle(fontSize: 16)),
-        ),
-      ],
+      ),
     );
   }
 }
 
-class SignUpForm extends StatelessWidget {
+class _AuthCard extends StatefulWidget {
+  final bool isSignIn;
   final TextEditingController emailController;
   final TextEditingController passwordController;
-  final TextEditingController mobileNumberController;
+  final TextEditingController mobileController;
+  final bool showPassword;
+  final VoidCallback onTogglePassword;
+  final VoidCallback onSignIn;
   final VoidCallback onSignUp;
 
-  const SignUpForm({
-    Key? key,
+  const _AuthCard({
+    required this.isSignIn,
     required this.emailController,
     required this.passwordController,
-    required this.mobileNumberController,
+    required this.mobileController,
+    required this.showPassword,
+    required this.onTogglePassword,
+    required this.onSignIn,
     required this.onSignUp,
-  }) : super(key: key);
+  });
+
+  @override
+  __AuthCardState createState() => __AuthCardState();
+}
+
+class __AuthCardState extends State<_AuthCard> {
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextField(
-          controller: emailController,
-          keyboardType: TextInputType.emailAddress,
-          decoration: const InputDecoration(
-            labelText: 'Email',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.email),
+    return Container(
+      width: double.infinity,
+      constraints: const BoxConstraints(maxWidth: 420),
+      padding: const EdgeInsets.all(32),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12),
+            blurRadius: 30,
+            offset: const Offset(0, 12),
           ),
+        ],
+      ),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            _CustomTextField(
+              controller: widget.emailController,
+              label: "Email",
+              icon: Icons.email_outlined,
+              keyboard: TextInputType.emailAddress,
+            ),
+            const SizedBox(height: 20),
+            _CustomTextField(
+              controller: widget.passwordController,
+              label: "Password",
+              icon: Icons.lock_outlined,
+              obscure: true,
+              showPassword: widget.showPassword,
+              onTogglePassword: widget.onTogglePassword,
+            ),
+            if (!widget.isSignIn) ...[
+              const SizedBox(height: 20),
+              _CustomTextField(
+                controller: widget.mobileController,
+                label: "Mobile Number",
+                icon: Icons.phone_outlined,
+                keyboard: TextInputType.phone,
+              ),
+            ],
+            const SizedBox(height: 28),
+            SizedBox(
+              width: double.infinity,
+              height: 56,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF4A90E2),
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16)),
+                  elevation: 0,
+                ),
+                onPressed: widget.isSignIn
+                    ? () {
+                        if (_formKey.currentState!.validate())
+                          widget.onSignIn();
+                      }
+                    : () {
+                        if (_formKey.currentState!.validate())
+                          widget.onSignUp();
+                      },
+                child: Text(
+                  widget.isSignIn ? "Sign In" : "Get Started",
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: passwordController,
-          obscureText: true,
-          decoration: const InputDecoration(
-            labelText: 'Password',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.lock),
-          ),
+      ),
+    );
+  }
+}
+
+class _CustomTextField extends StatelessWidget {
+  final TextEditingController controller;
+  final String label;
+  final IconData icon;
+  final TextInputType? keyboard;
+  final bool obscure;
+  final bool showPassword;
+  final VoidCallback? onTogglePassword;
+
+  const _CustomTextField({
+    required this.controller,
+    required this.label,
+    required this.icon,
+    this.keyboard,
+    this.obscure = false,
+    this.showPassword = false,
+    this.onTogglePassword,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      keyboardType: keyboard,
+      obscureText: obscure && !showPassword,
+      validator: (value) {
+        if (value == null || value.isEmpty) return 'This field is required';
+        if (keyboard == TextInputType.emailAddress && !value.contains('@'))
+          return 'Enter valid email';
+        if (keyboard == TextInputType.phone && value.length != 10)
+          return 'Enter 10-digit number';
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: label,
+        prefixIcon: Icon(icon, color: const Color(0xFF4A90E2)),
+        suffixIcon: onTogglePassword != null
+            ? IconButton(
+                icon: Icon(
+                    showPassword ? Icons.visibility : Icons.visibility_off,
+                    color: const Color(0xFF4A90E2)),
+                onPressed: onTogglePassword,
+              )
+            : null,
+        filled: true,
+        fillColor: Colors.grey.shade50,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: Colors.grey.shade300),
         ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: mobileNumberController,
-          keyboardType: TextInputType.phone,
-          decoration: const InputDecoration(
-            labelText: 'Mobile Number',
-            border: OutlineInputBorder(),
-            prefixIcon: Icon(Icons.phone),
-          ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: Colors.grey.shade300),
         ),
-        const SizedBox(height: 16),
-        buildCtaButton(text: "Sign Up", onPressed: onSignUp),
-      ],
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: const Color(0xFF4A90E2), width: 2),
+        ),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        labelStyle: TextStyle(color: Colors.grey.shade500),
+      ),
+      style: GoogleFonts.poppins(color: Colors.black87),
     );
   }
 }
@@ -452,49 +527,52 @@ class SignUpForm extends StatelessWidget {
 class GoogleSignInButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const GoogleSignInButton({
-    Key? key,
-    required this.onPressed,
-  }) : super(key: key);
+  const GoogleSignInButton({Key? key, required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 50,
+      width: double.infinity,
+      height: 56,
       decoration: BoxDecoration(
-        color: Colors.black87,
-        borderRadius: BorderRadius.circular(8),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.grey.shade300),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
           ),
         ],
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(16),
           onTap: onPressed,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FaIcon(
-                  FontAwesomeIcons.google,
-                  size: 20,
-                  color: Colors.red.shade600,
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.red.shade50,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: FaIcon(FontAwesomeIcons.google,
+                      size: 20, color: Colors.red.shade600),
                 ),
-                const SizedBox(width: 12),
-                const Text(
+                const SizedBox(width: 16),
+                Text(
                   'Continue with Google',
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black87,
                   ),
                 ),
               ],
