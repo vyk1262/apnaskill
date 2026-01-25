@@ -8,6 +8,7 @@ import 'package:skill_factorial/screens/register.dart';
 import 'package:skill_factorial/screens/common_widgets/cached_network_image_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../landing_home_page.dart';
 import '../profile_page_widgets/Profile.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -139,7 +140,11 @@ class _CustomAppBarState extends State<CustomAppBar>
                     : Row(
                         children: [
                           _buildNavButton(context,
-                              label: 'Home', screenName: '/'),
+                              label: 'Home',
+                              builder: (_) => const LandingPage()),
+                          _buildNavButton(context,
+                              label: 'Courses',
+                              builder: (_) => const QuizListHome()),
                           // _buildNavButton(context,
                           //     label: 'Mentors', screenName: 'mentors'),
 
@@ -276,7 +281,11 @@ class _CustomAppBarState extends State<CustomAppBar>
                                   const SizedBox(height: 20),
                                 ],
                                 _buildDrawerButton(context,
-                                    label: 'Home', screenName: '/'),
+                                    label: 'home',
+                                    builder: (_) => const LandingPage()),
+                                _buildDrawerButton(context,
+                                    label: 'Courses',
+                                    builder: (_) => const QuizListHome()),
                                 const SizedBox(height: 15),
                                 // _buildDrawerButton(context,
                                 //     label: 'Quizzes', screenName: 'quizzes'),
@@ -308,40 +317,28 @@ class _CustomAppBarState extends State<CustomAppBar>
     );
   }
 
-  Widget _buildNavButton(BuildContext context,
-      {required String label, required String screenName}) {
+  Widget _buildNavButton(
+    BuildContext context, {
+    required String label,
+    required WidgetBuilder builder,
+    bool replace = false,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: TextButton(
         onPressed: () {
-          final target = screenName.replaceAll('/', '');
-          if (target.isEmpty) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const QuizListHome()),
-            );
-          } else if (target == 'login') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const AuthScreen()),
-            );
-          } else if (target == 'profile') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfileScreen()),
-            );
+          final route = MaterialPageRoute(builder: builder);
+
+          if (replace) {
+            Navigator.pushReplacement(context, route);
           } else {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const QuizListHome()),
-            );
+            Navigator.push(context, route);
           }
         },
         child: Text(
           label,
           style: const TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.normal,
             fontSize: 20,
           ),
         ),
@@ -349,40 +346,34 @@ class _CustomAppBarState extends State<CustomAppBar>
     );
   }
 
-  Widget _buildDrawerButton(BuildContext context,
-      {required String label, required String screenName}) {
+  Widget _buildDrawerButton(
+    BuildContext context, {
+    required String label,
+    required WidgetBuilder builder,
+    bool replace = false,
+  }) {
     return TextButton(
       onPressed: () {
-        Navigator.pop(context); // Close the drawer
-        final target = screenName.replaceAll('/', '');
-        if (target.isEmpty) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const QuizListHome()),
-          );
-        } else if (target == 'login') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AuthScreen()),
-          );
+        Navigator.pop(context); // close drawer
+
+        final route = MaterialPageRoute(builder: builder);
+
+        if (replace) {
+          Navigator.pushReplacement(context, route);
         } else {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const QuizListHome()),
-          );
+          Navigator.push(context, route);
         }
       },
       style: TextButton.styleFrom(
-        foregroundColor: Colors.white, // Text color when pressed
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
-        alignment: Alignment.centerLeft, // Align text to left within button
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.symmetric(vertical: 10),
       ),
       child: Text(
         label,
         style: const TextStyle(
           color: Colors.white,
-          fontSize: 22, // Slightly smaller font size
-          fontWeight: FontWeight.w600, // Semi-bold for better readability
+          fontSize: 22,
+          fontWeight: FontWeight.w600,
         ),
       ),
     );
