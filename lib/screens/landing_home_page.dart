@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'common_widgets/custom_app_bar.dart';
+import 'landing_page_data.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -8,19 +9,18 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[50],
       appBar: CustomAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _HeroSection(),
-            _FeaturesSection(),
-            _HowItWorksSection(),
-            _PricingSection(),
-            _BenefitsSection(),
-            _FAQSection(),
-            _FooterSection(),
-          ],
-        ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: _HeroSection()),
+          SliverToBoxAdapter(child: _FeaturesSection()),
+          SliverToBoxAdapter(child: _HowItWorksSection()),
+          SliverToBoxAdapter(child: _PricingSection()),
+          SliverToBoxAdapter(child: _BenefitsSection()),
+          SliverToBoxAdapter(child: _FAQSection()),
+          SliverToBoxAdapter(child: _FooterSection()),
+        ],
       ),
     );
   }
@@ -29,131 +29,113 @@ class LandingPage extends StatelessWidget {
 class _HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 20),
-        Text(
-          'Master Skills with Quiz-First Learning',
-          style: TextStyle(
-            fontSize: 36,
-            fontWeight: FontWeight.bold,
-          ),
-          textAlign: TextAlign.center,
+    final isMobile = MediaQuery.of(context).size.width < 768;
+    return Container(
+      height: isMobile ? 500 : 650,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFF667eea), Color(0xFF764ba2)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-        SizedBox(height: 20),
-        Text(
-          'Practice targeted questions that mirror real interviews and exams. Track progress and build confidence.',
-          style: TextStyle(
-            fontSize: 18,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(height: 40),
+          Text(
+            LandingPageData.heroTitle,
+            style: TextStyle(
+              fontSize: isMobile ? 32 : 48,
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
+              height: 1.2,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(height: 30),
-        ElevatedButton(
-          onPressed: () {}, // Scroll to pricing or signup
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.orange,
-            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+          const SizedBox(height: 24),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: isMobile ? 24 : 120),
+            child: Text(
+              LandingPageData.heroSubtitle,
+              style: TextStyle(
+                fontSize: isMobile ? 16 : 20,
+                color: Colors.white.withOpacity(0.95),
+                height: 1.6,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
-          child: Text(
-            'Start Free Booster',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          const SizedBox(height: 48),
+          ElevatedButton(
+            onPressed: () {}, // Navigate to signup
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange[400],
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 20),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+              elevation: 12,
+              shadowColor: Colors.orange.withOpacity(0.4),
+            ),
+            child: Text(
+              LandingPageData.heroButtonText,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
 
 class _FeaturesSection extends StatelessWidget {
-  static const List<Map<String, String>> featuresData = [
-    {
-      "emoji": "🎯",
-      "title": "Quiz-First Learning",
-      "description":
-          "Skip long videos. Practice topic-wise questions that mirror interviews and exams."
-    },
-    {
-      "emoji": "📊",
-      "title": "Progress Tracking",
-      "description":
-          "See your best scores per quiz and improve over time with multiple attempts."
-    },
-    {
-      "emoji": "🧠",
-      "title": "Concept Recall",
-      "description":
-          "Strengthen fundamentals using active recall and spaced practice."
-    },
-    {
-      "emoji": "⚡",
-      "title": "Fast Revision",
-      "description":
-          "Quickly revise core concepts before tests, exams, or interviews."
-    },
-    {
-      "emoji": "🏆",
-      "title": "Interview Focused",
-      "description":
-          "Practice question patterns commonly seen in technical assessments."
-    },
-    {
-      "emoji": "🧩",
-      "title": "Topic-Wise Quizzes",
-      "description":
-          "Break large subjects into small quiz modules and focus where you're weak."
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-
-    int columns;
-    if (width < 768) {
-      columns = 1;
-    } else if (width < 1100) {
-      columns = 2;
-    } else {
-      columns = 3;
-    }
+    final columns = width < 768 ? 1 : (width < 1200 ? 2 : 3);
 
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: width < 768 ? 20 : 60,
-        vertical: 80,
-      ),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFFF8F9FA), Colors.white],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
+      padding: EdgeInsets.fromLTRB(
+        width < 768 ? 24 : 80,
+        100,
+        width < 768 ? 24 : 80,
+        100,
       ),
       child: Column(
         children: [
           const Text(
-            'Why Choose Skill Factorial?',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            LandingPageData.featuresTitle,
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w800,
+              color: Colors.black87,
+            ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 20),
           Text(
-            'Designed for faster learning and better results',
-            style: TextStyle(fontSize: 18, color: Colors.grey[600]),
+            LandingPageData.featuresSubtitle,
+            style: TextStyle(fontSize: 20, color: Colors.grey[600]),
           ),
-          const SizedBox(height: 60),
+          const SizedBox(height: 80),
           GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: featuresData.length,
+            itemCount: LandingPageData.features.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: columns,
-              crossAxisSpacing: 30,
-              mainAxisSpacing: 30,
-              childAspectRatio: width < 768 ? 1.4 : 1.2,
+              crossAxisSpacing: columns == 1 ? 0 : 40,
+              mainAxisSpacing: columns == 1 ? 0 : 40,
+              childAspectRatio: columns == 1 ? 1.2 : 1.1,
+              mainAxisExtent: columns == 1 ? 300 : 340,
             ),
             itemBuilder: (context, index) {
-              final feature = featuresData[index];
+              final feature = LandingPageData.features[index];
               return _FeatureCard(
                 emoji: feature['emoji']!,
                 title: feature['title']!,
@@ -181,16 +163,25 @@ class _FeatureCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(28),
+      padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.grey.shade200),
+        gradient: LinearGradient(
+          colors: [Colors.white, Colors.grey[50]!],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(28),
+        border: Border.all(color: Colors.orange.withOpacity(0.15)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
-            blurRadius: 30,
-            offset: const Offset(0, 20),
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 40,
+            offset: const Offset(0, 25),
+          ),
+          BoxShadow(
+            color: Colors.orange.withOpacity(0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
           ),
         ],
       ),
@@ -198,34 +189,50 @@ class _FeatureCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 64,
-            width: 64,
+            height: 90,
+            width: 90,
             decoration: BoxDecoration(
-              color: Colors.orange.withOpacity(0.12),
+              gradient: LinearGradient(
+                colors: [Colors.orange, Colors.orange[400]!],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
               shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.orange.withOpacity(0.4),
+                  blurRadius: 25,
+                  offset: const Offset(0, 12),
+                ),
+              ],
             ),
             child: Center(
               child: Text(
                 emoji,
-                style: const TextStyle(fontSize: 32),
+                style: const TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 28),
           Text(
             title,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+              height: 1.2,
+              color: Colors.black87,
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 20),
           Text(
             description,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 16,
               color: Colors.grey[600],
               height: 1.6,
             ),
@@ -237,57 +244,38 @@ class _FeatureCard extends StatelessWidget {
 }
 
 class _HowItWorksSection extends StatelessWidget {
-  static const List<Map<String, String>> stepsData = [
-    {
-      "step": "01",
-      "title": "Pick a Skill",
-      "desc": "Select from Java, Python, React, or Core CS fundamentals."
-    },
-    {
-      "step": "02",
-      "title": "Take the Quiz",
-      "desc": "Solve 10-15 targeted questions in under 10 minutes."
-    },
-    {
-      "step": "03",
-      "title": "Review Solutions",
-      "desc": "Read explanations for every wrong answer immediately."
-    },
-    {
-      "step": "04",
-      "title": "Track Growth",
-      "desc": "Watch your skill score improve with every attempt."
-    }
-  ];
-
   @override
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 768;
-
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 20 : 60,
-        vertical: 60,
+      padding: EdgeInsets.fromLTRB(
+        isMobile ? 24 : 80,
+        100,
+        isMobile ? 24 : 80,
+        100,
       ),
       child: Column(
         children: [
           const Text(
-            'How It Works',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            LandingPageData.howItWorksTitle,
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w800,
+              color: Colors.black87,
+            ),
           ),
-          const SizedBox(height: 60),
-
-          /// 🔥 Responsive Steps Layout
+          const SizedBox(height: 80),
           isMobile
               ? Column(
                   children: List.generate(
-                    stepsData.length,
+                    LandingPageData.howItWorksSteps.length,
                     (index) => Padding(
-                      padding: const EdgeInsets.only(bottom: 30),
-                      child: _stepCard(
-                        stepsData[index],
+                      padding: EdgeInsets.only(bottom: index == 3 ? 0 : 40),
+                      child: _StepCard(
+                        step: LandingPageData.howItWorksSteps[index],
                         isMobile: true,
-                        isLast: index == stepsData.length - 1,
+                        isLast:
+                            index == LandingPageData.howItWorksSteps.length - 1,
                       ),
                     ),
                   ),
@@ -295,12 +283,13 @@ class _HowItWorksSection extends StatelessWidget {
               : Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: List.generate(
-                    stepsData.length,
+                    LandingPageData.howItWorksSteps.length,
                     (index) => Expanded(
-                      child: _stepCard(
-                        stepsData[index],
+                      child: _StepCard(
+                        step: LandingPageData.howItWorksSteps[index],
                         isMobile: false,
-                        isLast: index == stepsData.length - 1,
+                        isLast:
+                            index == LandingPageData.howItWorksSteps.length - 1,
                       ),
                     ),
                   ),
@@ -311,234 +300,110 @@ class _HowItWorksSection extends StatelessWidget {
   }
 }
 
-Widget _stepCard(
-  Map<String, String> step, {
-  required bool isMobile,
-  required bool isLast,
-}) {
-  return Column(
-    children: [
-      Container(
-        height: 100,
-        width: 100,
-        decoration: const BoxDecoration(
-          color: Colors.orange,
-          shape: BoxShape.circle,
-        ),
-        child: Center(
-          child: Text(
-            step['step']!,
-            style: const TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ),
-      const SizedBox(height: 20),
-      Text(
-        step['title']!,
-        style: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      const SizedBox(height: 8),
-      Text(
-        step['desc']!,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 14,
-          color: Colors.grey[600],
-          height: 1.5,
-        ),
-      ),
+class _StepCard extends StatelessWidget {
+  final Map<String, String> step;
+  final bool isMobile;
+  final bool isLast;
 
-      /// Connector
-      if (!isLast)
-        Padding(
-          padding: const EdgeInsets.only(top: 30),
-          child: isMobile
-              ? Container(
-                  height: 40,
-                  width: 2,
-                  color: Colors.grey[300],
-                )
-              : Container(
-                  height: 2,
-                  width: 50,
-                  color: Colors.grey[300],
-                ),
-        ),
-    ],
-  );
-}
-
-class _PricingSection extends StatelessWidget {
-  static const List<Map<String, dynamic>> pricingPlans = [
-    {
-      "title": "Booster",
-      "subtitle": "Quizzes Only · Live Now",
-      "currentPrice": "₹0 (FREE)",
-      "originalPrice": "₹100",
-      "discountPercent": "100% OFF",
-      "features": [
-        "Access quizzes for your subjects subject",
-        "Multiple attempts to improve your score",
-        "Progress tracking in your profile",
-        "Detailed solutions & explanations",
-        "New quizzes added over time",
-        "Existing content will be updated regularly",
-        "Ideal for quick revision and practice",
-      ],
-      "buttonText": "Start Booster",
-      "isBestValue": true,
-      "badgeText": "LIVE",
-      "isComingSoon": false,
-    },
-    {
-      "title": "Accelerator",
-      "subtitle": "Quizzes + Projects (Coming Soon)",
-      "currentPrice": "₹499",
-      "originalPrice": "₹1,000",
-      "discountPercent": "50% OFF",
-      "features": [
-        "90-day structured learning",
-        "Projects",
-        "Projects + practice quizzes",
-        "Track your progress in profile section",
-        "Advanced capstone projects",
-        "Expert mentor guidance",
-        "Guided roadmap",
-        "Comprehensive assessments",
-      ],
-      "buttonText": "Coming Soon",
-      "isBestValue": false,
-      "badgeText": "",
-      "isComingSoon": true,
-    },
-    {
-      "title": "Intensive",
-      "subtitle": "Career Track (Coming Soon)",
-      "currentPrice": "₹9,999",
-      "originalPrice": "₹20,000",
-      "discountPercent": "50% OFF",
-      "features": [
-        "Deep-dive curriculum",
-        "Expert mentor guidance",
-        "Doubt solving support",
-        "Interview preparation",
-        "Mock interviews (Tech & HR)",
-        "Resume & LinkedIn review",
-        "Access to exclusive job portal",
-      ],
-      "buttonText": "Coming Soon",
-      "isBestValue": false,
-      "badgeText": "",
-      "isComingSoon": true,
-    },
-  ];
-
-  Widget _pricingCard(Map plan) {
-    final bool isBest = plan['isBestValue'] as bool;
-
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 12),
-      padding: const EdgeInsets.all(30),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-        border: isBest ? Border.all(color: Colors.orange, width: 2) : null,
-      ),
-      child: Column(
-        children: [
-          if (plan['badgeText'].toString().isNotEmpty)
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: Colors.orange,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Text(
-                plan['badgeText'],
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          const SizedBox(height: 20),
-          Text(
-            plan['title'],
-            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-          ),
-          Text(
-            plan['subtitle'],
-            style: TextStyle(fontSize: 14, color: Colors.grey[500]),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            plan['currentPrice'],
-            style: const TextStyle(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-              color: Colors.orange,
-            ),
-          ),
-          if (plan['originalPrice'] != null)
-            Text(
-              plan['originalPrice'],
-              style: TextStyle(
-                fontSize: 16,
-                decoration: TextDecoration.lineThrough,
-                color: Colors.grey[500],
-              ),
-            ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: plan['isComingSoon'] ? null : () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.orange,
-              minimumSize: const Size(double.infinity, 50),
-            ),
-            child: Text(plan['buttonText']),
-          ),
-          const SizedBox(height: 30),
-          ...(plan['features'] as List).map(
-            (feature) => Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: Row(
-                children: [
-                  const Icon(Icons.check, color: Colors.green, size: 20),
-                  const SizedBox(width: 12),
-                  Expanded(child: Text(feature)),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  const _StepCard({
+    required this.step,
+    required this.isMobile,
+    required this.isLast,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = MediaQuery.of(context).size.width < 768;
+    return Column(
+      children: [
+        Container(
+          height: 120,
+          width: 120,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.orange, Colors.orange[500]!],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.orange.withOpacity(0.4),
+                blurRadius: 25,
+                offset: const Offset(0, 12),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              step['step']!,
+              style: const TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 30),
+        Text(
+          step['title']!,
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        const SizedBox(height: 12),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 0),
+          child: Text(
+            step['desc']!,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.grey[600],
+              height: 1.5,
+            ),
+          ),
+        ),
+        if (!isLast)
+          Padding(
+            padding: const EdgeInsets.only(top: 40),
+            child: isMobile
+                ? Container(
+                    height: 50,
+                    width: 3,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  )
+                : Container(
+                    height: 3,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+          ),
+      ],
+    );
+  }
+}
 
+class _PricingSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 768;
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 20 : 60,
-        vertical: 60,
+      padding: EdgeInsets.fromLTRB(
+        isMobile ? 24 : 80,
+        100,
+        isMobile ? 24 : 80,
+        100,
       ),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [Color(0xFFF8F9FA), Colors.white],
           begin: Alignment.topCenter,
@@ -548,33 +413,38 @@ class _PricingSection extends StatelessWidget {
       child: Column(
         children: [
           const Text(
-            'Choose Your Plan',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            LandingPageData.pricingTitle,
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w800,
+              color: Colors.black87,
+            ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 16),
           Text(
-            'Start with free quizzes and upgrade as you grow',
-            style: TextStyle(fontSize: 18, color: Colors.grey),
+            LandingPageData.pricingSubtitle,
+            style: TextStyle(fontSize: 20, color: Colors.grey[600]),
           ),
-          const SizedBox(height: 60),
-
-          /// 🔥 Responsive Pricing Layout
+          const SizedBox(height: 80),
           isMobile
               ? Column(
-                  children:
-                      pricingPlans.map((plan) => _pricingCard(plan)).toList(),
+                  children: LandingPageData.pricingPlans
+                      .map((plan) => _PricingCard(plan: plan))
+                      .toList(),
                 )
               : Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: pricingPlans
-                      .map(
-                        (plan) => Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: _pricingCard(plan),
-                          ),
-                        ),
-                      )
+                  children: LandingPageData.pricingPlans
+                      .asMap()
+                      .entries
+                      .map((entry) => Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: entry.key == 1 ? 20 : 10,
+                              ),
+                              child: _PricingCard(plan: entry.value),
+                            ),
+                          ))
                       .toList(),
                 ),
         ],
@@ -583,95 +453,221 @@ class _PricingSection extends StatelessWidget {
   }
 }
 
-class _BenefitsSection extends StatelessWidget {
-  static const List<Map<String, String>> benefitsPoints = [
-    {
-      "emoji": "⚡",
-      "title": "Rapid Concept Revision",
-      "description":
-          "Cover entire topics quickly. Use quizzes to revise instead of watching hours of content."
-    },
-    {
-      "emoji": "🎯",
-      "title": "Pinpoint Weaknesses",
-      "description":
-          "See exactly which topics need more work based on your quiz performance."
-    },
-    {
-      "emoji": "📈",
-      "title": "Track Real Progress",
-      "description":
-          "Compare your latest scores with previous attempts and see improvement."
-    },
-    {
-      "emoji": "🧠",
-      "title": "Boost Retention",
-      "description":
-          "Active recall via quizzes helps you remember concepts much longer."
-    },
-    {
-      "emoji": "💪",
-      "title": "Build Confidence",
-      "description":
-          "Regular practice builds confidence before exams and interviews."
-    },
-    {
-      "emoji": "🏆",
-      "title": "Interview Ready",
-      "description":
-          "Question patterns are designed to be close to real technical rounds."
-    },
-  ];
+class _PricingCard extends StatelessWidget {
+  final Map<String, dynamic> plan;
+
+  const _PricingCard({required this.plan});
 
   @override
   Widget build(BuildContext context) {
+    final isBest = plan['isBestValue'] as bool;
     return Container(
-      padding: EdgeInsets.all(60),
-      color: Color(0xFF1E3A8A),
+      margin: const EdgeInsets.only(bottom: 24),
+      padding: const EdgeInsets.all(40),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: isBest
+              ? [Colors.orange.withOpacity(0.03), Colors.white]
+              : [Colors.white, Colors.grey[50]!],
+        ),
+        borderRadius: BorderRadius.circular(28),
+        border: isBest
+            ? Border.all(color: Colors.orange, width: 3)
+            : Border.all(color: Colors.grey[200]!),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 30,
+            offset: const Offset(0, 20),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          if (plan['badgeText'] != '')
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.orange, Colors.orange[600]!],
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                plan['badgeText'],
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                ),
+              ),
+            ),
+          const SizedBox(height: 24),
+          Text(
+            plan['title'],
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.w800,
+              color: isBest ? Colors.orange[800]! : Colors.black87,
+            ),
+          ),
+          Text(
+            plan['subtitle'],
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.grey[500],
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const SizedBox(height: 32),
+          Text(
+            plan['currentPrice'],
+            style: TextStyle(
+              fontSize: 48,
+              fontWeight: FontWeight.w900,
+              color: Colors.orange[700]!,
+              height: 1,
+            ),
+          ),
+          if (plan['originalPrice'] != null)
+            Text(
+              plan['originalPrice'],
+              style: TextStyle(
+                fontSize: 20,
+                decoration: TextDecoration.lineThrough,
+                color: Colors.grey[500],
+              ),
+            ),
+          const SizedBox(height: 32),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: plan['isComingSoon'] ? null : () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange[500],
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                elevation: 8,
+              ),
+              child: Text(
+                plan['buttonText'],
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 40),
+          ...((plan['features'] as List).map(
+            (feature) => Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(
+                      color: Colors.green,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(child: Text(feature)),
+                ],
+              ),
+            ),
+          )),
+        ],
+      ),
+    );
+  }
+}
+
+class _BenefitsSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(80),
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFF1E3A8A), Color(0xFF1E40AF)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
       child: Column(
         children: [
           Text(
-            'Benefits of Quizzes on Skill Factorial',
-            style: TextStyle(
-                fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
+            LandingPageData.benefitsTitle,
+            style: const TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
+            ),
           ),
-          SizedBox(height: 60),
+          const SizedBox(height: 80),
           Wrap(
-            spacing: 30,
-            runSpacing: 30,
-            children: benefitsPoints.map((benefit) {
+            spacing: 32,
+            runSpacing: 32,
+            children: LandingPageData.benefits.map((benefit) {
               return Container(
-                width: 300,
-                padding: EdgeInsets.all(24),
+                width: 380,
+                padding: const EdgeInsets.all(32),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.white.withOpacity(0.2)),
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.white.withOpacity(0.15),
+                      Colors.white.withOpacity(0.05),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(24),
+                  border: Border.all(
+                      color: Colors.white.withOpacity(0.2), width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      blurRadius: 30,
+                      offset: const Offset(0, 15),
+                    ),
+                  ],
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       benefit['emoji']!,
-                      style: TextStyle(fontSize: 32),
+                      style: const TextStyle(fontSize: 40),
                     ),
-                    SizedBox(width: 16),
+                    const SizedBox(width: 24),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             benefit['title']!,
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 12),
                           Text(
                             benefit['description']!,
-                            style:
-                                TextStyle(fontSize: 14, color: Colors.white70),
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white.withOpacity(0.9),
+                              height: 1.6,
+                            ),
                           ),
                         ],
                       ),
@@ -695,45 +691,41 @@ class _FAQSection extends StatefulWidget {
 class _FAQSectionState extends State<_FAQSection> {
   int? expandedIndex;
 
-  static const List<Map<String, String>> faqData = [
-    {
-      "question": "Is the Booster plan really free forever?",
-      "answer":
-          "Yes! The Booster plan is designed to provide free access to core tech quizzes to help students practice."
-    },
-    {
-      "question": "When will the Accelerator plan launch?",
-      "answer":
-          "We are currently finalizing the project modules. Sign up for our newsletter to get notified!"
-    },
-    {
-      "question": "Can I use Skill Factorial on my phone?",
-      "answer":
-          "Currently, we are web-optimized, but Android and iOS apps are in active development."
-    }
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(60),
+      padding: const EdgeInsets.fromLTRB(80, 100, 80, 100),
       color: Colors.white,
       child: Column(
         children: [
-          Text(
-            'Frequently Asked Questions',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          const Text(
+            LandingPageData.faqTitle,
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w800,
+              color: Colors.black87,
+            ),
           ),
-          SizedBox(height: 40),
-          ...faqData.asMap().entries.map((entry) {
-            int index = entry.key;
+          const SizedBox(height: 60),
+          ...LandingPageData.faqs.asMap().entries.map((entry) {
+            final index = entry.key;
             final faq = entry.value;
-            bool isExpanded = expandedIndex == index;
-            return Container(
-              margin: EdgeInsets.only(bottom: 16),
+            final isExpanded = expandedIndex == index;
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              margin: const EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
-                color: Colors.grey[50],
-                borderRadius: BorderRadius.circular(12),
+                color: isExpanded
+                    ? Colors.orange.withOpacity(0.05)
+                    : Colors.grey[50],
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
               ),
               child: ExpansionTile(
                 onExpansionChanged: (expanded) {
@@ -741,13 +733,41 @@ class _FAQSectionState extends State<_FAQSection> {
                     expandedIndex = expanded ? index : null;
                   });
                 },
-                leading: Icon(Icons.help_outline),
-                title: Text(faq['question']!,
-                    style: TextStyle(fontWeight: FontWeight.w600)),
+                collapsedBackgroundColor: Colors.transparent,
+                backgroundColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                leading: Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.orange, Colors.orange[400]!],
+                    ),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.help_outline,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                ),
+                title: Text(
+                  faq['question']!,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18,
+                  ),
+                ),
+                childrenPadding: const EdgeInsets.all(24),
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Text(faq['answer']!),
+                  Text(
+                    faq['answer']!,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey[700],
+                      height: 1.6,
+                    ),
                   ),
                 ],
               ),
@@ -760,28 +780,18 @@ class _FAQSectionState extends State<_FAQSection> {
 }
 
 class _FooterSection extends StatelessWidget {
-  static const Map<String, String> footerData = {
-    "title": "Get Skill Factorial on your device",
-    "subtitle": "Practice quizzes anywhere, anytime",
-    "copyright":
-        "© 2026 Skill Factorial. All rights reserved. Made with ❤️ in India.",
-  };
-
-  static const List<Map<String, String>> contactDetails = [
-    {
-      "emoji": "📧",
-      "title": "Email",
-      "text": "skillfactorial@gmail.com",
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(40),
+      width: double.infinity,
+      padding: const EdgeInsets.all(60),
       decoration: BoxDecoration(
-        color: Color(0xFF1A1A1A),
-        borderRadius: BorderRadius.only(
+        gradient: LinearGradient(
+          colors: [Color(0xFF1A1A1A), Color(0xFF0F0F0F)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40),
         ),
@@ -789,57 +799,88 @@ class _FooterSection extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            footerData['title']!,
-            style: TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+            LandingPageData.footer['title']!,
+            style: const TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
+            ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 16),
           Text(
-            footerData['subtitle']!,
-            style: TextStyle(fontSize: 16, color: Colors.grey[400]),
+            LandingPageData.footer['subtitle']!,
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.grey[400],
+            ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 60),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: contactDetails.map((contact) {
+            children: LandingPageData.contactDetails.map((contact) {
               return Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
                   children: [
-                    Text(
-                      contact['emoji']!,
-                      style: TextStyle(fontSize: 32),
+                    Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.orange, Colors.orange[400]!],
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          contact['emoji']!,
+                          style: const TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 16),
                     Text(
                       contact['title']!,
-                      style: TextStyle(color: Colors.grey[400]),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey[400],
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
+                    const SizedBox(height: 4),
                     Text(
                       contact['text']!,
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.w500),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                      ),
                     ),
                   ],
                 ),
               );
             }).toList(),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 60),
           Text(
-            footerData['copyright']!,
-            style: TextStyle(color: Colors.grey[500]),
+            LandingPageData.footer['copyright']!,
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.grey[500],
+            ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 24),
           GestureDetector(
-            onTap: () {
-              // Launch URL
-            },
+            onTap: () {},
             child: Text(
               'skillfactorial',
               style: TextStyle(
                 color: Colors.orange,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
                 decoration: TextDecoration.underline,
               ),
             ),
