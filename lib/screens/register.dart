@@ -193,14 +193,14 @@ class _AuthScreenState extends State<AuthScreen> {
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFF4A90E2),
-              Color(0xFF50C878),
-              Color(0xFF7B68EE),
+              AppColors.brandBlue,
+              AppColors.brandGreen,
+              AppColors.brandPurple,
             ],
           ),
         ),
@@ -229,7 +229,7 @@ class _AuthScreenState extends State<AuthScreen> {
                             style: GoogleFonts.poppins(
                               fontSize: 28,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: AppColors.white,
                             ),
                           ),
                           const SizedBox(height: 24),
@@ -239,7 +239,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 : "Create your account",
                             style: GoogleFonts.poppins(
                               fontSize: 20,
-                              color: Colors.white,
+                              color: AppColors.white,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -266,7 +266,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                   : "Already have an account? Sign in",
                               style: GoogleFonts.poppins(
                                 fontSize: 16,
-                                color: Colors.white.withOpacity(0.9),
+                                color: AppColors.white.withOpacity(0.9),
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -277,8 +277,8 @@ class _AuthScreenState extends State<AuthScreen> {
                               margin: const EdgeInsets.only(top: 20),
                               padding: const EdgeInsets.all(20),
                               child: const CircularProgressIndicator(
-                                valueColor:
-                                    AlwaysStoppedAnimation<Color>(Colors.white),
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    AppColors.white),
                                 strokeWidth: 3,
                               ),
                             ),
@@ -312,7 +312,7 @@ class StaticInfoWithImage extends StatelessWidget {
           style: GoogleFonts.poppins(
             fontSize: 36,
             fontWeight: FontWeight.w700,
-            color: Colors.white,
+            color: AppColors.white,
             height: 1.2,
           ),
         ),
@@ -321,7 +321,7 @@ class StaticInfoWithImage extends StatelessWidget {
           "Join 50K+ learners mastering\nskills that matter most",
           style: GoogleFonts.poppins(
             fontSize: 18,
-            color: Colors.white,
+            color: AppColors.white,
             height: 1.4,
           ),
         ),
@@ -330,9 +330,9 @@ class StaticInfoWithImage extends StatelessWidget {
           width: double.infinity,
           height: 300,
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1),
+            color: AppColors.white.withOpacity(0.1),
             borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: Colors.white.withOpacity(0.2)),
+            border: Border.all(color: AppColors.white.withOpacity(0.2)),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
@@ -340,11 +340,11 @@ class StaticInfoWithImage extends StatelessWidget {
               'assets/student_home/reg.png',
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) => Container(
-                color: Colors.white.withOpacity(0.1),
+                color: AppColors.white.withOpacity(0.1),
                 child: Icon(
                   Icons.school_outlined,
                   size: 100,
-                  color: Colors.white.withOpacity(0.8),
+                  color: AppColors.white.withOpacity(0.8),
                 ),
               ),
             ),
@@ -390,11 +390,11 @@ class __AuthCardState extends State<_AuthCard> {
       constraints: const BoxConstraints(maxWidth: 420),
       padding: const EdgeInsets.all(32),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.12),
+            color: AppColors.black.withOpacity(0.12),
             blurRadius: 30,
             offset: const Offset(0, 12),
           ),
@@ -434,8 +434,8 @@ class __AuthCardState extends State<_AuthCard> {
               height: 56,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF4A90E2),
-                  foregroundColor: Colors.white,
+                  backgroundColor: AppColors.brandBlue,
+                  foregroundColor: AppColors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)),
                   elevation: 0,
@@ -500,34 +500,34 @@ class _CustomTextField extends StatelessWidget {
       },
       decoration: InputDecoration(
         labelText: label,
-        prefixIcon: Icon(icon, color: const Color(0xFF4A90E2)),
+        prefixIcon: Icon(icon, color: AppColors.brandBlue),
         suffixIcon: onTogglePassword != null
             ? IconButton(
                 icon: Icon(
                     showPassword ? Icons.visibility : Icons.visibility_off,
-                    color: const Color(0xFF4A90E2)),
+                    color: AppColors.brandBlue),
                 onPressed: onTogglePassword,
               )
             : null,
         filled: true,
-        fillColor: Colors.grey.shade50,
+        fillColor: AppColors.backgroundLight,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Colors.grey.shade300),
+          borderSide: BorderSide(color: AppColors.border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Colors.grey.shade300),
+          borderSide: BorderSide(color: AppColors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: const Color(0xFF4A90E2), width: 2),
+          borderSide: BorderSide(color: AppColors.brandBlue, width: 2),
         ),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        labelStyle: TextStyle(color: Colors.grey.shade500),
+        labelStyle: TextStyle(color: AppColors.textLight),
       ),
-      style: GoogleFonts.poppins(color: Colors.black87),
+      style: GoogleFonts.poppins(color: AppColors.textPrimary),
     );
   }
 }
@@ -544,12 +544,12 @@ class GoogleSignInButton extends StatelessWidget {
       width: 350,
       height: 56,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.shade300),
+        border: Border.all(color: AppColors.border),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: AppColors.black.withOpacity(0.08),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),

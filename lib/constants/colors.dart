@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Primary Colors
-  static const Color primaryColor = Color(0xFF2563EB); // Modern Blue
-  static const Color secondaryColor = Color(0xFF7C3AED); // Deep Purple
-  static const Color accentColor = Color(0xFF10B981); // Emerald Green
+  // Brand Palette
+  static const Color primaryColor = Color(0xFF1D4ED8); // EdTech Blue
+  static const Color secondaryColor = Color(0xFF9333EA); // Vibrant Purple
+  static const Color accentColor = Color(0xFF14B8A6); // Teal Accent
+  static const Color highlight = Color(0xFFF59E0B); // Warm Amber
 
-  // Background Colors
-  static const Color backgroundColor = Color(0xFFF8FAFC); // Light Gray Blue
-  static const Color surfaceColor = Color(0xFFFFFFFF); // Pure White
-  static const Color cardBackground = Color(0xFFFFFFFF); // Card White
+  // Neutral Palette
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color white10 = Color(0x1AFFFFFF);
+  static const Color black = Color(0xFF000000);
+  static const Color backgroundLight = Color(0xFFF8FAFC); // Subtle off-white
+  static const Color backgroundDark = Color(0xFF0F172A); // Deep navy
+  static const Color surface = Color(0xFF0B1220); // Elevated card background
+  static const Color footerBackground = Color(0xFF0D0D0D);
 
-  // Text Colors
+  // Semantic Neutrals
   static const Color textPrimary = Color(0xFF1E293B); // Slate Dark
   static const Color textSecondary = Color(0xFF64748B); // Slate Medium
+  static const Color textTertiary = Color(0xFF475569); // Muted Slate
   static const Color textLight = Color(0xFF94A3B8); // Slate Light
 
   // Status Colors
-  static const Color success = Color(0xFF059669); // Green
+  static const Color success = Color(0xFF22C55E); // Green
   static const Color warning = Color(0xFFF59E0B); // Amber
-  static const Color error = Color(0xFFDC2626); // Red
-  static const Color info = Color(0xFF3B82F6); // Blue
+  static const Color error = Color(0xFFEF4444); // Red
+  static const Color info = Color(0xFF3B82F6); // Bright Blue
+
+  // Additional Brand Accents
+  static const Color brandBlue = Color(0xFF4A90E2);
+  static const Color brandGreen = Color(0xFF50C878);
+  static const Color brandPurple = Color(0xFF7B68EE);
+  static const Color brandNavy = Color(0xFF1A237E);
 
   // Gradients
   static const LinearGradient gradientPrimary = LinearGradient(
@@ -28,7 +40,8 @@ class AppColors {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
-  static LinearGradient gradientPrimaryMain = LinearGradient(
+
+  static LinearGradient gradientPrimarySoft = LinearGradient(
     colors: [
       primaryColor,
       primaryColor.withOpacity(0.7),
@@ -41,25 +54,23 @@ class AppColors {
     tileMode: TileMode.decal,
   );
 
-  static const LinearGradient gradientSecondary = LinearGradient(
-    colors: [Color(0xFF7C3AED), Color(0xFF10B981)],
+  static const LinearGradient gradientHero = LinearGradient(
+    colors: [backgroundDark, primaryColor],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const LinearGradient gradientAccent = LinearGradient(
-    colors: [Color(0xFF10B981), Color(0xFF2563EB)],
+    colors: [accentColor, primaryColor],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
-  // Overlay Colors
+  // Utility Colors
+  static const Color transparent = Colors.transparent;
   static const Color overlay = Color(0x801E293B); // Semi-transparent overlay
   static const Color shimmerBase = Color(0xFFE2E8F0); // Shimmer effect base
-  static const Color shimmerHighlight =
-      Color(0xFFF1F5F9); // Shimmer effect highlight
-
-  // Border and Divider Colors
+  static const Color shimmerHighlight = Color(0xFFF1F5F9); // Shimmer highlight
   static const Color border = Color(0xFFE2E8F0); // Border color
   static const Color divider = Color(0xFFE2E8F0); // Divider color
 

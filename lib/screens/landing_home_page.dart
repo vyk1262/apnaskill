@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:skill_factorial/constants/colors.dart';
 import 'package:skill_factorial/screens/investor_pitch.dart';
 
 import 'common_widgets/custom_app_bar.dart';
@@ -11,7 +12,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: AppColors.backgroundLight,
       appBar: CustomAppBar(),
       body: CustomScrollView(
         slivers: [
@@ -43,8 +44,7 @@ class _HeroSection extends StatelessWidget {
         vertical: isMobile ? 60 : 0,
       ),
       decoration: const BoxDecoration(
-        color: Color(
-            0xFF0F172A), // color: const Color(0xFF0F172A), Soft off-white professional background
+        color: AppColors.backgroundDark,
       ),
       child: isMobile
           ? Column(children: _buildHeroContent(isMobile))
@@ -75,13 +75,13 @@ class _HeroSection extends StatelessWidget {
       Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: Colors.orange.withOpacity(0.1),
+          color: AppColors.highlight.withOpacity(0.12),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Text(
           "🚀 10X YOUR LEARNING",
           style: GoogleFonts.poppins(
-            color: Colors.orange[800],
+            color: AppColors.highlight,
             fontSize: 12,
             fontWeight: FontWeight.w700,
             letterSpacing: 1.2,
@@ -95,7 +95,7 @@ class _HeroSection extends StatelessWidget {
         style: GoogleFonts.poppins(
           fontSize: isMobile ? 36 : 56,
           fontWeight: FontWeight.w900,
-          color: Color.fromARGB(255, 255, 255, 255),
+          color: AppColors.white,
           height: 1.1,
         ),
       ),
@@ -105,7 +105,7 @@ class _HeroSection extends StatelessWidget {
         textAlign: isMobile ? TextAlign.center : TextAlign.left,
         style: GoogleFonts.poppins(
           fontSize: isMobile ? 16 : 20,
-          color: Colors.blueGrey[700],
+          color: AppColors.textSecondary,
           height: 1.6,
         ),
       ),
@@ -115,8 +115,8 @@ class _HeroSection extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.orange[500],
-            foregroundColor: Colors.white,
+            backgroundColor: AppColors.highlight,
+            foregroundColor: AppColors.white,
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 24),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -144,7 +144,7 @@ class _HeroSection extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
-            color: Colors.orange.withOpacity(0.2),
+            color: AppColors.highlight.withOpacity(0.25),
             blurRadius: 100,
             offset: const Offset(0, 20),
           ),
@@ -160,7 +160,7 @@ class _HeroSection extends StatelessWidget {
             if (loadingProgress == null) return child;
             return Container(
               height: 400,
-              color: Colors.grey[200],
+              color: AppColors.shimmerBase,
               child: const Center(child: CircularProgressIndicator()),
             );
           },
@@ -189,7 +189,7 @@ class _FeaturesSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Colors.orange[700],
+              color: AppColors.highlight,
               letterSpacing: 2,
             ),
           ),
@@ -201,7 +201,7 @@ class _FeaturesSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: isMobile ? 32 : 44,
               fontWeight: FontWeight.w800,
-              color: const Color(0xFF1E293B),
+              color: AppColors.textPrimary,
               height: 1.2,
             ),
           ),
@@ -257,13 +257,13 @@ class _FeatureCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(40),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(32),
         // Subtle border to give it a "Glass" look on white backgrounds
-        border: Border.all(color: const Color(0xFFF1F5F9), width: 2),
+        border: Border.all(color: AppColors.border, width: 2),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF0F172A).withOpacity(0.05),
+            color: AppColors.backgroundDark.withOpacity(0.05),
             blurRadius: 40,
             offset: const Offset(0, 20),
           ),
@@ -278,14 +278,17 @@ class _FeatureCard extends StatelessWidget {
             width: 64,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.orange[400]!, Colors.orange[600]!],
+                colors: [
+                  AppColors.highlight.withOpacity(0.85),
+                  AppColors.highlight.withOpacity(0.55),
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.orange.withOpacity(0.3),
+                  color: AppColors.highlight.withOpacity(0.25),
                   blurRadius: 15,
                   offset: const Offset(0, 8),
                 ),
@@ -304,7 +307,7 @@ class _FeatureCard extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 22,
               fontWeight: FontWeight.w700,
-              color: const Color(0xFF1E293B),
+              color: AppColors.textPrimary,
             ),
           ),
           const SizedBox(height: 16),
@@ -312,13 +315,13 @@ class _FeatureCard extends StatelessWidget {
             description,
             style: GoogleFonts.poppins(
               fontSize: 15,
-              color: Colors.blueGrey[700],
+              color: AppColors.textSecondary,
               height: 1.7,
             ),
           ),
           const SizedBox(height: 24),
           // Small "Learn More" or indicator arrow
-          Icon(Icons.arrow_right_alt, color: Colors.orange[600]),
+          Icon(Icons.arrow_right_alt, color: AppColors.highlight),
         ],
       ),
     );
@@ -333,7 +336,7 @@ class _HowItWorksSection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      color: const Color(0xFF0F172A), // Very light background to make cards pop
+      color: AppColors.backgroundDark,
       padding: EdgeInsets.symmetric(
         horizontal: isMobile ? 24 : 80,
         vertical: 120,
@@ -345,7 +348,7 @@ class _HowItWorksSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Colors.orange[700],
+              color: AppColors.highlight,
               letterSpacing: 2,
             ),
           ),
@@ -356,7 +359,7 @@ class _HowItWorksSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: isMobile ? 32 : 44,
               fontWeight: FontWeight.w800,
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: AppColors.white,
             ),
           ),
           const SizedBox(height: 100),
@@ -420,7 +423,10 @@ class _StepCard extends StatelessWidget {
               height: 2,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.orange.withOpacity(0.5), Colors.transparent],
+                  colors: [
+                    AppColors.highlight.withOpacity(0.5),
+                    AppColors.transparent
+                  ],
                 ),
               ),
             ),
@@ -433,16 +439,16 @@ class _StepCard extends StatelessWidget {
               height: 100,
               width: 100,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: AppColors.black.withOpacity(0.05),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
                   BoxShadow(
-                    color: Colors.orange.withOpacity(0.1),
+                    color: AppColors.highlight.withOpacity(0.1),
                     blurRadius: 10,
                     spreadRadius: -2,
                   ),
@@ -453,11 +459,11 @@ class _StepCard extends StatelessWidget {
                   height: 70,
                   width: 70,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                       colors: [
-                        Color(0xFFFB923C),
-                        Color(0xFFEA580C)
-                      ], // Orange 400 to 600
+                        AppColors.highlight,
+                        AppColors.highlight.withOpacity(0.8),
+                      ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -469,7 +475,7 @@ class _StepCard extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: AppColors.white,
                       ),
                     ),
                   ),
@@ -483,7 +489,7 @@ class _StepCard extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: AppColors.white,
               ),
             ),
             const SizedBox(height: 16),
@@ -494,7 +500,7 @@ class _StepCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   fontSize: 15,
-                  color: const Color(0xFF64748B),
+                  color: AppColors.textSecondary,
                   height: 1.6,
                 ),
               ),
@@ -506,7 +512,7 @@ class _StepCard extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(vertical: 30),
                 height: 40,
                 width: 2,
-                color: Colors.orange.withOpacity(0.3),
+                color: AppColors.highlight.withOpacity(0.3),
               ),
           ],
         ),
@@ -523,7 +529,7 @@ class _PricingSection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      color: Colors.white,
+      color: AppColors.white,
       padding: EdgeInsets.symmetric(
         horizontal: isMobile ? 24 : 80,
         vertical: 120,
@@ -535,7 +541,7 @@ class _PricingSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Colors.orange[700],
+              color: AppColors.highlight,
               letterSpacing: 2,
             ),
           ),
@@ -546,7 +552,7 @@ class _PricingSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: isMobile ? 32 : 44,
               fontWeight: FontWeight.w800,
-              color: const Color(0xFF1E293B),
+              color: AppColors.textPrimary,
             ),
           ),
           const SizedBox(height: 16),
@@ -555,7 +561,7 @@ class _PricingSection extends StatelessWidget {
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
               fontSize: 18,
-              color: const Color(0xFF64748B),
+              color: AppColors.textSecondary,
             ),
           ),
           const SizedBox(height: 80),
@@ -607,14 +613,14 @@ class _PricingCard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(32),
           border: Border.all(
-            color: isBest ? Colors.orange : const Color(0xFFE2E8F0),
+            color: isBest ? AppColors.highlight : AppColors.border,
             width: isBest ? 2 : 1,
           ),
           boxShadow: [
             BoxShadow(
               color: isBest
-                  ? Colors.orange.withOpacity(0.1)
-                  : Colors.black.withOpacity(0.05),
+                  ? AppColors.highlight.withOpacity(0.1)
+                  : AppColors.black.withOpacity(0.05),
               blurRadius: 40,
               offset: const Offset(0, 20),
             ),
@@ -629,14 +635,16 @@ class _PricingCard extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: isBest ? Colors.orange[50] : const Color(0xFFF1F5F9),
+                  color: isBest
+                      ? AppColors.highlight.withOpacity(0.15)
+                      : AppColors.shimmerHighlight,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   plan['badgeText'],
                   style: GoogleFonts.poppins(
                     color:
-                        isBest ? Colors.orange[800] : const Color(0xFF475569),
+                        isBest ? AppColors.highlight : AppColors.textTertiary,
                     fontWeight: FontWeight.w700,
                     fontSize: 12,
                   ),
@@ -647,7 +655,7 @@ class _PricingCard extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF1E293B),
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 8),
@@ -655,7 +663,7 @@ class _PricingCard extends StatelessWidget {
               plan['subtitle'],
               style: GoogleFonts.poppins(
                 fontSize: 14,
-                color: const Color(0xFF64748B),
+                color: AppColors.textSecondary,
               ),
             ),
             const SizedBox(height: 32),
@@ -684,7 +692,7 @@ class _PricingCard extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         fontSize: 48,
                         fontWeight: FontWeight.w800,
-                        color: const Color(0xFF1E293B),
+                        color: AppColors.textPrimary,
                         letterSpacing: -1,
                       ),
                     ),
@@ -692,7 +700,7 @@ class _PricingCard extends StatelessWidget {
                       " /subject",
                       style: GoogleFonts.poppins(
                         fontSize: 16,
-                        color: const Color(0xFF64748B),
+                        color: AppColors.textSecondary,
                       ),
                     ),
                   ],
@@ -706,10 +714,11 @@ class _PricingCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: isComingSoon ? null : () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      isBest ? Colors.orange[600] : const Color(0xFF1E293B),
-                  foregroundColor: Colors.white,
-                  disabledBackgroundColor: const Color(0xFFE2E8F0),
+                  backgroundColor: isBest
+                      ? AppColors.highlight.withOpacity(0.9)
+                      : AppColors.textPrimary,
+                  foregroundColor: AppColors.white,
+                  disabledBackgroundColor: AppColors.border,
                   padding: const EdgeInsets.symmetric(vertical: 18),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
@@ -726,7 +735,7 @@ class _PricingCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            const Divider(color: Color(0xFFE2E8F0)),
+            const Divider(color: AppColors.divider),
             const SizedBox(height: 32),
             ...((plan['features'] as List).map(
               (feature) => Padding(
@@ -735,8 +744,8 @@ class _PricingCard extends StatelessWidget {
                   children: [
                     Icon(Icons.check_circle,
                         color: isComingSoon
-                            ? const Color(0xFF94A3B8)
-                            : Colors.green[500],
+                            ? AppColors.textLight
+                            : AppColors.success,
                         size: 20),
                     const SizedBox(width: 12),
                     Expanded(
@@ -744,7 +753,7 @@ class _PricingCard extends StatelessWidget {
                         feature,
                         style: GoogleFonts.poppins(
                           fontSize: 14,
-                          color: const Color(0xFF475569),
+                          color: AppColors.textTertiary,
                         ),
                       ),
                     ),
@@ -771,12 +780,12 @@ class _BenefitsSection extends StatelessWidget {
         horizontal: isMobile ? 24 : 80,
         vertical: 120,
       ),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color(0xFF0F172A),
-            Color(0xFF1E40AF)
-          ], // Deeper Slate to Deep Blue
+            AppColors.backgroundDark,
+            AppColors.brandNavy,
+          ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -789,7 +798,7 @@ class _BenefitsSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 14,
               fontWeight: FontWeight.w700,
-              color: Colors.orange[400],
+              color: AppColors.highlight,
               letterSpacing: 2,
             ),
           ),
@@ -800,7 +809,7 @@ class _BenefitsSection extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: isMobile ? 32 : 44,
               fontWeight: FontWeight.w800,
-              color: Colors.white,
+              color: AppColors.white,
             ),
           ),
           const SizedBox(height: 80),
@@ -835,10 +844,10 @@ class _GlassBenefitCard extends StatelessWidget {
       padding: const EdgeInsets.all(40),
       decoration: BoxDecoration(
         // Glassmorphism effect
-        color: Colors.white.withOpacity(0.05),
+        color: AppColors.white.withOpacity(0.05),
         borderRadius: BorderRadius.circular(32),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: AppColors.white.withOpacity(0.1),
           width: 1.5,
         ),
       ),
@@ -849,7 +858,7 @@ class _GlassBenefitCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: AppColors.white.withOpacity(0.1),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Text(
@@ -863,7 +872,7 @@ class _GlassBenefitCard extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 22,
               fontWeight: FontWeight.w700,
-              color: Colors.white,
+              color: AppColors.white,
             ),
           ),
           const SizedBox(height: 16),
@@ -871,7 +880,7 @@ class _GlassBenefitCard extends StatelessWidget {
             benefit['description']!,
             style: GoogleFonts.poppins(
               fontSize: 16,
-              color: Colors.white.withOpacity(0.7),
+              color: AppColors.white.withOpacity(0.7),
               height: 1.7,
             ),
           ),
@@ -896,7 +905,7 @@ class _FAQSectionState extends State<_FAQSection> {
 
     return Container(
       width: double.infinity,
-      color: Colors.white,
+      color: AppColors.white,
       padding: EdgeInsets.symmetric(
         horizontal: isMobile ? 24 : 80,
         vertical: 120,
@@ -912,7 +921,7 @@ class _FAQSectionState extends State<_FAQSection> {
                 style: GoogleFonts.poppins(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
-                  color: Colors.orange[700],
+                  color: AppColors.highlight,
                   letterSpacing: 2,
                 ),
               ),
@@ -923,7 +932,7 @@ class _FAQSectionState extends State<_FAQSection> {
                 style: GoogleFonts.poppins(
                   fontSize: isMobile ? 32 : 44,
                   fontWeight: FontWeight.w800,
-                  color: const Color(0xFF1E293B),
+                  color: AppColors.textPrimary,
                 ),
               ),
               const SizedBox(height: 60),
@@ -938,19 +947,19 @@ class _FAQSectionState extends State<_FAQSection> {
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                     decoration: BoxDecoration(
-                      color:
-                          isExpanded ? Colors.white : const Color(0xFFF8FAFC),
+                      color: isExpanded
+                          ? AppColors.white
+                          : AppColors.backgroundLight,
                       borderRadius: BorderRadius.circular(24),
                       border: Border.all(
-                        color: isExpanded
-                            ? Colors.orange
-                            : const Color(0xFFE2E8F0),
+                        color:
+                            isExpanded ? AppColors.highlight : AppColors.border,
                         width: isExpanded ? 2 : 1,
                       ),
                       boxShadow: isExpanded
                           ? [
                               BoxShadow(
-                                color: Colors.orange.withOpacity(0.05),
+                                color: AppColors.highlight.withOpacity(0.05),
                                 blurRadius: 20,
                                 offset: const Offset(0, 10),
                               )
@@ -979,7 +988,7 @@ class _FAQSectionState extends State<_FAQSection> {
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w700,
                             fontSize: isMobile ? 16 : 18,
-                            color: const Color(0xFF1E293B),
+                            color: AppColors.textPrimary,
                           ),
                         ),
                         trailing: Icon(
@@ -987,8 +996,8 @@ class _FAQSectionState extends State<_FAQSection> {
                               ? Icons.remove_circle_outline
                               : Icons.add_circle_outline,
                           color: isExpanded
-                              ? Colors.orange
-                              : const Color(0xFF64748B),
+                              ? AppColors.highlight
+                              : AppColors.textSecondary,
                         ),
                         childrenPadding:
                             const EdgeInsets.fromLTRB(24, 0, 24, 24),
@@ -997,7 +1006,7 @@ class _FAQSectionState extends State<_FAQSection> {
                             faq['answer']!,
                             style: GoogleFonts.poppins(
                               fontSize: 15,
-                              color: const Color(0xFF64748B),
+                              color: AppColors.textSecondary,
                               height: 1.6,
                             ),
                           ),
@@ -1029,7 +1038,7 @@ class _FooterSection extends StatelessWidget {
       ),
       decoration: const BoxDecoration(
         // Using a premium solid dark background to make orange pop
-        color: Color(0xFF0D0D0D),
+        color: AppColors.footerBackground,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(50),
           topRight: Radius.circular(50),
@@ -1053,7 +1062,7 @@ class _FooterSection extends StatelessWidget {
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
               fontSize: 18,
-              color: Colors.grey[500],
+              color: AppColors.textLight,
             ),
           ),
 
@@ -1071,7 +1080,7 @@ class _FooterSection extends StatelessWidget {
           ),
 
           const SizedBox(height: 60),
-          const Divider(color: Colors.white10, thickness: 1),
+          const Divider(color: AppColors.white10, thickness: 1),
           const SizedBox(height: 60),
 
           // Contact Details - Responsive Grid
@@ -1086,7 +1095,7 @@ class _FooterSection extends StatelessWidget {
                     contact['title']!,
                     style: GoogleFonts.poppins(
                       fontSize: 14,
-                      color: Colors.grey[500],
+                      color: AppColors.textLight,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -1110,7 +1119,7 @@ class _FooterSection extends StatelessWidget {
                       child: Text(
                         "Growth",
                         style: GoogleFonts.poppins(
-                          color: Colors.orange[400],
+                          color: AppColors.highlight.withOpacity(0.9),
                           fontSize: 14,
                           decoration: TextDecoration.underline,
                         ),
@@ -1127,7 +1136,7 @@ class _FooterSection extends StatelessWidget {
             LandingPageData.footer['copyright']!,
             style: GoogleFonts.poppins(
               fontSize: 14,
-              color: Colors.grey[600],
+              color: AppColors.textTertiary,
             ),
           ),
           const SizedBox(height: 16),
@@ -1136,7 +1145,7 @@ class _FooterSection extends StatelessWidget {
             child: Text(
               'skillfactorial',
               style: GoogleFonts.poppins(
-                color: Colors.orange,
+                color: AppColors.highlight,
                 fontWeight: FontWeight.w700,
                 fontSize: 18,
                 decoration: TextDecoration.underline,
@@ -1153,14 +1162,14 @@ class _FooterSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.03),
+        color: AppColors.white.withOpacity(0.03),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: AppColors.white10),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: Colors.white, size: 24),
+          Icon(icon, color: AppColors.white, size: 24),
           const SizedBox(width: 12),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1168,7 +1177,7 @@ class _FooterSection extends StatelessWidget {
               const Text(
                 "COMING SOON",
                 style: TextStyle(
-                  color: Colors.orange,
+                  color: AppColors.highlight,
                   fontSize: 9,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 1,

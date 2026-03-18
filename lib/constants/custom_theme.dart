@@ -5,31 +5,32 @@ import 'colors.dart';
 class CustomTheme {
   static ThemeData lightTheme = ThemeData(
     primaryColor: AppColors.primaryColor,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: AppColors.backgroundLight,
     appBarTheme: const AppBarTheme(
       color: AppColors.primaryColor,
       titleTextStyle: TextStyle(
-        color: Colors.white,
+        color: AppColors.white,
         fontSize: 20,
         fontWeight: FontWeight.normal,
       ),
+      iconTheme: IconThemeData(color: AppColors.white),
     ),
-    iconTheme: const IconThemeData(),
+    iconTheme: const IconThemeData(color: AppColors.primaryColor),
     listTileTheme: const ListTileThemeData(),
     inputDecorationTheme: const InputDecorationTheme(
-      labelStyle: TextStyle(color: Colors.black),
-      hintStyle: TextStyle(color: Colors.grey),
-      iconColor: Colors.black,
-      prefixIconColor: Colors.black,
-      suffixIconColor: Colors.black,
+      labelStyle: TextStyle(color: AppColors.textPrimary),
+      hintStyle: TextStyle(color: AppColors.textSecondary),
+      iconColor: AppColors.textPrimary,
+      prefixIconColor: AppColors.textPrimary,
+      suffixIconColor: AppColors.textPrimary,
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.black),
+        borderSide: BorderSide(color: AppColors.primaryColor),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.black),
+        borderSide: BorderSide(color: AppColors.border),
       ),
       border: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.black),
+        borderSide: BorderSide(color: AppColors.border),
       ),
     ),
     buttonTheme: const ButtonThemeData(
@@ -38,7 +39,7 @@ class CustomTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryColor,
-        foregroundColor: Colors.white,
+        foregroundColor: AppColors.white,
       ),
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -47,6 +48,10 @@ class CustomTheme {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: AppColors.primaryColor,
     ),
-    cardTheme: CardTheme(),
+    cardTheme: const CardTheme(
+      color: AppColors.white,
+      elevation: 4,
+      shadowColor: AppColors.shadowMedium,
+    ),
   );
 }

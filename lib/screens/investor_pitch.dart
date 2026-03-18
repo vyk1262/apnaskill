@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:skill_factorial/constants/colors.dart';
 import 'investor_pitch_data.dart';
 
 class InvestorPitch extends StatefulWidget {
@@ -38,7 +39,7 @@ class _InvestorPitchState extends State<InvestorPitch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0F1419),
+      backgroundColor: AppColors.backgroundDark,
       body: Stack(
         children: [
           // PageView for slides
@@ -70,8 +71,8 @@ class _InvestorPitchState extends State<InvestorPitch> {
                       height: 12,
                       decoration: BoxDecoration(
                         color: currentIndex == i
-                            ? Colors.white
-                            : Colors.white.withOpacity(0.4),
+                            ? AppColors.white
+                            : AppColors.white.withOpacity(0.4),
                         borderRadius: BorderRadius.circular(6),
                       ),
                     ),
@@ -85,14 +86,16 @@ class _InvestorPitchState extends State<InvestorPitch> {
                   children: [
                     if (currentIndex > 0)
                       IconButton(
-                        icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                        icon:
+                            Icon(Icons.arrow_back_ios, color: AppColors.white),
                         onPressed: _prevSlide,
                         iconSize: 32,
                       ),
+                    const Text("-"),
                     if (currentIndex < InvestorPitchData.slides.length - 1)
                       IconButton(
-                        icon:
-                            Icon(Icons.arrow_forward_ios, color: Colors.white),
+                        icon: Icon(Icons.arrow_forward_ios,
+                            color: AppColors.white),
                         onPressed: _nextSlide,
                         iconSize: 32,
                       ),
@@ -139,7 +142,7 @@ class SlideWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w500,
-              color: Colors.orange[400], // Highlighted color
+              color: AppColors.highlight.withOpacity(0.9), // Highlighted color
               height: 1.4,
             ),
             textAlign: TextAlign.center,
@@ -164,11 +167,11 @@ class SlideWidget extends StatelessWidget {
                               height: 10,
                               margin: EdgeInsets.only(top: 10, right: 18),
                               decoration: BoxDecoration(
-                                color: Colors.orange,
+                                color: AppColors.highlight,
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.orange.withOpacity(0.5),
+                                    color: AppColors.highlight.withOpacity(0.5),
                                     blurRadius: 8,
                                     spreadRadius: 1,
                                   ),
@@ -180,7 +183,7 @@ class SlideWidget extends StatelessWidget {
                                 point,
                                 style: TextStyle(
                                   fontSize: 20,
-                                  color: Colors.white.withOpacity(0.9),
+                                  color: AppColors.white.withOpacity(0.9),
                                   height: 1.5,
                                 ),
                               ),

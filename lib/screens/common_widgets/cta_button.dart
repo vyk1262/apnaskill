@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:skill_factorial/constants/colors.dart';
 
 Widget buildCtaButton({
   required String text,
   required VoidCallback onPressed,
-  Color bgColor = const Color(0xFF4A90E2),
-  Color fgColor = Colors.white,
+  Color bgColor = AppColors.brandBlue,
+  Color fgColor = AppColors.white,
   double ftSize = 20.0,
 }) {
   return ElevatedButton(
