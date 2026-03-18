@@ -28,11 +28,11 @@ class AppColors {
   static const Color error = Color(0xFFEF4444); // Red
   static const Color info = Color(0xFF3B82F6); // Bright Blue
 
-  // Additional Brand Accents
-  static const Color brandBlue = Color(0xFF4A90E2);
-  static const Color brandGreen = Color(0xFF50C878);
-  static const Color brandPurple = Color(0xFF7B68EE);
-  static const Color brandNavy = Color(0xFF1A237E);
+  // Legacy / helper colors (prefer using core palette above)
+  static const Color brandBlue = primaryColor;
+  static const Color brandGreen = accentColor;
+  static const Color brandPurple = secondaryColor;
+  static const Color brandNavy = backgroundDark;
 
   // Gradients
   static const LinearGradient gradientPrimary = LinearGradient(

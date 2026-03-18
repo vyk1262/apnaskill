@@ -198,9 +198,9 @@ class _AuthScreenState extends State<AuthScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              AppColors.brandBlue,
-              AppColors.brandGreen,
-              AppColors.brandPurple,
+              AppColors.primaryColor,
+              AppColors.secondaryColor,
+              AppColors.accentColor,
             ],
           ),
         ),
@@ -434,7 +434,7 @@ class __AuthCardState extends State<_AuthCard> {
               height: 56,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.brandBlue,
+                  backgroundColor: AppColors.primaryColor,
                   foregroundColor: AppColors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)),
@@ -500,12 +500,12 @@ class _CustomTextField extends StatelessWidget {
       },
       decoration: InputDecoration(
         labelText: label,
-        prefixIcon: Icon(icon, color: AppColors.brandBlue),
+        prefixIcon: Icon(icon, color: AppColors.primaryColor),
         suffixIcon: onTogglePassword != null
             ? IconButton(
                 icon: Icon(
                     showPassword ? Icons.visibility : Icons.visibility_off,
-                    color: AppColors.brandBlue),
+                    color: AppColors.primaryColor),
                 onPressed: onTogglePassword,
               )
             : null,
@@ -521,7 +521,7 @@ class _CustomTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: AppColors.brandBlue, width: 2),
+          borderSide: BorderSide(color: AppColors.primaryColor, width: 2),
         ),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -568,11 +568,11 @@ class GoogleSignInButton extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.red.shade50,
+                    color: AppColors.error.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: FaIcon(FontAwesomeIcons.google,
-                      size: 20, color: Colors.red.shade600),
+                      size: 20, color: AppColors.error),
                 ),
                 const SizedBox(width: 16),
                 Text(

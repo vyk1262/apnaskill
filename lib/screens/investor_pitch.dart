@@ -128,7 +128,7 @@ class SlideWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 48,
               fontWeight: FontWeight.w900, // Heavier for better impact
-              color: Colors.white,
+              color: AppColors.white,
               height: 1.1,
               letterSpacing: -1,
             ),

@@ -4,7 +4,7 @@ import 'package:skill_factorial/constants/colors.dart';
 Widget buildCtaButton({
   required String text,
   required VoidCallback onPressed,
-  Color bgColor = AppColors.brandBlue,
+  Color bgColor = AppColors.primaryColor,
   Color fgColor = AppColors.white,
   double ftSize = 20.0,
 }) {

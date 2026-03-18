@@ -44,7 +44,15 @@ class _HeroSection extends StatelessWidget {
         vertical: isMobile ? 60 : 0,
       ),
       decoration: const BoxDecoration(
-        color: AppColors.backgroundDark,
+        gradient: LinearGradient(
+          colors: [
+            AppColors.primaryColor,
+            AppColors.secondaryColor,
+            AppColors.accentColor,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
       ),
       child: isMobile
           ? Column(children: _buildHeroContent(isMobile))
@@ -213,7 +221,7 @@ class _FeaturesSection extends StatelessWidget {
               LandingPageData.featuresSubtitle,
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
-                  fontSize: 18, color: Colors.blueGrey[700], height: 1.6),
+                  fontSize: 18, color: AppColors.textSecondary, height: 1.6),
             ),
           ),
           const SizedBox(height: 80),
@@ -784,7 +792,7 @@ class _BenefitsSection extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             AppColors.backgroundDark,
-            AppColors.brandNavy,
+            AppColors.backgroundDark,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -1117,7 +1125,7 @@ class _FooterSection extends StatelessWidget {
                         );
                       },
                       child: Text(
-                        "Growth",
+                        "Pitch Deck Presentation",
                         style: GoogleFonts.poppins(
                           color: AppColors.highlight.withOpacity(0.9),
                           fontSize: 14,
